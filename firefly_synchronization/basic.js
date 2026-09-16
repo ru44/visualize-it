@@ -39,10 +39,14 @@ canvas_height = canvas_width;
 canvas.width = canvas_width;
 canvas.height = canvas_height;
 
-let animate = window.requestAnimationFrame
-    || window.webkitRequestAnimationFrame
-    || window.mozRequestAnimationFrame
-    || function (callback) {
+// let animate = window.requestAnimationFrame
+//     || window.webkitRequestAnimationFrame
+//     || window.mozRequestAnimationFrame
+//     || function (callback) {
+//         window.setTimeout(callback, 1000 / fps);
+//     };
+
+let animate = function (callback) {
         window.setTimeout(callback, 1000 / fps);
     };
 

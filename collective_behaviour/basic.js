@@ -1,6 +1,6 @@
 let screen_width = window.innerWidth, screen_height = window.innerHeight;
 let canvas_width, canvas_height;
-let fps = 24, paused = false;
+let fps = 30, paused = false;
 let mobile;
 
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -52,10 +52,14 @@ canvas_height = canvas_width;
 canvas.width = canvas_width;
 canvas.height = canvas_height;
 
-let animate = window.requestAnimationFrame
-    || window.webkitRequestAnimationFrame
-    || window.mozRequestAnimationFrame
-    || function (callback) {
+// let animate = window.requestAnimationFrame
+//     || window.webkitRequestAnimationFrame
+//     || window.mozRequestAnimationFrame
+//     || function (callback) {
+//         window.setTimeout(callback, 1000 / fps);
+//     };
+
+let animate = function (callback) {
         window.setTimeout(callback, 1000 / fps);
     };
 
