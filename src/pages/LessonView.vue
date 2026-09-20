@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { computed, defineAsyncComponent, reactive, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { getLesson, subjectLabels } from '../lessons'
+import { getLesson, lessons, subjectLabels } from '../lessons'
 import { buildAdhoc } from '../engine/adhoc'
 import { vizRegistry } from '../viz/registry'
 import Katex from '../components/Katex.vue'
 import MathText from '../components/MathText.vue'
 import ParamSlider from '../components/ParamSlider.vue'
+import ExplorerInput from '../components/ExplorerInput.vue'
 import { level, levels } from '../composables/useLevel'
 
 const ParamChart = defineAsyncComponent(() => import('../components/ParamChart.vue'))
@@ -35,6 +36,13 @@ function setParam(name: string, value: number) {
   params[name] = Math.min(spec.max, Math.max(spec.min, +snapped.toFixed(6)))
 }
 
+watch(lesson, (l) => (document.title = l ? `${l.title} — Visualize It` : 'Visualize It'), { immediate: true })
+
+const neighbours = computed(() => {
+  const i = lessons.findIndex((l) => l.id === props.id)
+  return i < 0 ? null : { prev: lessons[i - 1], next: lessons[i + 1] }
+})
+
 const linked = (ids: string[]) => ids.map((id) => ({ id, lesson: getLesson(id) }))
 </script>
 
@@ -45,29 +53,44 @@ const linked = (ids: string[]) => ids.map((id) => ({ id, lesson: getLesson(id) }
       Couldn’t turn “{{ query }}” into a visualization yet. Try a function of x such as <span class="num">x^3 - 3x</span>, a limit
       <span class="num">lim(x→0) sin(x)/x</span>, or an integral <span class="num">∫₀⁴ x² dx</span>.
     </template>
-    <RouterLink to="/" class="mt-4 block underline">Back to the explorer</RouterLink>
+    <ExplorerInput v-if="!id" class="mt-6" :initial="query" chips />
+    <RouterLink to="/" class="mt-6 block underline">Back to all concepts</RouterLink>
   </div>
-  <article v-else class="mx-auto max-w-7xl px-4 py-6 lg:px-8">
-    <header class="relative mb-5">
-      <label class="label absolute right-0 top-0 flex items-center gap-2">
-        Level
-        <select v-model="level" class="rounded border px-2 py-1 text-xs normal-case tracking-normal" style="border-color: var(--line); background: var(--panel); color: var(--fg)">
-          <option v-for="l in levels" :key="l" :value="l">{{ l }}</option>
-        </select>
-      </label>
-      <p class="label">{{ subjectLabels[lesson.subject] }} · {{ lesson.difficulty }}</p>
-      <h1 class="mt-1 text-2xl font-semibold tracking-tight">{{ lesson.title }}</h1>
-      <p class="mt-1 max-w-2xl" style="color: var(--muted)">{{ lesson.summary }}</p>
+  <article v-else class="mx-auto max-w-6xl px-4 py-6 lg:px-8">
+    <ExplorerInput v-if="!id" class="mb-6 max-w-2xl" :initial="query" />
+    <header class="mb-6 flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="label flex items-center gap-2">
+          <RouterLink to="/#concepts" class="hover:text-[var(--fg)]">← Concepts</RouterLink>
+          <span>/</span>
+          <span>{{ subjectLabels[lesson.subject] }}</span>
+        </p>
+        <h1 class="mt-2 text-3xl font-semibold tracking-tight">{{ lesson.title }}</h1>
+        <p class="mt-1.5 max-w-2xl leading-relaxed" style="color: var(--muted)"><MathText :text="lesson.summary" /></p>
+      </div>
+      <div>
+        <p class="label mb-1.5">Explain it at</p>
+        <div class="flex gap-1 rounded-xl p-1" style="background: var(--sunken)">
+          <button
+            v-for="l in levels"
+            :key="l"
+            class="rounded-lg px-2.5 py-1 text-xs capitalize transition-colors"
+            :style="level === l ? 'background: var(--panel); color: var(--fg); box-shadow: 0 1px 2px rgb(0 0 0 / .12)' : 'color: var(--muted)'"
+            @click="level = l"
+          >
+            {{ l.replace('-', ' ') }}
+          </button>
+        </div>
+      </div>
     </header>
 
     <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
-      <section class="overflow-hidden rounded-lg border" style="border-color: var(--line); background: var(--panel)">
+      <section class="surface overflow-hidden">
         <component :is="viz" v-if="viz" :params="params" :options="lesson.visualization.options" @set="setParam" />
-        <ParamChart v-for="c in lesson.charts ?? []" :key="c.title" :spec="c" :params="params" />
         <p v-if="!viz" class="p-6" style="color: var(--muted)">No visualization registered for “{{ lesson.visualization.type }}”.</p>
       </section>
 
-      <aside class="space-y-6">
+      <aside class="surface space-y-6 self-start p-5 lg:sticky lg:top-20 lg:row-span-2">
         <div>
           <p class="label mb-2">Equation</p>
           <div class="text-xl"><Katex :tex="lesson.equation" display /></div>
@@ -89,23 +112,27 @@ const linked = (ids: string[]) => ids.map((id) => ({ id, lesson: getLesson(id) }
           <dl class="space-y-1 text-sm">
             <div v-for="v in lesson.variables" :key="v.symbol" class="flex gap-3">
               <dt class="w-14 shrink-0"><Katex :tex="v.symbol" /></dt>
-              <dd style="color: var(--muted)">{{ v.meaning }}</dd>
+              <dd style="color: var(--muted)"><MathText :text="v.meaning" /></dd>
             </div>
           </dl>
         </div>
       </aside>
+
+      <section v-if="lesson.charts?.length" class="surface overflow-hidden [&>figure:first-child]:border-t-0">
+        <ParamChart v-for="c in lesson.charts" :key="c.title" :spec="c" :params="params" />
+      </section>
     </div>
 
-    <div class="mt-10 grid gap-10 lg:grid-cols-2">
+    <div class="mt-12 grid gap-x-12 gap-y-10 lg:grid-cols-2">
       <section>
         <div class="mb-3 flex items-center gap-4">
           <h2 class="label">What it means</h2>
-          <div class="flex rounded-md border text-xs" style="border-color: var(--line)">
+          <div class="flex gap-1 rounded-lg p-0.5 text-xs" style="background: var(--sunken)">
             <button
               v-for="m in ['intuition', 'formal'] as const"
               :key="m"
-              class="px-3 py-1 capitalize"
-              :style="mode === m ? 'background: var(--fg); color: var(--bg)' : 'color: var(--muted)'"
+              class="rounded-md px-3 py-1 capitalize transition-colors"
+              :style="mode === m ? 'background: var(--panel); color: var(--fg); box-shadow: 0 1px 2px rgb(0 0 0 / .12)' : 'color: var(--muted)'"
               @click="mode = m"
             >
               {{ m }}
@@ -164,5 +191,17 @@ const linked = (ids: string[]) => ids.map((id) => ({ id, lesson: getLesson(id) }
         </div>
       </section>
     </div>
+
+    <nav v-if="neighbours" class="mt-14 grid gap-4 sm:grid-cols-2">
+      <RouterLink v-if="neighbours.prev" :to="`/lesson/${neighbours.prev.id}`" class="surface lift p-4">
+        <p class="label">← Previous</p>
+        <p class="mt-1 font-medium">{{ neighbours.prev.title }}</p>
+      </RouterLink>
+      <span v-else />
+      <RouterLink v-if="neighbours.next" :to="`/lesson/${neighbours.next.id}`" class="surface lift p-4 text-right">
+        <p class="label">Next →</p>
+        <p class="mt-1 font-medium">{{ neighbours.next.title }}</p>
+      </RouterLink>
+    </nav>
   </article>
 </template>

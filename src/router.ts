@@ -7,7 +7,12 @@ export const router = createRouter({
     { path: '/', component: Home },
     { path: '/lesson/:id', component: () => import('./pages/LessonView.vue'), props: true },
     { path: '/explore', component: () => import('./pages/LessonView.vue') },
-    { path: '/map', component: () => import('./pages/MapView.vue') },
+    { path: '/map', component: () => import('./pages/MapView.vue'), meta: { title: 'Learning map' } },
+    { path: '/:rest(.*)*', component: () => import('./pages/NotFound.vue'), meta: { title: 'Not found' } },
   ],
-  scrollBehavior: () => ({ top: 0 }),
+  scrollBehavior: (to) => (to.hash ? { el: to.hash, top: 70 } : { top: 0 }),
+})
+
+router.afterEach((to) => {
+  if (!to.path.startsWith('/lesson') && to.path !== '/explore') document.title = to.meta.title ? `${to.meta.title} — Visualize It` : 'Visualize It — see what the equation means'
 })

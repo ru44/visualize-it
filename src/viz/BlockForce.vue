@@ -7,16 +7,16 @@ const props = defineProps<{ params: Record<string, number>; options: Record<stri
 const emit = defineEmits<{ set: [name: string, value: number] }>()
 
 const W = 800
-const H = 480
+const H = 320
 const PX_PER_M = 40
 const MARGIN = 60
-const GROUND_Y = 380
+const GROUND_Y = 250
 
 const F = computed(() => props.params.F ?? 10)
 const m = computed(() => props.params.m ?? 2)
 const a = computed(() => F.value / Math.max(m.value, 1e-6))
 
-const sideLenPx = computed(() => Math.max(10, Math.cbrt(Math.max(m.value, 0.001)) * 18))
+const sideLenPx = computed(() => Math.max(10, Math.cbrt(Math.max(m.value, 0.001)) * 42))
 
 const t = ref(0)
 const v = ref(0)
