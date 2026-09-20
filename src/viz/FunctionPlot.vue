@@ -15,6 +15,8 @@ interface PlotOptions {
   showDerivative?: boolean
   limitAt?: number
   rule?: RiemannRule
+  /** x-values to mark on the axis (equation solver). */
+  roots?: number[]
 }
 
 const props = defineProps<{ params: Record<string, number>; options: Record<string, any> }>()
@@ -215,6 +217,11 @@ function down(e: PointerEvent) {
 
       <path v-if="dCurve" :d="dCurve" fill="none" stroke="var(--accent-2)" stroke-width="1.5" stroke-dasharray="5 4" />
       <path :d="curve" fill="none" stroke="var(--accent)" stroke-width="2.5" />
+
+      <g v-for="root in o.roots ?? []" :key="root">
+        <circle :cx="sx(root)" :cy="sy(0)" r="6" fill="var(--bg)" stroke="var(--pos)" stroke-width="2.5" />
+        <text class="num" :x="sx(root)" :y="sy(0) + 24" text-anchor="middle" font-size="12" fill="var(--pos)">x = {{ fmt(root) }}</text>
+      </g>
 
       <template v-if="o.mode === 'plain'">
         <line :x1="point.cx" :x2="point.cx" :y1="sy(0)" :y2="point.cy" stroke="var(--accent-2)" stroke-dasharray="3 3" />

@@ -13,6 +13,9 @@ export const physics: Lesson[] = [
     concepts: ['force', 'mass', 'acceleration', 'momentum'],
     prerequisites: ['slope', 'derivative'],
     related: ['area-under-curve'],
+    charts: [
+      { title: 'Velocity and position over time', xLabel: 't (s)', yLabel: 'v (m/s) · x (m)', domain: [0, 5], series: [{ label: 'v = (F/m)·t', expr: 'F/m*x' }, { label: 'x = ½(F/m)·t²', expr: '0.5*F/m*x^2' }] },
+    ],
     visualization: {
       type: 'block-force',
       options: {},

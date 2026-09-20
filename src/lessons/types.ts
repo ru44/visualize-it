@@ -10,6 +10,17 @@ export interface ParamSpec {
   unit?: string
 }
 
+export interface ChartSpec {
+  title: string
+  xLabel: string
+  yLabel: string
+  domain: [number, number]
+  /** mathjs expressions in x; lesson parameters are in scope. */
+  series: { label: string; expr: string }[]
+  /** Parameter whose current value is marked on the first series. */
+  marker?: string
+}
+
 export interface Lesson {
   id: string
   title: string
@@ -27,7 +38,11 @@ export interface Lesson {
   parameters: Record<string, ParamSpec>
   variables: { symbol: string; meaning: string }[]
   /** Text may contain inline $LaTeX$. */
-  explanation: { intuition: string[]; formal: string[] }
+  /** `advanced` is shown at university level and above. */
+  explanation: { intuition: string[]; formal: string[]; advanced?: string[] }
   derivation: { tex: string; note: string }[]
+  derivationTitle?: string
+  /** Analytic curves drawn under the visualization (chart.js). */
+  charts?: ChartSpec[]
   realWorld: { title: string; text: string }[]
 }

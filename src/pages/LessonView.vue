@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, reactive, ref, watch } from 'vue'
+import { computed, defineAsyncComponent, reactive, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { getLesson, subjectLabels } from '../lessons'
 import { buildAdhoc } from '../engine/adhoc'
@@ -7,6 +7,9 @@ import { vizRegistry } from '../viz/registry'
 import Katex from '../components/Katex.vue'
 import MathText from '../components/MathText.vue'
 import ParamSlider from '../components/ParamSlider.vue'
+import { level, levels } from '../composables/useLevel'
+
+const ParamChart = defineAsyncComponent(() => import('../components/ParamChart.vue'))
 
 const props = defineProps<{ id?: string }>()
 const route = useRoute()
@@ -15,7 +18,9 @@ const lesson = computed(() => (props.id ? getLesson(props.id) : buildAdhoc(query
 const viz = computed(() => lesson.value && vizRegistry[lesson.value.visualization.type])
 
 const params = reactive<Record<string, number>>({})
-const mode = ref<'intuition' | 'formal'>('intuition')
+const rigorous = computed(() => level.value === 'university' || level.value === 'advanced')
+const mode = ref<'intuition' | 'formal'>(rigorous.value ? 'formal' : 'intuition')
+watch(rigorous, (r) => (mode.value = r ? 'formal' : 'intuition'))
 
 function reset() {
   for (const k of Object.keys(params)) delete params[k]
@@ -43,7 +48,13 @@ const linked = (ids: string[]) => ids.map((id) => ({ id, lesson: getLesson(id) }
     <RouterLink to="/" class="mt-4 block underline">Back to the explorer</RouterLink>
   </div>
   <article v-else class="mx-auto max-w-7xl px-4 py-6 lg:px-8">
-    <header class="mb-5">
+    <header class="relative mb-5">
+      <label class="label absolute right-0 top-0 flex items-center gap-2">
+        Level
+        <select v-model="level" class="rounded border px-2 py-1 text-xs normal-case tracking-normal" style="border-color: var(--line); background: var(--panel); color: var(--fg)">
+          <option v-for="l in levels" :key="l" :value="l">{{ l }}</option>
+        </select>
+      </label>
       <p class="label">{{ subjectLabels[lesson.subject] }} · {{ lesson.difficulty }}</p>
       <h1 class="mt-1 text-2xl font-semibold tracking-tight">{{ lesson.title }}</h1>
       <p class="mt-1 max-w-2xl" style="color: var(--muted)">{{ lesson.summary }}</p>
@@ -52,7 +63,8 @@ const linked = (ids: string[]) => ids.map((id) => ({ id, lesson: getLesson(id) }
     <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
       <section class="overflow-hidden rounded-lg border" style="border-color: var(--line); background: var(--panel)">
         <component :is="viz" v-if="viz" :params="params" :options="lesson.visualization.options" @set="setParam" />
-        <p v-else class="p-6" style="color: var(--muted)">No visualization registered for “{{ lesson.visualization.type }}”.</p>
+        <ParamChart v-for="c in lesson.charts ?? []" :key="c.title" :spec="c" :params="params" />
+        <p v-if="!viz" class="p-6" style="color: var(--muted)">No visualization registered for “{{ lesson.visualization.type }}”.</p>
       </section>
 
       <aside class="space-y-6">
@@ -102,11 +114,14 @@ const linked = (ids: string[]) => ids.map((id) => ({ id, lesson: getLesson(id) }
         </div>
         <div class="space-y-3 leading-relaxed">
           <p v-for="(t, i) in lesson.explanation[mode]" :key="mode + i"><MathText :text="t" /></p>
+          <template v-if="rigorous && mode === 'formal'">
+            <p v-for="(t, i) in lesson.explanation.advanced ?? []" :key="'adv' + i" class="border-l-2 pl-3" style="border-color: var(--accent)"><MathText :text="t" /></p>
+          </template>
         </div>
       </section>
 
       <section v-if="lesson.derivation.length">
-        <h2 class="label mb-3">Derivation</h2>
+        <h2 class="label mb-3">{{ lesson.derivationTitle ?? 'Derivation' }}</h2>
         <ol class="space-y-4">
           <li v-for="(s, i) in lesson.derivation" :key="i" class="flex gap-4">
             <span class="num pt-1 text-xs" style="color: var(--muted)">{{ i + 1 }}</span>
