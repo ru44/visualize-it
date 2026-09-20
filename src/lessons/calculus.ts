@@ -39,6 +39,7 @@ export const calculus: Lesson[] = [
         'A function $f: \\mathbb{R} \\to \\mathbb{R}$ assigns exactly one output to each input. Its graph is the set $\\{(x, f(x))\\}$.',
         'For a quadratic, the vertex sits at $x = -\\tfrac{b}{2a}$ and the sign of $a$ decides whether it is a minimum or a maximum.',
       ],
+      advanced: ['The three parameters are coordinates on the space of quadratics; completing the square shows every parabola is an affine image of $y = x^2$, which is why they all share one shape up to scaling.'],
     },
     derivation: [
       { tex: r`f(x) = ax^2 + bx + c`, note: 'Start from the general quadratic.' },
@@ -85,6 +86,7 @@ export const calculus: Lesson[] = [
         'For $y = mx + b$ and any $x_1 \\ne x_2$: $\\dfrac{y_2 - y_1}{x_2 - x_1} = \\dfrac{m(x_2 - x_1)}{x_2 - x_1} = m$.',
         'All rise–run triangles on a line are similar, so their ratio is an invariant of the line.',
       ],
+      advanced: ['Constant difference quotient characterises affine maps: $f$ is affine iff $\\frac{f(x_2)-f(x_1)}{x_2-x_1}$ is independent of the points. The derivative extends this by asking only for the limit as the points merge.'],
     },
     derivation: [
       { tex: r`y_1 = mx_1 + b, \quad y_2 = mx_2 + b`, note: 'Evaluate the line at two inputs.' },

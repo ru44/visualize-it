@@ -1,4 +1,4 @@
-import { evaluate } from 'mathjs'
+import { evaluate, compile, parse } from 'mathjs'
 import type { Lesson } from '../lessons/types'
 import { parseQuery } from './explorer'
 import { makeFn, derivativeExpr, toTex } from './math'
@@ -30,6 +30,60 @@ function autoRange(expr: string, [x0, x1]: [number, number]): [number, number] {
   return [lo - pad, hi + pad]
 }
 
+function usesY(expr: string): boolean {
+  try {
+    return parse(expr).filter((n: any) => n.isSymbolNode && n.name === 'y').length > 0
+  } catch {
+    return false
+  }
+}
+
+function surfaceLesson(expr: string): Lesson | null {
+  const extent = 3
+  const zs: number[] = []
+  try {
+    const code = compile(expr)
+    for (let i = 0; i <= 24; i++)
+      for (let j = 0; j <= 24; j++) {
+        const v = code.evaluate({ x: -extent + (i * extent) / 12, y: -extent + (j * extent) / 12 })
+        if (typeof v === 'number' && Number.isFinite(v)) zs.push(v)
+      }
+  } catch {
+    return null
+  }
+  if (!zs.length) return null
+  zs.sort((a, b) => a - b)
+  const lo = zs[Math.floor(zs.length * 0.02)]
+  const hi = zs[Math.ceil(zs.length * 0.98) - 1]
+  return {
+    id: 'adhoc',
+    title: 'Surface explorer',
+    subject: 'calculus',
+    difficulty: 'university',
+    equation: `z = ${toTex(expr)}`,
+    summary: 'A function of two variables is a landscape. Rotate it, move the point, and read the slope in each direction.',
+    concepts: [],
+    prerequisites: ['gradient'],
+    related: [],
+    visualization: { type: 'surface-3d', options: { expr, extent, zRange: [lo, hi === lo ? lo + 1 : hi] } },
+    parameters: {
+      x0: { label: 'point x', min: -extent, max: extent, step: 0.01, value: 1 },
+      y0: { label: 'point y', min: -extent, max: extent, step: 0.01, value: -0.5 },
+    },
+    variables: [
+      { symbol: r`\partial f/\partial x`, meaning: 'slope walking in the x direction only' },
+      { symbol: r`\partial f/\partial y`, meaning: 'slope walking in the y direction only' },
+      { symbol: r`\nabla f`, meaning: 'the gradient — orange arrow on the floor, pointing straight uphill' },
+    ],
+    explanation: {
+      intuition: ['The orange tile is the tangent plane at your point; the arrow on the floor points in the direction of steepest ascent, and its length is how steep that climb is. Where the arrow vanishes you are on a peak, a pit, or a saddle.'],
+      formal: ['$\\nabla f = (f_x, f_y)$; the directional derivative along a unit vector $\\mathbf{u}$ is $\\nabla f \\cdot \\mathbf{u}$. Partial derivatives here are computed numerically.'],
+    },
+    derivation: [],
+    realWorld: [],
+  }
+}
+
 /** Build a lesson on the fly from whatever the user typed. Returns null if it cannot be understood. */
 export function buildAdhoc(q: string): Lesson | null {
   const p = parseQuery(q)
@@ -59,6 +113,7 @@ export function buildAdhoc(q: string): Lesson | null {
       realWorld: [],
     }
   }
+  if (p.kind === 'function' && usesY(p.expr)) return surfaceLesson(p.expr)
   let f
   try {
     f = makeFn(p.expr)

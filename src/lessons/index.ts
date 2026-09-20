@@ -5,8 +5,9 @@ import { trigonometry } from './trigonometry'
 import { physics } from './physics'
 import { electricity } from './electricity'
 import { chemistry } from './chemistry'
+import { more } from './more'
 
-export const lessons: Lesson[] = [...calculus, ...geometry, ...trigonometry, ...physics, ...electricity, ...chemistry]
+export const lessons: Lesson[] = [...calculus, ...geometry, ...trigonometry, ...physics, ...electricity, ...chemistry, ...more]
 
 const byId = new Map(lessons.map((l) => [l.id, l]))
 export const getLesson = (id: string) => byId.get(id)

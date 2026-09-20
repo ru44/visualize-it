@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { scaleLinear } from 'd3-scale'
 import { line } from 'd3-shape'
 import { makeFn, derivativeExpr, numericSlope, riemannSamples, riemannSum, integrate, estimateLimit, fmt } from '../engine/math'
@@ -17,6 +17,8 @@ interface PlotOptions {
   rule?: RiemannRule
   /** x-values to mark on the axis (equation solver). */
   roots?: number[]
+  /** Advance a parameter in real time (units per second), wrapping inside `loop`. */
+  animate?: { param: string; speed: number; loop: [number, number] }
 }
 
 const props = defineProps<{ params: Record<string, number>; options: Record<string, any> }>()
@@ -159,6 +161,25 @@ const readouts = computed(() => {
   }
 })
 
+const playing = ref(true)
+let raf = 0
+let lastT = 0
+function tick(t: number) {
+  const a = o.value.animate
+  if (a && playing.value && !dragging.value && lastT) {
+    const next = (props.params[a.param] ?? a.loop[0]) + (a.speed * Math.min(t - lastT, 50)) / 1000
+    emit('set', a.param, next > a.loop[1] ? a.loop[0] : next)
+  }
+  lastT = t
+  raf = requestAnimationFrame(tick)
+}
+onMounted(() => {
+  if (!o.value.animate) return
+  playing.value = !matchMedia('(prefers-reduced-motion: reduce)').matches
+  raf = requestAnimationFrame(tick)
+})
+onUnmounted(() => cancelAnimationFrame(raf))
+
 // Direct manipulation: drag anywhere on the plot.
 const svg = ref<SVGSVGElement>()
 const dragging = ref(false)
@@ -179,7 +200,15 @@ function down(e: PointerEvent) {
 </script>
 
 <template>
-  <div>
+  <div class="relative">
+    <button
+      v-if="o.animate"
+      class="num absolute right-3 top-3 rounded-lg border px-2.5 py-1 text-xs"
+      style="border-color: var(--line); background: var(--panel); color: var(--muted)"
+      @click="playing = !playing"
+    >
+      {{ playing ? '❚❚ pause' : '▶ play' }}
+    </button>
     <svg
       ref="svg"
       :viewBox="`0 0 ${W} ${H}`"

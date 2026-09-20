@@ -55,8 +55,8 @@ export function parseQuery(q: string): Parsed {
   m = s.match(/^(?:d\/dx|derivative of)\s*(.+)$/i)
   if (m) return { kind: 'derivative', expr: m[1] }
   const eq = s.match(/^([^=]+)=([^=]+)$/)
-  if (eq && !/^(?:[a-z]\(x\)|y)$/i.test(eq[1].trim())) return { kind: 'equation', lhs: eq[1].trim(), rhs: eq[2].trim() }
-  return { kind: 'function', expr: s.replace(/^(?:[a-z]\(x\)|y)\s*=\s*/i, '') }
+  if (eq && !/^(?:[a-z]\(x(?:,\s*y)?\)|y|z)$/i.test(eq[1].trim())) return { kind: 'equation', lhs: eq[1].trim(), rhs: eq[2].trim() }
+  return { kind: 'function', expr: s.replace(/^(?:[a-z]\(x(?:,\s*y)?\)|y|z)\s*=\s*/i, '') }
 }
 
-export const examples = ['2x + 5 = 17', 'x² − 4x + 3 = 0', '∫₀⁴ x² dx', 'lim(x→0) sin(x)/x', 'f(x) = x³ − 3x', 'd/dx sin(x)', 'V = IR', 'F = ma', 'PV = nRT', 'a² + b² = c²']
+export const examples = ['2x + 5 = 17', 'x² − 4x + 3 = 0', '∫₀⁴ x² dx', 'lim(x→0) sin(x)/x', 'f(x) = x³ − 3x', 'd/dx sin(x)', 'z = sin(x)·cos(y)', 'V = IR', 'F = ma', 'PV = nRT', 'a² + b² = c²']

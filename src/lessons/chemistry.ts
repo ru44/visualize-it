@@ -41,6 +41,7 @@ export const chemistry: Lesson[] = [
         'For $n$ moles of an ideal gas at absolute temperature $T$ confined to volume $V$, the pressure satisfies $PV = nRT$, with $R = 8.314\\ \\mathrm{J\\,mol^{-1}K^{-1}}$.',
         'Equivalently, pressure is proportional to the number and average kinetic energy of the particles, and inversely proportional to the volume they are confined to: $P = \\dfrac{nRT}{V}$.',
       ],
+      advanced: ['Kinetic theory derives it: $PV = \\tfrac13 N m \\langle v^2 \\rangle$ together with $\\tfrac12 m\\langle v^2\\rangle = \\tfrac32 k_B T$ gives $PV = N k_B T$. Real gases deviate at high density; van der Waals corrects for molecular volume and attraction.'],
     },
     derivation: [
       {

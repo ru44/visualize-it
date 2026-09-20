@@ -39,6 +39,7 @@ export const physics: Lesson[] = [
         "Newton's second law states that the net force on an object equals the rate of change of its momentum: $F = \\dfrac{dp}{dt}$.",
         'For an object of constant mass, momentum is $p = mv$, so $F = m\\dfrac{dv}{dt} = ma$ — force equals mass times acceleration.',
       ],
+      advanced: ['In general $\\mathbf{F} = d\\mathbf{p}/dt$; for variable mass (a rocket) the $\\dot m$ term matters. Given $\\mathbf{F}(\\mathbf{x}, \\mathbf{v}, t)$ the law is a second-order ODE, so position and velocity at one instant determine the whole motion.'],
     },
     derivation: [
       { tex: r`p = mv`, note: 'Momentum is mass times velocity — a measure of how hard it is to stop something moving.' },

@@ -6,6 +6,7 @@ const CircleViz = defineAsyncComponent(() => import('./CircleViz.vue'))
 const UnitCircle = defineAsyncComponent(() => import('./UnitCircle.vue'))
 const BlockForce = defineAsyncComponent(() => import('./BlockForce.vue'))
 const OhmCircuit = defineAsyncComponent(() => import('./OhmCircuit.vue'))
+const Surface3D = defineAsyncComponent(() => import('./Surface3D.vue'))
 const GasBox = defineAsyncComponent(() => import('./GasBox.vue'))
 
 /**
@@ -20,4 +21,5 @@ export const vizRegistry: Record<string, Component> = {
   'block-force': BlockForce,
   'ohm-circuit': OhmCircuit,
   'gas-box': GasBox,
+  'surface-3d': Surface3D,
 }
