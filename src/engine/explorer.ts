@@ -42,9 +42,10 @@ export type Parsed =
   | { kind: 'integral'; expr: string; a: string; b: string }
   | { kind: 'derivative'; expr: string }
   | { kind: 'function'; expr: string }
+  | { kind: 'equation'; lhs: string; rhs: string }
 
 export function parseQuery(q: string): Parsed {
-  const s = normalize(q)
+  const s = normalize(q).replace(/^solve\s+/i, '')
   let m = s.match(/^lim\s*\(?\s*x\s*->\s*([^\s)]+)\s*\)?\s*(.+)$/i)
   if (m) return { kind: 'limit', at: m[1], expr: m[2] }
   m = s.match(/^(?:∫|int)\s*_\(?(-?[\w.]+)\)?\s*\^\(?(-?[\w.]+)\)?\s*(.+?)\s*dx$/i)
@@ -53,7 +54,9 @@ export function parseQuery(q: string): Parsed {
   if (m) return { kind: 'integral', expr: m[1], a: m[2], b: m[3] }
   m = s.match(/^(?:d\/dx|derivative of)\s*(.+)$/i)
   if (m) return { kind: 'derivative', expr: m[1] }
+  const eq = s.match(/^([^=]+)=([^=]+)$/)
+  if (eq && !/^(?:[a-z]\(x\)|y)$/i.test(eq[1].trim())) return { kind: 'equation', lhs: eq[1].trim(), rhs: eq[2].trim() }
   return { kind: 'function', expr: s.replace(/^(?:[a-z]\(x\)|y)\s*=\s*/i, '') }
 }
 
-export const examples = ['∫₀⁴ x² dx', 'lim(x→0) sin(x)/x', 'f(x) = x³ − 3x', 'd/dx sin(x)', 'V = IR', 'F = ma', 'PV = nRT', 'a² + b² = c²']
+export const examples = ['2x + 5 = 17', 'x² − 4x + 3 = 0', '∫₀⁴ x² dx', 'lim(x→0) sin(x)/x', 'f(x) = x³ − 3x', 'd/dx sin(x)', 'V = IR', 'F = ma', 'PV = nRT', 'a² + b² = c²']

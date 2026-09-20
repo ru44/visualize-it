@@ -13,6 +13,9 @@ export const chemistry: Lesson[] = [
     concepts: ['pressure', 'volume', 'temperature', 'moles'],
     prerequisites: ['function-graph'],
     related: ['newtons-second-law'],
+    charts: [
+      { title: 'Isotherm: pressure against volume at the current T and n', xLabel: 'V (L)', yLabel: 'P (kPa)', domain: [5, 50], marker: 'V', series: [{ label: 'P = nRT / V', expr: 'n*8.314*T/x' }] },
+    ],
     visualization: {
       type: 'gas-box',
       options: {},

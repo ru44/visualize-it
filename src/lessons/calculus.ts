@@ -127,6 +127,7 @@ export const calculus: Lesson[] = [
         "$f'(x) = \\lim_{h \\to 0} \\dfrac{f(x+h) - f(x)}{h}$, provided the limit exists.",
         "The tangent at $x_0$ is the best linear approximation: $f(x) \\approx f(x_0) + f'(x_0)(x - x_0)$.",
       ],
+      advanced: ['Differentiability at $x_0$ means $f(x_0 + h) = f(x_0) + f\'(x_0)h + o(h)$: the error of the tangent shrinks faster than $h$ itself. Differentiable implies continuous, but not conversely — $|x|$ at 0 has two one-sided slopes and no tangent.'],
     },
     derivation: [
       { tex: r`\frac{f(x+h) - f(x)}{h} = \frac{(x+h)^2 - x^2}{h}`, note: 'Slope of the secant through $x$ and $x + h$.' },
@@ -170,6 +171,7 @@ export const calculus: Lesson[] = [
         '$\\lim_{x \\to a} f(x) = L$ means: for every $\\varepsilon > 0$ there is a $\\delta > 0$ such that $0 < |x - a| < \\delta$ implies $|f(x) - L| < \\varepsilon$.',
         'Here $a = 0$, $L = 1$. The condition $0 < |x - a|$ is why the value at $a$ itself is irrelevant.',
       ],
+      advanced: ['Negating the definition is how limits are shown not to exist: there is an $\\varepsilon > 0$ such that every $\\delta$-neighbourhood contains an $x$ with $|f(x) - L| \\ge \\varepsilon$. Equivalently (Heine), $f(x_n) \\to L$ for every sequence $x_n \\to a$ with $x_n \\ne a$ — which is exactly what the shrinking readouts sample.'],
     },
     derivation: [
       { tex: r`\cos x \;<\; \frac{\sin x}{x} \;<\; 1 \qquad (0 < |x| < \tfrac{\pi}{2})`, note: 'Compare areas of a triangle, a circular sector and a larger triangle on the unit circle.' },
@@ -215,6 +217,7 @@ export const calculus: Lesson[] = [
         '$\\int_a^b f(x)\\,dx = \\lim_{n \\to \\infty} \\sum_{i=1}^{n} f(x_i^*)\\,\\Delta x$ with $\\Delta x = \\tfrac{b-a}{n}$.',
         'For continuous $f$ the limit exists and is independent of the sample points $x_i^*$ (left, right or midpoint).',
       ],
+      advanced: ['Riemann integrability: the upper and lower Darboux sums can be made arbitrarily close. Every continuous function on $[a,b]$ qualifies; for a monotone $f$ the gap is at most $|f(b) - f(a)|\\,\\Delta x$, which is the $O(1/n)$ error you see for left-endpoint rectangles. The midpoint rule improves this to $O(1/n^2)$.'],
     },
     derivation: [
       { tex: r`\sum_{i=1}^{n} \left(\tfrac{4i}{n}\right)^2 \cdot \tfrac{4}{n} = \frac{64}{n^3} \sum_{i=1}^{n} i^2`, note: 'Right-endpoint rectangles of width $4/n$.' },
@@ -259,6 +262,7 @@ export const calculus: Lesson[] = [
         '$\\int_a^b f = A_{+} - A_{-}$, where $A_{+}$ and $A_{-}$ are the areas above and below the axis.',
         'Total distance is a different quantity: $\\int_a^b |f(t)|\\,dt = A_{+} + A_{-}$.',
       ],
+      advanced: ['With $F(b) = \\int_a^b f$, the Fundamental Theorem gives $F\'(b) = f(b)$: the rate at which area accumulates equals the height of the curve at the moving edge. That is why the running total peaks exactly where $f$ crosses zero.'],
     },
     derivation: [
       { tex: r`\int_0^{b} 2\sin t \, dt = \big[-2\cos t\big]_0^{b}`, note: 'An antiderivative of $2\\sin t$ is $-2\\cos t$.' },

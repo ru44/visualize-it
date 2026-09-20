@@ -2,6 +2,7 @@ import { evaluate } from 'mathjs'
 import type { Lesson } from '../lessons/types'
 import { parseQuery } from './explorer'
 import { makeFn, derivativeExpr, toTex } from './math'
+import { solve } from './solve'
 
 const r = String.raw
 
@@ -32,6 +33,32 @@ function autoRange(expr: string, [x0, x1]: [number, number]): [number, number] {
 /** Build a lesson on the fly from whatever the user typed. Returns null if it cannot be understood. */
 export function buildAdhoc(q: string): Lesson | null {
   const p = parseQuery(q)
+  if (p.kind === 'equation') {
+    const sol = solve(p.lhs, p.rhs)
+    if (!sol) return null
+    const domain: [number, number] = sol.roots.length ? [Math.min(...sol.roots) - 4, Math.max(...sol.roots) + 4] : [-6, 6]
+    return {
+      id: 'adhoc',
+      title: 'Equation solver',
+      subject: 'functions',
+      difficulty: 'beginner',
+      equation: sol.steps[0].tex,
+      summary: 'Solving means finding the inputs where both sides agree — the points where “left minus right” crosses zero.',
+      concepts: [],
+      prerequisites: ['function-graph'],
+      related: [],
+      visualization: { type: 'function-plot', options: { expr: sol.expr, domain, range: autoRange(sol.expr, domain), mode: 'plain', roots: sol.roots } },
+      parameters: { x: { label: 'try a value of x', min: domain[0], max: domain[1], step: 0.01, value: +(domain[0] + 1).toFixed(2) } },
+      variables: [{ symbol: 'x', meaning: 'the unknown — drag it until left − right reads 0' }],
+      explanation: {
+        intuition: ['The curve shows left side minus right side. Drag the point: wherever the readout hits zero, the two sides are equal and you have found a solution. The algebra beside it reaches the same place without guessing.'],
+        formal: ['Each step applies the same operation to both sides, so the solution set never changes. $f(x) = g(x) \\iff f(x) - g(x) = 0$.'],
+      },
+      derivation: sol.steps,
+      derivationTitle: 'Step by step',
+      realWorld: [],
+    }
+  }
   let f
   try {
     f = makeFn(p.expr)

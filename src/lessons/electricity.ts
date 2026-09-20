@@ -13,6 +13,9 @@ export const electricity: Lesson[] = [
     concepts: ['voltage', 'current', 'resistance', 'power'],
     prerequisites: ['slope'],
     related: ['newtons-second-law'],
+    charts: [
+      { title: 'I–V characteristic: slope is 1/R', xLabel: 'V (volts)', yLabel: 'I (amps)', domain: [0, 24], marker: 'V', series: [{ label: 'I = V / R', expr: 'x/R' }] },
+    ],
     visualization: {
       type: 'ohm-circuit',
       options: {},
