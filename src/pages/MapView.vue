@@ -33,10 +33,10 @@ const height = computed(() => 80 + Math.max(...[...nodes.value.values()].map((n)
 </script>
 
 <template>
-  <main class="mx-auto max-w-5xl px-4 py-10 lg:px-8">
-    <h1 class="text-2xl font-semibold tracking-tight">Learning map</h1>
+  <main class="mx-auto max-w-6xl px-4 py-10 lg:px-8">
+    <h1 class="text-3xl font-semibold tracking-tight">Learning map</h1>
     <p class="mt-1" style="color: var(--muted)">Each concept rests on the ones above it. Start at the top, or jump in anywhere.</p>
-    <div class="mt-6 overflow-x-auto">
+    <div class="surface mt-6 overflow-x-auto p-4">
       <svg :viewBox="`0 0 ${W} ${height}`" class="block w-full" style="min-width: 720px">
         <line
           v-for="(e, i) in edges"
@@ -49,7 +49,7 @@ const height = computed(() => 80 + Math.max(...[...nodes.value.values()].map((n)
           stroke-opacity="0.5"
         />
         <g v-for="n in nodes.values()" :key="n.id" class="cursor-pointer" @click="router.push(`/lesson/${n.id}`)">
-          <rect :x="n.x - BOX.w / 2" :y="n.y - BOX.h / 2" :width="BOX.w" :height="BOX.h" rx="6" fill="var(--panel)" stroke="var(--line)" />
+          <rect :x="n.x - BOX.w / 2" :y="n.y - BOX.h / 2" :width="BOX.w" :height="BOX.h" rx="9" fill="var(--sunken)" stroke="var(--line)" class="transition-colors hover:stroke-[var(--accent)]" />
           <text :x="n.x" :y="n.y + 4" text-anchor="middle" font-size="13" fill="var(--fg)">{{ n.title }}</text>
         </g>
       </svg>
