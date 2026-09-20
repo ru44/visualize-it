@@ -36,6 +36,7 @@ export const geometry: Lesson[] = [
         'For a triangle with a right angle between sides of length $a$ and $b$, and hypotenuse $c$ opposite that right angle, $a^2 + b^2 = c^2$.',
         'Conversely, if a triangle\'s side lengths satisfy $a^2+b^2=c^2$, the angle opposite $c$ must be exactly $90°$ — the theorem is an if-and-only-if statement about right angles.',
       ],
+      advanced: ['In coordinates the theorem is the definition of the Euclidean norm, $\\|v\\|^2 = v \\cdot v$, and generalises to the law of cosines $c^2 = a^2 + b^2 - 2ab\\cos\\gamma$. It fails on curved surfaces — its failure is one way to measure curvature.'],
     },
     derivation: [
       {
@@ -89,6 +90,7 @@ export const geometry: Lesson[] = [
         'A circle of radius $r$ centred at a point $O$ is the set of points at distance exactly $r$ from $O$; its circumference is $C = 2\\pi r$.',
         'The disk it encloses has area $A = \\pi r^2$, and for every circle the ratio $C/d$ of circumference to diameter equals the constant $\\pi$.',
       ],
+      advanced: ['Area and circumference are linked by calculus: $\\frac{d}{dr}\\pi r^2 = 2\\pi r$. Growing the radius by $dr$ adds a thin ring of length $2\\pi r$ — and integrating those rings, $\\int_0^r 2\\pi s\\,ds$, rebuilds the area.'],
     },
     derivation: [
       {

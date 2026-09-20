@@ -35,6 +35,7 @@ export const trigonometry: Lesson[] = [
         'For a point $(\\cos\\theta, \\sin\\theta)$ on the unit circle, $\\theta$ is the angle in radians measured counter-clockwise from the positive $x$-axis.',
         'Because the point always lies at distance 1 from the origin, $\\sin^2\\theta + \\cos^2\\theta = 1$ for every value of $\\theta$.',
       ],
+      advanced: ['Euler’s formula packages both coordinates: $e^{i\\theta} = \\cos\\theta + i\\sin\\theta$. Angle addition becomes multiplication of exponentials, and $\\sin$, $\\cos$ are the solutions of $y\'\' = -y$ — which is why they appear in every oscillation.'],
     },
     derivation: [
       { tex: r`x^2 + y^2 = 1`, note: 'The point sits on a circle of radius 1, so its coordinates form the legs of a right triangle whose hypotenuse is 1.' },

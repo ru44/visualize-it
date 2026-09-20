@@ -39,6 +39,7 @@ export const electricity: Lesson[] = [
         'For an ohmic conductor at fixed temperature, current is proportional to voltage: $V = IR$, where $R$ is a constant of proportionality called resistance, measured in ohms ($\\Omega$).',
         'The power dissipated as heat is $P = VI$, which combines with Ohm\'s law to give the equivalent forms $P = I^2R = \\dfrac{V^2}{R}$.',
       ],
+      advanced: ['Ohm’s law is a material model, not a fundamental law: microscopically $\\mathbf{J} = \\sigma \\mathbf{E}$ (Drude). Diodes, filaments and superconductors violate it; for AC it generalises to complex impedance, $V = IZ$.'],
     },
     derivation: [
       {
