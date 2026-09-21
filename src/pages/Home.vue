@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { lessons } from '../lessons'
+import { classicSims } from '../classic'
 import type { Subject } from '../lessons/types'
 import { t, type Key } from '../i18n'
 import ExplorerInput from '../components/ExplorerInput.vue'
@@ -61,6 +62,14 @@ const steps = [1, 2, 3].map((i) => ({ title: `home.step${i}.t` as Key, text: `ho
           </RouterLink>
         </li>
       </ul>
+
+      <RouterLink to="/classic" class="surface lift mt-4 flex flex-wrap items-center justify-between gap-4 p-5">
+        <span>
+          <span class="block text-lg font-medium">{{ t('home.gallery.t') }}</span>
+          <span class="mt-1 block text-sm leading-relaxed" style="color: var(--muted)">{{ t('home.gallery.d', { n: classicSims.length }) }}</span>
+        </span>
+        <span class="btn-primary px-5 py-2.5 text-sm">{{ t('home.gallery.b') }}</span>
+      </RouterLink>
     </section>
   </main>
 </template>

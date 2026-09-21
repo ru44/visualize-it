@@ -51,6 +51,6 @@ Add an object to a file in `src/lessons/` (see `types.ts` for the schema) and in
 
 Create `src/viz/MyViz.vue` with props `{ params, options }` that emits `set(name, value)` when the user drags something, then register it in `src/viz/registry.ts`.
 
-## Classic simulations
+## Simulation gallery
 
-The original vanilla-JS simulations from [visualize-it](https://github.com/visualize-it/visualize-it.github.io) are preserved unchanged under `public/legacy/` and linked from the site as “Classic sims”.
+The 62 simulations of the original [visualize-it](https://github.com/visualize-it/visualize-it.github.io) project (by ChanRT and contributors) live under `public/legacy/` and are part of the new site at `/classic`: a catalogue by topic with English and Arabic titles, and a viewer page for each one. Their code runs unchanged in a frame, but `public/legacy/embed.css` + `embed.js` restyle them, follow the site's light/dark theme and size the frame to its content. The third-party analytics snippet was removed from those pages. `src/classic/manifest.json` lists them.

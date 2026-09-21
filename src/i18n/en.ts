@@ -215,6 +215,19 @@ export default {
   'graph.trange': 't, θ from 0 to',
 
   // map
+  'nav.sims': 'Simulations',
+  'classic.title': 'Simulation gallery',
+  'classic.lead': '{n} open-ended simulations to play with — physics, mathematics, computer science and complex systems.',
+  'classic.cat.all': 'All',
+  'classic.cat.physics': 'Physics',
+  'classic.cat.math': 'Mathematics',
+  'classic.cat.computer': 'Computer science',
+  'classic.cat.complex': 'Complex systems',
+  'classic.loading': 'Loading the simulation…',
+  'classic.credit': 'Simulation from the original Visualize It project by ChanRT and contributors. Its on-screen text is in English.',
+  'home.gallery.t': 'Simulation gallery',
+  'home.gallery.d': '{n} open-ended simulations: fractals, flocking birds, double pendulums, sorting algorithms and more.',
+  'home.gallery.b': 'Browse the gallery',
   'map.title': 'Learning map',
   'map.lead': 'Each idea rests on the ones above it. Dashed boxes come from another subject.',
 
