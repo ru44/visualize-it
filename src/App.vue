@@ -32,6 +32,7 @@ watchEffect(() => {
         </RouterLink>
         <div class="flex items-center gap-1 text-sm">
           <RouterLink to="/#concepts" class="rounded-lg px-3 py-1.5 hover:bg-[var(--sunken)]" style="color: var(--muted)">Concepts</RouterLink>
+          <RouterLink to="/graph" class="rounded-lg px-3 py-1.5 hover:bg-[var(--sunken)]" style="color: var(--muted)" active-class="!text-[var(--fg)]">Graph</RouterLink>
           <RouterLink to="/map" class="rounded-lg px-3 py-1.5 hover:bg-[var(--sunken)]" style="color: var(--muted)" active-class="!text-[var(--fg)]">Map</RouterLink>
           <a href="./legacy/index.html" class="hidden rounded-lg px-3 py-1.5 hover:bg-[var(--sunken)] sm:block" style="color: var(--muted)">Classic sims</a>
           <button

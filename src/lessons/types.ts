@@ -1,4 +1,16 @@
-export type Subject = 'functions' | 'calculus' | 'geometry' | 'trigonometry' | 'physics' | 'electricity' | 'chemistry'
+export type Subject =
+  | 'algebra'
+  | 'functions'
+  | 'calculus'
+  | 'geometry'
+  | 'trigonometry'
+  | 'physics'
+  | 'waves'
+  | 'electricity'
+  | 'electromagnetism'
+  | 'aerodynamics'
+  | 'thermodynamics'
+  | 'chemistry'
 export type Difficulty = 'beginner' | 'high-school' | 'university' | 'advanced'
 
 export interface ParamSpec {

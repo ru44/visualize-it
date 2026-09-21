@@ -7,6 +7,7 @@ export const router = createRouter({
     { path: '/', component: Home },
     { path: '/lesson/:id', component: () => import('./pages/LessonView.vue'), props: true },
     { path: '/explore', component: () => import('./pages/LessonView.vue') },
+    { path: '/graph', component: () => import('./pages/GraphView.vue'), meta: { title: 'Graphing' } },
     { path: '/map', component: () => import('./pages/MapView.vue'), meta: { title: 'Learning map' } },
     { path: '/:rest(.*)*', component: () => import('./pages/NotFound.vue'), meta: { title: 'Not found' } },
   ],
