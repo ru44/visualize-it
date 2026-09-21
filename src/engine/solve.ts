@@ -1,5 +1,7 @@
-import { rationalize } from 'mathjs'
+import { fraction } from 'mathjs'
 import { makeFn, toTex, fmt } from './math'
+import { polyCoeffs, polynomialRealRoots, scanRoots } from './analysis'
+import { t } from '../i18n'
 
 export interface Step {
   tex: string
@@ -10,18 +12,14 @@ export interface Solution {
   roots: number[]
   /** lhs − rhs, the curve whose axis crossings are the solutions. */
   expr: string
+  check: { status: 'exact' | 'numeric' | 'warning'; text: string }
 }
 
-/** Polynomial coefficients in x, lowest power first; null if the side is not a polynomial in x. */
-function coeffs(side: string): number[] | null {
-  try {
-    const p = rationalize(side, {}, true)
-    if (p.variables.some((v) => v !== 'x')) return null
-    const c = p.coefficients.map(Number)
-    return c.length ? c : [makeFn(side)(0)]
-  } catch {
-    return null
-  }
+/** Exact rational as LaTeX when the value is a simple fraction, otherwise a decimal. */
+function ratTex(v: number): string {
+  const f = fraction(v)
+  if (Number(f.d) === 1 || Number(f.d) > 10000 || Math.abs(f.valueOf() - v) > 1e-13) return fmt(v, 6)
+  return `${Number(f.s) < 0 ? '-' : ''}\\tfrac{${f.n}}{${f.d}}`
 }
 
 function polyTex(c: number[]): string {
@@ -30,85 +28,88 @@ function polyTex(c: number[]): string {
     const v = c[k]
     if (!v) continue
     const mag = Math.abs(v)
-    const body = (k === 0 || mag !== 1 ? fmt(mag) : '') + (k === 0 ? '' : k === 1 ? 'x' : `x^{${k}}`)
+    const body = (k === 0 || mag !== 1 ? ratTex(mag) : '') + (k === 0 ? '' : k === 1 ? 'x' : `x^{${k}}`)
     out += out ? (v < 0 ? ' - ' : ' + ') + body : (v < 0 ? '-' : '') + body
   }
   return out || '0'
 }
 
-function numericRoots(f: (x: number) => number, lo = -20, hi = 20): number[] {
-  const roots: number[] = []
-  const n = 4000
-  let xa = lo
-  let ya = f(xa)
-  for (let i = 1; i <= n; i++) {
-    const xb = lo + ((hi - lo) * i) / n
-    const yb = f(xb)
-    if (Number.isFinite(ya) && Number.isFinite(yb) && (ya === 0 || ya * yb < 0)) {
-      let [a, b, fa] = [xa, xb, ya]
-      for (let k = 0; k < 60; k++) {
-        const m = (a + b) / 2
-        const fm = f(m)
-        if (fa * fm <= 0) b = m
-        else [a, fa] = [m, fm]
-      }
-      const r = (a + b) / 2
-      if (Math.abs(f(r)) < 1e-6) roots.push(+r.toFixed(8))
-    }
-    ;[xa, ya] = [xb, yb]
-  }
-  return roots
+/** √n simplified to a·√b for integer n. */
+function surd(n: number): { out: number; inn: number } {
+  let out = 1
+  let inn = n
+  for (let k = 2; k * k <= inn; k++) while (inn % (k * k) === 0) (inn /= k * k), (out *= k)
+  return { out, inn }
 }
+
+const rootsTex = (roots: number[], approx = false) => roots.map((x, i) => `x_{${i + 1}} ${approx ? '\\approx' : '='} ${approx ? fmt(x, 6) : ratTex(x)}`).join(',\\quad ')
 
 export function solve(lhs: string, rhs: string): Solution | null {
   const expr = `(${lhs}) - (${rhs})`
-  let g
+  let g: (x: number) => number
   try {
-    g = makeFn(expr)
+    const fn = makeFn(expr)
+    g = (x) => fn(x)
   } catch {
     return null
   }
-  const steps: Step[] = [{ tex: `${toTex(lhs)} = ${toTex(rhs)}`, note: 'The equation asks: for which $x$ do both sides have the same value?' }]
-  const L = coeffs(lhs)
-  const R = coeffs(rhs)
-  const pad = (c: number[]) => [c[0] ?? 0, c[1] ?? 0, c[2] ?? 0]
+  const steps: Step[] = [{ tex: `${toTex(lhs)} = ${toTex(rhs)}`, note: t('solve.start') }]
+  const verified = (roots: number[]) => roots.every((x) => Math.abs(g(x)) < 1e-7 * (1 + Math.abs(x)))
+  const L = polyCoeffs(lhs)
+  const R = polyCoeffs(rhs)
 
-  if (L && R && L.length <= 3 && R.length <= 3) {
-    const [l, r] = [pad(L), pad(R)]
+  if (L && R) {
+    const n = Math.max(L.length, R.length)
+    const l = Array.from({ length: n }, (_, i) => L[i] ?? 0)
+    const r = Array.from({ length: n }, (_, i) => R[i] ?? 0)
     const d = l.map((v, i) => v - r[i])
-    if (d[2] === 0 && d[1] === 0) {
-      steps.push({ tex: d[0] === 0 ? `${fmt(l[0])} = ${fmt(r[0])}` : `${fmt(l[0])} \\ne ${fmt(r[0])}`, note: d[0] === 0 ? 'The $x$ terms cancel and the statement is always true: every $x$ is a solution.' : 'The $x$ terms cancel and what is left is false: no $x$ can satisfy this.' })
-      return { steps, roots: [], expr }
+    while (d.length > 1 && Math.abs(d[d.length - 1]) < 1e-14) d.pop()
+    const degree = d.length - 1
+
+    if (degree === 0) {
+      const always = Math.abs(d[0]) < 1e-14
+      steps.push({ tex: always ? `${ratTex(l[0])} = ${ratTex(r[0])}` : `${ratTex(l[0])} \\ne ${ratTex(r[0])}`, note: t(always ? 'solve.always' : 'solve.never') })
+      return { steps, roots: [], expr, check: { status: 'exact', text: t('trust.solveExact') } }
     }
-    if (d[2] === 0) {
-      // Linear: keep both sides balanced while isolating x.
-      if (r[1] !== 0) steps.push({ tex: `${polyTex([l[0], d[1]])} = ${fmt(r[0])}`, note: `Subtract $${polyTex([0, r[1]])}$ from both sides so that $x$ appears only on the left.` })
-      if (l[0] !== 0) steps.push({ tex: `${polyTex([0, d[1]])} = ${fmt(r[0] - l[0])}`, note: `${l[0] > 0 ? 'Subtract' : 'Add'} $${fmt(Math.abs(l[0]))}$ ${l[0] > 0 ? 'from' : 'to'} both sides. A balance stays level if you do the same thing to each pan.` })
+
+    if (degree === 1) {
+      if (r[1]) steps.push({ tex: `${polyTex([l[0], d[1]])} = ${ratTex(r[0])}`, note: t('solve.moveX', { term: polyTex([0, r[1]]) }) })
+      if (l[0]) steps.push({ tex: `${polyTex([0, d[1]])} = ${ratTex(r[0] - l[0])}`, note: t(l[0] > 0 ? 'solve.sub' : 'solve.add', { k: ratTex(Math.abs(l[0])) }) })
       const x = (r[0] - l[0]) / d[1]
-      if (d[1] !== 1) steps.push({ tex: `x = \\frac{${fmt(r[0] - l[0])}}{${fmt(d[1])}} = ${fmt(x)}`, note: `Divide both sides by $${fmt(d[1])}$ to leave $x$ alone.` })
-      else steps.push({ tex: `x = ${fmt(x)}`, note: 'Nothing left to undo.' })
-      steps.push({ tex: `\\text{check: left} = ${fmt(l[1] * x + l[0])}, \\quad \\text{right} = ${fmt(r[1] * x + r[0])}`, note: 'Substitute the answer back in: both sides agree. On the graph this is where left − right crosses zero.' })
-      return { steps, roots: [x], expr }
+      steps.push(d[1] !== 1 ? { tex: `x = \\frac{${ratTex(r[0] - l[0])}}{${ratTex(d[1])}} = ${ratTex(x)}`, note: t('solve.divide', { k: ratTex(d[1]) }) } : { tex: `x = ${ratTex(x)}`, note: t('solve.done') })
+      steps.push({ tex: `${ratTex(l[1] * x + l[0])} = ${ratTex(r[1] * x + r[0])} \;\\checkmark`, note: t('solve.check') })
+      return { steps, roots: [x], expr, check: { status: verified([x]) ? 'exact' : 'warning', text: t('trust.solveExact') } }
     }
-    const [c, b, a] = d
-    if (r.some((v) => v !== 0)) steps.push({ tex: `${polyTex(d)} = 0`, note: 'Move everything to one side. Solutions are now the places where this parabola touches the axis.' })
-    const disc = b * b - 4 * a * c
-    steps.push({ tex: `\\Delta = b^2 - 4ac = (${fmt(b)})^2 - 4(${fmt(a)})(${fmt(c)}) = ${fmt(disc)}`, note: 'The discriminant counts the crossings: positive → two, zero → one (the vertex touches), negative → none.' })
-    if (disc < 0) {
-      steps.push({ tex: `\\Delta < 0 \\quad\\Rightarrow\\quad \\text{no real solution}`, note: 'The parabola never reaches the axis — look at the graph. (The solutions are complex numbers.)' })
-      return { steps, roots: [], expr }
+
+    if (degree === 2) {
+      const [c, b, a] = d
+      if (r.some((v) => v !== 0)) steps.push({ tex: `${polyTex(d)} = 0`, note: t('solve.standard') })
+      const disc = b * b - 4 * a * c
+      steps.push({ tex: `\\Delta = b^2 - 4ac = (${ratTex(b)})^2 - 4(${ratTex(a)})(${ratTex(c)}) = ${ratTex(disc)}`, note: t('solve.disc') })
+      if (disc < 0) {
+        steps.push({ tex: `\\Delta < 0 \\quad\\Rightarrow\\quad \\text{${t('solve.none')}}`, note: t('solve.noReal') })
+        return { steps, roots: [], expr, check: { status: 'exact', text: t('trust.solveNone') } }
+      }
+      const sq = Math.sqrt(disc)
+      const roots = [...new Set([(-b - sq) / (2 * a), (-b + sq) / (2 * a)])].sort((p, q) => p - q)
+      // Keep the answer exact: show the surd when Δ is a whole number that is not a perfect square.
+      const perfect = Number.isInteger(sq)
+      const s = Number.isInteger(disc) && !perfect ? surd(disc) : null
+      const root = s ? `${s.out === 1 ? '' : s.out}\\sqrt{${s.inn}}` : ratTex(sq)
+      steps.push({ tex: `x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a} = \\frac{${ratTex(-b)} \\pm ${root}}{${ratTex(2 * a)}}`, note: t('solve.formula') })
+      steps.push({ tex: rootsTex(roots, !!s || !perfect), note: t('solve.roots') })
+      return { steps, roots, expr, check: { status: verified(roots) ? 'exact' : 'warning', text: t('trust.solveExact') } }
     }
-    const roots = [...new Set([(-b - Math.sqrt(disc)) / (2 * a), (-b + Math.sqrt(disc)) / (2 * a)])].sort((p, q) => p - q)
-    steps.push({ tex: `x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a} = \\frac{${fmt(-b)} \\pm ${fmt(Math.sqrt(disc))}}{${fmt(2 * a)}}`, note: 'The quadratic formula — completing the square, done once for every quadratic.' })
-    steps.push({ tex: roots.map((x, i) => `x_{${i + 1}} = ${fmt(x)}`).join(',\\quad '), note: 'Both values are marked on the graph where the curve meets the axis.' })
-    return { steps, roots, expr }
+
+    const roots = polynomialRealRoots(d)
+    steps.push({ tex: `${polyTex(d)} = 0`, note: t('solve.polyStd', { n: degree }) })
+    steps.push({ tex: roots.length ? rootsTex(roots, roots.some((x) => !Number.isInteger(x))) : `\\text{${t('solve.none')}}`, note: t('solve.polyRoots', { n: degree }) })
+    if (roots.length) steps.push({ tex: roots.map((x) => `f(${fmt(x, 4)}) = 0`).join(',\\quad '), note: t('solve.rootsCheck') })
+    return { steps, roots, expr, check: { status: verified(roots) ? 'numeric' : 'warning', text: t(roots.length ? 'trust.solvePoly' : 'trust.solveNone') } }
   }
 
-  const roots = numericRoots((x) => g(x))
-  steps.push({ tex: rhs.trim() === '0' ? `f(x) = ${toTex(lhs)}` : `${toTex(lhs)} - \\left(${toTex(rhs)}\\right) = 0`, note: 'Move everything to one side. There is no general algebraic recipe here, so we look for axis crossings numerically.' })
-  steps.push({
-    tex: roots.length ? roots.slice(0, 6).map((x, i) => `x_{${i + 1}} \\approx ${fmt(x, 5)}`).join(',\\quad ') : '\\text{no crossing found for } -20 \\le x \\le 20',
-    note: 'Found by bisection: trap a sign change between two inputs, then halve the gap until it closes. Approximate, not exact.',
-  })
-  return { steps, roots, expr }
+  const roots = scanRoots(g)
+  steps.push({ tex: rhs.trim() === '0' ? `f(x) = ${toTex(lhs)}` : `${toTex(lhs)} - \\left(${toTex(rhs)}\\right) = 0`, note: t('solve.numStd') })
+  steps.push({ tex: roots.length ? rootsTex(roots.slice(0, 8), true) + (roots.length > 8 ? ',\;\\dots' : '') : `\\text{${t('solve.none')}}`, note: t('solve.numRoots') })
+  return { steps, roots, expr, check: { status: 'numeric', text: t(roots.length ? 'trust.solveNumeric' : 'trust.solveNoneRange') } }
 }

@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "check": "npx -y tsx scripts/check-lessons.ts"
+    "check": "npx -y tsx scripts/check-lessons.ts",
+    "test": "npx -y tsx scripts/test-engine.ts"
   },
   "dependencies": {
     "chart.js": "^4.5.1",

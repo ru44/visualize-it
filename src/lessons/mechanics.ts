@@ -300,7 +300,7 @@ export const mechanics: Lesson[] = [
       ],
       formal: [
         '$a_c = v^2/r$, directed toward the center of the circular path even though speed is constant, because velocity\'s direction is continuously changing.',
-        r`\dfrac{\partial a_c}{\partial v} = 2v/r` + ' (quadratic growth with speed) versus $\\dfrac{\\partial a_c}{\\partial r} = -v^2/r^2$ (inverse-square decay with radius).',
+        r`$\dfrac{\partial a_c}{\partial v} = 2v/r$` + ' (quadratic growth with speed) versus $\\dfrac{\\partial a_c}{\\partial r} = -v^2/r^2$ (inverse-square decay with radius).',
       ],
       advanced: ['This follows from differentiating a rotating unit vector: for $\\mathbf r(t) = r(\\cos\\omega t, \\sin\\omega t)$, $\\ddot{\\mathbf r} = -\\omega^2 \\mathbf r$, magnitude $\\omega^2 r = v^2/r$ using $v=\\omega r$ — acceleration is anti-parallel to position, i.e. pointing at the center, purely from the geometry of uniform rotation, with no need to invoke any force by name.'],
     },
@@ -484,7 +484,7 @@ export const mechanics: Lesson[] = [
         'Increase $n$ one step at a time and count the humps: $n$ humps fit exactly between the two fixed, unmoving ends, so $n=1$ has one big hump, $n=2$ has two smaller ones with a new node in the middle, and so on — only these whole-number fits are allowed, because the string must be motionless at both ends.',
       ],
       formal: [
-        r`y(x,t) = 2A\sin(k_n x)\cos(\omega t)` + ' where $k_n = n\\pi/L$, a superposition of a right- and left-travelling wave of equal amplitude.',
+        r`$y(x,t) = 2A\sin(k_n x)\cos(\omega t)$` + ' where $k_n = n\\pi/L$, a superposition of a right- and left-travelling wave of equal amplitude.',
         'Nodes occur where $\\sin(k_n x) = 0$: $x = 0, L/n, 2L/n, \\dots, L$ — always including both fixed ends.',
       ],
       advanced: ['Standing waves are the normal modes of the string: any physically allowed vibration (with both ends fixed) can be written as a superposition $\\sum_n c_n \\sin(n\\pi x/L)\\cos(2\\pi f_n t + \\varphi_n)$, a Fourier series in space at each instant in time — this is the same decomposition that underlies analysing any complex periodic sound as a sum of pure harmonics.'],

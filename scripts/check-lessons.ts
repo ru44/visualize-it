@@ -14,7 +14,7 @@ for (const l of lessons) {
   if (!reg.includes(`'${l.visualization.type}'`) && !reg.includes(` ${l.visualization.type}:`)) err(l.id, `viz type '${l.visualization.type}' not registered`)
   tex(l.id, l.equation, 'equation'); l.derivation.forEach((d, i) => tex(l.id, d.tex, `derivation[${i}]`)); l.variables.forEach((v) => tex(l.id, v.symbol, 'variable'))
   for (const t of [l.summary, ...l.explanation.intuition, ...l.explanation.formal, ...(l.explanation.advanced ?? []), ...l.derivation.map((d) => d.note), ...l.variables.map((v) => v.meaning)]) {
-    const parts = t.split('$'); if (parts.length % 2 === 0) err(l.id, `unbalanced $ in: ${t.slice(0, 50)}`)
+    const parts = t.split('$'); parts.forEach((p, i) => i % 2 === 0 && /\\[a-zA-Z]{2,}/.test(p) && err(l.id, `LaTeX outside $…$: ${p.slice(0, 50)}`)); if (parts.length % 2 === 0) err(l.id, `unbalanced $ in: ${t.slice(0, 50)}`)
     parts.forEach((p, i) => i % 2 && tex(l.id, p, 'inline'))
   }
   const scope: Record<string, number> = {}; for (const [k, s] of Object.entries(l.parameters)) { scope[k] = s.value; if (s.value < s.min || s.value > s.max) err(l.id, `param ${k} default outside range`) }
@@ -36,5 +36,27 @@ for (const l of lessons) {
     } catch (x: any) { err(l.id, `expr error "${e}": ${String(x.message).slice(0, 80)}`) }
   }
 }
-console.log(`${lessons.length} lessons checked, ${bad} problems`)
+// ---- Arabic overlays: same shape as the base lesson, maths segments untouched --------------------
+import('../src/lessons/ar/index').catch(() => null)
+const { readdirSync } = await import('node:fs')
+const arDir = new URL('../src/lessons/ar/', import.meta.url)
+const ar: Record<string, any> = {}
+for (const f of readdirSync(arDir)) if (f.endsWith('.ts') && f !== 'index.ts') for (const v of Object.values(await import(new URL(f, arDir).href))) Object.assign(ar, v)
+const maths = (s: string) => [...new Set(s.split('$').filter((_, i) => i % 2).map((m) => m.replace(/\s+/g, '')))].sort().join('|')
+let translated = 0
+for (const l of lessons) {
+  const x = ar[l.id]
+  if (!x) { err(l.id, 'no Arabic translation'); continue }
+  translated++
+  const same = (n: string, a: number, b: number) => a !== b && err(l.id, `ar.${n}: ${a} items, base has ${b}`)
+  same('variables', x.variables.length, l.variables.length); same('intuition', x.intuition.length, l.explanation.intuition.length); same('formal', x.formal.length, l.explanation.formal.length)
+  same('derivationNotes', x.derivationNotes.length, l.derivation.length); same('realWorld', x.realWorld.length, l.realWorld.length); same('charts', (x.charts ?? []).length, (l.charts ?? []).length)
+  for (const k of Object.keys(l.parameters)) if (!x.parameters[k]) err(l.id, `ar.parameters missing '${k}'`)
+  const pairs: [string, string][] = [[l.summary, x.summary], ...l.explanation.intuition.map((s, i) => [s, x.intuition[i] ?? ''] as [string, string]), ...l.explanation.formal.map((s, i) => [s, x.formal[i] ?? ''] as [string, string]), ...l.derivation.map((d, i) => [d.note, x.derivationNotes[i] ?? ''] as [string, string])]
+  for (const [en, tr] of pairs) {
+    if (tr.split('$').length % 2 === 0) err(l.id, `ar: unbalanced $ in: ${tr.slice(0, 40)}`)
+    else { tr.split('$').forEach((p, i) => i % 2 && tex(l.id, p, 'ar inline')); if (maths(en) !== maths(tr)) err(l.id, `ar: maths differs from English in: ${tr.slice(0, 40)}`) }
+  }
+}
+console.log(`${lessons.length} lessons checked (${translated} with Arabic), ${bad} problems`)
 if (bad) process.exit(1)

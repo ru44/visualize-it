@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, watchEffect } from 'vue'
+import { t, locale } from './i18n'
 
 function initialTheme(): 'light' | 'dark' {
   try {
@@ -28,16 +29,16 @@ watchEffect(() => {
             <path d="M5 17c3-1 4-10 7-10s3 8 7 9" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" />
             <circle cx="12" cy="7.4" r="1.8" fill="var(--accent-2)" />
           </svg>
-          visualize·it
+          <span dir="ltr">visualize·it</span>
         </RouterLink>
-        <div class="flex items-center gap-1 text-sm">
-          <RouterLink to="/#concepts" class="rounded-lg px-3 py-1.5 hover:bg-[var(--sunken)]" style="color: var(--muted)">Concepts</RouterLink>
-          <RouterLink to="/graph" class="rounded-lg px-3 py-1.5 hover:bg-[var(--sunken)]" style="color: var(--muted)" active-class="!text-[var(--fg)]">Graph</RouterLink>
-          <RouterLink to="/map" class="rounded-lg px-3 py-1.5 hover:bg-[var(--sunken)]" style="color: var(--muted)" active-class="!text-[var(--fg)]">Map</RouterLink>
-          <a href="./legacy/index.html" class="hidden rounded-lg px-3 py-1.5 hover:bg-[var(--sunken)] sm:block" style="color: var(--muted)">Classic sims</a>
+        <div class="flex items-center gap-0.5 text-sm sm:gap-1">
+          <RouterLink to="/#subjects" class="rounded-lg px-2.5 py-1.5 hover:bg-[var(--sunken)] sm:px-3" style="color: var(--muted)">{{ t('nav.learn') }}</RouterLink>
+          <RouterLink to="/graph" class="rounded-lg px-2.5 py-1.5 hover:bg-[var(--sunken)] sm:px-3" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.graph') }}</RouterLink>
+          <RouterLink to="/map" class="hidden rounded-lg px-3 py-1.5 hover:bg-[var(--sunken)] sm:block" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.map') }}</RouterLink>
+          <button class="rounded-lg border px-2.5 py-1 text-sm hover:border-[var(--accent)]" style="border-color: var(--line)" @click="locale = locale === 'ar' ? 'en' : 'ar'">{{ t('nav.language') }}</button>
           <button
-            class="ml-1 grid h-9 w-9 place-items-center rounded-lg hover:bg-[var(--sunken)]"
-            :aria-label="`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`"
+            class="grid h-9 w-9 place-items-center rounded-lg hover:bg-[var(--sunken)]"
+            :aria-label="t('nav.theme')"
             @click="theme = theme === 'dark' ? 'light' : 'dark'"
           >
             <svg v-if="theme === 'dark'" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -55,17 +56,17 @@ watchEffect(() => {
     <div class="flex-1">
       <RouterView v-slot="{ Component, route }">
         <Transition name="page" mode="out-in" appear>
-          <component :is="Component" :key="route.path" />
+          <component :is="Component" :key="route.path + locale" />
         </Transition>
       </RouterView>
     </div>
 
     <footer class="mt-16 border-t" style="border-color: var(--line)">
       <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-6 text-sm lg:px-8" style="color: var(--muted)">
-        <p>Visualizations are conceptual models — built to make the idea visible, not to replace the physics.</p>
+        <p>{{ t('footer.note') }}</p>
         <p class="flex gap-4">
-          <RouterLink to="/map" class="hover:underline">Learning map</RouterLink>
-          <a href="./legacy/index.html" class="hover:underline">Classic simulations</a>
+          <RouterLink to="/map" class="hover:underline">{{ t('footer.map') }}</RouterLink>
+          <a href="./legacy/index.html" class="hover:underline">{{ t('footer.classic') }}</a>
           <a href="https://github.com/ru44/visualize-it" class="hover:underline">GitHub</a>
         </p>
       </div>
