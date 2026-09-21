@@ -8,7 +8,9 @@ export function makeFn(expr: string): Fn {
   const code = compile(expr)
   return (x, scope = {}) => {
     try {
-      const v = code.evaluate({ ...scope, x })
+      let v = code.evaluate({ ...scope, x })
+      // Multi-statement expressions ("t1 = …; …") return a ResultSet; the last entry is the value.
+      if (v && Array.isArray(v.entries)) v = v.entries[v.entries.length - 1]
       return typeof v === 'number' ? v : NaN
     } catch {
       return NaN
