@@ -34,6 +34,7 @@ watchEffect(() => {
         <div class="flex items-center gap-0.5 text-sm sm:gap-1">
           <RouterLink to="/#subjects" class="rounded-lg px-2.5 py-1.5 hover:bg-[var(--sunken)] sm:px-3" style="color: var(--muted)">{{ t('nav.learn') }}</RouterLink>
           <RouterLink to="/graph" class="rounded-lg px-2.5 py-1.5 hover:bg-[var(--sunken)] sm:px-3" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.graph') }}</RouterLink>
+          <RouterLink to="/classic" class="rounded-lg px-2.5 py-1.5 hover:bg-[var(--sunken)] sm:px-3" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.sims') }}</RouterLink>
           <RouterLink to="/map" class="hidden rounded-lg px-3 py-1.5 hover:bg-[var(--sunken)] sm:block" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.map') }}</RouterLink>
           <button class="rounded-lg border px-2.5 py-1 text-sm hover:border-[var(--accent)]" style="border-color: var(--line)" @click="locale = locale === 'ar' ? 'en' : 'ar'">{{ t('nav.language') }}</button>
           <button
@@ -66,7 +67,7 @@ watchEffect(() => {
         <p>{{ t('footer.note') }}</p>
         <p class="flex gap-4">
           <RouterLink to="/map" class="hover:underline">{{ t('footer.map') }}</RouterLink>
-          <a href="./legacy/index.html" class="hover:underline">{{ t('footer.classic') }}</a>
+          <RouterLink to="/classic" class="hover:underline">{{ t('classic.title') }}</RouterLink>
           <a href="https://github.com/ru44/visualize-it" class="hover:underline">GitHub</a>
         </p>
       </div>
