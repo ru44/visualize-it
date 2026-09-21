@@ -9,6 +9,11 @@ const wrap = (d: string) => (d.length > 1 ? `(${d})` : d)
 /** Unicode maths → plain ASCII that mathjs understands. */
 export function normalize(q: string): string {
   return q
+    .replace(/[٠-٩]/g, (d) => String('٠١٢٣٤٥٦٧٨٩'.indexOf(d)))
+    .replace(/[۰-۹]/g, (d) => String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d)))
+    .replace(/٫/g, '.')
+    .replace(/س/g, 'x')
+    .replace(/ص/g, 'y')
     .replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]+/g, (m) => '^' + wrap(digits(m, SUP)))
     .replace(/[₀₁₂₃₄₅₆₇₈₉]+/g, (m) => '_' + wrap(digits(m, SUB)))
     .replace(/π/g, ' pi ')
@@ -17,7 +22,7 @@ export function normalize(q: string): string {
     .replace(/÷/g, '/')
     .replace(/−/g, '-')
     .replace(/→/g, '->')
-    .replace(/∞/g, 'Infinity')
+    .replace(/∞|\binf(inity)?\b|\boo\b/gi, 'Infinity')
     .replace(/\s+/g, ' ')
     .trim()
 }

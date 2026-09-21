@@ -3,6 +3,7 @@ import { computed, onUnmounted, reactive, ref, watch } from 'vue'
 import * as M from 'mathjs'
 import { normalize } from '../engine/explorer'
 import { derivativeExpr, fmt } from '../engine/math'
+import { t, type Key } from '../i18n'
 
 type Kind = 'fn' | 'polar' | 'param' | 'implicit' | 'field'
 interface Entry {
@@ -270,8 +271,8 @@ const usesT = computed(() => entries.value.some((e) => e.on && (e.kind === 'pola
 <template>
   <main class="mx-auto max-w-7xl px-4 py-6 lg:px-8">
     <header class="mb-5">
-      <h1 class="text-3xl font-semibold tracking-tight">Graphing</h1>
-      <p class="mt-1" style="color: var(--muted)">Functions, polar and parametric curves, implicit equations and vector fields. Any extra letter becomes a slider.</p>
+      <h1 class="text-3xl font-semibold tracking-tight">{{ t('graph.title') }}</h1>
+      <p class="mt-1" style="color: var(--muted)">{{ t('graph.lead') }}</p>
     </header>
 
     <div class="grid gap-6 lg:grid-cols-[340px_minmax(0,1fr)]">
@@ -286,7 +287,7 @@ const usesT = computed(() => entries.value.some((e) => e.on && (e.kind === 'pola
                 @click="e.on = !e.on"
               />
               <select v-model="e.kind" class="rounded-md bg-transparent text-xs" style="color: var(--muted)" aria-label="Kind">
-                <option v-for="(kd, key) in kinds" :key="key" :value="key">{{ kd.name }}</option>
+                <option v-for="(_, key) in kinds" :key="key" :value="key">{{ t(`graph.kind.${key}` as Key) }}</option>
               </select>
               <span class="flex-1" />
               <button v-if="e.kind === 'fn'" class="num rounded px-1.5 text-xs" :style="e.deriv ? 'background: var(--accent-soft); color: var(--accent)' : 'color: var(--muted)'" title="Show derivative" @click="e.deriv = !e.deriv">f′</button>
@@ -294,23 +295,23 @@ const usesT = computed(() => entries.value.some((e) => e.on && (e.kind === 'pola
             </div>
             <label class="mt-1.5 flex items-center gap-2">
               <span class="num shrink-0 text-xs" style="color: var(--muted)">{{ kinds[e.kind].label }}</span>
-              <input v-model="e.text" class="num min-w-0 flex-1 bg-transparent py-1 text-sm outline-none" :placeholder="kinds[e.kind].hint" spellcheck="false" autocomplete="off" />
+              <input v-model="e.text" dir="ltr" class="num min-w-0 flex-1 bg-transparent py-1 text-sm outline-none" :placeholder="kinds[e.kind].hint" spellcheck="false" autocomplete="off" />
             </label>
             <p v-if="!compiled[i].ok" class="mt-1 text-xs" style="color: var(--neg)">
-              Can’t read this{{ e.kind === 'param' || e.kind === 'field' ? ' — two expressions separated by “;”' : '' }}.
+              {{ t('graph.bad') }}{{ e.kind === 'param' || e.kind === 'field' ? t('graph.two') : '' }}
             </p>
           </li>
         </ul>
 
         <div>
-          <p class="label mb-1.5">Add</p>
+          <p class="label mb-1.5">{{ t('graph.add') }}</p>
           <div class="flex flex-wrap gap-1.5">
-            <button v-for="(kd, key) in kinds" :key="key" class="rounded-full border px-2.5 py-1 text-xs hover:border-[var(--accent)]" style="border-color: var(--line); color: var(--muted)" @click="add(key)">+ {{ kd.name }}</button>
+            <button v-for="(_, key) in kinds" :key="key" class="rounded-full border px-2.5 py-1 text-xs hover:border-[var(--accent)]" style="border-color: var(--line); color: var(--muted)" @click="add(key)">+ {{ t(`graph.kind.${key}` as Key) }}</button>
           </div>
         </div>
 
         <div v-if="Object.keys(params).length || usesT" class="space-y-3">
-          <p class="label">Parameters</p>
+          <p class="label">{{ t('graph.params') }}</p>
           <label v-for="(v, name) in params" :key="name" class="block">
             <span class="flex items-center justify-between text-sm">
               <span class="num">{{ name }}</span>
@@ -322,7 +323,7 @@ const usesT = computed(() => entries.value.some((e) => e.on && (e.kind === 'pola
             <input v-model.number="params[name]" type="range" min="-5" max="5" step="0.01" class="w-full" :style="{ '--p': `${((v + 5) / 10) * 100}%` }" :aria-label="String(name)" />
           </label>
           <label v-if="usesT" class="block">
-            <span class="flex justify-between text-sm"><span class="num">t, θ from 0 to</span><span class="num">{{ fmt(tMax, 2) }}</span></span>
+            <span class="flex justify-between text-sm"><span>{{ t('graph.trange') }}</span><span class="num">{{ fmt(tMax, 2) }}</span></span>
             <input v-model.number="tMax" type="range" min="0.1" max="62.83" step="0.01" class="w-full" :style="{ '--p': `${(tMax / 62.83) * 100}%` }" aria-label="t range" />
           </label>
         </div>
@@ -371,7 +372,7 @@ const usesT = computed(() => entries.value.some((e) => e.on && (e.kind === 'pola
           </g>
         </svg>
         <p class="num flex justify-between border-t px-4 py-2 text-xs" style="border-color: var(--line); color: var(--muted)">
-          <span>{{ cursor ? `x ${fmt(cursor.x, 3)}   y ${fmt(cursor.y, 3)}` : 'scroll to zoom · drag to pan' }}</span>
+          <span>{{ cursor ? `x ${fmt(cursor.x, 3)}   y ${fmt(cursor.y, 3)}` : t('graph.hint') }}</span>
           <span>1 : 1 scale</span>
         </p>
       </section>

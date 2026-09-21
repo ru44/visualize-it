@@ -122,7 +122,7 @@ export const maths: Lesson[] = [
       ],
       formal: [
         'For $x > 0$, $x^n$ is defined for every real $n$ via $x^n = e^{n \\ln x}$, so fractional and negative exponents are as legitimate as integer ones.',
-        r`x^{p/q} = \sqrt[q]{x^p}` + ' (for positive integers $p, q$), and $x^{-n} = 1/x^n$.',
+        r`$x^{p/q} = \sqrt[q]{x^p}$` + ' (for positive integers $p, q$), and $x^{-n} = 1/x^n$.',
       ],
       advanced: ['Restricting to $x > 0$ is what makes $x^n = e^{n\\ln x}$ well defined for every real $n$; for negative $x$, non-integer powers generally leave the real numbers (e.g. $(-1)^{1/2} = i$), which is why this lesson keeps the domain positive.'],
     },
@@ -165,7 +165,7 @@ export const maths: Lesson[] = [
       ],
       formal: [
         '$y = \\log_b x$ is defined for $x > 0$ as the unique $y$ with $b^y = x$ ($b > 0$, $b \\ne 1$); it is the inverse function of $b^x$.',
-        r`\log_b(xy) = \log_b x + \log_b y, \qquad \log_b(x^p) = p\log_b x.`,
+        r`$\log_b(xy) = \log_b x + \log_b y$ and $\log_b(x^p) = p\log_b x$.`,
       ],
       advanced: ['Because $\\log_b x = \\ln x / \\ln b$, every logarithm is a rescaling of the natural log; this is why calculators need only implement one logarithm and derive the rest, and why $d(\\log_b x)/dx = 1/(x\\ln b)$ carries an extra factor compared to the natural log.'],
     },
@@ -333,7 +333,7 @@ export const maths: Lesson[] = [
     },
     variables: [
       { symbol: 'x', meaning: 'angle in radians' },
-      { symbol: r`\tan x`, meaning: r`\sin x / \cos x` },
+      { symbol: r`\tan x`, meaning: r`$\sin x / \cos x$` },
     ],
     explanation: {
       intuition: [

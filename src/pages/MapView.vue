@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { lessons, getLesson, subjectLabels } from '../lessons'
+import { lessons, getLesson } from '../lessons'
+import { localize } from '../lessons/localize'
+import { t, type Key } from '../i18n'
 import type { Subject } from '../lessons/types'
 
 const router = useRouter()
@@ -37,7 +39,7 @@ const graph = computed(() => {
     const list = byDepth.get(d)!
     for (let i = 0; i < list.length; i += PER_ROW, row++) {
       const chunk = list.slice(i, i + PER_ROW)
-      chunk.forEach((id, j) => nodes.set(id, { id, title: getLesson(id)!.title, x: (W * (j + 1)) / (chunk.length + 1), y: 36 + row * ROW, own: getLesson(id)!.subject === active.value }))
+      chunk.forEach((id, j) => nodes.set(id, { id, title: localize(getLesson(id)!).title, x: (W * (j + 1)) / (chunk.length + 1), y: 36 + row * ROW, own: getLesson(id)!.subject === active.value }))
     }
   }
   const edges = [...ids].flatMap((id) => getLesson(id)!.prerequisites.filter((p) => nodes.has(p)).map((p) => ({ from: nodes.get(p)!, to: nodes.get(id)! })))
@@ -48,8 +50,8 @@ const short = (t: string) => (t.length > 24 ? t.slice(0, 23) + '…' : t)
 
 <template>
   <main class="mx-auto max-w-6xl px-4 py-10 lg:px-8">
-    <h1 class="text-3xl font-semibold tracking-tight">Learning map</h1>
-    <p class="mt-1" style="color: var(--muted)">Each concept rests on the ones above it. Dashed boxes are prerequisites from another subject.</p>
+    <h1 class="text-3xl font-semibold tracking-tight">{{ t('map.title') }}</h1>
+    <p class="mt-1" style="color: var(--muted)">{{ t('map.lead') }}</p>
 
     <div class="mt-5 flex flex-wrap gap-1 rounded-xl p-1" style="background: var(--sunken)" role="tablist">
       <button
@@ -61,7 +63,7 @@ const short = (t: string) => (t.length > 24 ? t.slice(0, 23) + '…' : t)
         :style="active === s ? 'background: var(--panel); color: var(--fg); box-shadow: 0 1px 2px rgb(0 0 0 / .12)' : 'color: var(--muted)'"
         @click="active = s"
       >
-        {{ subjectLabels[s] }}
+        {{ t(`subject.${s}` as Key) }}
       </button>
     </div>
 

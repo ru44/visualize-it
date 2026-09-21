@@ -12,7 +12,7 @@ const pct = computed(() => `${((props.value - props.spec.min) / (props.spec.max 
   <label class="block">
     <span class="flex items-baseline justify-between text-sm">
       <span>{{ spec.label }}</span>
-      <span class="num rounded px-1.5 py-0.5 text-[13px]" style="background: var(--sunken)">
+      <span dir="ltr" class="num rounded px-1.5 py-0.5 text-[13px]" style="background: var(--sunken)">
         {{ fmt(value) }}<span v-if="spec.unit" style="color: var(--muted)"> {{ spec.unit }}</span>
       </span>
     </span>

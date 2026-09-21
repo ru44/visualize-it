@@ -2,7 +2,9 @@
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { scaleLinear } from 'd3-scale'
 import { line } from 'd3-shape'
-import { makeFn, derivativeExpr, numericSlope, riemannSamples, riemannSum, integrate, estimateLimit, fmt } from '../engine/math'
+import { makeFn, derivativeExpr, numericSlope, riemannSamples, riemannSum, fmt } from '../engine/math'
+import { analyzeLimit, integrateChecked, safeDigits } from '../engine/analysis'
+import { t } from '../i18n'
 import type { RiemannRule } from '../engine/math'
 import Readouts from '../components/Readouts.vue'
 
@@ -19,6 +21,8 @@ interface PlotOptions {
   roots?: number[]
   /** Advance a parameter in real time (units per second), wrapping inside `loop`. */
   animate?: { param: string; speed: number; loop: [number, number] }
+  /** Ignore the symbolic derivative (it failed verification) and measure slopes numerically. */
+  numericDerivative?: boolean
 }
 
 const props = defineProps<{ params: Record<string, number>; options: Record<string, any> }>()
@@ -36,7 +40,7 @@ const f = computed(() => {
   return (x: number) => fn(x, props.params)
 })
 const df = computed(() => {
-  const d = derivativeExpr(o.value.expr)
+  const d = o.value.numericDerivative ? null : derivativeExpr(o.value.expr)
   if (!d) return (x: number) => numericSlope(f.value, x)
   const fn = makeFn(d)
   return (x: number) => fn(x, props.params)
@@ -88,7 +92,8 @@ const tangent = computed(() => {
 const limit = computed(() => {
   const a = o.value.limitAt ?? 0
   const d = props.params.d ?? 1
-  return { a, d, L: estimateLimit(f.value, a), left: a - d, right: a + d }
+  const res = analyzeLimit(f.value, a)
+  return { a, d, res, L: res.kind === 'finite' ? res.value : NaN, left: a - d, right: a + d }
 })
 
 const rects = computed(() => {
@@ -111,46 +116,50 @@ const readouts = computed(() => {
     case 'secant': {
       const s = secant.value
       return [
-        { label: 'run Δx', value: fmt(s.xb - s.xa) },
-        { label: 'rise Δy', value: fmt(s.yb - s.ya) },
-        { label: 'slope Δy/Δx', value: fmt(s.m), color: 'var(--accent-2)' },
+        { label: t('plot.run'), value: fmt(s.xb - s.xa) },
+        { label: t('plot.rise'), value: fmt(s.yb - s.ya) },
+        { label: t('plot.slope'), value: fmt(s.m), color: 'var(--accent-2)' },
       ]
     }
     case 'tangent':
       return [
         { label: 'x', value: fmt(x.value) },
         { label: 'f(x)', value: fmt(f.value(x.value)) },
-        { label: "slope f'(x)", value: fmt(tangent.value.m), color: 'var(--accent-2)' },
+        { label: t('plot.slopeAt'), value: fmt(tangent.value.m), color: 'var(--accent-2)' },
       ]
     case 'limit': {
-      const { a, L } = limit.value
+      const { a, res } = limit.value
+      const shown = res.kind === 'finite' ? fmt(res.value, safeDigits(res.err, 6)) : res.kind === 'infinite' ? (res.sign > 0 ? '+∞' : '−∞') : t(res.kind === 'dne' ? 'plot.dne' : 'plot.unknown')
       return [
         ...[1, 0.1, 0.01].map((k) => {
           const xv = a + limit.value.d * k
           return { label: `f(${fmt(xv, 5)})`, value: fmt(f.value(xv), 6) }
         }),
-        { label: `limit as x→${fmt(a)}`, value: fmt(L, 6), color: 'var(--accent-2)' },
+        { label: t('plot.limit', { a: fmt(a) }), value: shown, color: 'var(--accent-2)' },
       ]
     }
     case 'riemann': {
       const n = Math.max(1, Math.round(p.n ?? 10))
       const approx = riemannSum(f.value, p.a, p.b, n, o.value.rule)
-      const exact = integrate(f.value, p.a, p.b)
+      const res = integrateChecked(f.value, p.a, p.b, Object.keys(p).length <= 3 ? o.value.expr : undefined)
+      const okValue = res.kind === 'exact' || res.kind === 'numeric'
       return [
-        { label: 'rectangles', value: String(n) },
-        { label: 'sum of rectangles', value: fmt(approx), color: 'var(--accent)' },
-        { label: 'exact integral', value: fmt(exact), color: 'var(--accent-2)' },
-        { label: 'error', value: fmt(Math.abs(exact - approx)) },
+        { label: t('plot.rects'), value: String(n) },
+        { label: t('plot.sum'), value: fmt(approx), color: 'var(--accent)' },
+        { label: t('plot.exact'), value: okValue ? fmt(res.value, res.kind === 'exact' ? 6 : safeDigits(res.err, 6)) : t('plot.singular'), color: 'var(--accent-2)' },
+        ...(okValue ? [{ label: t('plot.error'), value: fmt(Math.abs(res.value - approx)) }] : []),
       ]
     }
     case 'area': {
       const fn = f.value
-      const net = integrate(fn, p.a, p.b)
-      const total = integrate((t) => Math.abs(fn(t)), p.a, p.b)
+      const rn = integrateChecked(fn, p.a, p.b)
+      const rt = integrateChecked((u) => Math.abs(fn(u)), p.a, p.b)
+      if (rn.kind === 'singular' || rt.kind === 'singular') return [{ label: t('plot.signed'), value: t('plot.singular'), color: 'var(--accent-2)' }]
+      const [net, total] = [rn.value, rt.value]
       return [
-        { label: 'area above axis', value: fmt((total + net) / 2), color: 'var(--pos)' },
-        { label: 'area below axis', value: fmt((total - net) / 2), color: 'var(--neg)' },
-        { label: 'signed area ∫', value: fmt(net), color: 'var(--accent-2)' },
+        { label: t('plot.above'), value: fmt((total + net) / 2), color: 'var(--pos)' },
+        { label: t('plot.below'), value: fmt((total - net) / 2), color: 'var(--neg)' },
+        { label: t('plot.signed'), value: fmt(net), color: 'var(--accent-2)' },
       ]
     }
     default:
@@ -207,7 +216,7 @@ function down(e: PointerEvent) {
       style="border-color: var(--line); background: var(--panel); color: var(--muted)"
       @click="playing = !playing"
     >
-      {{ playing ? '❚❚ pause' : '▶ play' }}
+      {{ playing ? t('plot.pause') : t('plot.play') }}
     </button>
     <svg
       ref="svg"
@@ -277,11 +286,11 @@ function down(e: PointerEvent) {
       </template>
 
       <template v-else-if="o.mode === 'limit'">
-        <line x1="0" :x2="W" :y1="sy(limit.L)" :y2="sy(limit.L)" stroke="var(--accent-2)" stroke-dasharray="5 4" />
+        <line v-if="Number.isFinite(limit.L)" x1="0" :x2="W" :y1="sy(limit.L)" :y2="sy(limit.L)" stroke="var(--accent-2)" stroke-dasharray="5 4" />
         <line :x1="sx(limit.a)" :x2="sx(limit.a)" y1="0" :y2="H" stroke="var(--accent-2)" stroke-dasharray="5 4" />
         <circle :cx="sx(limit.left)" :cy="sy(f(limit.left))" r="6" fill="var(--fg)" />
         <circle :cx="sx(limit.right)" :cy="sy(f(limit.right))" r="6" fill="var(--fg)" />
-        <circle :cx="sx(limit.a)" :cy="sy(limit.L)" r="5" fill="var(--bg)" stroke="var(--accent-2)" stroke-width="2" />
+        <circle v-if="Number.isFinite(limit.L)" :cx="sx(limit.a)" :cy="sy(limit.L)" r="5" fill="var(--bg)" stroke="var(--accent-2)" stroke-width="2" />
       </template>
     </svg>
     <Readouts :items="readouts" />

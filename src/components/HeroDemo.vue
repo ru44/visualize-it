@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { t } from '../i18n'
 
 // A tiny self-running derivative demo. Pure Math — keeps the landing bundle light.
 const W = 520
@@ -57,8 +58,8 @@ onUnmounted(() => cancelAnimationFrame(raf))
       <circle :cx="sx(x)" :cy="sy(f(x))" r="6" fill="var(--panel)" stroke="var(--fg)" stroke-width="2.5" />
     </svg>
     <figcaption class="flex items-center justify-between border-t px-4 py-2.5 text-sm" style="border-color: var(--line)">
-      <span style="color: var(--muted)">The tangent line is the derivative.</span>
-      <span class="num" style="color: var(--accent-2)">slope {{ tangent.m >= 0 ? '+' : '' }}{{ tangent.m.toFixed(2) }}</span>
+      <span style="color: var(--muted)">{{ t('home.demo') }}</span>
+      <span class="num shrink-0 ps-3" style="color: var(--accent-2)">{{ t('home.slope') }} {{ tangent.m >= 0 ? '+' : '' }}{{ tangent.m.toFixed(2) }}</span>
     </figcaption>
   </figure>
 </template>

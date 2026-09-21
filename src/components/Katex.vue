@@ -7,5 +7,5 @@ const html = computed(() => katex.renderToString(props.tex, { displayMode: props
 </script>
 
 <template>
-  <span v-html="html" />
+  <span dir="ltr" class="inline-block max-w-full" v-html="html" />
 </template>

@@ -258,7 +258,7 @@ export const aerodynamics: Lesson[] = [
     },
     variables: [
       { symbol: 'L/D', meaning: 'lift-to-drag ratio \u2014 also the glide ratio: metres travelled per metre descended' },
-      { symbol: 'AR', meaning: r`aspect ratio, \; b^2/S \; \text{(span squared over area)}` },
+      { symbol: 'AR', meaning: 'aspect ratio, $b^2/S$ (span squared over wing area)' },
       { symbol: 'e', meaning: 'Oswald efficiency factor (here fixed at 0.85), how close the wing is to an ideal elliptical loading' },
       { symbol: 'C_{D,0}', meaning: 'parasitic (zero-lift) drag coefficient' },
     ],

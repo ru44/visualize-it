@@ -8,7 +8,7 @@ function load(): Difficulty {
     const v = localStorage.getItem('level') as Difficulty | null
     if (v && levels.includes(v)) return v
   } catch {}
-  return 'high-school'
+  return 'beginner'
 }
 
 // Shared across pages: the learner picks a level once.
