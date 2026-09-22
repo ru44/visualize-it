@@ -1,0 +1,56 @@
+# Extra video support, shown at the bottom of each subject page and linked from lessons.
+# Every url was checked to exist. Prefer channels and playlists over single videos (they age better).
+# Fields: title, url, by (channel), lang (en | ar | …), note (optional, one sentence).
+# To add a video for ONE lesson, put a `videos:` list with the same fields in that lesson's lesson.yaml.
+algebra:
+  - { title: Khan Academy, url: 'https://www.youtube.com/@khanacademy', by: Khan Academy, lang: en, note: Step-by-step algebra from the very beginning. }
+  - { title: The Organic Chemistry Tutor, url: 'https://www.youtube.com/@TheOrganicChemistryTutor', by: The Organic Chemistry Tutor, lang: en, note: Worked examples for every school topic. }
+functions:
+  - { title: Khan Academy, url: 'https://www.youtube.com/@khanacademy', by: Khan Academy, lang: en }
+  - { title: Professor Dave Explains, url: 'https://www.youtube.com/@ProfessorDaveExplains', by: Professor Dave Explains, lang: en }
+calculus:
+  - { title: 3Blue1Brown, url: 'https://www.youtube.com/@3blue1brown', by: 3Blue1Brown, lang: en, note: The "Essence of calculus" series on this channel is the best visual introduction there is. }
+  - { title: Khan Academy, url: 'https://www.youtube.com/@khanacademy', by: Khan Academy, lang: en }
+  - { title: The Organic Chemistry Tutor, url: 'https://www.youtube.com/@TheOrganicChemistryTutor', by: The Organic Chemistry Tutor, lang: en }
+geometry:
+  - { title: Numberphile, url: 'https://www.youtube.com/@numberphile', by: Numberphile, lang: en, note: Mathematicians explaining beautiful ideas, many of them geometric. }
+  - { title: Khan Academy, url: 'https://www.youtube.com/@khanacademy', by: Khan Academy, lang: en }
+trigonometry:
+  - { title: The Organic Chemistry Tutor, url: 'https://www.youtube.com/@TheOrganicChemistryTutor', by: The Organic Chemistry Tutor, lang: en }
+  - { title: Professor Dave Explains, url: 'https://www.youtube.com/@ProfessorDaveExplains', by: Professor Dave Explains, lang: en }
+statistics:
+  - { title: StatQuest with Josh Starmer, url: 'https://www.youtube.com/@statquest', by: StatQuest, lang: en, note: Every statistics idea explained clearly, one at a time. }
+  - { title: 3Blue1Brown, url: 'https://www.youtube.com/@3blue1brown', by: 3Blue1Brown, lang: en, note: Probability, Bayes and the normal distribution, visually. }
+  - { title: CrashCourse, url: 'https://www.youtube.com/@crashcourse', by: CrashCourse, lang: en, note: The Crash Course Statistics series. }
+physics:
+  - { title: Veritasium, url: 'https://www.youtube.com/@veritasium', by: Veritasium, lang: en, note: Experiments and surprising physics, beautifully filmed. }
+  - { title: minutephysics, url: 'https://www.youtube.com/@minutephysics', by: minutephysics, lang: en, note: Short drawn explanations. }
+  - { title: CrashCourse, url: 'https://www.youtube.com/@crashcourse', by: CrashCourse, lang: en, note: The Crash Course Physics series. }
+  - { title: الدحيح, url: 'https://www.youtube.com/@Eldaheeh', by: الدحيح, lang: ar, note: حلقات عربية ممتعة عن العلم والفيزياء والتاريخ. }
+waves:
+  - { title: Veritasium, url: 'https://www.youtube.com/@veritasium', by: Veritasium, lang: en }
+  - { title: minutephysics, url: 'https://www.youtube.com/@minutephysics', by: minutephysics, lang: en }
+electricity:
+  - { title: Khan Academy, url: 'https://www.youtube.com/@khanacademy', by: Khan Academy, lang: en, note: Circuits, Ohm's law and Kirchhoff from scratch. }
+  - { title: The Organic Chemistry Tutor, url: 'https://www.youtube.com/@TheOrganicChemistryTutor', by: The Organic Chemistry Tutor, lang: en }
+electromagnetism:
+  - { title: Veritasium, url: 'https://www.youtube.com/@veritasium', by: Veritasium, lang: en }
+  - { title: Khan Academy, url: 'https://www.youtube.com/@khanacademy', by: Khan Academy, lang: en }
+aerodynamics:
+  - { title: Veritasium, url: 'https://www.youtube.com/@veritasium', by: Veritasium, lang: en, note: Includes a well-known video on how wings really generate lift. }
+  - { title: Zach Star, url: 'https://www.youtube.com/@zachstar', by: Zach Star, lang: en, note: Engineering ideas and where the maths is used. }
+thermodynamics:
+  - { title: CrashCourse, url: 'https://www.youtube.com/@crashcourse', by: CrashCourse, lang: en }
+  - { title: Professor Dave Explains, url: 'https://www.youtube.com/@ProfessorDaveExplains', by: Professor Dave Explains, lang: en }
+chemistry:
+  - { title: The Organic Chemistry Tutor, url: 'https://www.youtube.com/@TheOrganicChemistryTutor', by: The Organic Chemistry Tutor, lang: en }
+  - { title: Professor Dave Explains, url: 'https://www.youtube.com/@ProfessorDaveExplains', by: Professor Dave Explains, lang: en, note: A complete general-chemistry series. }
+  - { title: CrashCourse, url: 'https://www.youtube.com/@crashcourse', by: CrashCourse, lang: en, note: The Crash Course Chemistry series. }
+computer-science:
+  - { title: Computerphile, url: 'https://www.youtube.com/@Computerphile', by: Computerphile, lang: en, note: Computer scientists explain algorithms, security and how computers work. }
+  - { title: CrashCourse, url: 'https://www.youtube.com/@crashcourse', by: CrashCourse, lang: en, note: The Crash Course Computer Science series. }
+  - { title: 3Blue1Brown, url: 'https://www.youtube.com/@3blue1brown', by: 3Blue1Brown, lang: en, note: Neural networks and gradient descent, visually. }
+biology:
+  - { title: Amoeba Sisters, url: 'https://www.youtube.com/@AmoebaSisters', by: Amoeba Sisters, lang: en, note: Friendly drawn biology for school students. }
+  - { title: CrashCourse, url: 'https://www.youtube.com/@crashcourse', by: CrashCourse, lang: en, note: The Crash Course Biology series. }
+  - { title: الدحيح, url: 'https://www.youtube.com/@Eldaheeh', by: الدحيح, lang: ar }

@@ -76,6 +76,14 @@ Arabic text follows `content/lessons/STYLE.ar.md`.
 
 The language switch in the navigation cycles through every language found in `content/ui/`.
 
+## Add videos
+
+`content/videos.yaml` lists channels and playlists per subject; a lesson can add its own under `videos:` in `lesson.yaml`. Each entry needs `title`, `url`, `by`, `lang` and an optional one-sentence `note`. Only add links you have opened yourself, and prefer channels and playlists to single videos.
+
+## Add a 3D scene
+
+A lesson opts into 3D with `visualization3d: { type, options }` in `lesson.yaml`; types are registered in `src/viz3d/registry.ts`. A scene is a component using `useThree()` from `src/viz3d/useThree.ts`, with the same `params`/`options` props as 2D visualizations. Models are `.glb` files in `public/models/`, listed with their licence in `content/models.yaml` and loaded with `loadModel(name)`; scenes must still work when a model is missing.
+
 ## Add a lesson
 
 ```bash

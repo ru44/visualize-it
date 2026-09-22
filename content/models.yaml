@@ -1,0 +1,52 @@
+# 3D models wanted for the scenes. Put each file at public/models/<name>.glb.
+# Requirements: .glb (binary glTF), low-poly (< 30k triangles), < 3 MB, licence CC0 or CC-BY
+# (write the author and licence in `credit`; it is shown under the scene).
+# Scenes fall back to simple procedural shapes while a file is missing.
+- name: cannon
+  used_by: projectile
+  wanted: a small cannon or launcher, barrel along +X, resting on the ground
+  credit: ''
+- name: ball
+  used_by: projectile, newtons-second-law
+  wanted: a plain ball (football / cannonball), about 1 unit across
+  credit: ''
+- name: crate
+  used_by: newtons-second-law, friction-inclined-plane
+  wanted: a wooden crate, 1 unit cube
+  credit: ''
+- name: piston-cylinder
+  used_by: ideal-gas-law
+  wanted: a transparent cylinder with a movable piston (or just the piston head)
+  credit: ''
+- name: airplane
+  used_by: lift, stall-and-angle-of-attack, lift-to-drag
+  wanted: a small low-poly aircraft (Cessna-like), nose along +X
+  credit: ''
+- name: car
+  used_by: drag-equation, terminal-velocity, kinematics-constant-acceleration
+  wanted: a low-poly car, front along +X
+  credit: ''
+- name: battery
+  used_by: ohms-law, series-parallel, rc-circuit
+  wanted: a AA battery, and a resistor and light bulb if available
+  credit: ''
+- name: water-molecule
+  used_by: chemical-reaction, diffusion-and-osmosis
+  wanted: ball-and-stick H2O (also H2 and O2 if available)
+  credit: ''
+- name: earth
+  used_by: universal-gravitation, projectile-motion (orbit variant), earth-space lessons
+  wanted: textured Earth sphere; Moon and Sun spheres too if available
+  credit: ''
+- name: pendulum
+  used_by: simple-harmonic-motion, spring-motion
+  wanted: a pendulum bob on a rod, pivot at the top
+  credit: ''
+- name: spring
+  used_by: work-and-energy, simple-harmonic-motion
+  wanted: a coil spring along +Y, 1 unit long at rest
+  credit: ''
+- name: ramp
+  used_by: friction-inclined-plane
+  wanted: a wedge / inclined plane, about 4 units long
+  credit: ''

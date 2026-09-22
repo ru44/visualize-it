@@ -3,15 +3,15 @@ subject: physics
 difficulty: high-school
 equation: F = ma
 concepts:
-  - force
-  - mass
-  - acceleration
-  - momentum
+- force
+- mass
+- acceleration
+- momentum
 prerequisites:
-  - slope
-  - derivative
+- slope
+- derivative
 related:
-  - area-under-curve
+- area-under-curve
 visualization:
   type: block-force
   options: {}
@@ -29,18 +29,21 @@ parameters:
     value: 2
     unit: kg
 variables:
-  - F
-  - m
-  - a
-  - v
+- F
+- m
+- a
+- v
 derivation:
-  - p = mv
-  - F = \frac{dp}{dt}
-  - F = \frac{d(mv)}{dt} = m\frac{dv}{dt} = ma
+- p = mv
+- F = \frac{dp}{dt}
+- F = \frac{d(mv)}{dt} = m\frac{dv}{dt} = ma
 charts:
-  - domain:
-      - 0
-      - 5
-    series:
-      - F/m*x
-      - 0.5*F/m*x^2
+- domain:
+  - 0
+  - 5
+  series:
+  - F/m*x
+  - 0.5*F/m*x^2
+visualization3d:
+  type: block-force
+  options: {}

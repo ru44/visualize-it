@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { computed, watchEffect } from 'vue'
-import { lessons } from '../lessons'
+import { lessons, subjectVideos } from '../lessons'
 import { localize } from '../lessons/localize'
 import type { Subject } from '../lessons/types'
 import { t, type Key } from '../i18n'
 import Katex from '../components/Katex.vue'
 import MathText from '../components/MathText.vue'
 import SubjectIcon from '../components/SubjectIcon.vue'
+import VideoList from '../components/VideoList.vue'
 import { useProgress } from '../stores/progress'
 
 const progress = useProgress()
@@ -54,6 +55,8 @@ const prog = computed(() => progress.bySubject(props.subject))
           </RouterLink>
         </li>
       </ol>
+
+      <VideoList class="mt-12" :videos="subjectVideos[subject] ?? []" :search-query="`${name} ${t('videos.explained')}`" />
     </template>
   </main>
 </template>

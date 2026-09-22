@@ -7,7 +7,8 @@ import { join } from 'node:path'
 import YAML from 'yaml'
 import katex from 'katex'
 import { compile } from 'mathjs'
-import { LessonYaml, SUBJECTS } from './schema'
+import { LessonYaml, SUBJECTS, Video } from './schema'
+import { z } from 'zod'
 import { parseLessonMd } from './markdown'
 
 const ROOT = join(import.meta.dirname, '../..')
@@ -137,6 +138,11 @@ for (const f of readdirSync(join(CONTENT, 'ui'))) {
 }
 for (const [lang, d] of Object.entries(ui)) if (lang !== 'en') for (const k of Object.keys(ui.en)) if (!(k in d)) err(`content/ui/${lang}.yaml`, `missing key "${k}"`)
 
+// ---- videos ---------------------------------------------------------------------------------------
+const videosRaw = YAML.parse(readFileSync(join(CONTENT, 'videos.yaml'), 'utf8')) ?? {}
+const videos = z.partialRecord(z.enum(SUBJECTS), z.array(Video)).safeParse(videosRaw)
+if (!videos.success) for (const i of videos.error.issues) err('content/videos.yaml', `${i.path.join('.')}: ${i.message}`)
+
 // ---- classic simulations -----------------------------------------------------------------------------
 const classic = YAML.parse(readFileSync(join(CONTENT, 'classic', 'manifest.yaml'), 'utf8'))
 const classicText: Record<string, any> = {}
@@ -148,6 +154,7 @@ write('lessons.json', lessons)
 for (const [lang, t] of Object.entries(texts)) write(`lessons.${lang}.json`, t)
 for (const [lang, d] of Object.entries(ui)) write(`ui.${lang}.json`, d)
 write('classic.json', classic)
+write('videos.json', videos.success ? videos.data : {})
 for (const [lang, d] of Object.entries(classicText)) write(`classic.${lang}.json`, d)
 writeFileSync(join(OUT, 'languages.json'), JSON.stringify(Object.keys(ui)))
 

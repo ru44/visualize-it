@@ -1,6 +1,10 @@
-import type { Lesson, LessonText, Subject } from './types'
+import type { Lesson, LessonText, Subject, Video } from './types'
 import raw from '../generated/lessons.json'
 import en from '../generated/lessons.en.json'
+import videosJson from '../generated/videos.json'
+
+/** Subject-level videos from content/videos.yaml. */
+export const subjectVideos = videosJson as Record<string, Video[]>
 
 /** Language-neutral lesson data merged with the English text. Other languages overlay at runtime (see localize.ts). */
 export const lessons: Lesson[] = (raw as any[]).map((l) => merge(l, (en as Record<string, LessonText>)[l.id]))
@@ -15,6 +19,8 @@ export function merge(l: any, t: LessonText): Lesson {
     prerequisites: l.prerequisites,
     related: l.related,
     visualization: l.visualization,
+    visualization3d: l.visualization3d,
+    videos: l.videos ?? [],
     title: t.title,
     summary: t.summary,
     parameters: Object.fromEntries(Object.entries(l.parameters as Record<string, any>).map(([k, p]) => [k, { ...p, label: t.parameters[k] ?? k }])),
