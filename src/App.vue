@@ -1,8 +1,14 @@
 <script setup lang="ts">
+import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import { t, locale } from './i18n'
 import { useSettings } from './stores/settings'
 
 const settings = useSettings()
+// On phones the links live in a menu; it closes whenever the page changes.
+const menu = ref(false)
+const route = useRoute()
+watch(() => route.fullPath, () => (menu.value = false))
 </script>
 
 <template>
@@ -18,12 +24,14 @@ const settings = useSettings()
           <span dir="ltr">visualize·it</span>
         </RouterLink>
         <div class="flex items-center gap-0.5 text-sm sm:gap-1">
-          <RouterLink to="/#subjects" class="rounded-lg px-2.5 py-1.5 hover:bg-[var(--sunken)] sm:px-3" style="color: var(--muted)">{{ t('nav.learn') }}</RouterLink>
-          <RouterLink to="/graph" class="rounded-lg px-2.5 py-1.5 hover:bg-[var(--sunken)] sm:px-3" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.graph') }}</RouterLink>
-          <RouterLink to="/classic" class="rounded-lg px-2.5 py-1.5 hover:bg-[var(--sunken)] sm:px-3" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.sims') }}</RouterLink>
-          <RouterLink to="/notation" class="hidden rounded-lg px-3 py-1.5 hover:bg-[var(--sunken)] sm:block" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.notation') }}</RouterLink>
-          <RouterLink to="/map" class="hidden rounded-lg px-3 py-1.5 hover:bg-[var(--sunken)] md:block" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.map') }}</RouterLink>
-          <button class="rounded-lg border px-2.5 py-1 text-sm hover:border-[var(--accent)]" style="border-color: var(--line)" @click="settings.nextLocale()">{{ t('nav.language') }}</button>
+          <div class="hidden items-center gap-0.5 sm:flex sm:gap-1">
+            <RouterLink to="/#subjects" class="rounded-lg px-2.5 py-1.5 hover:bg-[var(--sunken)] sm:px-3" style="color: var(--muted)">{{ t('nav.learn') }}</RouterLink>
+            <RouterLink to="/graph" class="rounded-lg px-2.5 py-1.5 hover:bg-[var(--sunken)] sm:px-3" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.graph') }}</RouterLink>
+            <RouterLink to="/classic" class="rounded-lg px-2.5 py-1.5 hover:bg-[var(--sunken)] sm:px-3" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.sims') }}</RouterLink>
+            <RouterLink to="/notation" class="rounded-lg px-3 py-1.5 hover:bg-[var(--sunken)]" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.notation') }}</RouterLink>
+            <RouterLink to="/map" class="hidden rounded-lg px-3 py-1.5 hover:bg-[var(--sunken)] md:block" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.map') }}</RouterLink>
+            <button class="rounded-lg border px-2.5 py-1 text-sm hover:border-[var(--accent)]" style="border-color: var(--line)" @click="settings.nextLocale()">{{ t('nav.language') }}</button>
+          </div>
           <button
             class="grid h-9 w-9 place-items-center rounded-lg hover:bg-[var(--sunken)]"
             :aria-label="t('nav.theme')"
@@ -37,7 +45,27 @@ const settings = useSettings()
               <path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5Z" />
             </svg>
           </button>
+          <button
+            class="grid h-9 w-9 place-items-center rounded-lg hover:bg-[var(--sunken)] sm:hidden"
+            :aria-label="t('nav.menu')"
+            aria-controls="mainmenu"
+            :aria-expanded="menu"
+            @click="menu = !menu"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <template v-if="menu"><path d="M6 6l12 12M18 6L6 18" /></template>
+              <template v-else><path d="M3.5 7h17M3.5 12h17M3.5 17h17" /></template>
+            </svg>
+          </button>
         </div>
+      </div>
+      <div v-if="menu" id="mainmenu" class="border-t px-3 py-2 text-[15px] sm:hidden" style="border-color: var(--line); background: var(--bg)">
+        <RouterLink to="/#subjects" class="block rounded-lg px-3 py-2.5 hover:bg-[var(--sunken)]">{{ t('nav.learn') }}</RouterLink>
+        <RouterLink to="/graph" class="block rounded-lg px-3 py-2.5 hover:bg-[var(--sunken)]" active-class="!text-[var(--accent)]">{{ t('nav.graph') }}</RouterLink>
+        <RouterLink to="/classic" class="block rounded-lg px-3 py-2.5 hover:bg-[var(--sunken)]" active-class="!text-[var(--accent)]">{{ t('nav.sims') }}</RouterLink>
+        <RouterLink to="/notation" class="block rounded-lg px-3 py-2.5 hover:bg-[var(--sunken)]" active-class="!text-[var(--accent)]">{{ t('nav.notation') }}</RouterLink>
+        <RouterLink to="/map" class="block rounded-lg px-3 py-2.5 hover:bg-[var(--sunken)]" active-class="!text-[var(--accent)]">{{ t('nav.map') }}</RouterLink>
+        <button class="mt-1 block w-full rounded-lg border px-3 py-2 text-start hover:border-[var(--accent)]" style="border-color: var(--line)" @click="settings.nextLocale()">{{ t('nav.language') }}</button>
       </div>
     </nav>
 
