@@ -71,7 +71,7 @@ canvas {
 }
 .num {
   unicode-bidi: isolate;
-  font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  font-family: 'JetBrains Mono', 'IBM Plex Sans Arabic', ui-monospace, 'SF Mono', Menlo, monospace;
   font-variant-numeric: tabular-nums;
 }
 /* No uppercase: labels often hold maths, and m and M are different quantities. */
