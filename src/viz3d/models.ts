@@ -1,5 +1,10 @@
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+import meta from '../generated/models.json'
+
+export interface ModelInfo { title: string; author: string; authorUrl: string; license: string; source: string; bytes: number; rotate: [number, number, number]; size?: number }
+export const modelInfo = meta as unknown as Record<string, ModelInfo>
+export const hasModel = (name: string) => name in modelInfo
 
 // GLB models live in public/models/<name>.glb and are listed in content/models.yaml.
 // Loading is cached; a missing file resolves to null so scenes can fall back to simple geometry.
@@ -7,12 +12,21 @@ const cache = new Map<string, Promise<THREE.Group | null>>()
 const loader = new GLTFLoader()
 
 export function loadModel(name: string): Promise<THREE.Group | null> {
+  if (!hasModel(name)) return Promise.resolve(null)
   if (!cache.has(name))
     cache.set(
       name,
       new Promise((resolve) => loader.load(`./models/${name}.glb`, (g) => resolve(g.scene), undefined, () => resolve(null))),
     )
-  return cache.get(name)!.then((g) => (g ? g.clone(true) : null))
+  return cache.get(name)!.then((g) => {
+    if (!g) return null
+    const c = g.clone(true)
+    const [rx, ry, rz] = modelInfo[name].rotate ?? [0, 0, 0]
+    const wrap = new THREE.Group()
+    c.rotation.set((rx * Math.PI) / 180, (ry * Math.PI) / 180, (rz * Math.PI) / 180)
+    wrap.add(c)
+    return wrap
+  })
 }
 
 /** Scale and centre a loaded model so its longest side equals `size`, resting on y = 0. */

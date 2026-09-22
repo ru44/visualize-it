@@ -6,4 +6,7 @@ export const viz3dRegistry: Record<string, Component> = {
   'block-force': defineAsyncComponent(() => import('./BlockForce3D.vue')),
   'gas-box': defineAsyncComponent(() => import('./GasBox3D.vue')),
   surface: defineAsyncComponent(() => import('./SurfaceMesh3D.vue')),
+  airfoil: defineAsyncComponent(() => import('./Airfoil3D.vue')),
+  orbit: defineAsyncComponent(() => import('./Orbit3D.vue')),
+  spring: defineAsyncComponent(() => import('./Spring3D.vue')),
 }

@@ -3,15 +3,15 @@ subject: aerodynamics
 difficulty: university
 equation: C_L(\alpha) \nearrow \text{until } \alpha_{\text{crit}}, \text{ then } C_L \searrow
 concepts:
-  - stall
-  - separation
-  - angle-of-attack
-  - boundary-layer
+- stall
+- separation
+- angle-of-attack
+- boundary-layer
 prerequisites:
-  - lift
+- lift
 related:
-  - lift
-  - lift-to-drag
+- lift
+- lift-to-drag
 visualization:
   type: airfoil
   options: {}
@@ -29,17 +29,22 @@ parameters:
     value: 40
     unit: m/s
 variables:
-  - \alpha
-  - \alpha_{\text{crit}}
-  - C_L
+- \alpha
+- \alpha_{\text{crit}}
+- C_L
 derivation:
-  - L = W \;\Rightarrow\; \tfrac12\rho v^2 S C_L = W
-  - C_L \le C_{L,\max}
-  - v_{\text{stall}} = \sqrt{\dfrac{2W}{\rho S\, C_{L,\max}}}
+- L = W \;\Rightarrow\; \tfrac12\rho v^2 S C_L = W
+- C_L \le C_{L,\max}
+- v_{\text{stall}} = \sqrt{\dfrac{2W}{\rho S\, C_{L,\max}}}
 charts:
-  - domain:
-      - -5
-      - 20
-    marker: alpha
-    series:
-      - "x < 15 ? 0.11*(x+2) : 1.87 - 0.19*(x-15)"
+- domain:
+  - -5
+  - 20
+  marker: alpha
+  series:
+  - 'x < 15 ? 0.11*(x+2) : 1.87 - 0.19*(x-15)'
+visualization3d:
+  type: airfoil
+  options:
+    models:
+    - airplane

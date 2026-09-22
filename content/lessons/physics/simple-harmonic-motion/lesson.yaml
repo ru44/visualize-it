@@ -3,33 +3,33 @@ subject: physics
 difficulty: university
 equation: \ddot x + \omega^2 x = 0, \qquad x(t) = A\cos(\omega t), \quad \omega = \sqrt{k/m}
 concepts:
-  - simple-harmonic-motion
-  - differential-equation
-  - period
+- simple-harmonic-motion
+- differential-equation
+- period
 prerequisites:
-  - derivative
-  - work-and-energy
+- derivative
+- work-and-energy
 related:
-  - damped-oscillation-resonance
-  - sine-function-parameters
+- damped-oscillation-resonance
+- sine-function-parameters
 visualization:
   type: function-plot
   options:
     expr: A*cos(sqrt(k/m)*x)
     domain:
-      - 0
-      - 12
+    - 0
+    - 12
     range:
-      - -5
-      - 5
+    - -5
+    - 5
     mode: tangent
     showDerivative: true
     animate:
       param: x
       speed: 1
       loop:
-        - 0
-        - 12
+      - 0
+      - 12
 parameters:
   A:
     min: 0.5
@@ -56,12 +56,15 @@ parameters:
     value: 0
     unit: s
 variables:
-  - A
-  - k
-  - m
-  - \omega = \sqrt{k/m}
+- A
+- k
+- m
+- \omega = \sqrt{k/m}
 derivation:
-  - F = -kx = m\ddot x \;\Rightarrow\; \ddot x + \frac{k}{m}x = 0
-  - x(t) = A\cos(\omega t + \varphi), \qquad \omega^2 = k/m
-  - T = \frac{2\pi}{\omega} = 2\pi\sqrt{\frac{m}{k}}
+- F = -kx = m\ddot x \;\Rightarrow\; \ddot x + \frac{k}{m}x = 0
+- x(t) = A\cos(\omega t + \varphi), \qquad \omega^2 = k/m
+- T = \frac{2\pi}{\omega} = 2\pi\sqrt{\frac{m}{k}}
 charts: []
+visualization3d:
+  type: spring
+  options: {}

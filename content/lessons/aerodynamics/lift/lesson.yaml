@@ -3,17 +3,17 @@ subject: aerodynamics
 difficulty: university
 equation: L = \tfrac12 \rho v^2 S\, C_L
 concepts:
-  - lift
-  - angle-of-attack
-  - pressure
-  - circulation
+- lift
+- angle-of-attack
+- pressure
+- circulation
 prerequisites:
-  - newtons-second-law
-  - function-graph
+- newtons-second-law
+- function-graph
 related:
-  - stall-and-angle-of-attack
-  - lift-to-drag
-  - bernoulli
+- stall-and-angle-of-attack
+- lift-to-drag
+- bernoulli
 visualization:
   type: airfoil
   options: {}
@@ -31,19 +31,24 @@ parameters:
     value: 50
     unit: m/s
 variables:
-  - L
-  - \rho
-  - v
-  - S
-  - C_L
+- L
+- \rho
+- v
+- S
+- C_L
 derivation:
-  - \dot{p}_{\text{air}} = \dot m\, \Delta v_y
-  - L = \dot{p}_{\text{air}} = \rho v S \cdot v\sin\alpha \;\propto\; \rho v^2 S \sin\alpha
-  - L = \tfrac12 \rho v^2 S\, C_L(\alpha)
+- \dot{p}_{\text{air}} = \dot m\, \Delta v_y
+- L = \dot{p}_{\text{air}} = \rho v S \cdot v\sin\alpha \;\propto\; \rho v^2 S \sin\alpha
+- L = \tfrac12 \rho v^2 S\, C_L(\alpha)
 charts:
-  - domain:
-      - -5
-      - 20
-    marker: alpha
-    series:
-      - "x < 15 ? 0.11*(x+2) : 1.87 - 0.19*(x-15)"
+- domain:
+  - -5
+  - 20
+  marker: alpha
+  series:
+  - 'x < 15 ? 0.11*(x+2) : 1.87 - 0.19*(x-15)'
+visualization3d:
+  type: airfoil
+  options:
+    models:
+    - airplane
