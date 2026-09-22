@@ -1,0 +1,33 @@
+id: ionic-and-covalent-bonding
+subject: chemistry
+difficulty: high-school
+equation: "\\Delta\\chi = |\\chi_1 - \\chi_2|"
+concepts:
+  - ionic-bond
+  - covalent-bond
+  - electronegativity
+  - octet-rule
+  - valence-electron
+prerequisites:
+  - periodic-table
+  - periodic-trends
+related:
+  - chemical-reaction
+  - ph-scale
+visualization:
+  type: periodic-table
+  options: {}
+parameters:
+  Z:
+    min: 1
+    max: 86
+    step: 1
+    value: 9
+variables:
+  - Z
+  - \chi
+derivation:
+  - "Z \\Rightarrow \\text{valence-electron count (from position in the table)}"
+  - "\\Delta\\chi = |\\chi_1 - \\chi_2|"
+  - "\\Delta\\chi \\text{ large} \\Rightarrow \\text{electron transfer; } \\Delta\\chi \\text{ small} \\Rightarrow \\text{electron sharing}"
+charts: []

@@ -1,0 +1,55 @@
+id: eigenvectors
+subject: algebra
+difficulty: university
+equation: 'M\mathbf{v} = \lambda\mathbf{v}'
+concepts:
+  - eigenvectors
+  - eigenvalues
+  - invariant-directions
+prerequisites:
+  - matrices-as-transformations
+  - determinant
+related:
+  - determinant
+visualization:
+  type: matrix-transform
+  options: {}
+parameters:
+  a:
+    min: -3
+    max: 3
+    step: 0.05
+    value: 2
+  b:
+    min: -3
+    max: 3
+    step: 0.05
+    value: 1
+  c:
+    min: -3
+    max: 3
+    step: 0.05
+    value: 1
+  d:
+    min: -3
+    max: 3
+    step: 0.05
+    value: 2
+  vx:
+    min: -5
+    max: 5
+    step: 0.05
+    value: 1
+  vy:
+    min: -4
+    max: 4
+    step: 0.05
+    value: 1
+variables:
+  - I
+  - \det
+derivation:
+  - M\mathbf{v} = \lambda\mathbf{v}
+  - (M - \lambda I)\mathbf{v} = 0
+  - \det(M - \lambda I) = 0
+charts: []

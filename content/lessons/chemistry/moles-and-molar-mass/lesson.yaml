@@ -1,0 +1,53 @@
+id: moles-and-molar-mass
+subject: chemistry
+difficulty: high-school
+equation: "n = \\dfrac{m}{M}"
+concepts:
+  - mole
+  - molar-mass
+  - avogadro-constant
+  - amount-of-substance
+prerequisites:
+  - atomic-structure
+related:
+  - dilution-molarity
+  - ideal-gas-law
+visualization:
+  type: function-plot
+  options:
+    expr: x/M
+    domain:
+      - 0
+      - 500
+    range:
+      - 0
+      - 30
+    mode: plain
+parameters:
+  M:
+    min: 2
+    max: 200
+    step: 0.5
+    value: 18.015
+    unit: g/mol
+  x:
+    min: 0
+    max: 500
+    step: 1
+    value: 90
+    unit: g
+variables:
+  - m
+  - M
+  - n
+  - N_A
+derivation:
+  - "n = \\dfrac{m}{M}"
+  - "N = n \\cdot N_A"
+  - "N = \\dfrac{m}{M}\\,N_A"
+charts:
+  - domain:
+      - 0
+      - 500
+    series:
+      - x/M*6.022e23

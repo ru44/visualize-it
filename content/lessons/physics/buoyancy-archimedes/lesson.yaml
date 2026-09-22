@@ -1,0 +1,44 @@
+id: buoyancy-archimedes
+subject: physics
+difficulty: high-school
+equation: F_b = \rho_{fluid} V_{sub}\, g
+concepts:
+  - buoyancy
+  - archimedes-principle
+  - density
+prerequisites:
+  - pressure-in-fluids
+related:
+  - pressure-in-fluids
+  - bernoulli-and-flow-rate
+visualization:
+  type: buoyancy
+  options: {}
+parameters:
+  rhoObj:
+    min: 50
+    max: 3000
+    step: 10
+    value: 600
+    unit: kg/m³
+  rhoFluid:
+    min: 700
+    max: 1600
+    step: 10
+    value: 1000
+    unit: kg/m³
+  V:
+    min: 1
+    max: 50
+    step: 1
+    value: 10
+    unit: L
+variables:
+  - F_b
+  - V_{sub}, V
+  - \rho_{obj}, \rho_{fluid}
+derivation:
+  - F_b = \rho_{fluid} V_{sub}\, g
+  - W = \rho_{obj} V g
+  - F_b = W \;\Rightarrow\; \frac{V_{sub}}{V} = \frac{\rho_{obj}}{\rho_{fluid}}
+charts: []

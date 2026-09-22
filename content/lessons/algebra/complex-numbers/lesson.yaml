@@ -1,0 +1,45 @@
+id: complex-numbers
+subject: algebra
+difficulty: high-school
+equation: 'zw = (ac - bd) + (ad + bc)i'
+concepts:
+  - complex-numbers
+  - imaginary-unit
+  - modulus
+  - argument
+prerequisites:
+  - quadratic-roots
+related:
+  - vectors
+  - powers-of-complex-numbers
+visualization:
+  type: complex-plane
+  options:
+    op: mul
+parameters:
+  a:
+    min: -4
+    max: 4
+    step: 0.05
+    value: 1
+  b:
+    min: -4
+    max: 4
+    step: 0.05
+    value: 1
+  c:
+    min: -4
+    max: 4
+    step: 0.05
+    value: 0
+  d:
+    min: -4
+    max: 4
+    step: 0.05
+    value: 1
+variables: []
+derivation:
+  - z = a + bi, \quad w = c + di
+  - zw = ac + adi + bci + bdi^2
+  - zw = (ac - bd) + (ad + bc)i
+charts: []

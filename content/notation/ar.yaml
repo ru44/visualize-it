@@ -1,142 +1,999 @@
-# دليل الرموز بالعربية. المفتاح هو رمز LaTeX كما يظهر في الصيغ. الحقول: name (الاسم)، read (كيف يُقرأ)، meaning (المعنى)، example، group.
-\alpha: { name: ألفا, read: "ألفا", meaning: "زاوية (زاوية الهجوم في الديناميكا الهوائية) أو ثابت صغير.", group: greek }
-\beta: { name: بيتا, read: "بيتا", meaning: "زاوية ثانية أو معدل؛ في نموذج SIR هي معدل العدوى.", group: greek }
-\gamma: { name: غاما, read: "غاما", meaning: "زاوية ثالثة أو معدل؛ معدل الشفاء في نموذج SIR، ونسبة السعات الحرارية في الغازات.", group: greek }
-\delta: { name: دلتا الصغيرة, read: "دلتا", meaning: "مسافة صغيرة أو حد للخطأ، كما في تعريف النهاية بإبسيلون ودلتا.", group: greek }
-\Delta: { name: دلتا الكبيرة, read: "دلتا", meaning: "التغير في كمية: Δx تعني «التغير في x»، أي القيمة النهائية ناقص الابتدائية.", example: '\Delta x = x_2 - x_1', group: greek }
-\epsilon: { name: إبسيلون, read: "إبسيلون", meaning: "عدد موجب صغير، خطأ مسموح به.", group: greek }
-\varepsilon: { name: إبسيلون, read: "إبسيلون", meaning: "عدد موجب صغير، خطأ مسموح به، كما في «ضمن ε من النهاية».", group: greek }
-\theta: { name: ثيتا, read: "ثيتا", meaning: "زاوية، تُقاس عادة من محور x الموجب.", group: greek }
-\lambda: { name: لامدا, read: "لامدا", meaning: "الطول الموجي؛ المعدل المتوسط في توزيع بواسون؛ قيمة ذاتية في الجبر الخطي.", group: greek }
-\mu: { name: مو, read: "مو", meaning: "متوسط التوزيع؛ معامل الاحتكاك؛ البادئة مايكرو (جزء من مليون).", group: greek }
-\nu: { name: نو, read: "نو", meaning: "التردد في الفيزياء أو اللزوجة الحركية في الموائع.", group: greek }
-\pi: { name: باي, read: "باي", meaning: "نسبة محيط الدائرة إلى قطرها، 3.14159…", group: greek }
-\rho: { name: رو, read: "رو", meaning: "الكثافة: الكتلة في وحدة الحجم (kg/m³). كثافة الهواء عند سطح البحر نحو 1.225 kg/m³.", group: greek }
-\sigma: { name: سيغما الصغيرة, read: "سيغما", meaning: "الانحراف المعياري، أي البعد النموذجي للبيانات عن المتوسط؛ و σ² هو التباين.", group: greek }
-\Sigma: { name: سيغما الكبيرة, read: "سيغما", meaning: "علامة الجمع: اجمع الحدود التي تليها.", group: greek }
-\sum: { name: المجموع, read: "مجموع", meaning: "اجمع كل الحدود، والدليل يجري من الحد الأدنى إلى الأعلى.", example: '\sum_{i=1}^{n} x_i = x_1 + x_2 + \dots + x_n', group: operator }
-\tau: { name: تاو, read: "تاو", meaning: "ثابت زمني، أي الزمن الذي تتغير فيه عملية أسية بعامل e؛ وأيضًا عزم الدوران.", group: greek }
-\phi: { name: فاي, read: "فاي", meaning: "زاوية الطور: أين تبدأ الموجة في دورتها. وأيضًا النسبة الذهبية.", group: greek }
-\varphi: { name: فاي, read: "فاي", meaning: "زاوية الطور: أين تبدأ الموجة في دورتها.", group: greek }
-\Phi: { name: فاي الكبيرة, read: "فاي", meaning: "التدفق المغناطيسي؛ أو دالة التوزيع التراكمي للتوزيع الطبيعي المعياري.", group: greek }
-\omega: { name: أوميغا, read: "أوميغا", meaning: "التردد الزاوي ω = 2πf (راديان في الثانية)؛ السرعة الزاوية للدوران.", group: greek }
-\Omega: { name: أوميغا الكبيرة, read: "أوميغا", meaning: "وحدة الأوم للمقاومة الكهربائية؛ أو مجموعة كل النتائج في الاحتمال.", group: greek }
-\eta: { name: إيتا, read: "إيتا", meaning: "الكفاءة: الطاقة النافعة الخارجة مقسومة على الطاقة الداخلة.", group: greek }
-\kappa: { name: كابا, read: "كابا", meaning: "انحناء أو ثابت تناسب.", group: greek }
-\chi: { name: كاي, read: "كاي", meaning: "تظهر في إحصائية مربع كاي.", group: greek }
-\psi: { name: بساي, read: "بساي", meaning: "دالة موجية في ميكانيكا الكم أو دالة انسياب في الموائع.", group: greek }
-\xi: { name: كسي, read: "كسي", meaning: "متغير وهمي أو متغير عشوائي.", group: greek }
-\zeta: { name: زيتا, read: "زيتا", meaning: "نسبة التخميد في الاهتزازات.", group: greek }
-\int: { name: علامة التكامل, read: "تكامل", meaning: "اجمع عددًا لا نهائيًا من الشرائح الرفيعة جدًا؛ المساحة تحت المنحنى بين الحدين.", example: '\int_a^b f(x)\,dx', group: calculus }
-\lim: { name: النهاية, read: "نهاية", meaning: "القيمة التي تقترب منها الدالة عندما يقترب مدخلها من نقطة، دون الحاجة إلى بلوغها.", example: '\lim_{x \to 0} \frac{\sin x}{x} = 1', group: calculus }
-\partial: { name: علامة المشتقة الجزئية, read: "جزئي", meaning: "معدل التغير بالنسبة إلى متغير واحد مع تثبيت بقية المتغيرات.", example: '\frac{\partial f}{\partial x}', group: calculus }
-\nabla: { name: نابلا, read: "دل", meaning: "مؤثر التدرج: متجه كل المشتقات الجزئية، ويشير إلى اتجاه أشد صعود.", example: '\nabla f = (f_x, f_y)', group: calculus }
-\to: { name: السهم, read: "يقترب من / يتحول إلى", meaning: "في النهاية يقترب المدخل من هذه القيمة؛ وفي التفاعلات «يتحول إلى».", group: calculus }
-\infty: { name: ما لا نهاية, read: "ما لا نهاية", meaning: "بلا حد: أكبر من أي عدد. وليس عددًا في ذاته.", group: calculus }
-"'": { name: الشرطة, read: "شرطة", meaning: "المشتقة: f′(x) هي معدل تغير f؛ و f″ المشتقة الثانية.", example: "f'(x)", group: calculus }
-\dot: { name: النقطة, read: "نقطة", meaning: "نقطة فوق الكمية تعني معدل تغيرها في الزمن: ẍ التسارع، و ṁ الكتلة في الثانية.", example: '\dot{x} = \frac{dx}{dt}', group: calculus }
-\ddot: { name: النقطتان, read: "نقطتان", meaning: "المشتقة الثانية في الزمن: ẍ هو التسارع.", group: calculus }
-d: { name: d التفاضلية, read: "دي", meaning: "في dx أو dt: تغير صغير جدًا في ذلك المتغير. و dy/dx مشتقة y بالنسبة إلى x.", group: calculus }
-\propto: { name: يتناسب مع, read: "يتناسب مع", meaning: "يكبر معه بالخطوة نفسها: تضاعف أحدهما يضاعف الآخر. y ∝ x تعني y = ثابت × x.", group: relation }
-\approx: { name: يساوي تقريبًا, read: "يساوي تقريبًا", meaning: "متساويان مع خطأ صغير.", group: relation }
-\ne: { name: لا يساوي, read: "لا يساوي", meaning: "الطرفان مختلفان.", group: relation }
-\neq: { name: لا يساوي, read: "لا يساوي", meaning: "الطرفان مختلفان.", group: relation }
-\le: { name: أصغر من أو يساوي, read: "على الأكثر", meaning: "أصغر من أو يساوي.", group: relation }
-\leq: { name: أصغر من أو يساوي, read: "على الأكثر", meaning: "أصغر من أو يساوي.", group: relation }
-\ge: { name: أكبر من أو يساوي, read: "على الأقل", meaning: "أكبر من أو يساوي.", group: relation }
-\geq: { name: أكبر من أو يساوي, read: "على الأقل", meaning: "أكبر من أو يساوي.", group: relation }
-\ll: { name: أصغر بكثير, read: "أصغر بكثير من", meaning: "أصغر بعامل كبير.", group: relation }
-\gg: { name: أكبر بكثير, read: "أكبر بكثير من", meaning: "أكبر بعامل كبير.", group: relation }
-\pm: { name: زائد أو ناقص, read: "زائد أو ناقص", meaning: "حالتان معًا: واحدة بـ + وأخرى بـ −. تُستخدم لجذري المعادلة التربيعية ولهوامش الخطأ.", group: relation }
-\mp: { name: ناقص أو زائد, read: "ناقص أو زائد", meaning: "الإشارة المعاكسة لاختيار ± سابق في الصيغة نفسها.", group: relation }
-\cdot: { name: الضرب / الضرب القياسي, read: "ضرب", meaning: "الضرب؛ وبين المتجهات الضرب القياسي.", group: operator }
-\times: { name: الضرب / الضرب الاتجاهي, read: "ضرب", meaning: "الضرب؛ وبين المتجهات الضرب الاتجاهي (متجه عمودي على كليهما).", group: operator }
-\sqrt: { name: الجذر التربيعي, read: "جذر", meaning: "العدد الذي إذا ضُرب في نفسه أعطى ما تحت العلامة.", group: operator }
-\frac: { name: الكسر, read: "على", meaning: "البسط مقسومًا على المقام.", group: operator }
-\Rightarrow: { name: يستلزم, read: "إذن", meaning: "إذا صح الطرف الأيسر تبع الأيمن.", group: relation }
-\iff: { name: إذا وفقط إذا, read: "إذا وفقط إذا", meaning: "كل طرف يستلزم الآخر؛ العبارتان متكافئتان.", group: relation }
-\mid: { name: بشرط, read: "بشرط", meaning: "في P(A | B): احتمال A بشرط وقوع B.", group: probability }
-\binom: { name: معامل ذي الحدين, read: "n اختيار k", meaning: "عدد طرق اختيار k عنصرًا من n عندما لا يهم الترتيب.", example: '\binom{n}{k} = \frac{n!}{k!\,(n-k)!}', group: probability }
-"!": { name: المضروب, read: "مضروب", meaning: "n! = n × (n−1) × … × 1، عدد طرق ترتيب n عنصرًا.", example: '5! = 120', group: probability }
-\in: { name: ينتمي إلى, read: "ينتمي إلى", meaning: "عنصر في المجموعة.", group: sets }
-\subseteq: { name: مجموعة جزئية, read: "مجموعة جزئية من", meaning: "كل عنصر في المجموعة اليسرى موجود في اليمنى أيضًا.", group: sets }
-\cup: { name: الاتحاد, read: "أو", meaning: "كل ما في أي من المجموعتين؛ وللحوادث «A أو B».", group: sets }
-\cap: { name: التقاطع, read: "و", meaning: "كل ما في المجموعتين معًا؛ وللحوادث «A و B».", group: sets }
-\mathbb: { name: مجموعات الأعداد, read: "R، الأعداد الحقيقية", meaning: "ℝ مجموعة الأعداد الحقيقية؛ ℕ الأعداد الطبيعية؛ ℤ الأعداد الصحيحة.", group: sets }
-\dots: { name: نقاط الحذف, read: "وهكذا", meaning: "يستمر النمط.", group: operator }
-\cdots: { name: نقاط الحذف, read: "وهكذا", meaning: "يستمر النمط.", group: operator }
-\langle: { name: قوسا المتوسط, read: "متوسط", meaning: "⟨v²⟩ هو متوسط v² على كل الجسيمات.", group: operator }
-\hat: { name: القبعة, read: "قبعة", meaning: "تقدير من البيانات: p̂ هي النسبة المرصودة التي تقدر الاحتمال الحقيقي p.", group: statistics }
-\bar: { name: الشريط, read: "شريط", meaning: "متوسط: x̄ هو متوسط قيم x.", group: statistics }
-\vec: { name: سهم المتجه, read: "متجه", meaning: "كمية لها اتجاه إلى جانب مقدارها.", group: operator }
-\mathbf: { name: المتجه الغليظ, read: "متجه", meaning: "الحروف الغليظة متجهات: كميات لها اتجاه مثل القوة والسرعة.", group: operator }
-\text: { name: نص, read: "", meaning: "كلمات عادية داخل الصيغة.", group: layout }
-\rightleftharpoons: { name: تفاعل انعكاسي, read: "في توازن مع", meaning: "يجري التفاعل في الاتجاهين معًا؛ وعند التوازن يتساوى المعدلان.", group: relation }
-\gets: { name: الإسناد, read: "يصبح", meaning: "في الخوارزميات، x ← 5 تخزن 5 في x.", group: computer-science }
-\searrow: { name: سهم التناقص, read: "يتناقص إلى", meaning: "تنخفض الكمية نحو القيمة.", group: relation }
-\nearrow: { name: سهم التزايد, read: "يتزايد إلى", meaning: "ترتفع الكمية نحو القيمة.", group: relation }
-\arg: { name: الوسيطة, read: "arg", meaning: "argmax f هو المدخل الذي تكون f عنده أكبر ما يمكن، لا القيمة الكبرى نفسها.", group: function }
-\sin: { name: الجيب, read: "جا", meaning: "لزاوية على دائرة الوحدة، ارتفاع النقطة (إحداثي y).", group: function }
-\cos: { name: جيب التمام, read: "جتا", meaning: "لزاوية على دائرة الوحدة، الموضع الأفقي للنقطة (إحداثي x).", group: function }
-\tan: { name: الظل, read: "ظا", meaning: "الجيب مقسومًا على جيب التمام؛ ميل الخط عند تلك الزاوية.", group: function }
-\atan: { name: الظل العكسي, read: "ظا العكسي", meaning: "الزاوية التي ظلها هو العدد المعطى.", group: function }
-\arctan: { name: الظل العكسي, read: "ظا العكسي", meaning: "الزاوية التي ظلها هو العدد المعطى.", group: function }
-\log: { name: اللوغاريتم, read: "لو", meaning: "القوة التي ترفع إليها الأساس لتحصل على العدد: log₁₀(1000) = 3.", group: function }
-\ln: { name: اللوغاريتم الطبيعي, read: "لو الطبيعي", meaning: "لوغاريتم أساسه e ≈ 2.718؛ ln(e^x) = x.", group: function }
-\exp: { name: الدالة الأسية, read: "e أس", meaning: "exp(x) = eˣ، الدالة التي يساوي معدل تغيرها قيمتها.", group: function }
-\tanh: { name: الظل الزائدي, read: "tanh", meaning: "دالة على شكل S ترتفع من −1 إلى 1؛ تظهر في مسائل السرعة الحدية.", group: function }
-\max: { name: القيمة الكبرى, read: "أكبر", meaning: "أكبر القيم المذكورة.", group: function }
-\min: { name: القيمة الصغرى, read: "أصغر", meaning: "أصغر القيم المذكورة.", group: function }
-\erf: { name: دالة الخطأ, read: "erf", meaning: "المساحة تحت منحنى الجرس، تُستخدم لحساب الاحتمالات الطبيعية.", group: function }
-\operatorname: { name: دالة مسماة, read: "", meaning: "دالة تُكتب باسمها مثل Var أو erf.", group: function }
-\mathrm: { name: نص قائم, read: "", meaning: "الوحدات والأسماء تُكتب بخط قائم مثل kg أو Bin.", group: layout }
-e: { name: عدد أويلر, read: "e", meaning: "2.71828…، أساس النمو الطبيعي؛ وفي الفيزياء شحنة الإلكترون.", group: constant }
-i: { name: دليل / الوحدة التخيلية, read: "i", meaning: "دليل عدّ في المجاميع (i = 1, 2, …)؛ وفي الأعداد المركبة √−1.", group: constant }
-j: { name: دليل, read: "j", meaning: "دليل عدّ ثانٍ.", group: constant }
-k: { name: ثابت / عدد, read: "k", meaning: "ثابت تناسب (ثابت النابض، ثابت المعدل) أو عدد في الاحتمال.", group: letter }
-n: { name: العدد, read: "n", meaning: "كم: محاولات أو عناصر أو مولات أو مستطيلات.", group: letter }
-N: { name: العدد الكلي, read: "N", meaning: "عدد كلي: للمحاولات أو الجسيمات أو الأشخاص.", group: letter }
-t: { name: الزمن, read: "t", meaning: "الزمن، بالثواني عادة.", group: letter }
-x: { name: x, read: "x", meaning: "مدخل الدالة، أو موضع أفقي.", group: letter }
-y: { name: y, read: "y", meaning: "مخرج الدالة، أو موضع رأسي.", group: letter }
-z: { name: z, read: "z", meaning: "إحداثي ثالث، أو مخرج دالة في متغيرين.", group: letter }
-f: { name: الدالة, read: "f", meaning: "قاعدة تحول مدخلًا إلى مخرج؛ f(x) مخرجها عند x.", group: letter }
-g: { name: الجاذبية / دالة, read: "g", meaning: "تسارع الجاذبية 9.81 m/s² على الأرض؛ أو دالة ثانية.", group: letter }
-h: { name: خطوة صغيرة / ارتفاع, read: "h", meaning: "خطوة صغيرة في المدخل (كما في نهاية المشتقة) أو ارتفاع.", group: letter }
-a: { name: a, read: "a", meaning: "معامل، أو الحد الأدنى للتكامل، أو التسارع.", group: letter }
-b: { name: b, read: "b", meaning: "معامل أو الحد الأعلى للتكامل.", group: letter }
-c: { name: c, read: "c", meaning: "ثابت؛ سرعة الضوء في النسبية؛ الوتر في مبرهنة فيثاغورس.", group: letter }
-m: { name: الكتلة / الميل, read: "m", meaning: "الكتلة في الفيزياء؛ ميل الخط في الجبر.", group: letter }
-v: { name: السرعة, read: "v", meaning: "السرعة مع اتجاه، بوحدة m/s.", group: letter }
-u: { name: u, read: "u", meaning: "متغير تعويض أو سرعة ابتدائية.", group: letter }
-p: { name: الاحتمال / كمية الحركة, read: "p", meaning: "احتمال بين 0 و 1؛ وفي الميكانيكا كمية الحركة p = mv؛ وفي الغازات الضغط.", group: letter }
-q: { name: الشحنة, read: "q", meaning: "شحنة كهربائية بالكولوم؛ أو 1 − p في الاحتمال.", group: letter }
-r: { name: نصف القطر / المعدل, read: "r", meaning: "نصف قطر أو مسافة من المركز؛ وفي نماذج النمو معدل.", group: letter }
-s: { name: s, read: "s", meaning: "المسافة المقطوعة، أو معامل الانتقاء، أو الثواني.", group: letter }
-w: { name: w, read: "w", meaning: "وزن أو عرض.", group: letter }
-A: { name: المساحة / السعة, read: "A", meaning: "المساحة، أو سعة الموجة، أو حادثة في الاحتمال.", group: letter }
-B: { name: المجال المغناطيسي / حادثة, read: "B", meaning: "شدة المجال المغناطيسي بالتسلا؛ أو حادثة ثانية في الاحتمال.", group: letter }
-C: { name: السعة الكهربائية / ثابت, read: "C", meaning: "السعة بالفاراد؛ ثابت التكامل؛ C(n,k) تعدّ التوافيق.", group: letter }
-D: { name: السحب / القطر, read: "D", meaning: "قوة السحب، أو القطر، أو مشتقة اتجاهية.", group: letter }
-E: { name: الطاقة / المجال / التوقع, read: "E", meaning: "الطاقة بالجول؛ المجال الكهربائي بـ V/m؛ E[X] القيمة المتوقعة لـ X.", group: letter }
-F: { name: القوة, read: "F", meaning: "القوة بالنيوتن.", group: letter }
-G: { name: ثابت الجاذبية, read: "G", meaning: "6.674 × 10⁻¹¹ N·m²/kg²، شدة الجاذبية.", group: constant }
-H: { name: H, read: "H", meaning: "ارتفاع، أو مصفوفة هيس للمشتقات الثانية.", group: letter }
-I: { name: التيار / المصابون, read: "I", meaning: "التيار الكهربائي بالأمبير؛ مجموعة المصابين في نموذج الوباء.", group: letter }
-J: { name: J, read: "J", meaning: "كثافة التيار أو الجول.", group: letter }
-K: { name: القدرة الاستيعابية / ثابت التوازن, read: "K", meaning: "عدد الأفراد الذي تتحمله البيئة؛ أو ثابت توازن كيميائي.", group: letter }
-L: { name: الطول / الرفع / النهاية / الحث, read: "L", meaning: "طول، أو قوة الرفع، أو قيمة النهاية، أو الحث بالهنري.", group: letter }
-M: { name: الكتلة / عدد ماخ, read: "M", meaning: "كتلة كبيرة (كوكب)، أو الكتلة المولية، أو عدد ماخ.", group: letter }
-P: { name: الضغط / الاحتمال / القدرة, read: "P", meaning: "الضغط بالباسكال؛ P(A) احتمال A؛ القدرة الكهربائية بالواط؛ عدد الأفراد.", group: letter }
-Q: { name: الحرارة / الشحنة, read: "Q", meaning: "طاقة حرارية بالجول، أو الشحنة الكلية.", group: letter }
-R: { name: المقاومة / ثابت الغازات / المدى, read: "R", meaning: "المقاومة الكهربائية بالأوم؛ ثابت الغازات 8.314 J/(mol·K)؛ المدى؛ مجموعة المتعافين.", group: letter }
-S: { name: المساحة / الإنتروبيا / المعرضون, read: "S", meaning: "مساحة سطح (مساحة الجناح)، أو الإنتروبيا، أو المعرضون للعدوى في نموذج الوباء.", group: letter }
-T: { name: درجة الحرارة / الدور, read: "T", meaning: "درجة الحرارة بالكلفن، أو دور الاهتزاز بالثواني.", group: letter }
-U: { name: الطاقة الداخلية, read: "U", meaning: "الطاقة الداخلية للنظام.", group: letter }
-V: { name: الجهد / الحجم, read: "V", meaning: "الجهد بالفولت، أو الحجم باللتر أو m³.", group: letter }
-W: { name: الشغل / الوزن, read: "W", meaning: "الشغل المبذول أو الوزن، بالجول أو النيوتن.", group: letter }
-X: { name: متغير عشوائي, read: "X", meaning: "متغير عشوائي: كمية تعتمد قيمتها على الصدفة.", group: statistics }
-Y: { name: Y, read: "Y", meaning: "متغير عشوائي ثانٍ أو إحداثي.", group: statistics }
-Z: { name: الدرجة المعيارية, read: "Z", meaning: "قيمة مقيسة: كم انحرافًا معياريًا تبعد عن المتوسط.", group: statistics }
-O: { name: O الكبيرة, read: "O الكبيرة", meaning: "حد أعلى للنمو: O(n²) تعني أن زمن التنفيذ ينمو على الأكثر مثل n².", group: computer-science }
-o: { name: o الصغيرة, read: "o الصغيرة", meaning: "ينمو أبطأ بصرامة من: o(h) يتلاشى أسرع من h.", group: calculus }
+\alpha:
+  name: ألفا
+  read: ألفا
+  meaning: زاوية (زاوية الهجوم في الديناميكا الهوائية) أو ثابت صغير.
+  group: greek
+  simple: مدى ارتفاع مقدمة الجناح نحو الريح، ويُقاس بزاوية.
+  example: عند α = 5° يرفع الجناح جيدًا، وبعد نحو 15° ينفلت الهواء عنه ويحدث الانهيار الهوائي.
+  lesson: lift
+\beta:
+  name: بيتا
+  read: بيتا
+  meaning: زاوية ثانية أو معدل؛ في نموذج SIR هي معدل العدوى.
+  group: greek
+  simple: مدى سهولة انتقال المرض من شخص إلى آخر كل يوم.
+  example: β = 0.3 تعني أن كل مريض يعدي نحو 0.3 شخص في اليوم.
+  lesson: sir-epidemic
+\gamma:
+  name: غاما
+  read: غاما
+  meaning: زاوية ثالثة أو معدل؛ معدل الشفاء في نموذج SIR، ونسبة السعات الحرارية في الغازات.
+  group: greek
+  simple: مدى سرعة شفاء المرضى كل يوم.
+  example: γ = 0.1 تعني أن عُشر المرضى يشفون كل يوم، فيستمر المرض نحو 10 أيام.
+  lesson: sir-epidemic
+\delta:
+  name: دلتا الصغيرة
+  read: دلتا
+  meaning: مسافة صغيرة أو حد للخطأ، كما في تعريف النهاية بإبسيلون ودلتا.
+  group: greek
+  simple: مقدار صغير مسموح به من التحرك في المدخل.
+  example: ابقَ ضمن δ = 0.01 من النقطة فيبقى المخرج ضمن الخطأ الذي طلبته.
+  lesson: limit
+\Delta:
+  name: دلتا الكبيرة
+  read: دلتا
+  meaning: 'التغير في كمية: Δx تعني «التغير في x»، أي القيمة النهائية ناقص الابتدائية.'
+  example: ارتفعت الحرارة من 18° إلى 25°، فالتغير ΔT = 25 − 18 = 7°.
+  group: greek
+  simple: 'التغير: ما انتهيت إليه ناقص ما بدأت به.'
+  lesson: slope
+\epsilon:
+  name: إبسيلون
+  read: إبسيلون
+  meaning: عدد موجب صغير، خطأ مسموح به.
+  group: greek
+  simple: خطأ صغير مسموح به.
+  example: «ضمن ε = 0.001» تعني أن الجواب قد يبتعد بجزء من ألف على الأكثر.
+  lesson: limit
+\varepsilon:
+  name: إبسيلون
+  read: إبسيلون
+  meaning: عدد موجب صغير، خطأ مسموح به، كما في «ضمن ε من النهاية».
+  group: greek
+  simple: خطأ صغير مسموح به.
+  example: «ضمن ε = 0.001» تعني أن الجواب قد يبتعد بجزء من ألف على الأكثر.
+  lesson: limit
+\theta:
+  name: ثيتا
+  read: ثيتا
+  meaning: زاوية، تُقاس عادة من محور x الموجب.
+  group: greek
+  simple: 'زاوية: مقدار ما دار الشيء.'
+  example: θ = 90° ربع دورة، و θ = 360° دورة كاملة.
+  lesson: unit-circle
+\lambda:
+  name: لامدا
+  read: لامدا
+  meaning: الطول الموجي؛ المعدل المتوسط في توزيع بواسون؛ قيمة ذاتية في الجبر الخطي.
+  group: greek
+  simple: المسافة من قمة موجة إلى القمة التالية.
+  example: تموجات تبعد قممها 2 cm طولها الموجي λ = 2 cm.
+  lesson: sine-wave
+\mu:
+  name: مو
+  read: مو
+  meaning: متوسط التوزيع؛ معامل الاحتكاك؛ البادئة مايكرو (جزء من مليون).
+  group: greek
+  simple: 'المتوسط: اجمع كل الأعداد واقسم على عددها.'
+  example: الدرجات 4 و 6 و 8 متوسطها μ = (4 + 6 + 8) / 3 = 6.
+  lesson: mean-and-spread
+\nu:
+  name: نو
+  read: نو
+  meaning: التردد في الفيزياء أو اللزوجة الحركية في الموائع.
+  group: greek
+  simple: عدد الموجات التي تمر في الثانية.
+  example: ν = 440 Hz هي نغمة A، أي 440 قمة موجية كل ثانية.
+  lesson: sine-wave
+\pi:
+  name: باي
+  read: باي
+  meaning: نسبة محيط الدائرة إلى قطرها، 3.14159…
+  group: greek
+  simple: 'كم مرة يدخل عرض الدائرة في محيطها: أكثر من 3 بقليل.'
+  example: عجلة عرضها متر واحد تقطع 3.14 m في دورة واحدة.
+  lesson: circle
+\rho:
+  name: رو
+  read: رو
+  meaning: 'الكثافة: الكتلة في وحدة الحجم (kg/m³). كثافة الهواء عند سطح البحر نحو 1.225 kg/m³.'
+  group: greek
+  simple: مدى ثقل المادة بالنسبة إلى حجمها (كتلة اللتر أو المتر المكعب).
+  example: 'الماء: كيلوغرام لكل لتر. الهواء: نحو 1.2 g لكل لتر. الحديد: 7.9 kg لكل لتر.'
+  lesson: ideal-gas-law
+\sigma:
+  name: سيغما الصغيرة
+  read: سيغما
+  meaning: الانحراف المعياري، أي البعد النموذجي للبيانات عن المتوسط؛ و σ² هو التباين.
+  group: greek
+  simple: مدى ابتعاد الأعداد عادة عن متوسطها.
+  example: الدرجات 48 و 50 و 52 لها σ صغيرة، والدرجات 20 و 50 و 80 لها σ كبيرة.
+  lesson: mean-and-spread
+\Sigma:
+  name: سيغما الكبيرة
+  read: سيغما
+  meaning: 'علامة الجمع: اجمع الحدود التي تليها.'
+  group: greek
+  simple: اجمعها كلها.
+  example: Σ للأعداد 1 و 2 و 3 و 4 تساوي 10.
+  lesson: integral
+\sum:
+  name: المجموع
+  read: مجموع
+  meaning: اجمع كل الحدود، والدليل يجري من الحد الأدنى إلى الأعلى.
+  example: Σ من i = 1 إلى 4 للمقدار i هي 1 + 2 + 3 + 4 = 10.
+  group: operator
+  simple: اجمعها كلها، حدًا واحدًا لكل قيمة من قيم العدّاد.
+  lesson: integral
+\tau:
+  name: تاو
+  read: تاو
+  meaning: ثابت زمني، أي الزمن الذي تتغير فيه عملية أسية بعامل e؛ وأيضًا عزم الدوران.
+  group: greek
+  simple: الزمن الذي يحتاجه الشيء ليتلاشى نحو ثلثيه.
+  example: مكثف τ له ثانيتان يُشحن 63% بعد ثانيتين و 95% بعد 6 ثوانٍ.
+  lesson: rc-circuit
+\phi:
+  name: فاي
+  read: فاي
+  meaning: 'زاوية الطور: أين تبدأ الموجة في دورتها. وأيضًا النسبة الذهبية.'
+  group: greek
+  simple: أين تبدأ الموجة في دورتها.
+  example: φ = 90° تعني أن الموجة تبدأ من قمتها لا من الصفر.
+  lesson: sine-wave
+\varphi:
+  name: فاي
+  read: فاي
+  meaning: 'زاوية الطور: أين تبدأ الموجة في دورتها.'
+  group: greek
+  simple: أين تبدأ الموجة في دورتها.
+  example: φ = 90° تعني أن الموجة تبدأ من قمتها لا من الصفر.
+  lesson: sine-wave
+\Phi:
+  name: فاي الكبيرة
+  read: فاي
+  meaning: التدفق المغناطيسي؛ أو دالة التوزيع التراكمي للتوزيع الطبيعي المعياري.
+  group: greek
+  simple: كم من المجال يعبر سطحًا، أو مساحة منحنى الجرس حتى نقطة.
+  example: 'Φ(0) = 0.5: نصف منحنى الجرس يقع يسار الوسط.'
+  lesson: normal-distribution
+\omega:
+  name: أوميغا
+  read: أوميغا
+  meaning: التردد الزاوي ω = 2πf (راديان في الثانية)؛ السرعة الزاوية للدوران.
+  group: greek
+  simple: مدى سرعة الدوران، بالراديان في الثانية.
+  example: دورة كاملة في الثانية تساوي ω = 2π ≈ 6.28 rad/s.
+  lesson: simple-harmonic-motion
+\Omega:
+  name: أوميغا الكبيرة
+  read: أوميغا
+  meaning: وحدة الأوم للمقاومة الكهربائية؛ أو مجموعة كل النتائج في الاحتمال.
+  group: greek
+  simple: وحدة المقاومة الكهربائية، الأوم.
+  example: مقاومة 100 Ω تمرر 0.1 A عندما يدفعها جهد 10 V.
+  lesson: ohms-law
+\eta:
+  name: إيتا
+  read: إيتا
+  meaning: 'الكفاءة: الطاقة النافعة الخارجة مقسومة على الطاقة الداخلة.'
+  group: greek
+  simple: 'الكفاءة: كم مما تدخله يخرج على شكل شيء نافع.'
+  example: η = 0.3 تعني أن 30% من طاقة الوقود تحرك السيارة، والباقي يضيع حرارة.
+  lesson: entropy-and-heat-engines
+\kappa:
+  name: كابا
+  read: كابا
+  meaning: انحناء أو ثابت تناسب.
+  group: greek
+  simple: انحناء أو ثابت تناسب.
+\chi:
+  name: كاي
+  read: كاي
+  meaning: تظهر في إحصائية مربع كاي.
+  group: greek
+  simple: تظهر في إحصائية مربع كاي.
+\psi:
+  name: بساي
+  read: بساي
+  meaning: دالة موجية في ميكانيكا الكم أو دالة انسياب في الموائع.
+  group: greek
+  simple: دالة موجية في ميكانيكا الكم أو دالة انسياب في الموائع.
+\xi:
+  name: كسي
+  read: كسي
+  meaning: متغير وهمي أو متغير عشوائي.
+  group: greek
+  simple: متغير وهمي أو متغير عشوائي.
+\zeta:
+  name: زيتا
+  read: زيتا
+  meaning: نسبة التخميد في الاهتزازات.
+  group: greek
+  simple: نسبة التخميد في الاهتزازات.
+\int:
+  name: علامة التكامل
+  read: تكامل
+  meaning: اجمع عددًا لا نهائيًا من الشرائح الرفيعة جدًا؛ المساحة تحت المنحنى بين الحدين.
+  example: ∫ من 0 إلى 4 للمقدار x² dx تساوي 21.33، وهي المساحة تحت المنحنى بين 0 و 4.
+  group: calculus
+  simple: 'اجمع عددًا لا نهائيًا من الشرائح الرفيعة: المساحة تحت المنحنى.'
+  lesson: integral
+\lim:
+  name: النهاية
+  read: نهاية
+  meaning: القيمة التي تقترب منها الدالة عندما يقترب مدخلها من نقطة، دون الحاجة إلى بلوغها.
+  example: تتجه sin(x)/x إلى 1 عندما تتجه x إلى 0، مع أن 0/0 نفسها لا تعني شيئًا.
+  group: calculus
+  simple: إلى أين تتجه القيم كلما اقتربت أكثر وأكثر.
+  lesson: limit
+\partial:
+  name: علامة المشتقة الجزئية
+  read: جزئي
+  meaning: معدل التغير بالنسبة إلى متغير واحد مع تثبيت بقية المتغيرات.
+  example: على تل، ∂h/∂x هو الانحدار عند المشي شرقًا مع إهمال الشمال.
+  group: calculus
+  simple: الميل في اتجاه واحد فقط مع تثبيت بقية المدخلات.
+  lesson: gradient
+\nabla:
+  name: نابلا
+  read: دل
+  meaning: 'مؤثر التدرج: متجه كل المشتقات الجزئية، ويشير إلى اتجاه أشد صعود.'
+  example: على سطح يشبه الوعاء يشير ∇f بعيدًا عن القاع في كل مكان.
+  group: calculus
+  simple: السهم الذي يشير إلى أشد صعود، ويطول كلما زاد الانحدار.
+  lesson: gradient
+\to:
+  name: السهم
+  read: يقترب من / يتحول إلى
+  meaning: في النهاية يقترب المدخل من هذه القيمة؛ وفي التفاعلات «يتحول إلى».
+  group: calculus
+  simple: يتجه نحو.
+  example: x → 0 تعني أن x تقترب أكثر وأكثر من 0.
+  lesson: limit
+\infty:
+  name: ما لا نهاية
+  read: ما لا نهاية
+  meaning: 'بلا حد: أكبر من أي عدد. وليس عددًا في ذاته.'
+  group: calculus
+  simple: 'بلا نهاية: أكبر من أي عدد تستطيع تسميته.'
+  example: 1، 2، 3، … تستمر → ∞. إنها اتجاه لا مكان.
+  lesson: limits-at-infinity
+'''':
+  name: الشرطة
+  read: شرطة
+  meaning: 'المشتقة: f′(x) هي معدل تغير f؛ و f″ المشتقة الثانية.'
+  example: إذا كانت f موضع سيارة فإن f′ سرعتها.
+  group: calculus
+  simple: 'معدل التغير: كم يتغير المخرج بسرعة عندما يتغير المدخل.'
+  lesson: derivative
+\dot:
+  name: النقطة
+  read: نقطة
+  meaning: 'نقطة فوق الكمية تعني معدل تغيرها في الزمن: ẍ التسارع، و ṁ الكتلة في الثانية.'
+  example: ṡ هي السرعة إذا كانت s المسافة، و ṁ كيلوغرامات تتدفق في الثانية.
+  group: calculus
+  simple: نقطة فوق الحرف تعني «مدى سرعة تغيره مع الزمن».
+  lesson: derivative
+\ddot:
+  name: النقطتان
+  read: نقطتان
+  meaning: 'المشتقة الثانية في الزمن: ẍ هو التسارع.'
+  group: calculus
+  simple: نقطتان تعنيان «مدى سرعة تغير سرعة التغير نفسها».
+  example: ẋ السرعة، و ẍ التسارع.
+  lesson: kinematics-constant-acceleration
+d:
+  name: d التفاضلية
+  read: دي
+  meaning: 'في dx أو dt: تغير صغير جدًا في ذلك المتغير. و dy/dx مشتقة y بالنسبة إلى x.'
+  group: calculus
+  simple: خطوة صغيرة جدًا في تلك الكمية.
+  example: 'dx تغير صغير جدًا في x، و dy/dx هو الميل: الارتفاع لكل خطوة صغيرة.'
+  lesson: derivative
+\propto:
+  name: يتناسب مع
+  read: يتناسب مع
+  meaning: 'يكبر معه بالخطوة نفسها: تضاعف أحدهما يضاعف الآخر. y ∝ x تعني y = ثابت × x.'
+  group: relation
+  simple: 'يكبر معه بالخطوة نفسها: ضاعف أحدهما فيتضاعف الآخر.'
+  example: 'التكلفة ∝ عدد التذاكر: ثلاث تذاكر تكلف ثلاثة أضعاف تذكرة واحدة.'
+  lesson: slope
+\approx:
+  name: يساوي تقريبًا
+  read: يساوي تقريبًا
+  meaning: متساويان مع خطأ صغير.
+  group: relation
+  simple: يساوي تقريبًا.
+  example: π ≈ 3.14.
+\ne:
+  name: لا يساوي
+  read: لا يساوي
+  meaning: الطرفان مختلفان.
+  group: relation
+  simple: لا يساوي.
+  example: 3 ≠ 4.
+\neq:
+  name: لا يساوي
+  read: لا يساوي
+  meaning: الطرفان مختلفان.
+  group: relation
+  simple: لا يساوي.
+  example: 3 ≠ 4.
+\le:
+  name: أصغر من أو يساوي
+  read: على الأكثر
+  meaning: أصغر من أو يساوي.
+  group: relation
+  simple: أصغر من أو يساوي.
+  example: x ≤ 5 تسمح بـ 5 وبكل ما دونها.
+\leq:
+  name: أصغر من أو يساوي
+  read: على الأكثر
+  meaning: أصغر من أو يساوي.
+  group: relation
+  simple: أصغر من أو يساوي.
+  example: x ≤ 5 تسمح بـ 5 وبكل ما دونها.
+\ge:
+  name: أكبر من أو يساوي
+  read: على الأقل
+  meaning: أكبر من أو يساوي.
+  group: relation
+  simple: أكبر من أو يساوي.
+  example: x ≥ 5 تسمح بـ 5 وبكل ما فوقها.
+\geq:
+  name: أكبر من أو يساوي
+  read: على الأقل
+  meaning: أكبر من أو يساوي.
+  group: relation
+  simple: أكبر من أو يساوي.
+  example: x ≥ 5 تسمح بـ 5 وبكل ما فوقها.
+\ll:
+  name: أصغر بكثير
+  read: أصغر بكثير من
+  meaning: أصغر بعامل كبير.
+  group: relation
+  simple: أصغر بكثير من.
+  example: 1 ≪ 1000.
+\gg:
+  name: أكبر بكثير
+  read: أكبر بكثير من
+  meaning: أكبر بعامل كبير.
+  group: relation
+  simple: أكبر بكثير من.
+  example: 1000 ≫ 1.
+\pm:
+  name: زائد أو ناقص
+  read: زائد أو ناقص
+  meaning: 'حالتان معًا: واحدة بـ + وأخرى بـ −. تُستخدم لجذري المعادلة التربيعية ولهوامش الخطأ.'
+  group: relation
+  simple: 'جوابان في سطر واحد: مرة بالزائد ومرة بالناقص.'
+  example: x = 3 ± 2 تعني x = 5 أو x = 1.
+  lesson: quadratic-roots
+\mp:
+  name: ناقص أو زائد
+  read: ناقص أو زائد
+  meaning: الإشارة المعاكسة لاختيار ± سابق في الصيغة نفسها.
+  group: relation
+  simple: اختيار الإشارة المعاكس لعلامة ± سابقة في السطر نفسه.
+  example: a ± b ∓ c تقرن + مع − و − مع +.
+\cdot:
+  name: الضرب / الضرب القياسي
+  read: ضرب
+  meaning: الضرب؛ وبين المتجهات الضرب القياسي.
+  group: operator
+  simple: ضرب.
+  example: 3 · 4 = 12.
+\times:
+  name: الضرب / الضرب الاتجاهي
+  read: ضرب
+  meaning: الضرب؛ وبين المتجهات الضرب الاتجاهي (متجه عمودي على كليهما).
+  group: operator
+  simple: ضرب.
+  example: 3 × 4 = 12.
+\sqrt:
+  name: الجذر التربيعي
+  read: جذر
+  meaning: العدد الذي إذا ضُرب في نفسه أعطى ما تحت العلامة.
+  group: operator
+  simple: العدد الذي إذا ضربته في نفسه أعطاك ما بداخل الجذر.
+  example: √9 = 3 لأن 3 × 3 = 9.
+  lesson: exponents-and-powers
+\frac:
+  name: الكسر
+  read: على
+  meaning: البسط مقسومًا على المقام.
+  group: operator
+  simple: الأعلى مقسومًا على الأسفل.
+  example: '3/4 من البيتزا: قسّمها أربعًا وخذ ثلاثًا.'
+\Rightarrow:
+  name: يستلزم
+  read: إذن
+  meaning: إذا صح الطرف الأيسر تبع الأيمن.
+  group: relation
+  simple: إذن؛ إذا صح اليسار تبعه اليمين.
+  example: x = 2 ⇒ x² = 4.
+\iff:
+  name: إذا وفقط إذا
+  read: إذا وفقط إذا
+  meaning: كل طرف يستلزم الآخر؛ العبارتان متكافئتان.
+  group: relation
+  simple: كل طرف صحيح تمامًا عندما يصح الآخر.
+  example: x + 1 = 3 ⇔ x = 2.
+\mid:
+  name: بشرط
+  read: بشرط
+  meaning: 'في P(A | B): احتمال A بشرط وقوع B.'
+  group: probability
+  simple: '«بشرط»: انظر فقط إلى الحالات التي وقع فيها ما بعد الخط.'
+  example: P(مطر | غيوم) هو احتمال المطر في الأيام الغائمة وحدها.
+  lesson: bayes-theorem
+\binom:
+  name: معامل ذي الحدين
+  read: n اختيار k
+  meaning: عدد طرق اختيار k عنصرًا من n عندما لا يهم الترتيب.
+  example: 'من 3 أصدقاء يمكن اختيار 3 أزواج مختلفة: C(3,2) = 3.'
+  group: probability
+  simple: كم مجموعة مختلفة من k يمكنك اختيارها من n شيء.
+  lesson: combinations
+'!':
+  name: المضروب
+  read: مضروب
+  meaning: n! = n × (n−1) × … × 1، عدد طرق ترتيب n عنصرًا.
+  example: '3! = 3 × 2 × 1 = 6: طرق رصّ 3 أشخاص في صف.'
+  group: probability
+  simple: اضرب العدد في كل الأعداد الصحيحة التي تحته.
+  lesson: permutations
+\in:
+  name: ينتمي إلى
+  read: ينتمي إلى
+  meaning: عنصر في المجموعة.
+  group: sets
+  simple: واحد من.
+  example: 3 ∈ {1, 2, 3}.
+\subseteq:
+  name: مجموعة جزئية
+  read: مجموعة جزئية من
+  meaning: كل عنصر في المجموعة اليسرى موجود في اليمنى أيضًا.
+  group: sets
+  simple: كل ما في المجموعة الأولى موجود في الثانية أيضًا.
+  example: '{1, 2} ⊆ {1, 2, 3}.'
+\cup:
+  name: الاتحاد
+  read: أو
+  meaning: كل ما في أي من المجموعتين؛ وللحوادث «A أو B».
+  group: sets
+  simple: هذا أو ذاك (أو كلاهما).
+  example: 'A ∪ B: في A، أو في B، أو في كليهما.'
+  lesson: probability-basics
+\cap:
+  name: التقاطع
+  read: و
+  meaning: كل ما في المجموعتين معًا؛ وللحوادث «A و B».
+  group: sets
+  simple: كلاهما معًا.
+  example: 'A ∩ B: في A وفي B أيضًا.'
+  lesson: probability-basics
+\mathbb:
+  name: مجموعات الأعداد
+  read: R، الأعداد الحقيقية
+  meaning: ℝ مجموعة الأعداد الحقيقية؛ ℕ الأعداد الطبيعية؛ ℤ الأعداد الصحيحة.
+  group: sets
+  simple: مجموعة مشهورة من الأعداد تُكتب بحروف مجوفة.
+  example: 'ℝ: كل الأعداد على خط الأعداد. ℤ: الأعداد الصحيحة بما فيها السالبة.'
+\dots:
+  name: نقاط الحذف
+  read: وهكذا
+  meaning: يستمر النمط.
+  group: operator
+  simple: وهكذا.
+  example: 1، 2، 3، … تستمر إلى ما لا نهاية.
+\cdots:
+  name: نقاط الحذف
+  read: وهكذا
+  meaning: يستمر النمط.
+  group: operator
+  simple: وهكذا.
+  example: 1 + 2 + ⋯ + 10 تتابع النمط حتى 10.
+\langle:
+  name: قوسا المتوسط
+  read: متوسط
+  meaning: ⟨v²⟩ هو متوسط v² على كل الجسيمات.
+  group: operator
+  simple: متوسط ما بداخل القوسين.
+  example: ⟨v²⟩ هو متوسط مربعات سرعات كل الجسيمات.
+  lesson: ideal-gas-law
+\hat:
+  name: القبعة
+  read: قبعة
+  meaning: 'تقدير من البيانات: p̂ هي النسبة المرصودة التي تقدر الاحتمال الحقيقي p.'
+  group: statistics
+  simple: أفضل تقدير لدينا من البيانات، لا القيمة الحقيقية.
+  example: 'ارمِ 100 قطعة نقد فتحصل على 53 صورة: p̂ = 0.53، وهو تقديرنا للاحتمال الحقيقي p = 0.5.'
+  lesson: law-of-large-numbers
+\bar:
+  name: الشريط
+  read: شريط
+  meaning: 'متوسط: x̄ هو متوسط قيم x.'
+  group: statistics
+  simple: متوسط القيم.
+  example: x̄ للأعداد 2 و 4 و 6 هو 4.
+  lesson: mean-and-spread
+\vec:
+  name: سهم المتجه
+  read: متجه
+  meaning: كمية لها اتجاه إلى جانب مقدارها.
+  group: operator
+  simple: 'كمية لها اتجاه: سهم.'
+  example: 'السرعة المتجهة: 50 km/h شمالًا، لا 50 km/h فقط.'
+  lesson: vectors
+\mathbf:
+  name: المتجه الغليظ
+  read: متجه
+  meaning: 'الحروف الغليظة متجهات: كميات لها اتجاه مثل القوة والسرعة.'
+  group: operator
+  simple: 'الحروف الغليظة أسهم: لها اتجاه لا مقدار فقط.'
+  example: F قوة تدفع في اتجاه ما، لا «قوة 10 N» فقط.
+  lesson: vectors
+\text:
+  name: نص
+  read: ''
+  meaning: كلمات عادية داخل الصيغة.
+  group: layout
+  simple: كلمات عادية داخل الصيغة.
+  example: P(مطر) تستخدم كلمة «مطر» داخل الرياضيات.
+\rightleftharpoons:
+  name: تفاعل انعكاسي
+  read: في توازن مع
+  meaning: يجري التفاعل في الاتجاهين معًا؛ وعند التوازن يتساوى المعدلان.
+  group: relation
+  simple: يجري التفاعل في الاتجاهين معًا.
+  example: 'A ⇌ B: تتحول A إلى B بينما تعود B إلى A.'
+  lesson: chemical-equilibrium
+\gets:
+  name: الإسناد
+  read: يصبح
+  meaning: في الخوارزميات، x ← 5 تخزن 5 في x.
+  group: computer-science
+  simple: خزّن القيمة على اليمين في الاسم على اليسار.
+  example: x ← 5 تضع 5 في الصندوق المسمى x.
+  lesson: algorithms-and-complexity
+\searrow:
+  name: سهم التناقص
+  read: يتناقص إلى
+  meaning: تنخفض الكمية نحو القيمة.
+  group: relation
+  simple: ينخفض نحو.
+  example: تتناقص القيمة إلى النهاية.
+\nearrow:
+  name: سهم التزايد
+  read: يتزايد إلى
+  meaning: ترتفع الكمية نحو القيمة.
+  group: relation
+  simple: يرتفع نحو.
+  example: تتزايد القيمة إلى النهاية.
+\arg:
+  name: الوسيطة
+  read: arg
+  meaning: argmax f هو المدخل الذي تكون f عنده أكبر ما يمكن، لا القيمة الكبرى نفسها.
+  group: function
+  simple: أي مدخل، لا أي مخرج.
+  example: argmax تختار x التي تكون الدالة عندها أكبر ما يمكن، لا القيمة الكبرى نفسها.
+  lesson: linear-regression
+\sin:
+  name: الجيب
+  read: جا
+  meaning: لزاوية على دائرة الوحدة، ارتفاع النقطة (إحداثي y).
+  group: function
+  simple: ارتفاع نقطة على عجلة تدور، كنسبة من نصف قطر العجلة.
+  example: 'عند 30° تكون النقطة في منتصف الارتفاع: sin 30° = 0.5. وعند 90° في القمة: sin 90° = 1.'
+  lesson: unit-circle
+\cos:
+  name: جيب التمام
+  read: جتا
+  meaning: لزاوية على دائرة الوحدة، الموضع الأفقي للنقطة (إحداثي x).
+  group: function
+  simple: بُعد نقطة على عجلة تدور نحو اليمين، كنسبة من نصف القطر.
+  example: 'عند 0° تكون النقطة في أقصى اليمين: cos 0° = 1. وعند 90° تكون فوق تمامًا فتصير cos 90° = 0.'
+  lesson: unit-circle
+\tan:
+  name: الظل
+  read: ظا
+  meaning: الجيب مقسومًا على جيب التمام؛ ميل الخط عند تلك الزاوية.
+  group: function
+  simple: 'ميل الخط عند تلك الزاوية: الارتفاع مقسومًا على المسافة الأفقية.'
+  example: 'tan 45° = 1: عند 45° ترتفع بقدر ما تتقدم.'
+  lesson: tangent-function
+\atan:
+  name: الظل العكسي
+  read: ظا العكسي
+  meaning: الزاوية التي ظلها هو العدد المعطى.
+  group: function
+  simple: الزاوية التي ميلها هو العدد المعطى.
+  example: arctan 1 = 45°.
+  lesson: tangent-function
+\arctan:
+  name: الظل العكسي
+  read: ظا العكسي
+  meaning: الزاوية التي ظلها هو العدد المعطى.
+  group: function
+  simple: الزاوية التي ميلها هو العدد المعطى.
+  example: arctan 1 = 45°.
+  lesson: tangent-function
+\log:
+  name: اللوغاريتم
+  read: لو
+  meaning: 'القوة التي ترفع إليها الأساس لتحصل على العدد: log₁₀(1000) = 3.'
+  group: function
+  simple: 'يسأل: كم مرة أضرب 10 لأصل إلى هذا العدد؟'
+  example: log(1000) = 3 لأن 10 × 10 × 10 = 1000.
+  lesson: logarithms
+\ln:
+  name: اللوغاريتم الطبيعي
+  read: لو الطبيعي
+  meaning: لوغاريتم أساسه e ≈ 2.718؛ ln(e^x) = x.
+  group: function
+  simple: 'يسأل: كم مرة أضرب e (2.718…) لأصل إلى هذا العدد؟'
+  example: ln(7.39) ≈ 2 لأن e × e ≈ 7.39.
+  lesson: logarithms
+\exp:
+  name: الدالة الأسية
+  read: e أس
+  meaning: exp(x) = eˣ، الدالة التي يساوي معدل تغيرها قيمتها.
+  group: function
+  simple: اضرب e (2.718…) في نفسه بذلك العدد من المرات.
+  example: exp(2) = e × e ≈ 7.39. نمو يتسارع كلما كبر.
+  lesson: exponential-growth
+\tanh:
+  name: الظل الزائدي
+  read: tanh
+  meaning: دالة على شكل S ترتفع من −1 إلى 1؛ تظهر في مسائل السرعة الحدية.
+  group: function
+  simple: منحنى على شكل S يرتفع بسلاسة من −1 إلى 1 ثم يستوي.
+  example: 'سرعة مظلّي يسقط تتبع tanh: تزيد ثم تستوي عند السرعة الحدية.'
+  lesson: terminal-velocity
+\max:
+  name: القيمة الكبرى
+  read: أكبر
+  meaning: أكبر القيم المذكورة.
+  group: function
+  simple: أكبرها.
+  example: max(3, 7, 5) = 7.
+\min:
+  name: القيمة الصغرى
+  read: أصغر
+  meaning: أصغر القيم المذكورة.
+  group: function
+  simple: أصغرها.
+  example: min(3, 7, 5) = 3.
+\erf:
+  name: دالة الخطأ
+  read: erf
+  meaning: المساحة تحت منحنى الجرس، تُستخدم لحساب الاحتمالات الطبيعية.
+  group: function
+  simple: المساحة تحت منحنى الجرس بين الوسط ونقطة.
+  example: تجيب عن سؤال «أي نسبة من الناس ضمن انحراف معياري واحد من المتوسط؟» (نحو 68%).
+  lesson: normal-distribution
+\operatorname:
+  name: دالة مسماة
+  read: ''
+  meaning: دالة تُكتب باسمها مثل Var أو erf.
+  group: function
+  simple: دالة تُكتب باسمها.
+  example: Var(X) هي تباين X.
+\mathrm:
+  name: نص قائم
+  read: ''
+  meaning: الوحدات والأسماء تُكتب بخط قائم مثل kg أو Bin.
+  group: layout
+  simple: 'حروف قائمة: وحدات أو أسماء لا متغيرات.'
+  example: kg و Hz و sin.
+e:
+  name: عدد أويلر
+  read: e
+  meaning: 2.71828…، أساس النمو الطبيعي؛ وفي الفيزياء شحنة الإلكترون.
+  group: constant
+  simple: العدد 2.718…، معدل النمو الطبيعي.
+  example: 'مال بفائدة 100% تُركّب باستمرار يتضاعف بعامل e كل سنة: 1 → 2.718.'
+  lesson: exponential-growth
+i:
+  name: دليل / الوحدة التخيلية
+  read: i
+  meaning: دليل عدّ في المجاميع (i = 1, 2, …)؛ وفي الأعداد المركبة √−1.
+  group: constant
+  simple: إما عدّاد (الأول، الثاني، الثالث…) أو الوحدة التخيلية، الجذر التربيعي لـ −1.
+  example: في Σ يعدّ i الحدود. وفي الأعداد المركبة i² = −1.
+  lesson: complex-numbers
+j:
+  name: دليل
+  read: j
+  meaning: دليل عدّ ثانٍ.
+  group: constant
+  simple: دليل عدّ ثانٍ.
+k:
+  name: ثابت / عدد
+  read: k
+  meaning: ثابت تناسب (ثابت النابض، ثابت المعدل) أو عدد في الاحتمال.
+  group: letter
+  simple: ثابت تناسب (ثابت النابض، ثابت المعدل) أو عدد في الاحتمال.
+n:
+  name: العدد
+  read: n
+  meaning: 'كم: محاولات أو عناصر أو مولات أو مستطيلات.'
+  group: letter
+  simple: 'كم: محاولات أو عناصر أو مولات أو مستطيلات.'
+N:
+  name: العدد الكلي
+  read: N
+  meaning: 'عدد كلي: للمحاولات أو الجسيمات أو الأشخاص.'
+  group: letter
+  simple: 'عدد كلي: للمحاولات أو الجسيمات أو الأشخاص.'
+t:
+  name: الزمن
+  read: t
+  meaning: الزمن، بالثواني عادة.
+  group: letter
+  simple: الزمن، بالثواني عادة.
+x:
+  name: x
+  read: x
+  meaning: مدخل الدالة، أو موضع أفقي.
+  group: letter
+  simple: مدخل الدالة، أو موضع أفقي.
+y:
+  name: y
+  read: y
+  meaning: مخرج الدالة، أو موضع رأسي.
+  group: letter
+  simple: مخرج الدالة، أو موضع رأسي.
+z:
+  name: z
+  read: z
+  meaning: إحداثي ثالث، أو مخرج دالة في متغيرين.
+  group: letter
+  simple: إحداثي ثالث، أو مخرج دالة في متغيرين.
+f:
+  name: الدالة
+  read: f
+  meaning: قاعدة تحول مدخلًا إلى مخرج؛ f(x) مخرجها عند x.
+  group: letter
+  simple: قاعدة تحول مدخلًا إلى مخرج؛ f(x) مخرجها عند x.
+g:
+  name: الجاذبية / دالة
+  read: g
+  meaning: تسارع الجاذبية 9.81 m/s² على الأرض؛ أو دالة ثانية.
+  group: letter
+  simple: تسارع الجاذبية 9.81 m/s² على الأرض؛ أو دالة ثانية.
+h:
+  name: خطوة صغيرة / ارتفاع
+  read: h
+  meaning: خطوة صغيرة في المدخل (كما في نهاية المشتقة) أو ارتفاع.
+  group: letter
+  simple: خطوة صغيرة في المدخل (كما في نهاية المشتقة) أو ارتفاع.
+a:
+  name: a
+  read: a
+  meaning: معامل، أو الحد الأدنى للتكامل، أو التسارع.
+  group: letter
+  simple: معامل، أو الحد الأدنى للتكامل، أو التسارع.
+b:
+  name: b
+  read: b
+  meaning: معامل أو الحد الأعلى للتكامل.
+  group: letter
+  simple: معامل أو الحد الأعلى للتكامل.
+c:
+  name: c
+  read: c
+  meaning: ثابت؛ سرعة الضوء في النسبية؛ الوتر في مبرهنة فيثاغورس.
+  group: letter
+  simple: ثابت؛ سرعة الضوء في النسبية؛ الوتر في مبرهنة فيثاغورس.
+m:
+  name: الكتلة / الميل
+  read: m
+  meaning: الكتلة في الفيزياء؛ ميل الخط في الجبر.
+  group: letter
+  simple: الكتلة في الفيزياء؛ ميل الخط في الجبر.
+v:
+  name: السرعة
+  read: v
+  meaning: السرعة مع اتجاه، بوحدة m/s.
+  group: letter
+  simple: السرعة مع اتجاه، بوحدة m/s.
+u:
+  name: u
+  read: u
+  meaning: متغير تعويض أو سرعة ابتدائية.
+  group: letter
+  simple: متغير تعويض أو سرعة ابتدائية.
+p:
+  name: الاحتمال / كمية الحركة
+  read: p
+  meaning: احتمال بين 0 و 1؛ وفي الميكانيكا كمية الحركة p = mv؛ وفي الغازات الضغط.
+  group: letter
+  simple: احتمال بين 0 و 1؛ وفي الميكانيكا كمية الحركة p = mv؛ وفي الغازات الضغط.
+q:
+  name: الشحنة
+  read: q
+  meaning: شحنة كهربائية بالكولوم؛ أو 1 − p في الاحتمال.
+  group: letter
+  simple: شحنة كهربائية بالكولوم؛ أو 1 − p في الاحتمال.
+r:
+  name: نصف القطر / المعدل
+  read: r
+  meaning: نصف قطر أو مسافة من المركز؛ وفي نماذج النمو معدل.
+  group: letter
+  simple: نصف قطر أو مسافة من المركز؛ وفي نماذج النمو معدل.
+s:
+  name: s
+  read: s
+  meaning: المسافة المقطوعة، أو معامل الانتقاء، أو الثواني.
+  group: letter
+  simple: المسافة المقطوعة، أو معامل الانتقاء، أو الثواني.
+w:
+  name: w
+  read: w
+  meaning: وزن أو عرض.
+  group: letter
+  simple: وزن أو عرض.
+A:
+  name: المساحة / السعة
+  read: A
+  meaning: المساحة، أو سعة الموجة، أو حادثة في الاحتمال.
+  group: letter
+  simple: المساحة، أو سعة الموجة، أو حادثة في الاحتمال.
+B:
+  name: المجال المغناطيسي / حادثة
+  read: B
+  meaning: شدة المجال المغناطيسي بالتسلا؛ أو حادثة ثانية في الاحتمال.
+  group: letter
+  simple: شدة المجال المغناطيسي بالتسلا؛ أو حادثة ثانية في الاحتمال.
+C:
+  name: السعة الكهربائية / ثابت
+  read: C
+  meaning: السعة بالفاراد؛ ثابت التكامل؛ C(n,k) تعدّ التوافيق.
+  group: letter
+  simple: السعة بالفاراد؛ ثابت التكامل؛ C(n,k) تعدّ التوافيق.
+D:
+  name: السحب / القطر
+  read: D
+  meaning: قوة السحب، أو القطر، أو مشتقة اتجاهية.
+  group: letter
+  simple: قوة السحب، أو القطر، أو مشتقة اتجاهية.
+E:
+  name: الطاقة / المجال / التوقع
+  read: E
+  meaning: الطاقة بالجول؛ المجال الكهربائي بـ V/m؛ E[X] القيمة المتوقعة لـ X.
+  group: letter
+  simple: الطاقة بالجول؛ المجال الكهربائي بـ V/m؛ E[X] القيمة المتوقعة لـ X.
+F:
+  name: القوة
+  read: F
+  meaning: القوة بالنيوتن.
+  group: letter
+  simple: القوة بالنيوتن.
+G:
+  name: ثابت الجاذبية
+  read: G
+  meaning: 6.674 × 10⁻¹¹ N·m²/kg²، شدة الجاذبية.
+  group: constant
+  simple: مدى قوة الجاذبية بين أي كتلتين، وهي نفسها في كل الكون.
+  example: 'ضئيلة جدًا: كرتان كتلة كل منهما 1 kg على بعد متر تتجاذبان بقوة 0.00000000007 N.'
+  lesson: universal-gravitation
+H:
+  name: H
+  read: H
+  meaning: ارتفاع، أو مصفوفة هيس للمشتقات الثانية.
+  group: letter
+  simple: ارتفاع، أو مصفوفة هيس للمشتقات الثانية.
+I:
+  name: التيار / المصابون
+  read: I
+  meaning: التيار الكهربائي بالأمبير؛ مجموعة المصابين في نموذج الوباء.
+  group: letter
+  simple: التيار الكهربائي بالأمبير؛ مجموعة المصابين في نموذج الوباء.
+J:
+  name: J
+  read: J
+  meaning: كثافة التيار أو الجول.
+  group: letter
+  simple: كثافة التيار أو الجول.
+K:
+  name: القدرة الاستيعابية / ثابت التوازن
+  read: K
+  meaning: عدد الأفراد الذي تتحمله البيئة؛ أو ثابت توازن كيميائي.
+  group: letter
+  simple: عدد الأفراد الذي تتحمله البيئة؛ أو ثابت توازن كيميائي.
+L:
+  name: الطول / الرفع / النهاية / الحث
+  read: L
+  meaning: طول، أو قوة الرفع، أو قيمة النهاية، أو الحث بالهنري.
+  group: letter
+  simple: طول، أو قوة الرفع، أو قيمة النهاية، أو الحث بالهنري.
+M:
+  name: الكتلة / عدد ماخ
+  read: M
+  meaning: كتلة كبيرة (كوكب)، أو الكتلة المولية، أو عدد ماخ.
+  group: letter
+  simple: كتلة كبيرة (كوكب)، أو الكتلة المولية، أو عدد ماخ.
+P:
+  name: الضغط / الاحتمال / القدرة
+  read: P
+  meaning: الضغط بالباسكال؛ P(A) احتمال A؛ القدرة الكهربائية بالواط؛ عدد الأفراد.
+  group: letter
+  simple: الضغط بالباسكال؛ P(A) احتمال A؛ القدرة الكهربائية بالواط؛ عدد الأفراد.
+Q:
+  name: الحرارة / الشحنة
+  read: Q
+  meaning: طاقة حرارية بالجول، أو الشحنة الكلية.
+  group: letter
+  simple: طاقة حرارية بالجول، أو الشحنة الكلية.
+R:
+  name: المقاومة / ثابت الغازات / المدى
+  read: R
+  meaning: المقاومة الكهربائية بالأوم؛ ثابت الغازات 8.314 J/(mol·K)؛ المدى؛ مجموعة المتعافين.
+  group: letter
+  simple: المقاومة الكهربائية بالأوم؛ ثابت الغازات 8.314 J/(mol·K)؛ المدى؛ مجموعة المتعافين.
+S:
+  name: المساحة / الإنتروبيا / المعرضون
+  read: S
+  meaning: مساحة سطح (مساحة الجناح)، أو الإنتروبيا، أو المعرضون للعدوى في نموذج الوباء.
+  group: letter
+  simple: مساحة سطح (مساحة الجناح)، أو الإنتروبيا، أو المعرضون للعدوى في نموذج الوباء.
+T:
+  name: درجة الحرارة / الدور
+  read: T
+  meaning: درجة الحرارة بالكلفن، أو دور الاهتزاز بالثواني.
+  group: letter
+  simple: درجة الحرارة بالكلفن، أو دور الاهتزاز بالثواني.
+U:
+  name: الطاقة الداخلية
+  read: U
+  meaning: الطاقة الداخلية للنظام.
+  group: letter
+  simple: الطاقة الداخلية للنظام.
+V:
+  name: الجهد / الحجم
+  read: V
+  meaning: الجهد بالفولت، أو الحجم باللتر أو m³.
+  group: letter
+  simple: الجهد بالفولت، أو الحجم باللتر أو m³.
+W:
+  name: الشغل / الوزن
+  read: W
+  meaning: الشغل المبذول أو الوزن، بالجول أو النيوتن.
+  group: letter
+  simple: الشغل المبذول أو الوزن، بالجول أو النيوتن.
+X:
+  name: متغير عشوائي
+  read: X
+  meaning: 'متغير عشوائي: كمية تعتمد قيمتها على الصدفة.'
+  group: statistics
+  simple: 'متغير عشوائي: كمية تعتمد قيمتها على الصدفة.'
+Y:
+  name: Y
+  read: Y
+  meaning: متغير عشوائي ثانٍ أو إحداثي.
+  group: statistics
+  simple: متغير عشوائي ثانٍ أو إحداثي.
+Z:
+  name: الدرجة المعيارية
+  read: Z
+  meaning: 'قيمة مقيسة: كم انحرافًا معياريًا تبعد عن المتوسط.'
+  group: statistics
+  simple: 'قيمة مقيسة: كم انحرافًا معياريًا تبعد عن المتوسط.'
+O:
+  name: O الكبيرة
+  read: O الكبيرة
+  meaning: 'حد أعلى للنمو: O(n²) تعني أن زمن التنفيذ ينمو على الأكثر مثل n².'
+  group: computer-science
+  simple: تقريبًا كيف يكبر الجهد كلما كبر المدخل، مع إهمال التفاصيل الصغيرة.
+  example: ترتيب 1000 عنصر بطريقة O(n²) يحتاج نحو مليون خطوة.
+  lesson: algorithms-and-complexity
+o:
+  name: o الصغيرة
+  read: o الصغيرة
+  meaning: 'ينمو أبطأ بصرامة من: o(h) يتلاشى أسرع من h.'
+  group: calculus
+  simple: 'ينمو أبطأ بصرامة من: o(h) يتلاشى أسرع من h.'

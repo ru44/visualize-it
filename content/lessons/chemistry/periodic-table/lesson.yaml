@@ -1,0 +1,31 @@
+id: periodic-table
+subject: chemistry
+difficulty: high-school
+equation: "Z \\Rightarrow (\\text{period},\\ \\text{group})"
+concepts:
+  - atomic-number
+  - electron-shell
+  - valence-electron
+  - periodic-law
+  - element-family
+prerequisites:
+  - atomic-structure
+related:
+  - periodic-trends
+  - ionic-and-covalent-bonding
+visualization:
+  type: periodic-table
+  options: {}
+parameters:
+  Z:
+    min: 1
+    max: 86
+    step: 1
+    value: 11
+variables:
+  - Z
+derivation:
+  - "Z = \\text{protons} = \\text{electrons in a neutral atom}"
+  - "\\text{period} = \\text{number of occupied electron shells}"
+  - "\\text{group} \\to \\text{valence-electron count (main-group elements)}"
+charts: []

@@ -1,0 +1,57 @@
+id: matrices-as-transformations
+subject: algebra
+difficulty: university
+equation: 'M\mathbf{v} = \begin{pmatrix} a & b \\ c & d \end{pmatrix}\begin{pmatrix} v_x \\ v_y \end{pmatrix} = \begin{pmatrix} a v_x + b v_y \\ c v_x + d v_y \end{pmatrix}'
+concepts:
+  - linear-transformations
+  - basis-vectors
+  - matrix-multiplication
+prerequisites:
+  - vectors
+related:
+  - determinant
+  - eigenvectors
+visualization:
+  type: matrix-transform
+  options: {}
+parameters:
+  a:
+    min: -3
+    max: 3
+    step: 0.05
+    value: 2
+  b:
+    min: -3
+    max: 3
+    step: 0.05
+    value: 1
+  c:
+    min: -3
+    max: 3
+    step: 0.05
+    value: 0
+  d:
+    min: -3
+    max: 3
+    step: 0.05
+    value: 1
+  vx:
+    min: -5
+    max: 5
+    step: 0.05
+    value: 1
+  vy:
+    min: -4
+    max: 4
+    step: 0.05
+    value: 1
+variables:
+  - a
+  - b
+  - c
+  - d
+derivation:
+  - M(1, 0) = (a, c), \quad M(0, 1) = (b, d)
+  - \mathbf{v} = v_x(1, 0) + v_y(0, 1)
+  - M\mathbf{v} = v_x(a, c) + v_y(b, d) = (a v_x + b v_y,\ c v_x + d v_y)
+charts: []

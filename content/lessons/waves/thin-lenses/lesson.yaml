@@ -1,0 +1,43 @@
+id: thin-lenses
+subject: waves
+difficulty: university
+equation: \frac{1}{f} = \frac{1}{d_0} + \frac{1}{d_i}
+concepts:
+  - thin-lens
+  - focal-length
+  - image-formation
+prerequisites:
+  - refraction-snells-law
+related:
+  - refraction-snells-law
+  - total-internal-reflection
+visualization:
+  type: ray-optics
+  options:
+    mode: lens
+parameters:
+  f:
+    min: 2
+    max: 15
+    step: 0.1
+    value: 6
+  doo:
+    min: 0.5
+    max: 30
+    step: 0.1
+    value: 15
+  ho:
+    min: 0.5
+    max: 6
+    step: 0.1
+    value: 3
+variables:
+  - f
+  - d_0, d_i
+  - h_0, h_i
+  - m
+derivation:
+  - \frac{h_i}{h_0} = -\frac{d_i}{d_0}
+  - \frac{1}{d_0} + \frac{1}{d_i} = \frac{1}{f}
+  - m = \frac{h_i}{h_0} = -\frac{d_i}{d_0}
+charts: []

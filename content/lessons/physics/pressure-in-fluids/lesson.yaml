@@ -1,0 +1,46 @@
+id: pressure-in-fluids
+subject: physics
+difficulty: high-school
+equation: P = P_0 + \rho g x
+concepts:
+  - hydrostatic-pressure
+  - fluid-statics
+prerequisites:
+  - newtons-second-law
+related:
+  - buoyancy-archimedes
+  - bernoulli-and-flow-rate
+visualization:
+  type: function-plot
+  options:
+    expr: (101325 + rho*9.81*x)/1000
+    domain:
+      - 0
+      - 100
+    range:
+      - 0
+      - 1200
+    mode: plain
+parameters:
+  rho:
+    min: 700
+    max: 1400
+    step: 10
+    value: 1000
+    unit: kg/m³
+  x:
+    min: 0
+    max: 100
+    step: 0.5
+    value: 10
+    unit: m
+variables:
+  - x
+  - P
+  - P_0
+  - \rho
+derivation:
+  - dP = \rho g\, dx
+  - P - P_0 = \rho g x
+  - P = P_0 + \rho g x
+charts: []

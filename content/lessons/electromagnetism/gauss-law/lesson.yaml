@@ -1,0 +1,53 @@
+id: gauss-law
+subject: electromagnetism
+difficulty: university
+equation: \Phi_E = \oint \mathbf{E}\cdot d\mathbf{A} = \frac{Q_{enc}}{\epsilon_0}
+concepts:
+  - gauss-law
+  - electric-flux
+  - symmetry
+prerequisites:
+  - coulombs-law
+related:
+  - coulombs-law
+  - faradays-law
+visualization:
+  type: function-plot
+  options:
+    expr: 'x < R ? 8.99e9*Q*1e-9*x/R^3 : 8.99e9*Q*1e-9/x^2'
+    domain:
+      - 0.01
+      - 5
+    range:
+      - 0
+      - 190
+    mode: plain
+parameters:
+  Q:
+    min: 1
+    max: 100
+    step: 1
+    value: 20
+    unit: nC
+  R:
+    min: 0.2
+    max: 2
+    step: 0.05
+    value: 1
+    unit: m
+  x:
+    min: 0.01
+    max: 5
+    step: 0.01
+    value: 1.5
+variables:
+  - \Phi_E
+  - \mathbf{E}
+  - Q, Q_{enc}
+  - \epsilon_0
+  - \oint
+derivation:
+  - \Phi_E = E(x)\cdot4\pi x^2 = \frac{Q_{enc}}{\epsilon_0}
+  - Q_{enc} = Q\frac{x^3}{R^3} \;\Rightarrow\; E(x) = \frac{kQx}{R^3}, \quad k = \frac{1}{4\pi\epsilon_0}
+  - Q_{enc} = Q \;\Rightarrow\; E(x) = \frac{kQ}{x^2}
+charts: []
