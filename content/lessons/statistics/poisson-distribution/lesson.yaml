@@ -35,3 +35,16 @@ derivation:
   - \binom{n}{k}\frac{1}{n^k} \to \frac{1}{k!}, \qquad \left(1 - \frac{\lambda}{n}\right)^{n} \to e^{-\lambda}
   - P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}
 charts: []
+primary: lambda
+presets:
+  - lambda: 3
+    k: 2
+  - lambda: 8
+    k: 5
+  - lambda: 0.8
+    k: 0
+challenges:
+  - check: 'lambda^k*exp(-lambda)/factorial(k)'
+    target: 0.2
+  - check: 'lambda < 1 and lambda^k*exp(-lambda)/factorial(k) > 0.5'
+  - check: 'lambda > 15 and abs(k-lambda) <= 1 and lambda^k*exp(-lambda)/factorial(k) > 0.05'

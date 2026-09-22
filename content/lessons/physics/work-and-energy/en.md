@@ -1,8 +1,8 @@
 ---
 title: Work as the area under a force curve
 summary: >-
-  Stretching a spring takes more force the further you pull; the work done is
-  the area under that rising force line.
+  This is why drawing a stiff bow takes far more effort than a soft one,
+  and where that effort goes: stored energy ready to launch the arrow.
 parameters:
   k: spring constant k
   a: a (start displacement)
@@ -13,11 +13,29 @@ variables:
   - work done stretching from $a$ to $b$ — the shaded area
 ---
 
+## Try it
+
+1. Watch the shaded triangle under the rising force line, from a to b.
+2. Drag "b (end displacement)" outward from a = 0. Watch the triangle grow both wider and taller.
+3. Now raise "spring constant k". The same stretch needs a taller triangle, so more work.
+
+## Real-life examples
+
+1. **Stretching a rubber band.** A soft 0.3 N/m band stretched 6 m (imagine a giant demo band) takes about 5.4 J of work — gentle resistance throughout.
+2. **A trampoline spring.** A moderately stiff 1.5 N/m spring stretched 5 m takes nearly 19 J, resisting more strongly the further it's pulled.
+3. **Drawing an archery bow.** A stiff 3.5 N/m "bow spring" pulled back 4 m takes 28 J of work, stored ready to launch the arrow.
+
+## Test yourself
+
+1. Make the work done exactly 20 J (starting from a = 0).
+2. Starting from a = 0, find a spring constant and stretch distance where the work done is exactly 24 J.
+3. Get the work above 25 J while keeping the total stretch under 5 m.
+
 ## Intuition
 
-Drag $b$ outward from $a=0$: the force line rises steadily and the shaded triangle grows — not just wider but taller too, so the area (and hence the work) grows faster than the displacement itself.
+Picture drawing a stiff bow-like spring, constant 3.5 N/m, back 4 metres: that takes 28 joules of work, stored ready to launch an arrow. Drag "b (end displacement)" outward from a = 0: the force line rises steadily and the shaded triangle grows, not just wider but taller too, so the area, and hence the work, grows faster than the displacement itself.
 
-Stiffen the spring by raising $k$: the same stretch now needs a taller triangle of force, so the work to reach any given displacement increases in direct proportion to $k$ — a stiffer spring stores more energy for the same stretch.
+Now raise "spring constant k" to stiffen the spring: the same stretch needs a taller triangle of force, so the work to reach any given displacement increases in direct proportion to k — a stiffer spring stores more energy for the same stretch.
 
 ## Formal
 

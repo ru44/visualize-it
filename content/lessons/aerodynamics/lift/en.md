@@ -1,9 +1,8 @@
 ---
 title: Lift and the airfoil
 summary: >-
-  A wing turns the airflow downward; by Newton’s third law the air pushes back
-  up on the wing. That force, together with the pressure difference it creates,
-  is lift.
+  This predicts how much a wing can lift — an aircraft's, a bird's, or a
+  sail's — and why tilting it too far makes that lift suddenly disappear.
 parameters:
   alpha: angle of attack α
   v: airspeed v
@@ -23,15 +22,27 @@ charts:
 
 ## Try it
 
-1. Raise «angle of attack α» slowly. The green lift arrow grows.
-2. Keep going past 15°. The air over the wing breaks up, the arrow shrinks: that is a stall.
-3. Now raise «airspeed v». Lift grows fast: double the speed, four times the lift.
+1. Picture a small aircraft climbing away after takeoff, tilted 5° into the air at 50 m/s.
+2. Raise «angle of attack α» slowly. The green lift arrow grows.
+3. Keep going past 15°. The air over the wing breaks up, the arrow shrinks: that is a stall.
+
+## Real-life examples
+
+1. **A light aircraft climbing after takeoff.** Tilted 5° and flying at 50 m/s, its wing is well below the danger zone and produces strong, steady lift.
+2. **The same aircraft on a slow final approach.** Tilted up to 12° and flying at only 30 m/s, it’s close to the 15° stall margin but still safely flying.
+3. **A wing deliberately pushed too far.** Tilted to 17°, past the critical angle, even at 40 m/s its lift has already started to collapse.
+
+## Test yourself
+
+1. Reach about 20,000 N of lift while staying below the 15° stall angle.
+2. Push the angle of attack just past 15° and see the lift coefficient stay above 1.5.
+3. Without exceeding 15°, generate at least 30,000 N of lift.
 
 ## Intuition
 
-Drag the angle of attack up and watch the streamlines: the wing tilts and every line bends downward as it passes, most sharply just behind the trailing edge, where the downward deflection is drawn as downwash. Turning that much air downward every second requires a downward force on the air — so by Newton’s third law the air pushes the wing up. That reaction force is most of what you feel as lift. You should ignore the old "equal transit time" story that air splitting at the leading edge must meet back up at the trailing edge at the same time: it is not true, does not follow from any physical law, and gets the direction of causation backwards.
+Picture a small aircraft wing climbing away after takeoff, tilted 5° into the air at 50 m/s. Drag «angle of attack α» up and watch the streamlines: the wing tilts more, and every line bends downward as it passes, most sharply just behind the trailing edge. Turning that much air downward every second pushes down on the air, so the air pushes back up on the wing — that reaction is most of what you feel as lift. You can ignore the old story that air splitting at the leading edge must meet up again at the trailing edge at the same time: it isn’t true, and it gets the cause and effect backwards.
 
-Raise the airspeed slider instead and the lift and drag arrows both grow — lift with the square of speed, so doubling v roughly quadruples L. Notice the streamlines bunch closer together just above the wing’s curved upper surface: that tighter spacing is faster-moving air, and faster-moving air has lower pressure (Bernoulli). The suction on top and the higher pressure underneath add up to the same lift force as the momentum picture — two ways of describing one phenomenon, not two competing mechanisms.
+Now raise «airspeed v» instead, and watch both the lift and drag arrows grow: lift climbs fast, so doubling the speed roughly quadruples it. Notice the streamlines bunch closer together just above the wing’s curved top: that’s faster-moving air, and faster air has lower pressure. The suction on top and the higher pressure underneath add up to the same lift force as the "pushing air down" story — two ways of describing one thing, not two separate effects.
 
 ## Formal
 

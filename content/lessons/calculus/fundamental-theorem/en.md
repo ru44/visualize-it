@@ -1,8 +1,8 @@
 ---
 title: The fundamental theorem of calculus
 summary: >-
-  Differentiation and integration are inverse operations: the area accumulated
-  so far, differentiated, gives back the very curve you were finding area under.
+  A car's odometer and speedometer are two sides of the same coin — read one
+  and you can work out the other, and this is the rule connecting them.
 parameters:
   a: a (start)
   b: b (end)
@@ -18,11 +18,29 @@ charts:
       - F(b) = -2cos(x) + 0.5x + 2
 ---
 
+## Try it
+
+1. Drag «b (end)» to the right with «a (start)» fixed at 0. The shaded area above grows, and the chart's marker on F(b) climbs to match.
+2. Watch where the curve above dips below the axis. The chart's marker turns around and falls there too.
+3. Drag «a (start)» away from 0. The shaded region — and the accumulated total — shrinks by whatever area is cut off on the left.
+
+## Real-life examples
+
+1. **Early odometer reading.** With a = 0 and b = 3, only a short stretch of driving has accumulated — the running total is still small.
+2. **Mid-trip odometer reading.** With a = 0 and b = 6, the trip has passed its fastest climbing stretch and the total is levelling off.
+3. **A trip segment recorded only from the 2-second mark.** With a = 2 and b = 8, the accumulated total counts only the distance covered after the odometer was reset at a = 2.
+
+## Test yourself
+
+1. Make the accumulated area F(b) − F(a) equal about 5.
+2. Find a window (with b at least 1 apart from a) where the accumulated area returns to 0.
+3. Push the accumulated area above 6.
+
 ## Intuition
 
-Drag $b$ to the right with $a$ fixed at $0$ and watch two things at once: the shaded area above grows or shrinks, and the chart's marker on $F(b)$ moves to match — the chart is literally tracking the running total of the shaded area as $b$ advances.
+Picture a car's trip odometer, reset to 0 at the start of a drive. The wavy curve on screen is the car's speed at every moment, and the shaded region beneath it is the distance covered so far. Drag «b (end)» to the right with «a (start)» fixed at 0, and watch two things at once: the shaded area grows or shrinks, and the marker on the chart below — the odometer reading — climbs or falls to match.
 
-Now look at where $v(x) = 2\sin(x) + 0.5$ is positive versus negative: exactly where it is positive, $F(b)$ in the chart is climbing; exactly where $v(x)$ dips negative, $F(b)$ turns around and falls. The curve above is the slope of the chart below — differentiating the accumulated area gives back the very curve you integrated.
+Now look at where the speed curve dips below the middle line: right there, the car is momentarily going backward, so the odometer marker turns around and falls too. The speed curve above is exactly the slope of the odometer chart below — read off how the total distance is changing, and you get back the very speed curve you started with.
 
 ## Formal
 

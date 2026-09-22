@@ -2,8 +2,8 @@
 title: Decibels
 summary: >-
   Power ratios in the real world span factors of millions, so engineers
-  compress them onto a logarithmic scale where doubling always adds the same
-  3 dB, no matter how big the numbers underneath.
+  compress them onto a scale where doubling always adds the same 3 dB,
+  no matter how big the numbers underneath.
 parameters:
   x: x — power ratio P/P₀
 variables:
@@ -18,11 +18,29 @@ charts:
       - dB gained
 ---
 
+## Try it
+
+1. Watch the curve. It plots the decibel level $L$ for a power ratio $x$, squeezing a huge range onto a small vertical scale.
+2. Drag $x$ from 1 toward a million. The curve rises fast at first, then flattens almost completely.
+3. Notice that every time you double $x$, $L$ climbs by the same 3 dB, no matter where you started.
+
+## Real-life examples
+
+1. **Turning up a speaker just slightly.** Doubling the electrical power sent to a speaker (x = 2) raises the sound level by exactly 3 dB — a small but just-noticeable jump in loudness.
+2. **An audio amplifier stage.** A preamp that boosts a weak microphone signal's power a thousandfold (x = 1,000) delivers 30 dB of gain, typical of a single amplification stage.
+3. **A long fiber-optic repeater chain.** By the time optical amplifiers restore a signal that has lost a millionfold in power (x = 1,000,000) over a long cable run, they have added back 60 dB of gain.
+
+## Test yourself
+
+1. Find the power ratio that gives a level of exactly 45 dB.
+2. Find the power ratio that gives a level close to 50 dB.
+3. Find a ratio where the level exceeds 55 dB while staying under half the maximum ratio on the slider.
+
 ## Intuition
 
-Drag x from 1 up toward a million and the curve rises fast at first, then flattens almost completely — because each extra factor of ten in power only adds another fixed 10 dB, however huge the ratio has already become. A jump from 1 to 10 looks the same size on the curve as a jump from 100,000 to 1,000,000.
+A whisper measures about 20 dB and a jet engine about 140 dB — a difference so large that describing it in raw power would mean writing a 1 followed by twelve zeros. The curve on screen plots $L$, the level in decibels, against $x$, the ratio of the power you're measuring to a fixed reference power. Drag $x$ from 1 up toward a million and the curve rises fast at first, then flattens almost completely, because each extra factor of ten in power only adds another fixed 10 dB, no matter how huge the ratio has already become.
 
-That squashing is exactly what your ears do naturally: a sound needs roughly ten times the power to seem "twice as loud," so a scale that compresses huge power ranges into small, evenly spaced steps matches how loudness is actually perceived.
+That squashing is exactly what your ears do naturally: a sound needs roughly ten times the power to seem twice as loud, so a scale that compresses huge power ranges into small, evenly spaced steps matches how loudness is actually perceived. A jump from 1 to 10 on the slider looks the same size on the curve as a jump from 100,000 to 1,000,000 — both add exactly 10 dB.
 
 ## Formal
 

@@ -18,9 +18,27 @@ charts:
       - sqrt(p(1−p)/N)
 ---
 
+## Try it
+
+1. Watch the shaded funnel: it marks where 95% of experiments stay, and it narrows as trials pile up.
+2. Drag «N — number of trials» down to 20. The funnel is wide: a single result can swing far from «p — true probability».
+3. Drag «N — number of trials» up toward 2000. The funnel squeezes tight around «p — true probability».
+
+## Real-life examples
+
+1. **Small pilot survey.** Asking just 50 people, with a true rate of 50%, gives an estimate that can easily be off by 10 percentage points or more.
+2. **National opinion poll.** A poll of 1000 voters, true support near 45%, is accurate to roughly ±3% — the standard "margin of error" you see quoted in the news.
+3. **Large clinical trial.** Following 2000 patients with a 20% event rate narrows the uncertainty enough to detect even small real effects.
+
+## Test yourself
+
+1. Shrink the standard error to about 3%, like a national poll.
+2. Run at least 1000 trials while keeping the standard error below 2%.
+3. Keep the trial count at 100 or fewer, yet push the standard error above 10%.
+
 ## Intuition
 
-The shaded funnel is where 95% of experiments stay. It is wide at the start — after 10 flips a fair coin often shows 30% or 70% heads — and narrows as $N$ grows. But look at how it narrows: to halve the width you need four times as many trials.
+The shaded funnel is where 95% of experiments stay. It is wide at the start — after 10 flips of a fair coin, «N — number of trials» = 10, the result often shows 30% or 70% heads — and it narrows as «N — number of trials» grows. But look at how it narrows: to halve the width you need four times as many trials.
 
 That square-root law is why polls of 1000 people are accurate to about ±3% while polls of 100 are only good to ±10%, and why a casino is sure to profit over a year even though any single night is a gamble.
 

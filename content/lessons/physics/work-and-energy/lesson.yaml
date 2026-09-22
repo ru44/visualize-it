@@ -51,3 +51,19 @@ derivation:
   - W = \int_0^x F(x')\,dx' = \int_0^x kx'\,dx'
   - W = \left[\tfrac12 kx'^2\right]_0^x = \tfrac12 kx^2
 charts: []
+primary: b
+presets:
+  - k: 0.3
+    a: 0
+    b: 6
+  - k: 1.5
+    a: 0
+    b: 5
+  - k: 3.5
+    a: 0
+    b: 4
+challenges:
+  - check: 0.5*k*(b^2-a^2)
+    target: 20
+  - check: abs(a)<0.3 and abs(0.5*k*(b^2-a^2)-24)<2
+  - check: b<5 and 0.5*k*(b^2-a^2)>25

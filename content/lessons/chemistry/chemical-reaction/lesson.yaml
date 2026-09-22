@@ -40,3 +40,19 @@ derivation:
   - "\\text{H: } 2a = 2c \\qquad \\text{O: } 2b = c"
   - a = c,\; b = c/2 \;\Rightarrow\; (a,b,c) = (2,1,2)
 charts: []
+primary: progress
+presets:
+  - h2: 4
+    o2: 2
+    progress: 1
+  - h2: 2
+    o2: 6
+    progress: 1
+  - h2: 10
+    o2: 2
+    progress: 0.5
+challenges:
+  - check: h2 - 2*o2
+    target: 0
+  - check: o2 - h2/2 >= 3
+  - check: progress > 0.99 and 2*min(floor(h2/2), o2) == 8

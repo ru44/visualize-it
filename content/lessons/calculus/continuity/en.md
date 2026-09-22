@@ -1,8 +1,9 @@
 ---
 title: Continuity and jump discontinuities
 summary: >-
-  A function is continuous where its graph can be drawn without lifting the pen
-  — where the limit from both sides agrees with the value there.
+  A tax schedule that jumps at a bracket boundary can cost you more than the
+  extra dollar you earned — continuity is the idea that tells you whether a
+  schedule does that.
 parameters:
   d: distance from x = 1
   j: jump size j
@@ -11,11 +12,29 @@ variables:
   - distance of the two approaching points from $x=1$
 ---
 
+## Try it
+
+1. With «jump size j» away from 0, shrink «distance from x = 1» toward 0. The two dots settle at two different heights.
+2. Drag «jump size j» down to exactly 0. The step in the graph disappears.
+3. Shrink «distance from x = 1» again. Now both dots settle on the same point — the graph never lifts the pen.
+
+## Real-life examples
+
+1. **A smooth tax curve.** With no jump (j = 0), earning one more dollar never costs you a sudden extra chunk of tax — the schedule is continuous.
+2. **A moderate bracket jump.** With j = 1.5, crossing x = 1 suddenly adds 1.5 to the amount owed — a real step, like a poorly designed tax bracket.
+3. **A steep rebate cliff.** With j = -2, crossing x = 1 suddenly drops the value by 2 — like a rebate that disappears the moment you earn one dollar too many.
+
+## Test yourself
+
+1. Make the function continuous: find the jump size that closes the gap.
+2. Create a downward jump of exactly 2, where the right side sits 2 below the left.
+3. Shrink the approach distance below 0.05 while keeping a jump bigger than 1 in size.
+
 ## Intuition
 
-With $j$ away from zero, shrink $d$ and watch the two approaching dots: the one coming from the left settles near $1$ (since $1^2 = 1$), while the one from the right settles near $1 + j$. They are closing in on two different heights, so no single limit exists at $x=1$, and the graph visibly has a step in it there.
+Think of a tax rule where crossing a certain income suddenly adds an extra charge, like a jump of 1.5 the moment you earn one dollar too many. On screen the same idea is drawn as two dots sliding toward the input value 1 from opposite sides — one creeping up from below, one creeping down from above — with the slider «distance from x = 1» setting how close they still are.
 
-Now drag $j$ down to exactly $0$: the two branches — $x^2$ below $1$ and $x^2 + j$ above — meet perfectly, the step disappears, and both one-sided limits agree with each other and with $f(1)$. That is continuity: the algebraic condition and the "no pen lift" picture are the same fact.
+With «jump size j» away from 0, shrink that distance: the left dot settles near height 1, but the right dot settles near a different height, 1 plus the jump. Now drag «jump size j» down to exactly 0: the step disappears, both dots meet at the same height, and the curve can be traced through that point without ever lifting a pen — that is continuity.
 
 ## Formal
 

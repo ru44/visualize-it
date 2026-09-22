@@ -60,3 +60,18 @@ derivation:
   - v(t) = \int_0^t a\,d\tau + v_0 = v_0 + at
   - x(t) = \int_0^t v(\tau)\,d\tau + x_0 = x_0 + v_0 t + \tfrac12 a t^2
 charts: []
+primary: a
+presets:
+  - x0: 0
+    v0: 8
+    a: -3
+  - x0: 0
+    v0: 0
+    a: 1
+  - x0: 2
+    v0: 1
+    a: 2
+challenges:
+  - check: abs(x-5)<0.05 and abs(x0+v0*x+0.5*a*x^2-20)<1
+  - check: abs(x-4)<0.05 and abs(v0+a*x)<0.2
+  - check: abs(v0*x+0.5*a*x^2)<0.5 and x>0.5

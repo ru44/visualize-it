@@ -1,8 +1,9 @@
 ---
 title: One-sided and infinite limits
 summary: >-
-  Approach $x=0$ from the left and right on $y=1/x$ and you head to two
-  different infinities — the two-sided limit does not exist.
+  Splitting a fixed cost over fewer and fewer people makes each person's
+  share blow up without limit — a one-sided infinite limit is exactly that
+  runaway behaviour, matched from the other side.
 parameters:
   d: distance from x = 0
 variables:
@@ -11,11 +12,29 @@ variables:
   - limit approaching from the right
 ---
 
+## Try it
+
+1. Shrink «distance from x = 0» toward 0. Watch the two dots close in on the gap from opposite sides.
+2. Read the table of values: from the right, the numbers grow huge; from the left, they plunge.
+3. Notice they never head to the same number — the two-sided limit does not exist.
+
+## Real-life examples
+
+1. **Still far from the asymptote.** At d = 1, the readouts are only modest numbers — nowhere near infinite yet.
+2. **Very close: values already in the hundreds.** At d = 0.1, both readouts have grown to ±10.
+3. **As close as the slider allows.** At d = 0.02, the readouts reach roughly ±50 — the closest this slider can get.
+
+## Test yourself
+
+1. Push the right-hand value above 40.
+2. Make the right-hand value equal about 10.
+3. Bring the right-hand value down below 1.
+
 ## Intuition
 
-Shrink $d$ and watch both dots close in on $x = 0$ from opposite sides. The table of values makes it concrete: from the right, $1/x$ grows without bound toward $+\infty$; from the left, it plunges toward $-\infty$. They are not converging on the same number — they are diverging in opposite directions.
+Imagine splitting a fixed 100-dollar venue rental among however many guests show up. With 100 guests, each pays 1 dollar; with 10 guests, each pays 10; and as the guest count drops toward 1, then toward a fraction of a person, each share explodes toward an unlimited amount. On screen, shrink «distance from x = 0» toward 0 and watch both dots close in on that same collapsing point from opposite sides: from the right, the readout grows without bound toward a huge positive number, while from the left, it plunges toward a huge negative one.
 
-This is exactly what the vertical line at $x=0$ on the graph is telling you: the curve never settles near any finite height there. Whenever the two one-sided behaviors disagree like this, mathematicians say the limit simply does not exist, even though each side individually has a clear (infinite) trend.
+They are not converging on the same number — they are racing off in opposite directions. Whenever the two sides disagree like this, mathematicians say the limit simply does not exist, even though each side individually has a clear runaway trend of its own.
 
 ## Formal
 

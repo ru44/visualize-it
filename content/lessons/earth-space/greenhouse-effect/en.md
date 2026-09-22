@@ -14,6 +14,24 @@ variables:
   - the surface temperature
 ---
 
+## Try it
+
+1. Set greenhouse strength to 0. Watch the temperature settle near −18°C — an airless Earth.
+2. Drag greenhouse strength up toward 0.78, today's value. Watch temperature climb to about +15°C.
+3. Drag albedo up instead, reflecting more sunlight away, and watch temperature fall.
+
+## Real-life examples
+
+- **An airless, Moon-like world.** With almost no greenhouse trapping (x = 0) and a dark surface (albedo = 0.11), the surface sits far below freezing.
+- **Earth today.** With today's albedo (0.3) and greenhouse strength (x = 0.78), the surface averages a comfortable +15°C.
+- **A runaway greenhouse, Venus-like.** A bright cloud cover (albedo = 0.6) still can't save a world with an extreme greenhouse strength (x = 0.95) from scorching heat.
+
+## Test yourself
+
+1. Tune albedo and greenhouse strength together so the surface sits right at freezing, 0°C.
+2. Push the surface above 40°C with a strong greenhouse effect and low albedo.
+3. With a bright, high-albedo world (over 0.55), cut greenhouse strength until the surface drops below −30°C.
+
 ## Intuition
 
 Set greenhouse strength to 0 — no trapping atmosphere at all — and the curve settles near −18 °C, the temperature Earth's surface would reach from sunlight alone with today's albedo. That is colder than any inhabited place on the planet, and it is the honest number for an airless Earth: reflective, sunlit, but with nothing to hold the heat in.

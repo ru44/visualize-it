@@ -1,8 +1,8 @@
 ---
 title: Bubble sort
 summary: >-
-  Repeatedly swap neighbours that are out of order and the largest values bubble
-  to the end. Simple to picture, expensive to run at scale.
+  Bubble sort shows why a method that's easy to picture by hand can quietly
+  become far too slow once the list you're sorting gets large.
 parameters:
   'n': n — number of items
   step: step — play position
@@ -12,11 +12,29 @@ variables:
   - how many out-of-order pairs have actually been exchanged
 ---
 
+## Try it
+
+1. Press play and watch two neighbouring bars get compared one pair at a time — whenever the left bar is taller, they swap.
+2. Watch the comparisons and swaps counters climb as the bars settle into order.
+3. Slide «n» from 8 up to 40 and press play again — notice how much longer it takes for all the bars to settle.
+
+## Real-life examples
+
+- **Sorting 8 playing cards in your hand.** With only 8 cards, comparing each neighbouring pair and swapping is quick enough to do without even thinking about it.
+- **Lining up 24 students by height for a class photo.** With 24 students, the same neighbour-swapping method needs far more comparisons — the teacher would be at it for a while.
+- **Sorting 40 books on a shelf by thickness.** With 40 books, comparing and swapping neighbours takes so many steps that a faster method would clearly be worth it.
+
+## Test yourself
+
+1. Find the value of n where the total number of comparisons comes out to exactly 190.
+2. Push n up until the comparison count reaches 300 or more.
+3. Set n to 10 and let the animation play all the way through to the end.
+
 ## Intuition
 
-Press play and watch adjacent bars get compared one pair at a time; whenever the left bar is taller than the right, they swap. After one full pass, the tallest bar has "bubbled" all the way to the end — guaranteed, because it is the biggest thing it meets on the way.
+Picture 8 kids standing in a random order, repeatedly comparing each pair of neighbours: if the taller kid is on the left, they swap places. After one full pass down the line, the tallest kid has ended up all the way at the end — bumped along by every swap, like a bubble floating up through water. On screen those kids are the coloured bars: press play and watch two neighbouring bars get compared at a time, swapping whenever the left one is taller.
 
-The readouts count comparisons and swaps as they happen: with $n$ items, each of the $n-1$ passes re-scans almost the whole array, so the total comparisons pile up as roughly $n^2/2$. Slide $n$ from 8 up to 40 and watch how much longer the bars take to settle — quadrupling $n$ roughly quadruples the wait, squared.
+The counters above tally comparisons and swaps as they happen. The slider $n$ sets how many bars there are. Each of the n−1 passes re-checks almost every neighbour again, so comparisons pile up fast: 8 bars need 28 comparisons, but 40 bars need 780 — nearly 30 times as many for only 5 times the bars. That is what quadratic growth means: work grows roughly as the square of $n$, not in direct proportion to it.
 
 ## Formal
 

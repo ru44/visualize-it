@@ -57,3 +57,20 @@ derivation:
   - \mathbf{E} \equiv \frac{\mathbf{F}}{q_{\text{test}}} = k\frac{q}{r^2}\hat{\mathbf{r}}
   - \mathbf{E}_{\text{total}} = \mathbf{E}_1 + \mathbf{E}_2
 charts: []
+primary: d
+presets:
+- q1: 3
+  q2: -3
+  d: 1.5
+- q1: 5
+  q2: 5
+  d: 4
+- q1: -4
+  q2: 2
+  d: 6
+challenges:
+- check: 'abs(8.99e-3*q1*q2/d^2)'
+  target: 0.05
+  tol: 0.01
+- check: 'q1*q2 > 0 and 8.99e-3*q1*q2/d^2 >= 0.02 and d >= 3'
+- check: '8.99e-3*abs(q1*q2)/d^2 > 0.2'

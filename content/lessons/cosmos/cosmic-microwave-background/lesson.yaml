@@ -1,0 +1,58 @@
+id: cosmic-microwave-background
+subject: cosmos
+difficulty: high-school
+equation: \lambda_{max} = \frac{2.898}{T}
+concepts:
+- blackbody radiation
+- Wien's law
+- cosmic microwave background
+prerequisites: []
+related:
+- expanding-universe-hubble-law
+- dark-energy
+- hydrogen-spectrum
+visualization:
+  type: function-plot
+  options:
+    expr: (x*T/2.898)^(-5)/(exp(14.388/(x*T)) - 1)*(exp(4.965) - 1)
+    domain:
+    - 0.1
+    - 10
+    range:
+    - 0
+    - 1.2
+    mode: plain
+primary: T
+parameters:
+  T:
+    min: 1
+    max: 10
+    step: 0.025
+    value: 2.725
+    unit: K
+  x:
+    min: 0.1
+    max: 10
+    step: 0.01
+    value: 1.06
+    unit: mm
+variables:
+- \lambda_{max}
+- T
+derivation:
+- \lambda_{max} \propto \frac{1}{T}
+- \lambda_{max} T = 2.898
+- \lambda_{max} = \frac{2.898}{T}
+presets:
+- T: 2.725
+  x: 1.06
+- T: 8
+  x: 0.4
+- T: 1.5
+  x: 2
+challenges:
+- check: abs(T - 2.725) < 0.05
+- check: abs(x - 1.06) < 0.05
+- check: 2.898/T
+  target: 0.5
+  tol: 0.02

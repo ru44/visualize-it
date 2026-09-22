@@ -19,19 +19,29 @@ variables:
   - the price fixed by law
 ---
 
+## Try it
+
+1. Watch the two lines cross. That crossing point is the market's natural equilibrium price and quantity.
+2. Drag price (the price fixed by law) below the crossing point. A gap opens between the lines: a shortage, more is demanded than supplied.
+3. Now drag price above the crossing point instead. The gap flips: a surplus, more is supplied than demanded.
+
+## Real-life examples
+
+1. **Rent control.** A city caps rent well below the market-clearing rate: at that price, tenants want more apartments than landlords are willing to offer, so a shortage appears — long waiting lists and few vacancies.
+2. **A minimum wage.** A wage floor set above the market wage means more people want jobs at that pay than employers want to hire, creating a surplus — some workers who would take a lower wage stay unemployed.
+3. **Fuel price caps during a shortage.** A government freezes the pump price below what supply and demand would set; drivers want more fuel than stations can supply, so queues form at the pump instead of prices rising.
+
+## Test yourself
+
+1. Create a shortage of exactly 20 units by setting the fixed price below equilibrium.
+2. Create a surplus of more than 15 units by setting the fixed price above equilibrium.
+3. Adjust how much buyers and sellers are willing to pay so that a fixed price of 50 happens to match the market's own equilibrium, with no shortage or surplus at all.
+
 ## Intuition
 
-Drag the price line below where the two curves cross: buyers now want more
-than sellers are willing to provide at that low price, so the gap between
-the demand and supply lines is a shortage. This is a price ceiling — rent
-control is the classic example, holding rent below what the market would
-set.
+Imagine a city where apartments would naturally rent for 40 a month at equilibrium, but a law caps rent at 25 instead. Drag the price line on screen, $P_0$, below where the demand and supply lines cross: buyers now want more apartments than landlords are willing to offer at that low price, and the gap between the two lines is a shortage — this is a price ceiling, with rent control as the classic example.
 
-Now drag the price line above the crossing point: sellers want to offer
-more than buyers will take off their hands at that high price, and the
-gap becomes a surplus. This is a price floor — a minimum wage above the
-market wage works the same way in the labour market, with the "sellers"
-being workers.
+Now drag the price line above the crossing point instead, say to 55: sellers want to offer more than buyers will take off their hands at that high price, and the gap becomes a surplus. This is a price floor — a minimum wage set above the market wage works the same way in the labour market, with the "sellers" being workers looking for jobs.
 
 ## Formal
 

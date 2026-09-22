@@ -28,6 +28,8 @@ export function merge(l: any, t: LessonText): Lesson {
     variables: (l.variables as string[]).map((symbol, i) => ({ symbol, meaning: t.variables[i] ?? '' })),
     explanation: { intuition: t.intuition, formal: t.formal, advanced: t.advanced?.length ? t.advanced : undefined },
     tryIt: t.tryIt ?? [],
+    presets: ((l.presets ?? []) as Record<string, number>[]).map((params, i) => ({ params, label: t.presets?.[i]?.label ?? '', text: t.presets?.[i]?.text ?? '' })),
+    challenges: ((l.challenges ?? []) as { check: string; target?: number; tol?: number }[]).map((c, i) => ({ ...c, text: t.challenges?.[i] ?? '' })),
     primary: l.primary,
     derivation: (l.derivation as string[]).map((tex, i) => ({ tex, note: t.derivationNotes[i] ?? '' })),
     realWorld: t.realWorld,

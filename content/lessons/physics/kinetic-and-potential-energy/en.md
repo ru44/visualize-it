@@ -1,8 +1,8 @@
 ---
 title: Kinetic energy and why speed matters so much
 summary: >-
-  Kinetic energy grows with the square of speed, not speed itself — small
-  increases in speed cost disproportionately more energy to produce or absorb.
+  This is why doubling a car's speed doesn't double its crash energy — it
+  quadruples it, which is why speed limits matter so much.
 parameters:
   m: mass m
   x: speed v
@@ -18,11 +18,29 @@ charts:
       - PE = m·g·h
 ---
 
+## Try it
+
+1. Watch the point at low speed on the curve.
+2. Drag the point from low to high speed. Watch the tangent line get steeper as you go.
+3. Compare speed v with speed 2v — the curve's height doesn't just double, it quadruples.
+
+## Real-life examples
+
+1. **A basketball pass.** A 0.6 kg basketball thrown at 8 m/s carries about 19 J of kinetic energy — enough to sting bare hands if caught wrong.
+2. **A bowling ball rolling down the lane.** At 5 kg and just 3 m/s, a bowling ball still carries over 22 J, more than the much lighter basketball, thanks to its mass.
+3. **Swinging a hammer.** A 2 kg hammer swung at 6 m/s carries 36 J of kinetic energy — enough to drive a nail deep with one blow.
+
+## Test yourself
+
+1. Make the kinetic energy exactly 20 J.
+2. Keep the mass at 1 kg and find the speed that gives 50 J of kinetic energy.
+3. Get the kinetic energy above 100 J while keeping the speed under 8 m/s.
+
 ## Intuition
 
-Drag the point from low to high speed: the curve does not rise steadily — it bends upward, and the tangent line gets visibly steeper as you go. That steepening slope means each extra unit of speed adds more energy than the last unit did.
+Picture a 0.6 kg basketball thrown at 8 m/s: it carries about 19 joules of kinetic energy, the energy of motion. Drag the point from low to high speed along the curve: it doesn't rise steadily, it bends upward, and the tangent line gets visibly steeper as you go, meaning each extra unit of speed adds more energy than the last one did.
 
-Go from speed $v$ to speed $2v$: the curve's height doesn't merely double, it quadruples, because $(2v)^2 = 4v^2$. That is the physical reason braking distance from double the speed is roughly four times longer — all that extra kinetic energy has to be removed by the same friction force over a longer stopping distance.
+Go from speed v to speed 2v instead: the curve's height doesn't merely double, it quadruples, because doubling a number and squaring it multiplies the result by four. That's the physical reason braking distance from double the speed is roughly four times longer — all that extra kinetic energy has to be removed by the same friction force over a longer stopping distance.
 
 ## Formal
 

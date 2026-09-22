@@ -42,3 +42,20 @@ derivation:
   - \text{number of such sequences} = \binom{n}{k}
   - P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
 charts: []
+primary: n
+presets:
+  - n: 10
+    p: 0.5
+    k: 5
+  - n: 20
+    p: 0.7
+    k: 15
+  - n: 50
+    p: 0.02
+    k: 0
+challenges:
+  - check: 'n*p'
+    target: 6
+  - check: 'combinations(n,k)*p^k*(1-p)^(n-k) > 0.3'
+  - check: 'sqrt(n*p*(1-p))'
+    target: 3

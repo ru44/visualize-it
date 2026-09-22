@@ -53,3 +53,16 @@ visualization3d:
     models:
     - airplane
 primary: alpha
+presets:
+- alpha: 5
+  v: 50
+- alpha: 12
+  v: 30
+- alpha: 17
+  v: 40
+challenges:
+- check: '0.5*1.225*v^2*16*(alpha<15 ? 0.11*(alpha+2) : 1.87-0.19*(alpha-15))'
+  target: 20000
+  tol: 2000
+- check: 'alpha > 15 and (alpha<15 ? 0.11*(alpha+2) : 1.87-0.19*(alpha-15)) > 1.5'
+- check: 'alpha <= 15 and 0.5*1.225*v^2*16*(alpha<15 ? 0.11*(alpha+2) : 1.87-0.19*(alpha-15)) >= 30000'

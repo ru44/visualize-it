@@ -48,3 +48,12 @@ visualization3d:
     zRange:
     - -4
     - 4
+primary: x0
+presets:
+  - { x0: 0, y0: 0 }
+  - { x0: 1.5, y0: 0 }
+  - { x0: 0, y0: 1.5 }
+challenges:
+  - { check: 'abs(x0^2 - y0^2) < 0.05 and (abs(x0) > 0.3 or abs(y0) > 0.3)' }
+  - { check: 'x0^2 - y0^2 > 3' }
+  - { check: 'x0^2 - y0^2 < -3' }

@@ -1,8 +1,8 @@
 ---
 title: 'Combinations: when order does not matter'
 summary: >-
-  How many different groups of k can you form from n items, when the group is
-  all that counts?
+  Count how many different teams, hands, or lottery picks you can form from a
+  set of items, when only who's in the group matters, not the order.
 parameters:
   'n': n — items available
   k: k — how many to pick
@@ -12,9 +12,27 @@ variables:
   - 'read “n choose k”: the number of possible groups'
 ---
 
+## Try it
+
+1. Watch the groups listed below the tokens as you drag «k — how many to pick».
+2. Notice (1,2) and (2,1) appear only once in that list: order does not matter for a group.
+3. Compare picking 2 items to picking the other 3: the number of groups is the same either way.
+
+## Real-life examples
+
+1. **Pizza toppings.** Choosing 3 toppings from a menu of 8 gives 56 different pizzas, however you rank the toppings you chose.
+2. **Study group.** Picking a 4-person study group from 9 classmates can be done 126 different ways.
+3. **Double scoop.** Choosing 2 flavours from 6 at an ice cream shop — chocolate then vanilla is the same order as vanilla then chocolate — gives 15 possible scoops.
+
+## Test yourself
+
+1. Find «n — items available» and «k — how many to pick» that give exactly 10 possible groups.
+2. Pick a k no larger than half of n, and make the number of groups exceed 50.
+3. Set «n — items available» to 10 and find the «k — how many to pick» that gives the largest possible number of groups (at least 250).
+
 ## Intuition
 
-Now (1,2) and (2,1) are the same thing — a team of two, not a ranking. Compare with the permutations lesson: with $n = 5$, $k = 2$ there were 20 ordered pairs but only 10 groups, because every group of 2 had been counted twice (once per ordering).
+Now a group of (1,2) and a group of (2,1) are the same thing — a team of two, not a ranking. Compare with the permutations lesson: with «n — items available» at 5 and «k — how many to pick» at 2 there were 20 ordered pairs, but only 10 groups, because every group of 2 had been counted twice, once per ordering.
 
 That is the whole idea: count the ordered arrangements, then divide by the $k!$ ways each group can be shuffled. Notice the symmetry too — choosing 2 of 5 to take is the same as choosing 3 of 5 to leave behind, so $C(5,2) = C(5,3)$.
 

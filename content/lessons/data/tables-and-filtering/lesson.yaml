@@ -1,0 +1,39 @@
+id: tables-and-filtering
+subject: data
+difficulty: beginner
+equation: \text{amount} > m
+concepts:
+- tables
+- filtering
+- SQL WHERE clause
+prerequisites: []
+related:
+- grouping-and-totals
+visualization:
+  type: query-table
+  options:
+    mode: filter
+primary: min
+parameters:
+  min:
+    min: 0
+    max: 45
+    step: 1
+    value: 15
+    unit: "$"
+variables:
+- m
+derivation:
+- m = \text{the slider's value, the minimum amount to keep}
+- \text{amount} > m \Rightarrow \text{row kept}
+- \text{amount} \le m \Rightarrow \text{row filtered out}
+presets:
+- min: 0
+- min: 20
+- min: 40
+challenges:
+- check: min
+  target: 20
+- check: min >= 35
+- check: min
+  target: 40

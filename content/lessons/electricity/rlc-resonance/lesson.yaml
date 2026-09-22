@@ -65,3 +65,18 @@ derivation:
   - "|Z| = \\sqrt{R^2+\\left(2\\pi f L-\\frac{1}{2\\pi f C}\\right)^2}, \\qquad I=\\frac{V}{|Z|}"
   - 2\pi f_0 L = \frac{1}{2\pi f_0 C} \;\Rightarrow\; f_0 = \frac{1}{2\pi\sqrt{LC}}
 charts: []
+primary: x
+presets:
+  - L: 50
+    C: 20
+    R: 5
+  - L: 100
+    C: 50
+    R: 20
+  - L: 150
+    C: 5
+    R: 15
+challenges:
+  - check: abs(x - 1/(2*pi*sqrt((L/1000)*(C*1e-6)))) < 2
+  - check: (1/R)*sqrt((L/1000)/(C*1e-6)) >= 15
+  - check: abs(x - 1/(2*pi*sqrt((L/1000)*(C*1e-6)))) < 2 and V/R >= 1.5

@@ -1,8 +1,9 @@
 ---
 title: Taylor series
 summary: >-
-  A wiggly curve like sine, rebuilt out of nothing but powers of x. Add more
-  terms and the copy hugs the original for longer.
+  A calculator's sine button has no picture of a wave stored inside it — it
+  rebuilds sin(x) on the spot from nothing but powers of x, and this shows
+  you that trick, piece by piece.
 parameters:
   N: degree of the polynomial N
   x: point x
@@ -15,11 +16,29 @@ charts:
       - sine
 ---
 
+## Try it
+
+1. Set «degree of the polynomial N» to 1. The curve is just a straight line, a poor match away from the centre.
+2. Raise «N» step by step. Each new pair of terms bends the curve to hug the true sine wave over a wider stretch.
+3. Drag «point x» outward at a high N. Even the best-fitting polynomial eventually pulls away from the true curve.
+
+## Real-life examples
+
+1. **A straight-line guess, far from the centre.** With N = 1 and x = 3, the polynomial is just a line — nowhere close to the real curve out there.
+2. **A five-term approximation, still fairly close.** With N = 5 and x = 2, the polynomial still tracks sine reasonably well.
+3. **The highest available degree, pushed far out.** With N = 11 and x = 6, even this many terms is being tested at the edge of where it still works well.
+
+## Test yourself
+
+1. Using just N = 1 (a straight line), find x where the approximation is still within 0.01 of sin(x).
+2. With N = 5, find how far from the centre you can push x and stay within 0.05 of the true sine curve.
+3. With the full N = 11 series, get within 0.05 of sin(x) as far out as you can.
+
 ## Intuition
 
-The curved line is the Taylor polynomial, built only from powers of $x$, and the dashed reference curve is the true $\sin x$. With $N=1$ the polynomial is just a straight line, a poor match away from the centre; drag $N$ up and each new pair of terms bends the curve to hug the sine wave over a wider stretch.
+Think of the sine button on a calculator: it has no picture of a wave stored inside, yet it can compute the sine of any number instantly. That trick works by adding up simple powers of the input, and the curved line on screen is exactly that: the Taylor polynomial, built only from powers of «point x», while the dashed reference curve is the true sine wave. With «degree of the polynomial N» at 1, the polynomial is just a straight line, a poor match away from the centre.
 
-Move the point $x$ outward and watch the gap between the two curves open up: even a high-degree polynomial eventually pulls away from the true function far enough from the centre, because the approximation is only guaranteed to be good locally.
+Raise «N» step by step and each new pair of terms bends the curve to hug the sine wave over a wider stretch. Now drag «point x» outward: even a high-degree polynomial eventually pulls away from the true curve far enough from the centre, because this kind of approximation is only guaranteed to be good close to home.
 
 ## Formal
 

@@ -40,3 +40,22 @@ derivation:
   - \theta_2 = 90^\circ \;\Rightarrow\; n_1\sin\theta_c = n_2
   - \theta_c = \arcsin\left(\frac{n_2}{n_1}\right)
 charts: []
+primary: theta1
+presets:
+  - theta1: 80
+    n1: 1.5
+    n2: 1.4
+  - theta1: 30
+    n1: 2.42
+    n2: 1
+  - theta1: 60
+    n1: 1.33
+    n2: 1
+challenges:
+  - check: theta1 - asin(n2/n1)*180/pi
+    target: 2
+    tol: 0.5
+  - check: n1 - n2
+    target: 0
+    tol: 0.02
+  - check: n1>n2 and abs(theta1 - asin(n2/n1)*180/pi) < 0.5

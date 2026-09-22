@@ -1,8 +1,9 @@
 ---
 title: 'Proof by induction'
 summary: >-
-  Prove a base case, show each step forces the next, and the statement holds
-  forever after — like a row of dominoes falling one after another.
+  Induction proves a statement true for every one of infinitely many numbers
+  from just two checks — a base case and a step that topples the next domino
+  in an endless row.
 parameters:
   x: n — how many terms are added
 charts:
@@ -18,11 +19,29 @@ variables:
   - k — the general step used in the inductive argument
 ---
 
+## Try it
+
+1. Drag x to 10 and read the curve's value, 55 — the same total as stacking cans 1 through 10 in a triangle.
+2. Watch the second curve n²/2 sitting just below the first, and note the gap between them at your chosen x.
+3. Push x all the way to 20 and read the running sum at the top of its range.
+
+## Real-life examples
+
+1. **Stacking a triangular can display.** A grocery stacks cans in a triangle 10 rows tall, 1 can in row 1 up to 10 cans in row 10, for 55 cans in total.
+2. **Saving a growing amount each day.** Saving 1 dollar on day 1, 2 dollars on day 2, and so on for 14 days adds up to 105 dollars saved.
+3. **Building a 20-step staircase of blocks.** A staircase built from cubes, one more cube per step for 20 steps, uses 210 cubes in total.
+
+## Test yourself
+
+1. Find the number of terms that makes the running sum equal exactly 66.
+2. Find x where the exact sum is exactly 5 more than the comparison curve n²/2.
+3. Find x where the running sum has already passed 150 but the comparison curve n²/2 has not.
+
 ## Intuition
 
-Drag x and watch the curve trace $1 + 2 + \cdots + n$ as a smooth shape rather than a growing pile of separate additions. At n = 10 the curve sits at 55, matching what you get by actually adding 1 through 10 by hand — the formula is just a shortcut for the same running total.
+Stack cans in a triangle 10 rows tall, 1 can in row 1 up to 10 cans in row 10, and counting them all by hand gives 55 cans. Drag the slider x to 10 and the chart's curve lands at that same number, tracing the running sum $1 + 2 + \cdots + n$ as one smooth shape instead of a pile of separate additions.
 
-The chart lines up that same formula against $n^2/2$, a close but not identical curve: the two nearly overlap for large n, but the exact sum is always a little above $n^2/2$ because of the leftover $n/2$ term. Watching them separate slightly at small n and converge at large n is a first taste of how formulas can approximate each other.
+The chart also draws a second curve, $n^2/2$, close to the first one but not identical. At x = 10 the exact sum sits at 55 while the comparison curve sits at 50, a gap of 5 that comes from the leftover x/2 term hiding inside the exact formula. Watch the two curves separate slightly for small x and nearly meet for large x, an early look at how one formula can approximate another.
 
 ## Formal
 

@@ -47,3 +47,20 @@ derivation:
   - A(2) = A(1)\left(1+\frac{\text{rate}}{100}\right) = P\left(1+\frac{\text{rate}}{100}\right)^2
   - A(x) = P\left(1+\frac{\text{rate}}{100}\right)^{x}
 charts: []
+primary: x
+presets:
+  - P: 4
+    rate: 8
+    x: 8
+  - P: 2
+    rate: 20
+    x: 5
+  - P: 10
+    rate: -15
+    x: 5
+challenges:
+  - check: abs(P - 4) + abs(rate - 8) + abs(P*(1 + rate/100)^x - 8)
+    target: 0
+    tol: 0.5
+  - check: abs(P - 10) < 0.1 and abs(rate + 20) < 0.1 and P*(1 + rate/100)^x < 1
+  - check: (1 + rate/100)^x > 2 and rate < 15 and rate > 1

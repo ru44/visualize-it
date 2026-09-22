@@ -1,8 +1,8 @@
 ---
 title: Absolute value inequalities
 summary: >-
-  The inequality $|x-c| < r$ describes every point within distance $r$ of $c$ —
-  exactly where the V-shaped curve $|x-c|-r$ dips below zero.
+  Find every point within a set distance of a target — the idea behind
+  manufacturing tolerances, fever alarms, and geofences.
 parameters:
   c: center c
   r: radius r
@@ -13,11 +13,29 @@ variables:
   - a test point
 ---
 
+## Try it
+
+1. Drag the point labelled x back and forth under the V-shaped curve.
+2. Watch where the curve dips below the horizontal axis — that stretch is every x within the allowed distance of the target.
+3. Raise the "radius r" slider and watch that dipped stretch widen on both sides at once.
+
+## Real-life examples
+
+1. **Bolt manufacturing tolerance.** A factory accepts a bolt only if its length lands within 0.3 mm (radius r) of a 2 mm target mark (center c). Anything further off gets rejected.
+2. **Fever check.** A digital thermometer sounds an alarm when a reading strays more than 1 °C (radius r) from the healthy baseline at 0 (center c).
+3. **Delivery robot geofence.** A warehouse robot must stay within 5 units (radius r) of its charging dock at position -4 (center c) on the floor map.
+
+## Test yourself
+
+1. Move the point x onto the exact edge of the dipped region, where the curve touches the axis.
+2. Make the accepted range exactly 10 units wide, from edge to edge.
+3. Move the point x to a spot exactly 3 units outside the accepted range.
+
 ## Intuition
 
-The curve is a V with its point at $x = c$, shifted down by $r$. Drag $x$ across the plot: everywhere the curve dips below the axis is exactly the set of $x$ satisfying $|x-c| < r$ — the two spots where it crosses zero are the boundary of that region.
+A factory accepts a bolt only if its length lands within 0.3 mm of a 2 mm target mark; anything further off gets thrown out. The picture shows this test as a V-shaped curve, drawn from $|x-c|-r$, that dips down and touches bottom exactly at the target. Drag the point x sideways along the curve: everywhere it sits below the horizontal axis is a length the factory would accept. The two spots where the curve crosses that axis mark the edges of the accepted range.
 
-Widen $r$ and the V drops further, so the below-zero stretch widens on both sides at once — because distance from $c$ is being compared against a bigger radius. Move $c$ and the whole V, and hence the solution interval, just slides sideways with it.
+The slider labelled center c sets that target mark, and radius r sets how far off a part may still be. Raise r and the V drops lower, so the accepted stretch below the axis widens on both sides at once — a looser tolerance always lets more lengths through. Move c instead and the whole V slides sideways, target and accepted range together, without changing how wide that range is.
 
 ## Formal
 

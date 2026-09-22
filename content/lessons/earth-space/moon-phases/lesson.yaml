@@ -30,3 +30,16 @@ derivation:
   - \cos\theta = 1 - 2f
   - f = \frac{1-\cos\theta}{2}
 charts: []
+primary: day
+presets:
+- day: 0
+- day: 7.4
+- day: 14.8
+challenges:
+- check: (1-cos(2*pi*day/29.53))/2
+  target: 0.5
+  tol: 0.02
+- check: (1-cos(2*pi*day/29.53))/2 > 0.9
+- check: (1-cos(2*pi*day/29.53))/2
+  target: 0
+  tol: 0.02

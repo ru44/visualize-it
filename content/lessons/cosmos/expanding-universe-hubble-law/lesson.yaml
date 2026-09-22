@@ -1,0 +1,57 @@
+id: expanding-universe-hubble-law
+subject: cosmos
+difficulty: high-school
+equation: v = H_0 d
+concepts:
+- cosmic expansion
+- Hubble's law
+- redshift
+prerequisites:
+- exponential-growth
+related:
+- dark-energy
+- cosmic-microwave-background
+visualization:
+  type: expansion
+  options: {}
+primary: tView
+parameters:
+  om:
+    min: 0
+    max: 1
+    step: 0.01
+    value: 1
+  ol:
+    min: 0
+    max: 1
+    step: 0.01
+    value: 0
+  tView:
+    min: 0
+    max: 1
+    step: 0.01
+    value: 0.6
+variables:
+- v
+- H_0
+- d
+derivation:
+- H(t) = \frac{\dot a}{a}
+- d = a\,d_0
+- v = \dot d = H_0 d
+presets:
+- om: 1
+  ol: 0
+  tView: 1
+- om: 0
+  ol: 0
+  tView: 1
+- om: 0.3
+  ol: 0.7
+  tView: 1
+challenges:
+- check: tView
+  target: 1
+  tol: 0.02
+- check: abs(ol) < 0.02
+- check: abs(om) < 0.02

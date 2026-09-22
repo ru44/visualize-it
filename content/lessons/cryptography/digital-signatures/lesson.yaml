@@ -1,0 +1,48 @@
+id: digital-signatures
+subject: cryptography
+difficulty: high-school
+equation: s = h^{d} \bmod n
+concepts:
+- digital-signature
+- rsa
+- hash-function
+- authentication
+prerequisites:
+- rsa-encryption
+- hash-functions
+related:
+- elliptic-curve-cryptography
+- block-ciphers-and-aes
+visualization:
+  type: hash-avalanche
+  options:
+    mode: avalanche
+    text: pay 100
+parameters:
+  pos:
+    min: 0
+    max: 6
+    step: 1
+    value: 0
+variables:
+- s
+- h
+- d
+- n
+- \bmod
+derivation:
+- \text{treat the order's hash as } h = 13
+- s = h^{d} \bmod n = 13^{27} \bmod 55 = 7 \quad \text{(sign with private exponent } d = 27\text{)}
+- s^{e} \bmod n = 7^{3} \bmod 55 = 13 = h \quad \text{(anyone can verify with public exponent } e = 3\text{)}
+charts: []
+primary: pos
+presets:
+- pos: 0
+- pos: 4
+- pos: 5
+challenges:
+- check: pos
+  target: 4
+- check: pos
+  target: 0
+- check: pos >= 4 and pos <= 6

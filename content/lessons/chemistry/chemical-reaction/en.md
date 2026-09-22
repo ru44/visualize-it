@@ -1,9 +1,9 @@
 ---
 title: 'Balancing a reaction: making water'
 summary: >-
-  Atoms are never created or destroyed in a reaction — they are only rearranged.
-  The coefficients in a balanced equation say exactly how many molecules
-  combine.
+  Balancing a reaction tells you exactly how many molecules of each
+  ingredient combine, so nothing is wasted and nothing appears from nowhere —
+  the same idea behind following a recipe.
 parameters:
   h2: H₂ molecules
   o2: O₂ molecules
@@ -14,11 +14,29 @@ variables:
   - 'molar mass: 1.008 g/mol for H, 15.999 g/mol for O'
 ---
 
+## Try it
+
+1. Drag «h2» and «o2» to set how many molecules of each are on the table.
+2. Drag «reaction progress» from 0 to 1. Watch molecules pair off two at a time and water molecules appear.
+3. Push one gas far higher than the other. The excess molecules stop reacting and pick up a dashed "excess" ring once the other runs out.
+
+## Real-life examples
+
+1. **Mixing hydrogen and oxygen in the exact ratio the equation calls for.** 4 H₂ molecules and 2 O₂ molecules react completely with nothing left over — the 2:1 ratio from the balanced equation.
+2. **Too much oxygen in the tank.** 2 H₂ molecules and 6 O₂ molecules: hydrogen runs out first and most of the oxygen just sits there unreacted.
+3. **A rocket engine halfway through its burn.** 10 H₂ molecules and 2 O₂ molecules, reaction halfway done: oxygen will run out first, capping how much water can ever form.
+
+## Test yourself
+
+1. Mix hydrogen and oxygen in the exact 2:1 ratio, with nothing wasted.
+2. Set up a mixture with oxygen so far in excess that at least 3 O₂ molecules are left over unreacted.
+3. Run the reaction to completion and produce exactly 8 water molecules.
+
 ## Intuition
 
-Drag the h2 and o2 sliders to set how many of each molecule are on the table, then scrub progress. Watch every ball on the left pair off: two H₂ and one O₂ always vanish together and two bent H₂O molecules appear on the right — never a leftover atom, never one created from nothing.
+Think of a recipe that needs exactly 2 eggs for every 1 cup of flour: bring 4 eggs and 6 cups of flour, and you can only make two batches before the eggs run out, no matter how much flour is left. On screen, drag «h2» and «o2» to set how many hydrogen and oxygen molecules sit on the table, then drag «reaction progress» from 0 to 1 and watch pairs of balls vanish together while new, bent water molecules appear.
 
-Push h2 up and o2 down (or the reverse) and the excess reactant stops reacting once the other one runs out — those molecules pick up a dashed “excess” ring and just sit there. That is a limiting reactant: whichever ingredient runs out first caps how much product you can make, no matter how much of the other you have.
+Push «h2» much higher than «o2» and, once the reaction runs, the leftover hydrogen molecules pick up a dashed ring and just sit there unreacted — the oxygen ran out first and capped how much water could form. Whichever ingredient runs out first is called the limiting reactant, and it decides how much product you get, no matter how much of the other ingredient is sitting around.
 
 ## Formal
 

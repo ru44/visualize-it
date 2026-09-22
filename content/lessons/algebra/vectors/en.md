@@ -1,8 +1,9 @@
 ---
 title: Vectors
 summary: >-
-  An arrow with a length and a direction. Drag its tip and watch its
-  components and its length change together.
+  See how two numbers alone pin down an arrow's exact length and direction —
+  the language behind velocity, force, and screen positions in every game
+  and map.
 parameters:
   a: matrix row 1, column 1
   b: matrix row 1, column 2
@@ -15,11 +16,29 @@ variables:
   - the vertical component of the vector
 ---
 
+## Try it
+
+1. Drag the orange arrow's tip and watch vx and vy change together.
+2. Watch the length readout below the grid update as you drag — that is the arrow's straight-line distance from the center.
+3. Push vx or vy negative and watch the arrow flip to point the other way along that axis.
+
+## Real-life examples
+
+1. **A car driving due east.** No sideways drift, just vx=5 m/s east (vy=0): the vector's length is exactly 5, matching its speed.
+2. **An elevator rising straight up.** No horizontal motion, just vy=4 m/s upward (vx=0): the vector's length is exactly 4.
+3. **An airplane's ground track.** Heading east at 3 while wind pushes it north at 4 (vx=3, vy=4): the combined ground-track vector has length exactly 5, even though neither component alone is 5.
+
+## Test yourself
+
+1. Make the vector's length exactly 5 using a vx and vy that are both nonzero.
+2. Make the vector point straight up, with no horizontal component, and a length of exactly 4.
+3. Make the vector point along the exact diagonal (equal vx and vy) with a length greater than 4.
+
 ## Intuition
 
-The arrow on the grid is a vector: it has a length (how far it reaches) and a direction (which way it points). Drag its tip and two numbers change at once, $v_x$ and $v_y$, how far it goes right and how far it goes up. Those two numbers are all you need to redraw the same arrow from scratch.
+A pilot flying due east at 3 units, while a crosswind pushes the plane north at 4 units, ends up moving along a single diagonal path — not east, not north, but somewhere between, and faster in a straight line than either push alone. The orange arrow on the grid is exactly that combined motion: drag its tip and two numbers change together, vx and vy, how far it reaches sideways and how far it reaches up. Those two numbers alone are enough to redraw the same arrow from scratch.
 
-Two vectors add tip to tail: slide one so its start sits on the other's tip, and the sum is the arrow from the first start to the last tip. A scalar multiple just stretches or shrinks the same arrow, or flips it if the scalar is negative, without changing its direction.
+The arrow's straight-line length comes from the same idea as a ladder leaning against a wall: square each of the two numbers, add them, and take the square root — the Pythagorean theorem applied to the triangle the arrow forms with its own sideways and upward reach. Stretch vx or vy and the arrow's length grows to match; flip either one negative and the arrow points the opposite way along that same axis.
 
 ## Formal
 

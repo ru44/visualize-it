@@ -1,8 +1,9 @@
 ---
 title: Newton's second law
 summary: >-
-  A net force accelerates a mass in proportion to the force and in inverse
-  proportion to the mass.
+  Push harder and something speeds up faster; push the same object once it's
+  heavier and you need much more force for the same effect, which is why
+  trucks need bigger engines than small cars.
 parameters:
   F: force F
   m: mass m
@@ -26,11 +27,23 @@ charts:
 2. Raise the slider «force F». The crate reaches the end of the floor much sooner.
 3. Now raise «mass m» instead. The same push barely moves the heavier crate. Acceleration = force ÷ mass.
 
+## Real-life examples
+
+1. **Pushing a shopping cart.** A steady 20 N push on a 15 kg cart: it speeds up by about 1.3 m/s every second.
+2. **Kicking a football.** A hard kick of 50 N on a 0.5 kg ball gives a huge acceleration, which is why the ball leaves your foot so fast.
+3. **Moving a heavy box.** 30 N on a 20 kg box barely gets it going: 1.5 m/s².
+
+## Test yourself
+
+1. Make the crate accelerate at exactly 2 m/s².
+2. Set the mass to 10 kg, then find the force that gives an acceleration of 1.5 m/s².
+3. Make the acceleration as gentle as 0.5 m/s².
+
 ## Intuition
 
-Drag left and right on the diagram to change the force $F$. Watch the orange arrow grow, and watch the block leap off the starting line faster and faster — a bigger push means a bigger acceleration, and the effect is immediate.
+Picture pushing a 15 kg shopping cart with a steady 20 N push — about as hard as a firm shove. Drag the slider "force F" and watch the orange arrow on the crate grow or shrink to match: a bigger push always makes the crate leap off the starting line faster, and you see the effect the moment you move the slider.
 
-Now picture the same push on a much heavier block: it grows visibly bigger as you raise $m$. For an identical force it now crawls instead of races, because acceleration is force *shared out* over mass — the green arrow above it shrinks even though the orange arrow behind it has not.
+Now keep the push the same and drag "mass m" up instead, until the block on screen grows as big as a loaded delivery truck. The same push barely moves it now — the green acceleration arrow shrinks even though the orange force arrow hasn't changed, because the same push now has far more mass to share it with.
 
 ## Formal
 

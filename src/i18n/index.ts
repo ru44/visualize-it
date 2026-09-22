@@ -38,9 +38,29 @@ watch(
   { immediate: true },
 )
 
-/** Translate a UI string; `{name}` placeholders are filled from `vars`. Reactive: reads `locale`. */
+const PLURAL = /\{(\w+)\|([^{}]*)\}/g
+
+/** Pick the plural form for `raw` (a number or a formatted number) using the language's own rules. */
+function plural(raw: string | number | undefined, body: string): string {
+  const text = String(raw ?? '')
+  const num = Number(text.replace(/[^\d.-]/g, ''))
+  const cat = text !== '' && Number.isFinite(num) ? new Intl.PluralRules(locale.value).select(num) : 'other'
+  const forms: Record<string, string> = {}
+  for (const part of body.split('|')) {
+    const i = part.indexOf('=')
+    forms[part.slice(0, i)] = part.slice(i + 1)
+  }
+  return (forms[cat] ?? forms.other ?? '').replaceAll('#', text)
+}
+
+/**
+ * Translate a UI string; `{name}` placeholders are filled from `vars`. Reactive: reads `locale`.
+ * Counted nouns use `{name|one=…|two=…|few=…|many=…|other=…}` with `#` for the number, so each
+ * language gets its own plural rules (Arabic: درس واحد، درسان، 3 دروس، 11 درسًا، 100 درس).
+ */
 export function t(key: Key, vars?: Record<string, string | number>): string {
   let s: string = dict[locale.value]?.[key] ?? (en as Record<string, string>)[key] ?? key
+  s = s.replace(PLURAL, (_, name: string, body: string) => plural(vars?.[name], body))
   if (vars) for (const k in vars) s = s.replaceAll(`{${k}}`, String(vars[k]))
   return s
 }

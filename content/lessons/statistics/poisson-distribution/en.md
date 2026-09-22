@@ -12,11 +12,29 @@ variables:
   - 'Euler’s number, 2.718…'
 ---
 
+## Try it
+
+1. Watch the bars: each shows the chance of exactly that many events happening in one interval.
+2. Drag «λ — average number per interval» down toward 0.5. Most intervals now show zero events.
+3. Drag «λ — average number per interval» up toward 20. The bars smooth into a symmetric bell around λ.
+
+## Real-life examples
+
+1. **Call centre.** A call centre gets 3 calls a minute on average; the chart shows the chance a given minute brings exactly 2 calls.
+2. **Radioactive decay.** A Geiger counter clicks 8 times a second on average; the chart shows the chance of exactly 5 clicks in one second.
+3. **Typos per page.** A manuscript averages 0.8 typos per page; the chart shows the chance a given page has zero typos at all.
+
+## Test yourself
+
+1. Find «λ — average number per interval» and «k — number of events» where that exact count has about a 20% chance.
+2. With a low average rate (under 1), find a count with more than a 50% chance of happening.
+3. With a high average rate (above 15), find a count within 1 of the average that still has more than a 5% chance.
+
 ## Intuition
 
-A call centre gets 3 calls a minute on average. Some minutes bring none, some bring six. The bars show how the counts spread: with $\lambda = 3$, exactly 2 calls has probability $9e^{-3}/2 \approx 0.224$. Zero calls still happens 5% of the time.
+A call centre gets 3 calls a minute on average, «λ — average number per interval» = 3. Some minutes bring none, some bring six. The bars on screen show how the counts spread: drag «k — number of events» to 2 and read that exactly 2 calls has probability $9e^{-3}/2 \approx 0.224$. Zero calls still happens 5% of the time.
 
-Slide $\lambda$ down to 0.5 and the distribution piles up at zero — most intervals are empty. Slide it to 20 and it becomes a symmetric bell with spread $\sqrt{20} \approx 4.5$: for a Poisson variable the variance equals the mean, so counts of about $\lambda \pm \sqrt\lambda$ are typical.
+Slide «λ — average number per interval» down to 0.5 and the bars pile up at zero — most intervals are empty. Slide it to 20 and the bars form a symmetric bell with spread about 4.5: for a Poisson count the variance equals the mean, so counts near λ plus or minus its square root are typical.
 
 ## Formal
 

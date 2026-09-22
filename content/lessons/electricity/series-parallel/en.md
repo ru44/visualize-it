@@ -1,8 +1,10 @@
 ---
 title: Series and parallel resistors
 summary: >-
-  The same two resistors behave very differently wired end-to-end versus
-  side-by-side: series divides the voltage, parallel divides the current.
+  Household outlets all work independently so one broken appliance does not
+  kill the power to the rest of the house, but old-style string lights share
+  one loop so a single burnt bulb darkens the whole strand — the difference
+  is whether the parts are wired in series or in parallel.
 parameters:
   V: supply voltage V
   R1: resistance R1
@@ -15,11 +17,29 @@ variables:
   - voltage drop across each resistor
 ---
 
+## Try it
+
+1. Tap the diagram to select series mode. Watch the same dots flow through both resistors, one after another.
+2. Tap again for parallel mode. Watch the dots split at the junction into two separate streams.
+3. Raise "resistance R1". In parallel mode its branch gets sparser; in series mode the whole loop slows down.
+
+## Real-life examples
+
+1. **Old-style string lights (series).** Wired one bulb after another (mode = series, R1 = 20 Ω, R2 = 60 Ω, V = 12 V), a single broken bulb once broke the whole string of lights.
+2. **Household wall outlets (parallel).** The same two resistors wired side-by-side instead (mode = parallel, R1 = 20 Ω, R2 = 60 Ω, V = 12 V) let each appliance work independently, seeing the full 12 V regardless of the others.
+3. **A voltage-divider light sensor (series).** A fixed 30 Ω resistor in series with a 10 Ω sensor (V = 9 V) creates a voltage across the sensor that a circuit can read to detect changes in light or temperature.
+
+## Test yourself
+
+1. Wire the resistors in parallel and get the combined resistance to exactly 12 Ω.
+2. Wire the resistors in series and get the combined resistance to exactly 50 Ω.
+3. Build a series voltage divider that drops exactly 3 V across R2.
+
 ## Intuition
 
-Tap the diagram to flip between series and parallel and watch the current dots. In series there is only one path, so both resistors carry exactly the same dots at the same speed — the same current flows through everything in the loop, one after another.
+Old-style Christmas lights were wired one bulb after another in a single loop: unscrew any one bulb and the whole string goes dark, because there is only one path for the current and it just got broken. Tap the diagram on screen to select series mode and watch the moving dots: in series there is only one path, so both resistors, $R_1$ and $R_2$, carry exactly the same dots at the same speed — the same current flows through everything in the loop, one after another.
 
-In parallel, the current splits: the branch with the smaller resistance gets visibly denser, faster-moving dots, because it offers less opposition and so draws more current, while both resistors now sit directly across the full battery voltage rather than sharing it.
+Now tap the diagram again to flip to parallel mode, like the wall outlets in a room: each one connects straight across the same two wires, so unplugging one lamp does nothing to the others. Watch the dots split at the junction: the branch with the smaller resistance gets denser, faster-moving dots, because it offers less opposition and draws more current, while both resistors now sit directly across the full battery voltage $V$ instead of sharing it.
 
 ## Formal
 

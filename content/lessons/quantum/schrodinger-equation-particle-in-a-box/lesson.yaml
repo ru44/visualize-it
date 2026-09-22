@@ -1,0 +1,49 @@
+id: schrodinger-equation-particle-in-a-box
+subject: quantum
+difficulty: university
+equation: -\frac{\hbar^2}{2m}\psi'' = E\psi
+concepts:
+  - schrodinger-equation
+  - quantization
+  - standing-waves
+prerequisites:
+  - de-broglie-waves
+  - standing-waves
+related:
+  - quantum-tunnelling
+  - uncertainty-principle
+visualization:
+  type: wave-function
+  options:
+    mode: box
+parameters:
+  n:
+    min: 1
+    max: 6
+    step: 1
+    value: 1
+variables:
+  - \hbar
+  - \psi
+  - m
+  - E
+  - L
+  - E_n
+derivation:
+  - \psi'' = -\frac{2mE}{\hbar^2}\,\psi
+  - \psi(0) = \psi(L) = 0
+  - E_n = \frac{n^2\pi^2\hbar^2}{2mL^2}
+charts: []
+primary: n
+presets:
+  - n: 1
+  - n: 2
+  - n: 5
+challenges:
+  - check: n^2
+    target: 9
+    tol: 0.5
+  - check: n >= 4
+  - check: n^2
+    target: 16
+    tol: 0.5

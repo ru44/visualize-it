@@ -41,3 +41,19 @@ derivation:
   - P(B) = P(B \mid A)\,P(A) + P(B \mid A^c)\,P(A^c)
   - P(A \mid B) = \frac{P(B \mid A)\,P(A)}{P(B \mid A)\,P(A) + P(B \mid A^c)\,P(A^c)}
 charts: []
+primary: prior
+presets:
+  - prior: 1
+    sens: 99
+    spec: 95
+  - prior: 20
+    sens: 90
+    spec: 85
+  - prior: 5
+    sens: 98
+    spec: 98
+challenges:
+  - check: '(sens*prior)/(sens*prior+(100-spec)*(100-prior))*100'
+    target: 50
+  - check: 'prior <= 2 and (sens*prior)/(sens*prior+(100-spec)*(100-prior))*100 >= 95'
+  - check: 'prior >= 20 and (sens*prior)/(sens*prior+(100-spec)*(100-prior))*100 <= 40'

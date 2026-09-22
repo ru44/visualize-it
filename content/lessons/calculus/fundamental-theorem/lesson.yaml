@@ -52,3 +52,12 @@ charts:
     marker: b
     series:
       - -2*cos(x) + 0.5*x + 2
+primary: b
+presets:
+  - { a: 0, b: 3 }
+  - { a: 0, b: 6 }
+  - { a: 2, b: 8 }
+challenges:
+  - { check: '-2*cos(b) + 0.5*b + 2*cos(a) - 0.5*a', target: 5, tol: 0.4 }
+  - { check: 'abs(-2*cos(b) + 0.5*b + 2*cos(a) - 0.5*a) < 0.3 and abs(b - a) > 1' }
+  - { check: '-2*cos(b) + 0.5*b + 2*cos(a) - 0.5*a > 6' }

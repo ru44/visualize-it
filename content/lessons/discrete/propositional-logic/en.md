@@ -1,9 +1,8 @@
 ---
 title: 'Propositional logic'
 summary: >-
-  A proposition is a statement that is simply true or false. Combine two of
-  them with AND, OR and NOT, and the same rule drives both a truth table and
-  a circuit.
+  Combining two true-or-false statements with AND, OR and NOT is the same
+  rule that drives both a truth table and a computer chip's circuits.
 parameters:
   a: a — first input (0 or 1)
   b: b — second input (0 or 1)
@@ -14,11 +13,29 @@ variables:
   - 'NOT: flips true to false and false to true'
 ---
 
+## Try it
+
+1. Set switch a to 1 (has a badge) and switch b to 1 (knows the code) and watch the lamp turn on.
+2. Slide switch b back to 0 and watch the lamp go dark immediately, even though a is still 1.
+3. Compare the AND lamp with the truth table on the right, and find the only row where the output is 1.
+
+## Real-life examples
+
+1. **Full access: badge and code.** A worker has a badge (a = 1) and knows the door code (b = 1): the AND gate outputs 1, and the door unlocks.
+2. **Badge but no code.** A visitor has a badge (a = 1) but does not know the code (b = 0): AND outputs 0, and the door stays locked.
+3. **Code but no badge.** Someone knows the code (b = 1) but was never issued a badge (a = 0): AND still outputs 0, so the door still stays locked.
+
+## Test yourself
+
+1. Find the one combination of a and b that makes AND output 1 and light the lamp.
+2. Find a combination where a and b disagree, so AND stays 0 even though one input is 1.
+3. Find the value of a for which flipping b alone would change whether the lamp lights.
+
 ## Intuition
 
-Flip the two switches a and b and watch the gate's output follow the truth table beside it. With AND the lamp only lights when both a and b are 1; slide either one to 0 and the light goes out immediately, because AND demands every input to hold.
+A door unlocks only when a worker both has a badge and knows the code. Set switch a to 1 for "has a badge" and switch b to 1 for "knows the code", and watch the lamp: it lights only when both switches read 1, matching the row (1, 1) in the truth table on the right. Slide either switch back to 0 and the lamp goes dark immediately, because AND demands every input hold at once.
 
-Change the gate to OR and the lamp is far easier to please: it lights as soon as one input is 1, and only goes dark when both are 0. NOT is simpler still — it just flips whatever single input you give it, so the same switch that turns a light on for AND turns it off for NOT.
+A different rule, admitting a guest if they show a badge or a staff member vouches for them, needs only one condition to hold instead of both: OR lights up whenever at least one switch is up, and only stays dark when both are 0. NOT is simpler still: it just flips whichever single input you give it, so the switch that turns a light on for AND turns the same light off for NOT.
 
 ## Formal
 

@@ -54,3 +54,17 @@ charts:
     marker: AR
     series:
       - 0.02 + (0.11*7)^2/(pi*x*0.85)
+primary: AR
+presets:
+- AR: 4
+  x: 5
+- AR: 9
+  x: 5
+- AR: 25
+  x: 5
+challenges:
+- check: '(0.11*(x+2))/(0.02+(0.11*(x+2))^2/(pi*AR*0.85))'
+  target: 20
+  tol: 2
+- check: '(0.11*(x+2))/(0.02+(0.11*(x+2))^2/(pi*AR*0.85)) > 30'
+- check: 'AR <= 6 and (0.11*(x+2))/(0.02+(0.11*(x+2))^2/(pi*AR*0.85)) > 10'

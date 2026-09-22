@@ -37,3 +37,18 @@ derivation:
   - \text{sum} = a \oplus b
   - \text{carry} = a \wedge b
 charts: []
+primary: a
+presets:
+  - a: 1
+    b: 0
+  - a: 1
+    b: 1
+  - a: 0
+    b: 0
+challenges:
+  - check: a*b
+    target: 1
+  - check: abs(a-b)
+    target: 1
+  - check: a+b
+    target: 0

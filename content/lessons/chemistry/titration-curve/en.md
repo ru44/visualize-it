@@ -16,11 +16,29 @@ variables:
   - equivalence volume — the volume of base that exactly cancels the acid
 ---
 
+## Try it
+
+1. Drag the «volume of base added» slider from zero. Watch pH barely move at first.
+2. Keep dragging toward the equivalence point. Watch pH leap almost vertically.
+3. Raise «acid volume Va» or «acid concentration Ca». Watch the equivalence point shift further along the slider.
+
+## Real-life examples
+
+1. **Standardising vinegar against a base.** 25 mL of 0.1 mol/L acetic acid titrated with 0.1 mol/L NaOH needs 25 mL of base to reach equivalence.
+2. **A more concentrated acid sample.** Just 10 mL of a stronger, 0.3 mol/L acid still needs 30 mL of the same 0.1 mol/L base — three times the concentration means three times the volume needed.
+3. **A dilute acid titrated with a strong, concentrated base.** 50 mL of a weak 0.05 mol/L acid needs only 2.5 mL of a concentrated 1 mol/L base to reach equivalence — a tiny, precise addition.
+
+## Test yourself
+
+1. Find settings where the equivalence point falls at exactly 20 mL of base added.
+2. Push the equivalence point out past 50 mL of base added.
+3. Set the volume added to exactly the equivalence point — the spot where pH crosses 7.
+
 ## Intuition
 
-Drag the volume-of-base slider from zero and watch the pH curve: at first it barely moves, because there is still far more acid than base and a little more base changes the ratio only slightly. Keep dragging, though, and near the equivalence point the curve suddenly shoots upward almost vertically — a tiny extra volume of base swings the solution from strongly acidic to strongly basic in a single step.
+Picture titrating 25 mL of vinegar, a weak-ish acid, against a base, adding it drop by drop: for a long time nothing dramatic seems to happen. On screen, drag the «volume of base added» slider from zero and watch the pH curve: at first it barely moves, because there is still far more acid than base and a little more base changes the ratio only slightly.
 
-That steep jump is not a coincidence of this particular reaction; it happens in every strong acid–strong base titration, because pH is a logarithm of concentration, and right at the point of exact cancellation the remaining acid or base concentration is changing from "a little bit of acid left" to "a little bit of base left" — passing through nearly pure water in between. Watching where that vertical jump sits on the slider tells you exactly how much base was needed to neutralise the acid.
+Keep dragging, though, and near the equivalence point the curve suddenly shoots upward almost vertically — a tiny extra volume of base swings the solution from strongly acidic to strongly basic in a single step. That steep jump happens in every strong acid–strong base titration, and watching where it sits on the slider tells you exactly how much base was needed to neutralise the acid.
 
 ## Formal
 

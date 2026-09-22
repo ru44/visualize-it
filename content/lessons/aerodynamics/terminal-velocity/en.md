@@ -1,8 +1,9 @@
 ---
 title: Terminal velocity
 summary: >-
-  A falling body speeds up only until drag grows to match gravity — after that
-  its speed levels off at a fixed terminal value.
+  This predicts the top speed a skydiver, raindrop, or falling object ever
+  reaches — because drag eventually grows to match gravity and stops it
+  speeding up further.
 parameters:
   m: mass m
   Cd: drag coefficient C_D
@@ -22,11 +23,29 @@ charts:
       - weight m·g
 ---
 
+## Try it
+
+1. Picture a 75 kg skydiver falling belly-down, arms and legs spread wide.
+2. Drag the time point «time t» along the curve: it starts steep, like free fall, then bends over and flattens.
+3. Now shrink «frontal area A», as if the skydiver tucked into a head-down dive. The speed it flattens toward — the terminal velocity — rises.
+
+## Real-life examples
+
+1. **A skydiver falling belly-down.** At 75 kg with arms and legs spread (area 0.7 m²), they level off at about 55 m/s — roughly 200 km/h.
+2. **The same skydiver diving head-down.** Tucked in with far less area (0.3 m²), they can reach about 76 m/s — much faster, purely from a smaller shape.
+3. **A heavier skydiver with gear, tucked in.** At 120 kg with a moderate 0.5 m² area, they level off around 62 m/s.
+
+## Test yourself
+
+1. Tune the mass, drag coefficient, and area for a terminal velocity of about 60 m/s.
+2. Find a time and body shape where the falling speed reaches about 50 m/s.
+3. Reach at least 95% of terminal velocity within the first 10 seconds of the fall.
+
 ## Intuition
 
-Drag the time point along the curve: it starts steep, exactly like free fall under gravity alone, then bends over and flattens toward a ceiling. Early on drag is tiny compared to weight, so the body accelerates at nearly $g$; as speed builds, drag — growing with $v^2$ — catches up to weight and the net force, and hence the acceleration, shrinks toward zero.
+Picture a 75 kg skydiver falling belly-down, arms and legs spread wide. Drag the time point «time t» along the curve: it starts steep, exactly like free fall under gravity alone, then bends over and flattens toward a ceiling. Early on, drag is tiny compared to weight, so the body speeds up almost as fast as anything in free fall; as speed builds, drag catches up to weight, and the extra speed gained each second shrinks toward zero.
 
-Now raise the mass slider: terminal velocity increases, because a heavier body needs more drag force, hence more speed, to balance its larger weight. Raise the frontal area instead (think: skydiver opening their arms and legs) and terminal velocity falls — more drag per unit speed means less speed is needed to reach balance. A skydiver in a head-down dive versus a spread-eagle "box" position is choosing between two very different $A$ values, and hence two very different terminal speeds.
+Now raise «mass m»: the terminal velocity increases, because a heavier body needs more drag force, and hence more speed, to balance its larger weight. Shrink «frontal area A» instead, as if the skydiver tucked into a head-down dive, and terminal velocity rises for the opposite reason — less drag per unit speed means more speed is needed to reach balance. A skydiver diving head-down versus spread out in a "box" position is choosing between two very different shapes, and hence two very different top speeds.
 
 ## Formal
 

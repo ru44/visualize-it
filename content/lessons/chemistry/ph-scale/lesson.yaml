@@ -40,3 +40,14 @@ derivation:
   - \mathrm{pH} \equiv -\log_{10}[\mathrm{H^+}]
   - \Delta[\mathrm{H^+}] \times 10 \;\Longleftrightarrow\; \Delta\mathrm{pH} = 1
 charts: []
+primary: x
+presets:
+  - x: 0.032
+  - x: 0.01
+  - x: 0.0003
+challenges:
+  - check: -log10(x)
+    target: 3
+  - check: -log10(x) < 1.5
+  - check: x
+    target: 0.002

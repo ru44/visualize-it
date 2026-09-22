@@ -56,3 +56,24 @@ derivation:
   - '|\det(M)|'
   - \det(M) = 0
 charts: []
+primary: a
+presets:
+  - a: 2
+    b: 0
+    c: 0
+    d: 1
+  - a: 1
+    b: 0.5
+    c: 0
+    d: 1
+  - a: -1
+    b: 0
+    c: 0
+    d: 1
+challenges:
+  - check: a*d - b*c
+    target: 2
+  - check: a*d - b*c
+    target: 0
+  - check: a*d - b*c
+    target: -0.5

@@ -38,3 +38,17 @@ derivation:
   - "\\text{electrons: } Z \\text{ (neutral atom)}"
   - A = Z + N
 charts: []
+primary: Z
+presets:
+  - Z: 1
+    N: 0
+  - Z: 6
+    N: 6
+  - Z: 20
+    N: 20
+challenges:
+  - check: Z + N
+    target: 24
+  - check: abs(Z - N) < 0.5
+  - check: N - Z
+    target: 8

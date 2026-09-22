@@ -1,9 +1,9 @@
 ---
 title: RLC resonance
 summary: >-
-  A resistor, inductor and capacitor in series pass current best at one special
-  frequency, where the inductor and capacitor's opposite reactances exactly
-  cancel.
+  Turning a radio dial does not change a station's actual frequency — it
+  changes your receiver's own favourite frequency until the two match, and
+  that is the moment a weak signal suddenly comes through loud and clear.
 parameters:
   V: source voltage V
   R: resistance R
@@ -17,11 +17,29 @@ variables:
   - quality factor — sharpness of the resonance peak
 ---
 
+## Try it
+
+1. Drag the frequency point along the curve. Current is small at the edges and peaks in the middle.
+2. Lower the slider "resistance R". Watch the peak grow taller and narrower.
+3. Read the frequency where the peak sits — that is the resonant frequency f0.
+
+## Real-life examples
+
+1. **A radio tuner searching for a station.** With low resistance (L = 50 mH, C = 20 µF, R = 5 Ω), the response peaks sharply at one frequency, letting the receiver pick out a single station and reject its neighbours.
+2. **A wireless phone-charging pad.** With moderate resistance (L = 100 mH, C = 50 µF, R = 20 Ω), transmitter and receiver coils are tuned to the same resonant frequency so energy transfers efficiently across the small gap.
+3. **A metal detector's coil.** With L = 150 mH, C = 5 µF, R = 15 Ω, a nearby metal object shifts the coil's effective inductance, moving the resonant peak in a way the circuit can sense.
+
+## Test yourself
+
+1. Tune to resonance: bring the drive frequency within 2 Hz of f0 for the current L and C.
+2. Make the resonance sharp: reach a quality factor Q of at least 15.
+3. At resonance, reach a peak current of at least 1.5 A.
+
 ## Intuition
 
-Drag the frequency point along the curve. Current is small at low and high frequency and peaks sharply near one frequency in the middle — the inductor resists fast changes (its reactance $2\pi fL$ grows with $f$) while the capacitor resists slow ones (its reactance $1/2\pi fC$ shrinks with $f$); only near $f_0$ do those two opposing effects cancel and the circuit looks purely resistive.
+Turn the dial on an old analogue radio and, out of all the stations broadcasting at once, only one comes through clearly at a time — the rest stay silent. That happens because the radio's tuning circuit favours one particular frequency and rejects the others, and the picture on screen shows exactly that favouritism as a curve. Drag the frequency point along the blue curve, labelled $x$ in Hz, and watch the current climb and fall: it is small at low and high frequencies, and peaks sharply near one frequency in the middle, called the resonant frequency.
 
-Shrink $R$ with the default $L$ and $C$ and watch the peak grow taller and narrower — less resistance means less to limit the current right at resonance, and a sharper filter that only lets a narrow band of frequencies through.
+That peak happens because an inductor (coil) resists fast changes in current more and more as frequency rises, while a capacitor resists slow changes more and more as frequency falls — only right at the resonant frequency do these two opposing effects cancel out, leaving the circuit acting like a plain resistor and letting the most current through. Shrink the slider "resistance R", keeping the default "inductance L" and "capacitance C", and watch the peak grow taller and narrower — that is a radio tuner becoming more selective, rejecting neighbouring stations more sharply.
 
 ## Formal
 

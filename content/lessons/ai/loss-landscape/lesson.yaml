@@ -1,0 +1,64 @@
+id: loss-landscape
+subject: ai
+difficulty: beginner
+equation: L(x,y) = (x-1)^2 + 2(y+0.5)^2, \qquad \nabla L = (2(x-1),\ 4(y+0.5))
+concepts:
+  - loss-landscape
+  - gradient-descent
+  - learning-rate
+  - local-minimum
+prerequisites:
+  - gradient
+  - what-is-machine-learning
+related:
+  - what-is-machine-learning
+  - overfitting
+visualization:
+  type: surface-3d
+  options:
+    expr: (x-1)^2 + 2*(y+0.5)^2
+    extent: 3
+    zRange:
+      - 0
+      - 20
+parameters:
+  x0:
+    min: -3
+    max: 3
+    step: 0.01
+    value: 2.5
+  y0:
+    min: -3
+    max: 3
+    step: 0.01
+    value: 2
+variables:
+  - x, y
+  - L
+  - \nabla L
+  - \eta
+derivation:
+  - L(x,y) = (x-1)^2 + 2(y+0.5)^2
+  - \nabla L = \left(\frac{\partial L}{\partial x}, \frac{\partial L}{\partial y}\right) = (2(x-1),\ 4(y+0.5))
+  - (x,y) \gets (x,y) - \eta\,\nabla L
+charts: []
+primary: x0
+presets:
+  - x0: 2.5
+    y0: 2
+  - x0: 1
+    y0: -0.5
+  - x0: -2
+    y0: -2
+challenges:
+  - check: abs(x0-1)<0.05 and abs(y0+0.5)<0.05
+  - check: (x0-1)^2+2*(y0+0.5)^2 > 15
+  - check: abs(y0+0.5)<0.05 and abs(x0-1)>1.5
+visualization3d:
+  type: surface
+  options:
+    expr: (x-1)^2 + 2*(y+0.5)^2
+    extent: 3
+    zRange:
+      - 0
+      - 20

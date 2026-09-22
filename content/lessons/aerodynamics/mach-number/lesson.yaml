@@ -54,3 +54,17 @@ charts:
     marker: x
     series:
       - vAircraft/sqrt(1.4*287*x)
+primary: vAircraft
+presets:
+- x: 220
+  vAircraft: 250
+- x: 305
+  vAircraft: 90
+- x: 220
+  vAircraft: 340
+challenges:
+- check: 'vAircraft/sqrt(1.4*287*x)'
+  target: 0.8
+  tol: 0.05
+- check: 'x <= 220 and vAircraft/sqrt(1.4*287*x) > 1'
+- check: 'vAircraft >= 100 and vAircraft/sqrt(1.4*287*x) < 0.3'

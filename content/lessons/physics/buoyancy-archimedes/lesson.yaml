@@ -42,3 +42,20 @@ derivation:
   - W = \rho_{obj} V g
   - F_b = W \;\Rightarrow\; \frac{V_{sub}}{V} = \frac{\rho_{obj}}{\rho_{fluid}}
 charts: []
+primary: rhoObj
+presets:
+  - rhoObj: 920
+    rhoFluid: 1000
+    V: 20
+  - rhoObj: 240
+    rhoFluid: 1000
+    V: 5
+  - rhoObj: 2500
+    rhoFluid: 1000
+    V: 10
+challenges:
+  - check: rhoObj/rhoFluid
+    target: 0.5
+  - check: rhoObj > rhoFluid
+  - check: rhoFluid*(V/1000)*9.81
+    target: 150

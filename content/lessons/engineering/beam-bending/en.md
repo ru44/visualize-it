@@ -1,9 +1,8 @@
 ---
 title: Beam bending
 summary: >-
-  A beam fixed at one end and loaded at the other bends into a curve set by
-  the load, the beam's length, its material, and the shape of its
-  cross-section — and length matters far more than any of the others.
+  A shelf or a diving board bends more from being longer than from any
+  other change you could make to it — this lesson shows why.
 parameters:
   F: F — end load
   L: L — beam length
@@ -19,11 +18,29 @@ variables:
   - M — the bending moment at a point, the internal twisting force trying to bend it there
 ---
 
+## Try it
+
+1. Watch the beam. Drag $x$ along its length to see how much it has bent at each point.
+2. Drag $F$ (the end load) up. The tip droops further, with the bend steepest at the free end.
+3. Now drag $L$ (the beam's length) up instead. The tip sags much faster than it did with $F$ — length matters far more.
+
+## Real-life examples
+
+1. **A wooden bookshelf.** A 1 m shelf loaded with about 20 kg of books (≈200 N) and made of soft wood (E ≈ 10 GPa) sags visibly at the front edge — which is why thin wooden shelves need a thicker cross-section or a support in the middle.
+2. **A diving board.** A springboard about 4 m long flexes noticeably under an 80 kg diver (≈800 N), stiffened by a fiberglass-like material (E ≈ 70 GPa) so it snaps back rather than staying bent.
+3. **A steel bridge support beam.** A 5 m steel I-beam (E ≈ 200 GPa) carrying a heavy 5,000 N load barely deflects compared to a wooden beam of the same size, because both its stiffness and its I-beam shape resist bending far more.
+
+## Test yourself
+
+1. Drag $x$ to the tip ($x = L$) and find a combination of $F$, $L$, $E$ and $I$ that gives a tip deflection of about 50 mm.
+2. Using a beam under 3 m long, find a load and material weak enough to make the tip sag more than 100 mm.
+3. Drag $x$ to the tip and find values of $F$, $L$, $E$ and $I$ that keep the tip deflection under 1 mm.
+
 ## Intuition
 
-Drag F up and the tip droops further, in a curve that is flattest near the wall and steepest at the free end — that end carries no more bending force beyond itself, so it tips over the most. Drag L up instead and the droop grows much faster than F does: doubling the length roughly makes the tip sag eight times as far.
+Picture a wooden bookshelf, about 1 meter long, sagging under 20 kg of books — roughly 200 newtons pressing down at the far edge. The curve on screen is $y$, how far each point on the beam has bent, plotted along its length; drag $F$, the load at the end, up and the tip droops further, bending most sharply right at that free end, since nothing beyond it pushes back.
 
-Now drag E or I up: the same load bends the beam far less, because a stiffer material (higher E) or a cross-section shaped to resist bending (higher I) both fight the load harder. That is exactly why bookshelves sag under heavy books and why the fix is a thicker shelf, not a stronger clamp.
+Now drag $L$, the beam's length, up instead: the droop grows far faster than it did with $F$ — doubling the length makes the tip sag roughly eight times as far. Raise $E$ or $I$ instead, the material's stiffness or the cross-section's shape, and the same load bends the beam much less, which is exactly why fixing a sagging shelf means a thicker board, not a stronger clamp.
 
 ## Formal
 

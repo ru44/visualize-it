@@ -1,8 +1,9 @@
 ---
 title: 'Quantifiers: for all and there exists'
 summary: >-
-  "Every multiple of 4 is a multiple of 2" and "some multiple of 2 is not a
-  multiple of 4" are two different kinds of claim. See both in one picture.
+  "Every multiple of 4 is also a multiple of 2" and "some multiple of 2 is
+  not a multiple of 4" are two different kinds of claim, and telling them
+  apart is what lets you prove or disprove a statement with just one example.
 parameters:
   N: N — largest number in the universe
   p: p — A is every multiple of p
@@ -17,11 +18,29 @@ variables:
   - 'not: flips a true claim to false and a false one to true'
 ---
 
+## Try it
+
+1. Set p to 2 and q to 4 and watch set B sit entirely inside set A on screen.
+2. Switch the highlighted operation to "difference" and read off the numbers that appear in A but not B — each one proves an existence claim.
+3. Change q to a number that is not a multiple of p (try q = 5) and watch the region B minus A fill with numbers, breaking the "for all" claim.
+
+## Real-life examples
+
+1. **Lockers numbered in fours are always numbered in twos.** With p = 2 and q = 4, and N = 20 lockers, every locker number that is a multiple of 4 is also a multiple of 2: the claim "every multiple of 4 is a multiple of 2" holds for all 20 lockers.
+2. **Every sixth bus stop is also a third stop.** With p = 3 and q = 6, and N = 30 stops, every stop numbered a multiple of 6 is also a multiple of 3, again a true "for all" claim.
+3. **Not every locker numbered in threes is numbered in fives.** With p = 5 and q = 3, and N = 24 lockers, locker 3 is a multiple of 3 but not of 5, a single counterexample that breaks the claim "every multiple of 3 is a multiple of 5."
+
+## Test yourself
+
+1. Find p and q so that the claim "every multiple of q is a multiple of p" is true.
+2. Find p and q so that the claim "every multiple of q is a multiple of p" is false.
+3. Find N, p and q so that more than 5 numbers are multiples of p but not of q.
+
 ## Intuition
 
-With p = 2 and q = 4, B sits entirely inside A: every multiple of 4 you can name (4, 8, 12, …) also turns up in A's list of even numbers. That "every single one" claim is what the for-all quantifier means, and it is exactly why the picture shows B \ A empty — nothing is in B without also being in A.
+Picture 20 lockers numbered 1 to 20. Set A holds every locker number that is a multiple of p, and set B holds every multiple of q. With p set to 2 and q set to 4, set B sits entirely inside set A on screen: every multiple of 4 you can name, 4, 8, 12, and so on, also shows up in A's list of even lockers. That "every single one" claim is what the for-all quantifier means, and it is why the region B minus A stays empty on screen.
 
-Now look at what the difference A \ B lights up: 2, 6, 10, 14, 18 — numbers that are even but not multiples of 4. Each one is a witness to an existence claim: "there exists a multiple of 2 that is not a multiple of 4." You only need to find one such number to make that claim true, and the picture hands you five.
+Now look at what lights up in A minus B: lockers 2, 6, 10, 14 and 18, each one even but not a multiple of 4. Each of those five lockers is a witness to an existence claim, that there exists a multiple of 2 which is not a multiple of 4. Finding just one such locker would already prove the claim true, and the picture hands you five.
 
 ## Formal
 

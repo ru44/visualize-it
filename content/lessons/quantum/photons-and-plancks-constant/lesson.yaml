@@ -1,0 +1,62 @@
+id: photons-and-plancks-constant
+subject: quantum
+difficulty: high-school
+equation: E = hf
+concepts:
+  - photon
+  - plancks-constant
+  - quantization
+prerequisites:
+  - sine-wave
+related:
+  - photoelectric-effect
+  - hydrogen-spectrum
+visualization:
+  type: photoelectric
+  options: {}
+parameters:
+  f:
+    min: 3
+    max: 15
+    step: 0.1
+    value: 6
+    unit: "×10¹⁴ Hz"
+  phi:
+    min: 1
+    max: 5
+    step: 0.05
+    value: 2.3
+    unit: eV
+  I:
+    min: 1
+    max: 10
+    step: 1
+    value: 5
+variables:
+  - E
+  - h
+  - f
+derivation:
+  - E \propto f
+  - E = hf
+  - h = 6.626\times10^{-34}\ \text{J s}
+charts: []
+primary: f
+presets:
+  - f: 4.7
+    phi: 2.3
+    I: 3
+  - f: 6.5
+    phi: 2.3
+    I: 6
+  - f: 10
+    phi: 2.3
+    I: 4
+challenges:
+  - check: 0.4136*f
+    target: 2
+    tol: 0.05
+  - check: 0.4136*f > 3
+  - check: 0.4136*f
+    target: 4.5
+    tol: 0.1

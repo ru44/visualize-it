@@ -20,11 +20,29 @@ charts:
       - molecules
 ---
 
+## Try it
+
+1. Drag «mass m». Watch the number of moles rise in a straight line as you add more.
+2. Raise «molar mass M» instead. The same mass on the scale now corresponds to fewer moles.
+3. Watch the chart: molecules climb in a straight line with mass, but the line's steepness depends on M.
+
+## Real-life examples
+
+1. **A glass of water.** About 250 g of water, with a molar mass of 18 g/mol, is nearly 14 moles — over 8 × 10²⁴ molecules.
+2. **Salting a pot of pasta water.** 30 g of table salt (molar mass 58.5 g/mol) is about half a mole, plenty to season a large pot.
+3. **A teaspoon of baking soda.** 10 g of baking soda (molar mass 84 g/mol) is a little over a tenth of a mole — enough to leaven a batch of cookies.
+
+## Test yourself
+
+1. Weigh out exactly 2 moles of substance.
+2. Get more than 10 moles from the mass and molar mass you choose.
+3. Get fewer than 0.05 moles — a vanishingly small amount.
+
 ## Intuition
 
-Drag the mass slider and watch the number of moles rise in a straight line — double the mass, double the moles, because moles is just mass measured in units of "however much one particle weighs." Now drag the molar mass slider instead: a heavier molecule means each mole weighs more, so the same mass on the scale corresponds to fewer moles, and the line tilts flatter.
+Picture a kitchen scale weighing out sugar for a recipe: 36 g of table sugar sitting on the pan. Drag the «mass m» slider and watch the number of moles rise in a straight line — double the mass, double the moles, because a mole is just mass measured in units of however much one particle weighs.
 
-This is the whole point of the mole: atoms and molecules are far too small and numerous to count one by one, but a kitchen scale can weigh grams easily. By choosing the mole to be exactly the number of atoms in the molar mass of a substance, chemists turn an uncountable pile of particles into an ordinary weighing problem.
+Now drag the «molar mass M» slider instead: a heavier molecule means each mole weighs more, so the same mass on the scale corresponds to fewer moles, and the line on the chart tilts flatter. This is the whole point of the mole: atoms are far too small and numerous to count one by one, but a kitchen scale weighs grams easily.
 
 ## Formal
 

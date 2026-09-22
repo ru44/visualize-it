@@ -49,3 +49,12 @@ derivation:
   - p>1 \;\Rightarrow\; 1-p<0 \;\Rightarrow\; \lim_{b\to\infty} b^{1-p} = 0
   - \lim_{b\to\infty}\int_1^b x^{-p}\,dx = \frac{0-1}{1-p} = \frac{1}{p-1}
 charts: []
+primary: p
+presets:
+  - { p: 0.5, a: 1, b: 50 }
+  - { p: 2, a: 1, b: 50 }
+  - { p: 1, a: 1, b: 30 }
+challenges:
+  - { check: 'p < 1 and (b^(1-p) - a^(1-p))/(1-p) > 5' }
+  - { check: 'p > 1 and (b^(1-p) - a^(1-p))/(1-p) < 2' }
+  - { check: '(b^(1-p) - a^(1-p))/(1-p)', target: 1, tol: 0.2 }

@@ -46,3 +46,12 @@ derivation:
   - \ln y = kt + C
   - y = e^{C} e^{kt} = y_0 e^{kt}
 charts: []
+primary: k
+presets:
+  - { k: 0.05, y0: 1, x: 10 }
+  - { k: -0.3, y0: 8, x: 5 }
+  - { k: 0.4, y0: 0.5, x: 8 }
+challenges:
+  - { check: 'y0*exp(k*x)', target: 5, tol: 0.3 }
+  - { check: 'y0*exp(k*x) < 0.1' }
+  - { check: 'exp(k*x)', target: 2, tol: 0.1 }

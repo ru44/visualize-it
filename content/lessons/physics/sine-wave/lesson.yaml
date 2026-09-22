@@ -77,3 +77,22 @@ derivation:
   - kx - \omega t = \text{const} \;\Rightarrow\; \frac{dx}{dt} = \frac{\omega}{k}
   - v = \frac{2\pi f}{2\pi/\lambda} = f\lambda
 charts: []
+primary: f
+presets:
+  - A: 0.3
+    L: 1
+    f: 1
+    phi: 0
+  - A: 1.5
+    L: 4
+    f: 0.4
+    phi: 0
+  - A: 2.5
+    L: 8
+    f: 0.15
+    phi: 0
+challenges:
+  - check: f*L
+    target: 1
+  - check: abs(f*L-1)<0.05 and L>=6
+  - check: L<3 and f*L>2

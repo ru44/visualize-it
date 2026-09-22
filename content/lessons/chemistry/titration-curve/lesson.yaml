@@ -58,4 +58,20 @@ derivation:
   - "n_a = C_a V_a"
   - "n_b = C_b x"
   - "n_a = n_b \\Rightarrow V_{eq} = \\dfrac{C_a V_a}{C_b}"
+primary: x
+presets:
+  - Ca: 0.1
+    Va: 25
+    Cb: 0.1
+  - Ca: 0.3
+    Va: 10
+    Cb: 0.1
+  - Ca: 0.05
+    Va: 50
+    Cb: 1.0
+challenges:
+  - check: Ca*Va/Cb
+    target: 20
+  - check: Ca*Va/Cb > 50
+  - check: abs(x - Ca*Va/Cb) < 0.2
 charts: []

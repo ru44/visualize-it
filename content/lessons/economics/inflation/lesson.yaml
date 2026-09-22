@@ -50,3 +50,17 @@ charts:
     marker: x
     series:
       - 100*(1 + p/100)^x
+primary: p
+presets:
+  - p: 2
+    x: 20
+  - p: 8
+    x: 10
+  - p: 20
+    x: 5
+challenges:
+  - check: 100/(1+p/100)^x
+    target: 50
+    tol: 2
+  - check: abs(p-2)<0.3 and abs(100*(1+p/100)^x - 200) < 5
+  - check: p < 10 and 100/(1+p/100)^x < 10

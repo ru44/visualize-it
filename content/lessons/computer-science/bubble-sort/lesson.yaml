@@ -37,3 +37,16 @@ derivation:
   - \sum_{i=1}^{n-1} (n-i) = \sum_{j=1}^{n-1} j = \frac{n(n-1)}{2}
   - \frac{n(n-1)}{2} = O(n^2)
 charts: []
+primary: n
+presets:
+  - n: 8
+    step: 1
+  - n: 24
+    step: 1
+  - n: 40
+    step: 1
+challenges:
+  - check: n*(n-1)/2
+    target: 190
+  - check: n*(n-1)/2 >= 300
+  - check: abs(n-10)<0.5 and step>=0.99

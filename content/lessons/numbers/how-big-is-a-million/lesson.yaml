@@ -1,0 +1,40 @@
+id: how-big-is-a-million
+subject: numbers
+difficulty: beginner
+equation: '10^{e}'
+concepts:
+- orders of magnitude
+- counting
+prerequisites:
+- powers-of-ten
+related:
+- scientific-notation
+- big-number-names
+visualization:
+  type: dot-grid
+  options: { mode: scale }
+parameters:
+  e:
+    min: 0
+    max: 12
+    step: 1
+    value: 6
+variables:
+- e
+derivation:
+- '10^{e} \text{ seconds}'
+- '\dfrac{10^{e}}{86400} \text{ days}'
+- '10^{6}\to 11.6\text{ days}, \quad 10^{9}\to 31.7\text{ years}'
+primary: e
+presets:
+- e: 4
+- e: 6
+- e: 9
+challenges:
+- check: e
+  target: 6
+  tol: 0.4
+- check: e
+  target: 9
+  tol: 0.4
+- check: e >= 10

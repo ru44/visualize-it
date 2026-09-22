@@ -18,6 +18,18 @@ variables:
 2. The blue bar is how far right it is: that is cos.
 3. Watch the wave on the right draw itself as you go round. A wave is just a circle seen over time.
 
+## Real-life examples
+
+1. **Clock hands at quarter past.** The minute hand points straight up at 90°, where the point on the circle sits exactly at its highest.
+2. **Compass bearing southwest.** A bearing of 225° points down and to the left, where both the horizontal and vertical distances from the centre are negative.
+3. **Ferris wheel near the top.** A car that has swung 80° around the wheel is close to the very top, nearly as high as it will get.
+
+## Test yourself
+
+1. Find an angle where the height of the point (sin θ) equals 0.5.
+2. Go past 180° yet keep the horizontal distance (cos θ) above 0.5.
+3. Land in the region where both the height and the horizontal distance are negative.
+
 ## Intuition
 
 Drag the point around the rim of the circle. Its horizontal distance from the centre is $\cos\theta$, its vertical distance is $\sin\theta$ — you are not memorising a table, you are watching two shadows cast by one spinning point.

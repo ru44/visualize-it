@@ -1,8 +1,9 @@
 ---
 title: 'Sets and Venn diagrams'
 summary: >-
-  A set is just a collection of things. See how two sets overlap, and why
-  counting their union means subtracting what you double-counted.
+  Counting two overlapping sets means subtracting what you double-counted,
+  the same fix behind counting search results, guest lists, or survey
+  answers that satisfy either of two conditions.
 parameters:
   N: N — largest number in the universe
   p: p — A is every multiple of p
@@ -14,11 +15,29 @@ variables:
   - 'the universe U: every number from 1 to N, the big rectangle'
 ---
 
+## Try it
+
+1. Set N to 20, p to 2 and q to 3, and tap "union" — every ticket divisible by 2 or 3 lights up.
+2. Tap "intersection" instead and watch the lit tickets shrink to just the ones divisible by both 2 and 3.
+3. Tap "difference" and then "complement" and compare which tickets stay lit each time.
+
+## Real-life examples
+
+1. **Raffle tickets divisible by 2 or 3.** Out of 20 raffle tickets, the union with p = 2 and q = 3 lights up every ticket number divisible by 2 or by 3 (or both), the tickets eligible for a "lucky number" prize.
+2. **Tickets divisible by both 4 and 6.** Out of 30 tickets, the intersection with p = 4 and q = 6 lights up only the numbers divisible by both, the multiples of 12, a smaller and rarer prize category.
+3. **Tickets divisible by 5 but not 7.** Out of 40 tickets, the difference with p = 5 and q = 7 lights up numbers divisible by 5 that are not also divisible by 7, tickets that qualify for one prize but are excluded from a bonus draw.
+
+## Test yourself
+
+1. Find N, p and q so that the union A∪B contains exactly 15 numbers.
+2. Find N, p and q so that the overlap A∩B has more than 5 numbers, the amount you'd double-count by just adding |A| and |B|.
+3. Find N, p and q so small and mismatched that A and B never overlap at all.
+
 ## Intuition
 
-Tap the operation buttons and watch which numbers light up. With union you get every number that is a multiple of p or of q (or both); with intersection only the numbers that are multiples of both stay lit, sitting in the lens where the two circles overlap. Difference keeps only what is in A but not in B, and complement flips the picture, lighting up everything outside A.
+Imagine 20 raffle tickets numbered 1 to 20, where set A is every ticket divisible by 2 and set B is every ticket divisible by 3. Tap the union button and every ticket that is a multiple of 2 or of 3 (or both) lights up. Tap intersection instead and only the tickets divisible by both light up, sitting in the lens where the two circles overlap.
 
-Set N to 20, p to 2 and q to 3: A has 10 numbers, B has 6, and the overlap A ∩ B (multiples of 6) has 3. If you just added 10 and 6 you would get 16, but the picture shows only 13 numbers lit for the union, because the 3 multiples of 6 were about to be counted twice, once in each circle.
+Set N to 20, p to 2 and q to 3 on the sliders: A has 10 tickets, B has 6, and the tickets divisible by both, the overlap A∩B, has 3. Adding 10 and 6 gives 16, but the picture lights up only 13 tickets for the union, because the 3 tickets divisible by both were about to be counted twice, once in each circle.
 
 ## Formal
 

@@ -72,3 +72,12 @@ charts:
     marker: T
     series:
       - Af*exp(-Ea/(8.314*x))
+primary: x
+presets:
+  - T: 293
+  - T: 277
+  - T: 370
+challenges:
+  - check: Af*exp(-Ea/(8.314*T)) > 1
+  - check: abs(Af-1e7)<1e5 and abs(Af*exp(-Ea/(8.314*T)) - 0.05) < 0.005
+  - check: Af*exp(-Ea/(8.314*T)) < 1e-6

@@ -38,3 +38,15 @@ derivation:
   - "\\text{for each neighbour } v \\text{ of the dequeued node } u: \\; d(v) = d(u) + 1"
   - \text{first visit to target} \Rightarrow d(\text{target}) = \text{shortest hop count}
 charts: []
+primary: start
+presets:
+  - start: 0
+    step: 1
+  - start: 5
+    step: 1
+  - start: 9
+    step: 0
+challenges:
+  - check: abs(start-0)<0.5 and step>=0.99
+  - check: abs(start-9)<0.5
+  - check: abs(start-5)<0.5 and step>0.5

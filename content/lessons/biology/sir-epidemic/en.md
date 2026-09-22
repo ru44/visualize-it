@@ -26,6 +26,24 @@ variables:
     fully susceptible population
 ---
 
+## Try it
+
+1. Watch the infected curve rise as the disease spreads through a susceptible population.
+2. Raise β, the rate of contacts that infect. The infected curve shoots higher and earlier.
+3. Raise γ, the recovery rate, instead. The same wave arrives lower and passes quicker.
+
+## Real-life examples
+
+- **Seasonal flu.** A modest transmission rate (β = 0.13) against a typical recovery rate (γ = 0.1) gives a reproduction number around 1.3 — enough to spread, but not explosively.
+- **A measles-like outbreak.** A very high transmission rate (β = 0.75) against slow recovery (γ = 0.05) gives a reproduction number near 15, among the most contagious diseases known.
+- **An outbreak that fizzles out.** A low transmission rate (β = 0.1) against fast recovery (γ = 0.3) keeps the reproduction number under 1, so the outbreak dies out on its own.
+
+## Test yourself
+
+1. Set the basic reproduction number (β divided by γ) to exactly 3.
+2. Reach a herd-immunity threshold of 80% (1 minus γ divided by β equals 0.8).
+3. Start an outbreak that cannot take off: keep the reproduction number below 1, starting from at least 20 initial cases.
+
 ## Intuition
 
 Three curves race across the plot: susceptible falls, infected rises then falls back to zero, recovered climbs and levels off. Drag β up and the infected curve shoots higher and earlier — more contacts mean a faster, sharper wave. Drag γ up instead and people leave the infected group faster, so the same wave arrives lower and passes quicker.

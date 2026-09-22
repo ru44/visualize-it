@@ -39,3 +39,17 @@ derivation:
   - (1-\alpha)\frac{S_{0}}{4} = \sigma T^4\left(1-\frac{\epsilon}{2}\right)
   - T = \left[\frac{(1-\alpha)S_{0}}{4\sigma(1-\epsilon/2)}\right]^{1/4}
 charts: []
+primary: x
+presets:
+- alb: 0.11
+  x: 0
+- alb: 0.3
+  x: 0.78
+- alb: 0.6
+  x: 0.95
+challenges:
+- check: ((1-alb)*1361/(4*5.67e-8*(1-x/2)))^(1/4) - 273.15
+  target: 0
+  tol: 2
+- check: ((1-alb)*1361/(4*5.67e-8*(1-x/2)))^(1/4) - 273.15 > 40
+- check: alb > 0.55 and ((1-alb)*1361/(4*5.67e-8*(1-x/2)))^(1/4) - 273.15 < -30

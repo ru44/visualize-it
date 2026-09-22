@@ -39,3 +39,11 @@ derivation:
 - \lim_{x \to 0} \frac{\sin x}{x} = 1
 charts: []
 primary: d
+presets:
+  - { d: 3 }
+  - { d: 0.5 }
+  - { d: 0.01 }
+challenges:
+  - { check: 'abs(sin(d)/d - 1) < 0.01' }
+  - { check: 'sin(d)/d < 0.9' }
+  - { check: 'sin(d)/d < 0' }

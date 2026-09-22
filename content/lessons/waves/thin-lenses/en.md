@@ -1,8 +1,10 @@
 ---
 title: Thin lenses and image formation
 summary: >-
-  Where a lens puts the image of an object depends on only two numbers — the
-  lens's focal length and how far away the object sits.
+  A magnifying glass held close to a page makes the letters look bigger and
+  upright, but held farther away it flips the whole view upside-down — where
+  the lens puts that image depends on just two numbers: its focal length and
+  how far away the object sits.
 parameters:
   f: focal length f
   doo: object distance d₀
@@ -14,11 +16,29 @@ variables:
   - magnification m
 ---
 
+## Try it
+
+1. Drag the red arrow (the object) far from the lens. Watch the three rays cross on the far side, drawing a small, upside-down image.
+2. Drag the object closer, past the mark labelled F. The rays now spread apart instead of crossing — a big, upright, dashed image appears instead.
+3. Raise the slider "focal length f". Watch where the crossing point (or the dashed image) moves.
+
+## Real-life examples
+
+1. **A camera photographing a distant tree.** With the tree far away (object distance d₀ = 25, focal length f = 6, height h₀ = 2) the lens forms a small, upside-down real image on the sensor — exactly what the shutter captures.
+2. **A magnifying glass over small text.** Held close to the page (d₀ = 3, f = 6, h₀ = 1) the object sits inside the focal length, so the lens produces a large, upright, virtual image the eye can focus on.
+3. **A projector lens showing a slide.** Placed just outside its focal length (d₀ = 12, f = 10, h₀ = 1.5), the lens throws a large, real, upside-down image onto the distant screen — which is why the slide is mounted upside-down inside the projector.
+
+## Test yourself
+
+1. Position the object so the image forms exactly 10 units behind the lens (image distance = 10).
+2. Move the object inside the focal length so the lens makes a virtual image, like a magnifying glass.
+3. Get a magnification of exactly −2: an image twice as tall as the object, and upside-down.
+
 ## Intuition
 
-Drag the object (the red arrow) closer to or farther from the lens along the axis. With it well outside the focal point, the three construction rays cross on the far side and trace out a real, upside-down image — drag it far enough and that image shrinks toward the focal point on the far side.
+Hold a magnifying glass a few centimetres above a page of text and the letters look bigger while staying right-side up — move the same glass a metre away instead, and it flips the whole scene upside-down. Both behaviours come from the same lens; only the object's distance changes, called $d_0$. On screen, the red arrow standing on the axis is the object: drag it closer to or farther from the lens. With it well outside the mark labelled $F$ (the focal point, 6 units from the lens by default), the three construction rays cross on the far side and trace a real, upside-down image; drag it far enough away and that image shrinks toward $F$.
 
-Now drag the object inside the focal length, closer to the lens than the marked $F$. The rays that left the lens now spread apart instead of crossing, so they never form a real image; only their backward extensions meet, on the same side as the object, drawn here as a dashed, upright, enlarged arrow — a virtual image, exactly what a magnifying glass produces.
+Now drag the object inside $F$, closer to the lens than the focal length. The rays leaving the lens now spread apart instead of crossing, so they never form a real image — only their backward extensions meet, on the same side as the object, drawn here as a dashed, upright, enlarged arrow. That dashed arrow is a virtual image, exactly what the magnifying glass produced when held close to the page.
 
 ## Formal
 

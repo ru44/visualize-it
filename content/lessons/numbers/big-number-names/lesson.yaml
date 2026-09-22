@@ -1,0 +1,40 @@
+id: big-number-names
+subject: numbers
+difficulty: beginner
+equation: '10^{100} = \text{googol}'
+concepts:
+- big number names
+- orders of magnitude
+prerequisites:
+- scientific-notation
+related:
+- how-big-is-a-million
+visualization:
+  type: powers-of-ten
+  options: { mode: numbers }
+parameters:
+  e:
+    min: 0
+    max: 100
+    step: 1
+    value: 12
+variables: []
+derivation:
+- '10^{6} = \text{million}'
+- '10^{9} = \text{billion}'
+- '10^{100} = \text{googol}'
+primary: e
+presets:
+- e: 6
+- e: 9
+- e: 100
+challenges:
+- check: e
+  target: 6
+  tol: 0.4
+- check: e
+  target: 9
+  tol: 0.4
+- check: e
+  target: 100
+  tol: 0.4

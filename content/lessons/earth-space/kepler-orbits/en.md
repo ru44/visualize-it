@@ -1,9 +1,9 @@
 ---
 title: Kepler orbits
 summary: >-
-  Every circular orbit is a balance: gravity pulling in exactly as hard as
-  the orbit needs to keep curving. Drag the radius and watch speed trade
-  off against distance.
+  Every circular orbit is a balance, gravity pulling in exactly as hard as
+  the curve needs to keep bending, trading speed for distance as the radius
+  changes.
 parameters:
   x: orbital radius from Earth's centre
 variables:
@@ -20,6 +20,24 @@ charts:
     series:
       - period
 ---
+
+## Try it
+
+1. Drag the radius slider to about 6.8, near Earth's surface. Read orbital speed: about 7.8 km/s, ISS territory.
+2. Keep dragging out to 42.2. Watch orbital speed drop to about 3.1 km/s.
+3. Watch orbital period climb from about 90 minutes to a full 24 hours — geostationary orbit.
+
+## Real-life examples
+
+- **The International Space Station.** At x = 6.8, low Earth orbit, the ISS circles at about 7.8 km/s, completing a lap in roughly 93 minutes.
+- **GPS satellites.** At x = 26.6, GPS satellites orbit slower, completing a lap roughly every 12 hours.
+- **Geostationary satellites.** At x = 42.2, orbital speed has dropped enough that one lap takes exactly 24 hours, matching Earth's rotation.
+
+## Test yourself
+
+1. Find the radius where one orbit takes exactly 24 hours (geostationary).
+2. Find the radius giving an orbital speed of exactly 5 km/s.
+3. Push the orbital period below 2 hours by orbiting close to Earth.
 
 ## Intuition
 

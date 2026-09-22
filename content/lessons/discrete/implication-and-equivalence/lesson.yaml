@@ -39,3 +39,15 @@ derivation:
   - \text{contrapositive } \neg q \Rightarrow \neg p \text{ has the same truth table as } p \Rightarrow q
   - \text{converse } q \Rightarrow p \text{ is a different statement, not guaranteed by } p \Rightarrow q
 charts: []
+primary: a
+presets:
+  - a: 1
+    b: 1
+  - a: 0
+    b: 1
+  - a: 1
+    b: 0
+challenges:
+  - check: 'a==1 and b==0'
+  - check: 'a==0 and b==1'
+  - check: 'a==b and a==0'

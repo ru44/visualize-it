@@ -43,3 +43,13 @@ charts:
     domain: [6.4, 60]
     series:
       - sqrt(3.986e14/(x*1e6))/1000
+primary: x
+presets:
+- x: 6.4
+- x: 20
+- x: 42.2
+challenges:
+- check: sqrt(2*3.986e14/(x*1e6))/1000
+  target: 5
+- check: x < 10 and sqrt(2*3.986e14/(x*1e6))/1000 > 10
+- check: sqrt(2*3.986e14/(x*1e6))/1000 < 6

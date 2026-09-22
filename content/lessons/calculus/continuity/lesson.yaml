@@ -43,3 +43,12 @@ derivation:
   - \lim_{x\to1^+} (x^2+j) = 1+j
   - 1 = 1+j \;\Longleftrightarrow\; j = 0
 charts: []
+primary: j
+presets:
+  - { j: 0, d: 0.3 }
+  - { j: 1.5, d: 0.3 }
+  - { j: -2, d: 0.1 }
+challenges:
+  - { check: 'j', target: 0 }
+  - { check: 'j', target: -2 }
+  - { check: 'd < 0.05 and abs(j) > 1' }

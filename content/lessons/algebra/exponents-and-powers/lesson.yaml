@@ -41,3 +41,17 @@ derivation:
   - x^{p/q} = \left(x^{1/q}\right)^{p}, \qquad \left(x^{1/q}\right)^q = x
   - x^{n} := e^{n \ln x}\ (x>0)
 charts: []
+primary: n
+presets:
+  - n: 2
+    x: 2
+  - n: 3
+    x: 2
+  - n: -1
+    x: 2
+challenges:
+  - check: abs(x - 2) + abs(x^n - 8)
+    target: 0
+    tol: 0.3
+  - check: abs(n + 1) < 0.05 and abs(x^n - 0.25) < 0.02
+  - check: abs(n) < 0.05

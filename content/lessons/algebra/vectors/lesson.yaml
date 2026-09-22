@@ -55,3 +55,17 @@ derivation:
   - v_x^2 + v_y^2
   - '|\mathbf{v}| = \sqrt{v_x^2 + v_y^2}'
 charts: []
+primary: vx
+presets:
+  - vx: 5
+    vy: 0
+  - vx: 0
+    vy: 4
+  - vx: 3
+    vy: 4
+challenges:
+  - check: abs(sqrt(vx^2 + vy^2) - 5) < 0.1 and abs(vx) > 0.1 and abs(vy) > 0.1
+  - check: abs(vx) + abs(vy - 4)
+    target: 0
+    tol: 0.1
+  - check: abs(vx - vy) < 0.05 and sqrt(vx^2 + vy^2) > 4

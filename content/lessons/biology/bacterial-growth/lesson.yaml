@@ -49,3 +49,20 @@ derivation:
   - N(nT) = N_0\cdot 2^n
   - N(t) = N_0\cdot 2^{t/T}
 charts: []
+primary: T
+presets:
+- N0: 10
+  T: 20
+  x: 120
+- N0: 20
+  T: 65
+  x: 260
+- N0: 5
+  T: 110
+  x: 440
+challenges:
+- check: 2^(x/T)
+  target: 2
+- check: 2^(x/T)
+  target: 8
+- check: N0 >= 80 and T > 100 and N0*2^(x/T) > 500

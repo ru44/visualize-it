@@ -53,3 +53,21 @@ charts:
     marker: x
     series:
       - 0.5*1000*((v1*A1/x)^2 - v1^2)/1000
+primary: x
+presets:
+  - v1: 1.5
+    A1: 6
+    x: 6
+  - v1: 1.5
+    A1: 6
+    x: 1.5
+  - v1: 1
+    A1: 9
+    x: 1
+challenges:
+  - check: A1/x
+    target: 2
+  - check: v1*A1/x
+    target: 8
+  - check: (v1*A1/x)^2 - v1^2
+    target: 20

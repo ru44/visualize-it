@@ -1,8 +1,9 @@
 ---
 title: Quicksort
 summary: >-
-  Pick a pivot, push everything smaller to one side and everything bigger to the
-  other, then recurse. Fast on average, but a bad pivot can ruin it.
+  Picking one item as a "pivot," sliding everything smaller to one side and
+  everything bigger to the other, then repeating inside each side, sorts
+  almost anything fast — though an unlucky pivot can slow it down badly.
 parameters:
   'n': n — number of items
   step: step — play position
@@ -12,11 +13,29 @@ variables:
   - how many comparisons against the current pivot have run so far
 ---
 
+## Try it
+
+1. Set n to 8 bars, press play slowly, and watch one bar get marked as the pivot while every other bar is pushed to its left or right.
+2. Watch the pivot once the shuffle settles — it never moves again, because it is already sitting in its final sorted spot.
+3. Drag n up to 40 bars and press play — a new pivot gets picked inside each smaller group, again and again, until every group is a single bar.
+
+## Real-life examples
+
+- **Sorting 8 kids in a lunch line by height.** With n = 8, one kid becomes the pivot, everyone shorter moves to their left and everyone taller to their right, and the trick repeats inside each side.
+- **Sorting 40 exam papers by score before grading.** With n = 40, the same pivot trick keeps working on five times as many papers, one pile at a time, all the way down.
+- **Sorting a tiny group of 4 friends by age.** With n = 4, one or two pivot rounds are enough to finish the whole sort.
+
+## Test yourself
+
+1. Drag n to the value where the total number of possible pairs among the bars is exactly 190.
+2. Drag n to its largest setting, 40 bars, and play the animation all the way to the end.
+3. Drag n to its smallest setting, 4 bars, and play the animation all the way to the end.
+
 ## Intuition
 
-Press play and watch one bar get marked as the pivot; every other bar is compared to it and shuffled to its left or right depending on whether it is smaller or bigger. Once the shuffle finishes, the pivot sits exactly where it belongs in the final sorted order — that is the one guarantee each partition step makes.
+Picture 8 kids lined up in random height order, and you want them sorted from shortest to tallest fast: pick one kid as the pivot, and send everyone shorter than the pivot to their left and everyone taller to their right. Press play here and watch exactly that happen on screen: one bar gets marked as the pivot, every other bar is compared to it, and the shuffle ends with the pivot sitting in its exact final position — the one guarantee every round makes.
 
-Then the trick repeats inside each side separately: a new pivot for the left group, a new pivot for the right group, smaller and smaller, until every group has one element. Watch how a good pivot splits the bars into two roughly equal halves, while an unlucky pivot (say, always the smallest bar) leaves one huge side and one empty one — that is the difference between the average and worst case.
+The same trick then repeats inside each smaller group on its own: a new pivot for the left group, a new pivot for the right group, smaller and smaller, until every group is down to one bar. Watch how a lucky pivot splits the bars into two roughly equal halves, while an unlucky pivot — say, always the shortest bar — leaves one huge group and one empty one, which is the difference between the fast, typical case and the slow, unlucky one.
 
 ## Formal
 

@@ -1,0 +1,41 @@
+id: scientific-notation
+subject: numbers
+difficulty: high-school
+equation: 'a\times10^{e}\quad(1\le a<10)'
+concepts:
+- scientific notation
+- orders of magnitude
+prerequisites:
+- powers-of-ten
+related:
+- how-big-is-a-million
+- big-number-names
+visualization:
+  type: powers-of-ten
+  options: { mode: numbers }
+parameters:
+  e:
+    min: 0
+    max: 100
+    step: 1
+    value: 9
+variables:
+- a
+- e
+derivation:
+- '\text{8,000,000,000} = 8\times10^{9}'
+- '1\le a<10'
+- '10^{e}\text{ counts the zeros, or shifts the decimal point}'
+primary: e
+presets:
+- e: 3
+- e: 6
+- e: 9
+challenges:
+- check: e
+  target: 23
+  tol: 0.4
+- check: e > 50
+- check: e
+  target: 100
+  tol: 0.4

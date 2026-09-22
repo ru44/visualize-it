@@ -44,3 +44,16 @@ derivation:
   - f = \mu N = \mu mg\cos\theta
   - ma = mg\sin\theta - \mu mg\cos\theta \;\Rightarrow\; a = g(\sin\theta - \mu\cos\theta)
 charts: []
+primary: x
+presets:
+  - mu: 0.06
+    x: 20
+  - mu: 0.4
+    x: 30
+  - mu: 0.9
+    x: 70
+challenges:
+  - check: abs(mu-0.5)<0.01 and abs(9.81*(sin(x*pi/180)-mu*cos(x*pi/180)))<0.3
+  - check: 9.81*(sin(x*pi/180)-mu*cos(x*pi/180))
+    target: 3
+  - check: abs(x-45)<0.2 and abs(9.81*(sin(x*pi/180)-mu*cos(x*pi/180)))<0.3

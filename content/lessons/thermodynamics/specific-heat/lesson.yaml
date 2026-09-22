@@ -52,3 +52,16 @@ derivation:
   - Q_{\text{melt}} = mL_f, \quad t_2 = t_1 + \frac{Q_{\text{melt}}}{P}
   - Q_{\text{water}} = mc_{\text{water}}(100 - 0), \quad t_3 = t_2 + \frac{Q_{\text{water}}}{P}
 charts: []
+primary: P
+presets:
+  - P: 2000
+    m: 0.5
+  - P: 300
+    m: 1
+  - P: 800
+    m: 1.5
+challenges:
+  - check: m*(41800+334000+418600)/P < 200
+  - check: m*334000/P
+    target: 60
+  - check: abs(m-1.5)<0.05 and m*794400/P > 300

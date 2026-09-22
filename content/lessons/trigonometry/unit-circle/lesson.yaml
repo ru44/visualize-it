@@ -34,3 +34,12 @@ derivation:
 - \cos^2\theta + \sin^2\theta = 1
 charts: []
 primary: theta
+presets:
+  - theta: 90
+  - theta: 225
+  - theta: 80
+challenges:
+  - check: 'sin(theta*pi/180)'
+    target: 0.5
+  - check: 'theta > 180 and cos(theta*pi/180) > 0.5'
+  - check: 'sin(theta*pi/180) < 0 and cos(theta*pi/180) < 0'

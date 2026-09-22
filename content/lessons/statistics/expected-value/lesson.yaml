@@ -54,3 +54,19 @@ charts:
     series:
       - x*w - (1-x)*c
       - 0*x
+primary: x
+presets:
+  - x: 0.5
+    w: 8
+    c: 8
+  - x: 0.05
+    w: 20
+    c: 1
+  - x: 0.9
+    w: 2
+    c: 15
+challenges:
+  - check: 'x*w - (1-x)*c'
+    target: 0
+  - check: 'x*w - (1-x)*c > 5'
+  - check: 'x < 0.5 and x*w - (1-x)*c > 0'

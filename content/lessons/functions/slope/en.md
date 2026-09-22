@@ -1,8 +1,9 @@
 ---
 title: Slope
 summary: >-
-  Slope measures steepness: how much the output changes for each step in the
-  input.
+  Learn to read how fast something changes — the single number that tells
+  you a car's speed, a ramp's steepness, or a price per item, no matter
+  which two points you compare.
 parameters:
   m: m — slope
   b: b — intercept
@@ -20,11 +21,23 @@ variables:
 2. Look at the number «slope Δy/Δx» under the picture. It does not change, no matter where the points are.
 3. Now move the slider «m — slope» up. The line gets steeper and the number grows. Slope simply means: how steep.
 
+## Real-life examples
+
+1. **A car's steady speed.** Driving at m=1.5 km per minute (b=0), checking the trip from minute x=-2 over a 4-minute stretch (h=4): the rise-over-run ratio always reads 1.5, matching the car's speed exactly.
+2. **A wheelchair ramp's grade.** A gentle ramp rises m=0.05 units for every unit it runs — a 5% grade — checked over the full 6-unit length of the ramp (h=6): the ratio still reads 0.05, however much of the ramp you measure.
+3. **Price per item.** Buying items costs m=2.5 per item plus a fixed 1-unit service fee (b=1); comparing a purchase of x=1 item to one 3 items later (h=3): the slope still reads 2.5, the price of one more item, no matter which two purchases you compare.
+
+## Test yourself
+
+1. Find a slope (m) and a run (h) whose rise multiplies out to exactly 5.
+2. Find m and b so the line passes through the point where x=3 and y=7.
+3. Make the line drop by more than 10 units over some run — a negative slope steep enough, and a run long enough.
+
 ## Intuition
 
-Pick two points on the line and walk from one to the other: first across (the run), then up (the rise). Slope is rise per unit of run.
+A car driving at a steady speed covers 1.5 kilometres every minute: after 4 minutes it has gone 6 kilometres, after 8 minutes, 12. Pick any two moments on the blue line here and walk from one point to the other exactly the way you would read that car's trip: first sideways (the run, how much time passed), then up (the rise, how much distance was covered). Slope is that rise for every unit of run.
 
-Move the points or change the run. The triangle changes size, yet the ratio never changes. That constancy is exactly what makes a line a line.
+Drag the points to a completely different stretch of the line, or change the run with the h slider. The little triangle changes size every time, yet the ratio of its two sides never changes — read it off under the picture and it stays locked to the number set by the m slider. That constancy, rise always growing in exact step with run, is exactly what makes a straight line straight.
 
 ## Formal
 

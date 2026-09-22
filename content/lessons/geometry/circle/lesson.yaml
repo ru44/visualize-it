@@ -31,3 +31,12 @@ derivation:
 - A = r \cdot \frac{C}{2} = r \cdot \frac{2\pi r}{2} = \pi r^2
 charts: []
 primary: r
+presets:
+  - r: 1.8
+  - r: 0.5
+  - r: 3
+challenges:
+  - check: 'pi*r^2'
+    target: 12
+  - check: 'r > 3 and 2*pi*r > 25'
+  - check: 'r < 1 and pi*r^2 < 2'

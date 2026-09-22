@@ -1,8 +1,9 @@
 ---
 title: Simple harmonic motion
 summary: >-
-  A mass on a spring oscillates with a period that depends only on stiffness and
-  mass — never on how far you pull it back.
+  This is why a pendulum clock keeps steady time no matter how far it
+  swings, and why every guitar string and car suspension settles into its
+  own natural rhythm.
 parameters:
   A: amplitude A
   k: spring constant k
@@ -15,11 +16,29 @@ variables:
   - angular frequency of oscillation
 ---
 
+## Try it
+
+1. Let it animate and watch the mass swing back and forth on the spring.
+2. Drag "amplitude A" wider or narrower. Time the gap between peaks — it stays the same.
+3. Now drag "spring constant k" or "mass m" instead. The time between peaks visibly stretches or shrinks.
+
+## Real-life examples
+
+1. **A heavy mass on an industrial spring.** Pulled back 1 m with a 2 N/m spring holding a 3 kg mass, it swings back and forth every 7.7 seconds regardless of how far you pull it.
+2. **A stiff car suspension spring.** A stiffer 4 N/m spring with a lighter 0.5 kg load oscillates much faster, completing a cycle in about 2.2 seconds.
+3. **A soft, stretchy spring.** A soft 0.3 N/m spring with a 1 kg mass swings slowly, taking nearly 11.5 seconds per cycle — proof that a floppier spring means a slower oscillation.
+
+## Test yourself
+
+1. Make the oscillation period exactly 2π seconds (about 6.28 s).
+2. Find a mass of at least 3 kg that still gives a period of about 2π seconds.
+3. Make the swing as wide as possible (A = 4 m) while keeping the period under 2 seconds.
+
 ## Intuition
 
-Let it animate and watch the tangent line and dashed derivative curve: the derivative (velocity) is zero exactly when position is at its extreme (turning around) and largest exactly when position crosses zero (moving fastest through the middle) — position and velocity are a quarter-cycle out of step.
+Picture a 3 kg mass on a spring with stiffness 2 N/m, pulled back 1 metre and let go. Let it animate and watch the tangent line and the dashed derivative curve: the derivative, its velocity, is zero exactly when the mass is at its farthest point, turning around, and largest exactly when it crosses the middle, moving fastest.
 
-Change $A$ alone and the oscillation swings wider or narrower, but count the time between peaks — it does not change. Now change $k$ or $m$ instead: the period visibly stretches or compresses. Amplitude sets how far it swings; stiffness and mass set how fast it swings, and only stiffness and mass.
+Change "amplitude A" alone and the swing widens or narrows, but time the gap between peaks: it never changes. Now change "spring constant k" or "mass m" instead, and that gap visibly stretches or shrinks. Amplitude sets how far the mass swings; stiffness and mass alone set how fast it swings.
 
 ## Formal
 

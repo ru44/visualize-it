@@ -11,6 +11,24 @@ variables:
 charts: []
 ---
 
+## Try it
+
+1. Tap across a row (a period). Watch the element change while the shell count stays fixed.
+2. Tap down a column (a group) instead. Watch a whole new shell appear while the valence count stays the same.
+3. Compare sodium and potassium, both in group 1. Notice how alike their chemistry is despite sodium being one shell smaller.
+
+## Real-life examples
+
+1. **Sodium, in table salt.** Sits in group 1: one loosely-held valence electron makes it a soft, highly reactive metal.
+2. **Neon, in glowing signs.** A full outer shell (group 18) makes it almost completely unreactive, and it glows reddish-orange when electrified.
+3. **Iron, in steel and blood.** A transition metal (period 4) whose partly-filled inner shells give it the variable chemistry needed for both girders and haemoglobin.
+
+## Test yourself
+
+1. Find the noble gas that ends period 3.
+2. Find the halogen in period 4.
+3. Find the alkaline earth metal in period 4.
+
 ## Intuition
 
 Tap across a row (a period) and watch the element change while its position stays on the same horizontal band. Each period corresponds to one more occupied electron shell than the one above it: period 1 has only one shell, period 2 has two, and so on down to period 6 shown here. Moving right within a row keeps the shell count fixed but adds one more electron to the outermost shell each step.

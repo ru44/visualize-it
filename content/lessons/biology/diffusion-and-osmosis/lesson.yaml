@@ -53,3 +53,24 @@ derivation:
   - \text{net rate} \propto (n_{left}-n_{right})\cdot(\text{permeability})
   - \text{net rate} \to 0 \text{ as } n_{left}\to n_{right}
 charts: []
+primary: nLeft
+presets:
+- nLeft: 180
+  nRight: 10
+  perm: 50
+  temp: 350
+  split: 50
+- nLeft: 100
+  nRight: 90
+  perm: 70
+  temp: 300
+  split: 50
+- nLeft: 150
+  nRight: 20
+  perm: 10
+  temp: 150
+  split: 50
+challenges:
+- check: abs(nLeft - nRight) < 5
+- check: abs(nLeft/nRight - 3) < 0.3 and perm > 80
+- check: perm < 20 and temp < 160

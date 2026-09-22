@@ -1,8 +1,8 @@
 ---
-title: 'Linear equations: where two lines meet'
+title: 'Linear equations: where the line crosses zero'
 summary: >-
-  Solving $mx + b = k$ is exactly the same problem as finding where the line $y
-  = mx + b - k$ crosses zero.
+  Find the one missing number that makes both sides of an equation balance —
+  the skill behind budgets, taxi fares, and knowing when two costs become equal.
 parameters:
   m: slope m
   b: intercept b
@@ -15,11 +15,29 @@ variables:
   - the unknown — where the plotted line crosses zero
 ---
 
+## Try it
+
+1. Look at the blue line and the orange point sitting on it. Drag the point left and right along "x".
+2. Watch the number beside it, $f(x)$, shrink as you drag. When it reaches exactly zero, the point sits on the horizontal axis — that is the solution.
+3. Now move the "intercept b" or "target k" slider instead. Notice how the whole line, and its crossing point, slides up or down with it.
+
+## Real-life examples
+
+1. **Buying notebooks on a budget.** Notebooks cost 1.50 dollars each (slope m = 1.5) and the store adds a 2-dollar delivery fee (intercept b = 2). With an 8-dollar budget (target k = 8), you can buy exactly 4 notebooks.
+2. **Taking a taxi.** The taxi charges 0.50 dollars per kilometre (m = 0.5) plus a 3-dollar flat pickup fee (b = 3). With 6 dollars in your pocket (k = 6), you can ride 6 kilometres.
+3. **Saving up from debt.** You save 2 dollars every week (m = 2) but start 3 dollars in debt (b = −3). Reaching 5 dollars in savings (k = 5) takes 4 weeks.
+
+## Test yourself
+
+1. Find slider values for m, b and k so that x = −5 is the exact solution — the point should sit right on the axis there.
+2. Make every value of x solve the equation at once, so the whole line lies flat on the horizontal axis. (Think about what the slope must be.)
+3. Make the equation impossible to solve, so that no value of x ever balances it. (Think about a flat line that never touches zero.)
+
 ## Intuition
 
-Drag the point along the line and watch the readout for $f(x)$: solving $mx + b = k$ is nothing more than sliding $x$ until that readout hits zero, because the line you are dragging along is $y = mx + b - k$, the original equation with everything moved to one side.
+Say you want to spend exactly 20 dollars on notebooks. Each one costs 3 dollars, and the store charges a fixed 2-dollar delivery fee no matter how many you order. How many notebooks can you buy? Move the orange point along the blue line and watch the number beside it, $f(x)$, shrink toward zero — that number is how far the two sides of the equation are from balancing. Where the point crosses the horizontal axis, the two sides balance exactly: the answer is 6 notebooks.
 
-Change $b$ or $k$ and the whole line shifts up or down, so the crossing point slides sideways. Change $m$ and the line tilts — steeper slopes mean the same vertical shift moves the crossing a much shorter horizontal distance.
+The slider labelled slope m is the price of one notebook: how much the line rises as $x$ grows by one. The slider labelled intercept b is the fixed delivery fee, and target k is the total amount you have to spend. Raise b or k and the whole blue line shifts up or down, sliding the crossing point sideways with it. Raise m instead and the line tilts: a steeper line reaches zero after a much shorter drag, because each extra notebook now costs more.
 
 ## Formal
 

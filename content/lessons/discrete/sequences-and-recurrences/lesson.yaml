@@ -38,3 +38,14 @@ derivation:
   - F_n = F_{n-1} + F_{n-2} \quad \text{(each term is the sum of the two before it)}
   - \lim_{n\to\infty} \frac{F_{n+1}}{F_n} = \varphi = \frac{1+\sqrt5}{2}
 charts: []
+primary: x
+presets:
+  - x: 8
+  - x: 12
+  - x: 20
+challenges:
+  - check: '((1+sqrt(5))/2)^x/sqrt(5)'
+    target: 21
+  - check: '((1+sqrt(5))/2)^x/sqrt(5)'
+    target: 144
+  - check: '((1+sqrt(5))/2)^x/sqrt(5) > 1000'

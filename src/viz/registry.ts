@@ -35,6 +35,32 @@ const PeriodicTable = defineAsyncComponent(() => import('./PeriodicTable.vue'))
 const CipherWheel = defineAsyncComponent(() => import('./CipherWheel.vue'))
 const ModClock = defineAsyncComponent(() => import('./ModClock.vue'))
 const VennSets = defineAsyncComponent(() => import('./VennSets.vue'))
+const PolyFit = defineAsyncComponent(() => import('./PolyFit.vue'))
+const NeuralNet = defineAsyncComponent(() => import('./NeuralNet.vue'))
+const Embeddings = defineAsyncComponent(() => import('./Embeddings.vue'))
+const NextToken = defineAsyncComponent(() => import('./NextToken.vue'))
+const DotGrid = defineAsyncComponent(() => import('./DotGrid.vue'))
+const PowersOfTen = defineAsyncComponent(() => import('./PowersOfTen.vue'))
+const Chessboard = defineAsyncComponent(() => import('./Chessboard.vue'))
+const Sieve = defineAsyncComponent(() => import('./Sieve.vue'))
+const QueryTable = defineAsyncComponent(() => import('./QueryTable.vue'))
+const SearchRace = defineAsyncComponent(() => import('./SearchRace.vue'))
+const MapReduce = defineAsyncComponent(() => import('./MapReduce.vue'))
+const Photoelectric = defineAsyncComponent(() => import('./Photoelectric.vue'))
+const DoubleSlit = defineAsyncComponent(() => import('./DoubleSlit.vue'))
+const WaveFunction = defineAsyncComponent(() => import('./WaveFunction.vue'))
+const EnergyLevels = defineAsyncComponent(() => import('./EnergyLevels.vue'))
+const Qubit = defineAsyncComponent(() => import('./Qubit.vue'))
+const FreeFall = defineAsyncComponent(() => import('./FreeFall.vue'))
+const XorCipher = defineAsyncComponent(() => import('./XorCipher.vue'))
+const FrequencyAnalysis = defineAsyncComponent(() => import('./FrequencyAnalysis.vue'))
+const HashAvalanche = defineAsyncComponent(() => import('./HashAvalanche.vue'))
+const ToySPN = defineAsyncComponent(() => import('./ToySPN.vue'))
+const EllipticCurve = defineAsyncComponent(() => import('./EllipticCurve.vue'))
+const RotationCurve = defineAsyncComponent(() => import('./RotationCurve.vue'))
+const Lensing = defineAsyncComponent(() => import('./Lensing.vue'))
+const Expansion = defineAsyncComponent(() => import('./Expansion.vue'))
+const QuarkBuilder = defineAsyncComponent(() => import('./QuarkBuilder.vue'))
 const Surface3D = defineAsyncComponent(() => import('./Surface3D.vue'))
 const GasBox = defineAsyncComponent(() => import('./GasBox.vue'))
 
@@ -69,6 +95,32 @@ export const vizRegistry: Record<string, Component> = {
   'cipher-wheel': CipherWheel,
   'mod-clock': ModClock,
   'venn-sets': VennSets,
+  'poly-fit': PolyFit,
+  'neural-net': NeuralNet,
+  embeddings: Embeddings,
+  'next-token': NextToken,
+  'dot-grid': DotGrid,
+  'powers-of-ten': PowersOfTen,
+  'chessboard': Chessboard,
+  'sieve': Sieve,
+  'query-table': QueryTable,
+  'search-race': SearchRace,
+  'map-reduce': MapReduce,
+  'photoelectric': Photoelectric,
+  'double-slit': DoubleSlit,
+  'wave-function': WaveFunction,
+  'energy-levels': EnergyLevels,
+  'qubit': Qubit,
+  'free-fall': FreeFall,
+  'xor-cipher': XorCipher,
+  'frequency-analysis': FrequencyAnalysis,
+  'hash-avalanche': HashAvalanche,
+  'toy-spn': ToySPN,
+  'elliptic-curve': EllipticCurve,
+  'rotation-curve': RotationCurve,
+  'lensing': Lensing,
+  'expansion': Expansion,
+  'quark-builder': QuarkBuilder,
   counting: Counting,
   'discrete-dist': DiscreteDist,
   'coin-flips': CoinFlips,

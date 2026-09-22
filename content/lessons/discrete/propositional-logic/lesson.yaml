@@ -38,3 +38,15 @@ derivation:
   - p \land q = 1 \iff p=1 \text{ and } q=1, \quad p \lor q = 1 \iff p=1 \text{ or } q=1
   - \text{a tautology is true in every row, e.g. } p \lor \neg p
 charts: []
+primary: a
+presets:
+  - a: 1
+    b: 1
+  - a: 1
+    b: 0
+  - a: 0
+    b: 1
+challenges:
+  - check: 'a==1 and b==1'
+  - check: 'a != b'
+  - check: 'a==1'

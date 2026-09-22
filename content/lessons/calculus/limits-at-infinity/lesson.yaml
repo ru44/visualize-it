@@ -48,3 +48,12 @@ derivation:
   - \lim_{x\to\infty}\frac{1}{x^2} = 0, \qquad \lim_{x\to\infty}\frac{b}{x^2} = 0
   - \lim_{x\to\infty}\frac{a+1/x^2}{1+b/x^2} = \frac{a+0}{1+0} = a
 charts: []
+primary: x
+presets:
+  - { a: 2, b: 3, x: 5 }
+  - { a: 1.5, b: 6, x: 50 }
+  - { a: 3.5, b: 1, x: 45 }
+challenges:
+  - { check: 'abs((a*x^2 + 1)/(x^2 + b) - a) < 0.01' }
+  - { check: 'a > 3 and abs((a*x^2 + 1)/(x^2 + b) - a) < 0.05' }
+  - { check: 'x < 0.5 and (a - (a*x^2 + 1)/(x^2 + b)) > 3' }

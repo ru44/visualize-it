@@ -1,9 +1,10 @@
 ---
 title: Specific heat and latent heat
 summary: >-
-  Heating a substance raises its temperature smoothly — except during a phase
-  change, where every joule goes into breaking or forming bonds instead, and the
-  temperature holds perfectly flat.
+  Boiling water for pasta always plateaus at 100°C no matter how high you
+  turn the stove — extra heat just makes it boil faster, not hotter — and
+  that flat stretch is where all the added energy goes into changing the
+  water's state instead of its temperature.
 parameters:
   P: heating power P
   m: mass of ice/water m
@@ -15,11 +16,29 @@ variables:
   - mass being heated
 ---
 
+## Try it
+
+1. Drag the time point x forward. Follow the temperature: it climbs, then holds flat, then climbs again.
+2. Raise the slider "heating power P". Every stage compresses — the same total energy now arrives faster.
+3. Raise the slider "mass m" instead. Every stage stretches out — there is more material to heat.
+
+## Real-life examples
+
+1. **A kettle boiling water.** At high power (P = 2000 W) heating half a kilogram of water (m = 0.5 kg), the temperature races through each stage in well under a minute.
+2. **A campfire slowly melting snow.** At low power (P = 300 W) melting a kilogram of snow (m = 1 kg), the flat melting stage alone can take nearly twenty minutes.
+3. **A microwave defrosting ice.** At moderate power (P = 800 W) on 1.5 kg of ice, the long flat plateau at 0°C is why defrosting takes far longer than reheating already-liquid food.
+
+## Test yourself
+
+1. Get all the ice to melt and the water to reach boiling in under 200 seconds total.
+2. Make the melting plateau (ice turning to water) last close to 60 seconds.
+3. Heat a mass of 1.5 kg so the whole warming-melting-boiling process takes longer than 300 seconds.
+
 ## Intuition
 
-Drag the time point x forward and follow the temperature: it climbs steadily as ice warms, then suddenly goes flat at 0°C even though the heater keeps running — that plateau is the ice melting. All the energy during the flat stretch is going into breaking the crystal structure, none of it into temperature.
+Put a pot of ice on a hot stove and watch a thermometer in it: the temperature climbs steadily at first, then suddenly holds dead flat at 0°C even though the burner keeps blasting heat — that flat stretch is the ice melting. On screen, drag the time point, labelled $x$ in seconds, forward along the curve and follow the temperature the same way: it climbs, flattens at 0°C, climbs again through liquid water, then flattens once more at 100°C for boiling.
 
-Keep dragging and temperature resumes climbing through liquid water, then flattens again at 100°C for boiling. Raise the heating power P and every stage compresses sideways — same total energy needed, delivered faster; raise the mass m instead and every stage stretches out, because there is simply more material to heat and melt.
+All the energy delivered during a flat stretch goes into breaking the ice's crystal structure or turning liquid into vapour — none of it raises the temperature, which is why a rolling boil never gets hotter than 100°C no matter how high you turn the stove. Raise the slider "heating power P" and every stage compresses sideways, because the same total energy now arrives faster; raise the slider "mass m" instead and every stage stretches out, because there is simply more ice and water to heat and melt.
 
 ## Formal
 

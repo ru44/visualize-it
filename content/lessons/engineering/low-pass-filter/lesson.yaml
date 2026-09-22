@@ -50,3 +50,17 @@ charts:
   - domain: [1, 1000]
     series:
       - -atan(x/fc)*180/pi
+primary: fc
+presets:
+  - fc: 100
+    x: 50
+  - fc: 300
+    x: 800
+  - fc: 150
+    x: 1000
+challenges:
+  - check: 20*log10(1/sqrt(1+(x/fc)^2))
+    target: -3
+    tol: 0.3
+  - check: x > 10*fc and 20*log10(1/sqrt(1+(x/fc)^2)) < -20
+  - check: fc>=200 and abs(-atan(x/fc)*180/pi - (-75)) < 3

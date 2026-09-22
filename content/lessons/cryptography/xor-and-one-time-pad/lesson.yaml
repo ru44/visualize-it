@@ -1,0 +1,44 @@
+id: xor-and-one-time-pad
+subject: cryptography
+difficulty: beginner
+equation: C = M \oplus K
+concepts:
+- xor
+- one-time-pad
+- perfect-secrecy
+- stream-cipher
+prerequisites:
+- caesar-cipher
+- binary-numbers
+related:
+- vigenere-cipher
+- block-ciphers-and-aes
+visualization:
+  type: xor-cipher
+  options:
+    text: HELLO
+parameters:
+  key:
+    min: 0
+    max: 999
+    step: 1
+    value: 42
+variables:
+- M
+- K
+- C
+derivation:
+- C = M \oplus K
+- C \oplus K = M
+- \text{if } K \text{ is random and used once, every message is an equally likely explanation of } C
+charts: []
+primary: key
+presets:
+- key: 42
+- key: 512
+- key: 900
+challenges:
+- check: key
+  target: 42
+- check: key >= 900
+- check: key < 10

@@ -1,8 +1,8 @@
 ---
 title: Dijkstra's algorithm
 summary: >-
-  Find the cheapest path across a graph whose edges have different weights,
-  always expanding the closest unfinished node next.
+  This is how GPS apps and network routers pick the cheapest route across a
+  map or network where some connections cost more than others.
 parameters:
   start: start — starting node
   step: step — play position
@@ -16,11 +16,29 @@ variables:
     d(v) next
 ---
 
+## Try it
+
+1. Set the slider "start" to 0 and slide "step" slowly from 0 toward 1 — watch the running-distance readout for each node lock in, one at a time, always the smallest unlocked number first.
+2. Reset "step" to 0, then set "start" to 9 — the target is now the start, so the whole search is already solved before it begins.
+3. Set "start" to 3 and play "step" to the end — compare a direct, heavy edge to a longer chain of light edges on the graph; Dijkstra always locks in whichever total is smaller.
+
+## Real-life examples
+
+- **Planning a road trip from home.** Starting at node 0, home, with the play position run to the end (step = 1) shows the algorithm settle the cheapest route to every town on the map, ending at node 9.
+- **Already at your destination.** Starting at node 9, the same node as the target, with the play position at the very start (step = 0) shows a trip that costs nothing, because you're already there.
+- **Starting from a smaller town along the way.** Starting at node 3 and running "step" to the end shows the algorithm weigh a short, expensive toll road against a longer, cheaper route before it settles on the cheapest way to node 9.
+
+## Test yourself
+
+1. Start the search at node 0 and run the play position all the way to the end.
+2. Set the starting node to 9, right on top of the target.
+3. Start at node 3 and move the play position past the halfway point.
+
 ## Intuition
 
-Watch the readout of running distances update as the algorithm expands nodes: each step it commits to the unfinished node with the smallest distance found so far, locks that distance in as final, and then checks whether reaching its neighbours through it is cheaper than what was known before. Unlike BFS, this graph's edges have different weights, so the fewest-edges path is not always the cheapest one — Dijkstra tracks the running total, not the hop count.
+Picture ten towns on a map, numbered 0 through 9, connected by roads that cost different amounts of fuel — some short cuts are pricey toll roads, some long ways round are cheap. Set the slider "start" to 0 and slide "step" to the right: watch the running-distance readout for each town lock in, one at a time, always settling the closest not-yet-locked town next. Once town 9, the destination, locks in, you have the cheapest route from home.
 
-Once a node is locked in, its distance never changes again — that is the greedy step, and it is only safe because every edge weight is non-negative, so no undiscovered path could possibly be shorter. Compare a direct heavy edge to a longer route of light edges on the graph: Dijkstra correctly prefers whichever total is smaller.
+That locking-in step is what is called greedy: once a town's cheapest cost is fixed, it never changes again, and that's only safe because no road has a negative cost, so no hidden shortcut could undercut it later. Move "start" to node 3 instead of 0 and watch a single expensive direct road lose out to a longer chain of cheap roads on the way to node 9, exactly as a real trip planner would choose the toll-free detour to save money overall.
 
 ## Formal
 

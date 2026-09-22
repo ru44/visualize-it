@@ -1,0 +1,43 @@
+id: bits-bytes-and-data-sizes
+subject: data
+difficulty: beginner
+equation: N = 10^e
+concepts:
+- bits and bytes
+- orders of magnitude
+- data storage
+- scientific notation
+prerequisites:
+- binary-numbers
+related:
+- logarithms
+- powers-of-ten
+- big-number-names
+visualization:
+  type: powers-of-ten
+  options:
+    mode: bytes
+primary: e
+parameters:
+  e:
+    min: 0
+    max: 22
+    step: 0.1
+    value: 6
+variables:
+- e
+- N
+derivation:
+- N = 10^e
+- e = \log_{10} N
+- 10^{e+3} = 1000 \cdot 10^e
+presets:
+- e: 0
+- e: 6.6
+- e: 21.9
+challenges:
+- check: e
+  target: 9
+- check: 10^e
+  target: 1000000
+- check: e >= 20

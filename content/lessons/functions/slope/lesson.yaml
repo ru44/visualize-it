@@ -52,3 +52,21 @@ derivation:
 - \frac{y_2 - y_1}{x_2 - x_1} = m
 charts: []
 primary: x
+presets:
+  - m: 1.5
+    b: 0
+    x: -2
+    h: 4
+  - m: 0.05
+    b: 0
+    x: 0
+    h: 6
+  - m: 2.5
+    b: 1
+    x: 1
+    h: 3
+challenges:
+  - check: m*h
+    target: 5
+  - check: abs(x - 3) < 0.05 and abs(m*x + b - 7) < 0.2
+  - check: m < -0.05 and m*h < -10

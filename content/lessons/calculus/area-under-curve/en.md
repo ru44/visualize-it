@@ -1,8 +1,8 @@
 ---
 title: Area under a curve
 summary: >-
-  Area below the axis counts as negative. The integral is a running total, not
-  just a size.
+  A car that drives forward and then backs up needs to know exactly where it
+  ends up, not just how far it travelled — that is what this idea works out.
 parameters:
   a: start a
   b: end b
@@ -11,11 +11,29 @@ variables:
   - start and end of the time window
 ---
 
+## Try it
+
+1. Drag «end b» to about 1.5. The teal region grows: the car has only driven forward so far.
+2. Keep dragging «end b» past 3.15. The shaded region peaks: the car is about to turn around.
+3. Push «end b» all the way to about 6.3. Red area appears and cancels the teal: the car has driven a full loop and returned near its start.
+
+## Real-life examples
+
+1. **Short errand.** Driving from second 0 to 1.5, before the car ever turns around: the whole shaded area counts as forward progress, a net displacement of about 1.9.
+2. **Longest outward leg.** Driving from 0 to about 3.15 seconds, right up to the turn-around point: net displacement peaks near 4, the largest one-way distance this car ever reaches.
+3. **A full loop back to the start.** Driving from 0 to about 6.3 seconds, one whole cycle: the forward push and the backward return cancel almost exactly, so net displacement drops back near zero.
+
+## Test yourself
+
+1. Find a time window (with «end b» at least 2 seconds after «start a») where the net displacement returns to 0.
+2. Make the net displacement as large as possible — about 4.
+3. Make the net displacement -3 (the car ends up 3 units behind where it started).
+
 ## Intuition
 
-Read the curve as the velocity of a car. While it is above the axis the car moves forward and distance piles up (teal). Below the axis the car reverses and the total is paid back (red).
+Picture a car on a straight road. It drives forward for the first three seconds, then slows, stops, and backs up for the next three. The wavy line on screen is the car's speed at every instant: when the line sits above the middle, the teal-shaded strip beneath it is distance gained, and when the line dips below, the red-shaded strip is distance given back.
 
-Drag the end time past $\pi$ and watch the signed area start to fall. At $2\pi$ it returns to zero: the car is back where it started, even though it drove the whole time.
+Drag the slider «end b», the number of seconds of driving you are watching, out past 3.15. Red area starts eating into teal, and by about 6.3 seconds the two shaded areas match exactly — the car has looped back to right where it started, even though it never stopped moving. Teal minus red is called the net displacement: the straight-line distance between where the car started and where it ended up.
 
 ## Formal
 

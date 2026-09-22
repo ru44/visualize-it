@@ -33,3 +33,17 @@ derivation:
   - \text{then at most } m \text{ items fit in the } m \text{ boxes}
   - n > m \text{ contradicts this, so some box has} \ge 2 \text{ items}
 charts: []
+primary: n
+presets:
+  - n: 8
+    k: 3
+  - n: 5
+    k: 2
+  - n: 10
+    k: 4
+challenges:
+  - check: 'combinations(n, k)'
+    target: 10
+  - check: 'combinations(n, k) > 100 and k <= 6'
+  - check: 'combinations(n, k)'
+    target: 252

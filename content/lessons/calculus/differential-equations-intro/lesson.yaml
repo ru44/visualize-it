@@ -55,3 +55,12 @@ derivation:
   - ky\left(1-\frac{y}{K}\right) - h = 0
   - \frac{kK}{4}
 charts: []
+primary: h
+presets:
+  - { k: 0.5, K: 150, h: 5, y0: 30 }
+  - { k: 0.3, K: 100, h: 7, y0: 50 }
+  - { k: 0.4, K: 80, h: 12, y0: 60 }
+challenges:
+  - { check: 'h > 0 and h < k*K/4' }
+  - { check: 'h > k*K/4' }
+  - { check: 'h - k*K/4', target: 0, tol: 0.5 }

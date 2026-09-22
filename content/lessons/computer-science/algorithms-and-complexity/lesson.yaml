@@ -60,3 +60,18 @@ charts:
     series:
       - x^2
       - 2^x
+primary: x
+presets:
+  - x: 30
+    k: 2
+  - x: 10
+    k: 1
+  - x: 20
+    k: 4
+challenges:
+  - check: k*x
+    target: 60
+  - check: k*x
+    target: 24
+    tol: 1
+  - check: abs(k-5)<0.5 and k*x>=100

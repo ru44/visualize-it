@@ -1,0 +1,50 @@
+id: schrodingers-cat-and-qubits
+subject: quantum
+difficulty: high-school
+equation: p = \cos^2\!\left(\frac{\theta}{2}\right)
+concepts:
+  - superposition
+  - measurement
+  - qubit
+prerequisites:
+  - probability-basics
+  - double-slit-experiment
+related:
+  - uncertainty-principle
+visualization:
+  type: qubit
+  options: {}
+parameters:
+  theta:
+    min: 0
+    max: 180
+    step: 1
+    value: 90
+    unit: "°"
+  shots:
+    min: 1
+    max: 1000
+    step: 1
+    value: 100
+variables:
+  - \theta
+  - p
+derivation:
+  - \theta = 0 \Rightarrow p = 1
+  - \theta = 180^\circ \Rightarrow p = 0
+  - p = \cos^2\!\left(\frac{\theta}{2}\right)
+charts: []
+primary: theta
+presets:
+  - theta: 90
+    shots: 100
+  - theta: 30
+    shots: 200
+  - theta: 60
+    shots: 1000
+challenges:
+  - check: cos(theta*pi/180/2)^2
+    target: 0.5
+    tol: 0.03
+  - check: cos(theta*pi/180/2)^2 > 0.9
+  - check: shots >= 500

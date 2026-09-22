@@ -1,8 +1,8 @@
 ---
 title: Buoyancy and Archimedes' principle
 summary: >-
-  An object floats or sinks purely by comparing its own density to the
-  fluid's — no other property of its shape or material matters.
+  This is why a steel ship floats but a steel coin sinks, and why you float
+  more easily in salty seawater than in a swimming pool.
 parameters:
   rhoObj: object density ρ_obj
   rhoFluid: fluid density ρ_fluid
@@ -13,11 +13,29 @@ variables:
   - object density and fluid density
 ---
 
+## Try it
+
+1. Watch the block sitting in the tank of fluid.
+2. Drag "object density ρ_obj" up. Watch the block sink lower until it drops to the floor.
+3. Now raise "fluid density ρ_fluid" instead. The same block floats higher.
+
+## Real-life examples
+
+1. **An ice cube in a glass of water.** Ice (920 kg/m³) is only slightly less dense than water (1000 kg/m³), so it floats with most of its 20 L volume submerged.
+2. **A cork bobbing in water.** Cork (240 kg/m³) is far less dense than water, so a 5 L cork rides mostly above the surface.
+3. **A rock dropped in a pond.** At 2500 kg/m³, denser than the 1000 kg/m³ water, a 10 L rock sinks straight to the bottom.
+
+## Test yourself
+
+1. Make the object float with exactly half its volume submerged.
+2. Make the object dense enough to sink completely to the bottom.
+3. Find a fluid density and volume that give a buoyant force of 150 N when the object is fully submerged.
+
 ## Intuition
 
-Drag the block up or down and watch its density readout change — dragging it toward the bottom of the tank raises $\rho_{obj}$, and once it exceeds the fluid's density the block sinks all the way to the floor instead of settling at some depth. Watch the two force arrows: the downward one is weight, fixed by the object's own density and volume, and the upward one is the buoyant force, which grows only as more of the object gets submerged.
+Picture a 20-litre block of ice, density 920 kg/m³, floating in a tank of water, density 1000 kg/m³. Drag the block up or down and watch the density readout change: pull it toward the bottom and "object density" rises, and once it passes the fluid's density the block sinks all the way to the floor instead of settling partway down.
 
-Notice the block always settles exactly where those two arrows balance. Push $\rho_{fluid}$ up instead — say, from fresh water toward something as dense as syrup — and the same floating block rides noticeably higher, because less of it now needs to be submerged to displace an equal weight of the denser fluid.
+Watch the two arrows on the block: the downward one is its weight, fixed by its own density and volume, and the upward one is the buoyant force, which grows only as more of the block is pushed under the surface. It always settles exactly where those two arrows balance. Now raise "fluid density ρ_fluid" toward something as thick as syrup: the same floating block rides noticeably higher, because less of it needs to go underwater to push aside an equal weight of the heavier fluid.
 
 ## Formal
 

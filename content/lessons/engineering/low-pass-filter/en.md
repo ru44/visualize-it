@@ -1,9 +1,8 @@
 ---
 title: Low-pass filter
 summary: >-
-  Below a cutoff frequency a signal passes through almost untouched; above it,
-  the filter squashes it harder and harder — the same behaviour whether it is
-  built from a resistor and a capacitor or from a line of code.
+  Below a cutoff frequency a signal passes through almost untouched; above
+  it, the same filter squashes it harder the higher it goes.
 parameters:
   fc: f_c — cutoff frequency
   x: f — signal frequency (Hz)
@@ -19,11 +18,29 @@ charts:
       - phase φ
 ---
 
+## Try it
+
+1. Watch the curve sit nearly flat near 0 dB at low frequency, then bend over and dive as frequency climbs.
+2. Drag $f_c$ (cutoff frequency) up. The whole corner slides right, letting higher frequencies through before the rolloff starts.
+3. Now drag $x$ (signal frequency) across the corner near $f_c$. Watch the gain fall and the phase shift grow toward −90°.
+
+## Real-life examples
+
+1. **A bass-focused tone control.** Setting the cutoff near 100 Hz lets a 50 Hz bass note pass through almost untouched, since it sits below the cutoff.
+2. **A bandwidth-limited voice channel.** A channel that only needs to carry speech filters out content above roughly 300 Hz in this simplified model, cutting an 800 Hz tone down substantially to save bandwidth.
+3. **A speaker crossover.** A woofer's crossover, cutting off around 150 Hz, blocks a 1,000 Hz signal almost entirely, protecting the woofer from frequencies it cannot reproduce well.
+
+## Test yourself
+
+1. Set the signal frequency equal to the cutoff frequency: the gain should drop by exactly 3 dB, the definition of the cutoff.
+2. Find a signal frequency more than 10 times the cutoff frequency where the gain has dropped by over 20 dB.
+3. Using a cutoff of at least 200 Hz, find a signal frequency that pushes the phase shift to about −75°.
+
 ## Intuition
 
-The curve sits nearly flat near 0 dB at low frequency, then bends over and dives as frequency climbs past f_c — everything below the corner gets through almost untouched, everything above it gets quieter the higher it goes. Drag f_c up and the whole corner slides right, letting higher frequencies through before the rolloff starts.
+Turn the treble knob down on a stereo, and the shimmer of cymbals fades while the bass line stays just as loud — that knob is quietly setting the cutoff of a filter like this one. The curve on screen plots the gain in decibels against $x$, the signal's frequency: it sits nearly flat near 0 dB at low frequency, then bends over and dives as $x$ climbs past $f_c$, the cutoff frequency set by the slider.
 
-This is exactly what a "treble" or "bass" knob does inside a mixer or an amplifier: it is a low-pass (or high-pass) filter whose cutoff you are sliding with the dial, cutting or keeping the higher frequencies in a sound.
+Drag $f_c$ up and the whole bend slides right, letting higher frequencies through before the rolloff starts. Alongside the volume change, the filter also delays the signal — the phase chart below shows that delay growing from near 0° at low frequency toward −90° once the frequency is far above $f_c$.
 
 ## Formal
 

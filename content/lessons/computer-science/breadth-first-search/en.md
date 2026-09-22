@@ -1,8 +1,8 @@
 ---
 title: Breadth-first search
 summary: >-
-  Explore a graph one layer at a time using a queue, guaranteeing the shortest
-  path measured in hops.
+  This search guarantees you'll find the shortest possible path between two
+  points, layer by layer, before checking anything farther away.
 parameters:
   start: start — starting node
   step: step — play position
@@ -12,11 +12,29 @@ variables:
   - 'the set of nodes already discovered, so they are never queued twice'
 ---
 
+## Try it
+
+1. Leave «start» at node 0 and press play — watch node 0 light up, then its direct neighbours light up together as one layer, then their neighbours as the next layer.
+2. Drag «step» back to 0 and forward again to replay the layers one at a time, and notice the target node (9) only lights up once every closer layer has already been explored.
+3. Change «start» and press play again — the layers redraw from the new starting point, but the target is still always found in the fewest possible hops.
+
+## Real-life examples
+
+- **Starting the search from yourself.** With start at node 0 and the animation played through, you watch the search spread outward in friend-of-friend layers until it reaches node 9, showing the fewest introductions needed to meet that person.
+- **Starting from someone in the middle.** With start at node 5, the search begins from a node already several hops into the network, often reaching node 9 in fewer layers.
+- **Starting right at the target.** With start at node 9 and the animation paused at the very beginning, node 9 lights up alone — its distance from itself is zero, and nothing has spread yet.
+
+## Test yourself
+
+1. Set start to node 0, then let the animation play all the way to the end.
+2. Move start to node 9, wherever the play position happens to be.
+3. Set start to node 5 and play at least halfway through the animation.
+
 ## Intuition
 
-Set the start node and press play: the node lights up, then every neighbour directly connected to it lights up together as one layer, then every neighbour of those lights up as the next layer, and so on until the target node is reached. Nodes never jump the queue — the algorithm always finishes an entire layer before starting the next one.
+Imagine you are looking for a classmate named Sam at a big party, and you only know who each person there knows, not where Sam is. You start by asking everyone you personally know — that's layer one — and if none of them is Sam, you ask everyone they know next — layer two — and so on, layer by layer, never skipping ahead. On screen that's the graph of 10 numbered circles: the start slider picks which circle you begin at, and pressing play lights up each layer of neighbours together before the next layer starts.
 
-That layer-by-layer order is exactly what makes BFS find the shortest path in hops: the first time the target is reached, it must be by the fewest possible edges, because every shorter path would already have been explored in an earlier layer. Change the start node and the layers redraw from the new source, but the guarantee stays the same.
+Because every layer finishes before the next one begins, the very first time you reach the target circle (always node 9), it has to be by the fewest possible hops — there is no way a shorter route was skipped, since it would have lit up in an earlier layer. Drag the step slider to replay the search at any point, or change the start node and press play again: the layers redraw from wherever you begin, but the shortest-hop guarantee never breaks.
 
 ## Formal
 

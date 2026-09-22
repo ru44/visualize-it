@@ -1,8 +1,9 @@
 ---
 title: Standing waves on a string
 summary: >-
-  Two identical waves travelling in opposite directions add up to a pattern that
-  does not travel at all — fixed nodes, oscillating antinodes.
+  A jump rope shaken at one end settles into a shape that does not travel
+  anywhere — some points stay still while others swing widely — and how many
+  humps appear depends only on how fast you shake it.
 parameters:
   A: amplitude A
   'n': harmonic number n
@@ -15,11 +16,29 @@ variables:
   - amplitude and frequency of the oscillation
 ---
 
+## Try it
+
+1. Let it animate. Every point along the string moves up and down in place, but the pattern itself does not travel.
+2. Raise the slider "harmonic number n" one step at a time. Count the humps that appear.
+3. Watch the still points, called nodes — they mark the two ends and any point where the string barely moves at all.
+
+## Real-life examples
+
+1. **A guitar string's basic note.** Plucked in its simplest shape (harmonic n = 1, amplitude A = 1.2), the whole string swings as one big hump — this is the string's lowest, loudest note.
+2. **A string pinched exactly at its middle.** Touching the midpoint forces a still point there (n = 2, A = 0.8), splitting the string into two smaller humps that ring a higher note.
+3. **An organ pipe's higher overtone.** Air inside the pipe can also settle into a finer pattern (n = 4, A = 0.5), adding brightness on top of the pipe's basic tone.
+
+## Test yourself
+
+1. Create the second harmonic: get exactly 2 humps with a still point in the middle (n = 2).
+2. Push the string to its highest possible harmonic: 6 humps at once (n = 6).
+3. Make the string wiggle slowly (frequency below 0.5 Hz) while still showing 3 humps (n = 3).
+
 ## Intuition
 
-Let it animate: every point along the string oscillates up and down in place, but some special points — the nodes — never move at all, while others — the antinodes, halfway between nodes — swing with the largest amplitude. Nothing travels left or right; the whole pattern just breathes in and out.
+Shake one end of a long jump rope up and down while a friend holds the other end still, and try different shaking speeds. At most speeds the rope just flails around messily — but at a few special speeds it settles into a clean, repeating shape that seems to breathe in place instead of travelling anywhere. The picture on screen shows exactly this: press play and every point on the blue string moves up and down, yet the overall pattern stays fixed between the two ends. Some points, called nodes, barely move at all; others, halfway between nodes and called antinodes, swing with the largest reach.
 
-Increase $n$ one step at a time and count the humps: $n$ humps fit exactly between the two fixed, unmoving ends, so $n=1$ has one big hump, $n=2$ has two smaller ones with a new node in the middle, and so on — only these whole-number fits are allowed, because the string must be motionless at both ends.
+Raise the slider "harmonic number n" one step at a time and count the humps: at n = 1 the whole 6-metre string swings as one big hump; at n = 2 it splits into two smaller humps with a new still point in the middle; and so on. Only whole numbers of humps are allowed, because the string must stay motionless at both fixed ends no matter what. The slider "frequency f" controls how fast the pattern breathes in and out, and "amplitude A" controls how far each hump swings — neither one changes how many humps fit.
 
 ## Formal
 

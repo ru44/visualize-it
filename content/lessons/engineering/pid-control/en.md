@@ -1,9 +1,8 @@
 ---
 title: PID control
 summary: >-
-  A controller watches the gap between what you want and what you have, and
-  pushes back on it; a proportional push alone always falls a little short,
-  and adding up the leftover error closes that last gap.
+  A controller pushes back on the gap between what you want and what you
+  have — and a simple push alone always falls a little short of the goal.
 parameters:
   Kp: K_p — proportional gain
   Ki: K_i — integral gain
@@ -19,11 +18,29 @@ variables:
   - τ — the plant's own time constant, how sluggishly x responds to a push
 ---
 
+## Try it
+
+1. Watch $x$ chase $r$. With $K_i$ at zero, it settles just short of $r$.
+2. Drag $K_p$ up. $x$ reacts faster and settles closer to $r$, but a gap always remains.
+3. Now drag $K_i$ up from zero. The controller starts closing that last gap, and $x$ eventually lands exactly on $r$ — though push $K_i$ too far and it starts to overshoot and oscillate.
+
+## Real-life examples
+
+1. **A home thermostat.** Modest gains (Kp = 1, Ki = 0.1) bring the room to temperature smoothly and slowly, without any overshoot — comfortable but not fast.
+2. **A car's cruise control.** Higher gains (Kp = 3, Ki = 0.5) let the system reach and hold the target speed quickly and precisely, even up a hill, without much overshoot.
+3. **A poorly tuned drone stabilizer.** Aggressive gains (Kp = 8, Ki = 1.5) react fast but overshoot and oscillate before settling — exactly the "too much Ki" problem this lesson warns about.
+
+## Test yourself
+
+1. With $K_i$ at zero (proportional-only control), find a $K_p$ that makes $x$ settle at exactly 80% of the target $r$.
+2. Find $K_p$, $K_i$ and $\tau$ that make the response critically damped — the fastest settling possible without any overshoot.
+3. With $K_i$ above 0.05, find a $K_p$ and $\tau$ combination that makes the response clearly oscillate before settling.
+
 ## Intuition
 
-x chases r: drag K_p up and x reacts faster and more strongly to any gap, but with K_i at zero it settles just short of r and stays there — a proportional push shrinks as the gap shrinks, so it never quite finishes the job. That leftover gap is the steady-state error.
+A car's cruise control is set to 100 km/h, but going uphill the engine alone can't quite keep up, and the car settles at 97 km/h and stays there — that lasting gap is exactly what proportional-only control produces. On screen, $x$, the plant's output, chases $r$, the target: drag $K_p$, the proportional gain, up and $x$ reacts faster and more strongly to any gap, but with $K_i$ at zero it always settles just short of $r$.
 
-Now drag K_i up from zero: the controller starts keeping a running tally of that leftover gap and pushes harder the longer it persists, so x eventually lands exactly on r. Push K_i too high, though, and the controller overreacts to old error, sending x past r, back under, and oscillating before it settles.
+Now drag $K_i$ up from zero: the controller starts keeping a running tally of that leftover gap and pushes harder the longer it persists, so $x$ eventually lands exactly on $r$ — the cruise control finally holds the exact speed, even uphill. Push $K_i$ too high, though, and the controller overreacts to old error, sending $x$ past $r$, back under, and oscillating before it settles.
 
 ## Formal
 

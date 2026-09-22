@@ -1,8 +1,8 @@
 ---
 title: 'Permutations: when order matters'
 summary: >-
-  How many ways can you line up k things chosen from n, when a different order
-  counts as a different result?
+  Count how many different ordered lists — race results, PINs, or a lineup —
+  you can make by choosing and arranging items from a set.
 parameters:
   'n': n — items available
   k: k — places to fill
@@ -12,11 +12,29 @@ variables:
   - 'n factorial: n × (n−1) × … × 1, the ways to line up all n items'
 ---
 
+## Try it
+
+1. Watch the arrangements listed below the tokens as you drag «k — places to fill».
+2. Notice (1,2) and (2,1) both appear: here order matters, like first and second place in a race.
+3. Raise «n — items available» and watch the count of arrangements grow much faster than the tokens did.
+
+## Real-life examples
+
+1. **Race podium.** Awarding gold, silver, and bronze among 8 runners can happen in 336 different orders.
+2. **Books on a shelf.** Arranging all 5 books in a row can be done in 120 different orders.
+3. **Locker code.** Picking an ordered 3-letter code from 6 available letters, no repeats, gives 120 possible codes.
+
+## Test yourself
+
+1. Find «n — items available» and «k — places to fill» that give exactly 60 possible arrangements.
+2. Fill every place, k equal to n, and make the count of arrangements exceed 100.
+3. Leave at least 3 items unused (n − k ≥ 3), yet keep the count of arrangements under 20.
+
 ## Intuition
 
-Look at the arrangements listed below the tokens. With 4 tokens and 2 places you get 12: any of the 4 can go first, then any of the 3 that are left can go second, and 4 × 3 = 12. The pair (1,2) and the pair (2,1) both appear, because here order matters — like first and second place in a race.
+Look at the arrangements listed below the tokens. With «n — items available» at 4 and «k — places to fill» at 2 you get 12: any of the 4 tokens can go first, then any of the 3 that are left can go second, and 4 × 3 = 12. The pair (1,2) and the pair (2,1) both appear, because here order matters — like first and second place in a race.
 
-Raise $k$ by one and every existing arrangement sprouts $n-k$ new endings, so the count grows very fast. Set $k = n$ and you are lining up everything: that is $n!$.
+Raise «k — places to fill» by one and every existing arrangement sprouts n − k new endings, so the count grows very fast. Set «k — places to fill» equal to «n — items available» and you are lining up every item — that count is written n factorial.
 
 ## Formal
 

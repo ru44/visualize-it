@@ -1,8 +1,9 @@
 ---
 title: Merge sort
 summary: >-
-  Split the list in half, sort each half, then merge the two sorted halves back
-  together. Always n log n — no unlucky worst case.
+  Splitting a big messy pile in half again and again, sorting each tiny
+  piece, then merging them back together lets you sort thousands of items
+  quickly without ever hitting an unlucky worst case.
 parameters:
   'n': n — number of items
   step: step — play position
@@ -12,11 +13,29 @@ variables:
   - the step that combines two already-sorted halves into one sorted list
 ---
 
+## Try it
+
+1. Set n to 8 bars and step to 0, then press play slowly — watch the bars split into two groups of 4, then four groups of 2, before any comparing happens.
+2. Keep watching as step climbs past halfway — two small sorted groups merge into one bigger sorted group, always taking whichever front bar is smaller.
+3. Drag n up to 40 bars and press play again — the number of splitting levels barely grows, even with five times as many bars as before.
+
+## Real-life examples
+
+- **Arranging 8 playing cards by rank.** With n = 8, merge sort splits the hand into two groups of 4, then four pairs, before merging back — just 3 levels for a hand this small.
+- **Lining up 32 classmates by height.** With n = 32, four times as many people only costs 5 splitting levels, not four times as many.
+- **Alphabetizing a shelf of 40 books.** With n = 40, merging still finishes in about 5 or 6 levels, which is why merge sort stays fast even on a long shelf.
+
+## Test yourself
+
+1. Find the number of bars that needs exactly 5 levels of splitting to reach single bars.
+2. Drag n to its largest setting, 40 bars, and play the animation all the way to the end.
+3. Drag n to its smallest setting, 4 bars, and play the animation all the way to the end.
+
 ## Intuition
 
-Press play and watch the bars split into smaller and smaller groups first — halves, then quarters, down to single bars that are trivially "sorted" alone. That splitting phase does no comparisons at all; it just decides the groups.
+Picture a messy stack of 8 playing cards you want in order: split it into two piles of 4, then split each of those into pairs, until every pile is a single card that is trivially "in order" all by itself. Press play here and watch the bars do exactly that — splitting into halves, then quarters, then single bars — before a single comparison happens; the splitting phase only decides the groups, it does no sorting at all.
 
-The real work happens on the way back up: each merge step walks two already-sorted groups side by side, always taking the smaller of the two fronts, so the combined group comes out sorted with no swaps needed later. Every level of merging touches every bar exactly once, and there are log2(n) levels — which is why the count never gets worse, no matter how the input was arranged to begin with.
+The real sorting happens on the way back up: each merge step slides two already-sorted piles side by side and always takes whichever front card is smaller, so the combined pile comes out sorted with no shuffling needed later. Every level of merging touches every single bar exactly once, and doubling the number of bars only adds one more level — which is why merge sort never has a slow day, no matter how scrambled the bars started.
 
 ## Formal
 

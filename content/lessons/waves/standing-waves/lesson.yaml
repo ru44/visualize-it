@@ -68,3 +68,20 @@ derivation:
   - y = y_1 + y_2 = A\big[\sin(kx-\omega t) + \sin(kx+\omega t)\big]
   - y = 2A\sin(kx)\cos(\omega t)
 charts: []
+primary: n
+presets:
+  - n: 1
+    A: 1.2
+    f: 0.5
+  - n: 2
+    A: 0.8
+    f: 0.8
+  - n: 4
+    A: 0.5
+    f: 1.2
+challenges:
+  - check: n
+    target: 2
+  - check: n
+    target: 6
+  - check: f < 0.5 and n == 3

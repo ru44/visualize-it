@@ -1,0 +1,45 @@
+id: frequency-analysis
+subject: cryptography
+difficulty: beginner
+equation: M = (C - g) \bmod 26
+concepts:
+- frequency-analysis
+- cryptanalysis
+- caesar-cipher
+- letter-statistics
+prerequisites:
+- caesar-cipher
+- modular-arithmetic
+related:
+- vigenere-cipher
+- xor-and-one-time-pad
+visualization:
+  type: frequency-analysis
+  options: {}
+parameters:
+  guess:
+    min: 0
+    max: 25
+    step: 1
+    value: 0
+variables:
+- M
+- C
+- g
+- \bmod
+derivation:
+- \text{count how often each letter appears in the intercepted ciphertext}
+- \text{compare that shifted count, using guess } g \text{, to normal English letter frequencies}
+- M = (C - g) \bmod 26 \quad \text{(the best-matching guess reveals the message)}
+charts: []
+primary: guess
+presets:
+- guess: 0
+- guess: 13
+- guess: 7
+challenges:
+- check: guess
+  target: 7
+- check: guess
+  target: 13
+- check: guess > 0 and guess != 7

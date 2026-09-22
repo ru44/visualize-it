@@ -44,3 +44,17 @@ derivation:
   - P - P_0 = \rho g x
   - P = P_0 + \rho g x
 charts: []
+primary: x
+presets:
+  - rho: 1000
+    x: 3
+  - rho: 1020
+    x: 10
+  - rho: 1240
+    x: 5
+challenges:
+  - check: 101325+rho*9.81*x
+    target: 200000
+  - check: rho*9.81*x
+    target: 50000
+  - check: abs(rho-1000)<5 and abs(101325+rho*9.81*x-150000)<3000

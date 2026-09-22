@@ -1,8 +1,8 @@
 ---
-title: Complex numbers
+title: 'Complex numbers: multiplying as a spin'
 summary: >-
-  A number with two parts, real and imaginary, that lives on a plane instead
-  of a line. Multiplying two of them rotates and scales.
+  See why multiplying two numbers that each carry a direction spins and
+  resizes a point — the trick behind radio signals, radar, and game graphics.
 parameters:
   a: first number, real part
   b: first number, imaginary part
@@ -11,11 +11,29 @@ parameters:
 variables: []
 ---
 
+## Try it
+
+1. Drag the first point (steps a and b) anywhere on the plane and watch its label update.
+2. Set the second point to "c = 0, d = 1" — pure $i$ — and watch the first point spin exactly 90° around the center.
+3. Now drag "d" past 1. The point keeps spinning and also moves farther from the center, because a bigger second number scales as well as rotates.
+
+## Real-life examples
+
+1. **AC circuit phase shift.** An electrical signal at 3+4i volts (a=3, b=4) passes through a pure inductor, which multiplies it by i (c=0, d=1): the signal's phase shifts 90° while its strength stays the same.
+2. **Rotating a game sprite.** A spaceship sits 2 steps right and 1 step up (a=2, b=1) on screen. Multiplying its position by about 0.7+0.7i (c=0.7, d=0.7) spins it 45° without changing its size.
+3. **Radar echo gain.** A radar blip 1 step out (a=1, b=0) is amplified and phase-shifted by a return signal of 2+2i (c=2, d=2), landing it farther out and rotated 45°.
+
+## Test yourself
+
+1. Choose a, b, c and d so the product lands exactly on the vertical (imaginary) axis, with no real part at all.
+2. Make the product's distance from the center exactly 10, however you split it between the two points.
+3. Find a second number exactly 1 unit from the center — it will only rotate points, never resize them.
+
 ## Intuition
 
-An ordinary number sits on a line, but the point on this plane needs two numbers to locate it, $a$ steps right and $b$ steps up. That point is the complex number $z = a + bi$, where $i$ is a new kind of number with the property $i^2 = -1$.
+Imagine a treasure marked 3 steps east and 4 steps north of an old tree. That spot is a single point on the plane you see here — the orange dot — and it doubles as the number $z = a+bi$, where $a=3$ counts steps east and $b=4$ counts steps north. The letter $i$ does not measure a distance; it means "turn 90° first," so $bi$ steps go in that turned direction instead of sideways.
 
-Set the second point to $c = 0, d = 1$, that is the number $i$ itself, and watch what multiplying by it does to the first point: it spins the point 90° around the origin without changing its distance from it. Multiplication by a complex number is always a rotation combined with a scaling.
+Now set the second point to $c=0, d=1$ — the number $i$ itself — and watch the orange dot spin: multiplying by it turns the dot 90° around the center without moving it closer or farther away. Any other second point both spins the dot by its own angle and stretches or shrinks it by its own distance from the center — multiplication is a spin plus a resize, nothing more.
 
 ## Formal
 

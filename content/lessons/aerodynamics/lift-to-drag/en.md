@@ -1,9 +1,8 @@
 ---
 title: Lift-to-drag ratio and glide
 summary: >-
-  How far a glider travels for every metre it sinks is set entirely by the
-  lift-to-drag ratio — and long, slender wings maximise it by cutting induced
-  drag.
+  This predicts how far a glider can travel for every metre of height it
+  gives up — and why gliders and albatrosses have such long, thin wings.
 parameters:
   AR: aspect ratio AR
   x: angle of attack α
@@ -24,11 +23,29 @@ charts:
       - C_D(AR)
 ---
 
+## Try it
+
+1. Picture a fighter jet's short, stubby wing (aspect ratio 4) flying at a 5° angle of attack.
+2. Drag the point «angle of attack α» along the curve. It climbs, peaks, then falls again.
+3. Now raise «aspect ratio AR» toward 25, like a glider's long, slender wing. The whole curve lifts, and its peak grows.
+
+## Real-life examples
+
+1. **A fighter jet's short, stubby wing.** With an aspect ratio of 4 at a 5° angle of attack, it manages a glide ratio of about 10 — built for speed and agility, not efficiency.
+2. **An airliner's wing.** With an aspect ratio of 9 at the same 5° angle, it reaches a glide ratio near 17, close to real airliner performance.
+3. **A sailplane's long, slender wing.** With an aspect ratio of 25 at 5°, it can glide almost 27 m for every metre it sinks — the payoff of a long, thin wing.
+
+## Test yourself
+
+1. Tune the aspect ratio and angle of attack for a glide ratio of about 20, close to an airliner's.
+2. Push the glide ratio above 30, into elite-sailplane territory.
+3. Using a stubby wing (aspect ratio at most 6, like a fighter jet), still reach a glide ratio above 10.
+
 ## Intuition
 
-Drag the angle-of-attack point along the L/D curve: it climbs, peaks, then falls again. Too little angle and there is barely any lift to divide by; too much and induced drag (the price of making lift) grows faster than lift itself, dragging the ratio back down. The peak is the single best angle to fly for maximum distance per metre of height given up — that is literally what "best glide speed" means.
+Picture a fighter jet's short, stubby wing, aspect ratio 4, flying at a 5° angle of attack. Drag the point «angle of attack α» along the L/D curve: it climbs, peaks, then falls again. Too little angle and there is barely any lift to divide by; too much and the drag from making lift grows faster than the lift itself, dragging the ratio back down. The peak is the single best angle to fly for the greatest distance per metre of height given up — that is literally what "best glide speed" means.
 
-Now raise the aspect-ratio slider and watch the whole curve lift and its peak grow: a higher AR means a longer, narrower wing for the same area, and that alone reduces induced drag for a given amount of lift. It is exactly why gliders and albatrosses have such long, slender wings — they are not built for speed, they are built to trade the least possible drag for the lift they need.
+Now raise «aspect ratio AR» toward 25, like a glider's long, slender wing, and watch the whole curve lift and its peak grow. A higher aspect ratio means a longer, narrower wing for the same area, and that alone cuts the drag needed to make a given amount of lift. It is exactly why gliders and albatrosses have such long, slender wings: not built for speed, but built to trade away the least possible drag for the lift they need.
 
 ## Formal
 

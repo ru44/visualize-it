@@ -10,4 +10,5 @@ export const viz3dRegistry: Record<string, Component> = {
   orbit: defineAsyncComponent(() => import('./Orbit3D.vue')),
   spring: defineAsyncComponent(() => import('./Spring3D.vue')),
   seasons: defineAsyncComponent(() => import('./Seasons3D.vue')),
+  spacetime: defineAsyncComponent(() => import('./Spacetime3D.vue')),
 }

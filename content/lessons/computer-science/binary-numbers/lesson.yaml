@@ -31,3 +31,15 @@ derivation:
   - n = \sum_{k=0}^{7} b_k \cdot 2^k
   - 0 \le n \le \sum_{k=0}^{7} 2^k = 2^8-1 = 255
 charts: []
+primary: value
+presets:
+  - value: 65
+  - value: 128
+  - value: 255
+challenges:
+  - check: value
+    target: 65
+  - check: value
+    target: 255
+  - check: value
+    target: 85

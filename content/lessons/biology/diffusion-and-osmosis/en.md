@@ -19,6 +19,24 @@ variables:
   - the concentration gradient across the membrane
 ---
 
+## Try it
+
+1. Watch the particles bounce across the membrane at random — some already crossing left to right and back again.
+2. Drag "particles on the left" far above "particles on the right." More crossings now happen left-to-right than right-to-left, simply because more particles start out on that side.
+3. Raise membrane permeability. Crossings happen more often on both sides at once, and the two sides even out faster.
+
+## Real-life examples
+
+- **A sugar cube dissolving in hot tea.** A strong gradient (180 particles versus 10), a warm temperature (350 K) and half-open pores (50%) drive sugar quickly away from the crowded spot next to the cube.
+- **Salt almost evened out in a glass of water.** With the two sides nearly matched (100 versus 90 particles) and free-flowing pores (70%), the net flow is already small — most crossings now cancel out.
+- **A cold, thick cell wall barely letting anything through.** A big gradient (150 versus 20) but a nearly closed membrane (10% permeability) at a cold temperature (150 K) means diffusion crawls along slowly.
+
+## Test yourself
+
+1. Bring both sides to the same particle count, within 5 of each other.
+2. Set up a gradient three times as crowded on the left as the right, with the membrane more than 80% open.
+3. Slow diffusion right down: drop permeability under 20% and cool the system below 160 K.
+
 ## Intuition
 
 Watch the particles cross the membrane at random — there is no rule telling more of them to go left than right, or vice versa. But because you start with far more particles on the crowded side, far more random crossings happen left-to-right than right-to-left simply by sheer numbers, and the net flow is from high concentration to low, until both sides look roughly the same.

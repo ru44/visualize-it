@@ -18,6 +18,24 @@ charts:
       - energy ratio to M5
 ---
 
+## Try it
+
+1. Watch the plotted line — the energy's logarithm — climb in a straight line as you drag magnitude up.
+2. Watch the second chart, the energy ratio to a magnitude-5 quake, barely move until about magnitude 7.
+3. Push the magnitude slider to 9 and watch that ratio rocket to roughly a million.
+
+## Real-life examples
+
+- **A quake most people don't notice.** Magnitude 3 releases so little energy that only sensitive instruments detect it.
+- **A historic mega-quake.** Magnitude 9, the scale of Sumatra (2004) and Tōhoku (2011), releases about a million times the energy of a magnitude-5 quake.
+- **A moderate, damaging earthquake.** Magnitude 6.5 is strong enough to damage poorly built structures, releasing roughly 5,600 times the energy of a magnitude-5 quake.
+
+## Test yourself
+
+1. Find the magnitude that releases exactly 1000 times the energy of a magnitude-5 quake.
+2. Push the magnitude high enough that the energy ratio passes 100,000.
+3. Find the magnitude where the energy ratio equals exactly 32 — one whole magnitude step above M5.
+
 ## Intuition
 
 Drag the magnitude slider from 3 to 9 and watch the plotted value — the base-10 logarithm of the energy released — climb in a straight line. That straightness is the point of a logarithmic scale: it turns numbers that would otherwise range from thousands of joules to numbers with 18 digits into a tidy line from about 9 to 18.

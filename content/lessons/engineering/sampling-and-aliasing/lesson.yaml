@@ -37,3 +37,15 @@ derivation:
   - x[n] = x(nT_s)
   - f_s < 2f \Rightarrow \text{a lower ghost frequency appears (aliasing)}
 charts: []
+primary: fs
+presets:
+  - f: 5
+    fs: 40
+  - f: 10
+    fs: 12
+  - f: 8
+    fs: 17
+challenges:
+  - check: fs >= 2*f and fs < 2.1*f
+  - check: fs < 1.5*f and fs >= 2
+  - check: fs < 2*f and fs > 1.9*f

@@ -48,3 +48,18 @@ derivation:
   - -r < x - c < r
   - c - r < x < c + r
 charts: []
+primary: x
+presets:
+  - c: 2
+    r: 0.3
+  - c: 0
+    r: 1
+  - c: -4
+    r: 5
+challenges:
+  - check: abs(x - c) - r
+    target: 0
+  - check: 2*r
+    target: 10
+  - check: abs(x - c) - r
+    target: 3

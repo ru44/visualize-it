@@ -12,6 +12,24 @@ variables:
   - the fraction of the Moon's disc that appears lit from Earth
 ---
 
+## Try it
+
+1. Drag the day slider from 0. Watch a thin crescent grow into a half-lit disc.
+2. Keep dragging to about day 15. Watch the disc become a full, glowing circle.
+3. Keep dragging toward day 29.5. Watch the disc shrink back down to dark.
+
+## Real-life examples
+
+- **New moon.** At day 0, the lit half faces entirely away from Earth — the sky shows no moon at all.
+- **First quarter.** At day 7.4, roughly a week in, exactly half the visible disc glows.
+- **Full moon.** At day 14.8, about two weeks in, the whole disc faces us lit — the brightest night of the month.
+
+## Test yourself
+
+1. Find the day when the Moon is exactly half-lit (first or last quarter).
+2. Push the illuminated fraction above 90%, near full moon.
+3. Drag all the way to the next new moon and find where the disc goes dark again.
+
 ## Intuition
 
 Drag the day slider from 0 and watch a thin crescent grow into a half, then a full, glowing disc, then shrink back down. The Sun always lights exactly half of the Moon, the same as it lights exactly half of any ball floating in sunlight. What changes is how much of that lit half faces Earth as the Moon travels around us.

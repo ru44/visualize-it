@@ -48,3 +48,15 @@ derivation:
   - \frac{dp}{dt}=sp(1-p)
   - p(t)=\frac{p_0e^{st}}{1-p_0+p_0e^{st}}
 charts: []
+primary: s
+presets:
+- s: 0.3
+  p0: 0.05
+- s: 0.2
+  p0: 0.01
+- s: -0.15
+  p0: 0.5
+challenges:
+- check: p0 < 0.05 and s > 0.25
+- check: s < 0 and p0 > 0.5
+- check: abs(p0 - 0.5) < 0.02

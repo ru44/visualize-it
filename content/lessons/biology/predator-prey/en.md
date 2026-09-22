@@ -20,6 +20,24 @@ variables:
   - 'predator death rate, unchecked by prey'
 ---
 
+## Try it
+
+1. Watch prey rise first, while predators are still scarce.
+2. Watch predators rise next as food (prey) becomes abundant — then watch prey crash.
+3. Watch predators starve and decline as prey grows scarce, letting prey recover — and the cycle repeats.
+
+## Real-life examples
+
+- **Lynx and snowshoe hare.** A slow, classic cycle (birth rate a = 0.6, predation rate b = 0.02) starting from 40 hares and 9 lynx, matching the decade-long boom-and-bust seen in real fur-trading records.
+- **A fast-cycling pest and its predator.** High rates all round (a = 1.5, b = 0.15) starting from 30 pests and 10 predators produce a much quicker boom-and-bust cycle.
+- **Wolves and a large deer herd.** A slow predator decline (d = 0.2) starting from 50 deer and 15 wolves stretches the cycle into a long, gentle swing.
+
+## Test yourself
+
+1. Set the predator equilibrium level (a divided by b) to 20.
+2. Set the prey equilibrium level (d divided by c times b) to 50.
+3. Start with four times as many prey as predators.
+
 ## Intuition
 
 Watch the two curves chase each other: prey rises first (few predators to stop it), then predators rise as food is abundant, which crashes the prey, which then starves the predators, letting prey recover — around and around. Drag b up and predators catch prey more easily: the prey peak falls and the cycle speeds up.

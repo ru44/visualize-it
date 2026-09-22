@@ -1,0 +1,61 @@
+id: block-ciphers-and-aes
+subject: cryptography
+difficulty: high-school
+equation: C = E_K(M)
+concepts:
+- block-cipher
+- aes
+- confusion-and-diffusion
+- substitution-permutation-network
+prerequisites:
+- xor-and-one-time-pad
+- binary-numbers
+related:
+- hash-functions
+- digital-signatures
+visualization:
+  type: toy-spn
+  options: {}
+parameters:
+  rounds:
+    min: 0
+    max: 4
+    step: 1
+    value: 2
+  flip:
+    min: 0
+    max: 15
+    step: 1
+    value: 0
+  key:
+    min: 0
+    max: 65535
+    step: 1
+    value: 14996
+variables:
+- C
+- E
+- K
+- M
+derivation:
+- '\text{each round: mix in the key, substitute every 4-bit group through a fixed S-box, then shuffle all 16 bits}'
+- \text{repeat the same round several times, each one spreading the change of a single bit further}
+- \text{after enough rounds, one flipped input bit has changed roughly half of the 16 output bits}
+charts: []
+primary: rounds
+presets:
+- rounds: 0
+  flip: 0
+  key: 14996
+- rounds: 2
+  flip: 0
+  key: 14996
+- rounds: 4
+  flip: 8
+  key: 14996
+challenges:
+- check: rounds
+  target: 4
+- check: flip
+  target: 15
+- check: rounds == 4 and flip == 0

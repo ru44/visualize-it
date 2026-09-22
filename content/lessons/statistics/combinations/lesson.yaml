@@ -35,3 +35,16 @@ derivation:
   - \text{each group of } k \text{ appears } k! \text{ times}
   - \binom{n}{k} = \frac{P(n,k)}{k!} = \frac{n!}{k!\,(n-k)!}
 charts: []
+primary: k
+presets:
+  - n: 8
+    k: 3
+  - n: 9
+    k: 4
+  - n: 6
+    k: 2
+challenges:
+  - check: 'combinations(n,k)'
+    target: 10
+  - check: 'k <= n - k and combinations(n,k) > 50'
+  - check: 'abs(n - 10) < 0.5 and combinations(n,k) >= 250'

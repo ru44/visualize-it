@@ -1,8 +1,8 @@
 ---
 title: What probability means
 summary: >-
-  A probability is a share between 0 and 1. Watch a random experiment and see
-  the share emerge from many trials.
+  Watch a real coin-flip experiment settle into a share between 0 and 1 — that
+  settled share is what "probability" means.
 parameters:
   p: p — chance of success on one trial
   'N': N — number of trials
@@ -18,6 +18,18 @@ variables:
 1. Watch the orange line at the start: it jumps around wildly. Three heads in a row is normal.
 2. Let it run. After a few hundred flips the line settles near the dashed line at p.
 3. Press «again». A different path, the same destination. That destination is what probability means.
+
+## Real-life examples
+
+1. **Fair coin flips.** Flipping a coin 200 times, with a true 50% chance each flip, shows the orange line settle near the middle.
+2. **Rainy days forecast.** With a 30% true daily chance of rain, tracking 360 days shows the orange line settle near 3 rainy days in 10.
+3. **Rolling a chosen number.** Rolling a die repeatedly for one specific face, about a 15% chance, over 600 rolls shows the orange line settle near that rate.
+
+## Test yourself
+
+1. Make the expected number of successes over all trials (p × N) equal exactly 300.
+2. With a low probability (under 20%), still expect more than 100 successes in total.
+3. Run at least 1500 trials with a probability close to fair, within 0.05 of 50%.
 
 ## Intuition
 

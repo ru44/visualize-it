@@ -1,0 +1,67 @@
+id: activation-functions
+subject: ai
+difficulty: beginner
+equation: \sigma(x) = \frac{1}{1+e^{-x}}, \qquad \tanh(x), \qquad \mathrm{ReLU}(x) = \max(0,x)
+concepts:
+  - activation-function
+  - non-linearity
+  - relu
+  - sigmoid
+  - tanh
+prerequisites:
+  - logistic-regression
+  - exponential-growth
+related:
+  - neural-network
+  - logistic-regression
+visualization:
+  type: function-plot
+  options:
+    expr: 'sel == 0 ? 1/(1+exp(-x)) : (sel == 1 ? tanh(x) : max(0, x))'
+    domain:
+      - -4
+      - 4
+    range:
+      - -1.5
+      - 4
+    mode: plain
+parameters:
+  sel:
+    min: 0
+    max: 2
+    step: 1
+    value: 2
+  x:
+    min: -4
+    max: 4
+    step: 0.05
+    value: 1
+variables:
+  - \sigma(x)
+  - \tanh(x)
+  - \mathrm{ReLU}(x)
+derivation:
+  - \sigma(x) = \frac{1}{1+e^{-x}}
+  - \tanh(x) = \frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}
+  - \mathrm{ReLU}(x) = \max(0,x)
+primary: x
+presets:
+  - sel: 0
+    x: 3
+  - sel: 1
+    x: -3
+  - sel: 2
+    x: 2
+challenges:
+  - check: sel==0 and x>3
+  - check: sel==1 and x<-3
+  - check: sel==2 and abs(x-2.5)<0.1
+charts:
+  - domain:
+      - -4
+      - 4
+    marker: x
+    series:
+      - 1/(1+exp(-x))
+      - tanh(x)
+      - max(0,x)

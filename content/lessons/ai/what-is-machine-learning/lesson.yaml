@@ -1,0 +1,67 @@
+id: what-is-machine-learning
+subject: ai
+difficulty: beginner
+equation: \hat y = mx + c, \qquad L = \frac{1}{n}\sum_i (y_i - \hat y_i)^2
+concepts:
+  - machine-learning
+  - model
+  - loss
+  - training
+prerequisites:
+  - linear-regression
+  - gradient
+related:
+  - loss-landscape
+  - overfitting
+visualization:
+  type: gradient-fit
+  options: {}
+parameters:
+  m:
+    min: -2
+    max: 3
+    step: 0.01
+    value: 0
+  c:
+    min: -3
+    max: 5
+    step: 0.05
+    value: 0
+  lr:
+    min: 0.001
+    max: 0.05
+    step: 0.001
+    value: 0.02
+  steps:
+    min: 0
+    max: 200
+    step: 1
+    value: 0
+variables:
+  - m, c
+  - L
+  - training
+derivation:
+  - L = \frac{1}{n}\sum_i (y_i - (mx_i+c))^2
+  - \frac{\partial L}{\partial m} = -\frac{2}{n}\sum_i x_i(y_i - mx_i - c), \quad \frac{\partial L}{\partial c} = -\frac{2}{n}\sum_i (y_i - mx_i - c)
+  - m \gets m - \eta\,\frac{\partial L}{\partial m}, \qquad c \gets c - \eta\,\frac{\partial L}{\partial c}
+charts: []
+primary: steps
+presets:
+  - m: 0
+    c: 0
+    lr: 0.02
+    steps: 0
+  - m: 1
+    c: 2
+    lr: 0.02
+    steps: 150
+  - m: 0
+    c: 0
+    lr: 0.049
+    steps: 20
+challenges:
+  - check: steps
+    target: 200
+  - check: lr < 0.003
+  - check: lr > 0.045 and steps > 10

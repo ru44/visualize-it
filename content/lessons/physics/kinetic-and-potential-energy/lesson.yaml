@@ -50,3 +50,16 @@ charts:
       - 12
     series:
       - m*9.81*x
+primary: x
+presets:
+  - m: 0.6
+    x: 8
+  - m: 5
+    x: 3
+  - m: 2
+    x: 6
+challenges:
+  - check: 0.5*m*x^2
+    target: 20
+  - check: abs(m-1)<0.02 and abs(0.5*m*x^2-50)<1
+  - check: x<8 and 0.5*m*x^2>100

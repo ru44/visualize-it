@@ -35,3 +35,16 @@ derivation:
   - (a+b)^2 = c^2 + 4\left(\tfrac{1}{2}ab\right)
   - a^2 + 2ab + b^2 = c^2 + 2ab \;\;\Rightarrow\;\; a^2 + b^2 = c^2
 charts: []
+primary: a
+presets:
+  - a: 3
+    b: 4
+  - a: 1.5
+    b: 6
+  - a: 5
+    b: 6
+challenges:
+  - check: 'sqrt(a^2+b^2)'
+    target: 5
+  - check: 'a < 2 and sqrt(a^2+b^2) > 7'
+  - check: 'abs(a - b) < 0.2 and sqrt(a^2+b^2) > 9'

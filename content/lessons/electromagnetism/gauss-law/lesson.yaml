@@ -51,3 +51,22 @@ derivation:
   - Q_{enc} = Q\frac{x^3}{R^3} \;\Rightarrow\; E(x) = \frac{kQx}{R^3}, \quad k = \frac{1}{4\pi\epsilon_0}
   - Q_{enc} = Q \;\Rightarrow\; E(x) = \frac{kQ}{x^2}
 charts: []
+primary: x
+presets:
+- Q: 20
+  R: 0.5
+  x: 2
+- Q: 80
+  R: 0.2
+  x: 1
+- Q: 50
+  R: 1.5
+  x: 0.5
+challenges:
+- check: '8.99*Q/x^2'
+  target: 100
+  tol: 10
+- check: 'R >= 1 and x < R and abs(8.99*Q*x/R^3 - 50) < 5'
+- check: '8.99*Q/x^2'
+  target: 2
+  tol: 0.5

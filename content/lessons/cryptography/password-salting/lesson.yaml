@@ -1,0 +1,55 @@
+id: password-salting
+subject: cryptography
+difficulty: high-school
+equation: h = H(P \Vert s)
+concepts:
+- salting
+- password-storage
+- rainbow-table
+- hash-function
+prerequisites:
+- hash-functions
+related:
+- digital-signatures
+- one-way-functions
+visualization:
+  type: hash-avalanche
+  options:
+    mode: salt
+    password: sunshine1
+parameters:
+  s1:
+    min: 0
+    max: 999
+    step: 1
+    value: 17
+  s2:
+    min: 0
+    max: 999
+    step: 1
+    value: 742
+variables:
+- P
+- s
+- H
+- h
+- \Vert
+derivation:
+- \text{two users both pick the password } P = \text{'sunshine1'}
+- h_1 = H(P \Vert s_1), \quad h_2 = H(P \Vert s_2)
+- \text{different salts } s_1 \ne s_2 \text{ give completely unrelated fingerprints } h_1, h_2
+charts: []
+primary: s1
+presets:
+- s1: 17
+  s2: 742
+- s1: 100
+  s2: 900
+- s1: 5
+  s2: 995
+challenges:
+- check: s1
+  target: 17
+- check: s2
+  target: 742
+- check: abs(s1 - s2) < 5

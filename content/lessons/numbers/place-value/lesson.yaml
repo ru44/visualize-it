@@ -1,0 +1,35 @@
+id: place-value
+subject: numbers
+difficulty: beginner
+equation: '347 = 3\times10^{2} + 4\times10^{1} + 7\times10^{0}'
+concepts:
+- place value
+- digits
+prerequisites: []
+related:
+- powers-of-ten
+visualization:
+  type: dot-grid
+  options: { mode: place }
+parameters:
+  N:
+    min: 0
+    max: 9999
+    step: 1
+    value: 347
+variables: []
+derivation:
+- '347 = 300 + 40 + 7'
+- '347 = 3\times100 + 4\times10 + 7\times1'
+- '347 = 3\times10^{2} + 4\times10^{1} + 7\times10^{0}'
+primary: N
+presets:
+- N: 124
+- N: 2530
+- N: 8000
+challenges:
+- check: N
+  target: 1000
+- check: floor(N / 100) % 10
+  target: 5
+- check: N > 9000 and N < 9500

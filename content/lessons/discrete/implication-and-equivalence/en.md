@@ -1,9 +1,8 @@
 ---
 title: 'Implication and equivalence'
 summary: >-
-  XOR is true when exactly one input is true. Compare it with "if... then"
-  and "if and only if", and see why reversing an implication changes its
-  meaning.
+  Comparing XOR with "if... then" and "if and only if" shows why swapping an
+  implication's two halves can turn a true statement false.
 parameters:
   a: a — first input (0 or 1)
   b: b — second input (0 or 1)
@@ -15,11 +14,29 @@ variables:
   - 'NOT: flips true to false and false to true'
 ---
 
+## Try it
+
+1. Flip switch a to 1 and switch b to 1 and watch the gate's lamp — it stays dark, because XOR only lights up when the two inputs disagree.
+2. Flip switch b back to 0 so a = 1 and b = 0: the lamp turns on, and the row (1, 0) lights up in the truth table on the right.
+3. Try all four combinations of a and b and read off the sum column each time — that column is exactly what XOR computes.
+
+## Real-life examples
+
+1. **Rain wets the ground.** It rains (a = 1) and the ground is wet (b = 1): the promise "if it rains, the ground gets wet" holds exactly as you would expect.
+2. **A sprinkler wets the ground without rain.** It does not rain (a = 0) but a sprinkler left the ground wet anyway (b = 1): the implication still holds, since it only promises what happens when it does rain.
+3. **A covered patio stays dry in the rain.** It rains (a = 1) but a covered patio stays dry (b = 0): this is the one combination that breaks the promise "if it rains, the ground gets wet."
+
+## Test yourself
+
+1. Find the one combination of switches where the promise "if it rains, the ground gets wet" is broken.
+2. Find a combination where rain and wet ground disagree, yet the promise still holds true.
+3. Find a combination where rain and wet ground are equivalent, both false at once.
+
 ## Intuition
 
-With both switches on the XOR gate's lamp stays dark, and it stays dark with both switches off too — XOR only lights up when the two inputs disagree, exactly one on and one off. That is different from OR, which would happily light up with both switches on.
+Set switch a to 1 and switch b to 1: both up, yet the lamp above the gate stays dark. Set both back to 0 and the lamp is still dark. Only when exactly one switch is up, a = 1 with b = 0, or a = 0 with b = 1, does the lamp light, because XOR rewards disagreement between its two inputs rather than agreement. OR is different: it would happily light up with both switches on.
 
-Implication behaves differently again: "if p then q" only breaks when p is true but q fails to follow, so it is not about matching inputs at all, it is about one thing guaranteeing another. "If and only if" sits between the two: it is true precisely when p and q agree, true together or false together, much like XOR's opposite.
+Picture a weather rule instead: a = 1 means it rained, and b = 1 means the ground got wet. The implication "if it rains, the ground gets wet" only breaks in one situation, when a = 1 but b = 0, rain with no wet ground; every other combination of the two switches keeps the rule true, even a = 0 with b = 0. "If and only if" is stricter: it is true only when a and b agree, both up or both down, which is almost the opposite pattern from the XOR lamp above.
 
 ## Formal
 

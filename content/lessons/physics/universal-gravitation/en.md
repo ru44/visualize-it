@@ -1,8 +1,9 @@
 ---
 title: Gravitational field strength with distance
 summary: >-
-  Gravity weakens with the square of distance from a planet's center — move
-  twice as far away and feel only a quarter of the pull.
+  This is why astronauts orbiting close to Earth still feel almost full
+  gravity, but a satellite far out in geostationary orbit feels barely any
+  pull at all.
 parameters:
   x: distance from Earth's center r
 variables:
@@ -11,11 +12,29 @@ variables:
   - 'Earth''s gravitational parameter, $3.986\times10^{14}\ \text{m}^3/\text{s}^2$'
 ---
 
+## Try it
+
+1. Watch the point start at r = 6.4 (Earth's surface). The field reads about 9.8 m/s².
+2. Drag "distance from Earth's center r" outward. Watch the curve plunge steeply at first.
+3. Keep dragging out toward 42 (geostationary orbit distance). The curve has flattened to a tiny fraction of its surface value.
+
+## Real-life examples
+
+1. **The International Space Station.** Orbiting only a few hundred km up (r≈6800 km from Earth's center), astronauts still feel nearly the same gravity as on the ground.
+2. **GPS satellites.** At around r≈26,600 km, GPS satellites feel gravity that's dropped to a small fraction of its surface value.
+3. **Geostationary satellites.** At r≈42,200 km, a satellite orbits once per day exactly matching Earth's rotation, with gravity down to about 1/40th its surface strength.
+
+## Test yourself
+
+1. Find the distance from Earth's center where gravity has dropped to exactly 1 m/s².
+2. Find the distance where gravity is a quarter of its surface value (about 2.43 m/s²).
+3. Find a distance far enough out that gravity has weakened below 0.2 m/s².
+
 ## Intuition
 
-Start the point at $r = 6.4$ (Earth's surface, roughly): the field is about $9.8\ \text{m/s}^2$, familiar as ordinary gravity. Drag outward and the curve drops steeply at first — it does not fall off gently, it plunges, because doubling distance divides the field by four, not two.
+Picture standing on Earth's surface, distance 6,400 km from the center, roughly where the point starts at r = 6.4: gravity there is about 9.8 metres per second squared, the pull you feel every day. Drag the slider "distance from Earth's center r" outward and watch the curve drop steeply, not gently — doubling the distance divides gravity by four, not two.
 
-Keep dragging out toward geostationary orbit distance (about 42,000 km, i.e. $r\approx42$): the curve has flattened dramatically, hovering near a small fraction of its surface value. Gravity never reaches zero on this plot, but it becomes vanishingly weak — which is exactly why objects that far out can coast in a stable, slow orbit.
+Keep dragging out toward geostationary orbit distance, about 42,000 km, so r ≈ 42: the curve has flattened dramatically, hovering near a tiny fraction of its surface value. Gravity never reaches zero on this plot, but it becomes vanishingly weak, which is exactly why objects that far out can coast in a stable, slow orbit.
 
 ## Formal
 

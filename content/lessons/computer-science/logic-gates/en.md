@@ -1,8 +1,9 @@
 ---
 title: Logic gates and Boolean algebra
 summary: >-
-  Every digital circuit reduces to a handful of gates combining 0s and 1s. Flip
-  the inputs and read the truth table your choices trace out.
+  Every decision a computer chip makes, from unlocking your phone to letting
+  a video game character jump, boils down to switches like these being
+  combined by a handful of simple rules.
 parameters:
   a: a — first input
   b: b — second input
@@ -13,11 +14,29 @@ variables:
   - NOT — flips a single input
 ---
 
+## Try it
+
+1. Set slider «a» to 1 and slider «b» to 0, and watch the AND gate's output light stay off.
+2. Raise «b» to 1 as well, so both switches are on, and watch the light turn on and the matching row in the truth table below get ticked.
+3. Drop «a» back to 0 while «b» stays at 1, and see the light switch off again — AND only lights up when every input is on.
+
+## Real-life examples
+
+- **Starting a car.** a = 1 means the key is turned and b = 1 means the seatbelt is buckled; with both switches on, the AND gate shows the engine is allowed to start.
+- **Unlocking a phone.** a = 1 means the password was typed correctly, but b = 0 means the fingerprint did not match; with only one input on, AND keeps the phone locked.
+- **Arming a burglar alarm.** a = 0 and b = 0 mean the door is not shut and the motion sensor is not set; with both switches off, AND leaves the alarm disarmed.
+
+## Test yourself
+
+1. Flip both switches on so the AND gate's output light finally turns on.
+2. Flip exactly one switch on and leave the other off, and notice the AND gate's light stays dark even though something changed.
+3. Flip both switches off and confirm the output light stays dark, just as it did before.
+
 ## Intuition
 
-Toggle $a$ and $b$ above the AND gate and watch the output light up only when both switches are on — the truth table below fills in as you go, one row confirmed at a time. Picture the gate list set to OR instead: the output would light whenever either switch is on; for XOR it would light only when the two disagree.
+Think of two light switches on a wall, one labelled a and one labelled b, each either off (0) or on (1) — four combinations in total, and you have flipped switches like these a hundred times before. This screen wires those two switches into an AND gate: drag slider «a» to 1 and slider «b» to 1 together, and the output light above the gate turns on, while the truth table below fills in the matching row. Try any other combination — one switch on, or both off — and the light stays dark, because AND only turns on when every input does.
 
-NAND and NOR are AND and OR with the output flipped — a small bubble on the output symbol. That flip matters more than it looks: NAND alone is enough to build every other gate, which is why real chips are built almost entirely out of NAND gates.
+Imagine the same two switches wired into an OR gate instead: now the light turns on if either switch is on, not only when both are. An XOR gate lights up only when the two switches disagree, one on and one off, and goes dark again the moment both agree. NAND and NOR are just AND and OR with the output flipped upside down, and that flip turns out to be enough on its own to build every other gate — which is why real computer chips are built almost entirely out of repeated NAND gates.
 
 ## Formal
 

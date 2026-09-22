@@ -22,18 +22,29 @@ charts:
       - price elasticity |E_d|
 ---
 
+## Try it
+
+1. Watch the revenue curve. Drag $x$, the price, up from a low value and see it climb.
+2. Keep dragging $x$ higher. At some point the tangent line on the curve flattens, then tips down — revenue has started falling instead of rising.
+3. Check the elasticity chart below: it crosses the value 1 at exactly the price where the tangent went flat.
+
+## Real-life examples
+
+1. **A staple food.** Rice priced at 30 with 105 units sold: raising the price barely changes how much people buy, since everyone still needs to eat. Demand is inelastic.
+2. **A luxury handbag.** Priced near 25 with only 25 units sold: a small price cut brings in enough new buyers to raise total revenue. Demand is elastic.
+3. **A concert ticket at the sweet spot.** Priced at 25 with 50 tickets sold, a 1-unit price rise would lose exactly as many sales as it gains in price — this is the single price that earns the most money overall.
+
+## Test yourself
+
+1. Find a price where demand is exactly unit elastic (the value on the elasticity chart equals 1) — this is the revenue-maximizing price.
+2. Raise the price until demand becomes clearly elastic (elasticity above 2), while keeping the quantity sold above zero.
+3. Lower the price until demand is clearly inelastic (elasticity below 0.2), while keeping the quantity sold above zero.
+
 ## Intuition
 
-Drag the price $x$ up from a low value: quantity falls only a little, and
-the tangent line on the revenue curve still points up — revenue is
-rising, because the extra money per sale outweighs the few buyers lost.
-Demand here is inelastic: buyers barely react.
+Imagine a concert where a free ticket would draw 100 fans, but every extra dollar on the price scares off 2 of them — that relationship is the demand line on screen. At a ticket price of 20, 60 fans still buy, and the tangent line on the revenue curve below still points up: the extra dollar you gain from everyone who stays outweighs the value of the few fans you lose. Demand is inelastic here, meaning buyers barely react to the price.
 
-Keep dragging $x$ higher and the tangent line flattens, then tips down:
-past a point, each further price rise loses more sales than it gains in
-price. Demand has become elastic. The elasticity chart below crosses 1
-exactly where the tangent goes flat — that is the revenue-maximising
-price.
+Now drag $x$, the price, higher still: past some point the tangent line flattens, then tips down — each further price rise now loses more ticket sales than it gains in extra revenue per ticket, and demand has become elastic. The elasticity chart below crosses the value 1 exactly where that tangent goes flat, marking the single price that earns the most total revenue.
 
 ## Formal
 

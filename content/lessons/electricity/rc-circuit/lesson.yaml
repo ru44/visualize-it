@@ -63,3 +63,19 @@ charts:
     marker: x
     series:
       - V0/R*exp(-x/(R*C/1000))
+primary: R
+presets:
+  - V0: 9
+    R: 2
+    C: 1000
+  - V0: 6
+    R: 0.5
+    C: 2000
+  - V0: 12
+    R: 8
+    C: 1000
+challenges:
+  - check: R*C/1000
+    target: 5
+  - check: abs(x-5)<0.1 and (1-exp(-x/(R*C/1000)))>=0.9
+  - check: abs((1-exp(-x/(R*C/1000))) - 0.5) < 0.02

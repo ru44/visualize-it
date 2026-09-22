@@ -1,0 +1,51 @@
+id: galileo-falling-objects
+subject: relativity
+difficulty: high-school
+equation: t = \sqrt{\dfrac{2h}{g}}
+concepts:
+  - free-fall
+  - gravity
+  - acceleration
+  - air-resistance
+prerequisites:
+  - newtons-second-law
+related:
+  - gravity-as-curved-spacetime
+  - projectile-motion
+visualization:
+  type: free-fall
+  options: {}
+primary: h
+parameters:
+  h:
+    min: 1
+    max: 100
+    step: 1
+    value: 20
+    unit: m
+  air:
+    min: 0
+    max: 1
+    step: 1
+    value: 1
+variables: []
+derivation:
+  - F = mg \Rightarrow a = g
+  - v = gt, \quad h = \tfrac{1}{2}gt^2
+  - t = \sqrt{\dfrac{2h}{g}}
+charts: []
+presets:
+  - h: 2
+    air: 1
+  - h: 2
+    air: 0
+  - h: 100
+    air: 1
+challenges:
+  - check: h
+    target: 50
+  - check: air
+    target: 0
+  - check: sqrt(2*h/9.81)
+    target: 3
+    tol: 0.15

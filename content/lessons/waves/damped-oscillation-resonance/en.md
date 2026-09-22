@@ -1,9 +1,9 @@
 ---
 title: Damped oscillation and resonance
 summary: >-
-  Friction or resistance drains energy from an oscillator, shrinking its swings
-  inside a decaying envelope — but driven at just the right frequency, a weakly
-  damped oscillator can still respond enormously.
+  A swing pushed once loses a little height on every pass and eventually
+  stops — but pushed at just the right rhythm instead, it can climb far
+  higher than any single push, and this lesson shows both effects together.
 parameters:
   A: initial amplitude A
   g: damping rate γ
@@ -23,11 +23,29 @@ charts:
       - F/√((ω0²−ω²)² + (2γω)²)
 ---
 
+## Try it
+
+1. Watch the curve. It swings up and down while shrinking toward zero, like a bell that rings and then fades.
+2. Raise the slider "damping rate γ" toward 1. The swings now die out almost immediately.
+3. Lower γ back toward 0. The swings barely fade at all — they ring on and on, like a struck tuning fork.
+
+## Real-life examples
+
+1. **A guitar string.** A plucked string (amplitude A = 1.5, damping rate γ = 0.06 per second) rings for a long time, because so little energy leaks out with each vibration.
+2. **A playground swing.** Pushed once and let go (A = 3, γ = 0.3 per second), a swing rocks a few times before friction and air resistance bring it to a stop.
+3. **A car driving over a pothole.** The suspension (A = 2.5, γ = 0.9 per second) is built to stop bouncing within about a second, so the ride feels smooth again quickly.
+
+## Test yourself
+
+1. Make the swings die out almost immediately: set the damping rate γ to at least 0.9 per second.
+2. Make the oscillation rock back and forth at 4.5 radians per second.
+3. Drive the system at its own natural rhythm: bring the frequency slider x within 0.3 rad/s of the natural frequency ω0.
+
 ## Intuition
 
-Drag the point along the main curve and watch the tangent: the oscillation still swings back and forth, but each successive swing is smaller than the last, trapped inside the shrinking dashed-like envelope $\pm Ae^{-\gamma t}$. Raise $\gamma$ and the whole thing dies out visibly faster, while the oscillation frequency $\omega$ barely changes.
+Push a swing once and let go: each arc is a little lower than the one before, until it stops. The blue curve on screen shows exactly that pattern over time, in seconds along the bottom. It starts at a height of 3 and rocks back and forth while shrinking inside an invisible boundary. Drag the orange point along the curve and watch the short tangent line: it shows how fast the swing is moving at that exact instant. Raise the slider called "damping rate $\gamma$" — how quickly each swing shrinks — from 0.2 toward 0.9, and the same swing now dies out in about a second instead of ten.
 
-Now look at the chart: it shows how a driven (pushed) version of this same oscillator responds depending on how fast you drive it. Sweep the driving frequency $x$-axis toward $\omega_0$ and the response amplitude spikes upward sharply if $\gamma$ is small — pushing at exactly the system's own natural rhythm gets an outsized response, the phenomenon of resonance.
+Now imagine pushing that same swing over and over, trying different rhythms to see which one builds the highest arc. The second graph plots exactly that: how strongly the system responds, against how fast you push it. Pushing close to the swing's own natural rhythm, $\omega_0$ (its natural frequency, here 3 radians per second), makes the response shoot up far higher than pushing at any other pace — this sudden peak is called resonance. Make $\gamma$ small on the first graph and the peak on the second graph turns tall and narrow, so only one precise rhythm gets a big response. Make $\gamma$ large instead and the peak flattens out, so almost any rhythm works about as well.
 
 ## Formal
 

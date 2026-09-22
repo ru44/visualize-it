@@ -43,3 +43,24 @@ derivation:
   - zw = ac + adi + bci + bdi^2
   - zw = (ac - bd) + (ad + bc)i
 charts: []
+primary: d
+presets:
+  - a: 3
+    b: 4
+    c: 0
+    d: 1
+  - a: 2
+    b: 1
+    c: 0.7
+    d: 0.7
+  - a: 1
+    b: 0
+    c: 2
+    d: 2
+challenges:
+  - check: a*c - b*d
+    target: 0
+  - check: sqrt(a^2 + b^2) * sqrt(c^2 + d^2)
+    target: 10
+  - check: sqrt(c^2 + d^2)
+    target: 1

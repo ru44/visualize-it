@@ -55,3 +55,18 @@ derivation:
   - \frac{dP}{P(1-P/K)} = r\,dt
   - P(t) = \frac{K}{1+\left(\frac{K-P_0}{P_0}\right)e^{-rt}}
 charts: []
+primary: r
+presets:
+- r: 0.8
+  K: 200
+  P0: 10
+- r: 0.25
+  K: 1000
+  P0: 50
+- r: 0.06
+  K: 500
+  P0: 20
+challenges:
+- check: abs(P0/K - 0.5) < 0.02
+- check: K/P0 >= 20
+- check: r > 0.5 and P0 < 30

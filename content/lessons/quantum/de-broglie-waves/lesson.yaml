@@ -1,0 +1,55 @@
+id: de-broglie-waves
+subject: quantum
+difficulty: high-school
+equation: \lambda = \frac{h}{mv}
+concepts:
+  - de-broglie-wavelength
+  - wave-particle-duality
+  - matter-waves
+prerequisites:
+  - photons-and-plancks-constant
+related:
+  - schrodinger-equation-particle-in-a-box
+  - double-slit-experiment
+visualization:
+  type: function-plot
+  options:
+    expr: 727/x
+    domain:
+      - 10
+      - 2000
+    range:
+      - 0
+      - 40
+    mode: tangent
+parameters:
+  x:
+    min: 10
+    max: 2000
+    step: 1
+    value: 100
+    unit: km/s
+variables:
+  - \lambda
+  - p
+  - m
+  - v
+  - h
+derivation:
+  - \lambda \propto \frac{1}{p}
+  - p = mv
+  - \lambda = \frac{h}{mv}
+charts: []
+primary: x
+presets:
+  - x: 100
+  - x: 500
+  - x: 1500
+challenges:
+  - check: 727/x
+    target: 7.27
+    tol: 0.2
+  - check: 727/x < 1
+  - check: 727/x
+    target: 2
+    tol: 0.05

@@ -1,9 +1,10 @@
 ---
 title: 'The first law: energy, heat, and work'
 summary: >-
-  Energy is conserved: whatever internal energy a gas gains equals the heat
-  added minus the work it does expanding — and that work is exactly the area
-  under its pressure–volume curve.
+  A bicycle pump gets warm as you compress air inside it, and rising air high
+  in the atmosphere cools as it expands — both are the same rule: energy put
+  in as heat, minus energy that leaves as work, is exactly what changes an
+  object's internal energy.
 parameters:
   'n': amount of gas n
   T: temperature T
@@ -16,11 +17,29 @@ variables:
   - 'pressure, volume, and absolute temperature of the gas'
 ---
 
+## Try it
+
+1. Drag markers a and b along the volume axis. Watch the shaded region between them — that is the work the gas does.
+2. Raise the slider "temperature T". Watch the whole curve lift, so the same shaded strip covers more area.
+3. Widen the gap between a and b. Watch the shaded area, and the work done, grow.
+
+## Real-life examples
+
+1. **A car engine's power stroke.** Hot combustion gas (n = 1 mol, T = 500 K) expanding from 1 to 5 litres pushes the piston outward, doing the work that turns the crankshaft.
+2. **A compressed-air tool releasing air.** Air (n = 0.5 mol, T = 300 K) expanding from 2 to 8 litres as it leaves the tank does mechanical work on whatever it is driving, cooling slightly as it goes.
+3. **A weather balloon rising through thin air.** A parcel of air (n = 2 mol, T = 250 K) expanding from 3 to 9 litres as pressure drops with altitude does work pushing against the surrounding air, cooling as it climbs.
+
+## Test yourself
+
+1. Get the work done by the gas to exactly 2000 J.
+2. Exactly double the volume (b = 2a) while keeping the work above 1500 J.
+3. Show compression: set b smaller than a so the work done by the gas drops to −1500 J or below.
+
 ## Intuition
 
-Drag a and b to set the start and end volume of the expansion. The shaded region under the curve is the work the gas does pushing outward — widen the shaded strip and you can see directly why expanding further, or starting at higher pressure, always means more work done, exactly the way the area under a velocity curve is distance.
+Pump up a bicycle tire quickly and the pump barrel gets noticeably warm — squeezing the air does work on it, and that work becomes extra internal energy you can feel as heat. On screen, drag $a$ and $b$, the two markers on the volume axis, to set the start and end volume of a gas expanding the other way around. The shaded blue region under the curve between them is the work the gas does as it pushes outward — try moving from $a=1$ to $b=5$ litres and watch the strip widen.
 
-Raise T with a and b fixed and the whole P–V curve lifts upward, so the same shaded interval covers more area — hotter gas pushes harder at every volume, so the same expansion does more work. This is the P–V picture behind “heating a gas lets it do more work”, the core idea of every heat engine.
+Widen that shaded strip further, or start it at a higher point on the curve, and you can see directly why expanding more, or starting at higher pressure, always means more work done — exactly the way the area under a speed-vs-time graph gives you distance travelled. Now raise the slider "temperature T" with $a$ and $b$ fixed: the whole curve lifts upward, so the same shaded interval covers more area. Hotter gas pushes harder at every volume, so the same expansion now does more work — this is the picture behind "heating a gas lets it do more work", the core idea inside every heat engine.
 
 ## Formal
 

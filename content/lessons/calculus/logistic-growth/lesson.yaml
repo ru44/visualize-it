@@ -53,3 +53,12 @@ derivation:
   - \int\left(\frac1y + \frac{1/K}{1-y/K}\right)dy = kt + C
   - y = \frac{K}{1+\left(\frac{K-y_0}{y_0}\right)e^{-kt}}
 charts: []
+primary: x
+presets:
+  - { K: 8, y0: 0.5, k: 0.6, x: 2 }
+  - { K: 8, y0: 0.5, k: 0.6, x: 8 }
+  - { K: 5, y0: 2, k: 0.3, x: 18 }
+challenges:
+  - { check: 'abs(K/(1 + ((K - y0)/y0)*exp(-k*x)) - K/2) < 0.1' }
+  - { check: 'K/(1 + ((K - y0)/y0)*exp(-k*x)) > 0.95*K' }
+  - { check: 'x >= 5 and K/(1 + ((K - y0)/y0)*exp(-k*x)) < 0.1*K' }

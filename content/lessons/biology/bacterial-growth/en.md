@@ -14,11 +14,29 @@ variables:
   - elapsed time
 ---
 
+## Try it
+
+1. Watch the curve start flat near $t=0$: just the starting cell count, and nothing more yet.
+2. Drag the time slider forward. The curve climbs slowly at first, then rockets upward.
+3. Now drag the doubling-time slider, $T$, down. The same stretch of time now fits many more doublings, and the curve rockets up even faster.
+
+## Real-life examples
+
+- **E. coli in a warm broth.** Starting from just 10 cells ($N_0 = 10$) and doubling every 20 minutes ($T = 20$), the colony grows for 2 hours ($t = 120$): over six doublings, enough to pass 600 cells.
+- **Yogurt culture bacteria.** Lactobacillus starting from 20 cells ($N_0 = 20$) doubles more slowly, about every 65 minutes ($T = 65$); after over 4 hours ($t = 260$) it has still multiplied many times over.
+- **Slow soil bacteria.** A sluggish soil species starting from just 5 cells ($N_0 = 5$) and doubling only every 110 minutes ($T = 110$) still keeps climbing after over 7 hours ($t = 440$).
+
+## Test yourself
+
+1. Find the time $t$ at which the colony has doubled exactly once — set $t$ equal to the doubling time $T$.
+2. Find the time at which the colony has grown to eight times its starting size (three doublings).
+3. Starting from at least 80 cells and with a slow doubling time over 100 minutes, still push the colony's count past 500.
+
 ## Intuition
 
-Drag t forward and watch N climb slowly at first, then faster and faster — each doubling adds as many cells as every previous doubling combined. The tangent line shown at your chosen t is the instantaneous growth rate there; notice it gets steeper and steeper as t grows, even though the doubling time T never changes.
+E. coli bacteria in a warm, nutrient-rich broth can double in number roughly every 20 minutes: one cell becomes two, two become four, and within ten hours one cell has become more than a billion. Drag the time slider, labelled $t$, forward from zero. Watch the population $N$ climb slowly at first, then faster and faster — each doubling adds as many cells as every doubling before it combined. The straight line touching the curve at your chosen point shows the instantaneous growth rate there. Watch it tilt steeper the further you drag, even though the doubling time $T$ never changes.
 
-Shrink T and the same population doubles more often in a given stretch of time, so the curve rockets up much faster — E. coli under ideal lab conditions can double in about 20 minutes, turning one cell into over a billion in under 10 hours. But no real culture keeps this up: nutrients deplete and waste builds up, so real growth eventually bends over into the logistic curve instead.
+Now drag the doubling-time slider, $T$, down instead. The same population doubles more often in a given stretch of time, so the curve rockets up much faster; a longer $T$ does the opposite, stretching the climb out. But no real culture keeps doubling forever: nutrients run out and waste builds up, so real bacterial growth eventually bends over into a flatter, S-shaped curve instead — the logistic curve covered in another lesson.
 
 ## Formal
 
