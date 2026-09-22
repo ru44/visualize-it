@@ -1,0 +1,67 @@
+id: action-potential
+subject: biology
+difficulty: university
+equation: \frac{dv}{dt} = v - \frac{v^3}{3} - w + I, \qquad \frac{dw}{dt} = \frac{v + a - bw}{\tau}
+concepts:
+  - action-potential
+  - threshold
+  - refractory-period
+  - neuron
+prerequisites:
+  - derivative
+related:
+  - sir-epidemic
+visualization:
+  type: ode-system
+  options:
+    vars:
+      - v
+      - w
+    equations:
+      - v - v^3/3 - w + I
+      - (v + a - b*w)/tau
+    initial:
+      - "-1.2"
+      - "-0.6"
+    tMax: 200
+    labels:
+      - membrane voltage v
+      - recovery variable w
+parameters:
+  I:
+    min: 0
+    max: 1.5
+    step: 0.05
+    value: 0.5
+  a:
+    min: 0.5
+    max: 1
+    step: 0.01
+    value: 0.7
+  b:
+    min: 0.5
+    max: 1
+    step: 0.01
+    value: 0.8
+  tau:
+    min: 5
+    max: 20
+    step: 0.5
+    value: 12.5
+  tView:
+    min: 0
+    max: 1
+    step: 0.001
+    value: 0
+variables:
+  - v
+  - w
+  - I
+  - a
+  - b
+  - \tau
+derivation:
+  - \frac{dv}{dt} = v - \frac{v^3}{3} - w + I
+  - \frac{dw}{dt} = \frac{v+a-bw}{\tau}
+  - \tau \gg 1 \ \Rightarrow\ w \text{ lags } v
+charts: []

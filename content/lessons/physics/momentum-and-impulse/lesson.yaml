@@ -1,0 +1,59 @@
+id: momentum-and-impulse
+subject: physics
+difficulty: university
+equation: J = \int F(t)\,dt = \Delta p
+concepts:
+  - impulse
+  - momentum
+  - area-under-curve
+prerequisites:
+  - area-under-curve
+  - newtons-second-law
+related:
+  - kinetic-and-potential-energy
+  - velocity-time-area
+visualization:
+  type: function-plot
+  options:
+    expr: Fmax*exp(-((x - 0.5)/w)^2)
+    domain:
+      - 0
+      - 1
+    range:
+      - 0
+      - 12
+    mode: area
+parameters:
+  Fmax:
+    min: 1
+    max: 10
+    step: 0.5
+    value: 6
+    unit: N
+  w:
+    min: 0.02
+    max: 0.4
+    step: 0.01
+    value: 0.08
+    unit: s
+  a:
+    min: 0
+    max: 0.9
+    step: 0.02
+    value: 0
+    unit: s
+  b:
+    min: 0.1
+    max: 1
+    step: 0.02
+    value: 1
+    unit: s
+variables:
+  - F(t)
+  - w
+  - J
+derivation:
+  - F(t) = m\frac{dv}{dt}
+  - J = \int_a^b F(t)\,dt = \int_a^b m\frac{dv}{dt}\,dt = m\int_{v(a)}^{v(b)} dv
+  - J = m\big(v(b) - v(a)\big) = \Delta p
+charts: []

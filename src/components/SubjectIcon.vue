@@ -16,6 +16,11 @@ const paths: Record<Subject, string> = {
   aerodynamics: 'M3 14c3-5 10-6 18-2-6 1-12 3-18 2zM3 8h8M3 19h10',
   thermodynamics: 'M10 14.5V5a2 2 0 1 1 4 0v9.5a4 4 0 1 1-4 0zM12 9v8',
   statistics: 'M4 20h16M6 16v-5M10 16V8M14 16v-3M18 16V5',
+  'computer-science': 'M4 5h16v11H4zM8 20h8M12 16v4M8 9l2 2-2 2M12 13h4',
+  biology: 'M8 3c0 6 8 6 8 12M16 3c0 6-8 6-8 12M8 15v6M16 15v6M9 7h6M9 11h6',
+  'earth-space': 'M12 12m-8 0a8 8 0 1 0 16 0a8 8 0 1 0-16 0M3 10c4 1 6 3 9 2s5-3 9-1M4 16c3-1 6 0 8 1s5 0 8-2',
+  economics: 'M4 19h16M4 19V5M7 15l4-5 3 3 6-7M14 6h6v6',
+  engineering: 'M2 12h3l2-6 3 12 3-9 2 5 2-2h5',
   chemistry: 'M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3M7.5 15h9',
 }
 </script>

@@ -1,0 +1,53 @@
+id: series-parallel
+subject: electricity
+difficulty: high-school
+equation: R_s = R_1+R_2, \qquad \frac{1}{R_p}=\frac{1}{R_1}+\frac{1}{R_2}
+concepts:
+  - kirchhoffs-laws
+  - series-circuit
+  - parallel-circuit
+  - voltage-divider
+  - current-divider
+prerequisites:
+  - ohms-law
+related:
+  - rc-circuit
+  - rlc-resonance
+  - ac-power
+visualization:
+  type: series-parallel
+  options: {}
+parameters:
+  V:
+    min: 1
+    max: 24
+    step: 0.5
+    value: 12
+    unit: V
+  R1:
+    min: 1
+    max: 100
+    step: 1
+    value: 20
+    unit: Ω
+  R2:
+    min: 1
+    max: 100
+    step: 1
+    value: 60
+    unit: Ω
+  mode:
+    min: 0
+    max: 1
+    step: 1
+    value: 0
+variables:
+  - R_1, R_2
+  - R_s, R_p
+  - I_1, I_2
+  - V_1, V_2
+derivation:
+  - V = I R_1 + I R_2 = I(R_1+R_2) \;\Rightarrow\; R_s = R_1+R_2
+  - I = \frac{V}{R_1}+\frac{V}{R_2} = V\left(\frac1{R_1}+\frac1{R_2}\right)
+  - \frac{1}{R_p} = \frac{1}{R_1}+\frac{1}{R_2}, \qquad V_2 = V\frac{R_2}{R_1+R_2}
+charts: []

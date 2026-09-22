@@ -1,0 +1,56 @@
+id: mach-number
+subject: aerodynamics
+difficulty: advanced
+equation: M = \frac{v}{a}, \qquad a = \sqrt{\gamma R T}
+concepts:
+  - mach-number
+  - speed-of-sound
+  - compressibility
+  - shock-wave
+prerequisites:
+  - ideal-gas-law
+  - function-graph
+related:
+  - drag-equation
+  - lift
+visualization:
+  type: function-plot
+  options:
+    expr: sqrt(1.4*287*x)
+    domain:
+      - 200
+      - 320
+    range:
+      - 260
+      - 370
+    mode: plain
+parameters:
+  x:
+    min: 200
+    max: 320
+    step: 1
+    value: 288
+    unit: K
+  vAircraft:
+    min: 50
+    max: 340
+    step: 5
+    value: 250
+    unit: m/s
+variables:
+  - M
+  - a
+  - \gamma
+  - R
+  - T
+derivation:
+  - p = \rho R T
+  - a^2 = \left(\frac{\partial p}{\partial \rho}\right)_{s} = \gamma R T
+  - M = \frac{v}{a} = \frac{v}{\sqrt{\gamma R T}}
+charts:
+  - domain:
+      - 200
+      - 320
+    marker: x
+    series:
+      - vAircraft/sqrt(1.4*287*x)

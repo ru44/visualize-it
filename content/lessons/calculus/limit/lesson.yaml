@@ -1,0 +1,40 @@
+id: limit
+subject: calculus
+difficulty: high-school
+equation: \lim_{x \to 0} \frac{\sin x}{x} = 1
+concepts:
+  - function
+  - approach
+  - limit
+  - continuity
+prerequisites:
+  - function-graph
+related:
+  - derivative
+  - integral
+visualization:
+  type: function-plot
+  options:
+    expr: sin(x)/x
+    domain:
+      - -7
+      - 7
+    range:
+      - -0.6
+      - 1.4
+    mode: limit
+    limitAt: 0
+parameters:
+  d:
+    min: 0.001
+    max: 6
+    step: 0.001
+    value: 3
+variables:
+  - x
+  - \tfrac{\sin x}{x}
+derivation:
+  - \cos x \;<\; \frac{\sin x}{x} \;<\; 1 \qquad (0 < |x| < \tfrac{\pi}{2})
+  - \lim_{x \to 0} \cos x = 1
+  - \lim_{x \to 0} \frac{\sin x}{x} = 1
+charts: []

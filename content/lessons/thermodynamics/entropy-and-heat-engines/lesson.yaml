@@ -1,0 +1,56 @@
+id: entropy-and-heat-engines
+subject: thermodynamics
+difficulty: university
+equation: \eta_{\text{Carnot}} = 1 - \frac{T_c}{T_h}
+concepts:
+  - second-law
+  - entropy
+  - carnot-efficiency
+  - heat-engine
+  - reversibility
+prerequisites:
+  - first-law-thermodynamics
+related:
+  - first-law-thermodynamics
+  - specific-heat
+visualization:
+  type: function-plot
+  options:
+    expr: 1 - Tc/x
+    domain:
+      - 400
+      - 900
+    range:
+      - 0
+      - 1
+    mode: tangent
+parameters:
+  Tc:
+    min: 250
+    max: 350
+    step: 5
+    value: 300
+    unit: K
+  x:
+    min: 400
+    max: 900
+    step: 5
+    value: 600
+    unit: K
+variables:
+  - T_h, T_c
+  - \eta
+  - S
+derivation:
+  - \eta = \frac{W}{Q_h} = \frac{Q_h - Q_c}{Q_h}
+  - "\\text{reversible cycle: } \\frac{Q_c}{Q_h} = \\frac{T_c}{T_h}"
+  - \eta_{\text{Carnot}} = 1 - \frac{Q_c}{Q_h} = 1 - \frac{T_c}{T_h}
+charts:
+  - domain:
+      - 400
+      - 900
+    marker: x
+    series:
+      - 1 - 250/x
+      - 1 - 300/x
+      - 1 - 350/x

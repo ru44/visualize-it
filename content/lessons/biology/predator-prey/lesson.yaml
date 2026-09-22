@@ -1,0 +1,76 @@
+id: predator-prey
+subject: biology
+difficulty: high-school
+equation: \frac{d(\text{prey})}{dt} = a\,\text{prey} - b\,\text{prey}\cdot\text{pred}, \qquad \frac{d(\text{pred})}{dt} = cb\,\text{prey}\cdot\text{pred} - d\,\text{pred}
+concepts:
+  - predator-prey
+  - population-cycle
+  - lotka-volterra
+prerequisites:
+  - logistic-population
+related:
+  - sir-epidemic
+visualization:
+  type: ode-system
+  options:
+    vars:
+      - prey
+      - pred
+    labels:
+      - prey
+      - predators
+    equations:
+      - a*prey - b*prey*pred
+      - c*b*prey*pred - d*pred
+    initial:
+      - x0
+      - y0
+    tMax: 60
+parameters:
+  a:
+    min: 0.2
+    max: 2
+    step: 0.05
+    value: 1.1
+  b:
+    min: 0.01
+    max: 0.2
+    step: 0.005
+    value: 0.05
+  c:
+    min: 0.1
+    max: 1
+    step: 0.05
+    value: 0.4
+  d:
+    min: 0.1
+    max: 2
+    step: 0.05
+    value: 0.9
+  x0:
+    min: 5
+    max: 60
+    step: 1
+    value: 40
+  y0:
+    min: 2
+    max: 30
+    step: 1
+    value: 9
+  tView:
+    min: 0
+    max: 1
+    step: 0.001
+    value: 0
+variables:
+  - prey
+  - pred
+  - a
+  - b
+  - c
+  - d
+derivation:
+  - \frac{d(\text{prey})}{dt}=0, \ \frac{d(\text{pred})}{dt}=0
+  - a\,\text{prey}=b\,\text{prey}\cdot\text{pred} \ \Rightarrow\ \text{pred}^*=a/b
+  - cb\,\text{prey}\cdot\text{pred}=d\,\text{pred} \ \Rightarrow\ \text{prey}^*=d/(cb)
+charts: []

@@ -1,0 +1,70 @@
+id: standing-waves
+subject: waves
+difficulty: university
+equation: y(x,t) = 2A\sin\!\left(\frac{n\pi x}{L}\right)\cos(2\pi f t)
+concepts:
+  - standing-wave
+  - harmonic
+  - interference
+  - node
+prerequisites:
+  - sine-wave
+  - unit-circle
+related:
+  - sine-wave
+  - interference-and-beats
+visualization:
+  type: function-plot
+  options:
+    expr: 2*A*sin(pi*n*x/6)*cos(2*pi*f*t)
+    domain:
+      - 0
+      - 6
+    range:
+      - -3
+      - 3
+    mode: plain
+    animate:
+      param: t
+      speed: 1
+      loop:
+        - 0
+        - 10
+parameters:
+  A:
+    min: 0.2
+    max: 2
+    step: 0.05
+    value: 1
+  n:
+    min: 1
+    max: 6
+    step: 1
+    value: 2
+  f:
+    min: 0.1
+    max: 1.5
+    step: 0.05
+    value: 0.4
+    unit: Hz
+  t:
+    min: 0
+    max: 10
+    step: 0.01
+    value: 0
+    unit: s
+  x:
+    min: 0
+    max: 6
+    step: 0.02
+    value: 3
+    unit: m
+variables:
+  - L
+  - n
+  - A, f
+derivation:
+  - y_1 = A\sin(kx - \omega t), \qquad y_2 = A\sin(kx + \omega t)
+  - y = y_1 + y_2 = A\big[\sin(kx-\omega t) + \sin(kx+\omega t)\big]
+  - y = 2A\sin(kx)\cos(\omega t)
+charts: []

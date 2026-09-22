@@ -1,0 +1,39 @@
+id: merge-sort
+subject: computer-science
+difficulty: high-school
+equation: T(n) = O(n \log n)
+concepts:
+  - sorting
+  - merge-sort
+  - divide-and-conquer
+  - stable-sort
+prerequisites:
+  - algorithms-and-complexity
+related:
+  - quicksort
+  - bubble-sort
+  - algorithms-and-complexity
+visualization:
+  type: sort-steps
+  options:
+    algorithm: merge
+parameters:
+  n:
+    min: 4
+    max: 40
+    step: 1
+    value: 16
+  step:
+    min: 0
+    max: 1
+    step: 0.001
+    value: 0
+variables:
+  - n
+  - log2 n
+  - merge
+derivation:
+  - T(n) = 2T(n/2) + O(n)
+  - \text{levels of recursion} = \log_2 n
+  - \text{work per level} = O(n) \;\Rightarrow\; T(n) = O(n\log n)
+charts: []

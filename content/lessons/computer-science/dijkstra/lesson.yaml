@@ -1,0 +1,40 @@
+id: dijkstra
+subject: computer-science
+difficulty: university
+equation: d(v) = \min_{u \to v} \big(d(u) + w(u,v)\big)
+concepts:
+  - graph
+  - dijkstra
+  - shortest-path
+  - greedy
+  - priority-queue
+prerequisites:
+  - breadth-first-search
+related:
+  - breadth-first-search
+  - depth-first-search
+visualization:
+  type: graph-search
+  options:
+    algorithm: dijkstra
+    target: 9
+parameters:
+  start:
+    min: 0
+    max: 9
+    step: 1
+    value: 0
+  step:
+    min: 0
+    max: 1
+    step: 0.001
+    value: 1
+variables:
+  - d(v)
+  - w(u,v)
+  - priority queue
+derivation:
+  - d(\text{start}) = 0, \quad d(v) = \infty \text{ for all other } v
+  - u = \arg\min_{v \text{ unfinished}} d(v)
+  - d(v) \gets \min\big(d(v),\, d(u) + w(u,v)\big)
+charts: []

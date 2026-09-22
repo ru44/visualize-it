@@ -1,0 +1,42 @@
+id: chemical-reaction
+subject: chemistry
+difficulty: high-school
+equation: 2\,\mathrm{H_2} + \mathrm{O_2} \;\rightarrow\; 2\,\mathrm{H_2O}
+concepts:
+  - balancing
+  - conservation-of-mass
+  - stoichiometry
+  - limiting-reactant
+  - molar-mass
+prerequisites: []
+related:
+  - atomic-structure
+  - chemical-equilibrium
+visualization:
+  type: reaction
+  options: {}
+parameters:
+  h2:
+    min: 0
+    max: 12
+    step: 1
+    value: 6
+  o2:
+    min: 0
+    max: 8
+    step: 1
+    value: 2
+  progress:
+    min: 0
+    max: 1
+    step: 0.01
+    value: 0
+variables:
+  - n(\mathrm{H_2})
+  - n(\mathrm{O_2})
+  - M
+derivation:
+  - a\,\mathrm{H_2} + b\,\mathrm{O_2} \rightarrow c\,\mathrm{H_2O}
+  - "\\text{H: } 2a = 2c \\qquad \\text{O: } 2b = c"
+  - a = c,\; b = c/2 \;\Rightarrow\; (a,b,c) = (2,1,2)
+charts: []

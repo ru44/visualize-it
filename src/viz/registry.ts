@@ -17,6 +17,13 @@ const Counting = defineAsyncComponent(() => import('./Counting.vue'))
 const DiscreteDist = defineAsyncComponent(() => import('./DiscreteDist.vue'))
 const CoinFlips = defineAsyncComponent(() => import('./CoinFlips.vue'))
 const BayesGrid = defineAsyncComponent(() => import('./BayesGrid.vue'))
+const OdeSystem = defineAsyncComponent(() => import('./OdeSystem.vue'))
+const LogicGates = defineAsyncComponent(() => import('./LogicGates.vue'))
+const SortSteps = defineAsyncComponent(() => import('./SortSteps.vue'))
+const GraphSearch = defineAsyncComponent(() => import('./GraphSearch.vue'))
+const BitsViz = defineAsyncComponent(() => import('./BitsViz.vue'))
+const GradientFit = defineAsyncComponent(() => import('./GradientFit.vue'))
+const Diffusion = defineAsyncComponent(() => import('./Diffusion.vue'))
 const Surface3D = defineAsyncComponent(() => import('./Surface3D.vue'))
 const GasBox = defineAsyncComponent(() => import('./GasBox.vue'))
 
@@ -33,6 +40,13 @@ export const vizRegistry: Record<string, Component> = {
   'ohm-circuit': OhmCircuit,
   'gas-box': GasBox,
   'surface-3d': Surface3D,
+  'ode-system': OdeSystem,
+  'logic-gates': LogicGates,
+  'sort-steps': SortSteps,
+  'graph-search': GraphSearch,
+  bits: BitsViz,
+  'gradient-fit': GradientFit,
+  diffusion: Diffusion,
   counting: Counting,
   'discrete-dist': DiscreteDist,
   'coin-flips': CoinFlips,

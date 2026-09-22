@@ -1,0 +1,66 @@
+id: ac-power
+subject: electricity
+difficulty: university
+equation: p(t) = v(t)i(t) = V_0 I_0\sin(\omega t)\sin(\omega t-\varphi), \qquad P_{\text{avg}} = \tfrac12 V_0 I_0\cos\varphi
+concepts:
+  - instantaneous-power
+  - real-power
+  - power-factor
+  - rms
+prerequisites:
+  - sine-wave
+related:
+  - series-parallel
+  - rlc-resonance
+visualization:
+  type: function-plot
+  options:
+    expr: V0*I0*sin(2*pi*50*x)*sin(2*pi*50*x - phi)
+    domain:
+      - 0
+      - 0.04
+    range:
+      - -55
+      - 55
+    mode: area
+parameters:
+  V0:
+    min: 1
+    max: 20
+    step: 0.5
+    value: 10
+    unit: V
+  I0:
+    min: 1
+    max: 10
+    step: 0.5
+    value: 5
+    unit: A
+  phi:
+    min: 0
+    max: 3.14
+    step: 0.05
+    value: 0.8
+    unit: rad
+  a:
+    min: 0
+    max: 0.04
+    step: 0.001
+    value: 0
+    unit: s
+  b:
+    min: 0
+    max: 0.04
+    step: 0.001
+    value: 0.02
+    unit: s
+variables:
+  - v(t), i(t)
+  - \varphi
+  - p(t)
+  - \cos\varphi
+derivation:
+  - p(t) = V_0I_0\sin(\omega t)\sin(\omega t-\varphi)
+  - \sin A\sin B = \tfrac12\big[\cos(A-B)-\cos(A+B)\big] \;\Rightarrow\; p(t) = \tfrac12 V_0I_0\cos\varphi - \tfrac12 V_0I_0\cos(2\omega t-\varphi)
+  - P_{\text{avg}} = \frac{1}{T}\int_0^T p(t)\,dt = \tfrac12 V_0I_0\cos\varphi
+charts: []

@@ -1,0 +1,37 @@
+id: pythagorean-theorem
+subject: geometry
+difficulty: beginner
+equation: a^2 + b^2 = c^2
+concepts:
+  - right triangle
+  - hypotenuse
+  - square
+  - area
+prerequisites: []
+related:
+  - circle
+  - unit-circle
+visualization:
+  type: right-triangle
+  options: {}
+parameters:
+  a:
+    min: 1
+    max: 8
+    step: 0.1
+    value: 3
+  b:
+    min: 1
+    max: 8
+    step: 0.1
+    value: 4
+variables:
+  - a
+  - b
+  - c
+  - θ
+derivation:
+  - (a+b)^2 = a^2 + 2ab + b^2
+  - (a+b)^2 = c^2 + 4\left(\tfrac{1}{2}ab\right)
+  - a^2 + 2ab + b^2 = c^2 + 2ab \;\;\Rightarrow\;\; a^2 + b^2 = c^2
+charts: []

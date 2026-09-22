@@ -1,0 +1,40 @@
+id: quicksort
+subject: computer-science
+difficulty: high-school
+equation: T(n) = O(n \log n) \text{ average}, \quad O(n^2) \text{ worst case}
+concepts:
+  - sorting
+  - quicksort
+  - divide-and-conquer
+  - pivot
+  - recursion
+prerequisites:
+  - algorithms-and-complexity
+related:
+  - bubble-sort
+  - merge-sort
+  - algorithms-and-complexity
+visualization:
+  type: sort-steps
+  options:
+    algorithm: quick
+parameters:
+  n:
+    min: 4
+    max: 40
+    step: 1
+    value: 16
+  step:
+    min: 0
+    max: 1
+    step: 0.001
+    value: 0
+variables:
+  - n
+  - pivot
+  - comparisons
+derivation:
+  - T(n) = T(k) + T(n-1-k) + O(n)
+  - "\\text{average case: } k \\approx n/2 \\;\\Rightarrow\\; T(n) = 2T(n/2) + O(n)"
+  - T(n) = O(n\log n)
+charts: []

@@ -1,0 +1,59 @@
+id: electric-potential
+subject: electromagnetism
+difficulty: university
+equation: V = k\frac{q}{r}, \qquad \mathbf{E} = -\nabla V
+concepts:
+  - electric-potential
+  - equipotential
+  - gradient
+  - potential-energy
+prerequisites:
+  - coulombs-law
+  - gradient
+related:
+  - coulombs-law
+  - gradient
+  - lorentz-force
+visualization:
+  type: electric-field
+  options: {}
+parameters:
+  q1:
+    min: -5
+    max: 5
+    step: 0.1
+    value: 2
+    unit: µC
+  q2:
+    min: -5
+    max: 5
+    step: 0.1
+    value: 2
+    unit: µC
+  d:
+    min: 1
+    max: 6
+    step: 0.1
+    value: 3
+    unit: m
+  px:
+    min: -4
+    max: 4
+    step: 0.05
+    value: 0.5
+    unit: m
+  py:
+    min: -2.4
+    max: 2.4
+    step: 0.05
+    value: 1.2
+    unit: m
+variables:
+  - V
+  - k
+  - \nabla V
+derivation:
+  - W = -\int_\infty^{r} \mathbf{F}\cdot d\boldsymbol{\ell} = kqq_{\text{test}}\!\left(\frac{1}{r}\right)
+  - V \equiv \frac{W}{q_{\text{test}}} = \frac{kq}{r}
+  - E_x = -\frac{\partial V}{\partial x}, \quad E_y = -\frac{\partial V}{\partial y}
+charts: []

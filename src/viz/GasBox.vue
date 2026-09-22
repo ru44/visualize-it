@@ -66,7 +66,7 @@ interface Particle {
   vx: number
   vy: number
 }
-let particles: Particle[] = []
+const particles: Particle[] = []
 
 function spawnParticle(w: number): Particle {
   const x = BOX_LEFT + RADIUS + Math.random() * Math.max(1, w - 2 * RADIUS)

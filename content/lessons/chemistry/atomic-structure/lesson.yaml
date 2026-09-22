@@ -1,0 +1,40 @@
+id: atomic-structure
+subject: chemistry
+difficulty: high-school
+equation: A = Z + N, \qquad {}^{A}_{Z}\mathrm{X}
+concepts:
+  - proton
+  - neutron
+  - electron
+  - atomic-number
+  - mass-number
+  - isotope
+  - electron-shell
+  - valence-electron
+prerequisites: []
+related:
+  - chemical-reaction
+  - ph-scale
+visualization:
+  type: atom-shells
+  options: {}
+parameters:
+  Z:
+    min: 1
+    max: 20
+    step: 1
+    value: 11
+  N:
+    min: 0
+    max: 24
+    step: 1
+    value: 12
+variables:
+  - Z
+  - N
+  - A
+derivation:
+  - "\\text{nucleus: } Z \\text{ protons } (+e) + N \\text{ neutrons } (0)"
+  - "\\text{electrons: } Z \\text{ (neutral atom)}"
+  - A = Z + N
+charts: []

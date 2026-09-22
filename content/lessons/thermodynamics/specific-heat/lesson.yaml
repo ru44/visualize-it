@@ -1,0 +1,54 @@
+id: specific-heat
+subject: thermodynamics
+difficulty: high-school
+equation: Q = mc\Delta T, \qquad Q = mL
+concepts:
+  - specific-heat-capacity
+  - latent-heat
+  - phase-change
+  - enthalpy
+prerequisites:
+  - area-under-curve
+related:
+  - first-law-thermodynamics
+  - entropy-and-heat-engines
+visualization:
+  type: function-plot
+  options:
+    expr: "t1 = m*41800/P; t2 = t1 + m*334000/P; t3 = t2 + m*418600/P; x < t1 ? -20 + P*x/(m*2090) : (x < t2 ? 0 : (x < t3 ? 100*(x - t2)/(t3 - t2) : 100))"
+    domain:
+      - 0
+      - 450
+    range:
+      - -25
+      - 110
+    mode: plain
+parameters:
+  P:
+    min: 200
+    max: 2000
+    step: 50
+    value: 1000
+    unit: W
+  m:
+    min: 0.1
+    max: 2
+    step: 0.1
+    value: 0.5
+    unit: kg
+  x:
+    min: 0
+    max: 450
+    step: 1
+    value: 100
+    unit: s
+variables:
+  - Q
+  - c
+  - L
+  - m
+derivation:
+  - Q_{\text{ice}} = mc_{\text{ice}}\big(0 - (-20)\big), \quad t_1 = \frac{Q_{\text{ice}}}{P}
+  - Q_{\text{melt}} = mL_f, \quad t_2 = t_1 + \frac{Q_{\text{melt}}}{P}
+  - Q_{\text{water}} = mc_{\text{water}}(100 - 0), \quad t_3 = t_2 + \frac{Q_{\text{water}}}{P}
+charts: []

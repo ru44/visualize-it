@@ -1,0 +1,62 @@
+id: algorithms-and-complexity
+subject: computer-science
+difficulty: high-school
+equation: T(n) = O(f(n))
+concepts:
+  - algorithm
+  - big-o
+  - complexity
+  - growth-rate
+prerequisites:
+  - exponents-and-powers
+  - logarithms
+related:
+  - bubble-sort
+  - quicksort
+  - merge-sort
+  - exponential-vs-polynomial
+visualization:
+  type: function-plot
+  options:
+    expr: k*x
+    domain:
+      - 1
+      - 30
+    range:
+      - 0
+      - 160
+    mode: plain
+parameters:
+  x:
+    min: 1
+    max: 30
+    step: 1
+    value: 10
+  k:
+    min: 1
+    max: 5
+    step: 1
+    value: 1
+variables:
+  - n
+  - T(n)
+  - O(f(n))
+derivation:
+  - T(n) = c_1 n + c_2
+  - T(n) \le c\,n \text{ for } n \ge n_0
+  - T(n) = O(n)
+charts:
+  - domain:
+      - 1
+      - 30
+    marker: x
+    series:
+      - x
+      - x*log(x,2)
+      - x^2
+  - domain:
+      - 1
+      - 12
+    series:
+      - x^2
+      - 2^x

@@ -1,0 +1,67 @@
+id: drag-equation
+subject: aerodynamics
+difficulty: high-school
+equation: D = \tfrac12 \rho v^2 C_D A
+concepts:
+  - drag
+  - dynamic-pressure
+  - drag-coefficient
+prerequisites:
+  - newtons-second-law
+  - function-graph
+related:
+  - lift
+  - lift-to-drag
+  - terminal-velocity
+visualization:
+  type: function-plot
+  options:
+    expr: 0.5*rho*Cd*A*x^2
+    domain:
+      - 0
+      - 60
+    range:
+      - -20
+      - 900
+    mode: tangent
+parameters:
+  rho:
+    min: 0.02
+    max: 1.3
+    step: 0.01
+    value: 1.225
+    unit: kg/m³
+  Cd:
+    min: 0.1
+    max: 1.5
+    step: 0.01
+    value: 0.3
+  A:
+    min: 0.5
+    max: 10
+    step: 0.1
+    value: 2.2
+    unit: m²
+  x:
+    min: 0
+    max: 60
+    step: 0.5
+    value: 25
+    unit: m/s
+variables:
+  - D
+  - \rho
+  - v
+  - C_D
+  - A
+derivation:
+  - q = \tfrac12 \rho v^2
+  - D = q \cdot C_D A
+  - D = \tfrac12 \rho v^2 C_D A
+charts:
+  - domain:
+      - 0
+      - 60
+    marker: x
+    series:
+      - 0.5*rho*Cd*A*x^3/1000

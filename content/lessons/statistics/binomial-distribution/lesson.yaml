@@ -1,0 +1,44 @@
+id: binomial-distribution
+subject: statistics
+difficulty: high-school
+equation: P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
+concepts:
+  - binomial
+  - distribution
+  - expected-value
+prerequisites:
+  - combinations
+  - probability-basics
+related:
+  - poisson-distribution
+  - normal-distribution
+visualization:
+  type: discrete-dist
+  options:
+    kind: binomial
+parameters:
+  n:
+    min: 1
+    max: 60
+    step: 1
+    value: 10
+  p:
+    min: 0.02
+    max: 0.98
+    step: 0.01
+    value: 0.5
+  k:
+    min: 0
+    max: 60
+    step: 1
+    value: 3
+variables:
+  - X
+  - \binom{n}{k}
+  - \mu = np
+  - \sigma = \sqrt{np(1-p)}
+derivation:
+  - P(\text{one specific sequence with } k \text{ successes}) = p^k (1-p)^{n-k}
+  - \text{number of such sequences} = \binom{n}{k}
+  - P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
+charts: []

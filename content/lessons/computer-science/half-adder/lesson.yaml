@@ -1,0 +1,39 @@
+id: half-adder
+subject: computer-science
+difficulty: high-school
+equation: \text{sum} = a \oplus b, \qquad \text{carry} = a \wedge b
+concepts:
+  - half-adder
+  - xor
+  - carry
+  - ripple-carry
+prerequisites:
+  - logic-gates
+  - binary-numbers
+related:
+  - logic-gates
+  - binary-numbers
+visualization:
+  type: logic-gates
+  options:
+    gate: HALF_ADDER
+parameters:
+  a:
+    min: 0
+    max: 1
+    step: 1
+    value: 1
+  b:
+    min: 0
+    max: 1
+    step: 1
+    value: 0
+variables:
+  - a, b
+  - \oplus
+  - \wedge
+derivation:
+  - 1 + 1 = 10_2
+  - \text{sum} = a \oplus b
+  - \text{carry} = a \wedge b
+charts: []

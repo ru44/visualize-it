@@ -1,0 +1,38 @@
+id: bernoulli
+subject: aerodynamics
+difficulty: university
+equation: p + \tfrac12 \rho v^2 = \text{const}, \qquad A_1 v_1 = A_2 v_2
+concepts:
+  - continuity
+  - pressure
+  - incompressible-flow
+prerequisites:
+  - newtons-second-law
+related:
+  - lift
+  - drag-equation
+visualization:
+  type: venturi
+  options: {}
+parameters:
+  v1:
+    min: 2
+    max: 30
+    step: 0.5
+    value: 10
+    unit: m/s
+  ratio:
+    min: 0.2
+    max: 1
+    step: 0.01
+    value: 0.5
+variables:
+  - p
+  - v
+  - A
+  - \rho
+derivation:
+  - \rho A_1 v_1 = \rho A_2 v_2 \;\Rightarrow\; A_1 v_1 = A_2 v_2
+  - dp = -\rho v\, dv
+  - p_1 + \tfrac12\rho v_1^2 = p_2 + \tfrac12\rho v_2^2
+charts: []
