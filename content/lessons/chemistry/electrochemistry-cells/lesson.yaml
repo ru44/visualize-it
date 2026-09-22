@@ -1,0 +1,54 @@
+id: electrochemistry-cells
+subject: chemistry
+difficulty: university
+equation: "E = E^0 - \\dfrac{0.05916}{n}\\log_{10} Q"
+concepts:
+  - electrochemical-cell
+  - standard-electrode-potential
+  - nernst-equation
+  - redox-reaction
+  - battery
+prerequisites:
+  - ohms-law
+  - logarithms
+related:
+  - chemical-equilibrium
+  - titration-curve
+visualization:
+  type: function-plot
+  options:
+    expr: E0 - (0.05916/n)*log10(x)
+    domain:
+      - 0.001
+      - 1000
+    range:
+      - 0
+      - 2
+    mode: plain
+parameters:
+  E0:
+    min: 0.1
+    max: 2
+    step: 0.01
+    value: 1.1
+    unit: V
+  n:
+    min: 1
+    max: 3
+    step: 1
+    value: 2
+  x:
+    min: 0.001
+    max: 1000
+    step: 0.5
+    value: 1
+variables:
+  - E
+  - E^0
+  - n
+  - Q
+derivation:
+  - "\\text{two half-reactions exchange } n \\text{ electrons, giving a standard cell potential } E^0"
+  - "E = E^0 - \\dfrac{RT}{nF}\\ln Q"
+  - "\\text{at } 25^\\circ\\mathrm{C}: E = E^0 - \\dfrac{0.05916}{n}\\log_{10} Q"
+charts: []

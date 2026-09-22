@@ -146,7 +146,7 @@ trust.derivNumeric: لا توجد مشتقة رمزية، لذلك نقيس ال
 trust.derivMismatch: لم تتّفق المشتقة الرمزية مع التحقّق العددي، لذلك نعرض الميل المقيس.
 trust.limitFinite: يقترب الجانبان من القيمة نفسها. حسبناها عدديًا بالاستكمال، وهي موثوقة حتى نحو {d} خانات عشرية، والقيمة {v}.
 trust.limitInf: تكبر القيم بلا حدّ من الجانبين، فالنهاية {v}.
-trust.limitDne: 'لا نهاية هنا، فمن اليسار تتّجه القيم إلى {l}، ومن اليمين إلى {r}.'
+trust.limitDne: لا نهاية هنا، فمن اليسار تتّجه القيم إلى {l}، ومن اليمين إلى {r}.
 trust.limitUnknown: القيم لا تستقرّ (ربما تتذبذب)، لذلك لا نعرض نهاية بدل أن نخمّن.
 trust.intExact: حسبنا قيمة دقيقة تمامًا بتكامل كثيرة الحدود حدًّا حدًّا بالكسور، وهي {v}.
 trust.intNumeric: حسبناه عدديًا (قاعدة سمبسون بثلاث دقّات)، وهو موثوق حتى نحو {d} خانات عشرية، والقيمة {v}.
@@ -308,7 +308,7 @@ three.models: 'النماذج ثلاثية الأبعاد:'
 three.view: العرض
 nav.notation: الرموز
 notation.title: الرموز والترميز
-notation.lead: 'كل حرف وعلامة تظهر في صيغ هذا الموقع: اسمها، وطريقة قراءتها، وماذا تعني. ويعرض كل درس أيضًا حروفه الخاصة بجانب الرسم.'
+notation.lead: 'كل حرف وعلامة تظهر في صيغ هذا الموقع: ماذا يفعل بكلمات بسيطة، مع مثال حقيقي وصورة صغيرة. ويعرض كل درس أيضًا حروفه الخاصة بجانب الرسم.'
 notation.search: ابحث عن رمز أو اسم أو معنى…
 notation.read: يُقرأ
 lesson.alsoInFormulas: وفي الصيغ أيضًا
@@ -359,3 +359,44 @@ sampling.seen: التردد الذي تظهره العينات
 sampling.original: الإشارة الأصلية
 sampling.recovered: استُعيدت بشكل صحيح
 sampling.aliased: 'تشوّه: تردد أدنى زائف'
+matrix.hint: اسحب النقطة المجوفة لتحريك v، والشبكة الزرقاء هي المستوى بعد المصفوفة
+matrix.det: المحدد
+matrix.area: معامل تغير المساحة
+matrix.complexEig: مركبة (دوران)
+complex.hint: اسحب z، تُجمع الزوايا وتُضرب الأطوال
+optics.hintRefr: اسحب لتغيير زاوية الشعاع الساقط
+optics.hintLens: اسحب الجسم يمينًا أو يسارًا
+optics.tir: انعكاس داخلي كلي
+optics.reflected: الضوء المنعكس
+optics.critical: الزاوية الحرجة
+optics.magnification: التكبير
+optics.image: الصورة
+optics.real: حقيقية مقلوبة
+optics.virtual: وهمية معتدلة
+optics.none: لا صورة (أشعة متوازية)
+buoy.hint: اسحب لأعلى أو لأسفل لتغيير كثافة الجسم
+buoy.weight: الوزن
+buoy.buoyancy: قوة الطفو
+buoy.submerged: الجزء المغمور
+buoy.state: النتيجة
+buoy.sinks: يغوص
+buoy.floats: يطفو
+ptable.hint: اضغط على عنصر
+ptable.element: العنصر
+ptable.mass: الكتلة الذرية
+ptable.groupPeriod: المجموعة / الدورة
+ptable.shells: الإلكترونات في كل مدار
+ptable.category: العائلة
+ptable.cat.alkali: الفلزات القلوية
+ptable.cat.alkaline: الفلزات القلوية الأرضية
+ptable.cat.transition: الفلزات الانتقالية
+ptable.cat.post: فلزات ما بعد الانتقالية
+ptable.cat.metalloid: أشباه الفلزات
+ptable.cat.nonmetal: اللافلزات
+ptable.cat.halogen: الهالوجينات
+ptable.cat.noble: الغازات النبيلة
+ptable.cat.lanthanide: اللانثانيدات
+ptable.cat.actinide: الأكتينيدات
+notation.example: 'مثال:'
+notation.learn: 'تعلّمه في درس: {lesson} ←'
+lesson.learnSymbol: الدرس

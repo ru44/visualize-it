@@ -168,7 +168,7 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
             <dl class="space-y-1.5 text-sm">
               <div v-for="g in glossary" :key="g.tok" class="flex gap-3">
                 <dt class="w-16 shrink-0"><Katex :tex="displayTex(g.tok)" /></dt>
-                <dd style="color: var(--muted)"><span class="font-medium" style="color: var(--fg)">{{ g.e.name }}</span><span v-if="g.e.read"> ({{ g.e.read }})</span> — {{ g.e.meaning }}</dd>
+                <dd style="color: var(--muted)"><span class="font-medium" style="color: var(--fg)">{{ g.e.name }}</span><span v-if="g.e.read"> ({{ g.e.read }})</span>. <MathText :text="g.e.simple" /><RouterLink v-if="g.e.lesson && g.e.lesson !== id" :to="`/lesson/${g.e.lesson}`" class="ms-1 underline" style="color: var(--accent)">{{ t('lesson.learnSymbol') }}</RouterLink></dd>
               </div>
             </dl>
           </template>

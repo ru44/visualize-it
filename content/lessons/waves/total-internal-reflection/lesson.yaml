@@ -1,0 +1,42 @@
+id: total-internal-reflection
+subject: waves
+difficulty: high-school
+equation: \theta_c = \arcsin\left(\frac{n_2}{n_1}\right)
+concepts:
+  - total-internal-reflection
+  - critical-angle
+  - optical-fibre
+prerequisites:
+  - refraction-snells-law
+related:
+  - refraction-snells-law
+  - thin-lenses
+visualization:
+  type: ray-optics
+  options:
+    mode: refraction
+parameters:
+  theta1:
+    min: 0
+    max: 89
+    step: 0.5
+    value: 50
+    unit: '°'
+  n1:
+    min: 1
+    max: 2.5
+    step: 0.01
+    value: 1.5
+  n2:
+    min: 1
+    max: 2.5
+    step: 0.01
+    value: 1
+variables:
+  - n_1, n_2
+  - \theta_c
+derivation:
+  - n_1\sin\theta_1 = n_2\sin\theta_2
+  - \theta_2 = 90^\circ \;\Rightarrow\; n_1\sin\theta_c = n_2
+  - \theta_c = \arcsin\left(\frac{n_2}{n_1}\right)
+charts: []

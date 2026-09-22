@@ -308,7 +308,7 @@ three.models: '3D models:'
 three.view: View
 nav.notation: Symbols
 notation.title: Symbols and notation
-notation.lead: Every letter and sign used in the formulas on this site, what it is called, how to say it, and what it means. Each lesson also lists its own letters next to the picture.
+notation.lead: 'Every letter and sign used in the formulas on this site: what it does, in plain words, with a real example and a small picture. Each lesson also lists its own letters next to the picture.'
 notation.search: Search a symbol, a name or a meaning…
 notation.read: read
 lesson.alsoInFormulas: Also in the formulas
@@ -359,3 +359,44 @@ sampling.seen: frequency the samples show
 sampling.original: original signal
 sampling.recovered: recovered correctly
 sampling.aliased: 'aliased: a false lower frequency'
+matrix.hint: drag the hollow dot to move v · the blue grid is the plane after the matrix
+matrix.det: determinant
+matrix.area: area scale factor
+matrix.complexEig: complex (rotation)
+complex.hint: drag z · angles add, lengths multiply
+optics.hintRefr: drag to change the angle of the incoming ray
+optics.hintLens: drag the object left or right
+optics.tir: total internal reflection
+optics.reflected: light reflected
+optics.critical: critical angle
+optics.magnification: magnification
+optics.image: image
+optics.real: real, inverted
+optics.virtual: virtual, upright
+optics.none: no image (rays parallel)
+buoy.hint: drag up or down to change the object’s density
+buoy.weight: weight
+buoy.buoyancy: buoyant force
+buoy.submerged: submerged
+buoy.state: result
+buoy.sinks: sinks
+buoy.floats: floats
+ptable.hint: tap an element
+ptable.element: element
+ptable.mass: atomic mass
+ptable.groupPeriod: group / period
+ptable.shells: electrons per shell
+ptable.category: family
+ptable.cat.alkali: alkali metals
+ptable.cat.alkaline: alkaline earth metals
+ptable.cat.transition: transition metals
+ptable.cat.post: post-transition metals
+ptable.cat.metalloid: metalloids
+ptable.cat.nonmetal: nonmetals
+ptable.cat.halogen: halogens
+ptable.cat.noble: noble gases
+ptable.cat.lanthanide: lanthanides
+ptable.cat.actinide: actinides
+notation.example: 'Example:'
+notation.learn: 'Learn it in: {lesson} →'
+lesson.learnSymbol: lesson

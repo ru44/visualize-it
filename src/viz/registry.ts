@@ -27,6 +27,11 @@ const Diffusion = defineAsyncComponent(() => import('./Diffusion.vue'))
 const MoonPhases = defineAsyncComponent(() => import('./MoonPhases.vue'))
 const SupplyDemand = defineAsyncComponent(() => import('./SupplyDemand.vue'))
 const Sampling = defineAsyncComponent(() => import('./Sampling.vue'))
+const MatrixTransform = defineAsyncComponent(() => import('./MatrixTransform.vue'))
+const ComplexPlane = defineAsyncComponent(() => import('./ComplexPlane.vue'))
+const RayOptics = defineAsyncComponent(() => import('./RayOptics.vue'))
+const Buoyancy = defineAsyncComponent(() => import('./Buoyancy.vue'))
+const PeriodicTable = defineAsyncComponent(() => import('./PeriodicTable.vue'))
 const Surface3D = defineAsyncComponent(() => import('./Surface3D.vue'))
 const GasBox = defineAsyncComponent(() => import('./GasBox.vue'))
 
@@ -53,6 +58,11 @@ export const vizRegistry: Record<string, Component> = {
   'moon-phases': MoonPhases,
   'supply-demand': SupplyDemand,
   sampling: Sampling,
+  'matrix-transform': MatrixTransform,
+  'complex-plane': ComplexPlane,
+  'ray-optics': RayOptics,
+  buoyancy: Buoyancy,
+  'periodic-table': PeriodicTable,
   counting: Counting,
   'discrete-dist': DiscreteDist,
   'coin-flips': CoinFlips,

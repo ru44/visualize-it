@@ -98,7 +98,12 @@ export interface LessonText {
 export interface NotationEntry {
   name: string
   read: string
+  /** One plain sentence anyone can follow. */
+  simple: string
+  /** The precise wording. */
   meaning: string
+  /** Lesson id that teaches the symbol. */
+  lesson?: string
   example?: string
   group: string
 }

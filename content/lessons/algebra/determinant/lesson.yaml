@@ -1,0 +1,58 @@
+id: determinant
+subject: algebra
+difficulty: university
+equation: '\det(M) = ad - bc'
+concepts:
+  - determinant
+  - area-scaling
+  - orientation
+  - invertibility
+prerequisites:
+  - matrices-as-transformations
+related:
+  - eigenvectors
+visualization:
+  type: matrix-transform
+  options: {}
+parameters:
+  a:
+    min: -3
+    max: 3
+    step: 0.05
+    value: 1.5
+  b:
+    min: -3
+    max: 3
+    step: 0.05
+    value: 0.5
+  c:
+    min: -3
+    max: 3
+    step: 0.05
+    value: 0.5
+  d:
+    min: -3
+    max: 3
+    step: 0.05
+    value: 1
+  vx:
+    min: -5
+    max: 5
+    step: 0.05
+    value: 1
+  vy:
+    min: -4
+    max: 4
+    step: 0.05
+    value: 0.5
+variables:
+  - a
+  - b
+  - c
+  - d
+  - \det
+derivation:
+  - \det(M) = ad - bc
+  - '|\det(M)|'
+  - \det(M) = 0
+charts: []

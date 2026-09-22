@@ -38,6 +38,8 @@ function checkProse(where: string, s: string) {
 const notation: Record<string, Record<string, any>> = {}
 for (const f of readdirSync(join(CONTENT, 'notation'))) notation[f.replace('.yaml', '')] = YAML.parse(readFileSync(join(CONTENT, 'notation', f), 'utf8')) ?? {}
 const glossary = new Set(Object.keys(notation.en ?? {}))
+const NOTATION_KEYS = new Set(['name', 'read', 'meaning', 'simple', 'example', 'lesson', 'group'])
+for (const [lang, d] of Object.entries(notation)) for (const [k, e] of Object.entries(d)) { for (const f of Object.keys(e as object)) if (!NOTATION_KEYS.has(f)) err(`content/notation/${lang}.yaml`, `${k}: unknown field "${f}"`); if (!(e as any).simple) err(`content/notation/${lang}.yaml`, `${k}: missing "simple" (one plain sentence)`) }
 for (const [lang, d] of Object.entries(notation)) if (lang !== 'en') for (const k of glossary) if (!(k in d)) err(`content/notation/${lang}.yaml`, `missing entry for ${k}`)
 const IGNORE = new Set(['\\text', '\\mathrm', '\\frac', '\\sqrt', 'd'])
 
@@ -169,6 +171,7 @@ for (const subject of readdirSync(join(CONTENT, 'lessons')).sort((a, b) => order
   }
 }
 const ids = new Set(lessons.map((l) => l.id))
+for (const [k, e] of Object.entries(notation.en ?? {})) if ((e as any).lesson && !ids.has((e as any).lesson)) err('content/notation/en.yaml', `${k}: lesson "${(e as any).lesson}" does not exist`)
 for (const l of lessons) for (const p of [...l.prerequisites, ...l.related]) if (!ids.has(p)) err(`content/lessons/${l.subject}/${l.id}/lesson.yaml`, `unknown lesson reference "${p}"`)
 
 // ---- ui strings -----------------------------------------------------------------------------------
