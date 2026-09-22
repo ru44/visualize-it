@@ -13,6 +13,10 @@ const LorentzForce = defineAsyncComponent(() => import('./LorentzForce.vue'))
 const SeriesParallel = defineAsyncComponent(() => import('./SeriesParallel.vue'))
 const Reaction = defineAsyncComponent(() => import('./Reaction.vue'))
 const AtomShells = defineAsyncComponent(() => import('./AtomShells.vue'))
+const Counting = defineAsyncComponent(() => import('./Counting.vue'))
+const DiscreteDist = defineAsyncComponent(() => import('./DiscreteDist.vue'))
+const CoinFlips = defineAsyncComponent(() => import('./CoinFlips.vue'))
+const BayesGrid = defineAsyncComponent(() => import('./BayesGrid.vue'))
 const Surface3D = defineAsyncComponent(() => import('./Surface3D.vue'))
 const GasBox = defineAsyncComponent(() => import('./GasBox.vue'))
 
@@ -29,6 +33,10 @@ export const vizRegistry: Record<string, Component> = {
   'ohm-circuit': OhmCircuit,
   'gas-box': GasBox,
   'surface-3d': Surface3D,
+  counting: Counting,
+  'discrete-dist': DiscreteDist,
+  'coin-flips': CoinFlips,
+  'bayes-grid': BayesGrid,
   'airfoil': Airfoil,
   'venturi': Venturi,
   'electric-field': ElectricField,

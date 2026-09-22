@@ -107,7 +107,7 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
 
         <div>
           <p class="label mb-2">{{ t('lesson.equation') }}</p>
-          <div class="overflow-x-auto text-xl"><Katex :tex="lesson.equation" display /></div>
+          <div class="overflow-x-auto" :class="lesson.equation.length > 45 ? 'text-base' : 'text-xl'"><Katex :tex="lesson.equation" display /></div>
         </div>
 
         <div v-if="lesson.checks?.length" class="rounded-xl p-3.5" style="background: var(--sunken)">

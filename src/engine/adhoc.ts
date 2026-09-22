@@ -4,6 +4,7 @@ import { parseQuery } from './explorer'
 import { makeFn, derivativeExpr, numericSlope, toTex, fmt } from './math'
 import { analyzeLimit, integrateChecked, safeDigits, type OneSided } from './analysis'
 import { solve } from './solve'
+import { combinations, permutations, factorial, fmtBig } from './stats'
 import { t } from '../i18n'
 
 const r = String.raw
@@ -87,6 +88,34 @@ function surfaceLesson(expr: string): Lesson | null {
 /** Build a lesson on the fly from whatever the user typed. Returns null if it cannot be understood. */
 export function buildAdhoc(q: string): Lesson | null {
   const p = parseQuery(q)
+
+  if (p.kind === 'count') {
+    const { op, n, k } = p
+    if (n > 170 || k > n) return null
+    const value = op === 'C' ? combinations(n, k) : op === 'P' ? permutations(n, k) : factorial(n)
+    const eq = op === 'C' ? r`\binom{${n}}{${k}} = \frac{${n}!}{${k}!\,${n - k}!} = ${fmtBig(value)}` : op === 'P' ? r`P(${n},${k}) = \frac{${n}!}{${n - k}!} = ${fmtBig(value)}` : r`${n}! = ${fmtBig(value)}`
+    const nMax = Math.max(n, 1)
+    return {
+      ...base,
+      title: t('adhoc.count.title'),
+      subject: 'statistics',
+      difficulty: 'beginner',
+      equation: eq.replace(/\u2009/g, '\\,'),
+      summary: t('adhoc.count.summary'),
+      prerequisites: [op === 'C' ? 'combinations' : 'permutations'],
+      visualization: { type: 'counting', options: { ordered: op !== 'C' } },
+      parameters: {
+        n: { label: t('adhoc.count.n'), min: 1, max: Math.min(60, Math.max(nMax, 10)), step: 1, value: Math.min(n, 60) },
+        k: { label: t('adhoc.count.k'), min: 0, max: Math.min(60, Math.max(nMax, 10)), step: 1, value: Math.min(k, 60) },
+      },
+      variables: [
+        { symbol: 'n', meaning: t('adhoc.count.varn') },
+        { symbol: 'k', meaning: t('adhoc.count.vark') },
+      ],
+      explanation: { intuition: [t(op === 'C' ? 'adhoc.count.intuitionC' : op === 'P' ? 'adhoc.count.intuitionP' : 'adhoc.count.intuitionF')], formal: [t('adhoc.count.formal')] },
+      checks: [{ status: 'exact', text: t('trust.countExact') }],
+    }
+  }
 
   if (p.kind === 'equation') {
     const sol = solve(p.lhs, p.rhs)

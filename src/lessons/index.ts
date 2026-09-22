@@ -11,8 +11,9 @@ import { electromagnetism } from './electromagnetism'
 import { chemistry2 } from './chemistry2'
 import { maths } from './maths'
 import { mechanics } from './mechanics'
+import { statistics } from './statistics'
 
-const all: Lesson[] = [...calculus, ...geometry, ...trigonometry, ...physics, ...electricity, ...chemistry, ...more, ...electromagnetism, ...aerodynamics, ...chemistry2, ...maths, ...mechanics]
+const all: Lesson[] = [...calculus, ...geometry, ...trigonometry, ...physics, ...electricity, ...chemistry, ...more, ...electromagnetism, ...aerodynamics, ...chemistry2, ...maths, ...mechanics, ...statistics]
 
 const byId = new Map(all.map((l) => [l.id, l]))
 export const getLesson = (id: string) => byId.get(id)
@@ -30,6 +31,7 @@ export const subjectLabels: Record<Subject, string> = {
   aerodynamics: 'Aerodynamics',
   thermodynamics: 'Thermodynamics',
   chemistry: 'Chemistry',
+  statistics: 'Statistics & probability',
 }
 
 const order = Object.keys(subjectLabels)
