@@ -1,0 +1,41 @@
+id: implication-and-equivalence
+subject: discrete
+difficulty: beginner
+equation: p \oplus q, \quad p \Rightarrow q, \quad p \iff q
+concepts:
+  - implication
+  - equivalence
+  - converse
+  - contrapositive
+  - xor
+prerequisites:
+  - propositional-logic
+related:
+  - logic-gates
+  - proof-by-induction
+visualization:
+  type: logic-gates
+  options:
+    gate: XOR
+parameters:
+  a:
+    min: 0
+    max: 1
+    step: 1
+    value: 1
+  b:
+    min: 0
+    max: 1
+    step: 1
+    value: 1
+variables:
+  - p, q
+  - \oplus
+  - \Rightarrow
+  - \iff
+  - \neg
+derivation:
+  - p \Rightarrow q \text{ is false only when } p=1 \text{ and } q=0
+  - \text{contrapositive } \neg q \Rightarrow \neg p \text{ has the same truth table as } p \Rightarrow q
+  - \text{converse } q \Rightarrow p \text{ is a different statement, not guaranteed by } p \Rightarrow q
+charts: []

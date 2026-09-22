@@ -1,0 +1,41 @@
+id: diffie-hellman
+subject: computer-science
+difficulty: high-school
+equation: s = g^{ab} \bmod p
+concepts:
+  - key-exchange
+  - discrete-logarithm
+  - shared-secret
+  - cryptography
+prerequisites:
+  - modular-arithmetic
+  - one-way-functions
+related:
+  - rsa-encryption
+visualization:
+  type: mod-clock
+  options:
+    mode: pow
+parameters:
+  n:
+    min: 2
+    max: 30
+    step: 1
+    value: 23
+  a:
+    min: 0
+    max: 29
+    step: 1
+    value: 5
+  k:
+    min: 1
+    max: 12
+    step: 1
+    value: 6
+variables:
+  - \bmod
+derivation:
+  - A = g^{a} \bmod p = 5^{6} \bmod 23 = 8
+  - B = g^{b} \bmod p = 5^{15} \bmod 23 = 19
+  - A^{b} \bmod p = B^{a} \bmod p = g^{ab} \bmod p = 2
+charts: []

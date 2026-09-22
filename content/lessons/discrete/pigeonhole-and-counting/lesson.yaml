@@ -1,0 +1,35 @@
+id: pigeonhole-and-counting
+subject: discrete
+difficulty: beginner
+equation: n > m \Rightarrow \text{some box holds at least two of the } n \text{ items}
+concepts:
+  - pigeonhole-principle
+  - product-rule
+  - counting
+prerequisites: []
+related:
+  - permutations
+  - combinations
+visualization:
+  type: counting
+  options:
+    ordered: false
+parameters:
+  n:
+    min: 1
+    max: 10
+    step: 1
+    value: 5
+  k:
+    min: 0
+    max: 10
+    step: 1
+    value: 2
+variables:
+  - n
+  - m
+derivation:
+  - \text{suppose every box has at most 1 item}
+  - \text{then at most } m \text{ items fit in the } m \text{ boxes}
+  - n > m \text{ contradicts this, so some box has} \ge 2 \text{ items}
+charts: []

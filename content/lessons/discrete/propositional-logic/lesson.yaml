@@ -1,0 +1,40 @@
+id: propositional-logic
+subject: discrete
+difficulty: beginner
+equation: p \land q, \quad p \lor q, \quad \neg p
+concepts:
+  - proposition
+  - conjunction
+  - disjunction
+  - negation
+  - truth-table
+  - tautology
+prerequisites: []
+related:
+  - logic-gates
+  - implication-and-equivalence
+visualization:
+  type: logic-gates
+  options:
+    gate: AND
+parameters:
+  a:
+    min: 0
+    max: 1
+    step: 1
+    value: 1
+  b:
+    min: 0
+    max: 1
+    step: 1
+    value: 0
+variables:
+  - p, q
+  - \land
+  - \lor
+  - \neg
+derivation:
+  - "\\text{truth table: list all } 2^2 = 4 \\text{ rows of } (p,q)"
+  - p \land q = 1 \iff p=1 \text{ and } q=1, \quad p \lor q = 1 \iff p=1 \text{ or } q=1
+  - \text{a tautology is true in every row, e.g. } p \lor \neg p
+charts: []

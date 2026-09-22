@@ -400,3 +400,20 @@ ptable.cat.actinide: actinides
 notation.example: 'Example:'
 notation.learn: 'Learn it in: {lesson} →'
 lesson.learnSymbol: lesson
+subject.discrete: Discrete mathematics
+subjectd.discrete: 'Sets, logic, proofs, counting, graphs and clock arithmetic: the maths behind computers.'
+cipher.hint: drag the inner wheel to change the shift
+cipher.shift: shift (the key)
+cipher.plain: plain text
+cipher.cipher: cipher text
+cipher.keys: possible keys
+mod.hint: tap a number to set a
+mod.turns: full turns around the clock
+mod.powers: powers of a, wrapping around
+mod.walk: walk b steps from a
+venn.hint: tap an operation · the orange numbers are the result
+venn.multiples: multiples of {k}
+venn.union: A ∪ B  union
+venn.intersection: A ∩ B  intersection
+venn.difference: A \ B  difference
+venn.complement: Aᶜ  complement

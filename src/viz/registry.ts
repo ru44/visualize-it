@@ -32,6 +32,9 @@ const ComplexPlane = defineAsyncComponent(() => import('./ComplexPlane.vue'))
 const RayOptics = defineAsyncComponent(() => import('./RayOptics.vue'))
 const Buoyancy = defineAsyncComponent(() => import('./Buoyancy.vue'))
 const PeriodicTable = defineAsyncComponent(() => import('./PeriodicTable.vue'))
+const CipherWheel = defineAsyncComponent(() => import('./CipherWheel.vue'))
+const ModClock = defineAsyncComponent(() => import('./ModClock.vue'))
+const VennSets = defineAsyncComponent(() => import('./VennSets.vue'))
 const Surface3D = defineAsyncComponent(() => import('./Surface3D.vue'))
 const GasBox = defineAsyncComponent(() => import('./GasBox.vue'))
 
@@ -63,6 +66,9 @@ export const vizRegistry: Record<string, Component> = {
   'ray-optics': RayOptics,
   buoyancy: Buoyancy,
   'periodic-table': PeriodicTable,
+  'cipher-wheel': CipherWheel,
+  'mod-clock': ModClock,
+  'venn-sets': VennSets,
   counting: Counting,
   'discrete-dist': DiscreteDist,
   'coin-flips': CoinFlips,

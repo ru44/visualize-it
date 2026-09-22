@@ -1,0 +1,41 @@
+id: modular-arithmetic
+subject: computer-science
+difficulty: beginner
+equation: a \equiv b \;(\bmod n)
+concepts:
+  - modular-arithmetic
+  - remainder
+  - congruence
+  - cryptography
+prerequisites: []
+related:
+  - caesar-cipher
+  - one-way-functions
+visualization:
+  type: mod-clock
+  options:
+    mode: add
+parameters:
+  n:
+    min: 2
+    max: 30
+    step: 1
+    value: 12
+  a:
+    min: 0
+    max: 29
+    step: 1
+    value: 7
+  b:
+    min: 0
+    max: 40
+    step: 1
+    value: 8
+variables:
+  - \bmod
+  - \equiv
+derivation:
+  - a \bmod n = b \bmod n
+  - a - b = kn \text{ for some integer } k
+  - a \equiv b \;(\bmod n)
+charts: []

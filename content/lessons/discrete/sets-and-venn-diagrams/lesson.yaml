@@ -1,0 +1,47 @@
+id: sets-and-venn-diagrams
+subject: discrete
+difficulty: beginner
+equation: "|A \\cup B| = |A| + |B| - |A \\cap B|"
+concepts:
+  - set
+  - subset
+  - union
+  - intersection
+  - complement
+prerequisites: []
+related:
+  - probability-basics
+  - quantifiers
+visualization:
+  type: venn-sets
+  options: {}
+parameters:
+  N:
+    min: 6
+    max: 40
+    step: 1
+    value: 20
+  p:
+    min: 2
+    max: 6
+    step: 1
+    value: 2
+  q:
+    min: 2
+    max: 7
+    step: 1
+    value: 3
+  op:
+    min: 0
+    max: 3
+    step: 1
+    value: 0
+variables:
+  - A
+  - B
+  - U
+derivation:
+  - A \cup B \text{ contains every element that is in } A, \text{ in } B, \text{ or in both}
+  - "|A| + |B| \\text{ counts every element of } A \\cap B \\text{ twice}"
+  - "|A \\cup B| = |A| + |B| - |A \\cap B|"
+charts: []

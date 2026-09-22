@@ -34,23 +34,41 @@ const machine = computed(() => {
   }
   return (ex[props.token] ?? ex['\\log'])[idx.value]
 })
+const slope = computed(() => 0.2 + 2.3 * (0.5 + 0.5 * Math.sin(t.value * 0.8)))
 const approach = computed(() => 1 / (1 + ((t.value * 1.2) % 3)))
 </script>
 
 <template>
   <svg :viewBox="`0 0 ${W} ${H}`" class="block h-[120px] w-[220px] shrink-0 rounded-lg" style="background: var(--sunken)">
-    <!-- unit circle -->
+    <!-- unit circle with axes; tan drawn on the x = 1 line -->
     <template v-if="kind === 'trig'">
+      <line x1="10" y1="60" x2="110" y2="60" stroke="var(--muted)" /><line x1="60" y1="8" x2="60" y2="112" stroke="var(--muted)" />
+      <text class="num" x="106" y="72" font-size="9" fill="var(--muted)">X</text><text class="num" x="64" y="14" font-size="9" fill="var(--muted)">Y</text>
       <circle cx="60" cy="60" r="42" fill="none" stroke="var(--line)" />
+      <template v-if="token === '\\tan'">
+        <line x1="102" y1="8" x2="102" y2="112" stroke="var(--accent-2)" stroke-opacity="0.35" />
+        <line x1="60" y1="60" :x2="Math.cos(th) > 0.12 ? 102 : 60 + 42 * Math.cos(th)" :y2="Math.cos(th) > 0.12 ? 60 - 42 * Math.tan(th) : 60 - 42 * Math.sin(th)" stroke="var(--fg)" stroke-opacity="0.5" stroke-dasharray="3 2" />
+        <line v-if="Math.cos(th) > 0.12" x1="102" y1="60" x2="102" :y2="Math.max(8, Math.min(112, 60 - 42 * Math.tan(th)))" stroke="var(--accent-2)" stroke-width="3" />
+      </template>
       <line x1="60" y1="60" :x2="60 + 42 * Math.cos(th)" :y2="60 - 42 * Math.sin(th)" stroke="var(--fg)" />
       <line :x1="60 + 42 * Math.cos(th)" y1="60" :x2="60 + 42 * Math.cos(th)" :y2="60 - 42 * Math.sin(th)" stroke="var(--pos)" stroke-width="3" />
       <line x1="60" y1="60" :x2="60 + 42 * Math.cos(th)" y2="60" stroke="var(--accent)" stroke-width="3" />
       <circle :cx="60 + 42 * Math.cos(th)" :cy="60 - 42 * Math.sin(th)" r="4" fill="var(--fg)" />
       <g class="num" font-size="11">
-        <text x="120" y="40" fill="var(--muted)">θ = {{ fmt((th * 180) / Math.PI, 0) }}°</text>
-        <text x="120" y="62" fill="var(--accent)">cos θ = {{ fmt(Math.cos(th)) }}</text>
-        <text x="120" y="84" fill="var(--pos)">sin θ = {{ fmt(Math.sin(th)) }}</text>
-        <text v-if="token === '\\tan'" x="120" y="106" fill="var(--accent-2)">tan θ = {{ Math.abs(Math.cos(th)) < 0.08 ? '→ ∞' : fmt(Math.tan(th)) }}</text>
+        <text x="124" y="34" fill="var(--muted)">θ = {{ fmt((th * 180) / Math.PI, 0) }}°</text>
+        <text x="124" y="56" fill="var(--accent)">cos θ = {{ fmt(Math.cos(th)) }}</text>
+        <text x="124" y="78" fill="var(--pos)">sin θ = {{ fmt(Math.sin(th)) }}</text>
+        <text v-if="token === '\\tan'" x="124" y="100" fill="var(--accent-2)">tan θ = {{ Math.abs(Math.cos(th)) < 0.12 ? '→ ∞' : fmt(Math.tan(th)) }}</text>
+      </g>
+    </template>
+    <!-- arctan: slope in, angle out -->
+    <template v-else-if="kind === 'arctan'">
+      <line x1="10" y1="90" x2="110" y2="90" stroke="var(--muted)" /><line x1="20" y1="10" x2="20" y2="100" stroke="var(--muted)" />
+      <line x1="20" y1="90" :x2="20 + 80" :y2="90 - 80 * slope" stroke="var(--accent-2)" stroke-width="2.5" />
+      <path :d="`M60,90 A40,40 0 0 0 ${20 + 40 * Math.cos(Math.atan(slope))},${90 - 40 * Math.sin(Math.atan(slope))}`" fill="none" stroke="var(--pos)" stroke-width="2" />
+      <g class="num" font-size="11">
+        <text x="124" y="50" fill="var(--accent-2)">slope = {{ fmt(slope) }}</text>
+        <text x="124" y="72" fill="var(--pos)">arctan = {{ fmt((Math.atan(slope) * 180) / Math.PI, 0) }}°</text>
       </g>
     </template>
     <!-- input → output machine -->

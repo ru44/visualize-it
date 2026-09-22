@@ -21,6 +21,7 @@ const paths: Record<Subject, string> = {
   'earth-space': 'M12 12m-8 0a8 8 0 1 0 16 0a8 8 0 1 0-16 0M3 10c4 1 6 3 9 2s5-3 9-1M4 16c3-1 6 0 8 1s5 0 8-2',
   economics: 'M4 19h16M4 19V5M7 15l4-5 3 3 6-7M14 6h6v6',
   engineering: 'M2 12h3l2-6 3 12 3-9 2 5 2-2h5',
+  discrete: 'M5 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0M19 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0M12 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0M7 7l4 9M17 7l-4 9M5 6h14',
   chemistry: 'M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3M7.5 15h9',
 }
 </script>
