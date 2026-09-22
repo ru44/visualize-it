@@ -117,8 +117,11 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
 
     <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
       <section class="surface relative overflow-hidden">
-        <div v-if="has3d" class="absolute end-3 top-3 z-10 flex gap-0.5 rounded-lg p-0.5 text-xs" style="background: var(--panel); border: 1px solid var(--line)">
-          <button v-for="m in [false, true]" :key="String(m)" class="rounded-md px-2.5 py-1" :style="view3d === m ? 'background: var(--fg); color: var(--bg)' : 'color: var(--muted)'" @click="view3d = m">{{ m ? '3D' : '2D' }}</button>
+        <div v-if="has3d" class="flex items-center justify-end gap-2 border-b px-3 py-1.5" style="border-color: var(--line)">
+          <span class="label">{{ t('three.view') }}</span>
+          <div class="flex gap-0.5 rounded-lg p-0.5 text-xs" style="background: var(--sunken)">
+            <button v-for="m in [false, true]" :key="String(m)" class="rounded-md px-2.5 py-1" :style="view3d === m ? 'background: var(--panel); color: var(--fg); box-shadow: 0 1px 2px rgb(0 0 0 / .12)' : 'color: var(--muted)'" @click="view3d = m">{{ m ? '3D' : '2D' }}</button>
+          </div>
         </div>
         <Scene3D v-if="show3d" :type="lesson.visualization3d!.type" :options="lesson.visualization3d!.options" :params="params" @set="setParam" />
         <component :is="viz" v-else-if="viz" :params="params" :options="lesson.visualization.options" @set="setParam" />
