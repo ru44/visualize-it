@@ -11,6 +11,7 @@ export const router = createRouter({
     { path: '/explore', component: () => import('./pages/LessonView.vue') },
     { path: '/classic', component: () => import('./pages/ClassicList.vue'), meta: { title: 'classic.title' } },
     { path: '/classic/:id', component: () => import('./pages/ClassicView.vue'), props: true },
+    { path: '/notation', component: () => import('./pages/NotationView.vue'), meta: { title: 'notation.title' } },
     { path: '/graph', component: () => import('./pages/GraphView.vue'), meta: { title: 'graph.title' } },
     { path: '/map', component: () => import('./pages/MapView.vue'), meta: { title: 'map.title' } },
     { path: '/:rest(.*)*', component: () => import('./pages/NotFound.vue'), meta: { title: 'nf.title' } },

@@ -12,6 +12,7 @@ import ParamSlider from '../components/ParamSlider.vue'
 import ExplorerInput from '../components/ExplorerInput.vue'
 import Scene3D from '../components/Scene3D.vue'
 import VideoList from '../components/VideoList.vue'
+import { notation, displayTex } from '../lessons/notation'
 import { useSettings, levels } from '../stores/settings'
 import { useProgress } from '../stores/progress'
 import { storeToRefs } from 'pinia'
@@ -67,6 +68,7 @@ const neighbours = computed(() => {
   return { prev: same(lessons[i - 1]), next: same(lessons[i + 1]) }
 })
 const linked = (ids: string[]) => ids.map((id) => ({ id, lesson: getLesson(id) && localize(getLesson(id)!) }))
+const glossary = computed(() => (lesson.value?.symbols ?? []).map((tok) => ({ tok, e: notation.value[tok] })).filter((x) => x.e))
 const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--accent-2)' }
 </script>
 
@@ -155,12 +157,22 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
 
         <details :open="showFormal">
           <summary class="label flex items-center gap-1.5"><span class="chev">▸</span>{{ t('lesson.variables') }}</summary>
-          <dl class="mt-2 space-y-1 text-sm">
+          <dl class="mt-2 space-y-1.5 text-sm">
             <div v-for="v in lesson.variables" :key="v.symbol" class="flex gap-3">
-              <dt class="w-14 shrink-0"><Katex :tex="v.symbol" /></dt>
-              <dd style="color: var(--muted)"><MathText :text="v.meaning" /></dd>
+              <dt class="w-16 shrink-0"><Katex :tex="v.symbol" /></dt>
+              <dd><MathText :text="v.meaning" /></dd>
             </div>
           </dl>
+          <template v-if="glossary.length">
+            <p class="label mt-4 mb-1.5">{{ t('lesson.alsoInFormulas') }}</p>
+            <dl class="space-y-1.5 text-sm">
+              <div v-for="g in glossary" :key="g.tok" class="flex gap-3">
+                <dt class="w-16 shrink-0"><Katex :tex="displayTex(g.tok)" /></dt>
+                <dd style="color: var(--muted)"><span class="font-medium" style="color: var(--fg)">{{ g.e.name }}</span><span v-if="g.e.read"> ({{ g.e.read }})</span> — {{ g.e.meaning }}</dd>
+              </div>
+            </dl>
+          </template>
+          <RouterLink to="/notation" class="mt-3 block text-xs underline" style="color: var(--accent)">{{ t('lesson.notationLink') }}</RouterLink>
         </details>
       </aside>
 

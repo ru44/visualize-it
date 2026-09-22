@@ -21,7 +21,8 @@ const settings = useSettings()
           <RouterLink to="/#subjects" class="rounded-lg px-2.5 py-1.5 hover:bg-[var(--sunken)] sm:px-3" style="color: var(--muted)">{{ t('nav.learn') }}</RouterLink>
           <RouterLink to="/graph" class="rounded-lg px-2.5 py-1.5 hover:bg-[var(--sunken)] sm:px-3" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.graph') }}</RouterLink>
           <RouterLink to="/classic" class="rounded-lg px-2.5 py-1.5 hover:bg-[var(--sunken)] sm:px-3" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.sims') }}</RouterLink>
-          <RouterLink to="/map" class="hidden rounded-lg px-3 py-1.5 hover:bg-[var(--sunken)] sm:block" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.map') }}</RouterLink>
+          <RouterLink to="/notation" class="hidden rounded-lg px-3 py-1.5 hover:bg-[var(--sunken)] sm:block" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.notation') }}</RouterLink>
+          <RouterLink to="/map" class="hidden rounded-lg px-3 py-1.5 hover:bg-[var(--sunken)] md:block" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.map') }}</RouterLink>
           <button class="rounded-lg border px-2.5 py-1 text-sm hover:border-[var(--accent)]" style="border-color: var(--line)" @click="settings.nextLocale()">{{ t('nav.language') }}</button>
           <button
             class="grid h-9 w-9 place-items-center rounded-lg hover:bg-[var(--sunken)]"
@@ -52,6 +53,7 @@ const settings = useSettings()
       <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-6 text-sm lg:px-8" style="color: var(--muted)">
         <p>{{ t('footer.note') }}</p>
         <p class="flex gap-4">
+          <RouterLink to="/notation" class="hover:underline">{{ t('nav.notation') }}</RouterLink>
           <RouterLink to="/map" class="hover:underline">{{ t('footer.map') }}</RouterLink>
           <RouterLink to="/classic" class="hover:underline">{{ t('classic.title') }}</RouterLink>
           <a href="https://github.com/ru44/visualize-it" class="hover:underline">GitHub</a>

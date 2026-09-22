@@ -64,6 +64,8 @@ export interface Lesson {
   /** Optional 3D scene; key in viz3d/registry.ts. */
   visualization3d?: { type: string; options: Record<string, any> }
   videos?: Video[]
+  /** Glossary tokens used in the formulas (beyond the lesson's own variables); filled by the content build. */
+  symbols?: string[]
   parameters: Record<string, ParamSpec>
   variables: { symbol: string; meaning: string }[]
   /** Text may contain inline $LaTeX$. */
@@ -90,4 +92,13 @@ export interface LessonText {
   advanced: string[]
   derivationNotes: string[]
   realWorld: { title: string; text: string }[]
+}
+
+/** One entry of the notation guide (content/notation/<lang>.yaml). */
+export interface NotationEntry {
+  name: string
+  read: string
+  meaning: string
+  example?: string
+  group: string
 }

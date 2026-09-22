@@ -21,6 +21,7 @@ export function merge(l: any, t: LessonText): Lesson {
     visualization: l.visualization,
     visualization3d: l.visualization3d,
     videos: l.videos ?? [],
+    symbols: l.symbols ?? [],
     title: t.title,
     summary: t.summary,
     parameters: Object.fromEntries(Object.entries(l.parameters as Record<string, any>).map(([k, p]) => [k, { ...p, label: t.parameters[k] ?? k }])),
