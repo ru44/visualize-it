@@ -306,3 +306,22 @@ videos.search: ابحث في يوتيوب عن «{q}»
 videos.explained: شرح
 three.models: 'النماذج ثلاثية الأبعاد:'
 three.view: العرض
+nav.notation: الرموز
+notation.title: الرموز والترميز
+notation.lead: 'كل حرف وعلامة تظهر في صيغ هذا الموقع: اسمها، وكيف تُقرأ، وماذا تعني. ويعرض كل درس أيضًا حروفه الخاصة بجانب الرسم.'
+notation.search: ابحث عن رمز أو اسم أو معنى…
+notation.read: يُقرأ
+lesson.alsoInFormulas: وفي الصيغ أيضًا
+lesson.notationLink: الدليل الكامل للرموز والترميز ←
+notation.group.greek: الحروف اليونانية
+notation.group.calculus: التفاضل والتكامل
+notation.group.relation: العلاقات
+notation.group.operator: المؤثرات
+notation.group.probability: الاحتمال
+notation.group.statistics: الإحصاء
+notation.group.sets: المجموعات
+notation.group.function: الدوال
+notation.group.constant: الثوابت
+notation.group.letter: الحروف الشائعة
+notation.group.computer-science: علوم الحاسوب
+notation.group.layout: التنسيق

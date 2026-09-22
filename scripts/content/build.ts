@@ -11,6 +11,7 @@ import { LessonYaml, SUBJECTS, Video } from './schema'
 import { z } from 'zod'
 import { parseLessonMd } from './markdown'
 import { collectModels } from './models'
+import { symbolsOf, tokensOfVariable } from './symbols'
 
 const ROOT = join(import.meta.dirname, '../..')
 const CONTENT = join(ROOT, 'content')
@@ -32,6 +33,13 @@ function checkProse(where: string, s: string) {
   if (parts.length % 2 === 0) err(where, `unbalanced $ in "${s.slice(0, 40)}"`)
   parts.forEach((p, i) => (i % 2 ? tex(where, p) : /\\[a-zA-Z]{2,}/.test(p) && err(where, `LaTeX outside $…$: "${p.slice(0, 40)}"`)))
 }
+
+// ---- notation glossary ------------------------------------------------------------------------
+const notation: Record<string, Record<string, any>> = {}
+for (const f of readdirSync(join(CONTENT, 'notation'))) notation[f.replace('.yaml', '')] = YAML.parse(readFileSync(join(CONTENT, 'notation', f), 'utf8')) ?? {}
+const glossary = new Set(Object.keys(notation.en ?? {}))
+for (const [lang, d] of Object.entries(notation)) if (lang !== 'en') for (const k of glossary) if (!(k in d)) err(`content/notation/${lang}.yaml`, `missing entry for ${k}`)
+const IGNORE = new Set(['\\text', '\\mathrm', '\\frac', '\\sqrt', 'd'])
 
 // ---- lessons --------------------------------------------------------------------------------------
 const lessons: any[] = []
@@ -60,6 +68,22 @@ for (const subject of readdirSync(join(CONTENT, 'lessons')).sort((a, b) => order
     tex(`${where}/lesson.yaml equation`, L.equation)
     L.variables.forEach((v) => tex(`${where}/lesson.yaml variables`, v))
     L.derivation.forEach((d, i) => tex(`${where}/lesson.yaml derivation[${i}]`, d))
+    // Every symbol in the formulas must be explained: by this lesson's variables or by the notation glossary.
+    const explained = new Set(L.variables.flatMap(tokensOfVariable))
+    const used = new Set<string>()
+    for (const tex of [L.equation, ...L.derivation]) for (const tok of symbolsOf(tex)) used.add(tok)
+    const extra: string[] = []
+    for (const tok of used) {
+      if (explained.has(tok)) continue
+      const base = tok.includes('_') ? tok.split('_')[0] : tok
+      if (explained.has(base)) continue
+      if (glossary.has(tok) || glossary.has(base)) {
+        if (!IGNORE.has(tok) && !IGNORE.has(base)) extra.push(glossary.has(tok) ? tok : base)
+        continue
+      }
+      err(`${where}/lesson.yaml`, `symbol "${tok}" appears in a formula but is not explained (add it to variables, or to content/notation/en.yaml)`)
+    }
+    ;(L as any).symbols = [...new Set(extra)]
     for (const [k, p] of Object.entries(L.parameters)) if (p.value < p.min || p.value > p.max) err(`${where}/lesson.yaml`, `parameter ${k}: default outside [min, max]`)
     const scope = Object.fromEntries(Object.entries(L.parameters).map(([k, p]) => [k, p.value]))
     const o = L.visualization.options
@@ -159,6 +183,7 @@ write('videos.json', videos.success ? videos.data : {})
 const models = collectModels(ROOT)
 for (const [n, m] of Object.entries(models)) if (m.bytes > 6e6) err(`public/models/${n}.glb`, `${(m.bytes / 1e6).toFixed(1)} MB is too heavy for the web (keep models under 6 MB)`)
 write('models.json', models)
+for (const [lang, d] of Object.entries(notation)) write(`notation.${lang}.json`, d)
 for (const [lang, d] of Object.entries(classicText)) write(`classic.${lang}.json`, d)
 writeFileSync(join(OUT, 'languages.json'), JSON.stringify(Object.keys(ui)))
 

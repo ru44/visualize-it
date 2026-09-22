@@ -306,3 +306,22 @@ videos.search: Search YouTube for “{q}”
 videos.explained: explained
 three.models: '3D models:'
 three.view: View
+nav.notation: Symbols
+notation.title: Symbols and notation
+notation.lead: Every letter and sign used in the formulas on this site, what it is called, how to say it, and what it means. Each lesson also lists its own letters next to the picture.
+notation.search: Search a symbol, a name or a meaning…
+notation.read: read
+lesson.alsoInFormulas: Also in the formulas
+lesson.notationLink: Full guide to symbols and notation →
+notation.group.greek: Greek letters
+notation.group.calculus: Calculus
+notation.group.relation: Relations
+notation.group.operator: Operators
+notation.group.probability: Probability
+notation.group.statistics: Statistics
+notation.group.sets: Sets
+notation.group.function: Functions
+notation.group.constant: Constants
+notation.group.letter: Common letters
+notation.group.computer-science: Computer science
+notation.group.layout: Typesetting

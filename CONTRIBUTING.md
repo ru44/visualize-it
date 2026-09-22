@@ -64,6 +64,8 @@ One paragraph for university level and above. Optional.
 One or two sentences. Repeat the `###` block for each example.
 ```
 
+Every symbol that appears in `equation` or `derivation` must be explained: either in the lesson's `variables` (lesson-specific meaning, e.g. `S` = wing area) or in the global guide `content/notation/<lang>.yaml` (Greek letters, operators, standard letters). `pnpm check` fails otherwise and names the letter. Lesson-specific meanings always win over the global one.
+
 Rules the checker enforces: the number of `variables` explanations, `## Derivation` notes and chart labels must match `lesson.yaml`; every `$…$` segment in a translation must be identical to the English one (translate the words, never the maths); no LaTeX outside `$…$`.
 
 Arabic text follows `content/lessons/STYLE.ar.md`.
