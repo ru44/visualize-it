@@ -1,8 +1,9 @@
 ---
 title: Refraction and Snell's law
 summary: >-
-  A ray bends when it crosses into a medium where light travels at a
-  different speed — the bend is exact enough to predict with one equation.
+  A straw in a glass of water looks bent, and a lens can focus light to a
+  point, because light bends whenever it crosses into a material where it
+  travels at a different speed — one equation predicts exactly how much.
 parameters:
   theta1: angle of incidence θ₁
   n1: refractive index of medium 1
@@ -13,11 +14,29 @@ variables:
   - speed of light in the first and second medium
 ---
 
+## Try it
+
+1. Drag the incoming ray at the top. Watch it bend as it crosses into the lower material.
+2. Raise "refractive index of medium 2" (n2). The transmitted ray bends closer to the vertical dashed line.
+3. Push the incidence angle θ1 toward 89°. Watch more and more light reflect instead of passing through.
+
+## Real-life examples
+
+1. **A straw in a glass of water.** Light going from air (n1 = 1) into water (n2 = 1.33) at 40° bends toward the vertical, which is why the straw looks broken at the surface.
+2. **A pencil pressed against a glass block.** Light entering glass (n1 = 1, n2 = 1.5) at 50° bends even more sharply, because glass slows light down more than water does.
+3. **A fish looking up out of the water.** Light leaving water (n1 = 1.33) for air (n2 = 1) at 30° bends away from the vertical, squeezing the fish's whole view of the sky into a narrow circle overhead.
+
+## Test yourself
+
+1. Set the angle of incidence θ1 to exactly 45°.
+2. Find values of θ1, n1 and n2 that bend the refracted ray to exactly 25° from the vertical.
+3. Find values that bend the refracted ray to just 5° from the vertical — nearly straight through.
+
 ## Intuition
 
-Drag the incident ray and watch the shaded strip below the boundary: darkening it raises $n_2$, and the transmitted ray bends harder toward the vertical dashed normal line as it does. Nothing mysterious is happening at the surface itself — the ray only changes direction because the wave in front of it is forced to slow down or speed up as it crosses into the new material.
+Dip a straw into a glass of water and look at it from the side: the straw appears to bend right where it enters the surface, even though it is perfectly straight. That happens because light travels slower in water than in air, and the picture on screen recreates it directly. Drag the incoming ray (top left) to change its angle from the vertical — this is the angle of incidence, $\theta_1$ — and start it around 40°, measured from the dashed vertical line, not from the water's surface. Watch the shaded strip below the boundary: darkening it raises $n_2$, the refractive index of the lower material, a number like 1 for air or about 1.33 for water that measures how strongly a material slows light down.
 
-Push $\theta_1$ toward grazing incidence and watch the readout for the reflected share climb: some light always reflects at a boundary between two different media, and the transmitted ray always bends away from a denser medium and toward a less dense one. At normal incidence ($\theta_1 = 0$) there is no bending at all, no matter how different $n_1$ and $n_2$ are.
+Push $\theta_1$ toward grazing incidence, close to 90°, and watch the readout for the reflected share climb: some light always bounces back at the boundary between two different materials. The transmitted ray always bends toward the vertical line when it enters a denser material (a higher $n_2$), and away from it when leaving one. At $\theta_1 = 0°$, straight down the middle, there is no bending at all, no matter how different $n_1$ and $n_2$ are — which is why looking straight down into a pool shows no distortion, only a view from the side does.
 
 ## Formal
 

@@ -1,0 +1,45 @@
+id: hash-functions
+subject: cryptography
+difficulty: high-school
+equation: H(M) = h
+concepts:
+- hash-function
+- sha-256
+- avalanche-effect
+- data-integrity
+prerequisites:
+- one-way-functions
+related:
+- password-salting
+- digital-signatures
+visualization:
+  type: hash-avalanche
+  options:
+    mode: avalanche
+    text: hello world
+parameters:
+  pos:
+    min: 0
+    max: 10
+    step: 1
+    value: 0
+variables:
+- M
+- H
+- h
+derivation:
+- \text{feed the message } M \text{ into SHA-256, a fixed public procedure}
+- H(M) = h \quad \text{(a 256-bit fingerprint, always the same length)}
+- \text{change one letter of } M \text{ and about half of the 256 bits of } h \text{ flip}
+charts: []
+primary: pos
+presets:
+- pos: 0
+- pos: 5
+- pos: 10
+challenges:
+- check: pos
+  target: 0
+- check: pos
+  target: 10
+- check: pos >= 3 and pos <= 7

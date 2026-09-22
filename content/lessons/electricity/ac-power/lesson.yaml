@@ -64,3 +64,22 @@ derivation:
   - \sin A\sin B = \tfrac12\big[\cos(A-B)-\cos(A+B)\big] \;\Rightarrow\; p(t) = \tfrac12 V_0I_0\cos\varphi - \tfrac12 V_0I_0\cos(2\omega t-\varphi)
   - P_{\text{avg}} = \frac{1}{T}\int_0^T p(t)\,dt = \tfrac12 V_0I_0\cos\varphi
 charts: []
+primary: phi
+presets:
+  - phi: 0
+    V0: 10
+    I0: 5
+  - phi: 0.9
+    V0: 15
+    I0: 6
+  - phi: 0.2
+    V0: 12
+    I0: 4
+challenges:
+  - check: cos(phi)
+    target: 0.5
+  - check: cos(phi)
+    target: 0
+    tol: 0.05
+  - check: 0.5*V0*I0*cos(phi)
+    target: 30

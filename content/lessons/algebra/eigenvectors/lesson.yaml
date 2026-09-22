@@ -53,3 +53,22 @@ derivation:
   - (M - \lambda I)\mathbf{v} = 0
   - \det(M - \lambda I) = 0
 charts: []
+primary: vx
+presets:
+  - a: 2
+    b: 1
+    c: 1
+    d: 2
+  - a: 3
+    b: 1
+    c: 0
+    d: 1
+  - a: 0
+    b: -1
+    c: 1
+    d: 0
+challenges:
+  - check: abs((a*vx + b*vy)*vy - (c*vx + d*vy)*vx) < 0.1 and (vx^2 + vy^2) > 1
+  - check: (a - d)^2 + 4*b*c < 0
+  - check: a*d - b*c
+    target: 0

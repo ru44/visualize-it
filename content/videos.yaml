@@ -70,3 +70,35 @@ discrete:
   - { title: Computerphile, url: 'https://www.youtube.com/@Computerphile', by: Computerphile, lang: en, note: Logic, graphs and the maths behind computing, explained by computer scientists. }
   - { title: 3Blue1Brown, url: 'https://www.youtube.com/@3blue1brown', by: 3Blue1Brown, lang: en, note: Counting, proofs and visual mathematics. }
   - { title: Numberphile, url: 'https://www.youtube.com/@numberphile', by: Numberphile, lang: en }
+ai:
+  - { title: 3Blue1Brown, url: 'https://www.youtube.com/@3blue1brown', by: 3Blue1Brown, lang: en, note: The neural-network and transformer series on this channel are the clearest visual explanations available. }
+  - { title: StatQuest with Josh Starmer, url: 'https://www.youtube.com/@statquest', by: StatQuest, lang: en, note: Machine learning ideas one at a time, gently. }
+  - { title: Computerphile, url: 'https://www.youtube.com/@Computerphile', by: Computerphile, lang: en, note: AI researchers explaining what models can and cannot do. }
+  - { title: الدحيح, url: 'https://www.youtube.com/@Eldaheeh', by: الدحيح, lang: ar }
+numbers:
+  - { title: Numberphile, url: 'https://www.youtube.com/@numberphile', by: Numberphile, lang: en, note: Enormous numbers, primes and why they are fun. }
+  - { title: Kurzgesagt, url: 'https://www.youtube.com/@kurzgesagt', by: Kurzgesagt, lang: en, note: Animated films about the size of things, from atoms to the universe. }
+  - { title: Khan Academy, url: 'https://www.youtube.com/@khanacademy', by: Khan Academy, lang: en, note: Place value, powers of ten and scientific notation step by step. }
+data:
+  - { title: Computerphile, url: 'https://www.youtube.com/@Computerphile', by: Computerphile, lang: en, note: Databases, indexes, MapReduce and how big systems handle data. }
+  - { title: StatQuest with Josh Starmer, url: 'https://www.youtube.com/@statquest', by: StatQuest, lang: en, note: Sampling and estimating from data, gently. }
+  - { title: CrashCourse, url: 'https://www.youtube.com/@crashcourse', by: CrashCourse, lang: en, note: The Crash Course Computer Science series. }
+quantum:
+  - { title: minutephysics, url: 'https://www.youtube.com/@minutephysics', by: minutephysics, lang: en, note: Short drawn explanations of quantum ideas. }
+  - { title: Veritasium, url: 'https://www.youtube.com/@veritasium', by: Veritasium, lang: en, note: Experiments on light, waves and particles. }
+  - { title: PBS Space Time, url: 'https://www.youtube.com/@pbsspacetime', by: PBS Space Time, lang: en, note: Deeper dives for when you want more. }
+  - { title: الدحيح, url: 'https://www.youtube.com/@Eldaheeh', by: الدحيح, lang: ar }
+relativity:
+  - { title: ScienceClic English, url: 'https://www.youtube.com/@ScienceClicEN', by: ScienceClic, lang: en, note: Beautiful animations of curved spacetime and black holes. }
+  - { title: minutephysics, url: 'https://www.youtube.com/@minutephysics', by: minutephysics, lang: en, note: Special relativity drawn step by step. }
+  - { title: Veritasium, url: 'https://www.youtube.com/@veritasium', by: Veritasium, lang: en }
+  - { title: الدحيح, url: 'https://www.youtube.com/@Eldaheeh', by: الدحيح, lang: ar }
+cryptography:
+  - { title: Computerphile, url: 'https://www.youtube.com/@Computerphile', by: Computerphile, lang: en, note: Hashing, AES, public keys and elliptic curves from security researchers. }
+  - { title: Numberphile, url: 'https://www.youtube.com/@numberphile', by: Numberphile, lang: en, note: The maths behind codes and ciphers. }
+  - { title: 3Blue1Brown, url: 'https://www.youtube.com/@3blue1brown', by: 3Blue1Brown, lang: en, note: How secure is 256-bit security, visually. }
+cosmos:
+  - { title: PBS Space Time, url: 'https://www.youtube.com/@pbsspacetime', by: PBS Space Time, lang: en, note: Dark matter, dark energy and quasars explained by astrophysicists. }
+  - { title: Kurzgesagt, url: 'https://www.youtube.com/@kurzgesagt', by: Kurzgesagt, lang: en, note: Animated films about the universe. }
+  - { title: ScienceClic English, url: 'https://www.youtube.com/@ScienceClicEN', by: ScienceClic, lang: en }
+  - { title: الدحيح, url: 'https://www.youtube.com/@Eldaheeh', by: الدحيح, lang: ar, note: حلقات عربية عن الكون والنجوم والثقوب السوداء. }

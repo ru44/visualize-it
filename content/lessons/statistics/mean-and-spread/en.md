@@ -1,8 +1,9 @@
 ---
 title: 'Mean, variance and standard deviation'
 summary: >-
-  One number for where the data sits, another for how far it wanders. Drag the
-  point to see how squared distances build the variance.
+  One number for where a set of scores sits, another for how far they wander —
+  together they summarize any list of numbers, from test results to delivery
+  times.
 parameters:
   m: guessed centre c
   a: data from
@@ -19,11 +20,29 @@ charts:
       - 'sum over the data 2, 4, 4, 4, 5, 5, 7, 9'
 ---
 
+## Try it
+
+1. Watch the curve: it plots the total squared distance from your guessed centre «guessed centre c» to each of the 8 data points.
+2. Drag «guessed centre c» left and right and watch the curve's height change.
+3. Find the lowest point of the curve: that guess is the data's mean.
+
+## Real-life examples
+
+1. **Guessing the class average.** A quiz scored 2, 4, 4, 4, 5, 5, 7, 9 out of 10; guessing the centre as 5 lands exactly on the true average, where the penalty is smallest.
+2. **Overshooting the guess.** Guessing 8 for the same quiz scores overshoots the true average, and the total squared error jumps far above its minimum.
+3. **Undershooting the guess.** Guessing just 1 undershoots by even more, since most of the class scored higher than that.
+
+## Test yourself
+
+1. Find the guessed centre that makes the total squared distance as small as possible — about 32.
+2. Guess a centre below 3 and see the penalty climb above 80.
+3. Guess a centre above 7 and still keep the penalty under 100.
+
 ## Intuition
 
-Take the data 2, 4, 4, 4, 5, 5, 7, 9. Its mean is 5. The chart below adds up the squared distances from any centre you guess: drag $c$ and the total is smallest exactly at 5. The mean is the centre that the data “pulls” least against.
+Take the quiz scores 2, 4, 4, 4, 5, 5, 7, 9. Their mean is 5. The curve on screen adds up the squared distance from each score to whatever centre you guess: drag «guessed centre c» and watch the total shrink to its smallest exactly at 5. The mean is the centre the data "pulls" against the least.
 
-Divide that smallest total (32) by the 8 values and you get the variance, 4. Take the square root to return to the original units: the standard deviation is 2, so a typical value sits about 2 away from the mean. The curve above shows the squared-distance penalty: small near the centre, punishing far away.
+Divide that smallest total, 32, by the 8 scores and you get the variance, 4. Take its square root to return to the original units: the standard deviation is 2, so a typical score sits about 2 points from the mean. The curve's shape shows the penalty for guessing wrong: small near the centre, harsh far away.
 
 ## Formal
 

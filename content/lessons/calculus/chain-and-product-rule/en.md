@@ -1,8 +1,9 @@
 ---
 title: The chain rule and product rule together
 summary: >-
-  Differentiating a product of two functions, one of which is itself a
-  composition, needs the product rule and the chain rule working together.
+  A radio signal built from a fast wiggle riding on a slowly changing
+  strength needs two differentiation rules at once — this shows you both,
+  working together.
 parameters:
   k: k (inner frequency)
   x: x (drag along the curve)
@@ -11,11 +12,29 @@ variables:
   - point where the tangent and derivative are evaluated
 ---
 
+## Try it
+
+1. Drag the point «x» along the curve. The solid tangent line and the dashed derivative curve always agree at that spot.
+2. Raise «k» slowly. Both curves oscillate faster, but the derivative curve also swings higher and lower — not just faster.
+3. Drag «x» far from the centre with a high «k». The derivative curve grows much larger than the original curve ever does.
+
+## Real-life examples
+
+1. **A slow-varying AM radio carrier.** With a gentle inner frequency (k = 0.4) and a point far from the centre (x = 5), the tangent shows how a slowly oscillating signal still tilts because of the growing envelope term.
+2. **A fast, buzzing tone near the start.** A high inner frequency (k = 2.8) makes the wave oscillate quickly, so even close to the centre (x = 0.5) the slope swings widely.
+3. **Backpropagation deep inside a network.** With k = 1.2 and x = -4, the same product-and-chain pattern is what a neural network computes, layer after layer, when it works out how a weight affects the final error.
+
+## Test yourself
+
+1. Find a point away from the centre (|x| > 1) where the tangent is flat — the derivative reads 0.
+2. Make the derivative climb above 10.
+3. Make the derivative drop below -10.
+
 ## Intuition
 
-Drag the point and compare the solid tangent line's slope with the dashed derivative curve beneath it — they always agree by construction. Notice the derivative curve is not just a shifted sine: near the origin it is dominated by the flat $\sin(kx)$ term, but for large $|x|$ the $kx\cos(kx)$ term wins and the derivative swings with growing amplitude.
+Picture an old radio dial: turning it changes how fast a signal wiggles up and down. On screen, knob «k» plays that role, and the point «x» marks one spot you are standing at on the wiggle. With «k» at 1 and «x» at 2, the solid curve is the signal itself, and the dashed curve beneath it is how steeply the signal rises or falls right at that spot — its slope, redrawn as its own curve.
 
-Increase $k$ and watch both curves oscillate faster — but also notice the derivative's amplitude grows too, not just its frequency. That is the chain rule's fingerprint: differentiating $\sin(kx)$ brings down an extra factor of $k$, so a faster inner oscillation always produces a steeper, wilder derivative.
+Raise «k» toward 3 and both curves wiggle faster, as you would expect. But watch the dashed curve's height too: it grows taller as well, not just faster. That extra growth is the fingerprint of two rules working together — one for the fast wiggle inside, one for the straight-line factor multiplying it — and together they make the slope swing more wildly than the signal itself ever does.
 
 ## Formal
 

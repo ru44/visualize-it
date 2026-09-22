@@ -1,8 +1,8 @@
 ---
 title: Seasons and day length
 summary: >-
-  It is not distance from the Sun that makes summer warm. It is the tilt of
-  Earth's axis, and you can watch it change the length of the day.
+  It is not distance from the Sun that makes summer warm — it is the tilt of
+  Earth's axis, and you can watch that tilt change how long each day lasts.
 parameters:
   lat: latitude
   x: day of year
@@ -15,6 +15,24 @@ variables:
   - the sunset hour angle, in radians
   - the length of daylight, in hours
 ---
+
+## Try it
+
+1. Drag the day-of-year slider through the year at latitude 45°. Watch day length rise toward June and fall toward December.
+2. Drag latitude toward the poles. Watch the swing between summer and winter grow much bigger.
+3. Drag latitude toward the equator instead. Watch the curve flatten out — almost no seasonal change at all.
+
+## Real-life examples
+
+- **A mid-latitude city in June.** At latitude 45° on day 172 (near the June solstice), daylight stretches out to its longest of the year.
+- **A city near the equator.** At latitude 2°, day length barely changes across the whole year — sunrise and sunset stay close to 6 hours apart from noon, whatever the day.
+- **Near the Arctic Circle in winter.** At latitude 65° on day 355 (near the December solstice), the Sun barely rises at all — the polar night.
+
+## Test yourself
+
+1. Find a day and latitude combination where day and night are exactly equal, 12 hours each.
+2. Near the Arctic Circle (above 60°), push summer day length above 20 hours of light.
+3. Near the equator (within 5° of it), find a day length that stays within half an hour of 12, no matter the day of year.
 
 ## Intuition
 

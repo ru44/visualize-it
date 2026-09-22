@@ -1,8 +1,9 @@
 ---
 title: The drag equation
 summary: >-
-  Drag resists motion through a fluid and grows with the square of speed, so
-  doubling your speed quadruples the force you must fight.
+  This predicts why going faster costs so much more energy — on a bike, in a
+  car, or falling through the air — because drag grows much faster than
+  speed does.
 parameters:
   rho: fluid density ρ
   Cd: drag coefficient C_D
@@ -22,11 +23,29 @@ charts:
       - P(v)
 ---
 
+## Try it
+
+1. Picture a cyclist riding upright at 8 m/s (about 29 km/h) into a headwind.
+2. Drag the speed point «speed v» to the right, toward highway speed. The tangent line — the extra force needed for one more m/s — gets steeper and steeper.
+3. Now shrink «frontal area A», as if the cyclist tucked down low. The whole curve drops, even at the same speed.
+
+## Real-life examples
+
+1. **An upright cyclist commuting.** Moving at 8 m/s with a frontal area of 0.5 m² and a drag coefficient of 0.9, they push against about 18 N of drag — most of a cyclist's effort at that speed.
+2. **A family car cruising on the motorway.** At 30 m/s (108 km/h) with a smooth 0.3 drag coefficient and a 2.2 m² frontal area, the car fights about 364 N of drag.
+3. **A skydiver in free fall.** Falling belly-down at 50 m/s with a drag coefficient near 1.0 and a 0.7 m² frontal area, they push against over 1000 N — nearly their own body weight.
+
+## Test yourself
+
+1. Find a speed and shape that produce about 300 N of drag, like a car on the motorway.
+2. Find a speed and shape where the power needed to overcome drag is about 10 kW.
+3. Fly at least 20 m/s but keep the drag below 50 N by choosing a very streamlined shape (small area and drag coefficient).
+
 ## Intuition
 
-Drag the speed point along the curve: the curve is a parabola, and its tangent line — the extra force needed for one more m/s — gets steeper and steeper as you move right. Near v = 0 the tangent is almost flat, but by highway speed a small further increase costs a large extra push, which is exactly why fuel economy falls off a cliff on the motorway.
+Picture a cyclist riding upright at 8 m/s into a headwind. Drag «speed v» to the right, toward highway speed, and watch the tangent line on the curve: it is the extra force needed for one more m/s, and it gets steeper and steeper as you move right. Near very low speed the tangent is almost flat, but at highway speed a small further increase costs a large extra push — exactly why fuel economy falls off a cliff on the motorway.
 
-Now change $C_D$ or the frontal area $A$: the whole parabola scales up or down but keeps its shape, because both sit as a plain multiplier in front of $v^2$. A cyclist tucking into an aerodynamic crouch is shrinking $A$; a streamlined car body is shrinking $C_D$ — both attack the same multiplier rather than fighting the unavoidable $v^2$ growth.
+Now shrink «drag coefficient Cd» or «frontal area A», as if the cyclist tucked down low: the whole curve drops but keeps its parabola shape, because both act as a plain multiplier on the speed term. A cyclist tucking in shrinks the area; a streamlined car body shrinks the drag coefficient — both attack that multiplier rather than fighting the speed-squared growth itself.
 
 ## Formal
 

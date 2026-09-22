@@ -1,8 +1,8 @@
 ---
 title: Friction on an inclined plane
 summary: >-
-  An object on a slope stays put as long as friction can match gravity's pull
-  along the incline; past a critical angle it cannot, and sliding begins.
+  This is why a rubber-soled shoe grips a steep roof but slides on wet tile,
+  and how engineers pick safe ramp angles for wheelchairs and warehouses.
 parameters:
   mu: coefficient of friction μ
   x: incline angle θ
@@ -12,11 +12,29 @@ variables:
   - 'net acceleration down the slope (negative means friction wins, it stays put)'
 ---
 
+## Try it
+
+1. Watch the curve at a shallow incline angle — it sits below zero, meaning the block stays put.
+2. Drag the slider "incline angle θ" up. Watch the curve rise toward zero, then cross it.
+3. Now raise "coefficient of friction μ". The crossing point, where sliding begins, moves to a steeper angle.
+
+## Real-life examples
+
+1. **A waxed ski on packed snow.** With μ≈0.06 and a gentle 20° slope, the tiny friction barely slows the skier — they accelerate down almost as if the slope were frictionless.
+2. **A wooden crate on a wooden ramp.** With μ=0.4 on a 30° ramp, friction nearly matches gravity's pull, so the crate creeps down slowly instead of sliding fast.
+3. **A rubber shoe on wet tile.** With μ=0.9 the shoe still slides on a steep 70° slope — its grip can't keep up with such a steep pitch.
+
+## Test yourself
+
+1. With friction μ = 0.5, find the incline angle where the block is exactly on the verge of sliding (acceleration = 0).
+2. Make the block accelerate down the slope at exactly 3 m/s².
+3. Set the incline to 45° and find the friction coefficient where the block just barely stays still.
+
 ## Intuition
 
-At shallow angles the curve sits below zero: gravity's pull along the slope is weaker than the maximum friction can resist, so nothing accelerates — the object is held in place. Drag the angle up and watch the curve rise toward zero.
+Picture a wooden crate on a 20° ramp with a slippery, waxed surface, friction coefficient μ = 0.06: at this shallow angle the curve on screen sits below zero, meaning gravity's pull along the slope is weaker than friction can resist, so the crate stays put. Drag the slider "incline angle θ" up and watch the curve climb toward zero.
 
-The root, where the curve crosses zero, is the critical angle: past it, the curve is positive and the object accelerates down the slope. Raise $\mu$ (rougher surface) and that crossing point pushes to a steeper angle — a higher $\mu$ buys you a steeper slope before sliding starts.
+The point where the curve crosses zero is the critical angle: past it, the curve turns positive and the crate accelerates down the slope. Now raise "coefficient of friction μ" instead, say to 0.9, and watch that crossing point shift to a much steeper angle — a rougher surface buys you a steeper ramp before anything starts sliding.
 
 ## Formal
 

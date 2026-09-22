@@ -1,9 +1,9 @@
 ---
 title: Dynamic equilibrium
 summary: >-
-  A reversible reaction does not stop — it settles into a dynamic balance where
-  the forward and reverse reactions proceed at equal rates, leaving
-  concentrations constant but far from zero on either side.
+  Most real reactions don't run to completion — they settle into a lasting
+  balance, and this lesson shows where that balance ends up and how to shift
+  it.
 parameters:
   A0: 'initial [A]₀'
   kf: forward rate constant kƒ
@@ -24,11 +24,29 @@ charts:
       - '[B] = A0 − [A]'
 ---
 
+## Try it
+
+1. Drag the time point «t» along the curve. Watch [A] fall and [B] rise, both flattening out — but not to zero.
+2. Raise «forward rate constant kf». The plateau shifts lower: equilibrium now favours B more.
+3. Raise «reverse rate constant kr» instead. The plateau shifts higher: equilibrium now favours A more.
+
+## Real-life examples
+
+1. **The Haber process making ammonia.** With kf much larger than kr (0.8 vs 0.1 per second), the forward reaction wins and most of the starting material converts to product before the rates balance.
+2. **Oxygen binding to haemoglobin in blood.** Forward and reverse rates are close (0.5 and 0.5 per second), so oxygen is picked up and released at nearly matched rates — a true, finely poised equilibrium.
+3. **Carbon dioxide escaping from an opened soda bottle.** With kr far larger than kf (0.6 vs 0.05 per second), the reverse reaction dominates and most of the dissolved gas ends up back in the gas phase.
+
+## Test yourself
+
+1. Set the rate constants so equilibrium favours B three times as strongly as A (K = 3).
+2. Let the reaction run to equilibrium with exactly 0.3 mol/L of A remaining.
+3. Make equilibrium favour the reactant so strongly that more than 80% of A is still left.
+
 ## Intuition
 
-Drag the time point x along the curve: [A] falls quickly at first, then flattens — not to zero, but to a fixed positive level. It flattens because the reaction never actually stops; A is still turning into B and B is still turning back into A, but at equal rates, so the concentrations stop changing even though molecules keep converting both ways.
+Picture a bottle of soda you just opened: dissolved CO2 keeps turning into bubbles, while some bubbles keep re-dissolving, until the fizzing settles into a steady hiss instead of stopping. On the chart, the curve for [A] starts high and falls, and the curve for [B] starts at zero and climbs. Drag the point marked «t» (time) along them and watch both flatten out, but never reach zero or the very top.
 
-Raise kƒ relative to kᵣ and the plateau shifts lower — equilibrium favours B more strongly. This is the microscopic picture behind Le Chatelier’s principle: nudging the balance of rates (by changing concentration, temperature, or pressure) shifts where the system settles, without ever truly stopping the underlying back-and-forth.
+They flatten because the reaction never actually stops: A is still turning into B, and B is still turning back into A, just at matched rates. Raise the slider «forward rate constant kf» and the flat part of both lines shifts — B ends up winning a bigger share. That's the whole idea behind Le Chatelier's principle: push on the rates, and the resting point moves, even though the back-and-forth itself never stops.
 
 ## Formal
 

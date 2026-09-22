@@ -41,3 +41,14 @@ charts: []
 visualization3d:
   type: orbit
   options: {}
+primary: x
+presets:
+  - x: 6.8
+  - x: 26.6
+  - x: 42.2
+challenges:
+  - check: 3.986e14/(x*1e6)^2
+    target: 1
+  - check: 3.986e14/(x*1e6)^2
+    target: 2.43
+  - check: 3.986e14/(x*1e6)^2 < 0.2

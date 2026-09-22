@@ -21,6 +21,24 @@ charts:
       - fraction remaining
 ---
 
+## Try it
+
+1. Drag time forward from zero. Watch the curve drop fastest at the start, then slow down.
+2. Watch the curve reach half its starting height at exactly one half-life.
+3. Drag the half-life slider instead. Watch the whole curve stretch or compress in time.
+
+## Real-life examples
+
+- **A fresh bone sample.** Starting from 500 atoms of carbon-14 (N₀ = 500, half-life 5730 years), only 1000 years in (x = 1000), most of the isotope is still there.
+- **A bone about one half-life old.** Starting from 200 atoms with the same half-life, after 5700 years roughly half the carbon-14 has decayed away.
+- **A much older sample, a different isotope.** Starting from 100 atoms of an isotope with a shorter half-life (T = 1000), after 8000 years — eight half-lives — only a tiny trace remains.
+
+## Test yourself
+
+1. Find the time at which exactly half the sample remains — one half-life.
+2. Wait long enough that under 5% of the sample remains.
+3. Get the remaining amount down to exactly 25 atoms.
+
 ## Intuition
 
 Drag time forward from zero and watch the tangent line's slope — the decay rate — get shallower as the curve drops: decay is fastest when there is the most material left, and it slows as less remains, never quite reaching zero. At exactly one half-life the curve has dropped to half its starting height, at two half-lives to a quarter, at three to an eighth.

@@ -44,3 +44,16 @@ charts:
     marker: N
     series:
       - sqrt(p*(1-p)/x)
+primary: N
+presets:
+  - p: 0.5
+    N: 50
+  - p: 0.45
+    N: 1000
+  - p: 0.2
+    N: 2000
+challenges:
+  - check: 'sqrt(p*(1-p)/N)'
+    target: 0.03
+  - check: 'N >= 1000 and sqrt(p*(1-p)/N) < 0.02'
+  - check: 'N <= 100 and sqrt(p*(1-p)/N) > 0.1'

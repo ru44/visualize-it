@@ -45,3 +45,22 @@ derivation:
   - "|A| + |B| \\text{ counts every element of } A \\cap B \\text{ twice}"
   - "|A \\cup B| = |A| + |B| - |A \\cap B|"
 charts: []
+primary: op
+presets:
+  - N: 20
+    p: 2
+    q: 3
+    op: 0
+  - N: 30
+    p: 4
+    q: 6
+    op: 1
+  - N: 40
+    p: 5
+    q: 7
+    op: 2
+challenges:
+  - check: 'floor(N/p) + floor(N/q) - floor(N/lcm(p,q))'
+    target: 15
+  - check: 'floor(N/lcm(p,q)) > 5'
+  - check: 'floor(N/lcm(p,q))==0'

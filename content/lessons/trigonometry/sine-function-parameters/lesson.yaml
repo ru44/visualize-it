@@ -62,3 +62,22 @@ derivation:
   - f'(x) = A\omega\cos(\omega x + \varphi)
   - \max f = D + A, \quad \min f = D - A, \quad T = \frac{2\pi}{\omega}
 charts: []
+primary: A
+presets:
+  - A: 3
+    w: 3
+    phi: 0
+    D: 0
+  - A: 1.5
+    w: 0.2
+    phi: 1
+    D: 2
+  - A: 4
+    w: 0.2
+    phi: 3
+    D: 1
+challenges:
+  - check: 'D + A'
+    target: 5
+  - check: '2*pi/w > 20 and A > 3'
+  - check: 'D - A < -2 and 2*pi/w < 5'

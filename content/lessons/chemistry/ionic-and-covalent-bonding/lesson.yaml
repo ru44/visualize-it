@@ -31,3 +31,15 @@ derivation:
   - "\\Delta\\chi = |\\chi_1 - \\chi_2|"
   - "\\Delta\\chi \\text{ large} \\Rightarrow \\text{electron transfer; } \\Delta\\chi \\text{ small} \\Rightarrow \\text{electron sharing}"
 charts: []
+primary: Z
+presets:
+  - Z: 11
+  - Z: 9
+  - Z: 6
+challenges:
+  - check: Z
+    target: 10
+  - check: Z
+    target: 19
+  - check: Z
+    target: 17

@@ -41,3 +41,22 @@ derivation:
   - n = \frac{c}{v} \;\Rightarrow\; v_1 = \frac{c}{n_1},\ v_2 = \frac{c}{n_2}
   - n_1\sin\theta_1 = n_2\sin\theta_2
 charts: []
+primary: theta1
+presets:
+  - theta1: 40
+    n1: 1
+    n2: 1.33
+  - theta1: 50
+    n1: 1
+    n2: 1.5
+  - theta1: 30
+    n1: 1.33
+    n2: 1
+challenges:
+  - check: theta1
+    target: 45
+  - check: asin(n1*sin(theta1*pi/180)/n2)*180/pi
+    target: 25
+  - check: asin(n1*sin(theta1*pi/180)/n2)*180/pi
+    target: 5
+    tol: 0.5

@@ -1,0 +1,29 @@
+id: word-embeddings
+subject: ai
+difficulty: beginner
+equation: v_K - v_M + v_W \approx v_Q
+concepts:
+  - word-embedding
+  - vector-space
+  - semantic-similarity
+prerequisites:
+  - vectors
+  - mean-and-spread
+related:
+  - attention
+  - neural-network
+visualization:
+  type: embeddings
+  options:
+    mode: vectors
+parameters: {}
+variables:
+  - v_K
+  - v_M
+  - v_W
+  - v_Q
+derivation:
+  - v_K, v_M, v_W, v_Q \in \mathbb{R}^2
+  - v_K - v_M \approx v_Q - v_W
+  - v_K - v_M + v_W \approx v_Q
+charts: []

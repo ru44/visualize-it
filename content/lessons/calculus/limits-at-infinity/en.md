@@ -1,8 +1,9 @@
 ---
 title: Limits at infinity and horizontal asymptotes
 summary: >-
-  For large $x$, only the highest powers matter — the lower-order terms fade
-  into insignificance and the ratio settles onto a flat horizontal line.
+  A skydiver falling from a plane can't fall faster than their top speed no
+  matter how long the fall continues — a horizontal asymptote is the number
+  a curve settles toward and never runs past, the same way.
 parameters:
   a: a (limiting height)
   b: b
@@ -13,11 +14,29 @@ variables:
   - 'input, dragged out toward large values'
 ---
 
+## Try it
+
+1. Drag «x (drag far to the right)» out past 30 or 40. The curve flattens and hugs a horizontal line.
+2. Read the flat height and compare it to «a (limiting height)». They match.
+3. Change «b» and watch near x = 0: the curve reshapes there, but the flat height far to the right never moves.
+
+## Real-life examples
+
+1. **Early reading, still settling.** With a = 2, b = 3 and x = 5, the curve hasn't reached its flat asymptote yet — it's still visibly changing.
+2. **Terminal velocity nearly reached.** With a = 1.5, b = 6 and x = 50, a falling object's speed has settled almost exactly onto its terminal value a.
+3. **An enzyme reaction near its maximum rate.** With a = 3.5, b = 1 and x = 45, the reaction rate has climbed close to its ceiling Vmax, here represented by a.
+
+## Test yourself
+
+1. Push x out far enough that the curve sits within 0.01 of its flat asymptote a.
+2. Make the asymptote higher than 3, and confirm the curve has settled within 0.05 of it.
+3. Keep x near 0 and make the curve's value more than 3 below the asymptote a.
+
 ## Intuition
 
-Drag $x$ out past $x = 30$ or $40$: the curve, however it wiggled near the origin, has flattened out and is hugging a horizontal line. Read off its height and compare to the slider for $a$ — they match, however $b$ is set.
+Picture a skydiver who has just jumped: at first they speed up quickly, but air resistance grows too, and eventually their falling speed stops increasing and settles at a fixed number — the terminal velocity. On screen, drag «x (drag far to the right)» out past 30 or 40, standing in for more and more time spent falling: the curve, however it wiggled near the start, flattens out and hugs a horizontal line.
 
-Change $b$ and watch closely: it visibly reshapes the curve near $x = 0$, where the $+1$ and $+b$ terms are comparable in size to $x^2$, but has no effect at all on the flat height far to the right, because out there $x^2$ dwarfs both constants — only the ratio of leading coefficients, $a/1$, survives.
+Read off that flat height and compare it to the slider «a (limiting height)» — they match, no matter how «b» is set. Now change «b» and watch closely: it visibly reshapes the curve near the very start, where its effect is still comparable in size to everything else, but it has no effect at all on the flat height far to the right, because out there the fastest-growing term dwarfs everything else.
 
 ## Formal
 

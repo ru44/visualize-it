@@ -1,8 +1,9 @@
 ---
 title: Power functions and fractional exponents
 summary: >-
-  One exponent $n$ controls a whole family of curves — straight lines,
-  parabolas, roots and reciprocals are all $x^n$ in disguise.
+  See how a single dial reshapes a curve into a line, a parabola, a
+  square-root, or a shrinking curve — the pattern behind area, volume, and
+  "inverse" relationships like sharing a bill.
 parameters:
   'n': exponent n
   x: x
@@ -11,11 +12,29 @@ variables:
   - 'the base, restricted here to positive values'
 ---
 
+## Try it
+
+1. Slide n from 2 down toward 0 and watch the curve straighten, then flatten.
+2. Push n past 0 into negative numbers and watch the curve's whole shape flip.
+3. Drag x left and right and read the curve's height at each point.
+
+## Real-life examples
+
+1. **Tiling a floor.** Doubling a square tile's side length (x=2) at exponent n=2 quadruples its area, from 1 to 4 square metres.
+2. **Packing a box.** Doubling a cube's side length (x=2) at exponent n=3 multiplies its volume by 8, from 1 to 8 cubic metres.
+3. **Splitting a bill.** At exponent n=-1, doubling the number of people sharing a fixed pizza bill (x=2) halves what each person pays, down to 0.5 of the original share.
+
+## Test yourself
+
+1. Set x to 2, then find the exponent that makes the curve reach exactly 8 there — the same growth a cube's volume shows when its side doubles.
+2. With the exponent set to -1, find the x where the curve drops to exactly 0.25 — like needing 4 people to quarter a shared bill.
+3. Find the one exponent that makes the curve perfectly flat, equal to 1, no matter where x sits.
+
 ## Intuition
 
-Slide $n$ from $2$ down to $1$: the parabola straightens into the line $y = x$. Keep going to $n = 0.5$ and the curve becomes a square root — steep near zero, flattening out — and at $n = 0$ it is simply the flat line $y = 1$.
+Double the side length of a square tile, from 1 metre to 2, and its area does not just double — it quadruples, from 1 square metre to 4. That is the curve you see here at exponent n = 2, plotted through the point where x = 2 reads 4 on the vertical axis. Slide n down to 1 and the curve straightens into a plain diagonal line, where the output always equals the input — doubling x now only doubles the result, like length itself instead of area.
 
-Push $n$ negative and the curve flips character completely: instead of growing, it now blows up as $x$ shrinks toward $0.1$ and settles down toward zero as $x$ grows, because $x^{-1} = 1/x$. The single formula $x^n$ quietly reproduces multiplication, roots and reciprocals just by turning one dial.
+Keep sliding n down to 0.5 and the curve becomes a square root: steep near zero, then flattening out as x grows. At n = 0 the curve turns dead flat at height 1, no matter what x is, because anything raised to the power zero equals 1. Push n negative instead, say to -1, and the curve flips character completely: it shoots up as x shrinks toward zero and settles toward zero as x grows — the same shape as a bill split among more and more people, where each share keeps shrinking.
 
 ## Formal
 

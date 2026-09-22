@@ -36,3 +36,18 @@ derivation:
   - \text{AND}(a,b) = 1 \iff a=1 \text{ and } b=1
   - \neg(a \wedge b) = \neg a \vee \neg b
 charts: []
+primary: a
+presets:
+  - a: 1
+    b: 1
+  - a: 1
+    b: 0
+  - a: 0
+    b: 0
+challenges:
+  - check: a*b
+    target: 1
+  - check: a+b
+    target: 1
+  - check: a+b
+    target: 0

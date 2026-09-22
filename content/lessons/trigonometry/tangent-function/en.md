@@ -1,14 +1,32 @@
 ---
 title: The tangent function and its asymptotes
 summary: >-
-  Tangent is a ratio that blows up wherever cosine is zero — the curve repeats
-  every $\pi$ and shoots to infinity at each end of every branch.
+  Tangent is a ratio that suddenly shoots off toward infinity wherever cosine
+  hits zero, then the same pattern repeats over and over.
 parameters:
   x: x
 variables:
   - angle in radians
   - $\sin x / \cos x$
 ---
+
+## Try it
+
+1. Watch the curve: it climbs steeply as the point approaches a vertical dashed line.
+2. Drag the point «x» slowly toward 1.57 — that's π/2. The curve rockets upward, then reappears far below.
+3. Keep dragging. The whole zig-zag pattern repeats every 3.14 units — that's π.
+
+## Real-life examples
+
+1. **Wheelchair ramp.** A gentle ramp angled at 0.1 radians, about 6°, has a slope — its tangent — of just 0.1: a rise of 1 for every 10 you travel.
+2. **Steep roof pitch.** A roof pitched at 1 radian, about 57°, has a tangent near 1.56 — steep enough that walking on it is dangerous.
+3. **Near-vertical camera tilt.** A security camera tilted to 1.5 radians, close to the vertical limit at π/2, has a tangent above 14 — a tiny change in angle now swings its view wildly.
+
+## Test yourself
+
+1. Find an angle where the tangent equals 1 — a 45-degree slope.
+2. Get close to the vertical dashed line, between 1.4 and 1.57, and push the tangent above 20.
+3. On the negative side, between −1.57 and −1, push the tangent below −10.
 
 ## Intuition
 

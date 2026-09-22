@@ -1,0 +1,51 @@
+id: indexes-and-fast-search
+subject: data
+difficulty: beginner
+equation: b = \log_2 N
+concepts:
+- binary search
+- database index
+- logarithmic time
+- algorithms
+prerequisites:
+- algorithms-and-complexity
+- logarithms
+related:
+- tables-and-filtering
+- powers-of-ten
+visualization:
+  type: search-race
+  options: {}
+primary: e
+parameters:
+  e:
+    min: 1
+    max: 12
+    step: 1
+    value: 6
+  target:
+    min: 0
+    max: 63
+    step: 1
+    value: 41
+variables:
+- N
+- b
+- e
+derivation:
+- N = 10^e
+- \text{each step of binary search discards half of what remains}
+- b = \log_2 N
+presets:
+- e: 3
+  target: 12
+- e: 6
+  target: 41
+- e: 9
+  target: 55
+challenges:
+- check: e
+  target: 12
+- check: target
+  target: 0
+- check: e <= 2

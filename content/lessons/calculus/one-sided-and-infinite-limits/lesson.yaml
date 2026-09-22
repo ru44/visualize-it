@@ -40,3 +40,12 @@ derivation:
   - \forall M > 0,\ \exists\, \delta = 1/M \text{ s.t. } 0<x<\delta \Rightarrow \tfrac1x > M
   - -\delta < x < 0 \;\Rightarrow\; \frac1x < -\frac1\delta
 charts: []
+primary: d
+presets:
+  - { d: 1 }
+  - { d: 0.1 }
+  - { d: 0.02 }
+challenges:
+  - { check: '1/d > 40' }
+  - { check: '1/d', target: 10, tol: 0.3 }
+  - { check: '1/d < 1' }

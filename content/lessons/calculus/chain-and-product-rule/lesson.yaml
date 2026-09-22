@@ -43,3 +43,12 @@ derivation:
   - \frac{d}{dx}\sin(kx) = \cos(kx)\cdot k
   - = kx\cos(kx) + \sin(kx)
 charts: []
+primary: x
+presets:
+  - { k: 0.4, x: 5 }
+  - { k: 2.8, x: 0.5 }
+  - { k: 1.2, x: -4 }
+challenges:
+  - { check: 'abs(k*x*cos(k*x) + sin(k*x)) < 0.15 and abs(x) > 1' }
+  - { check: 'k*x*cos(k*x) + sin(k*x) > 10' }
+  - { check: 'k*x*cos(k*x) + sin(k*x) < -10' }

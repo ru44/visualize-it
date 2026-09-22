@@ -47,3 +47,15 @@ charts:
     marker: x
     series:
       - b^x
+primary: x
+presets:
+  - b: 2
+    x: 8
+  - b: 3
+    x: 9
+  - b: 1.5
+    x: 10
+challenges:
+  - check: abs(x - b^3) < 0.1 and abs(b - 2) > 0.1
+  - check: abs(log(x, b) + 1) < 0.02
+  - check: abs(b - 3) < 0.05 and abs(log(x, b) - 2) < 0.1

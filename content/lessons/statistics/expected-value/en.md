@@ -20,11 +20,29 @@ charts:
       - fair game (zero)
 ---
 
+## Try it
+
+1. Watch the point on the line: it shows your average gain per play at the current «p — chance of winning».
+2. Drag «p — chance of winning» to the right. Watch the line's value climb from a loss into a profit.
+3. Find where the line crosses zero: that is a fair game, where on average you win exactly what you lose.
+
+## Real-life examples
+
+1. **Coin-flip bet.** Flip a coin: win 8 on heads, lose 8 on tails — a perfectly fair bet with an average result of zero.
+2. **Store raffle ticket.** A 1-in-20 chance to win a prize worth 20, otherwise you lose the 1 you paid for the ticket — worth entering on average.
+3. **Risky side bet.** A 90% chance to win a small 2, and a 10% chance to lose 15 — the average is still slightly positive, but a single unlucky spin can hurt a lot.
+
+## Test yourself
+
+1. Adjust the sliders until the game is exactly fair — an average result of zero.
+2. Make the average result better than +5 per play.
+3. Find a game where you win less than half the time, yet it is still profitable on average.
+
 ## Intuition
 
-You win 10 with probability 0.4, otherwise you lose 5. Over 100 plays you expect about 40 wins (+400) and 60 losses (−300): +100 in total, +1 per play. That per-play figure is the expected value, $0.4 \times 10 - 0.6 \times 5 = 1$. Drag the point: where the line crosses zero the game is fair.
+You win 10 with probability 0.4, otherwise you lose 5. Over 100 plays you expect about 40 wins (+400) and 60 losses (−300): +100 in total, or +1 per play. That per-play figure is the expected value, $0.4 \times 10 - 0.6 \times 5 = 1$. Drag the point along «p — chance of winning»: where the line crosses zero, the game is fair.
 
-Every lottery, casino game and insurance policy is designed so this number favours the house. The expected value of a €2 lottery ticket is typically about €1 — you pay €1 per ticket, on average, for the excitement.
+Every lottery, casino game and insurance policy is designed so this number favours the house. The expected value of a €2 lottery ticket is typically about €1 — on average you pay €1 per ticket just for the excitement of playing.
 
 ## Formal
 

@@ -46,3 +46,21 @@ derivation:
   - \frac{\partial L}{\partial m} = -\frac{2}{n}\sum_i x_i(y_i - mx_i - c), \quad \frac{\partial L}{\partial c} = -\frac{2}{n}\sum_i (y_i - mx_i - c)
   - m \gets m - \text{lr}\,\frac{\partial L}{\partial m}, \qquad c \gets c - \text{lr}\,\frac{\partial L}{\partial c}
 charts: []
+primary: steps
+presets:
+  - m: 0
+    c: 0
+    lr: 0.02
+    steps: 100
+  - m: 0
+    c: 0
+    lr: 0.049
+    steps: 20
+  - m: 1
+    c: 2
+    lr: 0.01
+    steps: 0
+challenges:
+  - check: steps>=150 and abs(lr-0.02)<0.005
+  - check: abs(lr-0.05)<0.002 and steps<=5
+  - check: abs(lr-0.001)<0.0005 and steps>=199

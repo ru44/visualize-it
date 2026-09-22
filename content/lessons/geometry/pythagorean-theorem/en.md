@@ -13,6 +13,24 @@ variables:
   - the angle opposite side a
 ---
 
+## Try it
+
+1. Drag the far vertex of leg «a — leg» and watch the blue square on it grow and shrink.
+2. Drag the far vertex of leg «b — leg» instead, and watch the teal square change with it.
+3. Compare the blue and teal areas combined to the amber square on the hypotenuse: they always match exactly.
+
+## Real-life examples
+
+1. **Squaring a corner.** Builders check a corner is a true right angle using legs of 3 m and 4 m: the diagonal comes out to exactly 5 m.
+2. **Ladder against a wall.** A ladder's base sits 1.5 m from the wall while it reaches 6 m up: the ladder itself must be about 6.2 m long.
+3. **Diagonal path across a garden.** A rectangular garden 5 m by 6 m has a diagonal shortcut path about 7.8 m long.
+
+## Test yourself
+
+1. Make the hypotenuse exactly 5 m long.
+2. Keep one leg under 2 m yet stretch the hypotenuse past 7 m.
+3. Make the two legs nearly equal, within 0.2 m of each other, yet the hypotenuse longer than 9 m.
+
 ## Intuition
 
 Drag either far vertex and watch the triangle stretch while the three tinted squares grow and shrink with it. The blue square sitting on leg $a$ has area $a^2$, the teal square on leg $b$ has area $b^2$, and the amber square leaning on the hypotenuse has area $c^2$. No matter how you distort the triangle, the blue area plus the teal area always exactly fills the amber one.

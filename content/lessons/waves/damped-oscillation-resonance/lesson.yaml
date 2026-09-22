@@ -72,3 +72,19 @@ charts:
     marker: w0
     series:
       - F/sqrt((w0^2 - x^2)^2 + (2*g*x)^2)
+primary: g
+presets:
+  - A: 1.5
+    g: 0.06
+    w: 5
+  - A: 3
+    g: 0.3
+    w: 1.5
+  - A: 2.5
+    g: 0.9
+    w: 3
+challenges:
+  - check: g >= 0.9
+  - check: w
+    target: 4.5
+  - check: abs(x - w0) < 0.3

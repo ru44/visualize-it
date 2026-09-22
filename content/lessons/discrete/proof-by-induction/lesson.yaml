@@ -44,3 +44,14 @@ charts:
     series:
       - x*(x+1)/2
       - x^2/2
+primary: x
+presets:
+  - x: 10
+  - x: 14
+  - x: 20
+challenges:
+  - check: 'x*(x+1)/2'
+    target: 66
+  - check: 'x*(x+1)/2 - x^2/2'
+    target: 5
+  - check: 'x*(x+1)/2 >= 150 and x^2/2 < 150'

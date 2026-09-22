@@ -1,0 +1,49 @@
+id: prime-numbers
+subject: numbers
+difficulty: high-school
+equation: 'N=a\times b\quad(1<a\le b<N)'
+concepts:
+- prime numbers
+- sieve of Eratosthenes
+prerequisites:
+- place-value
+related:
+- modular-arithmetic
+visualization:
+  type: sieve
+  options: {}
+parameters:
+  N:
+    min: 20
+    max: 120
+    step: 10
+    value: 100
+  p:
+    min: 0
+    max: 4
+    step: 1
+    value: 1
+variables:
+- N
+- a
+- b
+derivation:
+- '2\times2,\ 2\times3,\ 2\times4,\dots'
+- '3\times3,\ 3\times4,\dots'
+- '\text{numbers left uncrossed up to } N \text{ are prime}'
+primary: N
+presets:
+- N: 50
+  p: 2
+- N: 100
+  p: 4
+- N: 120
+  p: 1
+challenges:
+- check: p == 4 and N >= 100
+- check: N
+  target: 20
+  tol: 0.4
+- check: p
+  target: 0
+  tol: 0.4

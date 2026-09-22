@@ -18,6 +18,13 @@ export type Subject =
   | 'economics'
   | 'engineering'
   | 'discrete'
+  | 'ai'
+  | 'numbers'
+  | 'data'
+  | 'quantum'
+  | 'relativity'
+  | 'cryptography'
+  | 'cosmos'
 export type Difficulty = 'beginner' | 'high-school' | 'university' | 'advanced'
 
 export interface Video {
@@ -76,6 +83,10 @@ export interface Lesson {
   tryIt: string[]
   /** The parameter shown first in guided mode. */
   primary?: string
+  /** Real-life situations that load slider values. */
+  presets: { label: string; text: string; params: Record<string, number> }[]
+  /** Self-tests checked live against the sliders. */
+  challenges: { text: string; check: string; target?: number; tol?: number }[]
   derivation: { tex: string; note: string }[]
   derivationTitle?: string
   /** How trustworthy a computed answer is — shown for user-entered equations. */
@@ -93,6 +104,8 @@ export interface LessonText {
   variables: string[]
   charts: { title: string; xLabel: string; yLabel: string; series: string[] }[]
   tryIt: string[]
+  presets: { label: string; text: string }[]
+  challenges: string[]
   intuition: string[]
   formal: string[]
   advanced: string[]

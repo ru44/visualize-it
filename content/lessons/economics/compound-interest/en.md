@@ -22,18 +22,29 @@ charts:
       - simple interest
 ---
 
+## Try it
+
+1. Watch the curve. It starts low and flat, showing your balance $A$ growing slowly.
+2. Drag $r$ (interest rate) up. The curve gets dramatically steeper — a higher rate changes everything.
+3. Now drag $x$ (years invested) forward instead, keeping $r$ fixed. The same rate compounds into a much bigger balance simply by waiting longer.
+
+## Real-life examples
+
+1. **Saving for a child's education.** Parents put aside 1,000 at birth in an account paying 6% a year, compounded monthly; by the time their child turns 18 the fund has grown several times over.
+2. **Building a retirement nest egg.** 5,000 invested at a 7% annual return, compounded yearly, grows for 30 years — most of the final balance comes from decades of interest earning interest, not the original deposit.
+3. **A credit card balance.** 2,000 left unpaid at 15% interest, compounded monthly, compounds against the borrower instead of for them, growing steadily larger the longer it goes unpaid.
+
+## Test yourself
+
+1. Find a rate, compounding frequency and number of years that make your savings roughly double.
+2. Using a realistic rate below 10%, grow your savings to more than 5 times the starting amount within 40 years.
+3. Set the rate to 12% and find how many years it takes your money to double — check it against the rule of 72 (72 ÷ 12 = 6 years).
+
 ## Intuition
 
-Drag $x$ forward: the tangent line on the curve keeps getting steeper,
-because interest is now earned on both the original amount and on every
-past year's interest. Raise $n$ from 1 to 12: the same annual rate paid
-monthly instead of yearly compounds a little faster, since each month's
-interest starts earning sooner.
+Put 1,000 in a savings account at 7% a year, compounded every month, and leave it alone for years. On screen, the curve labelled $A$ is your growing balance, plotted against $x$, the number of years invested. Drag $x$ to the right: the tangent line drawn on the curve gets steeper year after year, because you are now earning interest on your original deposit and on every year's interest that came before it.
 
-Compare two starting points a few years apart with the same monthly
-deposit: the earlier saver ends up well ahead, not because they saved
-more in total, but because their money had more time to compound. Time in
-the market matters more than timing it.
+Now drag $r$, the annual interest rate, up instead: even a small rise makes the curve climb dramatically faster, because a higher rate multiplies every future year rather than just adding once. This is why a saver who starts at 25 can end up with roughly double the retirement balance of one who starts at 35 with the same monthly deposit, even though the later saver contributes for nearly as many years.
 
 ## Formal
 

@@ -1,0 +1,43 @@
+id: column-storage-and-bigquery
+subject: data
+difficulty: beginner
+equation: B = c \cdot 10^9
+concepts:
+- column-oriented storage
+- BigQuery
+- bytes scanned
+- query cost
+prerequisites:
+- tables-and-filtering
+- bits-bytes-and-data-sizes
+related:
+- grouping-and-totals
+visualization:
+  type: query-table
+  options:
+    mode: columns
+primary: cols
+parameters:
+  cols:
+    min: 1
+    max: 3
+    step: 1
+    value: 1
+variables:
+- B
+- c
+- k
+derivation:
+- \text{row store, read every column} \Rightarrow B = k \cdot 10^9
+- \text{column store, read only the columns you SELECT} \Rightarrow B = c \cdot 10^9
+- c < k \Rightarrow \text{fewer bytes scanned, smaller bill}
+presets:
+- cols: 1
+- cols: 2
+- cols: 3
+challenges:
+- check: cols
+  target: 1
+- check: cols
+  target: 3
+- check: cols == 2

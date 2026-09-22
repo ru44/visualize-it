@@ -48,3 +48,21 @@ derivation:
   - \exists x \in A \text{ with } x \notin B \quad \text{(2 is in A but not in B)}
   - \neg(\forall x \in B,\ x \in A) \iff \exists x \in B,\ x \notin A
 charts: []
+primary: op
+presets:
+  - N: 20
+    p: 2
+    q: 4
+    op: 2
+  - N: 30
+    p: 3
+    q: 6
+    op: 2
+  - N: 24
+    p: 5
+    q: 3
+    op: 2
+challenges:
+  - check: 'mod(q, p)==0'
+  - check: 'mod(q, p) != 0'
+  - check: 'floor(N/p) - floor(N/lcm(p,q)) > 5'

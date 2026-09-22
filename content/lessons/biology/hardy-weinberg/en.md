@@ -20,11 +20,29 @@ charts:
       - q² — aa homozygotes
 ---
 
+## Try it
+
+1. Drag $p$ toward 0.5 and watch the "one of each" group (Aa) become the largest share.
+2. Drag $p$ close to 1. The "two A" group takes over almost the whole population.
+3. Drag $p$ close to 0. The "two a" group takes over instead.
+
+## Real-life examples
+
+- **A common allele near fixation.** In a population where 98% of copies are the common version ($p = 0.98$), almost everyone carries two copies of it, and only a small share carry any of the rare version.
+- **Two equally common versions.** With the two versions exactly balanced ($p = 0.5$), the "one of each" group is as large as it can possibly get: half the population.
+- **A malaria-resistance allele in a high-risk region.** Where a protective variant makes up 80% of copies ($p = 0.8$), the rarer version still shows up in a meaningful slice of the population, both alone and paired up.
+
+## Test yourself
+
+1. Find $p$ where the "two A" group makes up 49% of the population.
+2. Find $p$ where the "one of each" group is as large as it can possibly be.
+3. Push the rare "two a" group below 1% of the population.
+
 ## Intuition
 
-Drag p and watch three shares add up to the whole population: $p^2$ (AA), $2pq$ (Aa) and $q^2$ (aa). At $p=0.5$ heterozygotes are the largest group, at 50% — not because heterozygosity is “favoured”, just because there are two ways to be Aa (one allele from each parent) and only one way to be AA or aa.
+Imagine a gene with two versions, A and a, and you know only one number: the share of A copies in the population, called $p$. Drag the slider for $p$ and watch three groups appear below it: people with two A copies, people with one of each, and people with two a copies. At $p = 0.5$ the one-of-each group is the largest, holding half the population. That is not because mixing is somehow favoured. It is simple counting: there are two ways to end up with one of each (an A from your mother and an a from your father, or the reverse), but only one way to get two of the same letter.
 
-Push p toward 0 or 1 and heterozygotes vanish along with one of the homozygote classes — a nearly fixed allele leaves almost no one carrying the other version. This is a snapshot with no selection, mutation, drift or migration at work: any real population’s genotype frequencies are compared against this baseline to detect whether evolution is happening.
+Push $p$ toward 0 or toward 1 and the one-of-each group shrinks away, along with one of the two-of-a-kind groups — when almost everyone carries the same letter, almost nobody is left carrying the other one. This snapshot assumes nothing is pushing evolution: no selection favouring one letter, no new mutations, no small-population luck, no newcomers moving in. Real biologists compare an actual population's numbers against this baseline; a mismatch is a signal that something is disturbing that calm picture.
 
 ## Formal
 

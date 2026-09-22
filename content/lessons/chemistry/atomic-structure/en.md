@@ -1,9 +1,9 @@
 ---
 title: 'Inside the atom: protons, neutrons, shells'
 summary: >-
-  An atom is a tiny charged nucleus of protons and neutrons surrounded by
-  electrons arranged in shells — and it is the outermost shell that decides how
-  an element reacts.
+  The number of protons, neutrons and electrons in an atom tells you which
+  element it is, whether it is a stable or radioactive isotope, and how
+  eagerly it will react with other atoms.
 parameters:
   Z: atomic number Z (protons)
   'N': neutrons N
@@ -13,11 +13,29 @@ variables:
   - 'mass number, $A = Z + N$'
 ---
 
+## Try it
+
+1. Drag «atomic number Z» upward. Watch the element symbol and name change one proton at a time.
+2. Now drag «neutrons N» on its own. The element stays the same, but you build a different isotope.
+3. Watch the electron shells fill and empty: whenever the outer shell exactly completes, you land on a noble gas.
+
+## Real-life examples
+
+1. **Hydrogen-1, the simplest atom.** One proton, no neutrons: the lightest atom there is, and the fuel that powers the Sun.
+2. **Carbon-12, in your body.** Six protons and six neutrons: the carbon atom that forms the backbone of every sugar, fat and protein you are made of.
+3. **Calcium-40, in your bones.** Twenty protons and twenty neutrons: the most common form of calcium, the mineral that gives bone and teeth their strength.
+
+## Test yourself
+
+1. Build an atom whose mass number is 24.
+2. Build an isotope with exactly as many neutrons as protons.
+3. Build an isotope with 8 more neutrons than protons.
+
 ## Intuition
 
-Drag horizontally to change Z and watch the nucleus label update, the element symbol and name change, and a whole new electron fill up — the shells drain and refill in the fixed order 2, then 8, then 8, then 2. That refilling pattern is the periodic table in miniature: every time a shell just filled, you land on a noble gas (He, Ne, Ar).
+Look at the diagram: a small circle in the middle is the nucleus, and rings of dots around it are the electron shells. Start at carbon, with 6 protons and 6 neutrons — that's the atom in pencil lead and in your own skin. Drag the slider labelled «atomic number Z» up by one, to 7, and the nucleus label changes, the element symbol flips to nitrogen, and one more dot appears in the outer ring.
 
-The dots in the outermost, half-drawn shell are highlighted — those are the valence electrons. They are the only ones close enough to the surface to be shared or traded with another atom, which is why elements with the same number of valence electrons (same column of the periodic table) behave alike even though their nuclei are completely different.
+Now drag «neutrons N» on its own, leaving Z untouched: the element name stays nitrogen, because neutrons don't change which element you have, only how heavy that atom is. Watch the outer ring instead: every time it fills up exactly, at 2, 10 or 18 dots, the diagram lands on a noble gas — helium, neon, argon — the calmest, least reactive atoms there are.
 
 ## Formal
 

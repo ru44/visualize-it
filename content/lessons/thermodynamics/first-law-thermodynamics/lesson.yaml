@@ -60,3 +60,22 @@ derivation:
   - W = \int_{V_1}^{V_2} \frac{nRT}{V}\,dV = nRT\big[\ln V\big]_{V_1}^{V_2}
   - W = nRT\ln\!\frac{V_2}{V_1}, \qquad \Delta U = 0 \;\Rightarrow\; Q = W
 charts: []
+primary: b
+presets:
+  - n: 1
+    T: 500
+    a: 1
+    b: 5
+  - n: 0.5
+    T: 300
+    a: 2
+    b: 8
+  - n: 2
+    T: 250
+    a: 3
+    b: 9
+challenges:
+  - check: n*8.314*T*log(b/a)
+    target: 2000
+  - check: abs(b - 2*a) < 0.05 and n*8.314*T*log(b/a) > 1500
+  - check: n*8.314*T*log(b/a) <= -1500

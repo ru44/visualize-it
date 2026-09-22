@@ -1,0 +1,60 @@
+id: photoelectric-effect
+subject: quantum
+difficulty: high-school
+equation: hf = \phi + E_k
+concepts:
+  - photoelectric-effect
+  - work-function
+  - threshold-frequency
+prerequisites:
+  - photons-and-plancks-constant
+related:
+  - hydrogen-spectrum
+visualization:
+  type: photoelectric
+  options: {}
+parameters:
+  f:
+    min: 3
+    max: 15
+    step: 0.1
+    value: 5
+    unit: "×10¹⁴ Hz"
+  phi:
+    min: 1
+    max: 5
+    step: 0.05
+    value: 2.3
+    unit: eV
+  I:
+    min: 1
+    max: 10
+    step: 1
+    value: 5
+variables:
+  - h
+  - f
+  - \phi
+  - E_k
+derivation:
+  - hf \geq \phi
+  - E_k = hf - \phi
+  - E_k\ \text{does not depend on}\ I
+charts: []
+primary: f
+presets:
+  - f: 6.0
+    phi: 2.3
+    I: 5
+  - f: 12
+    phi: 4.3
+    I: 5
+  - f: 5
+    phi: 1.9
+    I: 2
+challenges:
+  - check: abs(0.4136*f - phi) < 0.1
+  - check: I >= 8 and 0.4136*f < phi
+  - check: 0.4136*f - phi
+    target: 2
+    tol: 0.1

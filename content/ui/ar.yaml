@@ -21,7 +21,7 @@ home.step3.t: 3 · اقرأ السبب
 home.step3.d: شرح قصير بلغة بسيطة، والرياضيات الرسمية موجودة لمن يريدها فقط.
 home.subjects: اختر مادة
 home.subjects.d: كل مادة مسار قصير من الدروس، يبدأ بأسهل فكرة ثم يتدرّج.
-home.lessons: '{n} درسًا'
+home.lessons: '{n|zero=لا دروس|one=درس واحد|two=درسان|few=# دروس|many=# درسًا|other=# درس}'
 home.demo: حرّك المؤشر، فيبيّن الخط البرتقالي مدى انحدار المنحنى.
 home.slope: الانحدار
 explore.placeholder: اكتب معادلة، مثل 2x + 5 = 17
@@ -208,8 +208,8 @@ subject.statistics: الإحصاء والاحتمالات
 subjectd.statistics: العدّ والصدفة والتوزيعات، وما يمكن أن تخبرك به البيانات.
 count.orderedHint: الترتيب هنا مهم، فـ(1,2) و(2,1) ترتيبان مختلفان. اضغط لتغيير k.
 count.unorderedHint: الترتيب هنا غير مهم، فـ{1,2} و{2,1} هما الاختيار نفسه. اضغط لتغيير k.
-count.arrangements: '{n} ترتيبًا'
-count.selections: '{n} اختيارًا'
+count.arrangements: '{n|one=ترتيب واحد|two=ترتيبان|few=# ترتيبات|many=# ترتيبًا|other=# ترتيب}'
+count.selections: '{n|one=اختيار واحد|two=اختياران|few=# اختيارات|many=# اختيارًا|other=# اختيار}'
 count.first: نعرض أول {n}
 dist.mean: المتوسط μ
 dist.sd: الانحراف المعياري σ
@@ -287,7 +287,7 @@ progress.markDone: سجّل الإنجاز
 progress.undo: منجَز ✓ · تراجع
 progress.of: أنجزت {done} من {total}
 progress.all: أنجزت كل دروس هذه المادة.
-progress.overall: أنجزت {done} من {total} درسًا
+progress.overall: 'أنجزت {done} من {total|one=درس واحد|two=درسين|few=# دروس|many=# درسًا|other=# درس}'
 progress.reset: أعد ضبط التقدّم
 progress.saved: نحفظه في هذا المتصفح فقط.
 lesson.rigour: بدقة
@@ -424,5 +424,348 @@ guided.why: لماذا يحدث هذا؟
 guided.more: أخبرني أكثر
 guided.showMaths: أرِني الرياضيات
 guided.hideMaths: أخفِ الرياضيات
-guided.moreSliders: '{n} أشياء أخرى يمكن تغييرها'
+guided.moreSliders: '{n|one=شيء آخر يمكن تغييره|two=شيئان آخران يمكن تغييرهما|few=# أشياء أخرى يمكن تغييرها|other=# شيئًا آخر يمكن تغييره}'
 home.start2: 'ابدأ بدقيقتين: ما هو الميل؟'
+subject.ai: الذكاء الاصطناعي وتعلم الآلة
+subjectd.ai: كيف تتعلم الآلات من الأمثلة، وكيف تتوقع نماذج اللغة الكلمة التالية.
+fit.hintPoly: اضغط لإضافة نقطة تدريب، والخط الأخضر المتقطع هو القاعدة الحقيقية المخفية
+fit.degree: درجة كثيرة الحدود
+fit.trainErr: الخطأ على نقاط التدريب
+fit.testErr: الخطأ على نقاط جديدة
+fit.verdict: الحكم
+fit.under: أبسط من اللازم
+fit.over: حفظ النقاط عن ظهر قلب
+fit.good: يعمّم جيدًا
+fit.truth: القاعدة الحقيقية (مخفية)
+fit.model: ما تعلّمه النموذج
+fit.trainPts: نقاط التدريب
+nn.hint: اسحب على الخريطة لتحريك المدخل، والمنزلقات هي الأوزان
+nn.output: المخرج (احتمال A)
+nn.class: القرار
+nn.inputs: المدخلات
+nn.hidden: الطبقة المخفية
+nn.out: المخرج
+nn.map: 'ما تجيب به الشبكة لكل مدخل: برتقالي = A، أزرق = B'
+emb.hintVec: كل كلمة نقطة، والأسهم متجهات. ملك − رجل + امرأة تقع قرب…
+emb.hintAttn: 'اضغط كلمة: تكبر الكلمات الأخرى بقدر ما «تنتبه» إليها'
+emb.axis1: المحور 1 (المكانة ←)
+emb.axis2: المحور 2 (الجنس)
+emb.nearest: أقرب كلمة
+emb.cosine: التشابه (جيب التمام)
+emb.query: الانتباه من
+emb.king: ملك
+emb.queen: ملكة
+emb.man: رجل
+emb.woman: امرأة
+emb.boy: ولد
+emb.girl: بنت
+emb.prince: أمير
+emb.princess: أميرة
+emb.apple: تفاحة
+emb.banana: موزة
+emb.car: سيارة
+emb.bus: حافلة
+nlp.hint: 'نموذج لغوي في أصغر صورة: أي كلمة تميل إلى أن تتبع أي كلمة في هذا النص'
+nlp.corpusLabel: 'نص التدريب:'
+nlp.corpus: جلس القط على البساط. جلس الكلب على الخشبة. رأى القط الكلب. رأى الكلب القط وركض. ركض القط إلى البساط.
+nlp.words: عدد كلمات النص
+nlp.current: الكلمة الحالية
+nlp.temp: الحرارة
+nlp.top: الكلمة التالية الأرجح
+nlp.next: 'بعد «{w}» تابع النص بـ:'
+nlp.sample: ▶ اختر الكلمة التالية
+nlp.reset: ↻ ابدأ من جديد
+subject.numbers: العدّ والأعداد الكبيرة
+subjectd.numbers: القيمة المنزلية، قوى العشرة، كم هو كبير المليون حقًا، التضاعف والأعداد الأولية.
+subject.data: البيانات والبيانات الضخمة
+subjectd.data: 'من بايت واحد إلى الإنترنت كله: الجداول والاستعلامات والفهارس وكيف تُعالج البيانات الهائلة.'
+subject.quantum: فيزياء الكم
+subjectd.quantum: ضوء يأتي على شكل حزم، وجسيمات تتصرف كالموجات، ومعادلة شرودنغر.
+subject.relativity: الجاذبية والنسبية
+subjectd.relativity: السقوط، والزمكان المنحني، وساعات تدق بسرعات مختلفة، والثقوب السوداء، و E = mc².
+subject.cryptography: التشفير
+subjectd.cryptography: 'كيف تُحفظ الأسرار: الشيفرات والمفاتيح والتجزئة، والرياضيات التي تحمي كل رسالة.'
+subject.cosmos: الكون والجسيمات
+subjectd.cosmos: 'المادة المظلمة والطاقة المظلمة والكواركات والكوازارات: كيف نعرف أشياء لا نراها.'
+dots.sec: '{n|one=ثانية واحدة|two=ثانيتان|few=# ثوانٍ|many=# ثانية|other=# ثانية}'
+dots.min: '{n|one=دقيقة واحدة|two=دقيقتان|few=# دقائق|many=# دقيقة|other=# دقيقة}'
+dots.hour: '{n|one=ساعة واحدة|two=ساعتان|few=# ساعات|many=# ساعة|other=# ساعة}'
+dots.day: '{n|one=يوم واحد|two=يومان|few=# أيام|many=# يومًا|other=# يوم}'
+dots.year: '{n|one=سنة واحدة|two=سنتان|few=# سنوات|many=# سنة|other=# سنة}'
+dots.moon: أبعد من القمر
+dots.iss: أعلى من محطة الفضاء
+dots.everest: أعلى من إيفرست
+dots.building: أعلى من برج شاهق
+dots.person: أطول من إنسان
+dots.number: العدد
+dots.expanded: مفككًا إلى أجزاء
+dots.name: الاسم
+dots.counting: زمن عدّه، رقمًا كل ثانية
+dots.stack: على شكل رزمة أوراق
+dots.hint: كل مربع فيه 100 نقطة، والصورة كلها فيها 10,000
+dots.picture: كم نقطة
+dots.pictures: '{n|one=صورة واحدة مثل هذه|two=صورتان مثل هذه|few=# صور مثل هذه|many=# صورة مثل هذه|other=# صورة مثل هذه}'
+dots.col.th: الآلاف
+dots.col.h: المئات
+dots.col.te: العشرات
+dots.col.o: الآحاد
+dots.n.one: واحد
+dots.n.ten: عشرة
+dots.n.hundred: مئة
+dots.n.thousand: ألف
+dots.n.tenThousand: عشرة آلاف
+dots.n.hundredThousand: مئة ألف
+dots.n.million: مليون
+dots.n.tenMillion: عشرة ملايين
+dots.n.hundredMillion: مئة مليون
+dots.n.billion: مليار
+dots.n.tenBillion: عشرة مليارات
+dots.n.hundredBillion: مئة مليار
+dots.n.trillion: تريليون
+p10.zeros: '1 وبعده {n|zero=لا أصفار|one=صفر واحد|two=صفران|few=# أصفار|many=# صفرًا|other=# صفر}'
+p10.power: قوة العشرة
+p10.written: مكتوبًا بالكامل
+p10.nearest: أقرب مثال
+p10.times: مقارنة بالأصغر
+p10.stepsFrom: '{n|zero=لا خطوات|one=خطوة واحدة|two=خطوتان|few=# خطوات|many=# خطوة|other=# خطوة} من ×10 بعد {what}'
+p10.hint: 'اسحب على المسطرة: كل خطوة إلى اليمين أكبر بعشر مرات'
+p10.rule: كل علامة تعني ×10
+p10.size.proton: بروتون
+p10.size.atom: ذرة
+p10.size.dna: عرض الحمض النووي
+p10.size.bacterium: بكتيريا
+p10.size.hair: عرض شعرة
+p10.size.ant: نملة
+p10.size.child: طفل
+p10.size.field: ملعب كرة قدم
+p10.size.everest: جبل إيفرست
+p10.size.earth: الأرض
+p10.size.sun: الشمس
+p10.size.earthSun: من الأرض إلى الشمس
+p10.size.lightYear: سنة ضوئية
+p10.size.galaxy: مجرتنا
+p10.size.universe: الكون المرئي
+p10.bytes.letter: حرف واحد
+p10.bytes.message: رسالة نصية
+p10.bytes.page: صفحة نص
+p10.bytes.photo: صورة من الهاتف
+p10.bytes.song: أغنية
+p10.bytes.movie: فيلم عالي الدقة
+p10.bytes.phone: ذاكرة هاتف
+p10.bytes.laptop: قرص حاسوب محمول
+p10.bytes.petabyte: ألف قرص حاسوب
+p10.bytes.exabyte: مليون قرص حاسوب
+p10.bytes.worldData: ما ينتجه العالم من بيانات في سنة (تقريبًا)
+p10.numbers.thousand: ألف
+p10.numbers.million: مليون
+p10.numbers.billion: مليار
+p10.numbers.people: سكان الأرض
+p10.numbers.trillion: تريليون
+p10.numbers.sand: حبات الرمل على الأرض (تقدير تقريبي)
+p10.numbers.stars: النجوم في الكون المرئي (تقدير)
+p10.numbers.atoms: الذرات في الكون المرئي (تقدير)
+p10.numbers.googol: غوغول
+chess.square: المربع
+chess.onSquare: الحبات في هذا المربع
+chess.total: الحبات حتى الآن
+chess.weight: الوزن (25 ملغ للحبة)
+chess.harvests: سنوات من محصول الأرز العالمي
+chess.hint: 'اضغط مربعًا: كل مربع فيه ضعف حبات المربع الذي قبله'
+chess.note: المربع الأخير وحده فيه أرز أكثر مما زُرع على الإطلاق
+sieve.current: نشطب مضاعفات
+sieve.remaining: الأعداد غير المشطوبة
+sieve.status: الحالة
+sieve.done: وُجدت كل الأعداد الأولية
+sieve.next: 'التالي: مضاعفات {p}'
+sieve.hint: المربعات البرتقالية أعداد أولية، والمشطوبة مضاعفات
+sieve.used: الأعداد الأولية المستخدمة (اضغط أحدها)
+sieve.primes: الأعداد الأولية المتبقية في الشبكة
+qt.riyadh: الرياض
+qt.cairo: القاهرة
+qt.dubai: دبي
+qt.amman: عمّان
+qt.tea: شاي
+qt.coffee: قهوة
+qt.juice: عصير
+qt.amount: الكمية
+qt.city: المدينة
+qt.product: المنتج
+qt.scanned: الصفوف المفحوصة
+qt.returned: الصفوف الناتجة
+qt.rowStore: التخزين بالصفوف يقرأ
+qt.colStore: التخزين بالأعمدة يقرأ
+qt.saved: بيانات أقل تُقرأ
+qt.atBillion: مع مليار صف (8 بايت لكل قيمة)
+qt.filterHint: الصفوف البرتقالية مطابقة
+search.linear: الفحص واحدًا واحدًا
+search.binary: التنصيف في كل مرة
+search.hint: اضغط المربع الذي تبحث عنه، وكل صف ينصّف البحث
+search.sorted: 64 قيمة مرتبة
+search.found: 'وُجد في {n|one=خطوة واحدة|two=خطوتين|few=# خطوات|many=# خطوة|other=# خطوة}'
+mr.doc1: القط جلس
+mr.doc2: الكلب ركض
+mr.doc3: القط ركض
+mr.doc4: كلب جلس
+mr.stage: المرحلة
+mr.machines: الأجهزة
+mr.words: الكلمات
+mr.unique: الكلمات المختلفة
+mr.s0: التقسيم
+mr.s1: التعيين
+mr.s2: الخلط
+mr.s3: التجميع
+mr.machine: جهاز
+photo.wavelength: الطول الموجي
+photo.uv: فوق بنفسجي
+photo.ir: تحت أحمر
+photo.visible: مرئي
+photo.energy: طاقة الفوتون الواحد
+photo.work: الطاقة اللازمة لتحرير إلكترون
+photo.ke: الطاقة المتبقية للإلكترون
+photo.none: لا إلكترونات
+photo.hint: كل تموّج فوتون واحد، والنقاط الزرقاء إلكترونات خرجت من المعدن
+photo.lamp: مصباح
+photo.metal: معدن
+photo.nothing: 'الفوتونات ضعيفة: لا إلكترونات مهما زاد السطوع'
+photo.onePhoton: طاقة الفوتون الواحد
+slit.count: الجسيمات حتى الآن
+slit.spacing: المسافة بين الخطوط
+slit.detector: كاشف الشق
+slit.on: يعمل
+slit.off: متوقف
+slit.hint: الجسيمات تُرسل واحدًا تلو الآخر، راقب الشاشة تمتلئ
+slit.source: المصدر
+slit.watching: نراقب الشقين
+slit.screen: الشاشة
+wave.energy: الطاقة
+wave.nodes: أماكن لا يوجد فيها أبدًا
+wave.barrier: ارتفاع الجدار
+wave.width: عرض الجدار
+wave.through: ينفذ عبره
+wave.hintBox: جسيم محبوس بين جدارين لا يسمح له إلا بموجات معينة
+wave.where: أين يُرجّح وجوده
+wave.levels: الطاقات المسموحة
+wave.hintTunnel: موجة تصطدم بجدار لا يُفترض أن تتسلقه
+wave.wall: جدار
+wave.incoming: الموجة القادمة
+wave.escaped: 'نفذ:'
+wave.hintPacket: ضيّق موضع الجسيم فيتسع مدى سرعته
+wave.position: أين هو
+wave.momentum: كم سرعته
+levels.jump: القفزة
+levels.energy: طاقة الفوتون
+levels.wavelength: الطول الموجي
+levels.series: السلسلة
+levels.pickLower: اختر مستوى نهائيًا أدنى
+levels.hint: لا يقف الإلكترون إلا على هذه المستويات، وسقوطه يطلق فوتونًا واحدًا
+levels.spectrum: ألوان الهيدروجين المرئية
+levels.lyman: لايمان (فوق بنفسجي)
+levels.balmer: بالمر (مرئي)
+levels.paschen: باشن (تحت أحمر)
+levels.brackett: براكت (تحت أحمر)
+levels.pfund: فوند (تحت أحمر)
+levels.humphreys: همفريز (تحت أحمر)
+qubit.measured: 'النتائج حتى الآن (|0⟩ : |1⟩)'
+qubit.observed: نسبة |0⟩
+qubit.hint: السهم هو الحالة، والنظر يعطي جوابًا واحدًا فقط
+qubit.look: افتح الصندوق
+qubit.many: 'افتح {n|one=صندوقًا واحدًا|two=صندوقين|few=# صناديق|many=# صندوقًا|other=# صندوق}'
+qubit.results: ما رأيناه
+fall.ball: كرة ثقيلة
+fall.feather: ريشة
+fall.difference: تتأخر الريشة بمقدار
+fall.air: الهواء
+fall.withAir: مع الهواء
+fall.vacuum: بلا هواء (فراغ)
+fall.hint: يُسقطان في اللحظة نفسها
+xor.message: الرسالة
+xor.key: المفتاح
+xor.cipher: السر
+xor.back: بعد فك التشفير
+xor.hint: '1 ⊕ 1 = 0 و 0 ⊕ 1 = 1: المفتاح يقلب بتات الرسالة ثم يعيدها'
+cipher.keyword: الكلمة المفتاحية
+freq.guess: تخمينك للمفتاح
+freq.match: التطابق مع الإنجليزية
+freq.letters: الحروف المعدودة
+freq.hint: حرّك التخمين حتى تجلس الأعمدة البرتقالية على العلامات الزرقاء
+freq.secret: حروف النص السري
+freq.english: الإنجليزية العادية
+hash.user1: 'المستخدم 1: كلمة المرور + الملح'
+hash.original: الأصل
+hash.user2: 'المستخدم 2: كلمة المرور + الملح'
+hash.changed: تغيّر حرف واحد
+hash.flipped: البتات التي تغيّرت
+hash.hintSalt: اختار مستخدمان كلمة المرور نفسها، والملح يجعل ما يُخزن لهما مختلفًا تمامًا
+hash.hint: غيّر حرفًا واحدًا فينقلب نحو نصف البتات الـ 256
+hash.unavailable: لا يستطيع هذا المتصفح حساب SHA-256 هنا
+spn.rounds: الجولات
+spn.different: البتات المختلفة
+spn.hint: مدخلان يختلفان في بت واحد، يُشفّران جنبًا إلى جنب
+spn.input: المدخل
+spn.after: بعد الجولة {r}
+spn.bits: بتات مختلفة
+spn.aes: يكرر AES الخطوات الثلاث نفسها على 128 بت من 10 إلى 14 مرة، مع صندوق استبدال أكبر
+ec.off: ليس على المنحنى هنا
+ec.warning: تنبيه
+ec.singular: للمنحنى نقطة حادة
+ec.hint: 'ارسم خطًا عبر P و Q، وجد النقطة الثالثة، واقلبها: هذه هي P + Q'
+rot.speedVisible: السرعة عند {r} kpc من المادة المرئية
+rot.speedModel: السرعة مع الهالة المظلمة
+rot.miss: البعد عن القياسات
+rot.darkShare: حصة الكتلة غير المرئية
+rot.hint: أضف كتلة غير مرئية حتى يمر المنحنى بالنقاط المقيسة السوداء
+rot.distance: البعد عن المركز (kpc)
+rot.speed: سرعة الدوران (km/s)
+rot.measured: مقيس
+rot.visibleOnly: المادة المرئية وحدها
+rot.withDark: مع المادة المظلمة
+lens.radius: نصف قطر أينشتاين
+lens.offset: إزاحة المجرة
+lens.magnification: زيادة السطوع
+lens.shape: ما نراه
+lens.ring: حلقة كاملة
+lens.arcs: أقواس لامعة
+lens.shifted: صورة مزاحة وممطوطة
+lens.hint: مجرة خلف كتلة ثقيلة كما تُرى من الأرض
+exp.scale: حجم الكون (اليوم = 1)
+exp.time: الزمن منذ الانفجار العظيم
+exp.billionYears: مليار سنة
+exp.state: التوسع
+exp.speedingUp: يتسارع
+exp.slowingDown: يتباطأ
+exp.hint: تتباعد المجرات لأن الفضاء بينها يتمدد
+exp.us: نحن
+exp.timeAxis: الزمن ←
+exp.sizeAxis: الحجم
+exp.withoutDE: بلا طاقة مظلمة
+quark.recipe: الوصفة
+quark.charge: الشحنة الكلية
+quark.particle: صنعت
+quark.massShare: الكتلة الآتية من الكواركات نفسها
+quark.distance: المسافة بعد السحب
+quark.energy: الطاقة في الوتر
+quark.result: النتيجة
+quark.twoParticles: انقطع إلى جسيمين
+quark.stillOne: ما زال جسيمًا واحدًا
+quark.hint: اختر ثلاثة كواركات وانظر أي جسيم بنيت
+quark.slot: الكوارك {n}
+quark.hintPull: اسحب كواركًا بعيدًا عن شريكه
+quark.meson: جسيم جديد
+quark.snap: انقطع الوتر وظهرت كواركات جديدة
+quark.pairCost: تكفي لصنع كواركات جديدة
+quark.proton: بروتون
+quark.neutron: نيوترون
+quark.deltaPP: Δ⁺⁺ (دلتا)
+quark.deltaM: Δ⁻ (دلتا)
+quark.lambda: Λ⁰ (لامدا)
+quark.sigmaP: Σ⁺ (سيغما)
+quark.sigmaM: Σ⁻ (سيغما)
+quark.xi0: Ξ⁰ (كساي)
+quark.xiM: Ξ⁻ (كساي)
+quark.omegaM: Ω⁻ (أوميغا)
+quark.unknown: ليس جسيمًا معروفًا
+real.title: جرّب مثالًا من الحياة
+test.title: اختبر نفسك
+test.lead: حرّك المنزلقات حتى يصبح كل سؤال أخضر.
+test.solved: حُلّ {n} من {total}
+test.correct: صحيح!

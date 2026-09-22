@@ -54,3 +54,19 @@ derivation:
   - \left(x + \frac{b}{2a}\right)^2 = \frac{b^2 - 4ac}{4a^2}
   - x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 charts: []
+primary: x
+presets:
+  - a: -1
+    b: 4
+    c: 0
+  - a: 1
+    b: 0
+    c: 5
+  - a: 1
+    b: -6
+    c: 9
+challenges:
+  - check: abs(a*25 + b*5 + c) < 0.3 and abs(a) > 0.3
+  - check: b^2 - 4*a*c
+    target: 0
+  - check: a < -0.05 and b^2 - 4*a*c < -0.5

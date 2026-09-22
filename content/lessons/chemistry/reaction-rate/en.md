@@ -1,9 +1,9 @@
 ---
 title: Reaction rate and the Arrhenius equation
 summary: >-
-  For a first-order reaction, concentration decays exponentially with a rate
-  constant $k$ that is itself exponentially sensitive to temperature — which is
-  why a small temperature rise can dramatically speed a reaction up.
+  A small rise in temperature, just a few degrees, can make food spoil or a
+  chemical reaction run dramatically faster — this lesson shows why heat has
+  such an outsized effect on speed.
 parameters:
   A0: 'initial concentration [A]₀'
   Af: pre-exponential factor Aƒ
@@ -25,11 +25,29 @@ charts:
       - k = Af·exp(−Ea/RT)
 ---
 
+## Try it
+
+1. Drag the time point «t» along the curve. Watch the tangent line show the instantaneous rate, steepest at the start.
+2. Raise «temperature T». The whole curve collapses toward zero much faster.
+3. Raise «activation energy Ea» instead. The reaction slows down even at the same temperature.
+
+## Real-life examples
+
+1. **Food spoiling on the counter.** At room temperature (about 20°C, 293 K) the spoilage reaction runs at a noticeable pace.
+2. **The same food in the fridge.** Cooling to about 4°C (277 K) slows the rate constant enough to keep food fresh for days longer.
+3. **A pot kept at a gentle simmer.** Heating to nearly 100°C (370 K) speeds the same kind of reaction up dramatically — the basis of cooking.
+
+## Test yourself
+
+1. Raise the temperature (or lower the activation energy) until the rate constant exceeds 1 per second.
+2. With the pre-exponential factor at its default value, find an activation energy and temperature that give a rate constant of exactly 0.05 per second.
+3. Push the rate constant below one millionth per second — a reaction that has essentially stopped.
+
 ## Intuition
 
-Drag the time point x along the curve: the tangent line is the instantaneous rate, steep and fast right at the start when there is a lot of reactant, flattening out as [A] is used up — the rate is always proportional to how much is left, the same feedback pattern as radioactive decay.
+Picture a pot of hot soup left on the counter: it cools quickly at first, then more and more slowly as it nears room temperature — the same shape a reacting chemical follows. On screen, drag the time point «t» along the curve: the tangent line shows the instantaneous rate, steep at the start when a lot of reactant is present, flattening as it gets used up.
 
-Now drag temperature T upward instead. The whole curve collapses toward zero much faster, even though T only moved a little — because T sits inside a nested exponential in the Arrhenius equation, a modest temperature rise multiplies k, and hence the rate, by a large factor. That extreme sensitivity is why a 10°C rise can roughly double many everyday reaction rates.
+Now drag «temperature T» upward instead. The whole curve collapses toward zero much faster, even though T only moved a little, because T sits inside a nested exponential in the Arrhenius equation. A modest temperature rise multiplies the rate constant k by a large factor — which is why a 10°C rise can roughly double many everyday reaction rates.
 
 ## Formal
 

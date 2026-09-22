@@ -2,8 +2,8 @@
 title: Sampling and aliasing
 summary: >-
   A continuous signal can be rebuilt perfectly from its samples only if you
-  sample fast enough; sample too slowly and a fake, lower frequency appears
-  in its place.
+  sample fast enough — sample too slowly and a fake, lower frequency
+  appears in its place.
 parameters:
   f: f — signal frequency
   fs: f_s — sampling rate
@@ -13,11 +13,29 @@ variables:
   - T_s — the sampling period, the time gap between one sample and the next
 ---
 
+## Try it
+
+1. Watch the dots. They mark where the signal is actually measured, and the smooth curve behind them is what gets reconstructed from those dots alone.
+2. Drag $f_s$ down toward twice $f$. The dots grow sparse and the reconstruction starts to struggle.
+3. Push $f_s$ below that line. The reconstructed curve locks onto a slower, fake wave that was never really there — aliasing.
+
+## Real-life examples
+
+1. **Recording a musical note safely.** Sampling a 5 Hz-equivalent tone at a 40 Hz rate — comfortably more than twice the signal frequency — reconstructs the wave cleanly, the same safety margin CDs use by sampling well above twice the range of human hearing.
+2. **The wagon-wheel effect on camera.** A wheel's spin (here, f = 10) sampled by a camera at only fs = 12 frames a second falls well short of the Nyquist rate, so the wheel appears to crawl or spin backward on screen.
+3. **A sensor sampled right at the edge.** A signal at f = 8 sampled at fs = 17, just above the strict fs > 2f = 16 minimum, works in theory but leaves little margin — real systems sample well above this edge for safety.
+
+## Test yourself
+
+1. Find $f$ and $f_s$ where $f_s$ is at least twice $f$, but no more than 10% above that minimum — right at the edge of what the sampling rule requires.
+2. Create clear aliasing: find $f$ and $f_s$ where $f_s$ is less than 1.5 times $f$.
+3. Find $f$ and $f_s$ where $f_s$ sits just below twice $f$ — so aliasing has only just begun.
+
 ## Intuition
 
-Dots mark where the signal is actually measured, and the smooth curve behind them is what gets reconstructed from those dots alone. Drag f_s down toward twice f and the dots grow sparse; push it below that line and the reconstructed curve locks onto a slower wave that was never really there.
+In old western films, a stagecoach wheel sometimes appears to spin slowly backward even though it is really turning forward fast — the camera only captures a fixed number of pictures each second, and that is not often enough to keep up with the wheel. The dots on screen mark exactly where a signal is measured, taken at a rate of $f_s$ samples per second; the smooth curve behind them is everything that gets rebuilt from those dots alone.
 
-That fake slow wave is the same trick behind the wagon-wheel effect in old films: a camera "samples" a spinning wheel a fixed number of times per second, and if the wheel turns close to a whole number of times between frames, it looks like it is barely moving or even spinning backward.
+Drag $f_s$ down toward twice $f$, the signal's own frequency, and the dots grow sparse; push $f_s$ below that line and the reconstructed curve locks onto a slower wave that was never really there — the same illusion that makes the film wheel look like it is spinning backward.
 
 ## Formal
 

@@ -36,3 +36,19 @@ derivation:
   - dp = -\rho v\, dv
   - p_1 + \tfrac12\rho v_1^2 = p_2 + \tfrac12\rho v_2^2
 charts: []
+primary: ratio
+presets:
+- v1: 5
+  ratio: 0.3
+- v1: 10
+  ratio: 0.5
+- v1: 25
+  ratio: 0.25
+challenges:
+- check: 'v1/ratio'
+  target: 20
+  tol: 2
+- check: '0.6125*v1^2*(1/ratio^2-1)'
+  target: 500
+  tol: 50
+- check: 'v1/ratio < 15 and 0.6125*v1^2*(1/ratio^2-1) > 100'

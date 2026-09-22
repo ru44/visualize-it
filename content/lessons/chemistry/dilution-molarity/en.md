@@ -1,9 +1,9 @@
 ---
 title: Molarity and dilution
 summary: >-
-  Diluting a solution never changes how many moles of solute are present — only
-  the volume they are spread through, so concentration and volume trade off
-  exactly.
+  Adding water to a concentrated drink, cleaning product or medicine spreads
+  the same amount of active ingredient through more liquid — this lesson
+  shows exactly how much weaker it gets.
 parameters:
   C1: starting concentration C₁
   V1: starting volume V₁
@@ -14,11 +14,29 @@ variables:
   - 'moles of solute, $n = C_1 V_1$, unchanged by adding solvent'
 ---
 
+## Try it
+
+1. Drag the final-volume point «x» along the curve. Watch the concentration fall as you add more solvent.
+2. Raise «starting concentration C₁». The whole curve shifts upward — more moles to start with.
+3. Raise «starting volume V₁» instead. Same effect: more moles means a higher concentration at any final volume.
+
+## Real-life examples
+
+1. **Diluting a concentrated acid for an experiment.** 0.5 L of 2 mol/L stock acid topped up to 5 L: the moles of acid stay the same, just spread through ten times the volume.
+2. **Making juice from concentrate.** 1 L of 4 mol/L concentrate topped up to 4 L of drinkable juice — a quarter as strong, four times the volume.
+3. **Preparing an IV drip from concentrated saline.** Just 0.2 L of 3 mol/L stock diluted up to 2 L gives a safe, dilute solution for a patient.
+
+## Test yourself
+
+1. Make the final concentration exactly 0.4 mol/L.
+2. Spread the solute thin enough that the final concentration drops below 0.1 mol/L.
+3. Set the final volume to exactly twice the starting volume, and watch the concentration exactly halve.
+
 ## Intuition
 
-Drag the final-volume point x along the curve: as you add more solvent (larger V₂), the concentration C₂ traces a falling curve, never a straight line — doubling the volume exactly halves the concentration, tripling it exactly thirds the concentration. That shape, $y = k/x$, is the signature of “fixed quantity spread over a variable size”.
+Picture a small bottle of concentrated juice: 1 litre of it, at 2 mol/L of sugar, poured into a jug and topped up with water to 4 litres. The sugar itself didn't change, but it is now spread through four times the liquid. On the chart, drag the point marked «x» (final volume) to the right and watch the concentration curve fall — not in a straight line, but bending, because doubling the volume exactly halves the concentration.
 
-Raise C₁ or V₁ instead and the whole curve scales upward — you started with more moles of solute, so for any final volume the diluted concentration is higher. The moles you began with, $C_1V_1$, is the one number that survives dilution unchanged; everything else is just geometry.
+Raise «starting concentration C1» or «starting volume V1» instead, and the whole curve shifts upward: you began with more sugar, so at any final volume the drink is stronger. What never changes during dilution is the amount of sugar itself, C1 times V1 — everything else is just how much water you added.
 
 ## Formal
 

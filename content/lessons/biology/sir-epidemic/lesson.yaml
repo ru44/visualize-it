@@ -71,3 +71,23 @@ derivation:
   - \frac{dI}{dt} > 0 \iff \frac{S}{N} > \frac{\gamma}{\beta} = \frac{1}{R_0}
   - \text{herd immunity threshold} = 1 - \frac{1}{R_0}
 charts: []
+primary: beta
+presets:
+- N: 1000
+  I0: 5
+  beta: 0.13
+  gamma: 0.1
+- N: 1000
+  I0: 5
+  beta: 0.75
+  gamma: 0.05
+- N: 2000
+  I0: 10
+  beta: 0.1
+  gamma: 0.3
+challenges:
+- check: beta/gamma
+  target: 3
+- check: 1 - gamma/beta
+  target: 0.8
+- check: beta/gamma < 1 and I0 >= 20

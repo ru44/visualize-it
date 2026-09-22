@@ -49,3 +49,16 @@ derivation:
   - A = 2\pi f_1 x, \quad B = 2\pi f_2 x
   - = 2\cos\!\left(2\pi\frac{f_1-f_2}{2}x\right)\sin\!\left(2\pi\frac{f_1+f_2}{2}x\right)
 charts: []
+primary: f2
+presets:
+  - f1: 8
+    f2: 8.2
+  - f1: 6
+    f2: 6.8
+  - f1: 5
+    f2: 11
+challenges:
+  - check: abs(f1 - f2)
+    target: 1
+  - check: abs(f1 - f2) < 0.05
+  - check: abs(f1 - f2) >= 5

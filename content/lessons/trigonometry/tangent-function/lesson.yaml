@@ -37,3 +37,13 @@ derivation:
   - \cos x = 0 \;\Rightarrow\; x = \tfrac{\pi}{2} + n\pi
   - \tan(x+\pi) = \frac{\sin(x+\pi)}{\cos(x+\pi)} = \frac{-\sin x}{-\cos x} = \tan x
 charts: []
+primary: x
+presets:
+  - x: 0.1
+  - x: 1
+  - x: 1.5
+challenges:
+  - check: 'tan(x)'
+    target: 1
+  - check: 'x > 1.4 and x < 1.57 and tan(x) > 20'
+  - check: 'x < -1 and x > -1.57 and tan(x) < -10'

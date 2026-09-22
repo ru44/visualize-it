@@ -55,3 +55,24 @@ derivation:
   - \mathbf{v} = v_x(1, 0) + v_y(0, 1)
   - M\mathbf{v} = v_x(a, c) + v_y(b, d) = (a v_x + b v_y,\ c v_x + d v_y)
 charts: []
+primary: a
+presets:
+  - a: 2
+    b: 0
+    c: 0
+    d: 1
+  - a: 0
+    b: -1
+    c: 1
+    d: 0
+  - a: 1
+    b: 0.5
+    c: 0
+    d: 1
+challenges:
+  - check: a*d - b*c
+    target: -1
+  - check: sqrt(a^2 + c^2)
+    target: 3
+  - check: sqrt((a*vx + b*vy)^2 + (c*vx + d*vy)^2)
+    target: 10

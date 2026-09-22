@@ -1,8 +1,9 @@
 ---
 title: Matrices as transformations
 summary: >-
-  A matrix is a rule for moving every point in the plane at once. Drag its
-  columns and watch the whole grid move with them.
+  See a grid of numbers as a machine that moves every point on the plane at
+  once — the idea behind rotating icons, resizing photos, and animating 3-D
+  graphics.
 parameters:
   a: matrix row 1, column 1
   b: matrix row 1, column 2
@@ -17,11 +18,29 @@ variables:
   - bottom-right entry, where the second basis vector lands (its y-coordinate)
 ---
 
+## Try it
+
+1. Drag a, b, c and d one at a time and watch the grid stretch, tilt, or spin.
+2. Watch the orange arrow (vx, vy) move along with the grid — it always follows the same rule as every other point.
+3. Try a=0, b=-1, c=1, d=0 and see the whole grid spin exactly a quarter turn.
+
+## Real-life examples
+
+1. **Stretching a photo.** Doubling an image's width while keeping its height the same (a=2, b=0, c=0, d=1) stretches every point sideways, leaving vertical lines vertical.
+2. **Rotating an icon.** Spinning an icon a quarter turn (a=0, b=-1, c=1, d=0) sends the point (1,0) straight up and (0,1) to the left.
+3. **Slanting text into italics.** A shear (a=1, b=0.5, c=0, d=1) tilts every point sideways by an amount that grows with height, turning upright letters into italics.
+
+## Test yourself
+
+1. Make the transformation's determinant exactly -1: it should flip the plane like a mirror without changing any area.
+2. Make the first basis arrow — where (1,0) lands — end up exactly 3 units from the center.
+3. Find a vector and a matrix so that the vector lands exactly 10 units from the center after the transformation.
+
 ## Intuition
 
-Forget the grid of numbers for a moment: a matrix is a machine that moves every point of the plane somewhere else, all at once. The background grid shows this directly, its lines stay straight and evenly spaced, but they stretch, tilt or flip as you drag $a,b,c,d$.
+Rotate a phone icon a quarter turn when you tilt your screen, and every pixel of that icon moves to a new spot at once, all by the same rule. That rule is a matrix, and the grid you see here shows it acting on the whole plane: its lines stay straight and evenly spaced, but they stretch, tilt, or spin as you drag a, b, c and d.
 
-Everything the matrix does is decided by two arrows: where the point $(1,0)$ lands and where $(0,1)$ lands. Those two landing spots are exactly the matrix's columns, $(a,c)$ and $(b,d)$. Drag either column and you are redefining the whole transformation.
+Everything the matrix does is decided by just two arrows: where the point (1, 0) lands, and where the point (0, 1) lands. Those two landing spots are exactly the matrix's columns — drag column a, c and you move the first arrow; drag column b, d and you move the second. Every other point in the plane, including the orange vector defined by vx and vy, moves by the same combination of those two arrows.
 
 ## Formal
 

@@ -1,8 +1,9 @@
 ---
 title: Ideal gas law
 summary: >-
-  Pressure, volume, amount and temperature of a gas are locked together by one
-  constant, $R$.
+  Squeeze a gas into a smaller space, heat it up, or pump more of it in, and
+  its pressure rises — this lesson shows exactly how much, whether you're
+  inflating a tyre or designing an engine.
 parameters:
   'n': amount n
   T: temperature T
@@ -27,11 +28,23 @@ charts:
 2. Raise «temperature T». The particles fly faster and the pressure rises again, even with the same space.
 3. Raise «amount n». More particles, more hits, more pressure. That is the whole law.
 
+## Real-life examples
+
+1. **A party balloon filled with helium.** About 0.5 mol of gas at room temperature (300 K) fills roughly 12 L.
+2. **A car tyre on a hot day.** About 2 mol of air heated to 320 K, squeezed into the tyre's fixed 10 L volume, pushes the pressure noticeably higher.
+3. **A scuba tank, heavily compressed.** About 5 mol of air squeezed into just 8 L at room temperature (300 K) — far more gas than the same space would hold at normal pressure.
+
+## Test yourself
+
+1. Push the pressure up to about 250 kPa.
+2. Bring the pressure down below 50 kPa.
+3. Get the pressure to about 150 kPa.
+
 ## Intuition
 
-Drag the piston left or right to change $V$. Squeeze it in and the same particles are packed into a smaller box, so they hit the walls more often — watch the wall-hits-per-second readout climb — and the pressure gauge along the top rises. Slide the slider for $T$ up instead and every particle speeds up, so even at the same volume they slam into the walls harder and more often; slide $n$ up and there are simply more particles to do the hitting.
+Picture a bicycle pump: push the handle down and the same air gets squeezed into less space inside the cylinder. On screen, drag the piston left to shrink the volume V, and watch the same gas particles hit the walls more often — the wall-hits-per-second readout climbs, and the pressure gauge along the top rises with it.
 
-The pressure gauge is really just a running tally of those collisions. Nothing about the gas changes discontinuously — the particle count, their speed, and the box size all adjust smoothly as you move a slider, and the gauge tracks the combined effect in real time. That direct link between "more/faster collisions" and "higher pressure" is the whole content of the ideal gas law.
+Now drag the slider for temperature T up instead: every particle speeds up, so even in the same volume they slam into the walls harder and more often. Drag the slider for amount n up, and there are simply more particles doing the hitting. The pressure gauge is really just a running tally of those collisions — more of them, or harder ones, means a higher reading.
 
 ## Formal
 

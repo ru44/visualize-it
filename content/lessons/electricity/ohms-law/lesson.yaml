@@ -44,3 +44,16 @@ charts:
   series:
   - x/R
 primary: V
+presets:
+  - V: 3
+    R: 15
+  - V: 12
+    R: 4
+  - V: 5
+    R: 25
+challenges:
+  - check: V/R
+    target: 2
+  - check: V^2/R
+    target: 18
+  - check: V/R < 0.5 and R >= 40

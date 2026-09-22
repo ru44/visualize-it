@@ -1,9 +1,9 @@
 ---
 title: Entropy and the limits of heat engines
 summary: >-
-  No engine can turn all its heat into work — the second law caps every heat
-  engine’s efficiency below 100%, and that cap depends only on the hot and cold
-  reservoir temperatures.
+  A car engine turns only about a third of its fuel's heat into motion; the
+  rest is wasted as exhaust heat no matter how well the engine is built, and
+  this lesson shows the hard limit no engine can beat.
 parameters:
   Tc: cold reservoir Tc
   x: hot reservoir Th
@@ -23,11 +23,29 @@ charts:
       - Tc = 350 K
 ---
 
+## Try it
+
+1. Drag the hot-reservoir point x to the right. Watch the efficiency climb but bend under the line at 1.
+2. Raise the slider "cold reservoir Tc". Watch the whole curve drop.
+3. Read the efficiency value where the curve sits — no engine between these two temperatures can beat it.
+
+## Real-life examples
+
+1. **A coal power plant.** Steam near 800 K driving turbines that reject heat to river water around 300 K sets a Carnot ceiling of about 63% — real plants fall well short of even that.
+2. **A car engine.** Combustion gases near 650 K, exhausting into air around 320 K, cap the theoretical efficiency at about 51% — real engines manage only a fraction of that due to friction and losses.
+3. **A low-temperature geothermal plant.** With a modest source at 450 K and a cold side at 290 K, the Carnot ceiling drops to about 36%, which is why geothermal plants are less efficient than coal or gas plants.
+
+## Test yourself
+
+1. Get the Carnot efficiency to exactly 50%.
+2. Push the efficiency above 60% while keeping a realistic cold reservoir (Tc at least 280 K).
+3. Using the lowest possible cold-reservoir temperature (250 K), reach an efficiency of at least 55%.
+
 ## Intuition
 
-Drag the hot-reservoir point x to the right: efficiency climbs but visibly bends over, always staying under the horizontal line at 1 — no matter how hot you make the source, some of the heat is thermodynamically required to flow to the cold side unused. The tangent line’s shrinking slope shows the diminishing return of pushing Th higher and higher.
+A typical car engine converts only around 30% of the heat released by burning fuel into motion — the rest escapes as hot exhaust and warm metal, and no amount of clever engineering can push a heat engine to 100%, even in principle. The picture on screen shows this limit directly: drag the hot-reservoir point, labelled $x$ in kelvin (try 800, like hot steam in a power plant), and watch the efficiency curve climb but visibly bend over, always staying under the horizontal line at 1.
 
-Raise Tc instead and the whole curve drops — a smaller temperature gap between hot and cold means less available work per unit of heat. Engines are fundamentally about that gap, not about either temperature alone; a “hot” engine exhausting into an equally hot environment does no better than a cool one exhausting into the cold.
+No matter how hot you make the source, some heat is required by the laws of physics to flow, unused, to the cold side. Raise the slider "cold reservoir Tc" instead — say from 300 to 340 kelvin, close to a river used for cooling — and the whole curve drops: a smaller gap between hot and cold means less available work for every unit of heat burned. Engines are fundamentally about that gap, not about either temperature alone.
 
 ## Formal
 

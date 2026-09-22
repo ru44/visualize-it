@@ -29,3 +29,15 @@ derivation:
   - "\\text{period} = \\text{number of occupied electron shells}"
   - "\\text{group} \\to \\text{valence-electron count (main-group elements)}"
 charts: []
+primary: Z
+presets:
+  - Z: 11
+  - Z: 10
+  - Z: 26
+challenges:
+  - check: Z
+    target: 18
+  - check: Z
+    target: 35
+  - check: Z
+    target: 20

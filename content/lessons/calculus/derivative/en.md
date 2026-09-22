@@ -1,8 +1,9 @@
 ---
 title: Derivative
 summary: >-
-  The derivative is the slope of a curve at a single point — the instantaneous
-  rate of change.
+  A car's speedometer needs to know how fast you're going right now, not your
+  average for the whole trip — that instant reading is what a derivative
+  gives you.
 parameters:
   x: point x
 variables:
@@ -16,11 +17,23 @@ variables:
 2. Drag it to the right. The line tilts up and the slope number grows.
 3. Drag it to the left of the bottom. The slope turns negative: the curve is going downhill there.
 
+## Real-life examples
+
+1. **Standing at the bottom of a valley.** At the curve's lowest point (x = 0) the tangent is flat: slope 0, no climbing needed in either direction.
+2. **Partway up a steep climb.** At x = 3 the tangent tilts sharply upward: slope 6, a steep uphill stretch.
+3. **Descending the other side.** At x = -3 the tangent tilts down: slope -6, a steep downhill.
+
+## Test yourself
+
+1. Find the point where the slope is exactly 0.
+2. Find the point where the slope is exactly 6.
+3. Find the point where the slope is exactly -8.
+
 ## Intuition
 
-A curve has no single slope — its steepness changes as you move. The tangent line shows the slope at exactly one point: the direction the curve is heading right there.
+Imagine hiking up a hill whose path is drawn as the curve on screen. At the very bottom of the path (position 0) the ground is flat — no climbing at all. A bit further along (position 3) the path climbs steeply, gaining about 6 metres of height for every metre you walk forward. The path's steepness is different at every point, so there is no single number for "the slope" of the whole hill.
 
-Drag the point. The small dot on the dashed line records the tangent’s slope at each $x$. Collect all those slopes and you get a new function: the derivative. For $x^2$ it is the straight line $2x$ — negative where the curve falls, zero at the bottom, positive where it rises.
+Drag the point along the curve. The small dot on the dashed line beneath it copies down the orange tangent line's slope at exactly that spot — the steepness right there, nowhere else. Collect that reading at every point and you get a brand-new curve, called the derivative: negative while the path is heading downhill, zero exactly at the flat bottom, positive while it is climbing.
 
 ## Formal
 

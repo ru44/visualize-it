@@ -54,3 +54,22 @@ derivation:
   - f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-(x-\mu)^2/2\sigma^2}
   - P(\mu - \sigma \le X \le \mu + \sigma) = \Phi(1) - \Phi(-1) \approx 0.683
 charts: []
+primary: s
+presets:
+  - mu: 6
+    s: 1.5
+    a: 4.5
+    b: 7.5
+  - mu: 8
+    s: 0.5
+    a: 7.5
+    b: 8.5
+  - mu: 5
+    s: 3.5
+    a: 1.5
+    b: 8.5
+challenges:
+  - check: '0.5*(erf((b-mu)/(s*sqrt(2))) - erf((a-mu)/(s*sqrt(2))))'
+    target: 0.683
+  - check: 's < 1 and 0.5*(erf((b-mu)/(s*sqrt(2))) - erf((a-mu)/(s*sqrt(2)))) > 0.95'
+  - check: 'b - a < 1 and 0.5*(erf((b-mu)/(s*sqrt(2))) - erf((a-mu)/(s*sqrt(2)))) > 0.3'

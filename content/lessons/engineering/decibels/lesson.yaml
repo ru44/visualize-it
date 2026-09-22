@@ -39,3 +39,16 @@ charts:
   - domain: [0, 10]
     series:
       - 10*log10(2^x)
+primary: x
+presets:
+  - x: 2
+  - x: 1000
+  - x: 1000000
+challenges:
+  - check: 10*log10(x)
+    target: 45
+    tol: 1
+  - check: 10*log10(x)
+    target: 50
+    tol: 1
+  - check: 10*log10(x) > 55 and x < 500000

@@ -65,3 +65,25 @@ charts:
     marker: x
     series:
       - 0.5*rho*Cd*A*x^3/1000
+primary: x
+presets:
+- rho: 1.225
+  Cd: 0.9
+  A: 0.5
+  x: 8
+- rho: 1.225
+  Cd: 0.3
+  A: 2.2
+  x: 30
+- rho: 1.225
+  Cd: 1.0
+  A: 0.7
+  x: 50
+challenges:
+- check: '0.5*rho*x^2*Cd*A'
+  target: 300
+  tol: 30
+- check: '0.5*rho*x^3*Cd*A/1000'
+  target: 10
+  tol: 1
+- check: 'x >= 20 and Cd <= 0.2 and A <= 1 and 0.5*rho*x^2*Cd*A < 50'

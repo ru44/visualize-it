@@ -1,8 +1,9 @@
 ---
 title: Logistic growth and carrying capacity
 summary: >-
-  Growth that starts exponential but slows as it nears a ceiling $K$ traces an
-  S-shaped curve — fast in the middle, flat at both ends.
+  A new app that spreads quickly at first cannot keep doubling its users
+  forever — this idea predicts the S-shaped curve of growth that slows as it
+  nears the size of the whole market.
 parameters:
   K: carrying capacity K
   y0: starting amount y₀
@@ -14,11 +15,29 @@ variables:
   - intrinsic growth rate
 ---
 
+## Try it
+
+1. Drag the point through the early part of the curve, where y is small. The tangent grows steeply, almost like plain exponential growth.
+2. Keep dragging toward «carrying capacity K». The tangent flattens out even though y is at its largest.
+3. Compare the steepest point of the curve to K: it sits almost exactly halfway up, at K/2.
+
+## Real-life examples
+
+1. **An early-stage population, still in the exponential phase.** With K = 8, y0 = 0.5, k = 0.6 and x = 2, growth still looks almost unchecked.
+2. **Mid-growth, near the inflection point.** With the same K, y0 and k but x = 8, the population is climbing through its fastest-growing stretch, near K/2.
+3. **A slow-adoption product nearing market saturation.** With K = 5, y0 = 2, k = 0.3 and x = 18, adoption has almost filled the whole market.
+
+## Test yourself
+
+1. Reach the inflection point, where growth is fastest: make y equal K/2.
+2. Push the population above 95% of its carrying capacity K.
+3. Keep the population below 10% of K even after x has reached 5 or more.
+
 ## Intuition
 
-Drag the point through the early part of the curve, where $y$ is small compared to $K$: the tangent slope grows steeply, almost like plain exponential growth, because the braking term $(1-y/K)$ is still close to $1$ and barely holding anything back.
+Picture a new app with 50,000 people who might ever use it — call that ceiling «carrying capacity K». Drag the point through the early part of the curve, where the number of users is still small compared to that ceiling: the tangent grows steeply, almost like the app is doubling its users again and again with nothing slowing it down.
 
-Keep dragging toward $K$: the tangent flattens out even though $y$ is at its largest, because now $(1-y/K)$ is shrinking toward zero and throttling the growth rate — the population is running out of room, resources or capacity, and the curve gently levels off just short of the ceiling.
+Keep dragging toward «carrying capacity K»: the tangent flattens out even though the user count is at its largest, because the app is running out of new people to reach — everyone left to sign up is a shrinking slice of the population, and growth throttles itself even though nothing external changed.
 
 ## Formal
 

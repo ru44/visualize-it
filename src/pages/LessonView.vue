@@ -12,6 +12,8 @@ import ParamSlider from '../components/ParamSlider.vue'
 import ExplorerInput from '../components/ExplorerInput.vue'
 import Scene3D from '../components/Scene3D.vue'
 import VideoList from '../components/VideoList.vue'
+import RealLife from '../components/RealLife.vue'
+import Challenges from '../components/Challenges.vue'
 import { notation, displayTex } from '../lessons/notation'
 import { useSettings, levels } from '../stores/settings'
 import { useProgress } from '../stores/progress'
@@ -24,7 +26,7 @@ const primaryParam = computed(() => lesson.value?.primary ?? Object.keys(lesson.
 const revealed = ref(0)
 const showMaths = ref(false)
 watch(() => [props.id, query.value], () => ((revealed.value = 0), (showMaths.value = false)))
-const tryIt = computed(() => (lesson.value?.tryIt.length ? lesson.value.tryIt : lesson.value ? [lesson.value.explanation.intuition[0]] : []))
+const tryIt = computed(() => lesson.value?.tryIt ?? [])
 const doneSteps = reactive(new Set<number>())
 watch(() => props.id, () => doneSteps.clear())
 const has3d = computed(() => !!lesson.value?.visualization3d)
@@ -59,6 +61,10 @@ function reset() {
 }
 // Reset only when the lesson itself changes — not when its text is re-translated.
 watch(() => [props.id, query.value], reset, { immediate: true })
+
+function loadPreset(values: Record<string, number>) {
+  for (const [k, v] of Object.entries(values)) setParam(k, v)
+}
 
 function setParam(name: string, value: number) {
   const spec = base.value?.parameters[name]
@@ -107,6 +113,7 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
       <component :is="viz" v-else-if="viz" :params="params" :options="lesson.visualization.options" @set="setParam" />
       <div v-if="primaryParam && lesson.parameters[primaryParam]" class="border-t px-5 py-4" style="border-color: var(--line)">
         <ParamSlider :name="primaryParam" :spec="lesson.parameters[primaryParam]" :value="params[primaryParam]" @set="setParam" />
+        <RealLife v-if="lesson.presets.length" class="mt-4" :presets="lesson.presets" :lesson-id="id" @load="loadPreset" />
         <details v-if="Object.keys(lesson.parameters).length > 1" class="mt-3">
           <summary class="label flex items-center gap-1.5"><span class="chev">▸</span>{{ t('guided.moreSliders', { n: Object.keys(lesson.parameters).length - 1 }) }}</summary>
           <div class="mt-3 space-y-3">
@@ -116,7 +123,7 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
       </div>
     </section>
 
-    <section class="surface mt-5 p-5">
+    <section v-if="tryIt.length" class="surface mt-5 p-5">
       <h2 class="text-lg font-semibold tracking-tight">{{ t('guided.tryTitle') }}</h2>
       <ol class="mt-3 space-y-2.5">
         <li v-for="(step, i) in tryIt" :key="i" class="flex cursor-pointer items-start gap-3 text-[17px] leading-relaxed" @click="doneSteps.has(i) ? doneSteps.delete(i) : doneSteps.add(i)">
@@ -125,6 +132,8 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
         </li>
       </ol>
     </section>
+
+    <Challenges class="mt-5" :challenges="lesson.challenges" :params="params" :lesson-id="id" />
 
     <section class="mt-5">
       <button v-if="revealed < lesson.explanation.intuition.length" class="btn-primary w-full px-5 py-3 text-base" @click="revealed++">{{ revealed === 0 ? t('guided.why') : t('guided.more') }}</button>
@@ -227,6 +236,7 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
             <ParamSlider v-for="(spec, name) in lesson.parameters" :key="name" :name="name" :spec="spec" :value="params[name]" @set="setParam" />
           </div>
           <p class="mt-2 text-xs" style="color: var(--muted)">{{ t('lesson.dragHint') }}</p>
+          <RealLife v-if="lesson.presets.length && id" class="mt-4" :presets="lesson.presets" :lesson-id="id" @load="loadPreset" />
         </div>
 
         <div>
@@ -267,6 +277,8 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
         <ParamChart v-for="c in lesson.charts" :key="c.title" :spec="c" :params="params" />
       </section>
     </div>
+
+    <Challenges v-if="id" class="mt-8" :challenges="lesson.challenges" :params="params" :lesson-id="id" />
 
     <div class="mt-12 grid gap-x-12 gap-y-10 lg:grid-cols-2">
       <section ref="explain" class="scroll-mt-20">

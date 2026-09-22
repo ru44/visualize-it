@@ -65,3 +65,22 @@ charts:
     series:
       - 0.5*1.225*Cd*A*(sqrt(2*m*9.81/(1.225*Cd*A)) * tanh(9.81*x/sqrt(2*m*9.81/(1.225*Cd*A))))^2
       - m*9.81
+primary: m
+presets:
+- m: 75
+  Cd: 1.0
+  A: 0.7
+- m: 75
+  Cd: 0.7
+  A: 0.3
+- m: 120
+  Cd: 1.0
+  A: 0.5
+challenges:
+- check: 'sqrt(2*m*9.81/(1.225*Cd*A))'
+  target: 60
+  tol: 5
+- check: 'sqrt(2*m*9.81/(1.225*Cd*A)) * tanh(9.81*x/sqrt(2*m*9.81/(1.225*Cd*A)))'
+  target: 50
+  tol: 3
+- check: 'x <= 10 and tanh(9.81*x/sqrt(2*m*9.81/(1.225*Cd*A))) >= 0.95'

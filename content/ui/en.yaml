@@ -21,7 +21,7 @@ home.step3.t: 3 · Read why
 home.step3.d: A short plain-language explanation — the formal maths is there only if you want it.
 home.subjects: Choose a subject
 home.subjects.d: Each subject is a short path of lessons, from the easiest idea upward.
-home.lessons: '{n} lessons'
+home.lessons: '{n|one=# lesson|other=# lessons}'
 home.demo: 'Move your pointer: the orange line shows how steep the curve is.'
 home.slope: steepness
 explore.placeholder: Type an equation, e.g. 2x + 5 = 17
@@ -208,8 +208,8 @@ subject.statistics: Statistics & probability
 subjectd.statistics: Counting, chance, distributions and what data can tell you.
 count.orderedHint: 'Order matters: (1,2) and (2,1) are different arrangements. Tap to change k.'
 count.unorderedHint: 'Order does not matter: {1,2} and {2,1} are the same selection. Tap to change k.'
-count.arrangements: '{n} arrangements'
-count.selections: '{n} selections'
+count.arrangements: '{n|one=# arrangement|other=# arrangements}'
+count.selections: '{n|one=# selection|other=# selections}'
 count.first: showing the first {n}
 dist.mean: mean μ
 dist.sd: standard deviation σ
@@ -287,7 +287,7 @@ progress.markDone: Mark as done
 progress.undo: Done ✓ — undo
 progress.of: '{done} of {total} done'
 progress.all: You have finished every lesson in this subject.
-progress.overall: '{done} of {total} lessons done'
+progress.overall: '{done} of {total|one=# lesson|other=# lessons} done'
 progress.reset: Reset progress
 progress.saved: Saved in this browser only.
 lesson.rigour: Rigour
@@ -424,5 +424,348 @@ guided.why: Why does this happen?
 guided.more: Tell me more
 guided.showMaths: Show me the maths
 guided.hideMaths: Hide the maths
-guided.moreSliders: '{n} more things to change'
+guided.moreSliders: '{n|one=# more thing to change|other=# more things to change}'
 home.start2: 'Start with 2 minutes: what is a slope?'
+subject.ai: AI & machine learning
+subjectd.ai: How machines learn from examples, and how language models predict the next word.
+fit.hintPoly: tap to add a training point · dashed green is the hidden truth
+fit.degree: degree of the polynomial
+fit.trainErr: error on training points
+fit.testErr: error on new points
+fit.verdict: verdict
+fit.under: too simple (underfits)
+fit.over: memorised the points (overfits)
+fit.good: generalises well
+fit.truth: the real rule (hidden)
+fit.model: what the model learned
+fit.trainPts: training points
+nn.hint: drag on the map to move the input · sliders are the weights
+nn.output: output (probability of A)
+nn.class: decision
+nn.inputs: inputs
+nn.hidden: hidden layer
+nn.out: output
+nn.map: 'what the network answers for every input: orange = A, blue = B'
+emb.hintVec: each word is a point; arrows are vectors. king − man + woman lands near…
+emb.hintAttn: 'tap a word: the others swell by how much it "pays attention" to them'
+emb.axis1: axis 1 (status →)
+emb.axis2: axis 2 (gender)
+emb.nearest: nearest word
+emb.cosine: similarity (cosine)
+emb.query: attending from
+emb.king: king
+emb.queen: queen
+emb.man: man
+emb.woman: woman
+emb.boy: boy
+emb.girl: girl
+emb.prince: prince
+emb.princess: princess
+emb.apple: apple
+emb.banana: banana
+emb.car: car
+emb.bus: bus
+nlp.hint: 'a language model in miniature: which word tends to follow which, in this text'
+nlp.corpusLabel: 'Training text:'
+nlp.corpus: the cat sat on the mat. the dog sat on the log. the cat saw the dog. the dog saw the cat and ran. the cat ran to the mat.
+nlp.words: words in the text
+nlp.current: current word
+nlp.temp: temperature
+nlp.top: most likely next word
+nlp.next: 'after “{w}”, the text continued with:'
+nlp.sample: ▶ pick next word
+nlp.reset: ↻ start over
+subject.numbers: Counting & big numbers
+subjectd.numbers: Place value, powers of ten, how big a million really is, doubling and primes.
+subject.data: Data & big data
+subjectd.data: 'From one byte to the whole internet: tables, queries, indexes and how huge data is processed.'
+subject.quantum: Quantum physics
+subjectd.quantum: Light made of packets, particles that act like waves, and Schrödinger’s equation.
+subject.relativity: Gravity & relativity
+subjectd.relativity: Falling, curved spacetime, clocks that tick differently, black holes and E = mc².
+subject.cryptography: Cryptography
+subjectd.cryptography: 'How secrets are kept: ciphers, keys, hashes and the maths that protects every message.'
+subject.cosmos: The universe & particles
+subjectd.cosmos: 'Dark matter, dark energy, quarks and quasars: how we know about things we cannot see.'
+dots.sec: '{n|one=# second|other=# seconds}'
+dots.min: '{n|one=# minute|other=# minutes}'
+dots.hour: '{n|one=# hour|other=# hours}'
+dots.day: '{n|one=# day|other=# days}'
+dots.year: '{n|one=# year|other=# years}'
+dots.moon: past the Moon
+dots.iss: higher than the space station
+dots.everest: taller than Everest
+dots.building: taller than a tall building
+dots.person: taller than a person
+dots.number: number
+dots.expanded: broken into parts
+dots.name: name
+dots.counting: time to count it, one per second
+dots.stack: as a stack of paper sheets
+dots.hint: each square holds 100 dots; the whole picture holds 10,000
+dots.picture: how many dots
+dots.pictures: '{n|one=# picture like this one|other=# pictures like this one}'
+dots.col.th: thousands
+dots.col.h: hundreds
+dots.col.te: tens
+dots.col.o: ones
+dots.n.one: one
+dots.n.ten: ten
+dots.n.hundred: one hundred
+dots.n.thousand: one thousand
+dots.n.tenThousand: ten thousand
+dots.n.hundredThousand: one hundred thousand
+dots.n.million: one million
+dots.n.tenMillion: ten million
+dots.n.hundredMillion: one hundred million
+dots.n.billion: one billion
+dots.n.tenBillion: ten billion
+dots.n.hundredBillion: one hundred billion
+dots.n.trillion: one trillion
+p10.zeros: '1 followed by {n|one=# zero|other=# zeros}'
+p10.power: power of ten
+p10.written: written out
+p10.nearest: closest example
+p10.times: compared with the smallest
+p10.stepsFrom: '{n|one=# step|other=# steps} of ×10 from {what}'
+p10.hint: 'drag along the ruler: each step to the right is ten times bigger'
+p10.rule: every tick is ×10
+p10.size.proton: a proton
+p10.size.atom: an atom
+p10.size.dna: the width of DNA
+p10.size.bacterium: a bacterium
+p10.size.hair: the width of a hair
+p10.size.ant: an ant
+p10.size.child: a child
+p10.size.field: a football field
+p10.size.everest: Mount Everest
+p10.size.earth: the Earth
+p10.size.sun: the Sun
+p10.size.earthSun: Earth to Sun
+p10.size.lightYear: one light-year
+p10.size.galaxy: our galaxy
+p10.size.universe: the observable universe
+p10.bytes.letter: one letter
+p10.bytes.message: a text message
+p10.bytes.page: a page of text
+p10.bytes.photo: a phone photo
+p10.bytes.song: a song
+p10.bytes.movie: an HD film
+p10.bytes.phone: a phone’s storage
+p10.bytes.laptop: a laptop drive
+p10.bytes.petabyte: a thousand laptop drives
+p10.bytes.exabyte: a million laptop drives
+p10.bytes.worldData: data the world creates in a year (order of)
+p10.numbers.thousand: a thousand
+p10.numbers.million: a million
+p10.numbers.billion: a billion
+p10.numbers.people: people on Earth
+p10.numbers.trillion: a trillion
+p10.numbers.sand: grains of sand on Earth (rough estimate)
+p10.numbers.stars: stars in the observable universe (estimate)
+p10.numbers.atoms: atoms in the observable universe (estimate)
+p10.numbers.googol: a googol
+chess.square: square
+chess.onSquare: grains on this square
+chess.total: grains so far
+chess.weight: weight (25 mg per grain)
+chess.harvests: years of the world rice harvest
+chess.hint: 'tap a square: each one holds twice as many grains as the one before'
+chess.note: 'the last square alone: more rice than has ever been grown'
+sieve.current: crossing out multiples of
+sieve.remaining: numbers not crossed out
+sieve.status: status
+sieve.done: all primes found
+sieve.next: 'next: multiples of {p}'
+sieve.hint: orange boxes are primes, crossed boxes are multiples
+sieve.used: primes used so far (tap one)
+sieve.primes: primes left in the grid
+qt.riyadh: Riyadh
+qt.cairo: Cairo
+qt.dubai: Dubai
+qt.amman: Amman
+qt.tea: tea
+qt.coffee: coffee
+qt.juice: juice
+qt.amount: amount
+qt.city: city
+qt.product: product
+qt.scanned: rows checked
+qt.returned: rows returned
+qt.rowStore: row storage reads
+qt.colStore: column storage reads
+qt.saved: less data read
+qt.atBillion: with a billion rows (8 bytes per value)
+qt.filterHint: orange rows match
+search.linear: checking one by one
+search.binary: halving each time
+search.hint: tap the box you are looking for; each row halves the search
+search.sorted: 64 sorted values
+search.found: 'found in {n|one=# step|other=# steps}'
+mr.doc1: the cat sat
+mr.doc2: the dog ran
+mr.doc3: the cat ran
+mr.doc4: a dog sat
+mr.stage: stage
+mr.machines: machines
+mr.words: words
+mr.unique: different words
+mr.s0: split
+mr.s1: map
+mr.s2: shuffle
+mr.s3: reduce
+mr.machine: machine
+photo.wavelength: wavelength
+photo.uv: ultraviolet
+photo.ir: infrared
+photo.visible: visible
+photo.energy: energy of one photon
+photo.work: energy needed to free an electron
+photo.ke: energy left for the electron
+photo.none: no electrons
+photo.hint: each wiggle is one photon; blue dots are electrons knocked out of the metal
+photo.lamp: lamp
+photo.metal: metal
+photo.nothing: 'photons too weak: no electrons, however bright'
+photo.onePhoton: energy of one photon
+slit.count: particles so far
+slit.spacing: stripe spacing
+slit.detector: which-slit detector
+slit.on: 'on'
+slit.off: 'off'
+slit.hint: particles are sent one at a time; watch the screen fill up
+slit.source: source
+slit.watching: watching the slits
+slit.screen: screen
+wave.energy: energy
+wave.nodes: places it is never found
+wave.barrier: wall height
+wave.width: wall width
+wave.through: gets through
+wave.hintBox: a particle trapped between two walls can only have certain waves
+wave.where: where it is likely to be
+wave.levels: allowed energies
+wave.hintTunnel: a wave meets a wall it should not be able to climb
+wave.wall: wall
+wave.incoming: incoming wave
+wave.escaped: 'escaped:'
+wave.hintPacket: squeeze the particle’s position and its momentum spreads out
+wave.position: where it is
+wave.momentum: how fast it goes
+levels.jump: jump
+levels.energy: photon energy
+levels.wavelength: wavelength
+levels.series: series
+levels.pickLower: choose a lower final level
+levels.hint: the electron can sit only on these levels; falling releases one photon
+levels.spectrum: hydrogen’s visible colours
+levels.lyman: Lyman (ultraviolet)
+levels.balmer: Balmer (visible)
+levels.paschen: Paschen (infrared)
+levels.brackett: Brackett (infrared)
+levels.pfund: Pfund (infrared)
+levels.humphreys: Humphreys (infrared)
+qubit.measured: 'results so far (|0⟩ : |1⟩)'
+qubit.observed: share of |0⟩
+qubit.hint: the arrow is the state; looking gives only one answer
+qubit.look: open the box
+qubit.many: 'open {n|one=# box|other=# boxes}'
+qubit.results: what we saw
+fall.ball: heavy ball
+fall.feather: feather
+fall.difference: feather arrives later by
+fall.air: air
+fall.withAir: with air
+fall.vacuum: no air (vacuum)
+fall.hint: both are dropped at the same moment
+xor.message: message
+xor.key: key
+xor.cipher: secret
+xor.back: decrypted
+xor.hint: '1 ⊕ 1 = 0 and 0 ⊕ 1 = 1: the key flips the message bits, and flips them back'
+cipher.keyword: keyword
+freq.guess: your guess for the key
+freq.match: match with English
+freq.letters: letters counted
+freq.hint: slide the guess until the orange bars sit on the blue marks
+freq.secret: letters in the secret text
+freq.english: normal English
+hash.user1: 'user 1: password + salt'
+hash.original: original
+hash.user2: 'user 2: password + salt'
+hash.changed: one letter changed
+hash.flipped: bits changed
+hash.hintSalt: two users chose the same password; the salt makes their stored hashes unrelated
+hash.hint: change one letter and about half of the 256 bits flip
+hash.unavailable: this browser cannot compute SHA-256 here
+spn.rounds: rounds
+spn.different: bits different
+spn.hint: two inputs that differ in one bit, encrypted side by side
+spn.input: input
+spn.after: after round {r}
+spn.bits: bits differ
+spn.aes: AES does the same three steps on 128 bits, 10 to 14 times, with a bigger S-box
+ec.off: not on the curve here
+ec.warning: warning
+ec.singular: curve has a sharp point
+ec.hint: 'draw a line through P and Q, find the third point, flip it: that is P + Q'
+rot.speedVisible: speed at {r} kpc from visible matter
+rot.speedModel: speed with the dark halo
+rot.miss: distance from the measurements
+rot.darkShare: invisible share of the mass
+rot.hint: add invisible mass until the curve goes through the black measured points
+rot.distance: distance from the centre (kpc)
+rot.speed: orbit speed (km/s)
+rot.measured: measured
+rot.visibleOnly: visible matter only
+rot.withDark: with dark matter
+lens.radius: Einstein radius
+lens.offset: galaxy offset
+lens.magnification: brightness boost
+lens.shape: what we see
+lens.ring: a full ring
+lens.arcs: bright arcs
+lens.shifted: a moved, stretched image
+lens.hint: a galaxy behind a heavy mass, as seen from Earth
+exp.scale: size of the universe (today = 1)
+exp.time: time since the Big Bang
+exp.billionYears: billion years
+exp.state: expansion is
+exp.speedingUp: speeding up
+exp.slowingDown: slowing down
+exp.hint: galaxies drift apart because the space between them grows
+exp.us: us
+exp.timeAxis: time →
+exp.sizeAxis: size
+exp.withoutDE: without dark energy
+quark.recipe: recipe
+quark.charge: total charge
+quark.particle: you made
+quark.massShare: mass from the quarks themselves
+quark.distance: pulled apart by
+quark.energy: energy in the string
+quark.result: result
+quark.twoParticles: it snapped into two particles
+quark.stillOne: still one particle
+quark.hint: pick three quarks and see which particle you built
+quark.slot: quark {n}
+quark.hintPull: pull a quark away from its partner
+quark.meson: new particle
+quark.snap: 'the string snapped: new quarks appeared'
+quark.pairCost: enough to make new quarks
+quark.proton: proton
+quark.neutron: neutron
+quark.deltaPP: Δ⁺⁺ (delta)
+quark.deltaM: Δ⁻ (delta)
+quark.lambda: Λ⁰ (lambda)
+quark.sigmaP: Σ⁺ (sigma)
+quark.sigmaM: Σ⁻ (sigma)
+quark.xi0: Ξ⁰ (xi)
+quark.xiM: Ξ⁻ (xi)
+quark.omegaM: Ω⁻ (omega)
+quark.unknown: not a known particle
+real.title: Try a real-life example
+test.title: Test yourself
+test.lead: Move the sliders until each one turns green.
+test.solved: '{n} of {total} solved'
+test.correct: Correct!

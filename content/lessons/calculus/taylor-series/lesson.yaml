@@ -37,3 +37,12 @@ charts:
   - domain: [-7, 7]
     series:
       - 'sin(x)'
+primary: N
+presets:
+  - { N: 1, x: 3 }
+  - { N: 5, x: 2 }
+  - { N: 11, x: 6 }
+challenges:
+  - { check: 'N == 1 and abs(x - sin(x)) < 0.01' }
+  - { check: 'N == 5 and abs((x - x^3/6 + x^5/120) - sin(x)) < 0.05' }
+  - { check: 'N == 11 and abs((x - x^3/6 + x^5/120 - x^7/5040 + x^9/362880 - x^11/39916800) - sin(x)) < 0.05' }

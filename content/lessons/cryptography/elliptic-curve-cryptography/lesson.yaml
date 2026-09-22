@@ -1,0 +1,67 @@
+id: elliptic-curve-cryptography
+subject: cryptography
+difficulty: high-school
+equation: y^2 = x^3 + ax + b
+concepts:
+- elliptic-curve
+- point-addition
+- discrete-logarithm
+- public-key-cryptography
+prerequisites:
+- one-way-functions
+- rsa-encryption
+related:
+- diffie-hellman
+- digital-signatures
+visualization:
+  type: elliptic-curve
+  options: {}
+parameters:
+  a:
+    min: -3
+    max: 3
+    step: 0.1
+    value: -1
+  b:
+    min: -3
+    max: 5
+    step: 0.1
+    value: 1
+  px:
+    min: -2
+    max: 3
+    step: 0.01
+    value: -1
+  qx:
+    min: -2
+    max: 3
+    step: 0.01
+    value: 0.5
+variables:
+- a
+- b
+derivation:
+- \lambda = \dfrac{y_Q - y_P}{x_Q - x_P} = \dfrac{1 - 1}{1 - (-1)} = 0
+- x_R = \lambda^{2} - x_P - x_Q = 0 - (-1) - 1 = 0
+- y_{P+Q} = \lambda(x_P - x_R) - y_P = 0 - 1 = -1
+charts: []
+primary: px
+presets:
+- a: -1
+  b: 1
+  px: -1
+  qx: 0.5
+- a: 1
+  b: 3
+  px: 0
+  qx: 1
+- a: -3
+  b: 5
+  px: 1
+  qx: 2
+challenges:
+- check: a
+  target: 0
+- check: b
+  target: 5
+- check: px == qx

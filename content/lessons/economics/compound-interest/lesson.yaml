@@ -63,3 +63,23 @@ charts:
     marker: x
     series:
       - P*(1 + r/100*x)
+primary: r
+presets:
+  - P: 1000
+    r: 6
+    n: 12
+    x: 18
+  - P: 5000
+    r: 7
+    n: 1
+    x: 30
+  - P: 2000
+    r: 15
+    n: 12
+    x: 5
+challenges:
+  - check: (1+r/100/n)^(n*x)
+    target: 2
+    tol: 0.1
+  - check: r < 10 and (1+r/100/n)^(n*x) > 5
+  - check: abs(r-12)<0.3 and abs((1+r/100/n)^(n*x)-2)<0.15

@@ -1,9 +1,9 @@
 ---
 title: Lorentz force and cyclotron motion
 summary: >-
-  A moving charge in a magnetic field feels a force perpendicular to its
-  velocity — it steers the particle without ever speeding it up, bending
-  straight lines into circles.
+  This is how MRI scanners sort atoms and mass spectrometers weigh molecules:
+  a magnetic field steers a moving charged particle without ever speeding it
+  up.
 parameters:
   q: charge q
   v: speed v
@@ -16,11 +16,29 @@ variables:
   - 'uniform electric field strength, pointing up the screen'
 ---
 
+## Try it
+
+1. Picture an electron, curving inside the magnetic field of an old CRT television tube.
+2. Watch the particle with «electric field E» set to 0. It traces a perfect circle, over and over.
+3. Drag «charge q» from positive to negative. The particle now curves the other way around.
+
+## Real-life examples
+
+1. **An electron beam in an old CRT television.** A negative charge moving at 6 (×10⁵ m/s) through a 1 T field curves in a circle, which is how the beam gets steered onto the screen.
+2. **A proton in a mass spectrometer.** A positive charge moving at 8 (×10⁵ m/s) through a 1.5 T field curves too, and how tightly it curves reveals its mass.
+3. **A velocity selector.** With crossed fields, a 1 T magnetic field and a 3 (×10⁵ V/m) electric field, only particles moving at exactly 3 (×10⁵ m/s) travel straight through undeflected — everything faster or slower gets pushed aside.
+
+## Test yourself
+
+1. Tune the charge, speed, and field so the magnetic force is about 5 × 10⁻¹³ N.
+2. Build a velocity selector: with the magnetic field on, tune the electric field so particles moving at your chosen speed pass straight through.
+3. Now tune the sliders so the magnetic force drops to a much gentler 1 × 10⁻¹⁴ N.
+
 ## Intuition
 
-With E off, the particle traces a perfect circle — the magnetic force only ever turns the velocity, never lengthens or shortens it, because $\mathbf{v}\times\mathbf{B}$ is always perpendicular to $\mathbf{v}$. Set $q=0$ and the force vanishes: no charge, no push, a straight line.
+Picture an electron curving inside the magnetic field of an old CRT television tube. With «electric field E» set to 0, the particle traces a perfect circle: the magnetic force only ever turns its direction, never speeds it up or slows it down, because the push is always sideways to the motion. Set «charge q» to 0 and the force vanishes entirely — no charge, no push, just a straight line.
 
-Flip the sign of $q$ or of $B$ and the particle curves the other way — the trail (its fading history) traces the mirror circle. Turn on $E$ and the circle stops closing on itself: the constant sideways push adds a steady drift on top of the circular motion, sketching a looping, drifting path.
+Flip the sign of $q$ or of $B$ and the particle curves the other way, tracing the mirror-image circle. Turn on $E$ and the circle stops closing on itself: a steady sideways push now adds a drift on top of the circular motion, sketching a looping, wandering path — this is exactly how a velocity selector works, letting only one speed through in a straight line.
 
 ## Formal
 

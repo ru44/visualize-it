@@ -52,3 +52,26 @@ derivation:
   - "\\text{quantity demanded at } P_0: \\quad Q = \\dfrac{a - P_0}{b}"
   - "\\text{quantity supplied at } P_0: \\quad Q = \\dfrac{P_0 - c}{d}"
   - "\\text{gap} = \\dfrac{a-P_0}{b} - \\dfrac{P_0-c}{d}"
+primary: price
+presets:
+  - a: 80
+    b: 0.8
+    c: 10
+    d: 0.6
+    price: 25
+  - a: 80
+    b: 0.8
+    c: 10
+    d: 0.6
+    price: 55
+  - a: 90
+    b: 1
+    c: 20
+    d: 0.8
+    price: 30
+challenges:
+  - check: (a-price)/b - (price-c)/d
+    target: 20
+    tol: 1
+  - check: (price-c)/d - (a-price)/b > 15
+  - check: abs(price-50)<0.3 and abs((a-price)/b - (price-c)/d) < 1

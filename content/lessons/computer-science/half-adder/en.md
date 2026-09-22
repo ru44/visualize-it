@@ -1,8 +1,9 @@
 ---
 title: 'The half adder: addition from logic gates'
 summary: >-
-  Binary addition of a single column needs only two gates: XOR for the sum bit,
-  AND for the carry. Chain many of them and you have built an adder.
+  This is the tiny circuit computers use to add two binary digits together,
+  and chaining many of them is how every calculator and CPU adds numbers of
+  any size.
 parameters:
   a: a — first bit
   b: b — second bit
@@ -12,11 +13,29 @@ variables:
   - 'AND — the carry bit, 1 only when both inputs are 1'
 ---
 
+## Try it
+
+1. Set slider "a" to 1 and "b" to 0, then check the readouts: the sum lights up (1 + 0 = 1) but the carry stays off.
+2. Now set both "a" and "b" to 1 and watch the sum readout flip to 0 while the carry readout lights up instead — that's the binary carry, just like carrying a digit in 7 + 5.
+3. Set both "a" and "b" to 0 and confirm both readouts stay off — nothing to add, nothing to carry.
+
+## Real-life examples
+
+- **Adding 1 and 0 in a single binary column.** With "a" = 1 and "b" = 0, the sum lights up as 1 and the carry stays off, just like 1 + 0 = 1 with nothing to carry.
+- **Adding 1 and 1, the case that overflows.** With "a" = 1 and "b" = 1, the sum reads 0 and the carry lights up, exactly like carrying a 1 when a decimal column reaches 10.
+- **Adding two zero bits.** With "a" = 0 and "b" = 0, both the sum and carry stay off — there is nothing to add and nothing to carry, same as 0 + 0 = 0.
+
+## Test yourself
+
+1. Make the carry output light up — there is only one combination of "a" and "b" that does it.
+2. Make the sum output light up while the carry stays dark.
+3. Make both the sum and the carry stay off at the same time.
+
 ## Intuition
 
-Set both $a$ and $b$ to 1 above and watch: the sum output goes to 0 but the carry lights up. That is exactly $1+1=10$ in binary — a sum digit of 0 with a 1 carried to the next column, precisely like carrying a 1 when adding 7+5 by hand in decimal.
+When you add 7 and 5 by hand, the ones column gives 12: you write down 2 and carry a 1 into the tens column. A half adder does exactly the same carrying trick, but with a single binary digit, a bit, instead of a whole decimal column. Set both sliders "a" and "b" to 1 above and watch: the sum output drops to 0 while the carry output lights up, because $1+1=10$ in binary — a sum digit of 0 with a 1 carried onward, just like the 1 you carried from the ones column above.
 
-The other three input pairs — (0,0), (0,1), (1,0) — all give carry 0 and a sum that matches ordinary addition. XOR is doing the sum because it is 1 exactly when the two bits disagree, which is when adding them "overflows" a single digit only at (1,1).
+The other three input pairs — (0,0), (0,1), (1,0) — all give carry 0 and a sum that matches ordinary addition, with no overflow into a new column. XOR is doing the sum's job because it outputs 1 exactly when the two bits disagree, which is the only situation where adding them overflows a single digit: at (1,1).
 
 ## Formal
 

@@ -1,8 +1,9 @@
 ---
 title: Travelling wave
 summary: >-
-  Amplitude, wavelength, frequency and phase — four knobs that describe every
-  simple wave, from sound to light.
+  This is why the pattern of a wave slides forward while the water itself
+  only bobs up and down, and why a higher musical note has a shorter
+  wavelength.
 parameters:
   A: amplitude A
   L: wavelength λ
@@ -18,11 +19,29 @@ variables:
   - 'wave speed, always $f\lambda$'
 ---
 
+## Try it
+
+1. Let it animate and watch the marked point on the wave move only up and down.
+2. Drag "frequency f" up. Watch the point bob faster.
+3. Now drag "wavelength λ (L)" wider. The crests spread further apart.
+
+## Real-life examples
+
+1. **A ripple in a bathtub.** A small 0.3 m ripple with a 1 m wavelength, oscillating once per second, travels across the water at 1 m/s.
+2. **A wave sent down a jump rope.** Flicking the rope creates a 1.5 m wave with a 4 m wavelength repeating 0.4 times per second, moving down the rope at 1.6 m/s.
+3. **An ocean swell.** A slow, tall 2.5 m swell with an 8 m wavelength and a gentle 0.15 Hz rhythm rolls toward shore at just 1.2 m/s.
+
+## Test yourself
+
+1. Make the wave speed exactly 1 m/s.
+2. Keep the wave speed at about 1 m/s but stretch the wavelength to at least 6 m.
+3. Make the wave speed exceed 2 m/s while keeping the wavelength under 3 m.
+
 ## Intuition
 
-Watch the marked point: it only moves up and down, while the pattern slides to the right. A wave carries shape and energy, not material.
+Picture a ripple in a bathtub, a small wave 0.3 m tall with crests 1 m apart, repeating once per second. Let it animate and watch the marked point on the wave: it only moves up and down, while the whole pattern slides to the right. A wave carries shape and energy, not the water itself.
 
-Raise the frequency and the point bobs faster; stretch the wavelength and the crests spread out. Do both and the pattern races along — its speed is exactly $f\lambda$: one wavelength forward for every cycle completed.
+Raise "frequency f" and the marked point bobs faster; stretch "wavelength λ" and the crests spread further apart. Do both together and the pattern races along: its speed is exactly frequency times wavelength, one full wavelength forward for every cycle completed.
 
 ## Formal
 

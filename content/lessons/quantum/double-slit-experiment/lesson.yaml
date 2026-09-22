@@ -1,0 +1,67 @@
+id: double-slit-experiment
+subject: quantum
+difficulty: high-school
+equation: \Delta y = \frac{\lambda}{2.5\,d}
+concepts:
+  - wave-particle-duality
+  - interference
+  - superposition
+prerequisites:
+  - interference-and-beats
+  - sine-wave
+related:
+  - uncertainty-principle
+  - schrodingers-cat-and-qubits
+visualization:
+  type: double-slit
+  options: {}
+parameters:
+  d:
+    min: 1
+    max: 6
+    step: 0.1
+    value: 3
+  lam:
+    min: 1
+    max: 5
+    step: 0.1
+    value: 2
+  detector:
+    min: 0
+    max: 1
+    step: 1
+    value: 0
+  rate:
+    min: 5
+    max: 200
+    step: 5
+    value: 40
+variables:
+  - \Delta y
+  - \lambda
+  - d
+derivation:
+  - \Delta y \propto \lambda
+  - \Delta y \propto \frac{1}{d}
+  - \Delta y = \frac{\lambda}{2.5\,d}
+charts: []
+primary: d
+presets:
+  - d: 3
+    lam: 2
+    detector: 0
+    rate: 40
+  - d: 1.5
+    lam: 4
+    detector: 0
+    rate: 80
+  - d: 5
+    lam: 1.5
+    detector: 1
+    rate: 100
+challenges:
+  - check: lam/(2.5*d)
+    target: 0.5
+    tol: 0.02
+  - check: detector == 1
+  - check: lam/(2.5*d) < 0.15 and detector == 0

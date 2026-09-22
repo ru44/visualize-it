@@ -62,3 +62,16 @@ charts: []
 visualization3d:
   type: projectile
   options: {}
+primary: th
+presets:
+  - v: 8
+    th: 50
+  - v: 25
+    th: 35
+  - v: 30
+    th: 15
+challenges:
+  - check: v^2*sin(2*th*pi/180)/9.81
+    target: 40
+  - check: abs(v-20)<0.3 and abs(th-45)<1
+  - check: abs(v-20)<0.3 and th<40 and abs(v^2*sin(2*th*pi/180)/9.81-40)<1

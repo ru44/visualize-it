@@ -49,3 +49,20 @@ derivation:
   - \cos H = -\tan(\phi)\tan(\delta)
   - D = \frac{24}{\pi}H
 charts: []
+primary: lat
+presets:
+- lat: 45
+  x: 172
+  tilt: 23.4
+- lat: 2
+  x: 172
+  tilt: 23.4
+- lat: 65
+  x: 355
+  tilt: 23.4
+challenges:
+- check: 24/pi*acos(max(-1,min(1,-tan(lat*pi/180)*tan(tilt*pi/180*sin(2*pi*(x-80)/365)))))
+  target: 12
+  tol: 0.3
+- check: lat > 60 and 24/pi*acos(max(-1,min(1,-tan(lat*pi/180)*tan(tilt*pi/180*sin(2*pi*(x-80)/365))))) > 20
+- check: abs(lat) < 5 and abs(24/pi*acos(max(-1,min(1,-tan(lat*pi/180)*tan(tilt*pi/180*sin(2*pi*(x-80)/365))))) - 12) < 0.3

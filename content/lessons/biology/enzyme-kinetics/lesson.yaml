@@ -55,3 +55,20 @@ charts:
     series:
       - Vmax*x/(Km+x)
       - Vmax*x/(2*Km+x)
+primary: x
+presets:
+- Vmax: 8
+  Km: 1.5
+  x: 3
+- Vmax: 4
+  Km: 4
+  x: 4
+- Vmax: 5
+  Km: 2
+  x: 25
+challenges:
+- check: x/(Km+x)
+  target: 0.5
+  tol: 0.02
+- check: x/(Km+x) > 0.9
+- check: Km < 2 and Vmax*x/(Km+x) > 3

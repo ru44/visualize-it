@@ -51,3 +51,25 @@ derivation:
   - \mathbf{F}\cdot\mathbf{v} = q(\mathbf{v}\times\mathbf{B})\cdot\mathbf{v} = 0
   - \frac{mv^2}{r} = qvB \ \Rightarrow\ r = \frac{mv}{qB}, \quad T = \frac{2\pi r}{v} = \frac{2\pi m}{qB}
 charts: []
+primary: B
+presets:
+- q: -1
+  v: 6
+  B: 1
+  E: 0
+- q: 1
+  v: 8
+  B: 1.5
+  E: 0
+- q: 2
+  v: 3
+  B: 1
+  E: 3
+challenges:
+- check: 'abs(q*v*B*1.602e-14)'
+  target: 5e-13
+  tol: 1e-13
+- check: 'B != 0 and abs(v - E/B) < 0.2'
+- check: 'abs(q*v*B*1.602e-14)'
+  target: 1e-14
+  tol: 3e-15

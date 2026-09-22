@@ -50,3 +50,19 @@ derivation:
   - "\\tau_1 = \\tau_2 \\quad \\text{(equilibrium: no net rotation)}"
   - F_2 = \frac{F_1 d_1}{d_2}
 charts: []
+primary: x
+presets:
+  - F1: 40
+    d1: 0.5
+    x: 5
+  - F1: 30
+    d1: 1.5
+    x: 3
+  - F1: 45
+    d1: 0.5
+    x: 1.5
+challenges:
+  - check: F1*d1/x
+    target: 10
+  - check: abs(F1-40)<0.5 and abs(F1*d1/x-8)<0.3
+  - check: F1*d1/x<2

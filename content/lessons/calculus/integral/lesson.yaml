@@ -51,3 +51,11 @@ derivation:
 - \xrightarrow{\,n \to \infty\,} \frac{64 \cdot 2}{6} = \frac{64}{3}
 charts: []
 primary: n
+presets:
+  - { n: 4, a: 0, b: 4 }
+  - { n: 50, a: 1, b: 3 }
+  - { n: 500, a: 0, b: 5 }
+challenges:
+  - { check: '(b^3 - a^3)/3', target: 9, tol: 0.3 }
+  - { check: 'n > 100 and (b^3 - a^3)/3 > 20' }
+  - { check: '(b^3 - a^3)/3 < 0' }

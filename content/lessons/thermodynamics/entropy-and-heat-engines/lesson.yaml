@@ -54,3 +54,16 @@ charts:
       - 1 - 250/x
       - 1 - 300/x
       - 1 - 350/x
+primary: x
+presets:
+  - Tc: 300
+    x: 800
+  - Tc: 320
+    x: 650
+  - Tc: 290
+    x: 450
+challenges:
+  - check: 1 - Tc/x
+    target: 0.5
+  - check: (1 - Tc/x) > 0.6 and Tc >= 280
+  - check: abs(Tc-250)<1 and (1-Tc/x)>=0.55

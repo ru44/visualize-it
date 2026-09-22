@@ -42,7 +42,7 @@ function usesY(expr: string): boolean {
   }
 }
 
-const base = { id: 'adhoc', concepts: [], related: [], realWorld: [], derivation: [], tryIt: [] as string[] }
+const base = { id: 'adhoc', concepts: [], related: [], realWorld: [], derivation: [], tryIt: [] as string[], presets: [] as { label: string; text: string; params: Record<string, number> }[], challenges: [] as { text: string; check: string; target?: number; tol?: number }[] }
 const side = (s: OneSided) => (s.kind === 'finite' ? fmt(s.value, 6) : s.kind === 'infinite' ? (s.sign > 0 ? '+∞' : '−∞') : '?')
 
 function surfaceLesson(expr: string): Lesson | null {

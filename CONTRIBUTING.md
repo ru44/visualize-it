@@ -48,7 +48,13 @@ charts: []             # only if lesson.yaml has charts: [{ title, xLabel, yLabe
 ---
 
 ## Try it
-1. Two to four concrete steps: what to drag and what to notice. Shown first in the guided view (optional, but every starter lesson should have them).
+1. Two to four concrete steps: what to drag and what to notice. Shown first in the guided view.
+
+## Real-life examples
+- **Carrying shopping.** One or two sentences per preset in lesson.yaml's `presets`, same order.
+
+## Test yourself
+1. One task per challenge in lesson.yaml's `challenges`, same order, e.g. "Make the car accelerate at exactly 2 m/s²."
 
 ## Intuition
 Plain-language paragraphs (beginner level). Refer to what the learner sees and drags.
@@ -72,6 +78,22 @@ Every symbol that appears in `equation` or `derivation` must be explained: eithe
 Rules the checker enforces: the number of `variables` explanations, `## Derivation` notes and chart labels must match `lesson.yaml`; every `$…$` segment in a translation must be identical to the English one (translate the words, never the maths); no LaTeX outside `$…$`.
 
 Arabic text follows `content/lessons/STYLE.ar.md`.
+
+### Real-life examples and challenges
+
+Every lesson connects to real life and lets the learner test themselves. Both live in `lesson.yaml`:
+
+```yaml
+primary: F                 # the one slider shown in the guided view
+presets:                   # a real situation = a set of slider values
+  - { F: 20, m: 15 }       # every value must be inside its slider range
+challenges:                # a task the learner solves by moving the sliders
+  - { check: 'F/m', target: 2 }                    # reach a value (tolerance: 2 % or 0.01)
+  - { check: 'F/m', target: 0.5, tol: 0.02 }       # with your own tolerance
+  - { check: 'abs(m - 10) < 0.3 and F/m > 1.4' }   # or any true/false condition
+```
+
+`check` is a mathjs expression in the lesson's parameters. The checker proves that every challenge can actually be solved with the sliders, so an impossible task fails the build. The `## Real-life examples` and `## Test yourself` sections of each `<lang>.md` must have exactly as many items as `presets` and `challenges`. Solved challenges are saved in the learner's browser with their progress.
 
 ## Add a language
 

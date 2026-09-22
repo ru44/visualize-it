@@ -59,3 +59,24 @@ derivation:
   - EI\,y''(x) = M(x) = F(L-x)
   - y(0)=y'(0)=0 \implies y(x) = \frac{Fx^2(3L-x)}{6EI}
 charts: []
+primary: F
+presets:
+  - F: 200
+    L: 1
+    E: 10
+    I: 50
+    x: 1
+  - F: 800
+    L: 4
+    E: 70
+    I: 100
+    x: 4
+  - F: 5000
+    L: 5
+    E: 200
+    I: 150
+    x: 5
+challenges:
+  - check: abs(x-L)<0.05 and abs(F*x^2*(3*L-x)/(6*E*1e9*I*1e-8)*1000 - 50) < 5
+  - check: L<3 and x>=L-0.05 and F*x^2*(3*L-x)/(6*E*1e9*I*1e-8)*1000 > 100
+  - check: x>=L-0.05 and F*x^2*(3*L-x)/(6*E*1e9*I*1e-8)*1000 < 1

@@ -58,3 +58,22 @@ derivation:
   - \int_a^b v(t)\,dt = \int_a^b \frac{dx}{dt}\,dt = x(b) - x(a)
   - \Delta x = x(b) - x(a)
 charts: []
+primary: b
+presets:
+  - v0: 5
+    acc: 0
+    a: 0
+    b: 5
+  - v0: 4
+    acc: -2
+    a: 0
+    b: 4
+  - v0: 8
+    acc: -2
+    a: 0
+    b: 4
+challenges:
+  - check: v0*(b-a)+0.5*acc*(b^2-a^2)
+    target: 20
+  - check: abs(v0*(b-a)+0.5*acc*(b^2-a^2))<0.5 and abs(v0)>1
+  - check: v0>0 and acc<0 and (v0+acc*b)<0 and a<0.5

@@ -57,3 +57,22 @@ derivation:
   - J = \int_a^b F(t)\,dt = \int_a^b m\frac{dv}{dt}\,dt = m\int_{v(a)}^{v(b)} dv
   - J = m\big(v(b) - v(a)\big) = \Delta p
 charts: []
+primary: w
+presets:
+  - Fmax: 9
+    w: 0.03
+    a: 0.3
+    b: 0.7
+  - Fmax: 2
+    w: 0.3
+    a: 0.1
+    b: 0.9
+  - Fmax: 10
+    w: 0.02
+    a: 0.4
+    b: 0.6
+challenges:
+  - check: Fmax*w
+    target: 1.5
+  - check: abs(Fmax-5)<0.3 and w>0.3
+  - check: w<0.05 and Fmax<3

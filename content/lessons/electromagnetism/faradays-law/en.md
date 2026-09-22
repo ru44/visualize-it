@@ -1,9 +1,8 @@
 ---
 title: Faraday's law of induction
 summary: >-
-  A changing magnetic flux through a loop induces an emf equal to (minus) the
-  rate that flux is changing — the steeper the flux curve, the bigger the
-  induced voltage.
+  This is why spinning a coil in a magnet makes electricity: it predicts the
+  voltage a generator, transformer, or induction cooktop produces.
 parameters:
   B: field strength B
   A: loop area A
@@ -17,11 +16,29 @@ variables:
   - frequency at which the loop rotates (or the field varies)
 ---
 
+## Try it
+
+1. Picture a bike dynamo: a small coil, 50 turns, spinning twice a second in a modest magnetic field, lighting a bulb.
+2. Drag the point along the curve. The tangent line — the slope — is the voltage the coil produces at that instant.
+3. Raise «rotation frequency f». The curve grows taller and the voltage the coil makes goes up too.
+
+## Real-life examples
+
+1. **A bike dynamo.** A 50-turn coil spinning twice a second in a 0.2 T field, with a small 0.2 m² loop, produces a peak voltage of about 6 V — enough to light a bulb.
+2. **A power-station generator.** A huge 200-turn coil spinning fast in a strong 2 T field, with a 2 m² loop, produces a peak of about 10,000 V before transformers step it down for homes.
+3. **An induction cooktop coil.** A 100-turn coil switching once a second in a 1 T field over a 0.3 m² area makes about 190 V, enough to drive the currents that heat the pan.
+
+## Test yourself
+
+1. Build a hand-crank generator that produces a peak voltage of about 6 V, like a bike dynamo.
+2. Without touching the field strength, area, or turns much, push the peak voltage above 500 V using speed alone.
+3. Keep the coil small (area at most 0.5 m²) and the field weak (at most 1 T), but still reach a peak voltage above 20 V.
+
 ## Intuition
 
-The curve above is the flux $\Phi(t)$ through a coil — think of it as a loop of wire spinning in a fixed field, so the field "seen" through the loop rises and falls like a cosine. Drag the point along the curve: the tangent line is the induced emf. It is steepest — biggest emf — exactly where the flux itself crosses zero, and flat — zero emf — at the peaks and troughs of flux.
+Picture a bike dynamo: a small coil spinning in a magnet as the wheel turns, lighting a bulb. The curve above is the flux through that coil — how much magnetic field passes through the loop — and it rises and falls like a wave as the coil spins. Drag the point along the curve: the tangent line, the slope at that spot, is the voltage the coil produces right then. It is steepest, and the voltage biggest, exactly where the flux crosses zero, and flat, with zero voltage, at the flux's highest and lowest points.
 
-The chart below plots that slope directly as a sine wave, a quarter-cycle ahead of the flux. Raise the frequency $f$ and both the flux oscillates faster and the emf curve grows taller: doubling how fast the flux changes doubles the voltage it induces, even though the flux amplitude $BA$ never changed.
+The chart below plots that voltage directly, a quarter-turn ahead of the flux curve. Raise «rotation frequency f» and the flux wave speeds up while the voltage curve grows taller: spin the coil twice as fast, and it produces twice the voltage, even though the field and coil size never changed.
 
 ## Formal
 

@@ -1,0 +1,41 @@
+id: doubling-and-the-chessboard
+subject: numbers
+difficulty: high-school
+equation: 'g = 2^{k-1}'
+concepts:
+- exponential growth
+- doubling
+prerequisites:
+- powers-of-ten
+related:
+- exponential-growth
+- exponents-and-powers
+visualization:
+  type: chessboard
+  options: {}
+parameters:
+  k:
+    min: 1
+    max: 64
+    step: 1
+    value: 10
+variables:
+- g
+- k
+derivation:
+- 'g_{1} = 1'
+- 'g_{k} = 2\,g_{k-1}'
+- 'g_{k} = 2^{k-1}'
+primary: k
+presets:
+- k: 8
+- k: 32
+- k: 64
+challenges:
+- check: k
+  target: 16
+  tol: 0.4
+- check: 2^(k-1)
+  target: 1000000
+  tol: 100000
+- check: k >= 60

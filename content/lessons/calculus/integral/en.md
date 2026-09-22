@@ -1,8 +1,9 @@
 ---
 title: Integral
 summary: >-
-  An integral adds up infinitely many infinitely thin slices. Start with
-  rectangles and watch them converge.
+  Working out the exact distance a car covered from a wiggly speed graph is
+  not something a ruler can do — stacking thinner and thinner rectangles
+  under the curve is how this idea gets it exactly.
 parameters:
   'n': number of rectangles
   a: lower bound a
@@ -19,11 +20,23 @@ variables:
 2. Slide it to 50, then 500. The gaps disappear.
 3. Compare «sum of rectangles» with «integral» under the picture: the difference shrinks toward 0. The integral is where the sum is heading.
 
+## Real-life examples
+
+1. **A rough first estimate.** With just 4 rectangles from a = 0 to b = 4, the sum is a crude first guess at the true area.
+2. **A tighter estimate over a shorter interval.** With 50 rectangles from a = 1 to b = 3, the gaps between rectangles and curve have mostly vanished.
+3. **A near-exact area over the full domain.** With 500 rectangles from a = 0 to b = 5, the sum has essentially converged to the true integral.
+
+## Test yourself
+
+1. Find bounds where the true area under the curve equals about 9.
+2. Use more than 100 rectangles while keeping the area above 20.
+3. Make the signed area negative by setting the lower bound above the upper bound.
+
 ## Intuition
 
-We know how to find the area of a rectangle, not of a curved region. So cheat: cover the region with rectangles and add them up.
+Picture the region under a curving line on screen, and imagine wanting its exact area — but the only shape whose area you know for certain is a rectangle, just width times height. So here is the trick: cover the curved region with «number of rectangles» thin rectangles side by side, and add up all their areas instead.
 
-With 4 rectangles the fit is poor. Slide to 10, 50, 500 — the gaps vanish and the sum settles on a single number. The integral is that number.
+With «number of rectangles» set to 4 the fit is poor — the rectangles clearly miss chunks of the true area. Slide it up to 10, then 50, then 500: the gaps vanish and the sum settles on a single number, closer and closer to the true area. That settling number is called the integral.
 
 ## Formal
 

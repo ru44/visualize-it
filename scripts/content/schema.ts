@@ -2,7 +2,7 @@
 // each `<lang>.md` holds the text. Validation errors name the file and the field.
 import { z } from 'zod'
 
-export const SUBJECTS = ['algebra', 'functions', 'calculus', 'geometry', 'trigonometry', 'statistics', 'physics', 'waves', 'electricity', 'electromagnetism', 'aerodynamics', 'thermodynamics', 'chemistry', 'computer-science', 'biology', 'earth-space', 'economics', 'engineering', 'discrete'] as const
+export const SUBJECTS = ['algebra', 'functions', 'calculus', 'geometry', 'trigonometry', 'statistics', 'physics', 'waves', 'electricity', 'electromagnetism', 'aerodynamics', 'thermodynamics', 'chemistry', 'computer-science', 'biology', 'earth-space', 'economics', 'engineering', 'discrete', 'ai', 'numbers', 'data', 'quantum', 'relativity', 'cryptography', 'cosmos'] as const
 export const LEVELS = ['beginner', 'high-school', 'university', 'advanced'] as const
 
 export const ParamSpec = z.object({ min: z.number(), max: z.number(), step: z.number().positive(), value: z.number(), unit: z.string().optional() })
@@ -29,6 +29,14 @@ export const LessonYaml = z.object({
   variables: z.array(z.string()).default([]),
   /** Derivation steps (LaTeX); the note for each step lives in the language files. */
   derivation: z.array(z.string()).default([]),
+  /** Real-life situations: clicking one loads these slider values. Labels/descriptions live in '## Real-life examples'. */
+  presets: z.array(z.record(z.string(), z.number())).default([]),
+  /**
+   * Self-tests checked live against the sliders. `check` is a mathjs expression in the parameters. With `target`,
+   * it passes when |check − target| ≤ tol (default 2% of |target|, at least 0.01); without, when check is true.
+   * Texts live in '## Test yourself'. The build proves each one can be solved with the lesson's sliders.
+   */
+  challenges: z.array(z.object({ check: z.string(), target: z.number().optional(), tol: z.number().positive().optional() })).default([]),
   /** Extra videos for this lesson (subject-level ones live in content/videos.yaml). */
   videos: z.array(Video).default([]),
   charts: z
@@ -46,6 +54,8 @@ export const LessonText = z.object({
   charts: z.array(z.object({ title: z.string(), xLabel: z.string(), yLabel: z.string(), series: z.array(z.string()) })).default([]),
   /** 2–4 concrete steps for the learner: what to drag and what to notice. Shown first in guided mode. */
   tryIt: z.array(z.string()).default([]),
+  presets: z.array(z.object({ label: z.string(), text: z.string() })).default([]),
+  challenges: z.array(z.string()).default([]),
   intuition: z.array(z.string()).min(1),
   formal: z.array(z.string()).min(1),
   advanced: z.array(z.string()).default([]),

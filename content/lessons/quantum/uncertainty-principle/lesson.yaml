@@ -1,0 +1,45 @@
+id: uncertainty-principle
+subject: quantum
+difficulty: high-school
+equation: \Delta x \cdot \Delta p \geq \frac{\hbar}{2}
+concepts:
+  - heisenberg-uncertainty
+  - wave-packet
+  - complementarity
+prerequisites:
+  - de-broglie-waves
+related:
+  - double-slit-experiment
+  - schrodinger-equation-particle-in-a-box
+visualization:
+  type: wave-function
+  options:
+    mode: packet
+parameters:
+  sx:
+    min: 0.02
+    max: 0.3
+    step: 0.005
+    value: 0.08
+variables:
+  - \Delta x
+  - \Delta p
+  - \hbar
+derivation:
+  - \Delta x \cdot \Delta p \geq \frac{\hbar}{2}
+  - \Delta p = \frac{\hbar}{2\,\Delta x}
+  - \Delta x \to 0 \ \Rightarrow\ \Delta p \to \infty
+charts: []
+primary: sx
+presets:
+  - sx: 0.25
+  - sx: 0.03
+  - sx: 0.1
+challenges:
+  - check: 1/(2*sx)
+    target: 5
+    tol: 0.3
+  - check: 1/(2*sx) > 15
+  - check: 1/(2*sx)
+    target: 1.67
+    tol: 0.1

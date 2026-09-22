@@ -48,3 +48,17 @@ visualization3d:
   type: block-force
   options: {}
 primary: F
+presets:
+- F: 20
+  m: 15
+- F: 50
+  m: 0.5
+- F: 30
+  m: 20
+challenges:
+- check: F/m
+  target: 2
+- check: abs(m - 10) < 0.3 and abs(F/m - 1.5) < 0.05
+- check: F/m
+  target: 0.5
+  tol: 0.02

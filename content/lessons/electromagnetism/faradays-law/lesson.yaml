@@ -64,3 +64,23 @@ derivation:
   - \varepsilon = -N\frac{d\Phi}{dt}
   - \varepsilon(t) = N B A \, 2\pi f \sin(2\pi f t)
 charts: []
+primary: f
+presets:
+- 'N': 50
+  B: 0.2
+  A: 0.2
+  f: 0.5
+- 'N': 200
+  B: 2
+  A: 2
+  f: 2
+- 'N': 100
+  B: 1
+  A: 0.3
+  f: 1
+challenges:
+- check: 'N*B*A*2*pi*f'
+  target: 6
+  tol: 1
+- check: 'N*B*A*2*pi*f > 500'
+- check: 'A <= 0.5 and B <= 1 and N*B*A*2*pi*f > 20'

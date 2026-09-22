@@ -52,3 +52,19 @@ derivation:
   - "\\text{add solvent: } n \\text{ unchanged}, \\quad V_1 \\to V_2"
   - C_2 = \frac{n}{V_2} = \frac{C_1V_1}{V_2}
 charts: []
+primary: x
+presets:
+  - C1: 2
+    V1: 0.5
+    x: 5
+  - C1: 4
+    V1: 1
+    x: 4
+  - C1: 3
+    V1: 0.2
+    x: 2
+challenges:
+  - check: C1*V1/x
+    target: 0.4
+  - check: C1*V1/x < 0.1
+  - check: abs(x - 2*V1) < 0.1

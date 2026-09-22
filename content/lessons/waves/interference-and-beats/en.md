@@ -1,9 +1,9 @@
 ---
 title: Interference and beats
 summary: >-
-  Two tones close in frequency do not sound steady together — they beat,
-  swelling and fading at a rate equal to the difference between their
-  frequencies.
+  Two musical notes that are almost — but not quite — the same pitch don't
+  sound steady together; they pulse louder and softer in a rhythm you can
+  hear, and this lesson shows why.
 parameters:
   f1: frequency f1
   f2: frequency f2
@@ -13,11 +13,29 @@ variables:
   - the beat frequency — how often the combined amplitude swells
 ---
 
+## Try it
+
+1. Watch the curve: it wiggles quickly while its overall height swells and shrinks slowly.
+2. Raise the slider f2 away from f1. The swelling speeds up.
+3. Bring f2 back close to f1. The swelling slows almost to a stop — the two notes now sound like one.
+
+## Real-life examples
+
+1. **Tuning a guitar.** Two strings almost in tune (f1 = 8, f2 = 8.2) swell and fade slowly — a guitarist listens for this and tightens the string until it stops.
+2. **Two out-of-tune piano notes.** A bigger mismatch (f1 = 6, f2 = 6.8) beats noticeably faster, which is why it sounds harsher and more obviously "off".
+3. **Mixing two radio signals.** Engineers combine a station's frequency with a reference frequency far away (f1 = 5, f2 = 11) to produce a fast beat that is easier to process electronically.
+
+## Test yourself
+
+1. Make the two notes beat exactly once per second (a beat frequency of 1 Hz).
+2. Tune the two frequencies so close together that the beating nearly disappears (within 0.05 Hz).
+3. Make the beating fast: at least 5 beats per second.
+
 ## Intuition
 
-With $f_1$ and $f_2$ close together, the sum does not look like a clean sine wave — it looks like a fast wiggle trapped inside a slowly swelling and shrinking envelope. Watch the envelope: it grows to twice the single-tone amplitude where the two waves line up (constructive interference), and nearly cancels to zero where they fall out of step (destructive interference).
+Pluck two guitar strings tuned almost, but not quite, to the same note — say 220 and 224 vibrations per second — and you do not hear one steady tone. Instead the sound swells louder, fades to almost silence, then swells again, four times every second. The graph on screen shows this same effect with slower, easier-to-see numbers: the wiggly blue curve is the sum of two waves at frequencies $f_1$ and $f_2$ (starting at 8 and 9, meaning 8 and 9 cycles per second). Watch the curve's height rise and fall inside a slow, breathing outline — that outline is the beat.
 
-Pull $f_1$ and $f_2$ further apart and the envelope pulses faster; bring them closer together and the swelling slows down almost to a standstill. The rate of that swelling is always exactly $|f_1-f_2|$ — the beat frequency, independent of how large $f_1$ and $f_2$ themselves are.
+Drag the slider $f_2$ away from $f_1$ and that swelling speeds up; bring them close together and it slows down almost to a standstill. Set $f_1$ to 8 and $f_2$ to 9 and count: the loud-soft cycle happens once every second, matching the gap between them, 1. This gap, $|f_1-f_2|$, is called the beat frequency, and it does not care how high or low the two notes are — only how far apart they sit.
 
 ## Formal
 

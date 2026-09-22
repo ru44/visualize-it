@@ -8,7 +8,8 @@ Every concept follows the same path: **Equation → Visualization → Manipulati
 
 - **Equation Explorer** — type `∫₀⁴ x² dx`, `lim(x→0) sin(x)/x`, `2x + 5 = 17`, `C(52,5)`, `7!`, `V = IR`… and get an interactive visualization
 - **Step-by-step solver** — linear and quadratic equations with every transformation explained; numeric roots for anything else
-- **156 lessons in 19 subjects** — algebra (incl. vectors, matrices, complex numbers), functions, calculus, geometry, trigonometry, statistics & probability, discrete mathematics, mechanics, waves & optics, electricity, electromagnetism, aerodynamics, thermodynamics, chemistry, computer science (incl. cryptography), biology, earth & space, economics & finance, signals & engineering
+- **213 lessons in 26 subjects**, in English and Arabic — algebra (incl. vectors, matrices, complex numbers), functions, calculus, geometry, trigonometry, statistics & probability, discrete mathematics, numbers & big numbers, mechanics, waves & optics, electricity, electromagnetism, aerodynamics, thermodynamics, quantum physics, gravity & relativity, the universe (dark matter, dark energy, quarks, quasars), chemistry, computer science, cryptography, AI & machine learning, data & big data, biology, earth & space, economics & finance, signals & engineering
+- **Real life and self-test in every lesson with sliders** — one-tap real situations that set the sliders (a car braking, a phone charging…) and challenges the learner solves by moving them; the build proves every challenge can be solved
 - **Optional 3D scenes** (three.js) on lessons that opt in; **symbol guide** explaining every letter used in any formula; **progress checklist**; **video links** per subject
 - **Graphing engine** (`/graph`) — functions, polar, parametric, implicit curves and vector fields with zoom, pan, derivative overlay and auto-generated parameter sliders
 - **3D surfaces** with tangent plane and gradient; type `z = sin(x)·cos(y)` in the explorer

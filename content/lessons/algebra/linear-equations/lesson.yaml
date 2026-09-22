@@ -53,3 +53,20 @@ derivation:
   - mx + b - k = 0
   - x = \frac{k - b}{m}
 charts: []
+primary: x
+presets:
+  - m: 1.5
+    b: 2
+    k: 8
+  - m: 0.5
+    b: 3
+    k: 6
+  - m: 2
+    b: -3
+    k: 5
+challenges:
+  - check: abs(x + 5) + abs(m*x + b - k)
+    target: 0
+    tol: 0.1
+  - check: abs(m) < 0.05 and abs(b - k) < 0.1
+  - check: abs(m) < 0.05 and abs(b - k) > 1

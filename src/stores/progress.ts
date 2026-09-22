@@ -25,6 +25,20 @@ export const useProgress = defineStore('progress', () => {
     const all = lessons.filter((l) => l.subject === subject)
     return { done: all.filter((l) => done.has(l.id)).length, total: all.length }
   }
-  const reset = () => done.clear()
-  return { isDone, toggle, total, doneCount, bySubject, reset }
+  // Solved self-test challenges, per lesson ("lesson#index").
+  let solvedSaved: string[] = []
+  try {
+    const v = JSON.parse(localStorage.getItem('challenges') ?? '[]')
+    solvedSaved = Array.isArray(v) ? v : []
+  } catch {}
+  const solved = reactive(new Set<string>(solvedSaved))
+  watch(solved, () => {
+    try {
+      localStorage.setItem('challenges', JSON.stringify([...solved]))
+    } catch {}
+  })
+  const markSolved = (id: string, i: number) => solved.add(`${id}#${i}`)
+  const isSolved = (id: string, i: number) => solved.has(`${id}#${i}`)
+  const reset = () => (done.clear(), solved.clear())
+  return { isDone, toggle, total, doneCount, bySubject, reset, markSolved, isSolved }
 })

@@ -54,3 +54,19 @@ visualization3d:
   type: gas-box
   options: {}
 primary: V
+presets:
+  - n: 0.5
+    T: 300
+    V: 12
+  - n: 2
+    T: 320
+    V: 10
+  - n: 5
+    T: 300
+    V: 8
+challenges:
+  - check: n*8.314*T/V
+    target: 250
+  - check: n*8.314*T/V < 50
+  - check: n*8.314*T/V
+    target: 150

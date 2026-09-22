@@ -1,8 +1,8 @@
 ---
 title: The normal distribution
 summary: >-
-  The bell curve: where sums of many small random effects end up. The area under
-  it between two values is a probability.
+  The bell curve behind heights, test scores, and measurement error — the area
+  under it between two values tells you a probability.
 parameters:
   mu: μ — mean
   s: σ — standard deviation
@@ -16,11 +16,29 @@ variables:
   - the shaded area — the probability of landing between a and b
 ---
 
+## Try it
+
+1. Watch the shaded region between «from a» and «to b»: its area is the probability of landing in that range.
+2. Shrink «σ — standard deviation». The bell narrows and grows taller, concentrating around the mean.
+3. Set «from a» and «to b» to one «σ — standard deviation» either side of «μ — mean». The shaded area settles at about 68%.
+
+## Real-life examples
+
+1. **Class test scores.** Scores cluster around 6 out of 12 with a typical spread of 1.5 points; the shaded area shows the chance of scoring between 4.5 and 7.5.
+2. **Precision manufacturing.** A machine cuts parts to a target size of 8 with very little error, a spread of just 0.5; nearly every part lands between 7.5 and 8.5.
+3. **Delivery time variability.** Packages average 5 days to arrive with a wide spread of 3.5 days; the shaded area shows the chance a delivery takes between 1.5 and 8.5 days.
+
+## Test yourself
+
+1. Centre the shaded window on the mean, one standard deviation either side, so it covers about 68% probability.
+2. Make a narrow distribution — spread under 1 — where your window still captures more than 95% of the probability.
+3. Capture more than 30% probability using a shaded window narrower than 1 unit.
+
 ## Intuition
 
-Heights, measurement errors, exam scores: pile up enough small independent influences and this curve appears. The total area under it is exactly 1, and the shaded part is the probability of a value between $a$ and $b$. With $a$ and $b$ one standard deviation either side of the mean, the shaded area is 0.683.
+Heights, test scores, measurement errors: pile up enough small independent influences and this curve appears. The total area under it is exactly 1, and the shaded part between «from a» and «to b» is the probability of landing in that range. Set «from a» and «to b» one «σ — standard deviation» either side of «μ — mean» and the shaded area is 0.683.
 
-Widen $\sigma$ and the bell flattens and spreads, but the area between $\mu \pm \sigma$ stays 68%, between $\mu \pm 2\sigma$ 95%, and between $\mu \pm 3\sigma$ 99.7%. Those three numbers let you judge any bell-shaped data with just a mean and a standard deviation.
+Widen «σ — standard deviation» and the bell flattens and spreads, but the area within one standard deviation of the mean stays 68%, within two 95%, and within three 99.7%. Those three numbers let you judge any bell-shaped data using just a mean and a standard deviation.
 
 ## Formal
 

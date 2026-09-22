@@ -1,8 +1,8 @@
 ---
 title: Pressure in fluids
 summary: >-
-  Pressure in a fluid grows in a straight line with depth — every extra metre
-  of water above you adds the same fixed weight.
+  This is why your ears hurt when you dive to the bottom of a pool, and why
+  dams are built much thicker at the base than at the top.
 parameters:
   rho: fluid density ρ
   x: depth x
@@ -13,11 +13,29 @@ variables:
   - fluid density
 ---
 
+## Try it
+
+1. Watch the curve start at the surface, x = 0.
+2. Drag the slider "depth x" deeper. Watch the pressure climb in a straight line.
+3. Now raise "fluid density ρ" toward something denser, like seawater. The line's slope gets steeper.
+
+## Real-life examples
+
+1. **Swimming pool, 3 m deep.** In fresh water (1000 kg/m³), the pressure at the bottom of a 3 m pool is already noticeably higher than at the surface.
+2. **Scuba diving in the sea at 10 m.** Seawater is slightly denser (1020 kg/m³) than fresh water, and at 10 m depth the pressure has risen by about one atmosphere.
+3. **Floating in the Dead Sea at 5 m.** The Dead Sea's water is far saltier and denser (1240 kg/m³), so pressure builds up faster with depth than in ordinary seawater.
+
+## Test yourself
+
+1. Make the total pressure reach 200,000 Pa (about twice atmospheric pressure).
+2. Find a depth and density where the pressure increase from the surface alone equals 50,000 Pa.
+3. Keeping the fluid as fresh water (ρ=1000 kg/m³), find the depth where the pressure reaches 150,000 Pa.
+
 ## Intuition
 
-Drag $x$ deeper and watch the curve climb in a dead straight line — no curving, no flattening, because each extra metre of fluid above you adds exactly the same weight on top of everything below it. At $x = 0$ the curve starts at ordinary atmospheric pressure, not zero, because the air above the surface is already pressing down.
+Picture diving to 3 metres in a swimming pool, fresh water with density 1000 kg/m³. Drag the slider "depth x" deeper and watch the curve climb in a dead straight line: no curving, no flattening, because each extra metre of water above you adds exactly the same weight on top of everything below it. At depth zero the curve starts at ordinary atmospheric pressure, not zero, because the air above the surface is already pressing down.
 
-Now raise $\rho$ from water toward something denser, like seawater or mercury, and watch the line's slope get steeper: the same depth now carries far more weight per square metre, so the pressure at any given $x$ jumps up.
+Now raise "fluid density ρ" from fresh water toward something denser, like seawater at 1020 kg/m³ or the salty Dead Sea at 1240 kg/m³, and watch the line's slope get steeper: the same depth now carries far more weight per square metre, so the pressure at any given depth jumps up.
 
 ## Formal
 

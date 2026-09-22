@@ -16,11 +16,29 @@ variables:
   - time, in hours
 ---
 
+## Try it
+
+1. Drag time forward. Watch sea level rise and fall roughly twice a day as the lunar bulge sweeps past.
+2. Raise $B$, the Sun's pull, toward $A$, the Moon's pull. Watch the tide pattern's shape change.
+3. Set $B$ to 0. Watch the tide settle into one clean, repeating lunar rhythm.
+
+## Real-life examples
+
+- **A typical ocean coastline.** A moderate lunar pull ($A = 1.0$ m) and a smaller solar one ($B = 0.3$ m) give an ordinary tidal range of a couple of metres.
+- **A huge tidal range coast, Bay-of-Fundy-like.** With both pulls near their maximum ($A = 3.0$ m, $B = 1.5$ m) lined up together, the combined high tide towers several metres above the low.
+- **A calm sea with almost no solar pull.** A weak lunar pull ($A = 0.5$ m) and no solar contribution ($B = 0$) still produce a gentle, steady rhythm.
+
+## Test yourself
+
+1. Push the combined tide height above 3 metres.
+2. Find a moment of low tide: push sea level below −2 metres.
+3. Keep the lunar pull under 0.7 m and find a moment when the sea sits within 0.2 m of its average level.
+
 ## Intuition
 
 Drag time forward and watch the sea level rise and fall roughly twice a day. That is the lunar bulge sweeping past as Earth spins underneath it, and because the Moon also creeps along its orbit each day, the two high tides land about 50 minutes later each day rather than exactly 12 hours apart — a full lunar day is 24 h 50 min, not 24 h.
 
-Now raise $B$ toward $A$ and watch the pattern change shape: when the solar and lunar bulges line up you get the tall spring tides of new and full moon, and when they are a quarter-cycle apart you get the small neap tides of the first and last quarter — the very same phase that sets the Moon's visual shape.
+Now raise the Sun's tide strength, called $B$. Bring it up toward the Moon's tide strength, $A$. Watch the pattern change shape: when the solar and lunar bulges line up, you get the tall spring tides of new and full moon. When they sit a quarter-cycle apart instead, you get the small neap tides of the first and last quarter — the very same phase that sets the Moon's visible shape.
 
 ## Formal
 

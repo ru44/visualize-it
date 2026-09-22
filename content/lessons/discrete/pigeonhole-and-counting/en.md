@@ -1,8 +1,9 @@
 ---
 title: 'The pigeonhole principle and counting'
 summary: >-
-  Cram more items into fewer boxes than you have items, and one box must
-  hold at least two. A simple idea that proves surprisingly strong things.
+  Cramming more items into fewer boxes than you have items forces one box to
+  hold at least two — a simple idea that proves surprisingly strong things
+  about codes, passwords, and shared birthdays.
 parameters:
   n: n — items to choose from
   k: k — how many to pick
@@ -11,11 +12,29 @@ variables:
   - m — the number of boxes available
 ---
 
+## Try it
+
+1. Set n to 8 and k to 3, and read the total under the pool: that is how many different 3-person committees you could form.
+2. Drag k up toward n and watch the number of groups climb, then drag it back down toward 0 and watch it shrink again.
+3. Tap anywhere on the token pool to jump k straight to that position, and compare the new count to the one before.
+
+## Real-life examples
+
+1. **Picking a 3-person committee.** Choosing 3 volunteers for a committee out of 8 people who signed up: n = 8 and k = 3, and the order they are picked in does not matter.
+2. **Choosing pizza toppings.** A pizza shop lets you pick 2 toppings from a menu of 5: n = 5 and k = 2, "mushroom then olive" counts the same as "olive then mushroom".
+3. **Picking lottery numbers.** A lottery draws 4 numbered balls from a drum of 10: n = 10 and k = 4, and the winning set is the same no matter the order the balls came out.
+
+## Test yourself
+
+1. Find values of n and k that allow exactly 10 different selections.
+2. Find values of n and k that give more than 100 different selections while picking 6 or fewer items.
+3. Find the n and k that give the largest possible number of different selections in this picture (252 groups).
+
 ## Intuition
 
-Every selection the picture draws is a group of k items chosen from n, with the group itself all that matters, not the order you picked them in. Slide k up toward n and the number of possible groups grows fast, because there are simply many more ways to combine items as the group gets closer to half of n.
+Imagine 8 volunteers sign up and a 3-person committee needs to be chosen from them. Slide n to 8 and k to 3, and the picture below shows every different group of 3 you could form from the coloured tokens in the pool. Push k up toward n and the number of possible groups grows fast, because there are far more ways to combine tokens once the group size gets close to half of n.
 
-That growth in choices is exactly what the pigeonhole principle is about in reverse: if you have more items than boxes to put them in, at least one box is forced to hold more than one item, no matter how cleverly you distribute them. With 13 people and 12 months of the year, at least two people must share a birth month — you cannot spread 13 pigeons across 12 holes one per hole.
+Now flip the idea around: invite 13 people to a party where only 12 calendar months exist to hold birthdays, and at least two guests are forced to share a month no matter how the dates fall. That is the pigeonhole principle: whenever you have more items than boxes to hold them, one box must end up with two or more items inside it.
 
 ## Formal
 

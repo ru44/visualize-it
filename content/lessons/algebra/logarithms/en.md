@@ -1,8 +1,9 @@
 ---
 title: Logarithms as the inverse of powers
 summary: >-
-  A logarithm answers "what power of $b$ gives $x$?" — it undoes exponentiation
-  the way subtraction undoes addition.
+  Find out how many times you would need to multiply by a fixed factor to
+  reach a number — the scale behind pH, earthquake magnitude, and digital
+  bits.
 parameters:
   b: base b
   x: x
@@ -17,11 +18,29 @@ charts:
       - y = b^x
 ---
 
+## Try it
+
+1. Drag x and watch the curve's height — that height is the log of x.
+2. Raise the "base b" slider and watch the curve flatten, needing a much bigger x to reach the same height.
+3. Compare with the dashed curve below, $b^x$ — notice the two curves mirror each other.
+
+## Real-life examples
+
+1. **Bacteria doubling.** A colony doubles every hour (base b=2). After growing 8-fold (x=8), the curve reads exactly 3 — three doubling hours have passed.
+2. **A rumor tripling.** A rumor's audience triples every day (base b=3). Once it reaches 9 times its start size (x=9), the curve reads 2 — two days have passed.
+3. **Compound savings.** Savings grow by a factor of 1.5 each year (base b=1.5). Reaching 10 times the original amount (x=10) takes just under 6 years.
+
+## Test yourself
+
+1. Find a base other than 2 where the curve still reads exactly 3 somewhere — more than one answer works.
+2. Make the curve read exactly -1.
+3. Set the base to 3, then find the x where the curve reads exactly 2 — the point where two triplings land.
+
 ## Intuition
 
-Drag $x$ and read $y = \log_b x$: it is the exponent you would need on $b$ to get back to $x$. Compare with the chart below, $b^x$ — the log curve is that same relationship read backwards, which is why the two curves are mirror images across $y = x$.
+A bacteria colony doubles in size every hour. After 3 hours it has grown 8-fold — 2 doubled three times is 8. The curve on this screen answers the reverse question: given that the colony is now 8 times bigger, drag x to 8 and read the height of the curve — it lands on 3, the number of doubling hours that must have passed. Compare it with the dashed curve below, $b^x$: the two curves are mirror images of each other, because one undoes exactly what the other does.
 
-Increase the base $b$ and the log curve flattens: it takes a much larger $x$ to reach the same output, because a bigger base reaches any given power faster. At $x = 1$ every log curve passes through zero, whatever the base — $b^0 = 1$ always.
+Raise the base b and the curve flattens: reaching the same height now needs a far bigger x, because a bigger base reaches any given multiple faster — tripling gets you further per step than doubling does. Whatever the base, the curve always crosses zero at x = 1, since raising any base to the power 0 always gives 1.
 
 ## Formal
 

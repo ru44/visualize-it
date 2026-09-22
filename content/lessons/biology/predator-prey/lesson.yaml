@@ -74,3 +74,30 @@ derivation:
   - a\,\text{prey}=b\,\text{prey}\cdot\text{pred} \ \Rightarrow\ \text{pred}^*=a/b
   - cb\,\text{prey}\cdot\text{pred}=d\,\text{pred} \ \Rightarrow\ \text{prey}^*=d/(cb)
 charts: []
+primary: b
+presets:
+- a: 0.6
+  b: 0.02
+  c: 0.3
+  d: 0.3
+  x0: 40
+  y0: 9
+- a: 1.5
+  b: 0.15
+  c: 0.6
+  d: 1.2
+  x0: 30
+  y0: 10
+- a: 0.8
+  b: 0.03
+  c: 0.4
+  d: 0.2
+  x0: 50
+  y0: 15
+challenges:
+- check: a/b
+  target: 20
+- check: d/(c*b)
+  target: 50
+- check: x0/y0
+  target: 4

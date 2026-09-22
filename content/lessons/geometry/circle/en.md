@@ -1,8 +1,8 @@
 ---
 title: 'Circle: circumference and area'
 summary: >-
-  Every point on a circle sits the same distance $r$ from its centre; that
-  single number fixes how far around it is and how much area it encloses.
+  Every point on a circle sits the same distance from its centre — that one
+  distance alone fixes how far around it is and how much area it encloses.
 parameters:
   r: r — radius
 variables:
@@ -16,6 +16,18 @@ variables:
 1. Drag the handle on the rim to make the circle bigger and smaller.
 2. Look at the straight line under the circle: it is the rim unrolled. About 6.28 radius-lengths fit along it, always.
 3. Read «ratio C/d» under the picture. It never changes: that fixed number is π.
+
+## Real-life examples
+
+1. **Backyard trampoline.** A trampoline with a 1.8 m radius has a jumping surface of about 10 square metres.
+2. **Manhole cover.** A manhole cover with a 0.5 m radius has a rim just over 3 metres around.
+3. **Small satellite dish.** A satellite dish with a 3 m radius collects signal over an area of roughly 28 square metres.
+
+## Test yourself
+
+1. Size the circle so its area is about 12 square metres.
+2. Make a circle bigger than 3 m in radius whose circumference tops 25 m.
+3. Keep the radius under 1 m yet the area below 2 square metres.
 
 ## Intuition
 

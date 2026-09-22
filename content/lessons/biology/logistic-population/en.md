@@ -17,11 +17,29 @@ variables:
   - the starting population size
 ---
 
+## Try it
+
+1. Watch the curve start low and climb almost like unchecked exponential growth.
+2. Raise K, the carrying capacity. The population now has more room and grows to a higher final level.
+3. Raise r, the growth rate, instead. The climb gets steeper, but it still levels off at the same K.
+
+## Real-life examples
+
+- **Yeast in a small flask.** A fast grower (r = 0.8) starting from just 10 cells fills a small flask (K = 200) quickly, then levels off once nutrients run short.
+- **A deer herd in a forest.** A moderate growth rate (r = 0.25) lets 50 deer grow toward a forest's carrying capacity of 1000, slowing as they approach it.
+- **A recovering whale population.** A slow-breeding species (r = 0.06) starting from just 20 individuals takes many years to approach a capacity of 500.
+
+## Test yourself
+
+1. Set the starting population at exactly half the carrying capacity — the fastest-growing point on the curve.
+2. Give the population room to grow twentyfold: make K at least 20 times P0.
+3. Make the population recover quickly by setting r above 0.5 while starting from fewer than 30 individuals.
+
 ## Intuition
 
-Drag P0 low, near zero, and the curve starts by climbing almost like simple exponential growth — resources feel unlimited when so few individuals are competing for them. But watch what happens as the curve approaches K: it bends over and flattens, because the term $(1 - P/K)$ shrinks toward zero and chokes off further growth.
+Yeast added to a flask of sugar water multiplies fast at first, doubling again and again — but a flask can only hold so much life, and growth eventually stalls. Drag the starting-population slider, P0, down near zero. The curve climbs almost like plain exponential growth, because resources feel unlimited when so few individuals are competing for them. Now watch what happens as the curve approaches the ceiling set by K, the environment's carrying capacity: it bends over and flattens, because growth chokes off once the population gets close to what the environment can support.
 
-Raise K and the ceiling lifts, letting the same population grow further before levelling off. Raise r instead and the climb gets steeper without changing where it levels off — r sets the pace, K sets the destination. The steepest point of the whole curve is always at $P = K/2$, where growth is fastest before the slowdown takes hold.
+Raise K, the ceiling itself, and the population gets room to grow further before levelling off. Raise r instead, the growth rate, and the climb gets steeper without moving that ceiling — r sets the pace, K sets the destination. The whole curve grows fastest exactly halfway to the ceiling, when the population sits at half of the carrying capacity.
 
 ## Formal
 

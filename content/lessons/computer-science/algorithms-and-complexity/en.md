@@ -1,8 +1,8 @@
 ---
 title: Algorithms and Big-O complexity
 summary: >-
-  How does an algorithm's running time grow as the input grows? Compare a line,
-  a curve and an explosion on the same axes.
+  Before you pick an algorithm, it pays to know whether its running time
+  creeps up slowly or explodes once the input gets huge.
 parameters:
   x: n — input size
   k: k — slope of the linear reference line
@@ -28,11 +28,29 @@ charts:
       - 2^n
 ---
 
+## Try it
+
+1. Drag «n» along the straight line from 1 up to 30, and watch the line stay perfectly straight the whole way.
+2. Look at the chart below: the same n now marks a point on three more curves at once — notice how close together they are at n=10 and how far apart by n=30.
+3. Raise «k» and watch the straight line get steeper — multiplying by a bigger k still only makes a straight line, never a curve.
+
+## Real-life examples
+
+- **Grading 30 exams, 2 minutes each.** With n=30 exams and k=2 minutes per exam, the straight line shows a job that takes 60 minutes in total — double the exams, double the time.
+- **Checking 10 names on a guest list, 1 second each.** With n=10 and k=1, the search takes about 10 seconds — the simplest, slowest-growing kind of work there is.
+- **Delivering to 20 houses, 4 minutes between stops.** With n=20 and k=4, the round trip takes about 80 minutes — still a straight line, just a steeper one.
+
+## Test yourself
+
+1. Set the sliders so the line's height — k times n — lands on exactly 60.
+2. Bring the line's height down to about 24 (within 1 either way).
+3. Push k all the way up to 5, then raise n until the line reaches 100 or higher.
+
 ## Intuition
 
-Drag $n$ along the plain line $k\cdot n$ — the straight reference growth — then look at the chart underneath, where the same $n$ marks three other curves at once. At $n=10$ they are close together; at $n=30$, $n\log_2 n$ has pulled slightly ahead of a straight line, $n^2$ has raced far above it, and $2^n$ has flown off the top of the chart entirely.
+Picture grading a stack of exams: 10 exams take some amount of time, but 30 exams — three times as many — could take three times as long, depending on how the grading works. Drag the slider labelled $n$ (how many exams, from 1 to 30) and watch the straight orange line rise. It is controlled by a second slider, $k$, which sets how steep the line climbs, like minutes spent per exam. At $n=10$ the line sits low. By $n=30$ it has climbed three times higher, because a straight line grows in direct proportion to the number of exams.
 
-That gap is the whole point of Big-O: it is not about which algorithm is faster for one particular $n$, it is about which curve you are on. An $O(n^2)$ algorithm that beats an $O(n\log n)$ one for a small $n$ will always lose once $n$ is large enough — the chart shows exactly where the curves cross and diverge.
+Now look at the chart underneath. The same $n$ marks a point on three more curves at once. One is the straight line itself, labelled n on the chart. Another, labelled n·log2(n) on the legend, climbs a little faster. The steepest, labelled n² there, races far above the rest by the time input size reaches 30. A fourth curve, labelled $2^n$, grows so fast it flies off the top of the chart long before then. That gap between the curves — not which curve wins for one small input — is what tells you whether an algorithm will still be fast once the input is huge.
 
 ## Formal
 

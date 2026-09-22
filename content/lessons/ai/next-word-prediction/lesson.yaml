@@ -1,0 +1,43 @@
+id: next-word-prediction
+subject: ai
+difficulty: beginner
+equation: p(w \mid w_t) = \dfrac{\exp(c(w_t,w)/T)}{\sum_{w'} \exp(c(w_t,w')/T)}
+concepts:
+  - language-model
+  - bigram
+  - next-word-prediction
+  - sampling
+prerequisites:
+  - probability-basics
+  - exponential-growth
+related:
+  - attention
+  - temperature-and-softmax
+visualization:
+  type: next-token
+  options: {}
+parameters:
+  temp:
+    min: 0.1
+    max: 3
+    step: 0.05
+    value: 1
+variables:
+  - w_t
+  - c(w_t,w)
+  - T
+  - p(w \mid w_t)
+derivation:
+  - c(w_t, w)
+  - p(w \mid w_t) = \dfrac{\exp(c(w_t,w)/T)}{\sum_{w'} \exp(c(w_t,w')/T)}
+  - w_{t+1} \sim p(w \mid w_t)
+charts: []
+primary: temp
+presets:
+  - temp: 1
+  - temp: 0.2
+  - temp: 2.5
+challenges:
+  - check: temp<0.15
+  - check: temp>2.8
+  - check: abs(temp-1.5)<0.05

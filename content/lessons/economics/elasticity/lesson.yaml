@@ -56,3 +56,20 @@ charts:
     marker: x
     series:
       - -b*x/(a - b*x)
+primary: x
+presets:
+  - a: 120
+    b: 0.5
+    x: 30
+  - a: 100
+    b: 3
+    x: 25
+  - a: 100
+    b: 2
+    x: 25
+challenges:
+  - check: b*x/(a-b*x)
+    target: 1
+    tol: 0.05
+  - check: b*x/(a-b*x) > 2 and a-b*x > 0
+  - check: b*x/(a-b*x) < 0.2 and a-b*x > 0

@@ -1,0 +1,59 @@
+id: vigenere-cipher
+subject: cryptography
+difficulty: beginner
+equation: C = (M + K) \bmod 26
+concepts:
+- vigenere-cipher
+- polyalphabetic-cipher
+- kasiski-examination
+- keyword
+prerequisites:
+- caesar-cipher
+- modular-arithmetic
+related:
+- frequency-analysis
+- xor-and-one-time-pad
+visualization:
+  type: cipher-wheel
+  options:
+    text: ATTACK AT DAWN
+    keywords:
+    - KEY
+    - LEMON
+    - SUN
+    - CAT
+parameters:
+  kw:
+    min: 0
+    max: 3
+    step: 1
+    value: 1
+  pos:
+    min: 0
+    max: 13
+    step: 1
+    value: 0
+variables:
+- M
+- K
+- C
+- \bmod
+derivation:
+- K = 11 \quad \text{(L is the 12th letter, counting A = 0)}
+- C = (M + K) \bmod 26 = (0 + 11) \bmod 26 = 11
+- \text{11 is L, so A becomes L; the keyword then moves to its next letter}
+charts: []
+primary: kw
+presets:
+- kw: 0
+  pos: 0
+- kw: 1
+  pos: 0
+- kw: 2
+  pos: 5
+challenges:
+- check: kw
+  target: 1
+- check: pos
+  target: 13
+- check: kw == 3 and pos == 0

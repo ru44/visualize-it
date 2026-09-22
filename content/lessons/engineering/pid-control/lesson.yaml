@@ -66,3 +66,23 @@ derivation:
   - \dot{I} = r - x
   - \dot{x} = \frac{K_p(r-x) + K_iI - x}{\tau}
 charts: []
+primary: Kp
+presets:
+  - Kp: 1
+    Ki: 0.1
+    r: 1
+    tau: 3
+  - Kp: 3
+    Ki: 0.5
+    r: 1.5
+    tau: 0.5
+  - Kp: 8
+    Ki: 1.5
+    r: 1
+    tau: 0.5
+challenges:
+  - check: Ki<0.03 and abs(Kp/(1+Kp)-0.8)<0.02
+  - check: (1+Kp)/(2*sqrt(Ki*tau))
+    target: 1
+    tol: 0.05
+  - check: Ki>0.05 and (1+Kp)/(2*sqrt(Ki*tau)) < 0.5

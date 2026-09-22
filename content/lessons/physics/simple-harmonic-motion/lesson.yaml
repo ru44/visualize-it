@@ -68,3 +68,19 @@ charts: []
 visualization3d:
   type: spring
   options: {}
+primary: A
+presets:
+  - A: 1
+    k: 2
+    m: 3
+  - A: 0.5
+    k: 4
+    m: 0.5
+  - A: 3
+    k: 0.3
+    m: 1
+challenges:
+  - check: 2*pi*sqrt(m/k)
+    target: 6.28
+  - check: abs(m-k)<0.05 and m>=3
+  - check: abs(A-4)<0.05 and 2*pi*sqrt(m/k)<2

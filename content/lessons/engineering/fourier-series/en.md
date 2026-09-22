@@ -1,9 +1,8 @@
 ---
 title: Fourier series
 summary: >-
-  Any periodic wave — a square wave, a guitar note, a video clock signal — is
-  just a sum of pure sine waves at multiples of one base frequency; add enough
-  of them and the sum locks onto the shape.
+  Any repeating wave — a square wave, a guitar note, a digital clock pulse —
+  is really a stack of pure sine waves added together.
 parameters:
   N: N — highest harmonic kept in the sum
   x: x — position along one cycle
@@ -16,11 +15,29 @@ variables:
     contribute, shrinking as 1/k
 ---
 
+## Try it
+
+1. Watch the curve start as one smooth sine wave.
+2. Drag $N$ up. More sine terms get added, and the curve sprouts flatter tops and sharper shoulders, chasing a square wave.
+3. Now drag $x$ to move along the curve. Notice the small overshoot that lingers near the jumps even at the highest $N$ — the Gibbs ripple.
+
+## Real-life examples
+
+1. **A pure sine tone.** With only the fundamental (N = 1), the wave is a smooth, single-frequency tone — like a tuning fork or a softly played flute.
+2. **A clarinet's rich tone.** A clarinet's sound is built almost entirely from odd harmonics, much like this partial sum at N = 7: the extra terms give it a fuller, reedier timbre than a pure sine tone.
+3. **A digital clock signal.** A "square" clock pulse in a circuit is approximated here by many odd harmonics (N = 11); real wires filter out the highest ones, which is one reason fast digital edges round off instead of staying perfectly sharp.
+
+## Test yourself
+
+1. Using just the fundamental (N = 1), find $x$ where the wave reaches its peak value of about 1.27.
+2. Push $N$ to the maximum (11) and find an $x$ close to a jump where the curve overshoots above 1.1, even though the flat top it's chasing is only 1.
+3. Find an $x$ near a quarter of the way through the cycle where the partial sum lands close to the flat-top value of 1.
+
 ## Intuition
 
-The curve on screen starts as a single sine wave and, as you drag N up, sprouts sharper shoulders and flatter tops — each extra term nudges it closer to a square wave. Only odd harmonics show up, and each one is weaker than the last: the third harmonic is a third as tall, the fifth a fifth, and so on.
+A digital clock pulse that looks like a clean square wave on an oscilloscope is really built from many pure sine waves added together, one at the base frequency and others at odd multiples of it. The curve on screen starts as a single sine wave; drag $N$, the highest harmonic included, up and it sprouts sharper shoulders and flatter tops with each added term, chasing the square-wave shape.
 
-Even at N = 11 the corners still overshoot and ring a little before settling — the famous Gibbs ripple. No matter how many harmonics you add, that small spike near a jump never shrinks below about 9% of the jump's height; it just squeezes closer to the corner.
+Only odd harmonics show up in this sum, and each one is weaker than the last: the third harmonic stands a third as tall as the first, the fifth a fifth as tall, and so on. Even at $N = 11$ the corners still overshoot and ring a little before settling — drag $x$ near a jump to see it — the famous Gibbs ripple, which never shrinks below about 9% of the jump's height, no matter how many harmonics you add.
 
 ## Formal
 

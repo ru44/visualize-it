@@ -1,8 +1,9 @@
 ---
 title: Gauss's law and a charged sphere
 summary: >-
-  Sum up the electric field poking through any closed surface and it depends
-  on nothing outside that surface — only the charge trapped inside it.
+  This shortcut predicts the electric field around a charged object — like a
+  charged sphere or a Van de Graaff dome — without adding up every tiny piece
+  of charge by hand.
 parameters:
   Q: total charge Q
   R: sphere radius R
@@ -15,11 +16,29 @@ variables:
   - closed-surface (or closed-loop) integral sign
 ---
 
+## Try it
+
+1. Picture a small charged demonstration ball, 20 nC of charge spread over a 0.5 m sphere.
+2. Drag «distance from the centre x» outward from the middle. The field climbs while you're still inside the sphere, then starts falling once you pass its surface.
+3. Now raise «sphere radius R» while the charge stays fixed. The peak field at the surface drops — the same charge is now spread over more space.
+
+## Real-life examples
+
+1. **A small charged demonstration ball.** With 20 nC spread over a 0.5 m sphere, the field 2 m from the centre is a modest 45 V/m.
+2. **A Van de Graaff dome.** Charged to 80 nC on a compact 0.2 m sphere, the field just 1 m from the centre reaches over 700 V/m.
+3. **A large charged weather balloon.** With 50 nC spread over a bigger 1.5 m sphere, the field halfway to the surface (0.5 m out) is about 67 V/m — gentler, because the charge is more spread out.
+
+## Test yourself
+
+1. Move outside the sphere and find a charge and distance where the field is about 100 V/m.
+2. Using a large sphere (radius at least 1 m), find a point inside it where the field is about 50 V/m.
+3. Move far enough away, or use a small enough charge, that the field drops to about 2 V/m.
+
 ## Intuition
 
-Drag $x$ out from the centre and watch the field climb in a straight line while you're still inside the sphere — more and more charge is enclosed the farther out you go, growing with the volume you've swept past. The moment $x$ crosses $R$, every bit of charge is already enclosed, and the curve switches to falling off as $1/x^2$ instead, the familiar Coulomb's-law shape.
+Picture a small charged ball used in physics demonstrations, carrying 20 nC of charge spread over a sphere half a metre across. Drag «distance from the centre x» outward from the middle: while you are still inside the sphere, the field climbs in a straight line, because moving out sweeps past more and more of the charge. The moment $x$ passes the sphere's radius $R$, every bit of charge is already enclosed, and the field starts falling off instead, the same shape as in Coulomb's law.
 
-Now raise $R$ while keeping $Q$ fixed: the same total charge is smeared over a bigger sphere, so the peak field right at the surface drops, even though the charge itself never changed — only how spread out it is.
+Now raise «sphere radius R» while the charge stays fixed: the same total charge is now smeared over a bigger sphere, so the peak field right at the surface drops, even though the amount of charge never changed — only how spread out it is.
 
 ## Formal
 

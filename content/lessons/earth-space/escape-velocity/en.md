@@ -21,6 +21,24 @@ charts:
       - orbital speed
 ---
 
+## Try it
+
+1. Drag the radius slider to Earth's surface, about 6.4 on the thousand-km scale. Read off escape velocity: about 11.2 km/s.
+2. Compare it with the lower curve, orbital speed, at that same radius.
+3. Drag the radius far out. Watch both curves fall together as gravity weakens.
+
+## Real-life examples
+
+- **Launching from Earth's surface.** At x = 6.4 (thousand km from Earth's centre), escape velocity is about 11.2 km/s — the speed an unpowered object needs to leave Earth forever.
+- **GPS satellite altitude.** At x = 20, gravity is much weaker, so escape velocity has already dropped to a few kilometres per second.
+- **Geostationary distance.** At x = 42.2, the distance where satellites appear to hang still over the equator, escape velocity is lower still.
+
+## Test yourself
+
+1. Find the radius where escape velocity drops to exactly 5 km/s.
+2. Push escape velocity above 10 km/s by staying within 10 thousand km of Earth's centre.
+3. Get escape velocity below 6 km/s by moving far enough out.
+
 ## Intuition
 
 Drag the radius slider to Earth's surface, about 6,400 km, and read off the escape curve: about 11.2 km/s, the speed a rocket needs (ignoring air drag) to leave Earth forever rather than fall back. The second curve, orbital speed at that same radius, sits lower — escape speed is always $\sqrt{2}$ times the circular orbital speed, since it takes more energy to leave entirely than to just keep circling.

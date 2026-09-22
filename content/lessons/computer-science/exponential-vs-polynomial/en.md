@@ -1,9 +1,10 @@
 ---
 title: Exponential vs polynomial growth
 summary: >-
-  A polynomial like $x^3$ always loses to an exponential like $2^x$ eventually —
-  and that single fact underpins password strength, encryption and binary
-  search.
+  Understanding why anything that keeps doubling eventually overtakes
+  anything that merely grows by a fixed power explains why one extra
+  character in a password or one extra bit in an encryption key makes it
+  dramatically harder to crack.
 parameters:
   x: x — position on the curve
 variables:
@@ -19,11 +20,29 @@ charts:
       - x^3
 ---
 
+## Try it
+
+1. Set the slider "x" to 2. On the chart, notice the polynomial curve sitting above the exponential curve — 8 beats 4.
+2. Drag "x" up to 10 and watch the two curves cross: the exponential curve rockets to 1024 while the polynomial curve is still only at 1000.
+3. Push "x" all the way to 12 and read the gap: the exponential curve is now far above the polynomial one, more than twice as high.
+
+## Real-life examples
+
+- **Two weeks into a savings challenge.** Setting "x" to 2 shows the cube-growing allowance still ahead of the doubling one — early on, doubling looks unimpressive.
+- **Ten weeks in.** Setting "x" to 10 shows the doubling allowance has just overtaken the cube-growing one, the exact week the exponential wins for good.
+- **A full 12-week challenge.** Setting "x" to 12 shows the doubling allowance far out in front, worth more than twice as much as the cube-growing one.
+
+## Test yourself
+
+1. Find a value of "x" where the exponential curve is already bigger than the polynomial curve.
+2. Find the exact value of "x" where the exponential curve beats the polynomial curve by 2368.
+3. Find a value of "x" in the middle of the slider's range where the polynomial curve is still bigger than the exponential curve.
+
 ## Intuition
 
-Drag $x$ along the tangent view of $2^x$ and watch the curve bend ever more sharply upward, while the chart below shows $x^3$ climbing too — smoothly, steadily, unremarkably by comparison. For small $x$, $x^3$ is actually bigger ($x=2$: 8 vs 4), but by $x=10$, $2^x=1024$ has already overtaken $x^3=1000$, and the gap only widens after that.
+Imagine two weekly allowances that start out equal. One doubles every week: after 2 weeks it is 4 dollars, but after 10 weeks it has grown to $2^{10}=1024$ dollars. The other grows with the cube of the number of weeks: after 2 weeks it is 8 dollars, well ahead of the doubling one, but after 10 weeks it only reaches $10^3=1000$ dollars — already behind. Drag the slider "x" up toward 12 and watch the chart's steep curve, the exponential one, pull decisively ahead of the gently climbing cube.
 
-That crossover is not a coincidence of this particular pair — any exponential eventually beats any fixed-degree polynomial, no matter how high the degree or how close the exponential's base is to 1, because each unit of x multiplies an exponential but only adds a bounded increment to a polynomial's relative growth. It is why adding one more bit to a password does not add a little security, it doubles the number of guesses needed.
+That crossover near x = 10 is no accident of this one pair of numbers — any exponential curve eventually beats any polynomial curve, no matter how high the polynomial's power or how close the exponential's base is to 1. Look at the chart's two curves: the steep one is $2^x$, doubling with every step of x. The gentler one is $x^3$, growing only by a fixed power of x. That is why adding a single extra character to a password does not add a little security — it doubles the number of guesses an attacker needs.
 
 ## Formal
 

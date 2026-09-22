@@ -1,9 +1,8 @@
 ---
 title: The pH scale
 summary: >-
-  pH compresses an enormous range of acidity into a small, usable number by
-  taking a logarithm — every single pH unit is a ×10 change in hydrogen-ion
-  concentration.
+  Lemon juice, black coffee and soap all have wildly different acidity — pH
+  is the single number that lets you compare them all on one simple scale.
 parameters:
   x: 'H⁺ concentration [H⁺]'
 variables:
@@ -12,11 +11,29 @@ variables:
   - 'the same idea for hydroxide; at 25°C, $\mathrm{pH} + \mathrm{pOH} = 14$'
 ---
 
+## Try it
+
+1. Drag the point «[H⁺]» left, toward tiny concentrations. Watch pH climb.
+2. Drag it right instead, toward larger concentrations. Watch pH fall.
+3. Notice how the curve steepens near zero — that bending tangent is the signature of a logarithm.
+
+## Real-life examples
+
+1. **Stomach acid.** Hydrochloric acid in your stomach reaches [H⁺] ≈ 0.032 mol/L, a pH of about 1.5 — strong enough to dissolve food and kill most bacteria.
+2. **Lemon juice.** [H⁺] ≈ 0.01 mol/L gives a pH of 2, tart enough to make you wince.
+3. **Orange juice.** [H⁺] ≈ 0.0003 mol/L gives a pH of about 3.5, noticeably less acidic than lemon juice but still sharp.
+
+## Test yourself
+
+1. Find the concentration where pH equals 3.
+2. Make the solution more acidic than pH 1.5.
+3. Find [H⁺] for a solution with twice the hydrogen-ion concentration of a pH-3 solution.
+
 ## Intuition
 
-Drag the point left toward tiny concentrations and pH climbs; drag it right toward larger concentrations and pH falls. Notice how fast the curve bends — near $[\mathrm{H^+}] = 0.1$ it is nearly flat, but as you approach zero it shoots upward. That steepening tangent is the signature of a logarithm: equal ratios of concentration (×10, ×10, ×10 …) produce equal steps in pH (1, 1, 1 …), not equal steps in concentration.
+Picture lemon juice, with about 0.01 mol/L of hydrogen ions, next to black coffee, with roughly a thousand times fewer. On screen, drag the point left, toward tinier concentrations, and pH climbs; drag it right, toward larger concentrations, and pH falls. Near $[\mathrm{H^+}] = 0.1$ the curve is almost flat, but as you approach zero it shoots upward — that steep bend is the signature of a logarithm.
 
-Because the scale is logarithmic, a change from pH 5 to pH 4 is not “a bit more acidic” — it is ten times more hydrogen ions. Two solutions three pH units apart differ in acidity by a factor of $10^3 = 1000$, even though their pH values look close together on the slider.
+Because the scale is logarithmic, moving from pH 5 to pH 4 is not a small change — it means ten times more hydrogen ions. Two solutions three pH units apart differ in acidity by a factor of 1000, even though their pH values sit close together on the slider.
 
 ## Formal
 

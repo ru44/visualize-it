@@ -1,0 +1,51 @@
+id: overfitting
+subject: ai
+difficulty: beginner
+equation: \hat y = \sum_{j=0}^{d} w_j x^j, \qquad L = \frac{1}{n}\sum_i (y_i - \hat y_i)^2
+concepts:
+  - overfitting
+  - underfitting
+  - generalization
+  - validation
+prerequisites:
+  - linear-regression
+  - mean-and-spread
+related:
+  - what-is-machine-learning
+  - loss-landscape
+visualization:
+  type: poly-fit
+  options: {}
+parameters:
+  degree:
+    min: 0
+    max: 12
+    step: 1
+    value: 3
+  noise:
+    min: 0
+    max: 1
+    step: 0.05
+    value: 0.5
+variables:
+  - d
+  - w_j
+  - L_{tr}
+  - L_{new}
+derivation:
+  - \hat y = \sum_{j=0}^{d} w_j x^j
+  - L_{tr} = \frac{1}{n}\sum_i (y_i - \hat y_i)^2
+  - L_{new} = \frac{1}{n}\sum_i (y_i - \hat y_i)^2
+charts: []
+primary: degree
+presets:
+  - degree: 1
+    noise: 0.5
+  - degree: 12
+    noise: 0.5
+  - degree: 3
+    noise: 0.5
+challenges:
+  - check: degree<=1
+  - check: degree>=10
+  - check: noise>0.7 and degree>=10

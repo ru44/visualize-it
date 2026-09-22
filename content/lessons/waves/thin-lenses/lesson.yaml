@@ -41,3 +41,20 @@ derivation:
   - \frac{1}{d_0} + \frac{1}{d_i} = \frac{1}{f}
   - m = \frac{h_i}{h_0} = -\frac{d_i}{d_0}
 charts: []
+primary: doo
+presets:
+  - f: 6
+    doo: 25
+    ho: 2
+  - f: 6
+    doo: 3
+    ho: 1
+  - f: 10
+    doo: 12
+    ho: 1.5
+challenges:
+  - check: 1/(1/f - 1/doo)
+    target: 10
+  - check: doo < f
+  - check: -(1/(1/f - 1/doo))/doo
+    target: -2

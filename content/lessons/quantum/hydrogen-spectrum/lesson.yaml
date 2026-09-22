@@ -1,0 +1,53 @@
+id: hydrogen-spectrum
+subject: quantum
+difficulty: high-school
+equation: E_n = -\frac{13.6}{n^2}\ \text{eV}
+concepts:
+  - energy-levels
+  - atomic-spectrum
+  - balmer-series
+prerequisites:
+  - atomic-structure
+  - photons-and-plancks-constant
+related:
+  - schrodinger-equation-particle-in-a-box
+visualization:
+  type: energy-levels
+  options: {}
+parameters:
+  ni:
+    min: 2
+    max: 7
+    step: 1
+    value: 3
+  nf:
+    min: 1
+    max: 6
+    step: 1
+    value: 2
+variables:
+  - E_n
+  - \Delta E
+  - n_i
+  - n_f
+derivation:
+  - E_n = -\frac{13.6}{n^2}\ \text{eV}
+  - \Delta E = 13.6\left(\frac{1}{n_f^2}-\frac{1}{n_i^2}\right)\ \text{eV}
+  - \lambda = \frac{1240}{\Delta E}\ \text{nm}
+charts: []
+primary: ni
+presets:
+  - ni: 3
+    nf: 2
+  - ni: 4
+    nf: 2
+  - ni: 2
+    nf: 1
+challenges:
+  - check: 1240/(13.6*(1/nf^2-1/ni^2))
+    target: 656
+    tol: 5
+  - check: 1240/(13.6*(1/nf^2-1/ni^2)) < 200
+  - check: 1240/(13.6*(1/nf^2-1/ni^2))
+    target: 486
+    tol: 5

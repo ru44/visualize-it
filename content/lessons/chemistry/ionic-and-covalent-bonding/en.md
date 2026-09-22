@@ -1,15 +1,33 @@
 ---
 title: Ionic and covalent bonding
 summary: >-
-  Atoms bond to reach a full outer shell, and how they get there — one atom
-  giving up an electron outright, or two atoms sharing a pair — depends on
-  how unevenly the two atoms want that shared electron.
+  Why does salt dissolve in water but a plastic bag doesn't? It comes down to
+  whether atoms trade electrons outright or share them, and this lesson shows
+  you which one happens and why.
 parameters:
   Z: atomic number Z
 variables:
   - atomic number — fixes how many valence electrons an atom starts with
   - electronegativity — how strongly an atom pulls on shared electrons
 ---
+
+## Try it
+
+1. Tap through the periodic table to change «atomic number Z». Watch the valence-electron count and the element's family change.
+2. Land on a metal from the left side, then a nonmetal from the right. Notice how far apart their electronegativities sit.
+3. Land on two nonmetals close together on the table and compare — their electronegativities are close, favouring a shared, covalent bond.
+
+## Real-life examples
+
+1. **Table salt, sodium chloride.** Sodium (Z = 11) has one lonely valence electron it gives up readily — paired with a strongly electronegative nonmetal it forms a solid ionic crystal.
+2. **Fluoride in toothpaste and drinking water.** Fluorine (Z = 9) is the most electronegative element there is, pulling electrons from metals to form strong ionic compounds like calcium fluoride.
+3. **Carbon in every organic molecule.** Carbon (Z = 6) shares electrons about evenly with hydrogen and other nonmetals, building the covalent backbones of sugars, fats and DNA.
+
+## Test yourself
+
+1. Find the noble gas that ends period 2.
+2. Find the alkali metal that starts period 4.
+3. Find the halogen in chlorine's own group (period 3).
 
 ## Intuition
 

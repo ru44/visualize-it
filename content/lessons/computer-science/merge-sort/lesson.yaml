@@ -37,3 +37,16 @@ derivation:
   - \text{levels of recursion} = \log_2 n
   - \text{work per level} = O(n) \;\Rightarrow\; T(n) = O(n\log n)
 charts: []
+primary: n
+presets:
+  - n: 8
+    step: 1
+  - n: 32
+    step: 1
+  - n: 40
+    step: 1
+challenges:
+  - check: log(n,2)
+    target: 5
+  - check: abs(n-40)<0.5 and step>=0.99
+  - check: abs(n-4)<0.5 and step>=0.99

@@ -38,3 +38,14 @@ charts:
     domain: [5, 9]
     series:
       - 10^(1.5*(x-5))
+primary: x
+presets:
+- x: 3
+- x: 9
+- x: 6.5
+challenges:
+- check: 10^(1.5*(x-5))
+  target: 1000
+- check: 10^(1.5*(x-5)) > 100000
+- check: 10^(1.5*(x-5))
+  target: 32

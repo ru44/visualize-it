@@ -48,3 +48,20 @@ derivation:
   - "V = \\dfrac{F}{(1+r/100)^x}"
   - "V\\,(1+r/100)^x = F"
   - "\\text{as } x \\text{ grows, } V \\to 0 \\text{ for fixed } F, r>0"
+primary: x
+presets:
+  - F: 2000
+    r: 5
+    x: 1
+  - F: 8000
+    r: 6
+    x: 20
+  - F: 10000
+    r: 8
+    x: 40
+challenges:
+  - check: r > 0 and abs(F/(1+r/100)^x - 1000) < 20
+  - check: r >= 8 and x >= 40 and 1/(1+r/100)^x < 0.05
+  - check: 1/(1+r/100)^x
+    target: 0.5
+    tol: 0.03

@@ -2,7 +2,8 @@
 title: 'Sequences and recurrences'
 summary: >-
   Fibonacci numbers are defined by looking backward, each one built from the
-  two before it, yet a single closed formula predicts them all.
+  two before it, yet a single formula lets you jump straight to term 50
+  without computing the 49 before it.
 parameters:
   x: n — which term of the sequence
 variables:
@@ -10,11 +11,29 @@ variables:
   - '$\varphi$ — the golden ratio, about 1.618'
 ---
 
+## Try it
+
+1. Drag x forward one step at a time from 0 and watch the curve trace 0, 1, 1, 2, 3, 5, 8, 13… exactly at each whole number.
+2. Jump x straight to 8 and read the curve's value, 21 — the same count as the rabbit-pair story below.
+3. Push x to 20 and see how fast the curve has grown by the far end of its range.
+
+## Real-life examples
+
+1. **Rabbit pairs after 8 months.** In the classic (unrealistic) breeding puzzle, a pair of rabbits produces F8 = 21 pairs after 8 months, each generation built from the two before it.
+2. **Spiral counts in a sunflower head.** Large sunflower heads often show 144 spirals, F12 in the sequence, arranged at angles related to the golden ratio.
+3. **How fast the sequence grows by term 20.** By the 20th term the sequence has already reached 6765, showing how quickly a rule this simple, add the last two terms, can snowball.
+
+## Test yourself
+
+1. Find the term where the curve reaches 21, the same 8th Fibonacci number as the rabbit-pair example above.
+2. Find the term where the curve reaches 144, the same spiral count seen in a large sunflower head.
+3. Find a term where the curve has already climbed past 1000.
+
 ## Intuition
 
-Drag x forward one step at a time and watch the curve leap upward faster and faster — this is the closed-form approximation to the Fibonacci sequence, built purely from powers of the golden ratio φ, yet at every whole number it lands almost exactly on the familiar 0, 1, 1, 2, 3, 5, 8, 13… you would get by just adding the two previous terms.
+A pair of rabbits breeds so that its population after 8 months reaches 21 pairs, each new count built from the two months before it, using the same building rule for every step after. Drag the slider x forward one step at a time and watch the curve leap upward faster and faster, landing on 21 the moment x reaches 8, then on 34 at x = 9, then 55 at x = 10, tracking the familiar sequence 0, 1, 1, 2, 3, 5, 8, 13… exactly.
 
-That is the strange part: nothing about $\varphi^n/\sqrt5$ looks like "add the last two numbers", but the recurrence $F_n = F_{n-1} + F_{n-2}$ and this smooth exponential curve describe exactly the same sequence. The recurrence is easy to compute one term at a time; the closed form lets you jump straight to term 50 without ever computing terms 1 through 49.
+That step-by-step rule has a shortcut: a single smooth curve, built from powers of the golden ratio $\varphi$, about 1.618, lands almost exactly on every one of those same whole numbers without ever adding two previous terms together. Computing term 50 this way takes one calculation, while the step-by-step rule would first need every term from 1 through 49.
 
 ## Formal
 

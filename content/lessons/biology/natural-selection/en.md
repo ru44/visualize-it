@@ -15,11 +15,29 @@ variables:
   - starting allele frequency
 ---
 
+## Try it
+
+1. Start p0 near 0.05 — a rare new mutation — and watch the curve barely move.
+2. Raise s well above zero. The curve climbs faster, but keeps its same S shape.
+3. Make s negative instead. The curve now falls toward zero: the allele is being weeded out.
+
+## Real-life examples
+
+- **Peppered moths turning dark.** A strong advantage against bird predation (s = 0.3) lets a rare dark-colour mutation (p0 = 0.05) spread rapidly through a sooty, polluted woodland.
+- **Antibiotic resistance emerging.** A single resistant bacterium in a huge population (p0 = 0.01) with a solid survival edge (s = 0.2) under constant antibiotic exposure can take over within days.
+- **A harmful allele in decline.** Starting from half the population (p0 = 0.5), a mildly disadvantageous allele (s = −0.15) gets weeded out generation after generation.
+
+## Test yourself
+
+1. Start from a rare allele, below 5% of the population, and give it a strong advantage above s = 0.25.
+2. Make a harmful allele decline: set s below zero while starting from more than half the population.
+3. Find the point where change is fastest: start right at p0 = 0.5.
+
 ## Intuition
 
-Start p0 very low, like 0.05 — a rare new variant. At first the curve barely rises: with so few copies around, $p(1-p) \approx p$ is tiny and progress is slow no matter how useful the allele is. Watch it cross the middle, though, and the curve steepens sharply — that is where $p(1-p)$ is largest, at $p=0.5$.
+Start p0 very low, like 0.05 — a rare new variant. At first the curve barely rises: with so few copies around, $p(1-p) \approx p$ is tiny, and progress is slow no matter how useful the allele is. Watch it cross the middle, though, and the curve steepens sharply. That happens exactly where $p(1-p)$ is largest, when the allele's frequency sits at 0.5.
 
-Raise s and the whole climb speeds up without changing its S shape; make s negative and the curve now falls toward zero — a harmful allele gets weeded out by the same logic in reverse. This is exactly the logistic curve from population growth, but now tracking a proportion instead of a headcount: the allele competes against its alternative for a fixed 100% of the gene pool.
+Raise the selection coefficient, s — the size of the allele's survival advantage — and the whole climb speeds up without changing its S shape. Make s negative instead and the curve now falls toward zero: a harmful allele gets weeded out by the same logic in reverse. This is exactly the logistic curve from population growth, but now tracking a share of the gene pool instead of a headcount — the allele competes against its alternative for a fixed 100%.
 
 ## Formal
 

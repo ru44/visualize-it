@@ -1,9 +1,9 @@
 ---
 title: Electrochemical cells and the Nernst equation
 summary: >-
-  A battery's voltage is not fixed — it is the standard potential of its
-  two half-reactions minus a penalty that grows as products build up and
-  reactants run low, which is exactly why a battery goes flat.
+  Why does a flashlight get dimmer as its battery runs down? This lesson
+  shows how a battery's voltage depends on how far its chemical reaction has
+  already progressed.
 parameters:
   E0: standard cell potential E⁰
   n: electrons transferred n
@@ -15,11 +15,29 @@ variables:
   - reaction quotient — how far the reaction has progressed, products over reactants
 ---
 
+## Try it
+
+1. Drag «reaction quotient Q» up, away from 1. Watch the voltage curve fall as products build up.
+2. Raise «electrons transferred n» instead. The same drop in Q now costs less voltage.
+3. Raise «standard cell potential E⁰». The whole curve shifts upward — a stronger battery to start with.
+
+## Real-life examples
+
+1. **A fresh Daniell cell, just connected.** Standard potential 1.10 V, two electrons transferred, reactants and products in balance (Q = 1): the cell delivers its full rated voltage.
+2. **A battery that has nearly run flat.** After a long discharge, products have built up a thousandfold over reactants (Q = 500): even with a decent 1.5 V rating, the voltage has sagged noticeably.
+3. **The instant a cell is switched on.** Virtually no products exist yet (Q near its minimum): the voltage briefly reads close to its full standard value of 1.8 V.
+
+## Test yourself
+
+1. Get the cell voltage down to exactly 1.00 V.
+2. Make the cell essentially dead: voltage below 0.5 V.
+3. With the reaction quotient at its maximum (Q = 1000), find a standard potential and electron count that still keep at least 90% of the standard voltage.
+
 ## Intuition
 
-Drag the reaction-quotient slider up, away from 1, to picture a battery that has been running for a while: reactants have been consumed and products have piled up, so the ratio of products to reactants climbs. Watch the voltage curve fall as you do — the cell still has the same chemistry, the same standard potential, but less of a "push" left because the reaction is closer to running out of things to react.
+Picture a fresh AA battery, rated 1.5 V, versus one that has been running a flashlight for hours: the flashlight is visibly dimmer, because the battery's voltage has sagged below its rating. On screen, drag the slider «reaction quotient Q» up, away from 1, to picture that used-up battery: reactants have been consumed and products have piled up. Watch the voltage curve fall as you drag — same chemistry, same standard rating, but less push left.
 
-Now instead drag the electron-count slider. With more electrons transferred per reaction event, the same drop in voltage takes a much bigger swing in the reaction quotient to produce — each electron transferred shares the burden of the changing concentrations, so a cell with a larger n holds its voltage more steadily as it discharges.
+Now drag «electrons transferred n» instead. With more electrons changing hands in each reaction event, the same rise in Q costs less voltage, so a battery with a larger n holds its voltage more steadily as it discharges. That's the whole content of the Nernst equation: voltage equals the standard rating, minus a penalty that grows as the reaction quotient Q climbs.
 
 ## Formal
 

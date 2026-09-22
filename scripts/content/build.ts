@@ -102,6 +102,42 @@ for (const subject of readdirSync(join(CONTENT, 'lessons')).sort((a, b) => order
       err(`${where}/lesson.yaml`, `symbol "${tok}" appears in a formula but is not explained (add it to variables, or to content/notation/en.yaml)`)
     }
     ;(L as any).symbols = [...new Set(extra)]
+    // Real-life presets must use existing parameters within their ranges.
+    L.presets.forEach((pr, i) => { for (const [k, v] of Object.entries(pr)) { const spec = L.parameters[k]; if (!spec) err(`${where}/lesson.yaml`, `presets[${i}]: "${k}" is not a parameter`); else if (v < spec.min || v > spec.max) err(`${where}/lesson.yaml`, `presets[${i}]: ${k} = ${v} is outside [${spec.min}, ${spec.max}]`) } })
+    // Every challenge must be solvable with the sliders: search the parameter space for a passing setting.
+    L.challenges.forEach((ch, i) => {
+      let code
+      try { code = compile(ch.check) } catch (e: any) { return err(`${where}/lesson.yaml`, `challenges[${i}].check: ${String(e.message).slice(0, 80)}`) }
+      const names = Object.keys(L.parameters)
+      const passes = (sc: Record<string, number>) => { try { const v = code.evaluate(sc); if (ch.target === undefined) return !!v; const tol = ch.tol ?? Math.max(0.01, Math.abs(ch.target) * 0.02); return typeof v === 'number' && Math.abs(v - ch.target) <= tol } catch { return false } }
+      const snap = (k: string, v: number) => { const p = L.parameters[k]; return Math.min(p.max, Math.max(p.min, p.min + Math.round((v - p.min) / p.step) * p.step)) }
+      let ok = false
+      // Deterministic search (a seeded generator, so CI never flakes). Tight tasks usually pin some
+      // sliders to "likely" values: the default, preset values and the numbers written in the check.
+      // Each round starts from a point built mostly from those, then sweeps one slider across its
+      // whole range, so a task like "a = 5, n = 23, find k" is found quickly.
+      let seed = [...`${where}#${i}`].reduce((h, c) => (Math.imul(h, 31) + c.charCodeAt(0)) | 0, 7)
+      const rand = () => { seed = (seed + 0x6d2b79f5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296 }
+      const literals = (ch.check.match(/\d+(?:\.\d+)?/g) ?? []).map(Number).flatMap((v) => [v, -v])
+      const likely: Record<string, number[]> = {}
+      const grid: Record<string, number[]> = {}
+      for (const k of names) {
+        const p = L.parameters[k]
+        const cands = [p.value, ...literals, ...L.presets.map((q) => q[k]).filter((v) => v !== undefined)]
+        likely[k] = [...new Set(cands.filter((v) => v >= p.min && v <= p.max).map((v) => snap(k, v)))]
+        const steps = Math.round((p.max - p.min) / p.step)
+        const count = Math.min(steps, 400)
+        grid[k] = [...new Set([...likely[k], ...Array.from({ length: count + 1 }, (_, j) => snap(k, p.min + (j / count) * (p.max - p.min)))])]
+      }
+      const pick = (k: string) => (rand() < 0.6 && likely[k].length ? likely[k][Math.floor(rand() * likely[k].length)] : grid[k][Math.floor(rand() * grid[k].length)])
+      for (let round = 0; round < 3000 && !ok; round++) {
+        const sc: Record<string, number> = {}
+        for (const k of names) sc[k] = round === 0 ? L.parameters[k].value : pick(k)
+        const free = names[round % names.length]
+        for (const v of grid[free]) { sc[free] = v; if ((ok = passes(sc))) break }
+      }
+      if (!ok) err(`${where}/lesson.yaml`, `challenges[${i}] ("${ch.check}"${ch.target !== undefined ? ` = ${ch.target}` : ''}) cannot be reached with the sliders`)
+    })
     for (const [k, p] of Object.entries(L.parameters)) if (p.value < p.min || p.value > p.max) err(`${where}/lesson.yaml`, `parameter ${k}: default outside [min, max]`)
     const scope = Object.fromEntries(Object.entries(L.parameters).map(([k, p]) => [k, p.value]))
     const o = L.visualization.options
@@ -153,11 +189,13 @@ for (const subject of readdirSync(join(CONTENT, 'lessons')).sort((a, b) => order
       }
       if (T.variables.length !== L.variables.length) err(w, `variables: ${T.variables.length} explanations for ${L.variables.length} symbols`)
       if (T.derivationNotes.length !== L.derivation.length) err(w, `## Derivation: ${T.derivationNotes.length} notes for ${L.derivation.length} steps`)
+      if (T.presets.length !== L.presets.length) err(w, `## Real-life examples: ${T.presets.length} items, lesson.yaml has ${L.presets.length} presets`)
+      if (T.challenges.length !== L.challenges.length) err(w, `## Test yourself: ${T.challenges.length} items, lesson.yaml has ${L.challenges.length} challenges`)
       if (T.charts.length !== L.charts.length) err(w, `charts: ${T.charts.length} described, lesson.yaml has ${L.charts.length}`)
       T.charts.forEach((c, i) => L.charts[i] && c.series.length !== L.charts[i].series.length && err(w, `charts[${i}].series: ${c.series.length} labels for ${L.charts[i].series.length} series`))
       for (const k of Object.keys(L.parameters)) if (!T.parameters[k]) err(w, `parameters: missing label for "${k}"`)
       if (L.primary && !(L.primary in L.parameters)) err(`${where}/lesson.yaml`, `primary "${L.primary}" is not a parameter`)
-      for (const s of [T.summary, ...T.tryIt, ...T.intuition, ...T.formal, ...T.advanced, ...T.derivationNotes, ...T.variables, ...T.realWorld.map((r) => r.text)]) checkProse(w, s)
+      for (const s of [T.summary, ...T.tryIt, ...T.presets.map((p) => p.text), ...T.challenges, ...T.intuition, ...T.formal, ...T.advanced, ...T.derivationNotes, ...T.variables, ...T.realWorld.map((r) => r.text)]) checkProse(w, s)
       if (lang === 'en') Object.assign(en, T)
       else {
         // Maths must be identical to the English text, paragraph by paragraph.

@@ -31,3 +31,15 @@ derivation:
   - "\\text{across a period: } Z \\uparrow,\\ S \\approx \\text{constant} \\Rightarrow Z_{eff} \\uparrow"
   - "\\text{down a group: an added shell outweighs the rise in } Z_{eff} \\Rightarrow \\text{radius} \\uparrow"
 charts: []
+primary: Z
+presets:
+  - Z: 9
+  - Z: 55
+  - Z: 2
+challenges:
+  - check: Z
+    target: 9
+  - check: Z
+    target: 55
+  - check: Z
+    target: 2

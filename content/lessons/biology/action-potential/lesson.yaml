@@ -65,3 +65,21 @@ derivation:
   - \frac{dw}{dt} = \frac{v+a-bw}{\tau}
   - \tau \gg 1 \ \Rightarrow\ w \text{ lags } v
 charts: []
+primary: I
+presets:
+- I: 0
+  a: 0.7
+  b: 0.8
+  tau: 12.5
+- I: 0.2
+  a: 0.7
+  b: 0.8
+  tau: 12.5
+- I: 1.2
+  a: 0.7
+  b: 0.8
+  tau: 8
+challenges:
+- check: I > 1.0
+- check: abs(a - b) < 0.02
+- check: tau > 19 and I < 0.2

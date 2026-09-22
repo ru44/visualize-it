@@ -57,3 +57,26 @@ derivation:
   - V \equiv \frac{W}{q_{\text{test}}} = \frac{kq}{r}
   - E_x = -\frac{\partial V}{\partial x}, \quad E_y = -\frac{\partial V}{\partial y}
 charts: []
+primary: px
+presets:
+- q1: 3
+  q2: 3
+  d: 4
+  px: 0
+  py: 1.5
+- q1: 4
+  q2: -4
+  d: 2
+  px: 1.5
+  py: 0.5
+- q1: 5
+  q2: -1
+  d: 6
+  px: -2
+  py: 1
+challenges:
+- check: 'abs(8990*(q1/sqrt((px+d/2)^2+py^2) + q2/sqrt((px-d/2)^2+py^2)))'
+  target: 20000
+  tol: 2000
+- check: 'abs(8990*(q1/sqrt((px+d/2)^2+py^2) + q2/sqrt((px-d/2)^2+py^2))) < 200'
+- check: '8990*(q1/sqrt((px+d/2)^2+py^2) + q2/sqrt((px-d/2)^2+py^2)) < -20000'
