@@ -49,7 +49,16 @@ for (const subject of readdirSync(join(CONTENT, 'lessons')).sort((a, b) => order
   const dir = join(CONTENT, 'lessons', subject)
   if (!statSync(dir).isDirectory()) continue
   const orderFile = join(dir, '_order.yaml')
-  const ids: string[] = existsSync(orderFile) ? YAML.parse(readFileSync(orderFile, 'utf8')) : readdirSync(dir).filter((d) => statSync(join(dir, d)).isDirectory()).sort()
+  let ids: string[] = readdirSync(dir).filter((d) => statSync(join(dir, d)).isDirectory()).sort()
+  if (existsSync(orderFile)) {
+    try {
+      const listed: string[] = YAML.parse(readFileSync(orderFile, 'utf8')) ?? []
+      for (const id of ids) if (!listed.includes(id)) err(`content/lessons/${subject}/_order.yaml`, `lesson "${id}" exists but is not listed`)
+      ids = listed
+    } catch (e: any) {
+      err(`content/lessons/${subject}/_order.yaml`, `invalid YAML: ${String(e.message).split('\n')[0]}`)
+    }
+  }
   for (const id of ids) {
     const ldir = join(dir, id)
     const where = `content/lessons/${subject}/${id}`
@@ -57,7 +66,14 @@ for (const subject of readdirSync(join(CONTENT, 'lessons')).sort((a, b) => order
       err(where, 'missing lesson.yaml')
       continue
     }
-    const parsed = LessonYaml.safeParse(YAML.parse(readFileSync(join(ldir, 'lesson.yaml'), 'utf8')))
+    let rawYaml: unknown
+    try {
+      rawYaml = YAML.parse(readFileSync(join(ldir, 'lesson.yaml'), 'utf8'))
+    } catch (e: any) {
+      err(`${where}/lesson.yaml`, `invalid YAML: ${String(e.message).split('\n')[0]}`)
+      continue
+    }
+    const parsed = LessonYaml.safeParse(rawYaml)
     if (!parsed.success) {
       for (const i of parsed.error.issues) err(`${where}/lesson.yaml`, `${i.path.join('.')}: ${i.message}`)
       continue

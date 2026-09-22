@@ -1,0 +1,51 @@
+id: seasons
+subject: earth-space
+difficulty: high-school
+equation: D = \frac{24}{\pi}\arccos\left(-\tan(\phi)\tan(\delta)\right)
+concepts:
+  - axial-tilt
+  - declination
+  - day-length
+prerequisites:
+  - sine-wave
+related:
+  - moon-phases
+visualization:
+  type: function-plot
+  options:
+    expr: 24/pi*acos(max(-1,min(1,-tan(lat*pi/180)*tan(23.4*pi/180*sin(2*pi*(x-80)/365)))))
+    domain: [0, 365]
+    range: [0, 24]
+    mode: plain
+visualization3d:
+  type: seasons
+parameters:
+  lat:
+    min: -66
+    max: 66
+    step: 1
+    value: 45
+    unit: "°"
+  x:
+    min: 0
+    max: 365
+    step: 1
+    value: 172
+  tilt:
+    min: 0
+    max: 45
+    step: 0.5
+    value: 23.4
+    unit: "°"
+variables:
+  - \phi
+  - \delta
+  - \epsilon
+  - x
+  - H
+  - D
+derivation:
+  - \delta = \epsilon\sin\left(\frac{2\pi(x-80)}{365}\right)
+  - \cos H = -\tan(\phi)\tan(\delta)
+  - D = \frac{24}{\pi}H
+charts: []

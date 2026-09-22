@@ -1,0 +1,32 @@
+id: moon-phases
+subject: earth-space
+difficulty: high-school
+equation: f = \frac{1-\cos\theta}{2}
+concepts:
+  - lunar-phases
+  - tidal-locking
+  - eclipses
+prerequisites:
+  - unit-circle
+related:
+  - seasons
+  - tides
+visualization:
+  type: moon-phases
+  options: {}
+parameters:
+  day:
+    min: 0
+    max: 29.53
+    step: 0.1
+    value: 0
+variables:
+  - d
+  - P
+  - \theta
+  - f
+derivation:
+  - \theta = \frac{2\pi d}{P}
+  - \cos\theta = 1 - 2f
+  - f = \frac{1-\cos\theta}{2}
+charts: []

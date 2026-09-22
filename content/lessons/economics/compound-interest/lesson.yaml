@@ -1,0 +1,65 @@
+id: compound-interest
+subject: economics
+difficulty: beginner
+equation: A = P\left(1 + \dfrac{r}{100\,n}\right)^{n\,x}
+concepts:
+  - compound-interest
+  - exponential-growth
+  - savings
+prerequisites:
+  - percent-and-compound-growth
+  - exponential-growth
+related:
+  - present-value
+  - inflation
+visualization:
+  type: function-plot
+  options:
+    expr: P*(1 + r/100/n)^(n*x)
+    domain:
+      - 0
+      - 40
+    range:
+      - 0
+      - 18000
+    mode: tangent
+parameters:
+  P:
+    min: 100
+    max: 10000
+    step: 100
+    value: 1000
+  r:
+    min: 0
+    max: 15
+    step: 0.25
+    value: 7
+    unit: "%"
+  n:
+    min: 1
+    max: 12
+    step: 1
+    value: 12
+    label: compounding periods per year
+  x:
+    min: 0
+    max: 40
+    step: 0.5
+    value: 10
+variables:
+  - A
+  - P
+  - r
+  - n
+  - x
+derivation:
+  - "A = P\\left(1+\\dfrac{r}{100n}\\right)^{nx}"
+  - "\\ln A = \\ln P + nx\\,\\ln\\!\\left(1+\\dfrac{r}{100n}\\right)"
+  - "\\text{doubling time} \\approx \\dfrac{72}{r} \\text{ years (rule of 72)}"
+charts:
+  - domain:
+      - 0
+      - 40
+    marker: x
+    series:
+      - P*(1 + r/100*x)

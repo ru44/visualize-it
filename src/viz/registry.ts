@@ -24,6 +24,9 @@ const GraphSearch = defineAsyncComponent(() => import('./GraphSearch.vue'))
 const BitsViz = defineAsyncComponent(() => import('./BitsViz.vue'))
 const GradientFit = defineAsyncComponent(() => import('./GradientFit.vue'))
 const Diffusion = defineAsyncComponent(() => import('./Diffusion.vue'))
+const MoonPhases = defineAsyncComponent(() => import('./MoonPhases.vue'))
+const SupplyDemand = defineAsyncComponent(() => import('./SupplyDemand.vue'))
+const Sampling = defineAsyncComponent(() => import('./Sampling.vue'))
 const Surface3D = defineAsyncComponent(() => import('./Surface3D.vue'))
 const GasBox = defineAsyncComponent(() => import('./GasBox.vue'))
 
@@ -47,6 +50,9 @@ export const vizRegistry: Record<string, Component> = {
   bits: BitsViz,
   'gradient-fit': GradientFit,
   diffusion: Diffusion,
+  'moon-phases': MoonPhases,
+  'supply-demand': SupplyDemand,
+  sampling: Sampling,
   counting: Counting,
   'discrete-dist': DiscreteDist,
   'coin-flips': CoinFlips,

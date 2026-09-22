@@ -325,3 +325,37 @@ notation.group.constant: Constants
 notation.group.letter: Common letters
 notation.group.computer-science: Computer science
 notation.group.layout: Typesetting
+moon.hint: drag the Moon around its orbit
+moon.sun: sunlight
+moon.fromEarth: seen from Earth
+moon.day: day of the cycle
+moon.lit: lit fraction
+moon.phase: phase
+moon.new: new moon
+moon.waxingCrescent: waxing crescent
+moon.firstQuarter: first quarter
+moon.waxingGibbous: waxing gibbous
+moon.full: full moon
+moon.waningGibbous: waning gibbous
+moon.lastQuarter: last quarter
+moon.waningCrescent: waning crescent
+market.hint: drag up or down to set a price and see the shortage or surplus
+market.qty: quantity
+market.priceAxis: price
+market.demand: demand
+market.supply: supply
+market.eqPrice: equilibrium price
+market.eqQty: equilibrium quantity
+market.price: price
+market.demandAt: quantity demanded
+market.supplyAt: quantity supplied
+market.surplus: surplus
+market.shortage: shortage
+sampling.hint: dots are the samples · the coloured curve is what the samples reconstruct
+sampling.f: signal frequency
+sampling.fs: sampling rate
+sampling.nyquist: Nyquist limit fs/2
+sampling.seen: frequency the samples show
+sampling.original: original signal
+sampling.recovered: recovered correctly
+sampling.aliased: 'aliased: a false lower frequency'

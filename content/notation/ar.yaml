@@ -11,7 +11,7 @@
 \mu: { name: مو, read: "مو", meaning: "متوسط التوزيع؛ معامل الاحتكاك؛ البادئة مايكرو (جزء من مليون).", group: greek }
 \nu: { name: نو, read: "نو", meaning: "التردد في الفيزياء أو اللزوجة الحركية في الموائع.", group: greek }
 \pi: { name: باي, read: "باي", meaning: "نسبة محيط الدائرة إلى قطرها، 3.14159…", group: greek }
-\rho: { name: رو, read: "رو", meaning: "الكثافة: الكتلة في وحدة الحجوم (kg/m³). كثافة الهواء عند سطح البحر نحو 1.225 kg/m³.", group: greek }
+\rho: { name: رو, read: "رو", meaning: "الكثافة: الكتلة في وحدة الحجم (kg/m³). كثافة الهواء عند سطح البحر نحو 1.225 kg/m³.", group: greek }
 \sigma: { name: سيغما الصغيرة, read: "سيغما", meaning: "الانحراف المعياري، أي البعد النموذجي للبيانات عن المتوسط؛ و σ² هو التباين.", group: greek }
 \Sigma: { name: سيغما الكبيرة, read: "سيغما", meaning: "علامة الجمع: اجمع الحدود التي تليها.", group: greek }
 \sum: { name: المجموع, read: "مجموع", meaning: "اجمع كل الحدود، والدليل يجري من الحد الأدنى إلى الأعلى.", example: '\sum_{i=1}^{n} x_i = x_1 + x_2 + \dots + x_n', group: operator }
@@ -23,7 +23,7 @@
 \Omega: { name: أوميغا الكبيرة, read: "أوميغا", meaning: "وحدة الأوم للمقاومة الكهربائية؛ أو مجموعة كل النتائج في الاحتمال.", group: greek }
 \eta: { name: إيتا, read: "إيتا", meaning: "الكفاءة: الطاقة النافعة الخارجة مقسومة على الطاقة الداخلة.", group: greek }
 \kappa: { name: كابا, read: "كابا", meaning: "انحناء أو ثابت تناسب.", group: greek }
-\chi: { name: خي, read: "كاي", meaning: "تظهر في إحصائية مربع كاي.", group: greek }
+\chi: { name: كاي, read: "كاي", meaning: "تظهر في إحصائية مربع كاي.", group: greek }
 \psi: { name: بساي, read: "بساي", meaning: "دالة موجية في ميكانيكا الكم أو دالة انسياب في الموائع.", group: greek }
 \xi: { name: كسي, read: "كسي", meaning: "متغير وهمي أو متغير عشوائي.", group: greek }
 \zeta: { name: زيتا, read: "زيتا", meaning: "نسبة التخميد في الاهتزازات.", group: greek }
@@ -62,7 +62,7 @@ d: { name: d التفاضلية, read: "دي", meaning: "في dx أو dt: تغي
 \subseteq: { name: مجموعة جزئية, read: "مجموعة جزئية من", meaning: "كل عنصر في المجموعة اليسرى موجود في اليمنى أيضًا.", group: sets }
 \cup: { name: الاتحاد, read: "أو", meaning: "كل ما في أي من المجموعتين؛ وللحوادث «A أو B».", group: sets }
 \cap: { name: التقاطع, read: "و", meaning: "كل ما في المجموعتين معًا؛ وللحوادث «A و B».", group: sets }
-\mathbb: { name: مجموعات الأعداد, read: "R الأعداد الحقيقية", meaning: "ℝ مجموعة الأعداد الحقيقية؛ ℕ الأعداد الطبيعية؛ ℤ الأعداد الصحيحة.", group: sets }
+\mathbb: { name: مجموعات الأعداد, read: "R، الأعداد الحقيقية", meaning: "ℝ مجموعة الأعداد الحقيقية؛ ℕ الأعداد الطبيعية؛ ℤ الأعداد الصحيحة.", group: sets }
 \dots: { name: نقاط الحذف, read: "وهكذا", meaning: "يستمر النمط.", group: operator }
 \cdots: { name: نقاط الحذف, read: "وهكذا", meaning: "يستمر النمط.", group: operator }
 \langle: { name: قوسا المتوسط, read: "متوسط", meaning: "⟨v²⟩ هو متوسط v² على كل الجسيمات.", group: operator }

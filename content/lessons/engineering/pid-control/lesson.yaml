@@ -1,0 +1,68 @@
+id: pid-control
+subject: engineering
+difficulty: university
+equation: \tau\dot{x} = K_p(r - x) + K_iI - x, \qquad \dot{I} = r - x
+concepts:
+  - feedback-control
+  - proportional-integral
+  - steady-state-error
+  - setpoint
+prerequisites:
+  - derivative
+related:
+  - rc-circuit
+  - exponential-growth
+visualization:
+  type: ode-system
+  options:
+    vars:
+      - x
+      - I
+    equations:
+      - (Kp*(r - x) + Ki*I - x)/tau
+      - r - x
+    initial:
+      - "0"
+      - "0"
+    tMax: 30
+    labels:
+      - temperature x
+      - integral I
+parameters:
+  Kp:
+    min: 0
+    max: 10
+    step: 0.1
+    value: 2
+  Ki:
+    min: 0
+    max: 2
+    step: 0.05
+    value: 0.3
+  r:
+    min: 0.5
+    max: 2
+    step: 0.1
+    value: 1
+  tau:
+    min: 0.5
+    max: 5
+    step: 0.1
+    value: 1
+  tView:
+    min: 0
+    max: 1
+    step: 0.001
+    value: 0
+variables:
+  - x
+  - I
+  - K_p
+  - K_i
+  - r
+  - \tau
+derivation:
+  - \dot{x} = \frac{K_p(r-x) - x}{\tau} \quad (K_i = 0)
+  - \dot{I} = r - x
+  - \dot{x} = \frac{K_p(r-x) + K_iI - x}{\tau}
+charts: []

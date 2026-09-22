@@ -1,0 +1,39 @@
+id: sampling-and-aliasing
+subject: engineering
+difficulty: high-school
+equation: f_s > 2f \qquad x(t) = \sin(2\pi f t)
+concepts:
+  - sampling
+  - nyquist-rate
+  - aliasing
+  - reconstruction
+prerequisites:
+  - sine-wave
+related:
+  - fourier-series
+  - low-pass-filter
+visualization:
+  type: sampling
+  options: {}
+parameters:
+  f:
+    min: 0.5
+    max: 15
+    step: 0.1
+    value: 3
+    unit: Hz
+  fs:
+    min: 2
+    max: 40
+    step: 0.5
+    value: 20
+    unit: Hz
+variables:
+  - f
+  - f_s
+  - T_s
+derivation:
+  - T_s = \frac{1}{f_s}
+  - x[n] = x(nT_s)
+  - f_s < 2f \Rightarrow \text{a lower ghost frequency appears (aliasing)}
+charts: []

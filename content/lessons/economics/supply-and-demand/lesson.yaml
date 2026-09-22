@@ -1,0 +1,48 @@
+id: supply-and-demand
+subject: economics
+difficulty: beginner
+equation: P = a - b\,Q, \quad P = c + d\,Q
+concepts:
+  - supply-and-demand
+  - market-equilibrium
+  - price
+prerequisites:
+  - linear-equations
+related:
+  - price-controls
+  - elasticity
+visualization:
+  type: supply-demand
+  options: {}
+parameters:
+  a:
+    min: 20
+    max: 100
+    step: 1
+    value: 80
+  b:
+    min: 0.2
+    max: 2
+    step: 0.05
+    value: 0.8
+  c:
+    min: 0
+    max: 60
+    step: 1
+    value: 10
+  d:
+    min: 0.2
+    max: 2
+    step: 0.05
+    value: 0.6
+variables:
+  - P
+  - a
+  - b
+  - Q
+  - c
+  - d
+derivation:
+  - "P = a - b\\,Q"
+  - "P = c + d\\,Q"
+  - "a - b\\,Q = c + d\\,Q \\;\\Rightarrow\\; Q = \\dfrac{a-c}{b+d}"
