@@ -1,5 +1,21 @@
 # Contributing
 
+Thank you for helping. Most contributions are text: better explanations, a new language, a new lesson. None of that needs TypeScript.
+
+## Getting started
+
+```bash
+git clone https://github.com/ru44/visualize-it.git
+cd visualize-it
+pnpm install          # the project uses pnpm (https://pnpm.io); npm/yarn lockfiles are not kept
+pnpm dev              # compiles content/ and starts the site at http://localhost:5173
+pnpm check            # validates every lesson and translation, runs the engine tests
+```
+
+Open a pull request against `main`. CI runs `pnpm check`, `pnpm lint` and `pnpm build` on every pull request, so you will see any problem before a maintainer does. Please keep pull requests focused: one lesson, one language, or one component.
+
+## Where things live
+
 Everything a learner reads lives in `content/`, as YAML and Markdown. You do not need to touch TypeScript to add a lesson, fix a sentence or add a language.
 
 ```
@@ -13,7 +29,7 @@ content/
   classic/             titles and descriptions of the classic simulations
 ```
 
-`npm run check` compiles `content/` into `src/generated/` and rejects anything malformed: bad YAML, a missing section, a formula that does not evaluate, LaTeX that does not render, a translation whose maths differs from the English. The same check runs in CI, so a pull request cannot break the site.
+`pnpm check` compiles `content/` into `src/generated/` and rejects anything malformed: bad YAML, a missing section, a formula that does not evaluate, LaTeX that does not render, a translation whose maths differs from the English. The same check runs in CI, so a pull request cannot break the site.
 
 ## Improve the text of a lesson
 
@@ -63,10 +79,10 @@ The language switch in the navigation cycles through every language found in `co
 ## Add a lesson
 
 ```bash
-npm run new-lesson calculus chain-rule     # creates the folder with a template
+pnpm new-lesson calculus chain-rule     # creates the folder with a template
 ```
 
-Fill `lesson.yaml` and `en.md`, add the id to `content/lessons/calculus/_order.yaml`, run `npm run check`, then `npm run dev` and open `#/lesson/chain-rule`.
+Fill `lesson.yaml` and `en.md`, add the id to `content/lessons/calculus/_order.yaml`, run `pnpm check`, then `pnpm dev` and open `#/lesson/chain-rule`.
 
 `lesson.yaml` picks a visualization by `type`. The types and their options are the components registered in `src/viz/registry.ts`; `function-plot` (any expression in `x`, with modes plain / secant / tangent / limit / riemann / area), `ode-system` (any system of differential equations), `surface-3d` and `discrete-dist` cover most new lessons without code. Parameters are declared with ranges in `lesson.yaml` and appear as sliders; their labels come from each language file.
 
@@ -74,8 +90,12 @@ Fill `lesson.yaml` and `en.md`, add the id to `content/lessons/calculus/_order.y
 
 Create `src/viz/MyViz.vue` with props `{ params: Record<string, number>; options: Record<string, any> }`, emit `set(name, value)` when the learner drags something, render into an 800×480 SVG (or canvas) using only the CSS variables in `src/style.css`, put a `<Readouts>` under it, and register it in `src/viz/registry.ts`. Any lesson can then use it by `type`.
 
+## Reporting a wrong answer
+
+Correctness matters more than anything here. If a lesson, the solver or the explorer shows a wrong or misleading result, open an issue with the exact input (the equation you typed or the lesson id and slider values) and what you expected. Numerical results must always carry the right label (exact / numerical / undetermined); a missing or wrong label is a bug too.
+
 ## Code
 
-- `npm run lint` and `npm run format` before a pull request.
+- `pnpm lint` and `pnpm format` before a pull request.
 - State lives in Pinia stores (`src/stores/`): `settings` (language, theme, level) and `progress`.
 - Numerical results shown to learners go through `src/engine/analysis.ts` and are labelled exact / numerical / undetermined; add a case to `scripts/test-engine.ts` for any new capability.
