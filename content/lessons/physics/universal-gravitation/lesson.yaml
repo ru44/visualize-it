@@ -3,24 +3,24 @@ subject: physics
 difficulty: university
 equation: g(r) = \frac{GM}{r^2}
 concepts:
-  - gravitation
-  - inverse-square-law
-  - orbit
+- gravitation
+- inverse-square-law
+- orbit
 prerequisites:
-  - newtons-second-law
+- newtons-second-law
 related:
-  - newtons-second-law
-  - circular-motion
+- newtons-second-law
+- circular-motion
 visualization:
   type: function-plot
   options:
     expr: 3.986e14/(x*1e6)^2
     domain:
-      - 6.4
-      - 50
+    - 6.4
+    - 50
     range:
-      - 0
-      - 10
+    - 0
+    - 10
     mode: plain
 parameters:
   x:
@@ -30,11 +30,14 @@ parameters:
     value: 6.4
     unit: thousand km
 variables:
-  - r
-  - g(r)
-  - GM
+- r
+- g(r)
+- GM
 derivation:
-  - F = \frac{GMm}{r^2}
-  - g = \frac{F}{m} = \frac{GM}{r^2}
-  - g(6.4\times10^6\ \text{m}) \approx 9.8\ \text{m/s}^2
+- F = \frac{GMm}{r^2}
+- g = \frac{F}{m} = \frac{GM}{r^2}
+- g(6.4\times10^6\ \text{m}) \approx 9.8\ \text{m/s}^2
 charts: []
+visualization3d:
+  type: orbit
+  options: {}

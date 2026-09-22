@@ -22,7 +22,6 @@ useThree(
     const launcher = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.16, 1.2, 16), new THREE.MeshStandardMaterial({ color: theme.muted }))
     launcher.castShadow = true
     scene.add(launcher)
-    loadModel('cannon').then((m) => m && ((launcher.visible = false), scene.add(fit(m, 1.6)), (launcher.userData.model = m)))
     const trail = new THREE.Line(new THREE.BufferGeometry(), new THREE.LineBasicMaterial({ color: theme.accent }))
     scene.add(trail)
     const vel = arrow(new THREE.Vector3(1, 0, 0), new THREE.Vector3(), 1, theme.accent)

@@ -10,6 +10,7 @@ import { compile } from 'mathjs'
 import { LessonYaml, SUBJECTS, Video } from './schema'
 import { z } from 'zod'
 import { parseLessonMd } from './markdown'
+import { collectModels } from './models'
 
 const ROOT = join(import.meta.dirname, '../..')
 const CONTENT = join(ROOT, 'content')
@@ -155,6 +156,9 @@ for (const [lang, t] of Object.entries(texts)) write(`lessons.${lang}.json`, t)
 for (const [lang, d] of Object.entries(ui)) write(`ui.${lang}.json`, d)
 write('classic.json', classic)
 write('videos.json', videos.success ? videos.data : {})
+const models = collectModels(ROOT)
+for (const [n, m] of Object.entries(models)) if (m.bytes > 6e6) err(`public/models/${n}.glb`, `${(m.bytes / 1e6).toFixed(1)} MB is too heavy for the web (keep models under 6 MB)`)
+write('models.json', models)
 for (const [lang, d] of Object.entries(classicText)) write(`classic.${lang}.json`, d)
 writeFileSync(join(OUT, 'languages.json'), JSON.stringify(Object.keys(ui)))
 
