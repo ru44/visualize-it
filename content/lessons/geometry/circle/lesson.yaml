@@ -3,15 +3,15 @@ subject: geometry
 difficulty: beginner
 equation: A = \pi r^2, \; C = 2\pi r
 concepts:
-  - radius
-  - diameter
-  - circumference
-  - area
-  - pi
+- radius
+- diameter
+- circumference
+- area
+- pi
 prerequisites: []
 related:
-  - unit-circle
-  - integral
+- unit-circle
+- integral
 visualization:
   type: circle
   options: {}
@@ -22,11 +22,12 @@ parameters:
     step: 0.05
     value: 2
 variables:
-  - r
-  - C
-  - A
+- r
+- C
+- A
 derivation:
-  - A \approx n \cdot \left(\tfrac{1}{2}\, r \cdot \tfrac{C}{n}\right)
-  - \text{wedges, alternated point-up / point-down} \;\longrightarrow\; \text{rectangle of sides } r \text{ and } \tfrac{C}{2}
-  - A = r \cdot \frac{C}{2} = r \cdot \frac{2\pi r}{2} = \pi r^2
+- A \approx n \cdot \left(\tfrac{1}{2}\, r \cdot \tfrac{C}{n}\right)
+- \text{wedges, alternated point-up / point-down} \;\longrightarrow\; \text{rectangle of sides } r \text{ and } \tfrac{C}{2}
+- A = r \cdot \frac{C}{2} = r \cdot \frac{2\pi r}{2} = \pi r^2
 charts: []
+primary: r

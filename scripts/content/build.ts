@@ -156,11 +156,13 @@ for (const subject of readdirSync(join(CONTENT, 'lessons')).sort((a, b) => order
       if (T.charts.length !== L.charts.length) err(w, `charts: ${T.charts.length} described, lesson.yaml has ${L.charts.length}`)
       T.charts.forEach((c, i) => L.charts[i] && c.series.length !== L.charts[i].series.length && err(w, `charts[${i}].series: ${c.series.length} labels for ${L.charts[i].series.length} series`))
       for (const k of Object.keys(L.parameters)) if (!T.parameters[k]) err(w, `parameters: missing label for "${k}"`)
-      for (const s of [T.summary, ...T.intuition, ...T.formal, ...T.advanced, ...T.derivationNotes, ...T.variables, ...T.realWorld.map((r) => r.text)]) checkProse(w, s)
+      if (L.primary && !(L.primary in L.parameters)) err(`${where}/lesson.yaml`, `primary "${L.primary}" is not a parameter`)
+      for (const s of [T.summary, ...T.tryIt, ...T.intuition, ...T.formal, ...T.advanced, ...T.derivationNotes, ...T.variables, ...T.realWorld.map((r) => r.text)]) checkProse(w, s)
       if (lang === 'en') Object.assign(en, T)
       else {
         // Maths must be identical to the English text, paragraph by paragraph.
         const pairs: [string, string][] = [[en.summary, T.summary], ...en.intuition.map((s: string, i: number) => [s, T.intuition[i] ?? ''] as [string, string]), ...en.formal.map((s: string, i: number) => [s, T.formal[i] ?? ''] as [string, string]), ...en.derivationNotes.map((s: string, i: number) => [s, T.derivationNotes[i] ?? ''] as [string, string])]
+        if (T.tryIt.length !== en.tryIt.length) err(w, `## Try it: ${T.tryIt.length} steps, en.md has ${en.tryIt.length}`)
         if (T.intuition.length !== en.intuition.length) err(w, `## Intuition: ${T.intuition.length} paragraphs, en.md has ${en.intuition.length}`)
         if (T.formal.length !== en.formal.length) err(w, `## Formal: ${T.formal.length} paragraphs, en.md has ${en.formal.length}`)
         for (const [e, x] of pairs) if (x && mathSegments(e) !== mathSegments(x)) err(w, `maths differs from en.md in "${x.slice(0, 40)}"`)

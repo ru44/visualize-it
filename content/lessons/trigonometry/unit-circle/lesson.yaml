@@ -3,16 +3,16 @@ subject: trigonometry
 difficulty: high-school
 equation: (\cos\theta, \sin\theta), \quad \sin^2\theta + \cos^2\theta = 1
 concepts:
-  - unit circle
-  - sine
-  - cosine
-  - angle
-  - periodicity
+- unit circle
+- sine
+- cosine
+- angle
+- periodicity
 prerequisites:
-  - pythagorean-theorem
-  - circle
+- pythagorean-theorem
+- circle
 related:
-  - function-graph
+- function-graph
 visualization:
   type: unit-circle
   options: {}
@@ -24,12 +24,13 @@ parameters:
     value: 40
     unit: °
 variables:
-  - θ
-  - cos θ
-  - sin θ
-  - tan θ
+- θ
+- cos θ
+- sin θ
+- tan θ
 derivation:
-  - x^2 + y^2 = 1
-  - x = \cos\theta, \quad y = \sin\theta
-  - \cos^2\theta + \sin^2\theta = 1
+- x^2 + y^2 = 1
+- x = \cos\theta, \quad y = \sin\theta
+- \cos^2\theta + \sin^2\theta = 1
 charts: []
+primary: theta

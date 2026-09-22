@@ -14,6 +14,12 @@ variables:
   - rise divided by run
 ---
 
+## Try it
+
+1. Drag the slider «first point x₁» slowly to the right. The two points move along the line together.
+2. Look at the number «slope Δy/Δx» under the picture. It does not change, no matter where the points are.
+3. Now move the slider «m — slope» up. The line gets steeper and the number grows. Slope simply means: how steep.
+
 ## Intuition
 
 Pick two points on the line and walk from one to the other: first across (the run), then up (the rise). Slope is rise per unit of run.

@@ -3,23 +3,23 @@ subject: functions
 difficulty: beginner
 equation: m = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}
 concepts:
-  - slope
-  - rate-of-change
-  - line
+- slope
+- rate-of-change
+- line
 prerequisites:
-  - function-graph
+- function-graph
 related:
-  - derivative
+- derivative
 visualization:
   type: function-plot
   options:
     expr: m*x + b
     domain:
-      - -6
-      - 6
+    - -6
+    - 6
     range:
-      - -8
-      - 8
+    - -8
+    - 8
     mode: secant
 parameters:
   m:
@@ -43,11 +43,12 @@ parameters:
     step: 0.05
     value: 4
 variables:
-  - \Delta x
-  - \Delta y
-  - m
+- \Delta x
+- \Delta y
+- m
 derivation:
-  - y_1 = mx_1 + b, \quad y_2 = mx_2 + b
-  - y_2 - y_1 = m(x_2 - x_1)
-  - \frac{y_2 - y_1}{x_2 - x_1} = m
+- y_1 = mx_1 + b, \quad y_2 = mx_2 + b
+- y_2 - y_1 = m(x_2 - x_1)
+- \frac{y_2 - y_1}{x_2 - x_1} = m
 charts: []
+primary: x

@@ -417,3 +417,12 @@ venn.union: A ∪ B  الاتحاد
 venn.intersection: A ∩ B  التقاطع
 venn.difference: A \ B  الفرق
 venn.complement: Aᶜ  المتممة
+guided.full: العرض الكامل
+guided.simple: العرض المبسّط
+guided.tryTitle: جرّب هذا
+guided.why: لماذا يحدث هذا؟
+guided.more: أخبرني أكثر
+guided.showMaths: أرِني الرياضيات
+guided.hideMaths: أخفِ الرياضيات
+guided.moreSliders: '{n} أشياء أخرى يمكن تغييرها'
+home.start2: 'ابدأ بدقيقتين: ما هو الميل؟'

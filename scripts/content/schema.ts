@@ -20,6 +20,8 @@ export const LessonYaml = z.object({
   related: z.array(z.string()).default([]),
   visualization: z.object({ type: z.string(), options: z.record(z.string(), z.any()).default({}) }),
   /** Optional 3D scene (three.js) offered as a switch next to the 2D picture. Types live in src/viz3d/registry.ts. */
+  /** Which parameter the guided view exposes first (defaults to the first one). */
+  primary: z.string().optional(),
   visualization3d: z.object({ type: z.string(), options: z.record(z.string(), z.any()).default({}) }).optional(),
   /** Parameter ranges; labels live in the language files. */
   parameters: z.record(z.string(), ParamSpec).default({}),
@@ -42,6 +44,8 @@ export const LessonText = z.object({
   parameters: z.record(z.string(), z.string()).default({}),
   variables: z.array(z.string()).default([]),
   charts: z.array(z.object({ title: z.string(), xLabel: z.string(), yLabel: z.string(), series: z.array(z.string()) })).default([]),
+  /** 2–4 concrete steps for the learner: what to drag and what to notice. Shown first in guided mode. */
+  tryIt: z.array(z.string()).default([]),
   intuition: z.array(z.string()).min(1),
   formal: z.array(z.string()).min(1),
   advanced: z.array(z.string()).default([]),

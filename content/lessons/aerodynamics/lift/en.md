@@ -21,6 +21,12 @@ charts:
       - C_L(α)
 ---
 
+## Try it
+
+1. Raise «angle of attack α» slowly. The green lift arrow grows.
+2. Keep going past 15°. The air over the wing breaks up, the arrow shrinks: that is a stall.
+3. Now raise «airspeed v». Lift grows fast: double the speed, four times the lift.
+
 ## Intuition
 
 Drag the angle of attack up and watch the streamlines: the wing tilts and every line bends downward as it passes, most sharply just behind the trailing edge, where the downward deflection is drawn as downwash. Turning that much air downward every second requires a downward force on the air — so by Newton’s third law the air pushes the wing up. That reaction force is most of what you feel as lift. You should ignore the old "equal transit time" story that air splitting at the leading edge must meet back up at the trailing edge at the same time: it is not true, does not follow from any physical law, and gets the direction of causation backwards.

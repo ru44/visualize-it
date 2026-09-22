@@ -18,7 +18,15 @@ import { useProgress } from '../stores/progress'
 import { storeToRefs } from 'pinia'
 
 const settings = useSettings()
-const { level, view3d } = storeToRefs(settings)
+const { level, view3d, guided } = storeToRefs(settings)
+// Guided view: the picture, one slider, concrete steps, then explanations revealed one at a time.
+const primaryParam = computed(() => lesson.value?.primary ?? Object.keys(lesson.value?.parameters ?? {})[0])
+const revealed = ref(0)
+const showMaths = ref(false)
+watch(() => [props.id, query.value], () => ((revealed.value = 0), (showMaths.value = false)))
+const tryIt = computed(() => (lesson.value?.tryIt.length ? lesson.value.tryIt : lesson.value ? [lesson.value.explanation.intuition[0]] : []))
+const doneSteps = reactive(new Set<number>())
+watch(() => props.id, () => doneSteps.clear())
 const has3d = computed(() => !!lesson.value?.visualization3d)
 const show3d = computed(() => has3d.value && view3d.value)
 const progress = useProgress()
@@ -79,6 +87,84 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
     <RouterLink to="/" class="mt-6 block underline">{{ t('lesson.backHome') }}</RouterLink>
   </div>
 
+  <article v-else-if="guided && id" class="mx-auto max-w-4xl px-4 py-6 lg:px-8">
+    <header class="mb-4 flex flex-wrap items-start justify-between gap-3">
+      <div class="min-w-0">
+        <p class="label"><RouterLink :to="`/subject/${lesson.subject}`" class="hover:text-[var(--fg)]"><span class="inline-block rtl:-scale-x-100">←</span> {{ t(`subject.${lesson.subject}` as Key) }}</RouterLink></p>
+        <h1 class="mt-1 text-3xl font-semibold tracking-tight">{{ lesson.title }}</h1>
+        <p class="mt-1 max-w-2xl text-lg leading-relaxed" style="color: var(--muted)"><MathText :text="lesson.summary" /></p>
+      </div>
+      <button class="rounded-[10px] border px-3 py-1.5 text-xs" style="border-color: var(--line); color: var(--muted)" @click="guided = false">{{ t('guided.full') }}</button>
+    </header>
+
+    <section class="surface overflow-hidden">
+      <div v-if="has3d" class="flex items-center justify-end gap-2 border-b px-3 py-1.5" style="border-color: var(--line)">
+        <div class="flex gap-0.5 rounded-lg p-0.5 text-xs" style="background: var(--sunken)">
+          <button v-for="m in [false, true]" :key="String(m)" class="rounded-md px-2.5 py-1" :style="view3d === m ? 'background: var(--panel); color: var(--fg); box-shadow: 0 1px 2px rgb(0 0 0 / .12)' : 'color: var(--muted)'" @click="view3d = m">{{ m ? '3D' : '2D' }}</button>
+        </div>
+      </div>
+      <Scene3D v-if="show3d" :type="lesson.visualization3d!.type" :options="lesson.visualization3d!.options" :params="params" @set="setParam" />
+      <component :is="viz" v-else-if="viz" :params="params" :options="lesson.visualization.options" @set="setParam" />
+      <div v-if="primaryParam && lesson.parameters[primaryParam]" class="border-t px-5 py-4" style="border-color: var(--line)">
+        <ParamSlider :name="primaryParam" :spec="lesson.parameters[primaryParam]" :value="params[primaryParam]" @set="setParam" />
+        <details v-if="Object.keys(lesson.parameters).length > 1" class="mt-3">
+          <summary class="label flex items-center gap-1.5"><span class="chev">▸</span>{{ t('guided.moreSliders', { n: Object.keys(lesson.parameters).length - 1 }) }}</summary>
+          <div class="mt-3 space-y-3">
+            <ParamSlider v-for="(spec, name) in lesson.parameters" v-show="name !== primaryParam" :key="name" :name="name" :spec="spec" :value="params[name]" @set="setParam" />
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="surface mt-5 p-5">
+      <h2 class="text-lg font-semibold tracking-tight">{{ t('guided.tryTitle') }}</h2>
+      <ol class="mt-3 space-y-2.5">
+        <li v-for="(step, i) in tryIt" :key="i" class="flex cursor-pointer items-start gap-3 text-[17px] leading-relaxed" @click="doneSteps.has(i) ? doneSteps.delete(i) : doneSteps.add(i)">
+          <span class="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full border text-xs" :style="doneSteps.has(i) ? 'background: var(--pos); border-color: var(--pos); color: #fff' : 'border-color: var(--line); color: var(--muted)'">{{ doneSteps.has(i) ? '✓' : i + 1 }}</span>
+          <span :style="doneSteps.has(i) ? 'color: var(--muted)' : ''"><MathText :text="step" /></span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="mt-5">
+      <button v-if="revealed < lesson.explanation.intuition.length" class="btn-primary w-full px-5 py-3 text-base" @click="revealed++">{{ revealed === 0 ? t('guided.why') : t('guided.more') }}</button>
+      <div v-if="revealed" class="surface mt-3 space-y-4 p-5 text-[17px] leading-relaxed">
+        <p v-for="(tx, i) in lesson.explanation.intuition.slice(0, revealed)" :key="i"><MathText :text="tx" /></p>
+        <div v-if="revealed >= lesson.explanation.intuition.length" class="flex flex-wrap gap-2 pt-1">
+          <button class="rounded-[10px] border px-4 py-2 text-sm" style="border-color: var(--line)" @click="showMaths = !showMaths">{{ showMaths ? t('guided.hideMaths') : t('guided.showMaths') }}</button>
+          <button class="rounded-[10px] border px-4 py-2 text-sm font-medium transition-colors" :style="progress.isDone(id) ? 'background: var(--pos); border-color: var(--pos); color: #fff' : 'border-color: var(--line)'" @click="progress.toggle(id)">{{ progress.isDone(id) ? t('progress.undo') : t('progress.markDone') }}</button>
+        </div>
+      </div>
+      <div v-if="showMaths" class="surface mt-3 space-y-5 p-5">
+        <div><p class="label mb-2">{{ t('lesson.equation') }}</p><div class="overflow-x-auto text-lg"><Katex :tex="lesson.equation" display /></div></div>
+        <div>
+          <p class="label mb-2">{{ t('lesson.variables') }}</p>
+          <dl class="space-y-1.5 text-sm">
+            <div v-for="v in lesson.variables" :key="v.symbol" class="flex gap-3"><dt class="w-16 shrink-0"><Katex :tex="v.symbol" /></dt><dd><MathText :text="v.meaning" /></dd></div>
+            <div v-for="g in glossary" :key="g.tok" class="flex gap-3"><dt class="w-16 shrink-0"><Katex :tex="displayTex(g.tok)" /></dt><dd style="color: var(--muted)"><span style="color: var(--fg)">{{ g.e.name }}</span>. <MathText :text="g.e.simple" /></dd></div>
+          </dl>
+        </div>
+        <div><p class="label mb-2">{{ t('lesson.formal') }}</p><p v-for="(tx, i) in lesson.explanation.formal" :key="i" class="mt-2 leading-relaxed"><MathText :text="tx" /></p></div>
+        <div v-if="lesson.derivation.length">
+          <p class="label mb-2">{{ lesson.derivationTitle ?? t('lesson.derivation') }}</p>
+          <ol class="space-y-3"><li v-for="(st, i) in lesson.derivation" :key="i" class="flex gap-3"><span class="num pt-1 text-xs" style="color: var(--muted)">{{ i + 1 }}</span><div class="min-w-0 flex-1"><div class="overflow-x-auto"><Katex :tex="st.tex" display /></div><p class="mt-1 text-sm" style="color: var(--muted)"><MathText :text="st.note" /></p></div></li></ol>
+        </div>
+        <RouterLink to="/notation" class="block text-xs underline" style="color: var(--accent)">{{ t('lesson.notationLink') }}</RouterLink>
+      </div>
+    </section>
+
+    <section v-if="lesson.realWorld.length && revealed >= lesson.explanation.intuition.length" class="mt-6">
+      <h2 class="mb-2 text-lg font-semibold tracking-tight">{{ t('lesson.realWorld') }}</h2>
+      <ul class="divide-y" style="border-color: var(--line)"><li v-for="rw in lesson.realWorld" :key="rw.title" class="py-3 first:pt-0" style="border-color: var(--line)"><p class="font-medium">{{ rw.title }}</p><p class="text-sm leading-relaxed" style="color: var(--muted)"><MathText :text="rw.text" /></p></li></ul>
+    </section>
+
+    <nav v-if="neighbours && (neighbours.prev || neighbours.next)" class="mt-10 grid gap-4 sm:grid-cols-2">
+      <RouterLink v-if="neighbours.prev" :to="`/lesson/${neighbours.prev.id}`" class="surface lift p-4"><p class="label">{{ t('lesson.prev') }}</p><p class="mt-1 font-medium">{{ neighbours.prev.title }}</p></RouterLink>
+      <span v-else />
+      <RouterLink v-if="neighbours.next" :to="`/lesson/${neighbours.next.id}`" class="surface lift p-4 text-end" style="border-color: var(--accent)"><p class="label" style="color: var(--accent)">{{ t('lesson.nextLesson') }}</p><p class="mt-1 font-medium">{{ neighbours.next.title }}</p></RouterLink>
+    </nav>
+  </article>
+
   <article v-else class="mx-auto max-w-6xl px-4 py-6 lg:px-8">
     <ExplorerInput v-if="!id" class="mb-6 max-w-2xl" :initial="query" />
 
@@ -92,6 +178,7 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
         <p v-if="id && !hasTranslation(id)" class="mt-2 text-sm" style="color: var(--accent-2)">{{ t('lesson.translating') }}</p>
       </div>
       <div class="flex flex-wrap items-end gap-3">
+        <button v-if="id" class="rounded-[10px] border px-3 py-2 text-sm" style="border-color: var(--line); color: var(--muted)" @click="guided = true">{{ t('guided.simple') }}</button>
         <button
           v-if="id"
           class="rounded-[10px] border px-4 py-2 text-sm font-medium transition-colors"

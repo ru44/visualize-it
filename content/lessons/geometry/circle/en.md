@@ -11,6 +11,12 @@ variables:
   - the area enclosed by the circle
 ---
 
+## Try it
+
+1. Drag the handle on the rim to make the circle bigger and smaller.
+2. Look at the straight line under the circle: it is the rim unrolled. About 6.28 radius-lengths fit along it, always.
+3. Read «ratio C/d» under the picture. It never changes: that fixed number is π.
+
 ## Intuition
 
 Drag the handle on the rim: the radius line stretches, and the circle grows or shrinks around it. Below, that same rim gets cut and laid out flat as a straight segment — watch how its length always lines up with about $6.28$ copies of the radius, tick by tick. That number, $2\pi$, is not a coincidence of this one circle; it is the same for every circle you could draw.

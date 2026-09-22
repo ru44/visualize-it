@@ -417,3 +417,12 @@ venn.union: A ∪ B  union
 venn.intersection: A ∩ B  intersection
 venn.difference: A \ B  difference
 venn.complement: Aᶜ  complement
+guided.full: Full view
+guided.simple: Simple view
+guided.tryTitle: Try this
+guided.why: Why does this happen?
+guided.more: Tell me more
+guided.showMaths: Show me the maths
+guided.hideMaths: Hide the maths
+guided.moreSliders: '{n} more things to change'
+home.start2: 'Start with 2 minutes: what is a slope?'

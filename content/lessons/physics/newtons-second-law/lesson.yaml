@@ -47,3 +47,4 @@ charts:
 visualization3d:
   type: block-force
   options: {}
+primary: F

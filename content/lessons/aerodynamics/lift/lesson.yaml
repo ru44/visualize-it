@@ -52,3 +52,4 @@ visualization3d:
   options:
     models:
     - airplane
+primary: alpha
