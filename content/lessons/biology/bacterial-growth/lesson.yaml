@@ -1,0 +1,51 @@
+id: bacterial-growth
+subject: biology
+difficulty: beginner
+equation: N(t) = N_0\cdot 2^{t/T}
+concepts:
+  - exponential-growth
+  - doubling-time
+  - bacterial-growth
+prerequisites:
+  - exponential-growth
+related:
+  - logistic-population
+visualization:
+  type: function-plot
+  options:
+    expr: N0*2^(x/T)
+    domain:
+      - 0
+      - 600
+    range:
+      - 0
+      - 11000000
+    mode: tangent
+parameters:
+  N0:
+    min: 1
+    max: 100
+    step: 1
+    value: 10
+  T:
+    min: 10
+    max: 120
+    step: 5
+    value: 30
+    unit: min
+  x:
+    min: 0
+    max: 600
+    step: 1
+    value: 120
+    unit: min
+variables:
+  - N
+  - N_0
+  - T
+  - t
+derivation:
+  - N(T) = 2N(0), \quad N(2T)=2N(T)=4N(0)
+  - N(nT) = N_0\cdot 2^n
+  - N(t) = N_0\cdot 2^{t/T}
+charts: []

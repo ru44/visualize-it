@@ -1,0 +1,46 @@
+id: law-of-large-numbers
+subject: statistics
+difficulty: high-school
+equation: \hat p_N \to p, \qquad \sigma_{\hat p} = \sqrt{\frac{p(1-p)}{N}}
+concepts:
+  - law-of-large-numbers
+  - standard-error
+  - sampling
+prerequisites:
+  - probability-basics
+related:
+  - normal-distribution
+  - binomial-distribution
+visualization:
+  type: coin-flips
+  options: {}
+parameters:
+  p:
+    min: 0.05
+    max: 0.95
+    step: 0.05
+    value: 0.3
+  N:
+    min: 20
+    max: 2000
+    step: 10
+    value: 1000
+  speed:
+    min: 1
+    max: 200
+    step: 1
+    value: 60
+variables:
+  - \hat p_N
+  - \sigma_{\hat p}
+derivation:
+  - X_i \in \{0, 1\},\quad E[X_i] = p,\quad \mathrm{Var}(X_i) = p(1-p)
+  - \mathrm{Var}\!\left(\frac{1}{N}\sum X_i\right) = \frac{N\,p(1-p)}{N^2} = \frac{p(1-p)}{N}
+  - \sigma_{\hat p} = \sqrt{\frac{p(1-p)}{N}} \propto \frac{1}{\sqrt N}
+charts:
+  - domain:
+      - 1
+      - 2000
+    marker: N
+    series:
+      - sqrt(p*(1-p)/x)

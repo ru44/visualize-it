@@ -1,0 +1,57 @@
+id: logistic-population
+subject: biology
+difficulty: high-school
+equation: \frac{dP}{dt} = rP\left(1 - \frac{P}{K}\right)
+concepts:
+  - logistic-growth
+  - carrying-capacity
+  - population-ecology
+prerequisites:
+  - exponential-growth
+  - derivative
+related:
+  - sir-epidemic
+  - bacterial-growth
+visualization:
+  type: ode-system
+  options:
+    vars:
+      - P
+    equations:
+      - r*P*(1 - P/K)
+    initial:
+      - P0
+    tMax: 60
+    labels:
+      - population
+parameters:
+  r:
+    min: 0.05
+    max: 1
+    step: 0.01
+    value: 0.3
+  K:
+    min: 50
+    max: 2000
+    step: 10
+    value: 1000
+  P0:
+    min: 1
+    max: 500
+    step: 1
+    value: 50
+  tView:
+    min: 0
+    max: 1
+    step: 0.001
+    value: 0
+variables:
+  - P
+  - r
+  - K
+  - P_0
+derivation:
+  - \frac{dP}{dt} = rP - \frac{rP^2}{K}
+  - \frac{dP}{P(1-P/K)} = r\,dt
+  - P(t) = \frac{K}{1+\left(\frac{K-P_0}{P_0}\right)e^{-rt}}
+charts: []

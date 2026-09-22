@@ -7,6 +7,9 @@ import { t, type Key } from '../i18n'
 import ExplorerInput from '../components/ExplorerInput.vue'
 import HeroDemo from '../components/HeroDemo.vue'
 import SubjectIcon from '../components/SubjectIcon.vue'
+import { useProgress } from '../stores/progress'
+
+const progress = useProgress()
 
 const subjects = computed(() => {
   const count = new Map<Subject, number>()
@@ -48,6 +51,11 @@ const steps = [1, 2, 3].map((i) => ({ title: `home.step${i}.t` as Key, text: `ho
     <section id="subjects" class="scroll-mt-20 py-14">
       <h2 class="text-2xl font-semibold tracking-tight">{{ t('home.subjects') }}</h2>
       <p class="mt-1" style="color: var(--muted)">{{ t('home.subjects.d') }}</p>
+      <p v-if="progress.doneCount" class="mt-2 flex flex-wrap items-center gap-3 text-sm">
+        <span class="rounded-full px-3 py-1 tabular-nums" style="background: var(--accent-soft); color: var(--accent)">{{ t('progress.overall', { done: progress.doneCount, total: progress.total }) }}</span>
+        <span class="text-xs" style="color: var(--muted)">{{ t('progress.saved') }}</span>
+        <button class="text-xs underline" style="color: var(--muted)" @click="progress.reset()">{{ t('progress.reset') }}</button>
+      </p>
       <ul class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <li v-for="s in subjects" :key="s.id">
           <RouterLink :to="`/subject/${s.id}`" class="surface lift flex h-full gap-4 p-5">
@@ -57,6 +65,7 @@ const steps = [1, 2, 3].map((i) => ({ title: `home.step${i}.t` as Key, text: `ho
                 <span class="text-lg font-medium">{{ t(`subject.${s.id}` as Key) }}</span>
                 <span class="shrink-0 text-xs" style="color: var(--muted)">{{ t('home.lessons', { n: s.n }) }}</span>
               </span>
+              <span v-if="progress.bySubject(s.id).done" class="mt-2 block h-1.5 overflow-hidden rounded-full" style="background: var(--sunken)"><span class="block h-full rounded-full" style="background: var(--pos)" :style="{ width: `${(100 * progress.bySubject(s.id).done) / s.n}%` }" /></span>
               <span class="mt-1 block text-sm leading-relaxed" style="color: var(--muted)">{{ t(`subjectd.${s.id}` as Key) }}</span>
             </span>
           </RouterLink>

@@ -1,0 +1,56 @@
+id: normal-distribution
+subject: statistics
+difficulty: high-school
+equation: f(x) = \frac{1}{\sigma\sqrt{2\pi}}\, e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+concepts:
+  - normal
+  - bell-curve
+  - z-score
+  - central-limit-theorem
+prerequisites:
+  - mean-and-spread
+  - binomial-distribution
+related:
+  - law-of-large-numbers
+  - integral
+visualization:
+  type: function-plot
+  options:
+    expr: exp(-(x-mu)^2/(2*s^2))/(s*sqrt(2*pi))
+    domain:
+      - -4
+      - 16
+    range:
+      - -0.05
+      - 0.85
+    mode: area
+parameters:
+  mu:
+    min: 0
+    max: 12
+    step: 0.1
+    value: 6
+  s:
+    min: 0.5
+    max: 4
+    step: 0.05
+    value: 1.5
+  a:
+    min: -4
+    max: 16
+    step: 0.05
+    value: 4.5
+  b:
+    min: -4
+    max: 16
+    step: 0.05
+    value: 7.5
+variables:
+  - \mu
+  - \sigma
+  - \int_a^b f
+derivation:
+  - \int_{-\infty}^{\infty} e^{-x^2/2}\,dx = \sqrt{2\pi}
+  - f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-(x-\mu)^2/2\sigma^2}
+  - P(\mu - \sigma \le X \le \mu + \sigma) = \Phi(1) - \Phi(-1) \approx 0.683
+charts: []

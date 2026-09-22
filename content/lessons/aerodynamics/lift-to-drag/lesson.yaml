@@ -1,0 +1,56 @@
+id: lift-to-drag
+subject: aerodynamics
+difficulty: advanced
+equation: \frac{L}{D} = \frac{C_L}{C_D}, \qquad C_D = C_{D,0} + \frac{C_L^2}{\pi\, AR\, e}
+concepts:
+  - glide-ratio
+  - induced-drag
+  - aspect-ratio
+  - optimisation
+prerequisites:
+  - lift
+  - drag-equation
+  - derivative
+related:
+  - lift
+  - drag-equation
+  - stall-and-angle-of-attack
+visualization:
+  type: function-plot
+  options:
+    expr: (0.11*(x+2)) / (0.02 + (0.11*(x+2))^2/(pi*AR*0.85))
+    domain:
+      - -1
+      - 14
+    range:
+      - -2
+      - 22
+    mode: tangent
+parameters:
+  AR:
+    min: 4
+    max: 30
+    step: 0.5
+    value: 7
+  x:
+    min: -1
+    max: 14
+    step: 0.25
+    value: 5
+    unit: °
+variables:
+  - L/D
+  - AR
+  - e
+  - C_{D,0}
+derivation:
+  - \frac{L}{D} = \frac{C_L}{C_{D,0} + C_L^2/(\pi AR e)}
+  - \frac{d}{dC_L}\!\left(\frac{L}{D}\right) = 0 \;\Rightarrow\; C_{D,0} = \frac{C_L^2}{\pi AR e}
+  - \left(\frac{L}{D}\right)_{\max} = \frac{1}{2}\sqrt{\frac{\pi AR e}{C_{D,0}}}
+charts:
+  - domain:
+      - 4
+      - 30
+    marker: AR
+    series:
+      - 0.02 + (0.11*7)^2/(pi*x*0.85)

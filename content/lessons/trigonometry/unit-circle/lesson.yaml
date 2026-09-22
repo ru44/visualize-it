@@ -1,0 +1,35 @@
+id: unit-circle
+subject: trigonometry
+difficulty: high-school
+equation: (\cos\theta, \sin\theta), \quad \sin^2\theta + \cos^2\theta = 1
+concepts:
+  - unit circle
+  - sine
+  - cosine
+  - angle
+  - periodicity
+prerequisites:
+  - pythagorean-theorem
+  - circle
+related:
+  - function-graph
+visualization:
+  type: unit-circle
+  options: {}
+parameters:
+  theta:
+    min: 0
+    max: 360
+    step: 1
+    value: 40
+    unit: °
+variables:
+  - θ
+  - cos θ
+  - sin θ
+  - tan θ
+derivation:
+  - x^2 + y^2 = 1
+  - x = \cos\theta, \quad y = \sin\theta
+  - \cos^2\theta + \sin^2\theta = 1
+charts: []

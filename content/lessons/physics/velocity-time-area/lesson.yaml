@@ -1,0 +1,60 @@
+id: velocity-time-area
+subject: physics
+difficulty: high-school
+equation: \Delta x = \int_a^b v(t)\,dt
+concepts:
+  - velocity
+  - displacement
+  - area-under-curve
+  - integral
+prerequisites:
+  - area-under-curve
+  - kinematics-constant-acceleration
+related:
+  - kinematics-constant-acceleration
+  - fundamental-theorem
+visualization:
+  type: function-plot
+  options:
+    expr: v0 + acc*x
+    domain:
+      - 0
+      - 12
+    range:
+      - -10
+      - 20
+    mode: area
+parameters:
+  v0:
+    min: -8
+    max: 10
+    step: 0.5
+    value: -4
+    unit: m/s
+  acc:
+    min: -3
+    max: 3
+    step: 0.2
+    value: 1.5
+    unit: m/s²
+  a:
+    min: 0
+    max: 11
+    step: 0.2
+    value: 0
+    unit: s
+  b:
+    min: 0
+    max: 12
+    step: 0.2
+    value: 8
+    unit: s
+variables:
+  - v(t)
+  - \Delta x
+  - a, b
+derivation:
+  - v(t) = \frac{dx}{dt}
+  - \int_a^b v(t)\,dt = \int_a^b \frac{dx}{dt}\,dt = x(b) - x(a)
+  - \Delta x = x(b) - x(a)
+charts: []

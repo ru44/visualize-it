@@ -1,0 +1,40 @@
+id: depth-first-search
+subject: computer-science
+difficulty: high-school
+equation: "\\text{DFS: follow one branch to its end before backtracking}"
+concepts:
+  - graph
+  - dfs
+  - stack
+  - recursion
+  - backtracking
+prerequisites:
+  - algorithms-and-complexity
+related:
+  - breadth-first-search
+  - dijkstra
+visualization:
+  type: graph-search
+  options:
+    algorithm: dfs
+    target: 9
+parameters:
+  start:
+    min: 0
+    max: 9
+    step: 1
+    value: 0
+  step:
+    min: 0
+    max: 1
+    step: 0.001
+    value: 1
+variables:
+  - stack
+  - visited
+  - backtrack
+derivation:
+  - \text{stack} = [\text{start}]
+  - \text{visit top of stack} \to \text{push its first unvisited neighbour}
+  - \text{no unvisited neighbour} \to \text{pop (backtrack)}
+charts: []

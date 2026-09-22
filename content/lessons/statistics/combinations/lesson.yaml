@@ -1,0 +1,37 @@
+id: combinations
+subject: statistics
+difficulty: beginner
+equation: C(n,k) = \binom{n}{k} = \frac{n!}{k!\,(n-k)!}
+concepts:
+  - counting
+  - combination
+  - binomial-coefficient
+prerequisites:
+  - permutations
+related:
+  - binomial-distribution
+  - probability-basics
+visualization:
+  type: counting
+  options:
+    ordered: false
+parameters:
+  n:
+    min: 1
+    max: 10
+    step: 1
+    value: 5
+  k:
+    min: 0
+    max: 10
+    step: 1
+    value: 2
+variables:
+  - n
+  - k
+  - \binom{n}{k}
+derivation:
+  - P(n,k) = \frac{n!}{(n-k)!}
+  - \text{each group of } k \text{ appears } k! \text{ times}
+  - \binom{n}{k} = \frac{P(n,k)}{k!} = \frac{n!}{k!\,(n-k)!}
+charts: []

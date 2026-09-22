@@ -86,7 +86,6 @@ function smoothstep(x: number) {
 }
 
 const N_LINES = 14
-const N_STEPS = 46
 // Streamlines are built in screen space: the far-field flow is horizontal, and each line is pushed
 // around the body with y = C(x) ± sqrt(s² + R(x)²) — it hugs the surface when it starts close (small s)
 // and is barely disturbed when it starts far away.

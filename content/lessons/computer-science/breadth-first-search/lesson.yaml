@@ -1,0 +1,40 @@
+id: breadth-first-search
+subject: computer-science
+difficulty: high-school
+equation: "\\text{BFS: explore all nodes at distance } d \\text{ before any at } d+1"
+concepts:
+  - graph
+  - bfs
+  - queue
+  - shortest-path
+  - levels
+prerequisites:
+  - algorithms-and-complexity
+related:
+  - depth-first-search
+  - dijkstra
+visualization:
+  type: graph-search
+  options:
+    algorithm: bfs
+    target: 9
+parameters:
+  start:
+    min: 0
+    max: 9
+    step: 1
+    value: 0
+  step:
+    min: 0
+    max: 1
+    step: 0.001
+    value: 1
+variables:
+  - queue
+  - d
+  - visited
+derivation:
+  - \text{queue} = [\text{start}], \quad d(\text{start}) = 0
+  - "\\text{for each neighbour } v \\text{ of the dequeued node } u: \\; d(v) = d(u) + 1"
+  - \text{first visit to target} \Rightarrow d(\text{target}) = \text{shortest hop count}
+charts: []

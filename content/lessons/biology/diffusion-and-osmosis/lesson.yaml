@@ -1,0 +1,55 @@
+id: diffusion-and-osmosis
+subject: biology
+difficulty: beginner
+equation: J = -D\,\frac{dC}{dx}
+concepts:
+  - diffusion
+  - osmosis
+  - concentration-gradient
+  - membrane
+prerequisites:
+  - ideal-gas-law
+related:
+  - enzyme-kinetics
+visualization:
+  type: diffusion
+  options: {}
+parameters:
+  nLeft:
+    min: 0
+    max: 200
+    step: 5
+    value: 150
+  nRight:
+    min: 0
+    max: 200
+    step: 5
+    value: 20
+  perm:
+    min: 0
+    max: 100
+    step: 5
+    value: 50
+    unit: "%"
+  temp:
+    min: 150
+    max: 600
+    step: 10
+    value: 300
+    unit: K
+  split:
+    min: 10
+    max: 90
+    step: 1
+    value: 50
+    unit: "%"
+variables:
+  - J
+  - D
+  - C
+  - dC/dx
+derivation:
+  - \text{rate left-to-right} \propto n_{left}\cdot(\text{permeability})
+  - \text{net rate} \propto (n_{left}-n_{right})\cdot(\text{permeability})
+  - \text{net rate} \to 0 \text{ as } n_{left}\to n_{right}
+charts: []

@@ -1,0 +1,36 @@
+id: permutations
+subject: statistics
+difficulty: beginner
+equation: P(n,k) = \frac{n!}{(n-k)!}
+concepts:
+  - counting
+  - factorial
+  - permutation
+prerequisites: []
+related:
+  - combinations
+  - probability-basics
+visualization:
+  type: counting
+  options:
+    ordered: true
+parameters:
+  n:
+    min: 1
+    max: 8
+    step: 1
+    value: 4
+  k:
+    min: 0
+    max: 8
+    step: 1
+    value: 2
+variables:
+  - n
+  - k
+  - n!
+derivation:
+  - n \times (n-1) \times \cdots \times (n-k+1)
+  - = \frac{n \times (n-1) \times \cdots \times 1}{(n-k) \times \cdots \times 1}
+  - P(n,k) = \frac{n!}{(n-k)!}
+charts: []

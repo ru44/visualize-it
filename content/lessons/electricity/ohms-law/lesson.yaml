@@ -1,0 +1,45 @@
+id: ohms-law
+subject: electricity
+difficulty: high-school
+equation: V = IR
+concepts:
+  - voltage
+  - current
+  - resistance
+  - power
+prerequisites:
+  - slope
+related:
+  - newtons-second-law
+visualization:
+  type: ohm-circuit
+  options: {}
+parameters:
+  V:
+    min: 0
+    max: 24
+    step: 0.5
+    value: 9
+    unit: V
+  R:
+    min: 1
+    max: 100
+    step: 1
+    value: 30
+    unit: Ω
+variables:
+  - V
+  - I
+  - R
+  - P
+derivation:
+  - I \propto V
+  - R \equiv \frac{V}{I} \;\Rightarrow\; V = IR
+  - P = VI = I(IR) = I^2R = \left(\frac{V}{R}\right)^{\!2}\! R = \frac{V^2}{R}
+charts:
+  - domain:
+      - 0
+      - 24
+    marker: V
+    series:
+      - x/R

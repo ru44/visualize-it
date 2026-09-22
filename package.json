@@ -4,11 +4,15 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "dev": "npm run content && vite",
+    "build": "npm run content && vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "check": "npx -y tsx scripts/check-lessons.ts",
-    "test": "npx -y tsx scripts/test-engine.ts"
+    "content": "npx -y tsx scripts/content/build.ts",
+    "check": "npm run content && npm test",
+    "test": "npx -y tsx scripts/test-engine.ts",
+    "new-lesson": "npx -y tsx scripts/content/new-lesson.ts",
+    "lint": "eslint src scripts",
+    "format": "prettier --write \"src/**/*.{ts,vue}\" \"scripts/**/*.ts\" \"content/**/*.{md,yaml}\""
   },
   "dependencies": {
     "chart.js": "^4.5.1",
@@ -16,6 +20,7 @@
     "d3-shape": "^3.2.0",
     "katex": "^0.18.7",
     "mathjs": "^15.2.0",
+    "pinia": "^4.0.3",
     "vue": "^3.5.43",
     "vue-chartjs": "^5.3.4",
     "vue-router": "^5.3.1"
@@ -26,9 +31,18 @@
     "@types/d3-shape": "^3.2.0",
     "@types/katex": "^0.16.8",
     "@vitejs/plugin-vue": "^6.0.9",
+    "@vue/eslint-config-typescript": "^14.9.0",
+    "eslint": "^9.39.5",
+    "eslint-plugin-vue": "^10.11.0",
+    "globals": "^17.12.0",
+    "gray-matter": "^4.0.3",
+    "prettier": "^3.9.8",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3",
+    "typescript-eslint": "^8.70.1",
     "vite": "^8.3.0",
-    "vue-tsc": "^3.3.11"
+    "vue-tsc": "^3.3.11",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.5"
   }
 }

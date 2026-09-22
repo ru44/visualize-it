@@ -23,7 +23,8 @@ Every concept follows the same path: **Equation → Visualization → Manipulati
 npm install
 npm run dev      # local development
 npm run build    # type-check + production build into dist/
-npm run check    # validate every lesson and its Arabic translation: expressions, LaTeX, references, parameters
+npm run check    # compile + validate all content, then run the engine tests
+npm run new-lesson <subject> <id>   # scaffold a lesson
 npm test         # known-answer tests for the numerical engine (limits, integrals, roots)
 ```
 
@@ -32,24 +33,17 @@ Pushing to `main` deploys to GitHub Pages via `.github/workflows/deploy.yml` (en
 ## Architecture
 
 ```
-src/lessons/    declarative lesson data (content only — no page code)
-src/engine/     explorer (input parsing), math (mathjs wrapper), analysis (checked limits/integrals/roots), solve, adhoc
-src/i18n/       UI strings (en, ar) and the locale switch
-src/lessons/ar/ Arabic text overlays, keyed by lesson id (loaded on demand)
+content/        all lesson text and interface strings — YAML + Markdown, one folder per lesson, one .md per language
+scripts/content build.ts compiles content/ → src/generated/*.json and validates every file; new-lesson.ts scaffolds
+src/engine/     explorer (input parsing), math, analysis (checked limits/integrals/roots), stats, solve, adhoc
 src/viz/        visualization components + registry (type → component)
-src/components/ Katex, MathText, ParamSlider, ParamChart (vue-chartjs), …
-src/pages/      Home, LessonView (renders any lesson), MapView
+src/stores/     Pinia: settings (language, theme, level), progress (lessons marked done)
+src/pages/      Home, SubjectView, LessonView (renders any lesson), GraphView, MapView, Classic*
 ```
 
-Stack: Vue 3, TypeScript, Vite, Tailwind CSS v4, mathjs, KaTeX, d3-scale / d3-shape, Chart.js via vue-chartjs.
+Stack: Vue 3, TypeScript, Vite, Pinia, Tailwind CSS v4, mathjs, KaTeX, d3-scale / d3-shape, Chart.js.
 
-### Adding a lesson
-
-Add an object to a file in `src/lessons/` (see `types.ts` for the schema) and include it in `src/lessons/index.ts`. If an existing visualization fits (`function-plot` covers most of calculus), that is all.
-
-### Adding a visualization
-
-Create `src/viz/MyViz.vue` with props `{ params, options }` that emits `set(name, value)` when the user drags something, then register it in `src/viz/registry.ts`.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for how to improve a lesson's text, add a language, add a lesson or add a visualization.
 
 ## Simulation gallery
 

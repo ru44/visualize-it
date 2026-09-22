@@ -1,0 +1,74 @@
+id: reaction-rate
+subject: chemistry
+difficulty: university
+equation: "[\\mathrm{A}] = [\\mathrm{A}]_0\\, e^{-kt}, \\qquad k = A_f\\, e^{-E_a/RT}"
+concepts:
+  - rate-law
+  - rate-constant
+  - activation-energy
+  - arrhenius-equation
+  - catalyst
+prerequisites:
+  - exponential-growth
+  - derivative
+related:
+  - chemical-equilibrium
+  - entropy-and-heat-engines
+visualization:
+  type: function-plot
+  options:
+    expr: A0*exp(-(Af*exp(-Ea/(8.314*T)))*x)
+    domain:
+      - 0
+      - 100
+    range:
+      - 0
+      - 1.2
+    mode: tangent
+parameters:
+  A0:
+    min: 0.1
+    max: 2
+    step: 0.05
+    value: 1
+    unit: mol/L
+  Af:
+    min: 1000000
+    max: 50000000
+    step: 1000000
+    value: 10000000
+    unit: 1/s
+  Ea:
+    min: 20000
+    max: 80000
+    step: 1000
+    value: 48570
+    unit: J/mol
+  T:
+    min: 250
+    max: 400
+    step: 1
+    value: 300
+    unit: K
+  x:
+    min: 0
+    max: 100
+    step: 0.5
+    value: 20
+    unit: s
+variables:
+  - "[\\mathrm{A}]"
+  - k
+  - E_a
+  - A_f
+derivation:
+  - \frac{d[\mathrm{A}]}{dt} = -k[\mathrm{A}]
+  - \int \frac{d[\mathrm{A}]}{[\mathrm{A}]} = -k\int dt \;\Rightarrow\; \ln[\mathrm{A}] = -kt + \ln[\mathrm{A}]_0
+  - "[\\mathrm{A}] = [\\mathrm{A}]_0 e^{-kt}, \\qquad k = A_f e^{-E_a/RT}"
+charts:
+  - domain:
+      - 250
+      - 400
+    marker: T
+    series:
+      - Af*exp(-Ea/(8.314*x))

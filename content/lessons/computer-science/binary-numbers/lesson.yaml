@@ -1,0 +1,33 @@
+id: binary-numbers
+subject: computer-science
+difficulty: beginner
+equation: n = \sum_{k=0}^{7} b_k \cdot 2^k
+concepts:
+  - binary
+  - bit
+  - byte
+  - hexadecimal
+  - place-value
+prerequisites:
+  - exponents-and-powers
+related:
+  - logic-gates
+  - half-adder
+visualization:
+  type: bits
+  options: {}
+parameters:
+  value:
+    min: 0
+    max: 255
+    step: 1
+    value: 42
+variables:
+  - b_k
+  - 2^k
+  - n
+derivation:
+  - n = b_7\cdot2^7 + b_6\cdot2^6 + \cdots + b_1\cdot2^1 + b_0\cdot2^0
+  - n = \sum_{k=0}^{7} b_k \cdot 2^k
+  - 0 \le n \le \sum_{k=0}^{7} 2^k = 2^8-1 = 255
+charts: []

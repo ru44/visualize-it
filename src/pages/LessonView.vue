@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, defineAsyncComponent, reactive, ref, watch } from 'vue'
+import { computed, defineAsyncComponent, nextTick, reactive, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { getLesson, lessons } from '../lessons'
 import { localize, hasTranslation } from '../lessons/localize'
@@ -10,7 +10,12 @@ import Katex from '../components/Katex.vue'
 import MathText from '../components/MathText.vue'
 import ParamSlider from '../components/ParamSlider.vue'
 import ExplorerInput from '../components/ExplorerInput.vue'
-import { level, levels } from '../composables/useLevel'
+import { useSettings, levels } from '../stores/settings'
+import { useProgress } from '../stores/progress'
+import { storeToRefs } from 'pinia'
+
+const { level } = storeToRefs(useSettings())
+const progress = useProgress()
 
 const ParamChart = defineAsyncComponent(() => import('../components/ParamChart.vue'))
 
@@ -22,10 +27,17 @@ const lesson = computed(() => base.value && localize(base.value))
 const viz = computed(() => lesson.value && vizRegistry[lesson.value.visualization.type])
 
 const params = reactive<Record<string, number>>({})
-const rigorous = computed(() => level.value === 'university' || level.value === 'advanced')
+// Each level shows a different mix:  beginner → simple text only · high school → simple + formal ·
+// university → formal + rigorous note (simple folded) · advanced → rigorous note first, derivation open.
 const beginner = computed(() => level.value === 'beginner')
-const mode = ref<'intuition' | 'formal'>(rigorous.value ? 'formal' : 'intuition')
-watch(level, () => (mode.value = rigorous.value ? 'formal' : 'intuition'))
+const rigorous = computed(() => level.value === 'university' || level.value === 'advanced')
+const showIntuition = computed(() => level.value !== 'advanced')
+const showFormal = computed(() => level.value !== 'beginner')
+const explain = ref<HTMLElement>()
+watch(level, async () => {
+  await nextTick()
+  explain.value?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+})
 
 function reset() {
   for (const k of Object.keys(params)) delete params[k]
@@ -72,7 +84,16 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
         <p class="mt-1.5 max-w-2xl text-lg leading-relaxed" style="color: var(--muted)"><MathText :text="lesson.summary" /></p>
         <p v-if="id && !hasTranslation(id)" class="mt-2 text-sm" style="color: var(--accent-2)">{{ t('lesson.translating') }}</p>
       </div>
-      <div>
+      <div class="flex flex-wrap items-end gap-3">
+        <button
+          v-if="id"
+          class="rounded-[10px] border px-4 py-2 text-sm font-medium transition-colors"
+          :style="progress.isDone(id) ? 'background: var(--pos); border-color: var(--pos); color: #fff' : 'border-color: var(--line)'"
+          @click="progress.toggle(id)"
+        >
+          {{ progress.isDone(id) ? t('progress.undo') : t('progress.markDone') }}
+        </button>
+        <div>
         <p class="label mb-1.5">{{ t('lesson.level') }}</p>
         <div class="flex flex-wrap gap-1 rounded-xl p-1" style="background: var(--sunken)">
           <button
@@ -84,6 +105,7 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
           >
             {{ t(`level.${l}` as Key) }}
           </button>
+        </div>
         </div>
       </div>
     </header>
@@ -118,7 +140,7 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
           </p>
         </div>
 
-        <details :open="!beginner">
+        <details :open="showFormal">
           <summary class="label flex items-center gap-1.5"><span class="chev">▸</span>{{ t('lesson.variables') }}</summary>
           <dl class="mt-2 space-y-1 text-sm">
             <div v-for="v in lesson.variables" :key="v.symbol" class="flex gap-3">
@@ -135,25 +157,28 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
     </div>
 
     <div class="mt-12 grid gap-x-12 gap-y-10 lg:grid-cols-2">
-      <section>
-        <div class="mb-3 flex items-center gap-4">
+      <section ref="explain" class="scroll-mt-20">
+        <div class="mb-3 flex flex-wrap items-center gap-3">
           <h2 class="text-xl font-semibold tracking-tight">{{ t('lesson.meaning') }}</h2>
-          <div v-if="!beginner" class="flex gap-1 rounded-lg p-0.5 text-xs" style="background: var(--sunken)">
-            <button
-              v-for="m in ['intuition', 'formal'] as const"
-              :key="m"
-              class="rounded-md px-3 py-1 transition-colors"
-              :style="mode === m ? 'background: var(--panel); color: var(--fg); box-shadow: 0 1px 2px rgb(0 0 0 / .12)' : 'color: var(--muted)'"
-              @click="mode = m"
-            >
-              {{ t(`lesson.${m}` as Key) }}
-            </button>
-          </div>
+          <span class="rounded-full px-2.5 py-0.5 text-xs" style="background: var(--accent-soft); color: var(--accent)">{{ t(`level.${level}` as Key) }}</span>
         </div>
-        <div class="space-y-3 text-[17px] leading-relaxed">
-          <p v-for="(tx, i) in lesson.explanation[mode]" :key="mode + i"><MathText :text="tx" /></p>
-          <template v-if="rigorous && mode === 'formal'">
-            <p v-for="(tx, i) in lesson.explanation.advanced ?? []" :key="'adv' + i" class="border-s-2 ps-3" style="border-color: var(--accent)"><MathText :text="tx" /></p>
+        <div class="space-y-4 text-[17px] leading-relaxed">
+          <template v-if="rigorous">
+            <p v-for="(tx, i) in lesson.explanation.advanced ?? []" :key="'adv' + i" class="rounded-xl p-4" style="background: var(--sunken)"><span class="label me-2">{{ t('lesson.rigour') }}</span><MathText :text="tx" /></p>
+          </template>
+          <template v-if="showFormal">
+            <p v-if="!beginner && showIntuition" class="label">{{ t('lesson.formal') }}</p>
+            <p v-for="(tx, i) in lesson.explanation.formal" :key="'f' + i"><MathText :text="tx" /></p>
+          </template>
+          <template v-if="showIntuition">
+            <details v-if="rigorous" class="rounded-xl border p-3" style="border-color: var(--line)">
+              <summary class="label flex items-center gap-1.5"><span class="chev">▸</span>{{ t('lesson.simpleVersion') }}</summary>
+              <p v-for="(tx, i) in lesson.explanation.intuition" :key="'i' + i" class="mt-2"><MathText :text="tx" /></p>
+            </details>
+            <template v-else>
+              <p v-if="showFormal" class="label">{{ t('lesson.intuition') }}</p>
+              <p v-for="(tx, i) in lesson.explanation.intuition" :key="'i' + i"><MathText :text="tx" /></p>
+            </template>
           </template>
         </div>
       </section>
@@ -169,7 +194,7 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
       </section>
 
       <section v-if="lesson.derivation.length" :class="lesson.derivationTitle ? 'lg:order-first' : ''">
-        <details :open="!beginner || !!lesson.derivationTitle" class="surface p-4 sm:p-5">
+        <details :open="rigorous || !!lesson.derivationTitle" class="surface p-4 sm:p-5">
           <summary class="flex items-center gap-2 text-lg font-semibold tracking-tight"><span class="chev text-sm" style="color: var(--muted)">▸</span>{{ lesson.derivationTitle ?? t('lesson.derivation') }}</summary>
           <ol class="mt-4 space-y-4">
             <li v-for="(s, i) in lesson.derivation" :key="i" class="flex gap-4">

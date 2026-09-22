@@ -1,42 +1,31 @@
-import type { Lesson, Subject } from './types'
-import { calculus } from './calculus'
-import { geometry } from './geometry'
-import { trigonometry } from './trigonometry'
-import { physics } from './physics'
-import { electricity } from './electricity'
-import { chemistry } from './chemistry'
-import { more } from './more'
-import { aerodynamics } from './aerodynamics'
-import { electromagnetism } from './electromagnetism'
-import { chemistry2 } from './chemistry2'
-import { maths } from './maths'
-import { mechanics } from './mechanics'
-import { statistics } from './statistics'
+import type { Lesson, LessonText, Subject } from './types'
+import raw from '../generated/lessons.json'
+import en from '../generated/lessons.en.json'
 
-const all: Lesson[] = [...calculus, ...geometry, ...trigonometry, ...physics, ...electricity, ...chemistry, ...more, ...electromagnetism, ...aerodynamics, ...chemistry2, ...maths, ...mechanics, ...statistics]
+/** Language-neutral lesson data merged with the English text. Other languages overlay at runtime (see localize.ts). */
+export const lessons: Lesson[] = (raw as any[]).map((l) => merge(l, (en as Record<string, LessonText>)[l.id]))
 
-const byId = new Map(all.map((l) => [l.id, l]))
-export const getLesson = (id: string) => byId.get(id)
-
-export const subjectLabels: Record<Subject, string> = {
-  algebra: 'Algebra',
-  functions: 'Functions',
-  calculus: 'Calculus',
-  geometry: 'Geometry',
-  trigonometry: 'Trigonometry',
-  physics: 'Mechanics',
-  waves: 'Waves',
-  electricity: 'Electricity',
-  electromagnetism: 'Electromagnetism',
-  aerodynamics: 'Aerodynamics',
-  thermodynamics: 'Thermodynamics',
-  chemistry: 'Chemistry',
-  statistics: 'Statistics & probability',
+export function merge(l: any, t: LessonText): Lesson {
+  return {
+    id: l.id,
+    subject: l.subject,
+    difficulty: l.difficulty,
+    equation: l.equation,
+    concepts: l.concepts,
+    prerequisites: l.prerequisites,
+    related: l.related,
+    visualization: l.visualization,
+    title: t.title,
+    summary: t.summary,
+    parameters: Object.fromEntries(Object.entries(l.parameters as Record<string, any>).map(([k, p]) => [k, { ...p, label: t.parameters[k] ?? k }])),
+    variables: (l.variables as string[]).map((symbol, i) => ({ symbol, meaning: t.variables[i] ?? '' })),
+    explanation: { intuition: t.intuition, formal: t.formal, advanced: t.advanced?.length ? t.advanced : undefined },
+    derivation: (l.derivation as string[]).map((tex, i) => ({ tex, note: t.derivationNotes[i] ?? '' })),
+    realWorld: t.realWorld,
+    charts: (l.charts as any[]).map((c, i) => ({ domain: c.domain, marker: c.marker, title: t.charts?.[i]?.title ?? '', xLabel: t.charts?.[i]?.xLabel ?? '', yLabel: t.charts?.[i]?.yLabel ?? '', series: (c.series as string[]).map((expr, j) => ({ expr, label: t.charts?.[i]?.series[j] ?? expr })) })),
+  }
 }
 
-const order = Object.keys(subjectLabels)
-/** Grouped by subject (in the order of `subjectLabels`), original order kept inside each subject. */
-export const lessons: Lesson[] = all
-  .map((l, i) => [l, i] as const)
-  .sort((a, b) => order.indexOf(a[0].subject) - order.indexOf(b[0].subject) || a[1] - b[1])
-  .map(([l]) => l)
+const byId = new Map(lessons.map((l) => [l.id, l]))
+export const getLesson = (id: string) => byId.get(id)
+export const subjects: Subject[] = [...new Set(lessons.map((l) => l.subject))]

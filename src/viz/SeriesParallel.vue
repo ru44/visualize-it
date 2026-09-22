@@ -110,7 +110,6 @@ function pointAt(pts: [number, number][], t: number): [number, number] {
   return pts[0]
 }
 
-const DOTS = 3
 const phase = reactive({ a: [0, 1 / 3, 2 / 3], b: [0, 1 / 3, 2 / 3] })
 
 function speedFor(current: number) {

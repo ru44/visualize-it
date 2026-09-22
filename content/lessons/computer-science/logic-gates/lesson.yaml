@@ -1,0 +1,38 @@
+id: logic-gates
+subject: computer-science
+difficulty: beginner
+equation: "\\text{AND}: a \\wedge b, \\quad \\text{OR}: a \\vee b, \\quad \\text{NOT}: \\neg a"
+concepts:
+  - logic-gate
+  - boolean-algebra
+  - truth-table
+prerequisites:
+  - binary-numbers
+related:
+  - half-adder
+  - binary-numbers
+visualization:
+  type: logic-gates
+  options:
+    gate: AND
+parameters:
+  a:
+    min: 0
+    max: 1
+    step: 1
+    value: 1
+  b:
+    min: 0
+    max: 1
+    step: 1
+    value: 0
+variables:
+  - a, b
+  - \wedge
+  - \vee
+  - \neg
+derivation:
+  - "\\text{truth table: enumerate all } 2^2 = 4 \\text{ rows of } (a,b)"
+  - \text{AND}(a,b) = 1 \iff a=1 \text{ and } b=1
+  - \neg(a \wedge b) = \neg a \vee \neg b
+charts: []

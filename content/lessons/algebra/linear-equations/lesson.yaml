@@ -1,0 +1,55 @@
+id: linear-equations
+subject: algebra
+difficulty: beginner
+equation: mx + b = k \;\Longleftrightarrow\; mx + b - k = 0
+concepts:
+  - linear-function
+  - root
+  - slope-intercept
+prerequisites:
+  - function-graph
+related:
+  - quadratic-roots
+  - slope
+visualization:
+  type: function-plot
+  options:
+    expr: m*x + b - k
+    domain:
+      - -10
+      - 10
+    range:
+      - -10
+      - 10
+    mode: plain
+parameters:
+  m:
+    min: -3
+    max: 3
+    step: 0.1
+    value: 1
+  b:
+    min: -8
+    max: 8
+    step: 0.5
+    value: 2
+  k:
+    min: -8
+    max: 8
+    step: 0.5
+    value: 5
+  x:
+    min: -10
+    max: 10
+    step: 0.05
+    value: 0
+variables:
+  - m
+  - b
+  - k
+  - x
+derivation:
+  - mx + b = k
+  - mx + b - k = 0
+  - x = \frac{k - b}{m}
+charts: []

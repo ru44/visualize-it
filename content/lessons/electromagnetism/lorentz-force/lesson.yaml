@@ -1,0 +1,53 @@
+id: lorentz-force
+subject: electromagnetism
+difficulty: university
+equation: \mathbf{F} = q(\mathbf{E} + \mathbf{v}\times\mathbf{B})
+concepts:
+  - lorentz-force
+  - magnetic-field
+  - cyclotron-motion
+  - cross-product
+prerequisites:
+  - coulombs-law
+  - newtons-second-law
+related:
+  - coulombs-law
+  - faradays-law
+visualization:
+  type: lorentz-force
+  options: {}
+parameters:
+  q:
+    min: -3
+    max: 3
+    step: 1
+    value: 1
+    unit: e
+  v:
+    min: 1
+    max: 10
+    step: 0.5
+    value: 5
+    unit: ×10⁵ m/s
+  B:
+    min: -2
+    max: 2
+    step: 0.1
+    value: 1
+    unit: T
+  E:
+    min: 0
+    max: 3
+    step: 0.1
+    value: 0
+    unit: ×10⁵ V/m
+variables:
+  - q
+  - v
+  - B
+  - E
+derivation:
+  - \mathbf{F} = q\mathbf{v}\times\mathbf{B}, \qquad |\mathbf{F}| = qvB \ (\mathbf{v}\perp\mathbf{B})
+  - \mathbf{F}\cdot\mathbf{v} = q(\mathbf{v}\times\mathbf{B})\cdot\mathbf{v} = 0
+  - \frac{mv^2}{r} = qvB \ \Rightarrow\ r = \frac{mv}{qB}, \quad T = \frac{2\pi r}{v} = \frac{2\pi m}{qB}
+charts: []
