@@ -17,6 +17,7 @@ export type Subject =
   | 'earth-space'
   | 'economics'
   | 'engineering'
+  | 'discrete'
 export type Difficulty = 'beginner' | 'high-school' | 'university' | 'advanced'
 
 export interface Video {

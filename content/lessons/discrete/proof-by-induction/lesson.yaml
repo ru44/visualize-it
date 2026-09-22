@@ -1,0 +1,46 @@
+id: proof-by-induction
+subject: discrete
+difficulty: high-school
+equation: \sum_{i=1}^{n} i = \frac{n(n+1)}{2}
+concepts:
+  - induction
+  - base-case
+  - inductive-step
+  - summation
+prerequisites:
+  - propositional-logic
+related:
+  - sequences-and-recurrences
+visualization:
+  type: function-plot
+  options:
+    expr: x*(x+1)/2
+    domain:
+      - 0
+      - 20
+    range:
+      - 0
+      - 210
+    mode: plain
+parameters:
+  x:
+    min: 0
+    max: 20
+    step: 1
+    value: 10
+variables:
+  - n
+  - i
+  - k
+derivation:
+  - "\\text{base case } n=1: \\quad 1 = \\frac{1(1+1)}{2}"
+  - "\\text{inductive hypothesis: assume } \\sum_{i=1}^{k} i = \\frac{k(k+1)}{2}"
+  - \sum_{i=1}^{k+1} i = \frac{k(k+1)}{2} + (k+1) = \frac{(k+1)(k+2)}{2}
+charts:
+  - domain:
+      - 0
+      - 20
+    marker: x
+    series:
+      - x*(x+1)/2
+      - x^2/2

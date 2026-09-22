@@ -1,0 +1,50 @@
+id: quantifiers
+subject: discrete
+difficulty: beginner
+equation: (\forall x \in B)\ x \in A, \quad (\exists x \in A)\ x \notin B
+concepts:
+  - universal-quantifier
+  - existential-quantifier
+  - subset
+  - negation
+prerequisites:
+  - sets-and-venn-diagrams
+  - propositional-logic
+related:
+  - pigeonhole-and-counting
+visualization:
+  type: venn-sets
+  options: {}
+parameters:
+  N:
+    min: 6
+    max: 40
+    step: 1
+    value: 20
+  p:
+    min: 2
+    max: 6
+    step: 1
+    value: 2
+  q:
+    min: 2
+    max: 7
+    step: 1
+    value: 4
+  op:
+    min: 0
+    max: 3
+    step: 1
+    value: 2
+variables:
+  - A
+  - B
+  - \forall
+  - \exists
+  - \notin
+  - \neg
+derivation:
+  - \forall x \in B,\ x \in A \quad \text{(every multiple of 4 is a multiple of 2)}
+  - \exists x \in A \text{ with } x \notin B \quad \text{(2 is in A but not in B)}
+  - \neg(\forall x \in B,\ x \in A) \iff \exists x \in B,\ x \notin A
+charts: []

@@ -400,3 +400,20 @@ ptable.cat.actinide: الأكتينيدات
 notation.example: 'مثال:'
 notation.learn: 'تعلّمه في درس: {lesson} ←'
 lesson.learnSymbol: الدرس
+subject.discrete: الرياضيات المتقطعة
+subjectd.discrete: 'المجموعات والمنطق والبراهين والعدّ والمخططات وحساب الساعة: الرياضيات التي تقف خلف الحواسيب.'
+cipher.hint: اسحب العجلة الداخلية لتغيير الإزاحة
+cipher.shift: الإزاحة (المفتاح)
+cipher.plain: النص الأصلي
+cipher.cipher: النص المشفر
+cipher.keys: المفاتيح الممكنة
+mod.hint: اضغط رقمًا لتحديد a
+mod.turns: دورات كاملة حول الساعة
+mod.powers: قوى a مع الالتفاف حول الساعة
+mod.walk: امشِ b خطوة من a
+venn.hint: اضغط عملية، والأرقام البرتقالية هي النتيجة
+venn.multiples: مضاعفات {k}
+venn.union: A ∪ B  الاتحاد
+venn.intersection: A ∩ B  التقاطع
+venn.difference: A \ B  الفرق
+venn.complement: Aᶜ  المتممة

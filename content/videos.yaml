@@ -66,3 +66,7 @@ engineering:
   - { title: 3Blue1Brown, url: 'https://www.youtube.com/@3blue1brown', by: 3Blue1Brown, lang: en, note: The Fourier transform, explained visually. }
   - { title: Zach Star, url: 'https://www.youtube.com/@zachstar', by: Zach Star, lang: en, note: What engineers actually do with this maths. }
   - { title: Veritasium, url: 'https://www.youtube.com/@veritasium', by: Veritasium, lang: en }
+discrete:
+  - { title: Computerphile, url: 'https://www.youtube.com/@Computerphile', by: Computerphile, lang: en, note: Logic, graphs and the maths behind computing, explained by computer scientists. }
+  - { title: 3Blue1Brown, url: 'https://www.youtube.com/@3blue1brown', by: 3Blue1Brown, lang: en, note: Counting, proofs and visual mathematics. }
+  - { title: Numberphile, url: 'https://www.youtube.com/@numberphile', by: Numberphile, lang: en }

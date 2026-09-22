@@ -1,0 +1,39 @@
+id: graphs-and-euler-paths
+subject: discrete
+difficulty: high-school
+equation: \deg(v) = \text{edges touching } v, \quad \text{Euler path} \iff 0 \text{ or } 2 \text{ vertices have odd } \deg(v)
+concepts:
+  - graph
+  - vertex
+  - edge
+  - degree
+  - euler-path
+  - tree
+prerequisites: []
+related:
+  - breadth-first-search
+  - pigeonhole-and-counting
+visualization:
+  type: graph-search
+  options:
+    algorithm: bfs
+    target: 9
+parameters:
+  start:
+    min: 0
+    max: 9
+    step: 1
+    value: 0
+  step:
+    min: 0
+    max: 1
+    step: 0.001
+    value: 1
+variables:
+  - v
+  - \deg
+derivation:
+  - \text{each time a path passes through } v \text{ (not as an endpoint), it uses 2 of its edges}
+  - \text{so every non-endpoint vertex must have even } \deg(v)
+  - \text{only the two endpoints may have odd } \deg(v), \text{ giving 0 or 2 odd vertices}
+charts: []

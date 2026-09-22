@@ -1,0 +1,40 @@
+id: sequences-and-recurrences
+subject: discrete
+difficulty: high-school
+equation: F_n = F_{n-1} + F_{n-2}, \quad F_n \approx \frac{\varphi^n}{\sqrt5}
+concepts:
+  - sequence
+  - recurrence
+  - fibonacci
+  - closed-form
+  - golden-ratio
+prerequisites:
+  - proof-by-induction
+related:
+  - algorithms-and-complexity
+  - exponential-growth
+visualization:
+  type: function-plot
+  options:
+    expr: ((1+sqrt(5))/2)^x/sqrt(5)
+    domain:
+      - 0
+      - 20
+    range:
+      - 0
+      - 7000
+    mode: plain
+parameters:
+  x:
+    min: 0
+    max: 20
+    step: 1
+    value: 10
+variables:
+  - F_n
+  - \varphi
+derivation:
+  - F_0 = 0, \quad F_1 = 1 \quad \text{(seed values)}
+  - F_n = F_{n-1} + F_{n-2} \quad \text{(each term is the sum of the two before it)}
+  - \lim_{n\to\infty} \frac{F_{n+1}}{F_n} = \varphi = \frac{1+\sqrt5}{2}
+charts: []
