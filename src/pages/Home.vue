@@ -58,16 +58,15 @@ const steps = [1, 2, 3].map((i) => ({ title: `home.step${i}.t` as Key, text: `ho
       </p>
       <ul class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <li v-for="s in subjects" :key="s.id">
-          <RouterLink :to="`/subject/${s.id}`" class="surface lift flex h-full gap-4 p-5">
+          <RouterLink :to="`/subject/${s.id}`" class="surface lift relative flex h-full gap-4 p-5">
             <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl" style="background: var(--accent-soft); color: var(--accent)"><SubjectIcon :subject="s.id" /></span>
             <span class="flex min-w-0 flex-1 flex-col">
-              <span class="text-lg font-medium">{{ t(`subject.${s.id}` as Key) }}</span>
+              <span class="pe-20 text-lg font-medium">{{ t(`subject.${s.id}` as Key) }}</span>
               <span class="mt-1 block text-sm leading-relaxed" style="color: var(--muted)">{{ t(`subjectd.${s.id}` as Key) }}</span>
-              <span class="mt-auto flex items-center gap-3 pt-3 text-xs" style="color: var(--muted)">
-                <span class="shrink-0 rounded-full px-2.5 py-0.5 tabular-nums" style="background: var(--sunken)">{{ t('home.lessons', { n: s.n }) }}</span>
-                <span v-if="progress.bySubject(s.id).done" class="block h-1.5 flex-1 overflow-hidden rounded-full" style="background: var(--sunken)"><span class="block h-full rounded-full" style="background: var(--pos)" :style="{ width: `${(100 * progress.bySubject(s.id).done) / s.n}%` }" /></span>
-              </span>
+              <span v-if="progress.bySubject(s.id).done" class="mt-auto block pt-3"><span class="block h-1.5 overflow-hidden rounded-full" style="background: var(--sunken)"><span class="block h-full rounded-full" style="background: var(--pos)" :style="{ width: `${(100 * progress.bySubject(s.id).done) / s.n}%` }" /></span></span>
             </span>
+            <!-- Always the same corner, whatever the title's length. -->
+            <span class="absolute top-5 end-5 shrink-0 rounded-full px-2.5 py-0.5 text-xs tabular-nums" style="background: var(--sunken); color: var(--muted)">{{ t('home.lessons', { n: s.n }) }}</span>
           </RouterLink>
         </li>
       </ul>
