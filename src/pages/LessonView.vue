@@ -10,11 +10,16 @@ import Katex from '../components/Katex.vue'
 import MathText from '../components/MathText.vue'
 import ParamSlider from '../components/ParamSlider.vue'
 import ExplorerInput from '../components/ExplorerInput.vue'
+import Scene3D from '../components/Scene3D.vue'
+import VideoList from '../components/VideoList.vue'
 import { useSettings, levels } from '../stores/settings'
 import { useProgress } from '../stores/progress'
 import { storeToRefs } from 'pinia'
 
-const { level } = storeToRefs(useSettings())
+const settings = useSettings()
+const { level, view3d } = storeToRefs(settings)
+const has3d = computed(() => !!lesson.value?.visualization3d)
+const show3d = computed(() => has3d.value && view3d.value)
 const progress = useProgress()
 
 const ParamChart = defineAsyncComponent(() => import('../components/ParamChart.vue'))
@@ -111,8 +116,13 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
     </header>
 
     <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
-      <section class="surface overflow-hidden">
-        <component :is="viz" v-if="viz" :params="params" :options="lesson.visualization.options" @set="setParam" />
+      <section class="surface relative overflow-hidden">
+        <div v-if="has3d" class="absolute end-3 top-3 z-10 flex gap-0.5 rounded-lg p-0.5 text-xs" style="background: var(--panel); border: 1px solid var(--line)">
+          <button v-for="m in [false, true]" :key="String(m)" class="rounded-md px-2.5 py-1" :style="view3d === m ? 'background: var(--fg); color: var(--bg)' : 'color: var(--muted)'" @click="view3d = m">{{ m ? '3D' : '2D' }}</button>
+        </div>
+        <Scene3D v-if="show3d" :type="lesson.visualization3d!.type" :options="lesson.visualization3d!.options" :params="params" @set="setParam" />
+        <component :is="viz" v-else-if="viz" :params="params" :options="lesson.visualization.options" @set="setParam" />
+        <p v-if="has3d && settings.isPhone && !view3d" class="border-t px-4 py-2 text-xs" style="border-color: var(--line); color: var(--muted)">{{ t('three.phone') }}</p>
       </section>
 
       <aside class="surface space-y-6 self-start p-5 lg:sticky lg:top-20 lg:row-span-2">
@@ -229,6 +239,8 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
         </div>
       </section>
     </div>
+
+    <VideoList v-if="id" class="mt-12" :videos="lesson.videos ?? []" :search-query="`${lesson.title} ${t('videos.explained')}`" />
 
     <nav v-if="neighbours && (neighbours.prev || neighbours.next)" class="mt-14 grid gap-4 sm:grid-cols-2">
       <RouterLink v-if="neighbours.prev" :to="`/lesson/${neighbours.prev.id}`" class="surface lift p-4">

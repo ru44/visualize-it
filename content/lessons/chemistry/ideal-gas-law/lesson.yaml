@@ -3,14 +3,14 @@ subject: chemistry
 difficulty: high-school
 equation: PV = nRT
 concepts:
-  - pressure
-  - volume
-  - temperature
-  - moles
+- pressure
+- volume
+- temperature
+- moles
 prerequisites:
-  - function-graph
+- function-graph
 related:
-  - newtons-second-law
+- newtons-second-law
 visualization:
   type: gas-box
   options: {}
@@ -34,19 +34,22 @@ parameters:
     value: 25
     unit: L
 variables:
-  - P
-  - V
-  - n
-  - R
-  - T
+- P
+- V
+- n
+- R
+- T
 derivation:
-  - P \propto \frac{1}{V} \quad \text{(Boyle)}, \qquad V \propto T \quad \text{(Charles)}, \qquad V \propto n \quad \text{(Avogadro)}
-  - P \propto \frac{nT}{V}
-  - PV = nRT
+- P \propto \frac{1}{V} \quad \text{(Boyle)}, \qquad V \propto T \quad \text{(Charles)}, \qquad V \propto n \quad \text{(Avogadro)}
+- P \propto \frac{nT}{V}
+- PV = nRT
 charts:
-  - domain:
-      - 5
-      - 50
-    marker: V
-    series:
-      - n*8.314*T/x
+- domain:
+  - 5
+  - 50
+  marker: V
+  series:
+  - n*8.314*T/x
+visualization3d:
+  type: gas-box
+  options: {}

@@ -21,8 +21,8 @@ home.step3.t: 3 · Read why
 home.step3.d: A short plain-language explanation — the formal maths is there only if you want it.
 home.subjects: Choose a subject
 home.subjects.d: Each subject is a short path of lessons, from the easiest idea upward.
-home.lessons: "{n} lessons"
-home.demo: "Move your pointer: the orange line shows how steep the curve is."
+home.lessons: '{n} lessons'
+home.demo: 'Move your pointer: the orange line shows how steep the curve is.'
 home.slope: steepness
 explore.placeholder: Type an equation, e.g. 2x + 5 = 17
 explore.button: Show me
@@ -52,7 +52,7 @@ lesson.soon: coming soon
 lesson.notFound: Lesson not found.
 lesson.showMore: Show
 lesson.trust: How sure is this answer?
-lesson.cantRead: "I could not turn “{q}” into a picture. Check the spelling, or try one of these:"
+lesson.cantRead: 'I could not turn “{q}” into a picture. Check the spelling, or try one of these:'
 lesson.backHome: Back to the start
 lesson.translating: This lesson is shown in English — its translation is not ready yet.
 level.beginner: Beginner
@@ -77,7 +77,7 @@ subjectd.calculus: How things change (derivatives) and how they add up (integral
 subjectd.geometry: Shapes, lengths and areas you can stretch with your hands.
 subjectd.trigonometry: Circles, angles and the waves they create.
 subjectd.physics: Forces, motion and energy.
-subjectd.waves: "Vibrations that travel: sound, strings and resonance."
+subjectd.waves: 'Vibrations that travel: sound, strings and resonance.'
 subjectd.electricity: Voltage, current, resistance and circuits.
 subjectd.electromagnetism: Charges, fields and the forces between them.
 subjectd.aerodynamics: How wings lift, why drag grows, and what stall means.
@@ -105,7 +105,7 @@ adhoc.limit.summary: Slide the two dots toward the target and watch where the va
 adhoc.limit.param: distance from {a}
 adhoc.limit.var: the input, moving toward {a} from both sides
 adhoc.limit.intuition: Pull the two dots toward the dashed line. A limit asks where the values are heading — not what happens exactly at the point. If the two sides head to different places, or run off the chart, there is no limit.
-adhoc.limit.formal: "$\\lim_{x \\to a} f(x) = L$ means: for every $\\varepsilon > 0$ there is a $\\delta > 0$ with $0 < |x - a| < \\delta \\Rightarrow |f(x) - L| < \\varepsilon$."
+adhoc.limit.formal: '$\lim_{x \to a} f(x) = L$ means: for every $\varepsilon > 0$ there is a $\delta > 0$ with $0 < |x - a| < \delta \Rightarrow |f(x) - L| < \varepsilon$.'
 adhoc.integral.title: Integral explorer
 adhoc.integral.summary: Cover the area with rectangles, then use more and more of them until the total stops changing.
 adhoc.integral.n: number of rectangles
@@ -113,7 +113,7 @@ adhoc.integral.a: start a
 adhoc.integral.b: end b
 adhoc.integral.var1: where the adding-up starts and stops
 adhoc.integral.var2: the width of one thin slice
-adhoc.integral.intuition: "Each rectangle is height × width — one small piece of the total. Add more rectangles and compare “sum of rectangles” with “integral”: the gap melts away. Parts below the axis count as negative."
+adhoc.integral.intuition: 'Each rectangle is height × width — one small piece of the total. Add more rectangles and compare “sum of rectangles” with “integral”: the gap melts away. Parts below the axis count as negative.'
 adhoc.integral.formal: $\int_a^b f(x)\,dx = \lim_{n \to \infty} \sum_{i=1}^{n} f(x_i^*)\,\Delta x$.
 adhoc.fn.title: Function explorer
 adhoc.fn.dtitle: Derivative explorer
@@ -136,7 +136,7 @@ adhoc.solve.title: Equation solver
 adhoc.solve.summary: Solving means finding the x where both sides are equal — where “left side minus right side” is zero.
 adhoc.solve.param: try a value of x
 adhoc.solve.var: the unknown — drag it until “left − right” reads 0
-adhoc.solve.intuition: "The curve shows left side minus right side. Drag the point: wherever the value is zero, the two sides are equal and you have found a solution. The steps beside it reach the same place without guessing."
+adhoc.solve.intuition: 'The curve shows left side minus right side. Drag the point: wherever the value is zero, the two sides are equal and you have found a solution. The steps beside it reach the same place without guessing.'
 adhoc.solve.formal: Each step does the same thing to both sides, so the solutions never change. $f(x) = g(x) \iff f(x) - g(x) = 0$.
 trust.exact: Exact
 trust.numeric: Numerical
@@ -144,12 +144,12 @@ trust.warning: Careful
 trust.derivExact: The derivative was worked out symbolically (exact) and double-checked numerically at several points.
 trust.derivNumeric: No symbolic derivative was found, so the slope is measured numerically from the curve. It is accurate to about 6 digits.
 trust.derivMismatch: The symbolic derivative did not agree with a numerical check, so the slope shown is the measured one.
-trust.limitFinite: "Both sides approach the same value. Computed numerically by extrapolation; reliable to about {d} decimal places: {v}."
-trust.limitInf: "The values grow without bound on both sides: the limit is {v}."
-trust.limitDne: "The limit does not exist: from the left the values head to {l}, from the right to {r}."
+trust.limitFinite: 'Both sides approach the same value. Computed numerically by extrapolation; reliable to about {d} decimal places: {v}.'
+trust.limitInf: 'The values grow without bound on both sides: the limit is {v}.'
+trust.limitDne: 'The limit does not exist: from the left the values head to {l}, from the right to {r}.'
 trust.limitUnknown: The values do not settle down (they may oscillate), so no limit is reported rather than a guess.
-trust.intExact: "Exact value, from integrating the polynomial term by term with fractions: {v}."
-trust.intNumeric: "Computed numerically (Simpson’s rule at three resolutions). Reliable to about {d} decimal places: {v}."
+trust.intExact: 'Exact value, from integrating the polynomial term by term with fractions: {v}.'
+trust.intNumeric: 'Computed numerically (Simpson’s rule at three resolutions). Reliable to about {d} decimal places: {v}.'
 trust.intSingular: The function is undefined near x = {x} inside this interval, so this is an improper integral and may have no finite value. No number is reported.
 trust.intUnreliable: The numerical methods disagree with each other here (the function is too wild in this interval). Treat {v} as a rough estimate only.
 trust.solveExact: Solved exactly by algebra. Every solution was substituted back into the original equation to confirm it.
@@ -158,22 +158,22 @@ trust.solveNumeric: Found numerically by searching −50 ≤ x ≤ 50; each solu
 trust.solveNone: No real solution exists.
 trust.solveNoneRange: No solution was found for −50 ≤ x ≤ 50.
 trust.surface: Slopes are measured numerically from the surface (accurate to about 6 digits).
-solve.start: "The question: for which $x$ are both sides equal?"
-solve.always: "The $x$ terms cancel and what remains is always true: every $x$ is a solution."
-solve.never: "The $x$ terms cancel and what remains is false: no $x$ works."
+solve.start: 'The question: for which $x$ are both sides equal?'
+solve.always: 'The $x$ terms cancel and what remains is always true: every $x$ is a solution.'
+solve.never: 'The $x$ terms cancel and what remains is false: no $x$ works.'
 solve.moveX: Subtract ${term}$ from both sides so that $x$ is only on the left.
 solve.sub: Subtract ${k}$ from both sides. A balance stays level if you do the same to both pans.
 solve.add: Add ${k}$ to both sides. A balance stays level if you do the same to both pans.
 solve.divide: Divide both sides by ${k}$ to leave $x$ alone.
 solve.done: Nothing left to undo.
-solve.check: "Put the answer back into the original equation: both sides agree."
+solve.check: 'Put the answer back into the original equation: both sides agree.'
 solve.standard: Move everything to one side. Solutions are where this curve touches the axis.
-solve.disc: "The discriminant counts the solutions: positive → two, zero → one, negative → none."
+solve.disc: 'The discriminant counts the solutions: positive → two, zero → one, negative → none.'
 solve.noReal: The curve never reaches the axis — look at the graph. (The solutions are complex numbers.)
-solve.formula: "The quadratic formula: completing the square, done once for every quadratic."
+solve.formula: 'The quadratic formula: completing the square, done once for every quadratic.'
 solve.roots: Both are marked on the graph where the curve meets the axis.
-solve.rootsCheck: "Checked by substituting back: left − right = 0 (to within rounding)."
-solve.polyStd: "Move everything to one side: a polynomial of degree {n}."
+solve.rootsCheck: 'Checked by substituting back: left − right = 0 (to within rounding).'
+solve.polyStd: 'Move everything to one side: a polynomial of degree {n}.'
 solve.polyRoots: A polynomial of degree {n} has at most {n} real solutions. All of them were located numerically and confirmed.
 solve.numStd: Move everything to one side. There is no general algebraic recipe here, so the crossings are located numerically.
 solve.numRoots: Found by trapping each crossing between two inputs and halving the gap until it closes.
@@ -183,7 +183,7 @@ graph.lead: Draw functions, curves and fields. Any extra letter you type becomes
 graph.add: Add
 graph.params: Sliders
 graph.bad: Can’t read this
-graph.two: " — write two expressions separated by “;”"
+graph.two: ' — write two expressions separated by “;”'
 graph.hint: scroll to zoom · drag to move
 graph.kind.fn: Function
 graph.kind.polar: Polar
@@ -193,7 +193,7 @@ graph.kind.field: Vector field
 graph.trange: t, θ from 0 to
 nav.sims: Simulations
 classic.title: Simulation gallery
-classic.lead: "{n} open-ended simulations to play with — physics, mathematics, computer science and complex systems."
+classic.lead: '{n} open-ended simulations to play with — physics, mathematics, computer science and complex systems.'
 classic.cat.all: All
 classic.cat.physics: Physics
 classic.cat.math: Mathematics
@@ -202,14 +202,14 @@ classic.cat.complex: Complex systems
 classic.loading: Loading the simulation…
 classic.credit: Simulation from the original Visualize It project by ChanRT and contributors. Its on-screen text is in English.
 home.gallery.t: Simulation gallery
-home.gallery.d: "{n} open-ended simulations: fractals, flocking birds, double pendulums, sorting algorithms and more."
+home.gallery.d: '{n} open-ended simulations: fractals, flocking birds, double pendulums, sorting algorithms and more.'
 home.gallery.b: Browse the gallery
 subject.statistics: Statistics & probability
 subjectd.statistics: Counting, chance, distributions and what data can tell you.
-count.orderedHint: "Order matters: (1,2) and (2,1) are different arrangements. Tap to change k."
-count.unorderedHint: "Order does not matter: {1,2} and {2,1} are the same selection. Tap to change k."
-count.arrangements: "{n} arrangements"
-count.selections: "{n} selections"
+count.orderedHint: 'Order matters: (1,2) and (2,1) are different arrangements. Tap to change k.'
+count.unorderedHint: 'Order does not matter: {1,2} and {2,1} are the same selection. Tap to change k.'
+count.arrangements: '{n} arrangements'
+count.selections: '{n} selections'
 count.first: showing the first {n}
 dist.mean: mean μ
 dist.sd: standard deviation σ
@@ -219,13 +219,13 @@ coin.successes: successes
 coin.proportion: proportion so far
 coin.gap: distance from p
 coin.again: ↻ again
-coin.band: "shaded: where 95% of runs stay"
+coin.band: 'shaded: where 95% of runs stay'
 bayes.hint: Everyone in a population of 1000. Drag to change how common the condition is.
 bayes.tp: ill, test positive
 bayes.fp: healthy, test positive
 bayes.fn: ill, test negative
 bayes.tn: healthy, test negative
-bayes.has: "has the condition:"
+bayes.has: 'has the condition:'
 bayes.hasNot: does not have it
 bayes.positives: people who test positive
 bayes.ofWhichIll: …of whom actually ill
@@ -237,9 +237,9 @@ adhoc.count.n: n — items to choose from
 adhoc.count.k: k — how many to pick
 adhoc.count.varn: how many different items there are
 adhoc.count.vark: how many of them you pick
-adhoc.count.intuitionP: "Picking k items one after another: n choices for the first, n − 1 for the second, and so on. Because the order counts, (1,2) and (2,1) are listed separately."
+adhoc.count.intuitionP: 'Picking k items one after another: n choices for the first, n − 1 for the second, and so on. Because the order counts, (1,2) and (2,1) are listed separately.'
 adhoc.count.intuitionC: Pick k items when only the group matters. Every group of k appears k! times among the ordered arrangements, so divide by k! to count each group once.
-adhoc.count.intuitionF: "n! is the number of ways to line up all n items: n choices for the first place, n − 1 for the next, down to 1."
+adhoc.count.intuitionF: 'n! is the number of ways to line up all n items: n choices for the first place, n − 1 for the next, down to 1.'
 adhoc.count.formal: $P(n,k) = \dfrac{n!}{(n-k)!}$, $\;C(n,k) = \dbinom{n}{k} = \dfrac{n!}{k!\,(n-k)!}$.
 trust.countExact: Computed with exact integer arithmetic (no rounding), so every digit is correct.
 count.tooMany: too many to draw
@@ -285,9 +285,9 @@ diff.gradient: difference
 progress.done: Done
 progress.markDone: Mark as done
 progress.undo: Done ✓ — undo
-progress.of: "{done} of {total} done"
+progress.of: '{done} of {total} done'
 progress.all: You have finished every lesson in this subject.
-progress.overall: "{done} of {total} lessons done"
+progress.overall: '{done} of {total} lessons done'
 progress.reset: Reset progress
 progress.saved: Saved in this browser only.
 lesson.rigour: Rigour
@@ -296,3 +296,11 @@ map.title: Learning map
 map.lead: Each idea rests on the ones above it. Dashed boxes come from another subject.
 nf.title: This page is undefined
 nf.text: Like 0/0 — but unlike a limit, there is nothing to approach here.
+three.hint: drag to rotate · scroll to zoom
+three.noWebgl: 3D needs WebGL, which this browser or device does not provide. The 2D picture has the same information.
+three.missing: This 3D scene is not available.
+three.phone: A 3D view of this lesson exists. It is off on phones to save battery; tap 3D to try it.
+videos.title: Watch and learn more
+videos.lead: Free channels that teach this subject well. Links open on YouTube in a new tab.
+videos.search: Search YouTube for “{q}”
+videos.explained: explained

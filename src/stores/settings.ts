@@ -29,9 +29,15 @@ export const useSettings = defineStore('settings', () => {
   watch(theme, (v) => ((document.documentElement.dataset.theme = v), write('theme', v)), { immediate: true })
   const toggleTheme = () => (theme.value = theme.value === 'dark' ? 'light' : 'dark')
 
+  // 3D scenes are opt-in: off by default on small screens and coarse pointers (phones), remembered per device.
+  const phone = typeof matchMedia !== 'undefined' && matchMedia('(max-width: 640px), (pointer: coarse)').matches
+  const view3d = ref<boolean>(read('view3d') === null ? !phone : read('view3d') === '1')
+  watch(view3d, (v) => write('view3d', v ? '1' : '0'))
+  const isPhone = phone
+
   const setLocale = (l: Locale) => locales.includes(l) && (locale.value = l)
   const nextLocale = () => setLocale(locales[(locales.indexOf(locale.value) + 1) % locales.length])
   const rtl = computed(() => isRtl())
 
-  return { level, theme, toggleTheme, locale, locales, setLocale, nextLocale, rtl }
+  return { level, theme, toggleTheme, locale, locales, setLocale, nextLocale, rtl, view3d, isPhone }
 })

@@ -3,23 +3,23 @@ subject: calculus
 difficulty: advanced
 equation: f(x,y) = x^2 - y^2, \qquad \nabla f = (2x,\, -2y)
 concepts:
-  - partial-derivative
-  - saddle-point
-  - gradient
-  - multivariable
+- partial-derivative
+- saddle-point
+- gradient
+- multivariable
 prerequisites:
-  - gradient
-  - derivative
+- gradient
+- derivative
 related:
-  - gradient
+- gradient
 visualization:
   type: surface-3d
   options:
     expr: x^2 - y^2
     extent: 2
     zRange:
-      - -4
-      - 4
+    - -4
+    - 4
 parameters:
   x0:
     min: -2
@@ -32,11 +32,19 @@ parameters:
     step: 0.01
     value: 0
 variables:
-  - \partial f/\partial x
-  - \partial f/\partial y
-  - \nabla f
+- \partial f/\partial x
+- \partial f/\partial y
+- \nabla f
 derivation:
-  - f_x = \frac{\partial}{\partial x}(x^2-y^2) = 2x, \qquad f_y = \frac{\partial}{\partial y}(x^2-y^2) = -2y
-  - f_x = f_y = 0 \;\Longleftrightarrow\; x=0,\ y=0
-  - H = \begin{pmatrix}f_{xx}&f_{xy}\\f_{xy}&f_{yy}\end{pmatrix} = \begin{pmatrix}2&0\\0&-2\end{pmatrix}
+- f_x = \frac{\partial}{\partial x}(x^2-y^2) = 2x, \qquad f_y = \frac{\partial}{\partial y}(x^2-y^2) = -2y
+- f_x = f_y = 0 \;\Longleftrightarrow\; x=0,\ y=0
+- H = \begin{pmatrix}f_{xx}&f_{xy}\\f_{xy}&f_{yy}\end{pmatrix} = \begin{pmatrix}2&0\\0&-2\end{pmatrix}
 charts: []
+visualization3d:
+  type: surface
+  options:
+    expr: x^2 - y^2
+    extent: 2
+    zRange:
+    - -4
+    - 4

@@ -3,33 +3,33 @@ subject: physics
 difficulty: high-school
 equation: y = x\tan\theta - \frac{g\,x^2}{2v^2\cos^2\theta}
 concepts:
-  - kinematics
-  - vectors
-  - parabola
-  - gravity
+- kinematics
+- vectors
+- parabola
+- gravity
 prerequisites:
-  - function-graph
-  - newtons-second-law
-  - unit-circle
+- function-graph
+- newtons-second-law
+- unit-circle
 related:
-  - sine-wave
+- sine-wave
 visualization:
   type: function-plot
   options:
     expr: x*tan(th*pi/180) - 9.81*x^2/(2*v^2*cos(th*pi/180)^2)
     domain:
-      - 0
-      - 100
+    - 0
+    - 100
     range:
-      - -8
-      - 52
+    - -8
+    - 52
     mode: tangent
     animate:
       param: x
       speed: 22
       loop:
-        - 0
-        - 100
+      - 0
+      - 100
 parameters:
   v:
     min: 5
@@ -50,12 +50,15 @@ parameters:
     value: 0
     unit: m
 variables:
-  - v
-  - \theta
-  - g
-  - x, y
+- v
+- \theta
+- g
+- x, y
 derivation:
-  - x = v\cos\theta\; t, \qquad y = v\sin\theta\; t - \tfrac12 g t^2
-  - t = \frac{x}{v\cos\theta}
-  - y = x\tan\theta - \frac{g x^2}{2v^2\cos^2\theta}
+- x = v\cos\theta\; t, \qquad y = v\sin\theta\; t - \tfrac12 g t^2
+- t = \frac{x}{v\cos\theta}
+- y = x\tan\theta - \frac{g x^2}{2v^2\cos^2\theta}
 charts: []
+visualization3d:
+  type: projectile
+  options: {}

@@ -19,6 +19,14 @@ export type Subject =
   | 'engineering'
 export type Difficulty = 'beginner' | 'high-school' | 'university' | 'advanced'
 
+export interface Video {
+  title: string
+  url: string
+  by: string
+  lang: string
+  note?: string
+}
+
 export interface ParamSpec {
   label: string
   min: number
@@ -53,6 +61,9 @@ export interface Lesson {
   related: string[]
   /** `type` is a key in viz/registry.ts; `options` is passed to that component untouched. */
   visualization: { type: string; options: Record<string, any> }
+  /** Optional 3D scene; key in viz3d/registry.ts. */
+  visualization3d?: { type: string; options: Record<string, any> }
+  videos?: Video[]
   parameters: Record<string, ParamSpec>
   variables: { symbol: string; meaning: string }[]
   /** Text may contain inline $LaTeX$. */
