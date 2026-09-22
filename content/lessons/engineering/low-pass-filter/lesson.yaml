@@ -1,0 +1,52 @@
+id: low-pass-filter
+subject: engineering
+difficulty: high-school
+equation: |-
+  |H(f)|_{dB} = 20\log_{10}\frac{1}{\sqrt{1+(f/f_c)^2}}, \qquad \phi(f) = -\arctan\left(\frac{f}{f_c}\right)
+concepts:
+  - cutoff-frequency
+  - decibel-scale
+  - phase-shift
+  - rc-filter
+prerequisites:
+  - rc-circuit
+  - logarithms
+related:
+  - rc-circuit
+  - decibels
+  - fourier-series
+visualization:
+  type: function-plot
+  options:
+    expr: 20*log10(1/sqrt(1 + (x/fc)^2))
+    domain: [1, 1000]
+    range: [-45, 3]
+    mode: plain
+  charts:
+    - domain: [1, 1000]
+      series:
+        - -atan(x/fc)*180/pi
+parameters:
+  fc:
+    min: 10
+    max: 500
+    step: 5
+    value: 100
+    unit: Hz
+  x:
+    min: 1
+    max: 1000
+    step: 1
+    value: 100
+variables:
+  - H
+  - f_c
+  - \phi
+derivation:
+  - '|H(f)|^2 = \frac{1}{1+(f/f_c)^2}'
+  - '|H(f)|_{dB} = 10\log_{10}|H(f)|^2 = 20\log_{10}|H(f)|'
+  - 'f=f_c \implies |H|_{dB} = 20\log_{10}\frac{1}{\sqrt 2} \approx -3\text{ dB}'
+charts:
+  - domain: [1, 1000]
+    series:
+      - -atan(x/fc)*180/pi

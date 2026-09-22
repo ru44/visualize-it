@@ -1,0 +1,41 @@
+id: decibels
+subject: engineering
+difficulty: beginner
+equation: L = 10\log_{10}\frac{P}{P_0}
+concepts:
+  - decibel-scale
+  - logarithmic-scale
+  - power-ratio
+prerequisites:
+  - logarithms
+related:
+  - low-pass-filter
+visualization:
+  type: function-plot
+  options:
+    expr: 10*log10(x)
+    domain: [1, 1000000]
+    range: [0, 65]
+    mode: plain
+  charts:
+    - domain: [0, 10]
+      series:
+        - 10*log10(2^x)
+parameters:
+  x:
+    min: 1
+    max: 1000000
+    step: 1000
+    value: 1000
+variables:
+  - L
+  - P
+  - P_0
+derivation:
+  - L(2P) - L(P) = 10\log_{10}2 \approx 3\text{ dB}
+  - L(10P) - L(P) = 10\log_{10}10 = 10\text{ dB}
+  - L = 0 \iff P = P_0
+charts:
+  - domain: [0, 10]
+    series:
+      - 10*log10(2^x)

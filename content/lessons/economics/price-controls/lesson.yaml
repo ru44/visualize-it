@@ -1,0 +1,54 @@
+id: price-controls
+subject: economics
+difficulty: beginner
+equation: P = a - b\,Q, \quad P = c + d\,Q, \quad P = P_0
+concepts:
+  - price-ceiling
+  - price-floor
+  - shortage
+  - surplus
+prerequisites:
+  - supply-and-demand
+related:
+  - elasticity
+visualization:
+  type: supply-demand
+  options: {}
+parameters:
+  a:
+    min: 20
+    max: 100
+    step: 1
+    value: 80
+  b:
+    min: 0.2
+    max: 2
+    step: 0.05
+    value: 0.8
+  c:
+    min: 0
+    max: 60
+    step: 1
+    value: 10
+  d:
+    min: 0.2
+    max: 2
+    step: 0.05
+    value: 0.6
+  price:
+    min: 0
+    max: 100
+    step: 0.5
+    value: 30
+variables:
+  - P
+  - a
+  - b
+  - Q
+  - c
+  - d
+  - P_0
+derivation:
+  - "\\text{quantity demanded at } P_0: \\quad Q = \\dfrac{a - P_0}{b}"
+  - "\\text{quantity supplied at } P_0: \\quad Q = \\dfrac{P_0 - c}{d}"
+  - "\\text{gap} = \\dfrac{a-P_0}{b} - \\dfrac{P_0-c}{d}"

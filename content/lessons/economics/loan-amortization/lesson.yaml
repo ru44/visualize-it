@@ -1,0 +1,64 @@
+id: loan-amortization
+subject: economics
+difficulty: beginner
+equation: B(x) = L\cdot\dfrac{(1+i)^N - (1+i)^x}{(1+i)^N - 1}, \quad i = \dfrac{r}{1200}
+concepts:
+  - loan
+  - amortization
+  - interest
+prerequisites:
+  - compound-interest
+related:
+  - present-value
+visualization:
+  type: function-plot
+  options:
+    expr: L*((1+r/1200)^N - (1+r/1200)^x)/((1+r/1200)^N - 1)
+    domain:
+      - 0
+      - 360
+    range:
+      - 0
+      - 100000
+    mode: plain
+parameters:
+  L:
+    min: 1000
+    max: 300000
+    step: 1000
+    value: 100000
+  r:
+    min: 0.5
+    max: 15
+    step: 0.25
+    value: 6
+    unit: "%"
+  N:
+    min: 12
+    max: 360
+    step: 12
+    value: 240
+    label: months
+  x:
+    min: 0
+    max: 360
+    step: 1
+    value: 60
+variables:
+  - B
+  - x
+  - L
+  - i
+  - N
+  - r
+derivation:
+  - "i = \\dfrac{r}{1200}"
+  - "B(x) = L\\cdot\\dfrac{(1+i)^N-(1+i)^x}{(1+i)^N-1}"
+  - "\\text{interest in month } x = B(x-1)\\cdot i, \\quad \\text{principal} = \\text{payment} - \\text{interest}"
+charts:
+  - domain:
+      - 0
+      - 360
+    marker: x
+    series:
+      - L*((1+r/1200)^N - (1+r/1200)^x)/((1+r/1200)^N - 1)*r/1200

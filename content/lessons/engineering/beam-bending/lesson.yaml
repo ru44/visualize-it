@@ -1,0 +1,61 @@
+id: beam-bending
+subject: engineering
+difficulty: high-school
+equation: y(x) = \frac{Fx^2(3L-x)}{6EI}, \qquad y_{\max} = \frac{FL^3}{3EI}
+concepts:
+  - bending-moment
+  - stiffness
+  - second-moment-of-area
+  - cantilever
+prerequisites:
+  - derivative
+related: []
+visualization:
+  type: function-plot
+  options:
+    expr: "x <= L ? F*x^2*(3*L - x)/(6*E*1e9*I*1e-8)*1000 : 0"
+    domain: [0, 5]
+    range: [0, 300]
+    mode: plain
+parameters:
+  F:
+    min: 100
+    max: 5000
+    step: 100
+    value: 1000
+    unit: N
+  L:
+    min: 1
+    max: 5
+    step: 0.1
+    value: 2
+    unit: m
+  E:
+    min: 10
+    max: 300
+    step: 5
+    value: 200
+    unit: GPa
+  I:
+    min: 1
+    max: 200
+    step: 1
+    value: 20
+    unit: cm⁴
+  x:
+    min: 0
+    max: 5
+    step: 0.01
+    value: 2
+variables:
+  - F
+  - L
+  - E
+  - I
+  - y
+  - M
+derivation:
+  - M(x) = F(L-x)
+  - EI\,y''(x) = M(x) = F(L-x)
+  - y(0)=y'(0)=0 \implies y(x) = \frac{Fx^2(3L-x)}{6EI}
+charts: []

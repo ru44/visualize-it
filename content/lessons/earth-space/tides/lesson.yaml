@@ -1,0 +1,55 @@
+id: tides
+subject: earth-space
+difficulty: high-school
+equation: h(x) = A\cos\left(\frac{2\pi(x-t_0)}{12.42}\right) + B\cos\left(\frac{2\pi x}{12}\right)
+concepts:
+  - tidal-bulges
+  - lunar-day
+  - spring-neap-tides
+prerequisites:
+  - sine-wave
+related:
+  - moon-phases
+visualization:
+  type: function-plot
+  options:
+    expr: A*cos(2*pi*(x - t0)/12.42) + B*cos(2*pi*x/12)
+    domain: [0, 48]
+    range: [-3, 3]
+    mode: plain
+parameters:
+  A:
+    min: 0.5
+    max: 3
+    step: 0.1
+    value: 1.5
+    unit: "m"
+  B:
+    min: 0
+    max: 1.5
+    step: 0.1
+    value: 0.5
+    unit: "m"
+  t0:
+    min: 0
+    max: 12
+    step: 0.5
+    value: 2
+    unit: "h"
+  x:
+    min: 0
+    max: 48
+    step: 0.1
+    value: 6
+    unit: "h"
+variables:
+  - h
+  - A
+  - B
+  - t_0
+  - x
+derivation:
+  - A\cos\left(\frac{2\pi(x-t_0)}{12.42}\right)
+  - B\cos\left(\frac{2\pi x}{12}\right)
+  - h(x) = A\cos\left(\frac{2\pi(x-t_0)}{12.42}\right) + B\cos\left(\frac{2\pi x}{12}\right)
+charts: []

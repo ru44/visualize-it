@@ -8,8 +8,8 @@ footer.note: الرسوم هنا نماذج مبسّطة توضّح الفكرة
 footer.map: خريطة التعلّم
 footer.classic: المحاكاة القديمة
 home.kicker: رياضيات · فيزياء · كهرباء · كيمياء · طيران
-home.title1: شاهِد ماذا
-home.title2: تعني المعادلة.
+home.title1: شاهد
+home.title2: معنى المعادلة.
 home.lead: بلا حفظ. حرّك الأشياء، وراقب ما يحدث، وافهم السبب.
 home.start: ابدأ بالدرس الأول
 home.how: كيف يعمل الموقع
@@ -146,7 +146,7 @@ trust.derivNumeric: لا توجد مشتقة رمزية، لذلك نقيس ال
 trust.derivMismatch: لم تتّفق المشتقة الرمزية مع التحقّق العددي، لذلك نعرض الميل المقيس.
 trust.limitFinite: يقترب الجانبان من القيمة نفسها. حسبناها عدديًا بالاستكمال، وهي موثوقة حتى نحو {d} خانات عشرية، والقيمة {v}.
 trust.limitInf: تكبر القيم بلا حدّ من الجانبين، فالنهاية {v}.
-trust.limitDne: 'لا نهاية هنا: من اليسار تتّجه القيم إلى {l}، ومن اليمين إلى {r}.'
+trust.limitDne: 'لا نهاية هنا، فمن اليسار تتّجه القيم إلى {l}، ومن اليمين إلى {r}.'
 trust.limitUnknown: القيم لا تستقرّ (ربما تتذبذب)، لذلك لا نعرض نهاية بدل أن نخمّن.
 trust.intExact: حسبنا قيمة دقيقة تمامًا بتكامل كثيرة الحدود حدًّا حدًّا بالكسور، وهي {v}.
 trust.intNumeric: حسبناه عدديًا (قاعدة سمبسون بثلاث دقّات)، وهو موثوق حتى نحو {d} خانات عشرية، والقيمة {v}.
@@ -169,7 +169,7 @@ solve.done: لم يبقَ ما نُزيله.
 solve.check: عوِّض الجواب في المعادلة الأصلية وسترى الطرفين متساويين.
 solve.standard: انقل كل شيء إلى طرف واحد. الحلول هي حيث يلمس هذا المنحنى المحور.
 solve.disc: 'يحدّد المميّز عدد الحلول: موجب ← حلّان، صفر ← حلّ واحد، سالب ← لا حلّ.'
-solve.noReal: المنحنى لا يصل إلى المحور أبدًا، انظر إلى الرسم. (الحلول أعداد مركّبة.)
+solve.noReal: المنحنى لا يصل إلى المحور أبدًا، كما ترى في الرسم. (الحلول أعداد مركّبة.)
 solve.formula: القانون العام للمعادلة التربيعية يكمل المربع مرة واحدة، فيصلح لكل المعادلات التربيعية.
 solve.roots: يظهر كلاهما على الرسم حيث يلتقي المنحنى بالمحور.
 solve.rootsCheck: تحقّقنا بالتعويض، فالأيسر − الأيمن = 0 (ضمن حدود التقريب).
@@ -301,14 +301,14 @@ three.noWebgl: يحتاج العرض الثلاثي الأبعاد إلى WebGL�
 three.missing: هذا المشهد الثلاثي الأبعاد غير متاح.
 three.phone: لهذا الدرس عرض ثلاثي الأبعاد. أوقفناه على الهاتف حفاظًا على البطارية، اضغط 3D لتجربته.
 videos.title: شاهد وتعلّم أكثر
-videos.lead: قنوات مجانية تشرح هذه المادة جيدًا. تُفتح الروابط في يوتيوب في تبويب جديد.
+videos.lead: قنوات مجانية تشرح هذه المادة جيدًا. تفتح الروابط في يوتيوب في تبويب جديد.
 videos.search: ابحث في يوتيوب عن «{q}»
 videos.explained: شرح
 three.models: 'النماذج ثلاثية الأبعاد:'
 three.view: العرض
 nav.notation: الرموز
 notation.title: الرموز والترميز
-notation.lead: 'كل حرف وعلامة تظهر في صيغ هذا الموقع: اسمها، وكيف تُقرأ، وماذا تعني. ويعرض كل درس أيضًا حروفه الخاصة بجانب الرسم.'
+notation.lead: 'كل حرف وعلامة تظهر في صيغ هذا الموقع: اسمها، وطريقة قراءتها، وماذا تعني. ويعرض كل درس أيضًا حروفه الخاصة بجانب الرسم.'
 notation.search: ابحث عن رمز أو اسم أو معنى…
 notation.read: يُقرأ
 lesson.alsoInFormulas: وفي الصيغ أيضًا
@@ -325,3 +325,37 @@ notation.group.constant: الثوابت
 notation.group.letter: الحروف الشائعة
 notation.group.computer-science: علوم الحاسوب
 notation.group.layout: التنسيق
+moon.hint: اسحب القمر حول مداره
+moon.sun: ضوء الشمس
+moon.fromEarth: كما يُرى من الأرض
+moon.day: يوم الدورة
+moon.lit: الجزء المضاء
+moon.phase: الطور
+moon.new: محاق
+moon.waxingCrescent: هلال متزايد
+moon.firstQuarter: تربيع أول
+moon.waxingGibbous: أحدب متزايد
+moon.full: بدر
+moon.waningGibbous: أحدب متناقص
+moon.lastQuarter: تربيع أخير
+moon.waningCrescent: هلال متناقص
+market.hint: اسحب لأعلى أو لأسفل لتحدّد سعرًا وترى العجز أو الفائض
+market.qty: الكمية
+market.priceAxis: السعر
+market.demand: الطلب
+market.supply: العرض
+market.eqPrice: سعر التوازن
+market.eqQty: كمية التوازن
+market.price: السعر
+market.demandAt: الكمية المطلوبة
+market.supplyAt: الكمية المعروضة
+market.surplus: فائض
+market.shortage: عجز
+sampling.hint: النقاط هي العينات · المنحنى الملوّن ما تعيد العينات بناءه
+sampling.f: تردد الإشارة
+sampling.fs: معدل أخذ العينات
+sampling.nyquist: حد نايكويست fs/2
+sampling.seen: التردد الذي تظهره العينات
+sampling.original: الإشارة الأصلية
+sampling.recovered: استُعيدت بشكل صحيح
+sampling.aliased: 'تشوّه: تردد أدنى زائف'
