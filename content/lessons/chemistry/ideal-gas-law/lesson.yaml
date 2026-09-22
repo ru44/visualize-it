@@ -53,3 +53,4 @@ charts:
 visualization3d:
   type: gas-box
   options: {}
+primary: V

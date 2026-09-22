@@ -35,9 +35,13 @@ export const useSettings = defineStore('settings', () => {
   watch(view3d, (v) => write('view3d', v ? '1' : '0'))
   const isPhone = phone
 
+  // Guided view: one slider, 'try this' steps, explanations revealed step by step. Default for new visitors.
+  const guided = ref<boolean>(read('guided') === null ? true : read('guided') === '1')
+  watch(guided, (v) => write('guided', v ? '1' : '0'))
+
   const setLocale = (l: Locale) => locales.includes(l) && (locale.value = l)
   const nextLocale = () => setLocale(locales[(locales.indexOf(locale.value) + 1) % locales.length])
   const rtl = computed(() => isRtl())
 
-  return { level, theme, toggleTheme, locale, locales, setLocale, nextLocale, rtl, view3d, isPhone }
+  return { level, theme, toggleTheme, locale, locales, setLocale, nextLocale, rtl, view3d, isPhone, guided }
 })

@@ -27,7 +27,7 @@ const steps = [1, 2, 3].map((i) => ({ title: `home.step${i}.t` as Key, text: `ho
         <h1 class="text-4xl font-semibold leading-[1.15] tracking-tight sm:text-5xl sm:leading-[1.12]">{{ t('home.title1') }}<br />{{ t('home.title2') }}</h1>
         <p class="mt-5 max-w-lg text-lg leading-relaxed" style="color: var(--muted)">{{ t('home.lead') }}</p>
         <div class="mt-7 flex flex-wrap items-center gap-3">
-          <RouterLink :to="`/lesson/${lessons[0].id}`" class="btn-primary px-6 py-3">{{ t('home.start') }}</RouterLink>
+          <RouterLink to="/lesson/slope" class="btn-primary px-6 py-3 text-base">{{ t('home.start2') }}</RouterLink>
           <RouterLink to="/#subjects" class="rounded-[10px] border px-5 py-3 font-medium hover:border-[var(--accent)]" style="border-color: var(--line)">{{ t('home.subjects') }}</RouterLink>
         </div>
       </div>

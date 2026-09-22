@@ -19,6 +19,12 @@ charts:
       - I = V / R
 ---
 
+## Try it
+
+1. Raise «voltage V». The dots speed up: more push, more current.
+2. Raise «resistance R». The dots slow down: harder path, less current.
+3. Read «I = V/R» under the picture. It is always the voltage divided by the resistance.
+
 ## Intuition
 
 Drag up and down on the circuit to set the voltage $V$. Watch the dots travelling around the loop: they speed up as $V$ rises, because a bigger push drives a bigger current. Now imagine turning the resistor's dial instead — a larger $R$ chokes the same push down to a smaller current, exactly like squeezing a hose narrows the flow of water for the same pump pressure.

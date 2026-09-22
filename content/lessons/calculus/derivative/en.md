@@ -10,6 +10,12 @@ variables:
   - its slope at each x (dashed)
 ---
 
+## Try it
+
+1. Drag the point to the very bottom of the curve. The orange line lies flat and the slope reads 0.
+2. Drag it to the right. The line tilts up and the slope number grows.
+3. Drag it to the left of the bottom. The slope turns negative: the curve is going downhill there.
+
 ## Intuition
 
 A curve has no single slope — its steepness changes as you move. The tangent line shows the slope at exactly one point: the direction the curve is heading right there.

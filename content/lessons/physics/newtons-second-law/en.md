@@ -20,6 +20,12 @@ charts:
       - x = ½(F/m)·t²
 ---
 
+## Try it
+
+1. Watch the crate. It starts still and speeds up as the arrow pushes it.
+2. Raise the slider «force F». The crate reaches the end of the floor much sooner.
+3. Now raise «mass m» instead. The same push barely moves the heavier crate. Acceleration = force ÷ mass.
+
 ## Intuition
 
 Drag left and right on the diagram to change the force $F$. Watch the orange arrow grow, and watch the block leap off the starting line faster and faster — a bigger push means a bigger acceleration, and the effect is immediate.

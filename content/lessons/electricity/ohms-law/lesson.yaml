@@ -3,14 +3,14 @@ subject: electricity
 difficulty: high-school
 equation: V = IR
 concepts:
-  - voltage
-  - current
-  - resistance
-  - power
+- voltage
+- current
+- resistance
+- power
 prerequisites:
-  - slope
+- slope
 related:
-  - newtons-second-law
+- newtons-second-law
 visualization:
   type: ohm-circuit
   options: {}
@@ -28,18 +28,19 @@ parameters:
     value: 30
     unit: Ω
 variables:
-  - V
-  - I
-  - R
-  - P
+- V
+- I
+- R
+- P
 derivation:
-  - I \propto V
-  - R \equiv \frac{V}{I} \;\Rightarrow\; V = IR
-  - P = VI = I(IR) = I^2R = \left(\frac{V}{R}\right)^{\!2}\! R = \frac{V^2}{R}
+- I \propto V
+- R \equiv \frac{V}{I} \;\Rightarrow\; V = IR
+- P = VI = I(IR) = I^2R = \left(\frac{V}{R}\right)^{\!2}\! R = \frac{V^2}{R}
 charts:
-  - domain:
-      - 0
-      - 24
-    marker: V
-    series:
-      - x/R
+- domain:
+  - 0
+  - 24
+  marker: V
+  series:
+  - x/R
+primary: V

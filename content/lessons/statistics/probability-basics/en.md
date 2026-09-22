@@ -13,6 +13,12 @@ variables:
   - the proportion of successes observed so far (orange line)
 ---
 
+## Try it
+
+1. Watch the orange line at the start: it jumps around wildly. Three heads in a row is normal.
+2. Let it run. After a few hundred flips the line settles near the dashed line at p.
+3. Press «again». A different path, the same destination. That destination is what probability means.
+
 ## Intuition
 
 Each dot along the top is one trial: orange for success, grey for failure. The orange line is the proportion of successes so far. At the start it jumps around wildly — three heads in a row is nothing unusual — but as trials pile up it calms down and hugs the dashed line at $p$.

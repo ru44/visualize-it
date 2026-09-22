@@ -12,6 +12,12 @@ variables:
   - 'sin θ divided by cos θ, undefined where cos θ = 0'
 ---
 
+## Try it
+
+1. Drag the point around the circle. The green bar is its height: that is sin.
+2. The blue bar is how far right it is: that is cos.
+3. Watch the wave on the right draw itself as you go round. A wave is just a circle seen over time.
+
 ## Intuition
 
 Drag the point around the rim of the circle. Its horizontal distance from the centre is $\cos\theta$, its vertical distance is $\sin\theta$ — you are not memorising a table, you are watching two shadows cast by one spinning point.

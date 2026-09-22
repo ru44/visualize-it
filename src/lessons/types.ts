@@ -72,6 +72,10 @@ export interface Lesson {
   /** Text may contain inline $LaTeX$. */
   /** `advanced` is shown at university level and above. */
   explanation: { intuition: string[]; formal: string[]; advanced?: string[] }
+  /** Concrete things to try first (guided mode). */
+  tryIt: string[]
+  /** The parameter shown first in guided mode. */
+  primary?: string
   derivation: { tex: string; note: string }[]
   derivationTitle?: string
   /** How trustworthy a computed answer is — shown for user-entered equations. */
@@ -88,6 +92,7 @@ export interface LessonText {
   parameters: Record<string, string>
   variables: string[]
   charts: { title: string; xLabel: string; yLabel: string; series: string[] }[]
+  tryIt: string[]
   intuition: string[]
   formal: string[]
   advanced: string[]

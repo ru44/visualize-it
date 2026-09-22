@@ -27,6 +27,8 @@ export function merge(l: any, t: LessonText): Lesson {
     parameters: Object.fromEntries(Object.entries(l.parameters as Record<string, any>).map(([k, p]) => [k, { ...p, label: t.parameters[k] ?? k }])),
     variables: (l.variables as string[]).map((symbol, i) => ({ symbol, meaning: t.variables[i] ?? '' })),
     explanation: { intuition: t.intuition, formal: t.formal, advanced: t.advanced?.length ? t.advanced : undefined },
+    tryIt: t.tryIt ?? [],
+    primary: l.primary,
     derivation: (l.derivation as string[]).map((tex, i) => ({ tex, note: t.derivationNotes[i] ?? '' })),
     realWorld: t.realWorld,
     charts: (l.charts as any[]).map((c, i) => ({ domain: c.domain, marker: c.marker, title: t.charts?.[i]?.title ?? '', xLabel: t.charts?.[i]?.xLabel ?? '', yLabel: t.charts?.[i]?.yLabel ?? '', series: (c.series as string[]).map((expr, j) => ({ expr, label: t.charts?.[i]?.series[j] ?? expr })) })),

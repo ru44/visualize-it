@@ -21,6 +21,12 @@ charts:
       - P = nRT / V
 ---
 
+## Try it
+
+1. Drag the piston to the left to squeeze the gas. The particles hit the walls more often and the pressure gauge rises.
+2. Raise «temperature T». The particles fly faster and the pressure rises again, even with the same space.
+3. Raise «amount n». More particles, more hits, more pressure. That is the whole law.
+
 ## Intuition
 
 Drag the piston left or right to change $V$. Squeeze it in and the same particles are packed into a smaller box, so they hit the walls more often — watch the wall-hits-per-second readout climb — and the pressure gauge along the top rises. Slide the slider for $T$ up instead and every particle speeds up, so even at the same volume they slam into the walls harder and more often; slide $n$ up and there are simply more particles to do the hitting.

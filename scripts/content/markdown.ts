@@ -30,6 +30,7 @@ export function parseLessonMd(src: string): LessonText {
     })
   return LessonText.parse({
     ...data,
+    tryIt: steps(parts['try it']),
     intuition: paras(parts.intuition),
     formal: paras(parts.formal),
     advanced: paras(parts.advanced),
@@ -43,7 +44,8 @@ export function writeLessonMd(t: LessonText): string {
   if (Object.keys(t.parameters).length) fm.parameters = t.parameters
   if (t.variables.length) fm.variables = t.variables
   if (t.charts.length) fm.charts = t.charts
-  let body = `\n## Intuition\n\n${t.intuition.join('\n\n')}\n\n## Formal\n\n${t.formal.join('\n\n')}\n`
+  let body = t.tryIt.length ? `\n## Try it\n\n${t.tryIt.map((n, i) => `${i + 1}. ${n}`).join('\n')}\n` : ''
+  body += `\n## Intuition\n\n${t.intuition.join('\n\n')}\n\n## Formal\n\n${t.formal.join('\n\n')}\n`
   if (t.advanced.length) body += `\n## Advanced\n\n${t.advanced.join('\n\n')}\n`
   if (t.derivationNotes.length) body += `\n## Derivation\n\n${t.derivationNotes.map((n, i) => `${i + 1}. ${n}`).join('\n')}\n`
   if (t.realWorld.length) body += `\n## Real world\n\n${t.realWorld.map((r) => `### ${r.title}\n${r.text}`).join('\n\n')}\n`

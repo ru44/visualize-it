@@ -13,6 +13,12 @@ variables:
   - the area of one thin slice
 ---
 
+## Try it
+
+1. Set «number of rectangles» to 4. The rectangles miss a lot of the area under the curve.
+2. Slide it to 50, then 500. The gaps disappear.
+3. Compare «sum of rectangles» with «integral» under the picture: the difference shrinks toward 0. The integral is where the sum is heading.
+
 ## Intuition
 
 We know how to find the area of a rectangle, not of a curved region. So cheat: cover the region with rectangles and add them up.

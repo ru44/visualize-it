@@ -47,6 +47,9 @@ variables:             # one explanation per symbol in lesson.yaml, same order
 charts: []             # only if lesson.yaml has charts: [{ title, xLabel, yLabel, series: [labels] }]
 ---
 
+## Try it
+1. Two to four concrete steps: what to drag and what to notice. Shown first in the guided view (optional, but every starter lesson should have them).
+
 ## Intuition
 Plain-language paragraphs (beginner level). Refer to what the learner sees and drags.
 
@@ -93,6 +96,8 @@ pnpm new-lesson calculus chain-rule     # creates the folder with a template
 ```
 
 Fill `lesson.yaml` and `en.md`, add the id to `content/lessons/calculus/_order.yaml`, run `pnpm check`, then `pnpm dev` and open `#/lesson/chain-rule`.
+
+`primary:` in `lesson.yaml` names the one slider the guided view shows first (defaults to the first parameter).
 
 `lesson.yaml` picks a visualization by `type`. The types and their options are the components registered in `src/viz/registry.ts`; `function-plot` (any expression in `x`, with modes plain / secant / tangent / limit / riemann / area), `ode-system` (any system of differential equations), `surface-3d` and `discrete-dist` cover most new lessons without code. Parameters are declared with ranges in `lesson.yaml` and appear as sliders; their labels come from each language file.
 

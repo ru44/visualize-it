@@ -10,6 +10,12 @@ variables:
   - undefined at x = 0 (that would be 0/0) — shown as a hollow point
 ---
 
+## Try it
+
+1. Drag the slider «distance from 0» toward 0. The two dots slide toward the gap in the middle.
+2. Read the numbers under the picture: 0.84…, 0.99…, 0.9999… They get closer and closer to 1.
+3. The function has a hole exactly at 0, yet everything points at 1. That number 1 is the limit.
+
 ## Intuition
 
 At $x = 0$ this function has a hole: $0/0$ means nothing. But a limit never asks what happens at the point — it asks what happens on the way there.

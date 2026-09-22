@@ -3,26 +3,26 @@ subject: calculus
 difficulty: high-school
 equation: \int_0^4 x^2 \, dx = \frac{64}{3}
 concepts:
-  - area
-  - riemann-sum
-  - integral
-  - accumulation
+- area
+- riemann-sum
+- integral
+- accumulation
 prerequisites:
-  - function-graph
-  - limit
+- function-graph
+- limit
 related:
-  - area-under-curve
-  - derivative
+- area-under-curve
+- derivative
 visualization:
   type: function-plot
   options:
     expr: x^2
     domain:
-      - -1
-      - 5
+    - -1
+    - 5
     range:
-      - -2
-      - 20
+    - -2
+    - 20
     mode: riemann
     rule: left
 parameters:
@@ -42,11 +42,12 @@ parameters:
     step: 0.05
     value: 4
 variables:
-  - a, b
-  - dx
-  - f(x)\,dx
+- a, b
+- dx
+- f(x)\,dx
 derivation:
-  - \sum_{i=1}^{n} \left(\tfrac{4i}{n}\right)^2 \cdot \tfrac{4}{n} = \frac{64}{n^3} \sum_{i=1}^{n} i^2
-  - = \frac{64}{n^3} \cdot \frac{n(n+1)(2n+1)}{6}
-  - \xrightarrow{\,n \to \infty\,} \frac{64 \cdot 2}{6} = \frac{64}{3}
+- \sum_{i=1}^{n} \left(\tfrac{4i}{n}\right)^2 \cdot \tfrac{4}{n} = \frac{64}{n^3} \sum_{i=1}^{n} i^2
+- = \frac{64}{n^3} \cdot \frac{n(n+1)(2n+1)}{6}
+- \xrightarrow{\,n \to \infty\,} \frac{64 \cdot 2}{6} = \frac{64}{3}
 charts: []
+primary: n

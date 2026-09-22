@@ -16,6 +16,12 @@ variables:
   - where the curve crosses the vertical axis
 ---
 
+## Try it
+
+1. Drag the point left and right. Its height is the answer the rule gives for that x.
+2. Move the slider «a». Watch the whole curve bend more or less.
+3. Set «a» to 0. The curve turns into a straight line: no bending left.
+
 ## Intuition
 
 Drag the point. Its horizontal position is the input, its height is the output. The curve is simply the trail left by every possible input.
