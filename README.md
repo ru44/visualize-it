@@ -20,12 +20,12 @@ Every concept follows the same path: **Equation → Visualization → Manipulati
 ## Run it
 
 ```bash
-npm install
-npm run dev      # local development
-npm run build    # type-check + production build into dist/
-npm run check    # compile + validate all content, then run the engine tests
-npm run new-lesson <subject> <id>   # scaffold a lesson
-npm test         # known-answer tests for the numerical engine (limits, integrals, roots)
+pnpm install
+pnpm dev         # local development
+pnpm build       # compile content, type-check, production build into dist/
+pnpm check       # compile + validate all content, then run the engine tests
+pnpm new-lesson <subject> <id>   # scaffold a lesson
+ppnpm test        # known-answer tests for the numerical engine (limits, integrals, roots)
 ```
 
 Pushing to `main` deploys to GitHub Pages via `.github/workflows/deploy.yml` (enable Pages → Source: GitHub Actions once in the repository settings).

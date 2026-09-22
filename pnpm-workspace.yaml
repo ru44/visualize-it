@@ -1,0 +1,7 @@
+allowBuilds:
+  esbuild: true
+
+# Pin the ESLint TypeScript packages to a release older than pnpm's minimum-release-age policy.
+overrides:
+  typescript-eslint: 8.70.0
+  "@typescript-eslint/*": 8.70.0
