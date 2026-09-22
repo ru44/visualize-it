@@ -54,3 +54,30 @@ ok('x^2 + 1 = 0 has no real root', same(scanRoots(fn('x^2 + 1')), []), scanRoots
 
 console.log(failed ? `\n${failed} FAILED` : '\nall engine tests passed')
 if (failed) process.exit(1)
+
+// ---- combinatorics & probability ---------------------------------------------------------------
+import { factorial, permutations, combinations, binomialPmf, poissonPmf, normalCdf } from '../src/engine/stats'
+let f2 = 0
+const ok2 = (name: string, cond: boolean, got: unknown) => { if (!cond) f2++; console.log(`${cond ? '✓' : '✗'} ${name}${cond ? '' : '  → got ' + String(got)}`) }
+ok2('0! = 1', factorial(0) === 1n, factorial(0))
+ok2('10! = 3628800', factorial(10) === 3628800n, factorial(10))
+ok2('25! exact', factorial(25) === 15511210043330985984000000n, factorial(25))
+ok2('C(5,2) = 10', combinations(5, 2) === 10n, combinations(5, 2))
+ok2('C(52,5) = 2598960', combinations(52, 5) === 2598960n, combinations(52, 5))
+ok2('C(100,50) exact', combinations(100, 50) === 100891344545564193334812497256n, combinations(100, 50))
+ok2('C(n,k) = C(n,n−k)', combinations(30, 7) === combinations(30, 23), null)
+ok2('C(5,7) = 0', combinations(5, 7) === 0n, combinations(5, 7))
+ok2('P(5,2) = 20', permutations(5, 2) === 20n, permutations(5, 2))
+ok2('P(10,10) = 10!', permutations(10, 10) === factorial(10), permutations(10, 10))
+ok2('P(n,k) = C(n,k)·k!', permutations(12, 5) === combinations(12, 5) * factorial(5), null)
+ok2('binomial pmf sums to 1', Math.abs(Array.from({ length: 21 }, (_, k) => binomialPmf(20, k, 0.3)).reduce((a, b) => a + b) - 1) < 1e-12, null)
+ok2('binomial(10,3,0.5) = 120/1024', near(binomialPmf(10, 3, 0.5), 120 / 1024, 1e-12), binomialPmf(10, 3, 0.5))
+ok2('poisson(2,0) = e^-2', near(poissonPmf(2, 0), Math.exp(-2), 1e-12), poissonPmf(2, 0))
+ok2('poisson(3,2) = 9e^-3/2', near(poissonPmf(3, 2), (9 * Math.exp(-3)) / 2, 1e-12), poissonPmf(3, 2))
+ok2('poisson pmf sums to 1', Math.abs(Array.from({ length: 60 }, (_, k) => poissonPmf(4, k)).reduce((a, b) => a + b) - 1) < 1e-12, null)
+ok2('Φ(0) = 0.5', near(normalCdf(0), 0.5, 1e-7), normalCdf(0))
+ok2('Φ(1.96) ≈ 0.9750', Math.abs(normalCdf(1.96) - 0.9750021) < 2e-7, normalCdf(1.96))
+ok2('Φ(−1) ≈ 0.1587', Math.abs(normalCdf(-1) - 0.1586553) < 2e-7, normalCdf(-1))
+ok2('68–95–99.7', Math.abs(normalCdf(1) - normalCdf(-1) - 0.6826895) < 3e-7 && Math.abs(normalCdf(2) - normalCdf(-2) - 0.9544997) < 3e-7, null)
+if (f2) { console.log(`\n${f2} FAILED (stats)`); process.exit(1) }
+console.log('all stats tests passed')

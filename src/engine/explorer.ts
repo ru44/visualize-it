@@ -48,9 +48,17 @@ export type Parsed =
   | { kind: 'derivative'; expr: string }
   | { kind: 'function'; expr: string }
   | { kind: 'equation'; lhs: string; rhs: string }
+  | { kind: 'count'; op: 'C' | 'P' | '!'; n: number; k: number }
 
 export function parseQuery(q: string): Parsed {
   const s = normalize(q).replace(/^solve\s+/i, '')
+  // Counting: C(10,3), 10C3, nCr(10,3), binom(10,3), 10 choose 3, P(10,3), 10P3, 7!
+  let c = s.match(/^(?:C|nCr|binom|choose)\s*\(\s*(\d+)\s*,\s*(\d+)\s*\)$/i) || s.match(/^(\d+)\s*C\s*(\d+)$/i) || s.match(/^(\d+)\s+choose\s+(\d+)$/i)
+  if (c) return { kind: 'count', op: 'C', n: +c[1], k: +c[2] }
+  c = s.match(/^(?:P|nPr|perm)\s*\(\s*(\d+)\s*,\s*(\d+)\s*\)$/i) || s.match(/^(\d+)\s*P\s*(\d+)$/i)
+  if (c) return { kind: 'count', op: 'P', n: +c[1], k: +c[2] }
+  c = s.match(/^(\d+)\s*!$/)
+  if (c) return { kind: 'count', op: '!', n: +c[1], k: +c[1] }
   let m = s.match(/^lim\s*\(?\s*x\s*->\s*([^\s)]+)\s*\)?\s*(.+)$/i)
   if (m) return { kind: 'limit', at: m[1], expr: m[2] }
   m = s.match(/^(?:∫|int)\s*_\(?(-?[\w.]+)\)?\s*\^\(?(-?[\w.]+)\)?\s*(.+?)\s*dx$/i)
@@ -64,4 +72,4 @@ export function parseQuery(q: string): Parsed {
   return { kind: 'function', expr: s.replace(/^(?:[a-z]\(x(?:,\s*y)?\)|y|z)\s*=\s*/i, '') }
 }
 
-export const examples = ['2x + 5 = 17', 'x² − 4x + 3 = 0', '∫₀⁴ x² dx', 'lim(x→0) sin(x)/x', 'f(x) = x³ − 3x', 'd/dx sin(x)', 'z = sin(x)·cos(y)', 'V = IR', 'F = ma', 'PV = nRT', 'a² + b² = c²']
+export const examples = ['2x + 5 = 17', 'C(10,3)', 'x² − 4x + 3 = 0', '∫₀⁴ x² dx', 'lim(x→0) sin(x)/x', 'f(x) = x³ − 3x', 'd/dx sin(x)', 'z = sin(x)·cos(y)', 'V = IR', 'F = ma', 'PV = nRT', 'a² + b² = c²']

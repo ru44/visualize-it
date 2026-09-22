@@ -6,9 +6,9 @@ Every concept follows the same path: **Equation → Visualization → Manipulati
 
 ## Features
 
-- **Equation Explorer** — type `∫₀⁴ x² dx`, `lim(x→0) sin(x)/x`, `2x + 5 = 17`, `V = IR`… and get an interactive visualization
+- **Equation Explorer** — type `∫₀⁴ x² dx`, `lim(x→0) sin(x)/x`, `2x + 5 = 17`, `C(52,5)`, `7!`, `V = IR`… and get an interactive visualization
 - **Step-by-step solver** — linear and quadratic equations with every transformation explained; numeric roots for anything else
-- **69 lessons in 12 subjects** — algebra, functions, calculus (limits → multivariable), geometry, trigonometry, mechanics, waves, electricity, electromagnetism, aerodynamics, thermodynamics, chemistry
+- **79 lessons in 13 subjects** — algebra, functions, calculus (limits → multivariable), geometry, trigonometry, statistics & probability (permutations, combinations, binomial, Poisson, normal, Bayes…), mechanics, waves, electricity, electromagnetism, aerodynamics, thermodynamics, chemistry
 - **Graphing engine** (`/graph`) — functions, polar, parametric, implicit curves and vector fields with zoom, pan, derivative overlay and auto-generated parameter sliders
 - **3D surfaces** with tangent plane and gradient; type `z = sin(x)·cos(y)` in the explorer
 - **Arabic and English** with full right-to-left layout; every lesson is translated (`?lang=ar` forces the language in a shared link)

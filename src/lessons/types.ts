@@ -11,6 +11,7 @@ export type Subject =
   | 'aerodynamics'
   | 'thermodynamics'
   | 'chemistry'
+  | 'statistics'
 export type Difficulty = 'beginner' | 'high-school' | 'university' | 'advanced'
 
 export interface ParamSpec {
