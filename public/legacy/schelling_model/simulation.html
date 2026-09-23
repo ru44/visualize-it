@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>Schelling's Model | Visualize It</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keyword" content="schelling, schelling's model, segregation, interactive, social">
+  <meta name="og:image" content="https://github.com/visualize-it/visualize-it.github.io/raw/main/images_webp/schelling_model.webp">
+
+  <!-- Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script src="../helper.js" defer></script>
+  <script src="Boid.js" defer></script>
+  <script src="basic.js" defer></script>
+  <script src="utils.js" defer></script>
+  <script src="user_input.js" defer></script>
+  <script src="simulation.js" defer></script>
+
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="../embed.css"><script src="../embed.js"></script>
+</head>
+
+<body>
+  <nav class="nav-extended" style="background:black; margin-top: 0mm">
+    <div class="nav-wrapper">
+      <h1 id="main-heading">Visualize It</h1>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent tabs-fixed-width">
+        <li class="tab"><a href="../index.html" style="font-size: larger;">Home</a></li>
+        <li class="tab"><a href="../about.html" style="font-size: larger;">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="text">
+    <h2>Schelling's Model</h2>
+    <center>
+      <p>
+        Schelling's Model replicates the segregation that takes place in populations of differing backgrounds or
+        opinions
+      </p>
+    </center>
+
+    <hr>
+
+    <h3>Simulation</h3>
+    <p>Agents (people) of different backgrounds/opinions are represented by circles of different colors. The world is
+      initially populated with random agents placed at random positions. The simulation continues until all agents are
+      happy. Unhappy agents have a square drawn around them (see description for more details).
+    </p>
+
+    <div class="container" style="width:90%">
+      <div class="row">
+        <div class="col s12 l8">
+          <canvas id="canvas"></canvas>
+        </div>
+        <div class="col s12 l4">
+          <center>
+            <div style="background: black; border: 1px solid red; padding: 5px;">
+              <b>
+                Warning: <br>
+                Do not introduce too many species with high occupancy and low tolerance. Simulation WILL hang.
+              </b>
+            </div>
+            <hr>
+            <p class="jittery" id="unhappy-display"></p>
+            <button class="btn purple darken-4" id="pause-button" onclick="pauseToggle()">Pause</button>
+            <button class="btn purple darken-4" id="restart-button" onclick="initParams()">Restart</button>
+            <hr>
+            <p id="occupancy-display"></p>
+            <button class="btn purple darken-4" onclick="setOccupancy(0.25)">25%</button>
+            <button class="btn purple darken-4" onclick="setOccupancy(0.5)">50%</button>
+            <button class="btn purple darken-4" onclick="setOccupancy(0.75)">75%</button>
+            <hr>
+            <p id="tol-display"></p>
+            <input id="tol-input" type="range" min="0.3" max="0.8" step="0.05" oninput="updateParams('tol')"
+              onchange="updateParams('tol')">
+            <span>(Lower tolerance implies causes segregation)</span>
+            <hr>
+            <p id="num-display"></p>
+            <button class="btn purple darken-4" onclick="setNumber(2)">2</button>
+            <button class="btn purple darken-4" onclick="setNumber(3)">3</button>
+            <button class="btn purple darken-4" onclick="setNumber(4)">4</button>
+          </center>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>Description</h3>
+
+    <p>
+      Every agent has 8 neighbours. In every step, a random agent is chosen and it's neighbourhood is analysed:
+      \[ f = \frac{n_{different}}{n_{total}} \]
+      \(n_{different}\) is the number of neighbours of a different species whereas \(n_{total}\) is the total number of
+      neighbours present.
+      If the above fraction \(f\) is greater than the tolerance value, then the agent is "unhappy" and therefore seeks
+      to relocate to a spot where it will be happy amongst it's compatriots. This simple rule is enough to establish
+      segregation. Lower the tolerance, greater the segregation. In the real world, these species may differ in their
+      background (race, ethinicity, religion, language) or their opinion (politics, incompatible issues). This sort of
+      segregation is observed in the animal kingdom too.
+    </p>
+
+    <br>
+    <hr>
+    <br>
+
+    <b>Note:</b>
+    <ol>
+      <li>The boundary condition is periodic</li>
+      <li>Simulation may lag on lower-end devices</li>
+    </ol>
+
+    <br>
+    <hr>
+
+    <p class="center-align">Developed by ChanRT | Fork me at <a href="https://www.github.com/chanrt">GitHub</a></p>
+  </div>
+</body>
+
+</html>

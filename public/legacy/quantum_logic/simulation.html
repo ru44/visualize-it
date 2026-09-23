@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>Quantum Logic Gates | Visualize It</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="quantum logic gates, quantum computing, quantum computers, quantum circuits, quantum, interactive">
+  <meta name="og:image" content="https://github.com/visualize-it/visualize-it.github.io/raw/main/images_webp/quantum_computing.webp">
+
+  <!-- Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="basic.js" defer></script>
+  <script src="quantum_logic.js" defer></script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+  <script>
+    window.MathJax = {
+      loader: { load: ['[tex]/braket'] },
+      tex: { packages: { '[+]': ['braket'] } }
+    };
+  </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="../embed.css"><script src="../embed.js"></script>
+</head>
+
+<body>
+  <nav class="nav-extended" style="background:black; margin-top: 0mm">
+    <div class="nav-wrapper">
+      <h1 id="main-heading">Visualize It</h1>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent tabs-fixed-width">
+        <li class="tab"><a href="../index.html" style="font-size: larger;">Home</a></li>
+        <li class="tab"><a href="../about.html" style="font-size: larger;">About</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="text">
+    <h2>Quantum Logic Gates</h2>
+    <center>
+      <p>
+        Quantum circuits are primarily composed of logic gates. It is these logic gates that create and utilize
+        phenomenon like superposition and entanglement of qubits, which are responsible for the interesting properties
+        of quantum computing. This visualization allows you to apply single-qubit logic gates.
+      </p>
+    </center>
+
+    <center>
+      <br>
+      <canvas id="quantum-canvas"></canvas>
+      <p id="display-input"></p>
+      <p id="display-output"></p>
+      <!--<p id="display-measure"></p>-->
+      <div class="container">
+        <div class="row">
+          <div class="col s12 l6">
+            <span>Add logic gates:</span> <br>
+            <button onclick="addGate('H')" class="btn purple darken-4">+H</button>
+            <button onclick="addGate('X')" class="btn purple darken-4">+X</button>
+            <button onclick="addGate('Z')" class="btn purple darken-4">+Z</button>
+            <br>
+            <br>
+            <span>Remove logic gates:</span> <br>
+            <button onclick="remove('first')" class="btn purple darken-4">Remove first</button>
+            <button onclick="remove('last')" class="btn purple darken-4">Remove last</button>
+            <button onclick="remove('all')" class="btn purple darken-4">Clear</button>
+            <br>
+            <br>
+            <span>Some Standard inputs:</span> <br>
+            <button onclick="setInput('0')" class="btn purple darken-4">0</button>
+            <button onclick="setInput('1')" class="btn purple darken-4">1</button>
+            <button onclick="setInput('+')" class="btn purple darken-4">+</button>
+            <button onclick="setInput('-')" class="btn purple darken-4">-</button>
+          </div>
+          <div class="col s12 l6">
+            <span>Amplitudes input:</span>
+            <div class="row">
+              <div class="col s6">
+                <p id="display-top"></p>
+                <input id="input-top" type="range" class="slider" min="0" max="100" oninput="updateParams('top-slider')"
+                  onchange="updateParams('top-slider')">
+              </div>
+              <div class="col s6">
+                <p id="display-bottom"></p>
+                <input id="input-bottom" type="range" class="slider" min="0" max="100"
+                  oninput="updateParams('bottom-slider')" onchange="updateParams('bottom-slider')">
+              </div>
+            </div>
+            <span>Or type the amplitudes here:</span>
+            <input placeholder="a, b" id="input" style="width: 35%" type="text" onchange="updateParams('text')"
+              oninput="updateParams('text')">
+            <p>Both amplitudes should be between -1 and 1</p>
+          </div>
+        </div>
+      </div>
+    </center>
+
+    <br>
+    <hr>
+
+    <h3>Description</h3>
+
+    <p>
+      Every qubit \( | \psi \gt \) resides on a point on a Block sphere. It can be represented by two
+      numbers \( (a, b)\) such that:
+      \[ | \psi \gt = a | 0 \gt + b | 1 \gt \]
+      Here, \( | 0 \gt \) and \( b | 1 \gt \) are known as the basis states. The probability that a qubit is measured in
+      the \( | 0 \gt \) state is given by \( a^2 \). The probability that a qubit is measured in the \( | 1 \gt \) state
+      is given by \( b^2 \). Following the postulates of probability, we require that:
+      \[ a^2 + b^2 = 1 \]
+      Logic gates essentially manipulate these amplitudes whilst preserving the normalisation. Every logic gate's action
+      can be represented by a matrix. A logic gate with matrix representation \( M \), acts on a qubit \( | \psi \gt \)
+      to produce \( M | \psi \gt \) via matrix multiplication. The single-qubit logic gates are:
+    </p>
+
+    <ol>
+      <li>
+        <b>Hadamard gate:</b> <br>
+        This gate is mainly used for spreading and recombination of quantum states. It operates as follows:
+        \[ (a, b) \rightarrow \left( \frac{a + b}{\sqrt{2}}, \frac{a - b}{\sqrt{2}} \right) \]
+        Its matrix representation is:
+        \[ H = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix} \]
+      </li>
+      <li>
+        <b>Pauli-X or NOT gate:</b>
+        This gate interchanges the amplitudes of the qubit's state:
+        \[ (a, b) \rightarrow (b, a) \]
+        Its matrix representation is:
+        \[ X = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \]
+      </li>
+      <li>
+        <b>Pauli-Z or phase-flip gate:</b>
+        This gate flips the sign of the 2<sup>nd</sup> amplitude
+        \[ (a, b) \rightarrow (a, -b) \]
+        Its matrix representation is:
+        \[ Z = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} \]
+      </li>
+    </ol>
+
+    <p>
+      All the above logic gates function as their own inverse. You can verify that \( HH = XX = ZZ = I \)
+    </p>
+
+    <br>
+    <hr>
+    <br>
+
+    <b>Note:</b>
+
+    <ol>
+      <li>Besides H, X and Z, there are other single qubit gates like Pauli-Y (Y), Phase (P), \( \frac{\pi}{8} \) (T),
+        etc</li>
+      <li>Multi qubit gates also exist: Controlled NOT (CNOT), Controlled Z (CZ), Toffoli (TOFF), SWAP, etc</li>
+      <li>In order to preserve normalization, the matrix associated with every logic gate must be unitary \( M
+        M^{\dagger} = M^{\dagger} M = I \).
+      </li>
+      <li>The program does not consider your text-input until it is defined and proper</li>
+    </ol>
+
+    <br>
+    <hr>
+
+    <p class="center-align">Developed by ChanRT | Fork me at <a href="https://www.github.com/chanrt">GitHub</a></p>
+  </div>
+</body>
+
+
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>Trigonometric Functions | Visualize It</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keyword" content="trigonometric, trigonometry, trigonometric functions, interactive, visualization">
+  <meta name="og:image" content="https://github.com/visualize-it/visualize-it.github.io/raw/main/images_webp/trig_functions.webp">
+
+  <!-- Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- JS -->
+  <script src="multithread.js" defer></script>
+  <script src="sin_cos.js" defer></script>
+  <script src="tan_cot.js" defer></script>
+  <script src="sec_cosec.js" defer></script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+<link rel="stylesheet" href="../embed.css"><script src="../embed.js"></script>
+</head>
+
+<body>
+  <nav class="nav-extended" style="background:black; margin-top: 0mm">
+    <div class="nav-wrapper">
+      <h1 id="main-heading">Visualize It</h1>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent tabs-fixed-width">
+        <li class="tab"><a href="../index.html" style="font-size: larger;">Home</a></li>
+        <li class="tab"><a href="../about.html" style="font-size: larger;">About</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="text">
+    <h2>Trigonometric Functions</h2>
+    <hr>
+    <p class="center-align">
+        Ever wondered why Trigonometric functions are named the way they
+        are?<br>
+        Why is cosine named as "co"sine, "cosecant" named as "co"secant and
+        "cotangent" named as "co"tangent?<br>
+        Do these functions have any meaning outside of triangles?<br>
+        Aren't terms like "secant" and "tangent" associated with circles?
+    </p>
+    <hr>
+    <!-- <h3>Contents</h3>
+    <ul>
+      <li><a href="#sine-cosine">Visualization of Sine and Cosine</a></li>
+      <li><a href="#tan-cot">Visualization of Tangent and Cotangent</a></li>
+      <li><a href="#sec-cosec">Visualization of Secant and Cosecant</a></li>
+    </ul>
+    <hr> -->
+
+    <h3>The Age-old Brothers:<br>Sine and Cosine</h3>
+
+    <b>Etymology:</b> The word "sine" is derived from the latin word "Sinus"
+    which means a "bay" or a "fold". It's Sanskrit, Arabic and Persian
+    versions are dervided from the Greek word "khorde" which signifies a
+    bow-string. In the below visualization, if we imagine the X-axis to act like a mirror, the image would become
+    symmetrical. The line segments OP and OP' look like the strings of a bow, and the perpendiculars to X axis (whose
+    length is equal to 2sin(&theta;)) looks like a bow
+    <br><br>
+
+    <b>Visualization:</b> Consider a unit circle (a circle of radius 1).
+    Consider a line drawn from the origin O, that makes an angle &theta;
+    with the X-axis in the anti-clockwise direction. This line intersects the
+    circle at a point P. The length of the projection of the line segment OP on the
+    Y-axis is equal to the Sine of &theta;<br><br>
+
+    <br>
+    <center>
+      <div class="container" style="width: 100%">
+        <div class="row">
+          <div class="col s12 l8">
+            <canvas id="sine-cosine"></canvas>
+          </div>
+          <div class="col s12 l4">
+            <p class="jittery" id="angle-1"></p>
+            <p class="jittery" id="sin"></p>
+            <p class="jittery" id="cos"></p>
+
+            <p><b>Adjust angle using the following slider:</b></p>
+            <input type="range" min="0" max="360" value="30" id="slider-1" oninput="update_1('slide')"
+              onchange="update_1('slide')" class="slider" step="1">
+
+            <p><b>Or, type the angle here:</b></p>
+            <div style="width: 50%">
+              <input type="number" max="360" min="0" id="type-1" value="30" oninput="update_1('typed')"
+                onchange="update_1('typed')">
+            </div>
+          </div>
+        </div>
+      </div>
+    </center>
+    <br>
+    <b>Relationship between Sine and Cosine:</b>
+    <p>
+      Cosine has a serendipitous
+      co-existence with Sine. The length of projection of the same line
+      segment OP on the X-axis is equal to the Cosine of &theta;
+    </p><br><br>
+
+    <h4>Deductions</h4>
+    <b>The basic trigonometric identity:</b>
+    \[ \sin^2 \theta + \cos^2 \theta = 1 \]
+    <p>Just using pythagoras theorem, we see that sin(&theta;)^2 + cos(&theta;)^2
+      = 1 for all angles &theta;</p>
+    <b>Value of Sines and Cosines of multiples of 90 degrees:</b>
+    <ol>
+      <li>The Sine of 0 degrees is 0, since a line coinciding with the X-axis has no projection on the Y-axis</li>
+      <li>The Cosine of 0 degrees is 1, since a line drawn within a unit circle and coinciding with the X-axis has a
+        projection of length 1 on the X-axis</li>
+      <li>The Sine of 90 degrees is 1, since a line drawn within a unit circle and coinciding with the Y-axis has a
+        projection of length 1 on the Y-axis</li>
+      <li>The Cosine of 90 degees is 0, since a line coinciding with the Y-axis has no projection on the X-axis</li>
+      <li>The same logic holds good for 180 degrees and 270 degrees</li>
+      <li>This visualization also allows us to extend the definition of trigonometric functions beyond 90 degrees, since
+        we are no longer restricted to a triangle</li>
+    </ol>
+
+    <b>Signs of Sine and Cosine functions:</b>
+    <ol>
+      <li>Any angle from 0 to 180 degrees has a positive Sine, since the length of projection on the Y-axis is measured
+        along the positive Y-direction</li>
+      <li>Sine is negative for rest of the angles because the length of projection on the Y-axis is measured along the
+        negative Y-direction</li>
+      <li>Any angle from 0 to 90 degrees and 270 to 360 degrees has a positive Cosine, since the length of projection on
+        the X-axis is measured along the positive X-direction</li>
+      <li>Cosine is negative for rest of the angles because the length of projection on the X-axis is measured along the
+        negative X-direction</li>
+    </ol>
+
+    <b>Sine is an odd function:</b>
+    \[ \sin (-\theta) = - \sin (\theta) \]
+    <ol>
+      <li>Consider an angle &theta;, having magnitude between 0 and 90 degrees</li>
+      <li>The Sine of +&theta; is always positive since the projection on the Y-axis is always along the positive
+        Y-direction</li>
+      <li>The Sine of -&theta; is always negative since the projection on the Y-axis is always along the negative
+        Y-direction</li>
+      <li>Hence, sin(-&theta;) = -sin(&theta;): Sine is an odd function</li>
+      <li>The same also holds good for an angle &theta; having magnitude between 90 and 180 degrees: Sin(&theta;) is
+        always positive whereas sin(-&theta;) is always negative</li>
+    </ol>
+
+    <b>Cosine is an even function:</b>
+    \[ \cos (-\theta) = \cos (\theta) \]
+    <ol>
+      <li>Consider an angle &theta;, having magnitude between 0 and 90 degrees</li>
+      <li>The Cosine of +&theta; is always positive since the projection on the X-axis is always along the positive
+        X-direction</li>
+      <li>The Cosine of -&theta; is always positive since the projection on the X-axis is always along the positive
+        X-direction</li>
+      <li>Hence, cos(-&theta;) = cos(&theta;): Cosine is even odd function</li>
+      <li>The same also holds good for an angle &theta; having magnitude between 90 and 180 degrees: Cos(&theta;) and
+        cos(-&theta;) are both negative</li>
+    </ol>
+    </p>
+    <hr>
+
+    <h3>The Circle Grazers:<br>Tangent and Cotangent</h3>
+    <b>Etymology:</b> The word "tangent" comes from the Latin verb "tangere" which means "to touch"
+    <br><br>
+    <b>Visualization:</b> Consider the same unit cirle with the same line segment OP. Consider a tangent drawn to the
+    circle at point P. The length between the point P and the point where this tangent intersects the X-axis is equal
+    to the tangent of the angle &theta;
+    <br>
+    <br>
+    <center>
+      <div class="container" style="width: 100%">
+        <div class="row">
+          <div class="col s12 l8">
+            <canvas id="tan-cot"></canvas>
+          </div>
+          <div class="col s12 l4">
+            <p class="jittery" id="angle-2"></p>
+            <p class="jittery" id="tan"></p>
+            <p class="jittery" id="cot"></p>
+            <p><b>Adjust angle using the following slider:</b></p>
+            <input type="range" min="0" max="360" value="30" id="slider-2" oninput="update_2('slide')"
+              onchange="update_2('slide')" class="slider">
+            <p><b>Or, type the angle here:</b></p>
+            <div style="width: 50%">
+              <input type="number" max="360" min="0" id="type-2" value="45" oninput="update_2('typed')"
+                onchange="update_2('typed')">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </center>
+    <br>
+    <b>Relationship between Tangent and Cotangentt:</b>
+    <p>
+      The length of the same tangent, but from the point P to its
+      point of intersection with the Y-axis is equal to the Cotangent of &theta;
+    </p>
+    <h4>Deductions</h4>
+
+    <b>Values of Tangents and Cotangents of multiples of 90 degrees</b>
+    <ol>
+      <li>The Tangent of 0 degrees is 0, since the point P is already intersecting with the X-axis</li>
+      <li>The Cotangent of 0 degrees is infinite, since the tangent never meets the Y-axis </li>
+      <li>The Tangent of 90 degrees is infinite, since the tangent never meets the X-axis</li>
+      <li>The Cotangent of 90 degrees is 0, since the point P is already intersecting with the Y-axis</li>
+      <li>The same logic holds good for 180 degrees and 270 degrees</li>
+    </ol>
+    </p>
+    <hr>
+
+    <h3>The Inner Perpetrators:<br>Secant and Cosecant</h3>
+    <p>
+      <b>Etymology:</b> The word "secant" is derived from the French verb "secanter" which means "to cut"
+      <br><br>
+      <b>Visualization:</b> Consider the same unit cirle with the same line segment OP and the tangent drawn to the
+      circle at point P. The length between the Origin and the point where the tangent intersects the X-axis is equal to
+      the Secant of &theta;
+      <br>
+      <br>
+      <center>
+        <div class="container" style="width: 100%">
+          <div class="row">
+            <div class="col s12 l8">
+              <canvas id="sec-cosec"></canvas>
+            </div>
+            <div class="col s12 l4">
+              <p class="jittery" id="angle-3"></p>
+              <p class="jittery" id="sec"></p>
+              <p class="jittery" id="cosec"></p>
+              <p><b>Adjust angle using the following slider:</b></p>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="360" value="30" id="slider-3" oninput="update_3('slide')"
+                  onchange="update_3('slide')" class="slider">
+              </div>
+              <p><b>Or, type the angle here:</b></p>
+              <div style="width: 50%">
+                <input type="number" max="360" min="0" id="type-3" value="60" oninput="update_3('typed')"
+                  onchange="update_3('typed')">
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </center>
+      <br>
+      <b>Relationship between Secant and Cosecant:</b>
+    <p>
+      The distance between the Origin and the point where the same tangent intersects the Y-axis is equal to the
+      Cosecant of &theta;
+    </p>
+    <h4>Deductions</h4>
+    <b>Trigonometric identities:</b>
+    <p>On applying Pythagoras theorem to the two traingles, we obtain:</p>
+    \[ 1 + \tan^2 \theta = \sec^2 \theta \]
+    \[ 1 + \cot^2 \theta = \csc^2 \theta \]
+    <b>Values of Secant and Cosecant of multiples of 90 degrees</b>
+    <ol>
+      <li>The Secant of 0 degrees is 1, since the point P coincides with the X-axis</li>
+      <li>The Cosecant of 0 degrees is infinite, since the tangent never meets the Y-axis</li>
+      <li>The Secant of 90 degrees is infinite, since the tangent never meets the X-axis</li>
+      <li>The Cosecant of 0 degrees is 1, since the point P coincides with the Y-axis</li>
+      <li>The same logic holds good for 180 degrees and 270 degrees</li>
+    </ol>
+    </p>
+    <br>
+    <hr>
+    <p class="center-align">Developed by ChanRT | Fork me at <a href="https://www.github.com/chanrt">Github</a></p>
+  </div>
+
+</body>
+
+</html>

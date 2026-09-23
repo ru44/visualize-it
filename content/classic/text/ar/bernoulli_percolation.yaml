@@ -1,0 +1,18 @@
+# Arabic for the words on the bernoulli_percolation simulation page. Keys are the English exactly as the page shows it;
+# values are the Arabic. Keep HTML tags, numbers and {0}-style placeholders as they are.
+"Bernoulli Percolation | Visualize It": "التسرب البرنولي | Visualize It"
+"Visualize It": "Visualize It"
+"<a href=\"../index.html\" style=\"font-size: larger;\">Home</a>": "<a href=\"../index.html\" style=\"font-size: larger;\">الرئيسية</a>"
+"<a href=\"../about.html\" style=\"font-size: larger;\">About</a>": "<a href=\"../about.html\" style=\"font-size: larger;\">حول</a>"
+"Bernoulli Percolation": "التسرب البرنولي"
+"Percolation is the study of flow of fluid through porous media. Bernoulli percolation is a very simple model that features a widely-studied phase transition. The model comprises of a two dimensional grid of cell. The probability that the 'gate' between two cells is open, is given by the percolation probability. A connected group of cells will have the same colored fluid.": "التسرب دراسة كيف يتدفق سائل عبر مادة مليئة بالثقوب، مثل الماء في الإسفنج. التسرب البرنولي نموذج بسيط جدًا له انتقال طور مشهور بين الباحثين. يمثَّل بشبكة من الخلايا على مستوى ثنائي الأبعاد، ولكل 'بوابة' بين خليتين احتمال أن تكون مفتوحة هو نسبة التسرب. كل مجموعة خلايا متصلة تأخذ لون السائل نفسه."
+"<b>Warning:</b> This simulation features rapidly strobing lights. It is not recommended for people with photosensitive epilepsy.": "<b>تحذير:</b> تعرض هذه المحاكاة أضواء متقطعة سريعة، ولا يُنصح بها لمن يعانون من الصرع الضوئي."
+"Percolation Probability = 0.40": "نسبة التسرب = 0.40"
+"Reset": "إعادة الضبط"
+"Vary the percolation probability from 0 to 1. Around 0.5, you should notice that a connected system that spans the entire landscape has come into existence. This cluster is called 'percolating cluster' or 'spanning cluster', and this transition is called 'percolation transition'.": "غيّر نسبة التسرب بين 0 و1. عند 0.5 تقريبًا ستلاحظ ظهور مجموعة متصلة تمتد عبر الشبكة كلها. تسمى هذه المجموعة 'العنقود المتسرب' أو 'العنقود الممتد'، ويسمى هذا التحول 'انتقال التسرب'."
+"Note:": "ملاحظة:"
+"From 0.5 onwards, the dominant cluster changes color very often because it merges with many smaller cells with differently colored fluids.": "بعد 0.5 يغيّر العنقود الأكبر لونه كثيرًا لأنه يندمج باستمرار مع خلايا أصغر ألوان سوائلها مختلفة."
+"This simulation is computationally complex and may lag on lower end devices.": "هذه المحاكاة تحتاج حسابًا كثيرًا، فقد تتقطع على الأجهزة الأضعف."
+"Related: <a href=\"../porous_percolation/simulation.html\">Porous Percolation</a>, <a href=\"../tdp/simulation.html\">Directed Percolation</a>, <a href=\"../contact_process/simulation.html\">Contact Process</a>.": "محاكاة قريبة: <a href=\"../porous_percolation/simulation.html\">التسرب المسامي</a>، <a href=\"../tdp/simulation.html\">التسرب الموجّه</a>، <a href=\"../contact_process/simulation.html\">عملية التماس</a>."
+"Developed by ChanRT | Fork me at <a href=\"https://www.github.com/chanrt\">GitHub</a>": "طوّره ChanRT، وشفرته المصدرية على <a href=\"https://www.github.com/chanrt\">GitHub</a>"
+"Percolation Probability = {0}": "نسبة التسرب = {0}"

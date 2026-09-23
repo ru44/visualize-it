@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>Special Relativity | Visualize It</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keyword"
+    content="special relativity, relativity, einstein, time dilation, length contraction, visualization, physics">
+  <meta name="og:image" content="https://github.com/visualize-it/visualize-it.github.io/raw/main/images_webp/special_relativity.webp">
+
+  <!-- Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="basic.js" defer></script>
+  <script src="special_relativity.js" defer></script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="../embed.css"><script src="../embed.js"></script>
+</head>
+
+<body>
+  <nav class="nav-extended" style="background:black; margin-top: 0mm">
+    <div class="nav-wrapper">
+      <h1 id="main-heading">Visualize It</h1>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent tabs-fixed-width">
+        <li class="tab"><a href="../index.html" style="font-size: larger;">Home</a></li>
+        <li class="tab"><a href="../about.html" style="font-size: larger;">About</a></li>
+      </ul>
+    </div>
+  </nav>
+</body>
+
+<div class="text">
+  <h2>Special Relativity</h2>
+
+  <p>Special relativity explains the relationship between space and time. It's based on two postulates: 1) The laws of
+    physics are same in all inertial frames of reference and 2) The speed of light in vacuum is same for all observers.
+    On applying these postulates, one realizes that certain physical quantities when measured from different inertial
+    frames of reference do not tally with each other. We explore three such quantities.</p>
+  <p>Consider a Geosynchronous satellite orbiting the Earth. It's near-circular orbital path has a radius of 42300 km.
+    We measure the passage of time, length of the same object and frequency of waves tranmitted by the satellite and
+    received by the Earth. Use the slider to vary the orbital speed of the satellite as a % of speed of light.</p>
+  <br>
+  <center>
+    <canvas id="sr-canvas"></canvas>
+  </center>
+  <br>
+
+  <center>
+    <div class="container" style="width: 100%">
+      <div class="row">
+        <div class="col s12 l6">
+          <p id="speed-display"></p>
+        </div>
+        <div class="col s12 l6">
+          <input type="range" min="0" max="1000" value="700" id="speed-slider" oninput="updateParams('speed-slide')"
+            onchange="updateParams('speed-slide')" class="slider" style="width: 100%">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 l6">
+          <p class="text-white">Or type the % of speed of light here:</p>
+        </div>
+        <div class="col s12 l6">
+          <input max="100" min="0" id="speed-input" value="70.0" oninput="updateParams('speed-typed')"
+            onchange="updateParams('speed-typed')">
+        </div>
+      </div>
+    </div>
+  </center>
+
+  <br>
+  <hr>
+
+  <h3>Description</h3>
+  <b>Time Dilation</b>
+  \[ t = \frac{t_0}{\sqrt{1 - \frac{v^2}{c^2}}} \]
+  <p>According to a stationary observer on Earth, time appears to pass slower aboard the satellite. If the time period
+    between two events on the satellite is 't<sub>0</sub>'' aboard the satellite, then it is 't' (as calculated above)
+    for the observer on Earth. Observe that t<sub>0</sub> &lt; t. This phenomenon is known as time dilation.</p>
+  <b>Length contraction</b>
+  \[ l = l_0 \sqrt{1 - \frac{v^2}{c^2}} \]
+  <p>If the length of an object on Earth is measured to be 'l<sub>0</sub>'' by a stationary observer on Earth, then an
+    observer aboard the satellite measured the same object's length to be 'l' as calculated above. Observe that
+    l<sub>0</sub> &gt; l. This phenomenon is known as length contraction.</p>
+  <b>Relativistic Doppler Effect</b>
+  \[ f = f_0 \left( \frac{c-v}{c+v} \right) \]
+  <p>If the satellite transmits waves of frequency 'f<sub>0</sub>'', then a stationary receiver on the Earth will
+    measure the same waves to have a frequency of 'f' as calculated above. This phenomenon is known as relativistic
+    doppler effect.</p>
+
+  <br>
+  <hr>
+  <br>
+
+  <b>Note:</b>
+  <ol>
+    <li>Speaking in a strict sense, a satellit orbiting the Earth won't exactly show these effects in the same manner.
+      The orbiting satellite analogy has been provided to get a brief idea of speed. Instead, consider a spaceship going
+      away from Earth at the same speed.</li>
+    <li>This simulation is compatible with SI units</li>
+    <li><b>Gamma (&gamma;)</b> is defined as:
+      \[ \gamma = \frac{1}{1 - \frac{v^2}{c^2}} \]
+      Hence, \( t = \gamma t_0 \) and \( l = l_0 / \gamma \)</li>
+    <li>Gravitational effects on physical quantities have been ignored. They come under the purview of General
+      Relativity.</li>
+  </ol>
+
+  <br>
+  <hr>
+
+  <p class="center-align">Developed by ChanRT | Fork me at <a href="https://www.github.com/chanrt">GitHub</a></p>
+</div>
+
+</html>

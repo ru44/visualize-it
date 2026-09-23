@@ -1,0 +1,45 @@
+/* Restyles the classic simulations to match the new site. Loaded by every legacy page;
+   colours arrive from the parent page as CSS variables (see embed.js), with light defaults. */
+:root {
+  --bg: #fbfbfa; --panel: #ffffff; --sunken: #f4f4f3; --fg: #16161a; --muted: #6b6b76;
+  --line: #e6e6e9; --accent: #2f5bea; --accent-2: #d9730d;
+}
+html, body { background: var(--bg) !important; color: var(--fg) !important; }
+body, .text, p, li, span, label, td, th, b {
+  font-family: Inter, 'IBM Plex Sans Arabic', ui-sans-serif, system-ui, sans-serif !important;
+  color: var(--fg);
+}
+html.embedded nav, html.embedded #main-heading, html.embedded .page-footer { display: none !important; }
+html.embedded body { margin: 0; padding: 0 4px 8px; overflow-x: hidden; }
+html.embedded .text > h2:first-child, html.embedded .text > h1:first-child { display: none; }
+.text { max-width: 980px; margin: 0 auto; font-size: 16px; line-height: 1.7; }
+h1, h2, h3, h4, h5 { color: var(--fg) !important; font-weight: 600 !important; letter-spacing: -0.01em; }
+h2 { font-size: 1.7rem !important; } h3 { font-size: 1.35rem !important; } h4 { font-size: 1.15rem !important; } h5 { font-size: 1.05rem !important; }
+a { color: var(--accent) !important; }
+hr { border: 0; border-top: 1px solid var(--line); }
+canvas { border-radius: 12px; border: 1px solid var(--line); max-width: 100%; touch-action: none; }
+html .btn, html .btn-large, html .btn-small, html button.btn, html .btn.purple, html .btn.purple.darken-4, html .btn[class*='darken'], html .btn[class*='lighten'] {
+  background-color: var(--fg) !important;
+  background: var(--fg) !important; color: var(--bg) !important; box-shadow: none !important;
+  border-radius: 10px !important; text-transform: none !important; font-weight: 500; letter-spacing: 0;
+  height: auto !important; line-height: 1.2 !important; padding: 10px 16px !important; margin: 3px 2px;
+}
+.btn:hover { opacity: 0.85; }
+.btn.disabled, .btn:disabled { background: var(--sunken) !important; color: var(--muted) !important; }
+input[type='range'] { accent-color: var(--accent); border: 0 !important; }
+input[type='range']::-webkit-slider-thumb { background: var(--accent) !important; }
+input[type='range']::-moz-range-thumb { background: var(--accent) !important; }
+input[type='range'] + .thumb { background: var(--accent) !important; }
+input[type='text'], input[type='number'], select, textarea {
+  color: var(--fg) !important; background: var(--panel) !important; border: 1px solid var(--line) !important;
+  border-radius: 8px !important; padding: 0 10px !important; box-sizing: border-box !important; box-shadow: none !important;
+}
+select { display: inline-block !important; height: 2.6rem; width: auto; }
+[type='checkbox'].filled-in:checked + span:not(.lever):after, [type='radio']:checked + span:after { background-color: var(--accent) !important; border-color: var(--accent) !important; }
+.switch label input[type='checkbox']:checked + .lever { background-color: color-mix(in srgb, var(--accent) 45%, transparent) !important; }
+.switch label input[type='checkbox']:checked + .lever:after { background-color: var(--accent) !important; }
+table, .card, .card-panel, .collection, .collapsible, .collapsible-header, .collapsible-body { background: var(--panel) !important; border-color: var(--line) !important; box-shadow: none !important; color: var(--fg) !important; }
+.tabs { background: transparent !important; } .tabs .tab a { color: var(--muted) !important; } .tabs .tab a.active { color: var(--fg) !important; } .tabs .indicator { background: var(--accent) !important; }
+code, pre { background: var(--sunken) !important; color: var(--fg) !important; border-radius: 6px; }
+img { max-width: 100%; height: auto; border-radius: 10px; }
+.MathJax, .MathJax_Display, .mjx-chtml { color: var(--fg) !important; }

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>1D Heat Equation | Visualize It</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="basic.js" defer></script>
+  <script src="heat_equation.js" defer></script>
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="../embed.css"><script src="../embed.js"></script>
+</head>
+
+<body>
+  <nav class="nav-extended" style="background:black; margin-top: 0mm">
+    <div class="nav-wrapper">
+      <h1 id="main-heading">Visualize It</h1>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent tabs-fixed-width">
+        <li class="tab"><a href="../index.html" style="font-size: larger;">Home</a></li>
+        <li class="tab"><a href="../about.html" style="font-size: larger;">About</a></li>
+      </ul>
+    </div>
+  </nav>
+</body>
+
+<div class="text">
+  <h4>Operation of Heat Equation in One Dimension</h4>
+  <p>The heat equation is a partial differential equation that models the temperature changes across the dimensions of a body, with respect to time. It basically conveys that the temperature change at a particular point is directly proportional to the difference between the average neighbourhood temperature and it's own temperature. The proportionality constant being \( \alpha \):</p>
+  \[ \frac{dT}{dt} = \alpha \left( \frac{\partial^2 T}{\partial x^2} + \frac{\partial^2 T}{\partial y^2} + \frac{\partial^2 T}{\partial z^2} \right) \]
+  <p>In this simulation, we look at the operation of this equation along a single dimension</p>
+  <center>
+    <br>
+    <canvas id="canvas"></canvas>
+    <br>
+    <p id="upper-line"></p>
+    <p id="lower-line"></p>
+    <br>
+    <button class="btn purple darken-4" onclick="generate()">Generate</button>
+    <button class="btn purple darken-4" onclick="simulate()">Simulate</button>
+    <br>
+    <p id="cond-display"></p>
+    <input type="range" onchange="updateParams('cond')" oninput="updateParams('cond')" id="cond-slider" min="0" max="1" step="0.01">
+    <input id="num-input" placeholder="Number of sampling points" type="number">
+  </center>
+
+  <br>
+  <hr>
+  <br>
+
+  <h5>Presets</h5>
+
+  <ol>
+    <li><b>Two rods at different temperatures:</b>
+      <center>
+        <button class="btn purple darken-4" onclick="preset_rods()">Generate</button>
+      </center>
+      <br><br>
+    </li>
+    <li><b>Linear gradient in temperature:</b>
+      <center>
+        <button class="btn purple darken-4" onclick="preset_linear()">Generate</button>
+      </center>
+    </li>
+  </ol>
+
+  <br>
+  <hr>
+  <br>
+
+  <b>Note:</b>
+  <ol>
+    <li>The temperature changes in the beginning are extremely rapid, after which the pace reduces</li>
+    <li>In certain cases, when the conductivity is high (> 0.9), temperatures briefly oscillate at several positions</li>
+  </ol>
+
+  <br>
+  <hr>
+  <br>
+
+  <p class="center-align">Developed by ChanRT | Fork me at <a href="https://www.github.com/chanrt">GitHub</a></p>
+</div>
+
+</html>

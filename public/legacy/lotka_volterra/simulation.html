@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>Lotka Volterra Model | Visualize It</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keyword" content="lotka, volterra, lotka volterra, interactive, predator, prey, population, simulation">
+  <meta name="og:image" content="https://github.com/visualize-it/visualize-it.github.io/raw/main/images_webp/lotka_volterra.webp">
+
+  <!-- Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script src="../helper.js" defer></script>
+  <script src="basic.js" defer></script>
+  <script src="user_input.js" defer></script>
+  <script src="simulation.js" defer></script>
+
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="../embed.css"><script src="../embed.js"></script>
+</head>
+
+<body>
+  <nav class="nav-extended" style="background:black; margin-top: 0mm">
+    <div class="nav-wrapper">
+      <h1 id="main-heading">Visualize It</h1>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent tabs-fixed-width">
+        <li class="tab"><a href="../index.html" style="font-size: larger;">Home</a></li>
+        <li class="tab"><a href="../about.html" style="font-size: larger;">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="text">
+    <h2>Lotka Volterra Model</h2>
+    <center>
+      <p>
+        The Lotka-Volterra Model is a set of two non-linear differential equations that describe the population dynamics
+        of a predator and prey. It can be extended to include more interacting species. This simulation replicates the
+        Lotka-Volterra Model in the spatial domain, using a method called Gillespie algorithm. Blue squares represent
+        the prey whereas red squares represent the predator.
+      </p>
+      <br>
+    </center>
+
+    <div class="container" style="width:90%">
+      <div class="row">
+        <div class="col s12 l8">
+          <canvas id="canvas"></canvas>
+        </div>
+        <div class="col s12 l4">
+          <center>
+            <button id="pause-button" class="btn purple darken-4" onclick="pauseToggle()">Pause</button>
+            <button class="btn purple darken-4" onclick="initParams()">Restart</button>
+            <br> <br>
+            <span class="jittery" id="prey-num"></span>
+            <br>
+            <span class="jittery" id="pred-num"></span>
+            <br> <br>
+            <b>Restart the simulation if either predator or prey go extinct</b>
+          </center>
+          <hr>
+          <br>
+
+          <span id="prey-rep-display"></span>
+          <input id="prey-rep-input" type="range" min="0" max="1" step="0.1" oninput="updateParams('prey-rep')"
+            onchange="updateParams('prey-rep')" />
+
+          <span id="prey-ded-display"></span>
+          <input id="prey-ded-input" type="range" min="0" max="1" step="0.1" oninput="updateParams('prey-ded')"
+            onchange="updateParams('prey-ded')" />
+
+          <span id="pred-rep-display"></span>
+          <input id="pred-rep-input" type="range" min="0" max="1" step="0.1" oninput="updateParams('pred-rep')"
+            onchange="updateParams('pred-rep')" />
+
+          <span id="pred-ded-display"></span>
+          <input id="pred-ded-input" type="range" min="0" max="1" step="0.1" oninput="updateParams('pred-ded')"
+            onchange="updateParams('pred-ded')" />
+
+          <span id="pred-req-display"></span>
+          <input id="pred-req-input" type="range" min="1" max="4" step="1" oninput="updateParams('pred-req')"
+            onchange="updateParams('pred-req')" />
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <hr>
+
+    <h3>Model Description</h3>
+
+    <p>
+      Let \(x\) denote population of the prey and \(y\) denote population of the predator. Then, according to Lotka
+      Volterra Model:
+    </p>
+    \[ \frac{dx}{dt} = \alpha x - \beta x y \]
+    \[ \frac{dy}{dt} = \delta x y - \gamma y \]
+    <p>
+      \(\alpha, \beta, \gamma, \delta\) are real, positive numbers that descibe the growth, mortality and interaction
+      between the two species. Numerical simulations of this model (with certain values of model parameters) showcase
+      oscillatory behaviour in the populations of prey and predator. This sort of behaviour is actually observed in
+      real-world populations, for example - snowshow hare (prey) and canada lynx (predator).
+    </p>
+
+    <br>
+    <hr>
+
+    <h3>Spatial Simulation</h3>
+
+    <p>
+      The above model is a mean-field model. We attempt to replicate the results of this model using a bare-bones
+      probabilistic automaton with basic interactions. Each prey reproduces at some rate, in which case it
+      populates an empty cell next to it. Prey die with some mortality rate. Predators also die with some mortality
+      rate. However, predators require prey in order to reproduce. If a prey is surrounded by atleast \(n\) predators,
+      then the prey is killed and a predator is born in the same cell. Using Gillespie algorithm, these rates are
+      converted into probabilities. The entire grid is synchronously updates in every time step.
+      <br>
+      All the probabilites, as well as the number of predators required to kill a prey, can be adjusted in the above
+      simulation.
+    </p>
+
+    <br>
+    <hr>
+
+    <b>Note:</b>
+
+    <ol>
+      <li>This simulation is computationally complex and may lag on lower-end devices</li>
+      <li>For the default values of probabilites, we indeed see some sort of oscillatory behaviour. However, there is a
+        small chance that this is not the case.</li>
+      <li>Prey search through Von-Neumann neighbours, whereas Predators consider all 8 neighbourhood cells</li>
+    </ol>
+
+    <br>
+    <hr>
+
+    <p class="center-align">Developed by ChanRT | Fork me at <a href="https://www.github.com/chanrt">GitHub</a></p>
+  </div>
+</body>
+
+</html>

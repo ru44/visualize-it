@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Predators and Flocking Behaviour</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Scripts -->
+    <script src="linker.js" defer></script>
+    <script src="math.js" defer></script>
+    <script src="boid.js" defer></script>
+    <script src="simulator.js" defer></script>
+    <script src="histograms.js" defer></script>
+    <script src="frequency.js" defer></script>
+
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../embed.css"><script src="../embed.js"></script>
+</head>
+
+<body>
+    <h4>Predators and Flocking Behaviour</h4>
+
+    <p>Work in progress</p>
+    <br>
+    <center>
+        <canvas id="canvas"></canvas>
+    </center>
+    <br>
+    <center>
+        <p id="number-display"></p>
+        <button class="btn purple darken-4" onclick="addBoids(1)">Add Boid</button>
+        <button class="btn purple darken-4" onclick="clearBoids()">Clear</button>
+        <button class="btn purple darken-4" onclick="restartSimulation()">Restart</button>
+    </center>
+    <br>
+    <br>
+    <center>
+        <p>Density slider: Press 'restart' for changes to reflect</p>
+        <input oninput="updateParams('density')" onchange="updateParams('density')" id="density-slider" type="range" min="0" max="5" step="0.01" value="0.5">
+        <p id="density-display"></p>
+    </center>
+    <br>
+    <br>
+    <center>
+        <canvas id="tortuosity-canvas"></canvas>
+    </center>
+    <center>
+        <p>Tortuosity histogram - updated every 180 time steps</p>
+    </center>
+    <br>
+    <br>
+    <center>
+        <canvas id="histogram-canvas"></canvas>
+    </center>
+    <center>
+        <p>Red histogram - Attraction; Blue histogram - Orientation; Green histogram - Persistence</p>
+    </center>
+    <br>
+    <br>
+    <center>
+        <canvas id="frequency-canvas"></canvas>
+    </center>
+    <center>
+        <p>X-axis: Attraction, Y-axis: Orientation. Parameter: Number of deaths (lighter color implies more relative deaths)</p>
+    </center>
+</body>
+
+</html>

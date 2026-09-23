@@ -49,4 +49,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for how to improve a lesson's text, add a
 
 ## Simulation gallery
 
-The 62 simulations of the original [visualize-it](https://github.com/visualize-it/visualize-it.github.io) project (by ChanRT and contributors) have been rebuilt as native lessons: Game of Life, flocking, the Ising and XY models, Lorenz, Mandelbrot, sandpiles, Schelling segregation, percolation, reaction-diffusion, mazes, ant colonies, k-means, Hopfield networks and the rest. They now have Arabic, sliders, real-life presets, challenges and progress like every other lesson, so the old `public/legacy/` folder and its gallery were removed.
+The 62 simulations of the original [visualize-it](https://github.com/visualize-it/visualize-it.github.io) project (by ChanRT and contributors) live under `public/legacy/` and run exactly as their authors built them, at `/classic`. `public/legacy/embed.js` fits them into the site: it follows the light/dark theme, sizes the frame, and swaps their words for the reader's language from `content/classic/text/<lang>/<id>.yaml`. Only the text changes; each simulation's code, canvas, controls and layout stay as they were.
