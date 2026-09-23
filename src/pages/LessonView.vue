@@ -21,16 +21,6 @@ import { storeToRefs } from 'pinia'
 
 const settings = useSettings()
 const { level, view3d, guided } = storeToRefs(settings)
-// Guided view: the picture, one slider, concrete steps, then explanations revealed one at a time.
-const primaryParam = computed(() => lesson.value?.primary ?? Object.keys(lesson.value?.parameters ?? {})[0])
-const revealed = ref(0)
-const showMaths = ref(false)
-watch(() => [props.id, query.value], () => ((revealed.value = 0), (showMaths.value = false)))
-const tryIt = computed(() => lesson.value?.tryIt ?? [])
-const doneSteps = reactive(new Set<number>())
-watch(() => props.id, () => doneSteps.clear())
-const has3d = computed(() => !!lesson.value?.visualization3d)
-const show3d = computed(() => has3d.value && view3d.value)
 const progress = useProgress()
 
 const ParamChart = defineAsyncComponent(() => import('../components/ParamChart.vue'))
@@ -41,6 +31,17 @@ const query = computed(() => String(route.query.q ?? ''))
 const base = computed(() => (props.id ? getLesson(props.id) : buildAdhoc(query.value)))
 const lesson = computed(() => base.value && localize(base.value))
 const viz = computed(() => lesson.value && vizRegistry[lesson.value.visualization.type])
+
+// Guided view: the picture, one slider, concrete steps, then explanations revealed one at a time.
+const primaryParam = computed(() => lesson.value?.primary ?? Object.keys(lesson.value?.parameters ?? {})[0])
+const revealed = ref(0)
+const showMaths = ref(false)
+watch(() => [props.id, query.value], () => ((revealed.value = 0), (showMaths.value = false)))
+const tryIt = computed(() => lesson.value?.tryIt ?? [])
+const doneSteps = reactive(new Set<number>())
+watch(() => props.id, () => doneSteps.clear())
+const has3d = computed(() => !!lesson.value?.visualization3d)
+const show3d = computed(() => has3d.value && view3d.value)
 
 const params = reactive<Record<string, number>>({})
 // Each level shows a different mix:  beginner → simple text only · high school → simple + formal ·

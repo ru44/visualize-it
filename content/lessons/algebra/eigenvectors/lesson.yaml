@@ -14,6 +14,9 @@ related:
 visualization:
   type: matrix-transform
   options: {}
+visualization3d:
+  type: matrix
+  options: { eigen: true }
 parameters:
   a:
     min: -3

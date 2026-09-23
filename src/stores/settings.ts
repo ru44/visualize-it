@@ -31,7 +31,9 @@ export const useSettings = defineStore('settings', () => {
 
   // 3D scenes are opt-in: off by default on small screens and coarse pointers (phones), remembered per device.
   const phone = typeof matchMedia !== 'undefined' && matchMedia('(max-width: 640px), (pointer: coarse)').matches
-  const view3d = ref<boolean>(read('view3d') === null ? !phone : read('view3d') === '1')
+  // ?3d=1 or ?3d=0 in the URL forces the view, which makes a 3D scene easy to check and to share.
+  const forced3d = /[?&]3d=([01])/.exec(typeof location !== 'undefined' ? location.href : '')?.[1]
+  const view3d = ref<boolean>(forced3d ? forced3d === '1' : read('view3d') === null ? !phone : read('view3d') === '1')
   watch(view3d, (v) => write('view3d', v ? '1' : '0'))
   const isPhone = phone
 

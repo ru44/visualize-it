@@ -18,6 +18,9 @@ related:
 visualization:
   type: atom-shells
   options: {}
+visualization3d:
+  type: atom
+  options: {}
 parameters:
   Z:
     min: 1

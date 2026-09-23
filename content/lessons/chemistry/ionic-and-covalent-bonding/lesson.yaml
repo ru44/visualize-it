@@ -17,6 +17,9 @@ related:
 visualization:
   type: periodic-table
   options: {}
+visualization3d:
+  type: molecule
+  options: {}
 parameters:
   Z:
     min: 1

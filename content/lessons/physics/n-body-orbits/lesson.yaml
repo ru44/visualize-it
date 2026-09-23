@@ -16,6 +16,9 @@ related:
 visualization:
   type: n-body
   options: {}
+visualization3d:
+  type: nbody
+  options: {}
 parameters:
   n:
     min: 2

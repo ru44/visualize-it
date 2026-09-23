@@ -25,6 +25,14 @@ visualization:
     - 20
     mode: riemann
     rule: left
+visualization3d:
+  type: revolution
+  options:
+    expr: x^2
+    domain:
+    - -1
+    - 5
+    rule: left
 parameters:
   n:
     min: 1

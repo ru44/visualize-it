@@ -17,6 +17,9 @@ related:
 visualization:
   type: unit-circle
   options: {}
+visualization3d:
+  type: vector
+  options: { mode: split }
 parameters:
   theta:
     min: 0

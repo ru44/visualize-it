@@ -22,6 +22,9 @@ visualization:
       - 0
       - 190
     mode: plain
+visualization3d:
+  type: gauss-surface
+  options: {}
 parameters:
   Q:
     min: 1

@@ -30,6 +30,9 @@ visualization:
       loop:
         - 0
         - 10
+visualization3d:
+  type: membrane
+  options: {}
 parameters:
   A:
     min: 0.2
