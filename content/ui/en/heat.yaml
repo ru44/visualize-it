@@ -1,0 +1,6 @@
+heat.alpha: diffusivity α
+heat.step: time
+heat.center: centre temperature
+heat.max: peak temperature
+heat.restart: ↻ restart
+heat.hint: ▶ runs the heat equation · drag "time" to step through

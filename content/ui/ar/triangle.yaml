@@ -1,0 +1,5 @@
+triangle.ratioA: a / sin A
+triangle.ratioB: b / sin B
+triangle.ratioC: c / sin C
+triangle.inequality: أقصر ضلعين مقابل أطولهما
+triangle.invalid: لا مثلث بهذه الأضلاع الثلاثة، فالضلعان الأقصران لا يصلان أحدهما إلى الآخر

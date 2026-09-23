@@ -1,0 +1,54 @@
+id: game-of-life
+subject: complexity
+difficulty: beginner
+equation: \text{alive} \Rightarrow 2 \text{ or } 3 \text{ neighbours}
+concepts:
+  - cellular-automaton
+  - emergence
+  - simple-rules
+prerequisites: []
+related:
+  - exponential-growth
+visualization:
+  type: game-of-life
+  options: {}
+parameters:
+  start:
+    min: 0
+    max: 2
+    step: 1
+    value: 0
+  density:
+    min: 2
+    max: 60
+    step: 1
+    value: 25
+  gen:
+    min: 0
+    max: 120
+    step: 1
+    value: 0
+variables:
+  - the pattern you start from
+  - how full the first generation is
+  - which generation you are looking at
+derivation:
+  - \text{count the 8 neighbours of every cell}
+  - \text{alive stays alive with 2 or 3 neighbours}
+  - \text{empty becomes alive with exactly 3}
+charts: []
+primary: gen
+presets:
+  - start: 1
+    density: 25
+    gen: 0
+  - start: 2
+    density: 25
+    gen: 0
+  - start: 0
+    density: 45
+    gen: 0
+challenges:
+  - check: abs(start - 1) < 0.5 and gen >= 40
+  - check: abs(start - 2) < 0.5 and gen >= 20
+  - check: abs(density - 5) < 1.5 and gen >= 30

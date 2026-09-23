@@ -1,0 +1,54 @@
+id: predator-escape
+subject: complexity
+difficulty: high-school
+equation: \text{react to where the threat was, then swerve as you flee}
+concepts:
+  - reaction-delay
+  - pursuit-evasion
+  - emergence
+prerequisites: []
+related:
+  - game-of-life
+visualization:
+  type: predator-escape
+  options: {}
+parameters:
+  delay:
+    min: 0
+    max: 20
+    step: 1
+    value: 6
+  zigzag:
+    min: 0
+    max: 60
+    step: 5
+    value: 30
+  step:
+    min: 0
+    max: 200
+    step: 1
+    value: 0
+variables:
+  - how many ticks late the prey reacts to the predator
+  - how sharply the prey zigzags side to side while fleeing
+  - which tick of the chase you are watching
+derivation:
+  - \text{the prey looks up where the predator was several ticks ago, not now}
+  - \text{the prey runs away from that stale position, swerving side to side}
+  - \text{the faster predator can only turn a limited amount each tick, so a sharp swerve buys distance}
+charts: []
+primary: step
+presets:
+  - delay: 2
+    zigzag: 0
+    step: 120
+  - delay: 6
+    zigzag: 30
+    step: 120
+  - delay: 14
+    zigzag: 55
+    step: 160
+challenges:
+  - check: zigzag < 5 and step >= 100
+  - check: zigzag >= 40 and delay >= 10 and step >= 120
+  - check: abs(delay - 14) < 1 and zigzag >= 50

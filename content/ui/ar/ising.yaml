@@ -1,0 +1,6 @@
+ising.temperature: الحرارة
+ising.step: خطوة مونت كارلو
+ising.magnetization: "|المغنطة|"
+ising.energy: الطاقة لكل سبين
+ising.restart: ↻ من البداية
+ising.hint: ▶ يطبّق قاعدة ميتروبوليس · حرّك منزلق «خطوة مونت كارلو» لتتقدّم خطوة خطوة

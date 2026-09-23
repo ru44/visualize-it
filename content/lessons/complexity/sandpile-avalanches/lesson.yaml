@@ -1,0 +1,45 @@
+id: sandpile-avalanches
+subject: complexity
+difficulty: beginner
+equation: z_i \ge 4 \Rightarrow \text{topple}
+concepts:
+  - self-organized-criticality
+  - cellular-automaton
+  - power-law
+  - avalanche
+prerequisites: []
+related:
+  - game-of-life
+visualization:
+  type: sandpile
+  options: {}
+parameters:
+  site:
+    min: 0
+    max: 1
+    step: 1
+    value: 0
+  drops:
+    min: 0
+    max: 200
+    step: 1
+    value: 0
+variables:
+  - z
+derivation:
+  - \text{drop one grain on the chosen cell, so its height } z \text{ grows by one}
+  - z_i \ge 4 \Rightarrow \text{the cell gives one grain to each of its four neighbours}
+  - '\text{a neighbour can now reach 4 itself, so one dropped grain can trigger a whole chain: an avalanche}'
+charts: []
+primary: drops
+presets:
+  - site: 0
+    drops: 40
+  - site: 0
+    drops: 160
+  - site: 1
+    drops: 160
+challenges:
+  - check: site < 0.5 and drops >= 160
+  - check: site >= 0.5 and drops >= 120
+  - check: drops <= 5

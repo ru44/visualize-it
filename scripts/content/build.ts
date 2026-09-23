@@ -1,7 +1,6 @@
 // Compiles content/ into src/generated/*.json and reports every problem with file + field.
 //   content/lessons/<subject>/<id>/lesson.yaml + <lang>.md   →  lessons.json, lessons.<lang>.json
-//   content/ui/<lang>.yaml                                    →  ui.<lang>.json
-//   content/classic/manifest.yaml + <lang>.yaml               →  classic.json, classic.<lang>.json
+//   content/ui/<lang>.yaml (+ content/ui/<lang>/*.yaml)         →  ui.<lang>.json
 import { readdirSync, readFileSync, writeFileSync, existsSync, mkdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 import YAML from 'yaml'
@@ -215,10 +214,23 @@ for (const [k, e] of Object.entries(notation.en ?? {})) if ((e as any).lesson &&
 for (const l of lessons) for (const p of [...l.prerequisites, ...l.related]) if (!ids.has(p)) err(`content/lessons/${l.subject}/${l.id}/lesson.yaml`, `unknown lesson reference "${p}"`)
 
 // ---- ui strings -----------------------------------------------------------------------------------
+// content/ui/<lang>.yaml holds the site's strings. A folder content/ui/<lang>/ may hold extra
+// files whose keys are merged in, so a new visualization can ship its strings without every
+// contributor editing the same file.
 const ui: Record<string, Record<string, string>> = {}
-for (const f of readdirSync(join(CONTENT, 'ui'))) {
-  const lang = f.replace('.yaml', '')
-  ui[lang] = YAML.parse(readFileSync(join(CONTENT, 'ui', f), 'utf8'))
+for (const f of readdirSync(join(CONTENT, 'ui'), { withFileTypes: true })) {
+  if (!f.isFile() || !f.name.endsWith('.yaml')) continue
+  const lang = f.name.replace('.yaml', '')
+  ui[lang] = YAML.parse(readFileSync(join(CONTENT, 'ui', f.name), 'utf8'))
+  const extra = join(CONTENT, 'ui', lang)
+  if (existsSync(extra))
+    for (const g of readdirSync(extra).filter((x) => x.endsWith('.yaml')).sort()) {
+      const part = YAML.parse(readFileSync(join(extra, g), 'utf8')) ?? {}
+      for (const [k, v] of Object.entries(part as Record<string, string>)) {
+        if (k in ui[lang]) err(`content/ui/${lang}/${g}`, `key "${k}" is already defined`)
+        ui[lang][k] = v
+      }
+    }
 }
 for (const [lang, d] of Object.entries(ui)) if (lang !== 'en') for (const k of Object.keys(ui.en)) if (!(k in d)) err(`content/ui/${lang}.yaml`, `missing key "${k}"`)
 
@@ -227,23 +239,16 @@ const videosRaw = YAML.parse(readFileSync(join(CONTENT, 'videos.yaml'), 'utf8'))
 const videos = z.partialRecord(z.enum(SUBJECTS), z.array(Video)).safeParse(videosRaw)
 if (!videos.success) for (const i of videos.error.issues) err('content/videos.yaml', `${i.path.join('.')}: ${i.message}`)
 
-// ---- classic simulations -----------------------------------------------------------------------------
-const classic = YAML.parse(readFileSync(join(CONTENT, 'classic', 'manifest.yaml'), 'utf8'))
-const classicText: Record<string, any> = {}
-for (const f of readdirSync(join(CONTENT, 'classic'))) if (f !== 'manifest.yaml') classicText[f.replace('.yaml', '')] = YAML.parse(readFileSync(join(CONTENT, 'classic', f), 'utf8'))
-
 // ---- write --------------------------------------------------------------------------------------------
 const write = (name: string, data: unknown) => writeFileSync(join(OUT, name), JSON.stringify(data))
 write('lessons.json', lessons)
 for (const [lang, t] of Object.entries(texts)) write(`lessons.${lang}.json`, t)
 for (const [lang, d] of Object.entries(ui)) write(`ui.${lang}.json`, d)
-write('classic.json', classic)
 write('videos.json', videos.success ? videos.data : {})
 const models = collectModels(ROOT)
 for (const [n, m] of Object.entries(models)) if (m.bytes > 6e6) err(`public/models/${n}.glb`, `${(m.bytes / 1e6).toFixed(1)} MB is too heavy for the web (keep models under 6 MB)`)
 write('models.json', models)
 for (const [lang, d] of Object.entries(notation)) write(`notation.${lang}.json`, d)
-for (const [lang, d] of Object.entries(classicText)) write(`classic.${lang}.json`, d)
 writeFileSync(join(OUT, 'languages.json'), JSON.stringify(Object.keys(ui)))
 
 const langs = Object.keys(texts)

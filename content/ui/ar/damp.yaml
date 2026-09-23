@@ -1,0 +1,7 @@
+damp.zeta: نسبة التخامد ζ
+damp.regime: نوع الحركة
+damp.under: تخامد ناقص
+damp.critical: تخامد حرج
+damp.over: تخامد زائد
+damp.x: الموضع x
+damp.hint: ▶ حرّك «التخامد c» من الصفر إلى قيمة كبيرة وراقب شكل المنحنى يتغيّر

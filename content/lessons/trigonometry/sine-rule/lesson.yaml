@@ -1,0 +1,63 @@
+id: sine-rule
+subject: trigonometry
+difficulty: high-school
+equation: \dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C}
+concepts:
+- sine rule
+- law of sines
+- oblique triangle
+- ambiguous case
+prerequisites:
+- solving-right-triangles
+related:
+- cosine-rule
+visualization:
+  type: triangle
+  options: {}
+parameters:
+  a:
+    min: 1
+    max: 9
+    step: 0.1
+    value: 5
+    unit: m
+  b:
+    min: 1
+    max: 9
+    step: 0.1
+    value: 6
+    unit: m
+  c:
+    min: 1
+    max: 9
+    step: 0.1
+    value: 7
+    unit: m
+variables:
+- a
+- b
+- c
+- A
+- B
+- C
+derivation:
+- h = b\sin A = a\sin B
+- \dfrac{a}{\sin A} = \dfrac{b}{\sin B}
+- \dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C}
+charts: []
+primary: a
+presets:
+- a: 5
+  b: 6
+  c: 7
+- a: 4
+  b: 4
+  c: 7
+- a: 6
+  b: 8
+  c: 9
+challenges:
+- check: 'a/sin(acos((b^2+c^2-a^2)/(2*b*c)))'
+  target: 10
+- check: 'abs(a-b) < 0.3 and c > 8'
+- check: 'a > b and a > c'

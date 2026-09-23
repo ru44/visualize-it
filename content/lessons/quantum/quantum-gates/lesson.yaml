@@ -1,0 +1,56 @@
+id: quantum-gates
+subject: quantum
+difficulty: university
+equation: P_{ab} = c_{ab}^{2}
+concepts:
+- qubit
+- superposition
+- entanglement
+- measurement
+prerequisites:
+- schrodingers-cat-and-qubits
+related:
+- schrodingers-cat-and-qubits
+- uncertainty-principle
+visualization:
+  type: quantum-gates
+  options: {}
+parameters:
+  g0:
+    min: 0
+    max: 2
+    step: 1
+    value: 2
+  g1:
+    min: 0
+    max: 2
+    step: 1
+    value: 0
+  cnot:
+    min: 0
+    max: 1
+    step: 1
+    value: 1
+variables:
+- c_{ab}
+- P_{ab}
+derivation:
+- c_{00}=1,\quad c_{01}=c_{10}=c_{11}=0
+- \text{X flips a qubit, H mixes it evenly, CNOT flips qubit B only when qubit A is 1}
+- P_{ab} = c_{ab}^{2}
+charts: []
+primary: g0
+presets:
+- g0: 2
+  g1: 0
+  cnot: 1
+- g0: 1
+  g1: 1
+  cnot: 0
+- g0: 2
+  g1: 2
+  cnot: 0
+challenges:
+- check: g0 == 2 and cnot == 1
+- check: g0 == 1 and g1 == 1
+- check: g0 == 2 and g1 == 2 and cnot == 0

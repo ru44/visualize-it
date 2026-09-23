@@ -1,0 +1,46 @@
+id: vector-components
+subject: trigonometry
+difficulty: high-school
+equation: F_x = F\cos\theta, \quad F_y = F\sin\theta
+concepts:
+  - vector-components
+  - resolving-forces
+  - sine
+  - cosine
+prerequisites:
+  - unit-circle
+  - vectors
+related:
+  - pythagorean-theorem
+  - projectile-motion
+  - inverse-trig-functions
+visualization:
+  type: unit-circle
+  options: {}
+parameters:
+  theta:
+    min: 0
+    max: 90
+    step: 1
+    value: 15
+    unit: °
+variables:
+  - F
+  - \theta
+  - F_x
+  - F_y
+derivation:
+  - \cos\theta = \dfrac{F_x}{F}, \quad \sin\theta = \dfrac{F_y}{F} \quad\text{(the rope's own right triangle)}
+  - F_x = F\cos\theta \quad\text{(the across part of the pull)}
+  - F_y = F\sin\theta \quad\text{(the upward part of the pull)}
+charts: []
+primary: theta
+presets:
+  - theta: 15
+  - theta: 45
+  - theta: 70
+challenges:
+  - check: 'cos(theta*pi/180)'
+    target: 0.87
+  - check: 'sin(theta*pi/180) > 0.9 and cos(theta*pi/180) > 0'
+  - check: 'abs(sin(theta*pi/180) - cos(theta*pi/180)) < 0.02'

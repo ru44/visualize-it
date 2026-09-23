@@ -1,0 +1,58 @@
+id: predators-and-flocks
+subject: complexity
+difficulty: beginner
+equation: \text{predator near} \Rightarrow \text{flee, else flock}
+concepts:
+  - flocking
+  - predator-prey
+  - emergence
+  - collective-motion
+prerequisites:
+  - flocking-boids
+related:
+  - flocking-boids
+  - couzin-zones
+visualization:
+  type: boids
+  options:
+    mode: predator
+parameters:
+  fear:
+    min: 20
+    max: 150
+    step: 5
+    value: 70
+  speed:
+    min: 1
+    max: 3
+    step: 0.1
+    value: 1.6
+  t:
+    min: 0
+    max: 240
+    step: 1
+    value: 100
+variables:
+  - the distance at which prey notice the predator and flee
+  - the predator's speed as a multiple of the prey's speed
+  - how many steps the chase has run
+derivation:
+  - \text{every prey follows the ordinary separation, alignment and cohesion rules}
+  - \text{unless the predator is closer than the fear radius}
+  - \text{in which case it turns hard away from the predator instead}
+charts: []
+primary: fear
+presets:
+  - fear: 40
+    speed: 1.1
+    t: 150
+  - fear: 90
+    speed: 1.6
+    t: 150
+  - fear: 130
+    speed: 2.6
+    t: 150
+challenges:
+  - check: fear <= 40
+  - check: speed >= 2.2
+  - check: fear >= 100 and speed >= 2

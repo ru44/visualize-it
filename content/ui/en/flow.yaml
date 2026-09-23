@@ -1,0 +1,5 @@
+flow.regime: wake
+flow.smooth: smooth
+flow.vortices: shedding vortices
+flow.freq: shedding rate
+flow.hint: ▶ dots ride the flow past the obstacle · drag Re up to break the wake into vortices

@@ -1,0 +1,6 @@
+hilbert.grid: grid
+hilbert.cells: cells
+hilbert.step: point
+hilbert.locality: distance {n} steps back
+hilbert.hint: the curve visits every cell once, never jumping far
+hilbert.restart: ↻ restart

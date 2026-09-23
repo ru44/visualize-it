@@ -1,0 +1,6 @@
+life.gen: generation
+life.alive: alive cells
+life.born: born this step
+life.died: died this step
+life.restart: ↻ restart
+life.hint: ▶ runs the rules · drag "generation" to step through

@@ -1,0 +1,56 @@
+id: vicsek-alignment
+subject: complexity
+difficulty: high-school
+equation: \text{heading} \to \text{average nearby heading} + \text{noise}
+concepts:
+  - phase-transition
+  - self-organization
+  - collective-motion
+  - flocking
+prerequisites: []
+related:
+  - flocking-boids
+  - collective-behaviour
+visualization:
+  type: vicsek
+  options: {}
+parameters:
+  r:
+    min: 10
+    max: 120
+    step: 5
+    value: 40
+  noise:
+    min: 0
+    max: 360
+    step: 5
+    value: 90
+  t:
+    min: 0
+    max: 220
+    step: 1
+    value: 120
+variables:
+  - interaction radius
+  - noise amplitude
+  - step
+derivation:
+  - \text{average the headings of every particle within the interaction radius}
+  - \text{add a random wobble drawn from the noise amplitude}
+  - \text{move forward one step in the new heading}
+charts: []
+primary: noise
+presets:
+  - r: 40
+    noise: 15
+    t: 150
+  - r: 40
+    noise: 90
+    t: 150
+  - r: 40
+    noise: 260
+    t: 150
+challenges:
+  - check: noise <= 20
+  - check: noise >= 240
+  - check: noise >= 60 and noise <= 110

@@ -1,0 +1,10 @@
+hop.hint: ▶ each sweep flips cells toward agreement · drag "sweep" to step through
+hop.pattern: memory
+hop.p.x: the X
+hop.p.plus: the cross
+hop.p.square: the square
+hop.noise: damaged
+hop.step: sweep
+hop.match: match to memory
+hop.target: stored memory
+hop.restart: ↻ restart

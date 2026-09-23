@@ -1,0 +1,67 @@
+id: double-pendulum
+subject: physics
+difficulty: university
+equation: 2\ddot\theta_1 + \ddot\theta_2\cos(\theta_1-\theta_2) + \dot\theta_2^2\sin(\theta_1-\theta_2) + 2\frac{g}{L}\sin\theta_1 = 0
+concepts:
+- chaos
+- sensitive-dependence
+- pendulum
+prerequisites:
+- circular-motion
+related:
+- lorenz-attractor
+- simple-harmonic-motion
+visualization:
+  type: double-pendulum
+  options: {}
+parameters:
+  theta0:
+    min: 20
+    max: 175
+    step: 1
+    value: 120
+    unit: deg
+  sep:
+    min: 0
+    max: 5
+    step: 0.05
+    value: 0.5
+    unit: deg
+  L:
+    min: 0.5
+    max: 1.5
+    step: 0.05
+    value: 1
+    unit: m
+  t:
+    min: 0
+    max: 12.8
+    step: 0.02
+    value: 0
+    unit: s
+variables:
+- \theta_1
+- \theta_2
+derivation:
+- 2\ddot\theta_1 + \ddot\theta_2\cos(\theta_1-\theta_2) + \dot\theta_2^2\sin(\theta_1-\theta_2) + 2\frac{g}{L}\sin\theta_1 = 0
+- \ddot\theta_2 + \ddot\theta_1\cos(\theta_1-\theta_2) - \dot\theta_1^2\sin(\theta_1-\theta_2) + \frac{g}{L}\sin\theta_2 = 0
+- \text{two equal rods of length } L\text{, solved numerically from } \theta_1(0)=\theta_2(0)
+charts: []
+primary: theta0
+presets:
+- theta0: 45
+  sep: 0.5
+  L: 1
+  t: 0
+- theta0: 120
+  sep: 0.5
+  L: 1
+  t: 0
+- theta0: 150
+  sep: 3
+  L: 0.8
+  t: 0
+challenges:
+- check: theta0 < 60
+- check: theta0 > 100 and sep < 1
+- check: sep > 2.5

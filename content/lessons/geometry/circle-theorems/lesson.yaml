@@ -1,0 +1,53 @@
+id: circle-theorems
+subject: geometry
+difficulty: high-school
+equation: \angle AOB = 2\,\angle ACB
+concepts:
+- inscribed angle
+- central angle
+- semicircle
+- tangent
+prerequisites:
+- circle
+related:
+- pythagorean-theorem
+- polygons-and-tessellation
+visualization:
+  type: circle-theorems
+  options: {}
+parameters:
+  arc:
+    min: 20
+    max: 180
+    step: 1
+    value: 100
+    unit: "°"
+  pos:
+    min: 0.05
+    max: 0.95
+    step: 0.01
+    value: 0.5
+variables:
+- O
+- A
+- B
+- C
+derivation:
+- \text{OA = OB = OC = r, so triangle OAC and triangle OBC are both isosceles}
+- \text{the base angles of an isosceles triangle are equal, so } \angle OAC=\angle OCA \text{ and } \angle OBC=\angle OCB
+- \angle AOB = 2\,\angle ACB \text{ follows once the two triangles' angles at } O \text{ are added together}
+charts: []
+primary: arc
+presets:
+- arc: 100
+  pos: 0.5
+- arc: 180
+  pos: 0.5
+- arc: 60
+  pos: 0.8
+challenges:
+- check: arc
+  target: 180
+- check: arc
+  target: 80
+- check: 'arc > 130 and pos > 0.85'

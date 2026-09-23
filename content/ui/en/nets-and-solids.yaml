@@ -1,0 +1,8 @@
+nets.hint: drag fold — 0 is a flat net, 1 is a closed cube
+nets.fold: fold
+nets.hinge: hinge angle
+nets.area: total surface area
+nets.state: state
+nets.closed: closed cube
+nets.flat: flat net
+nets.folding: folding

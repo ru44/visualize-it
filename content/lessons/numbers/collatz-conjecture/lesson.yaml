@@ -1,0 +1,44 @@
+id: collatz-conjecture
+subject: numbers
+difficulty: beginner
+equation: 'n \to \begin{cases} n/2 & n \text{ even} \\ 3n+1 & n \text{ odd}\end{cases}'
+concepts:
+- iteration
+- parity
+- unsolved problems
+prerequisites: []
+related:
+- prime-numbers
+visualization:
+  type: collatz
+  options: {}
+parameters:
+  start:
+    min: 2
+    max: 9999
+    step: 1
+    value: 27
+  step:
+    min: 0
+    max: 1
+    step: 0.01
+    value: 0
+variables:
+- n
+derivation:
+- 'n_0 = \text{start}'
+- 'n_{k+1} = n_k/2 \text{ if } n_k \text{ even}, \text{ else } 3n_k+1'
+- '\text{every start tried so far reaches } n_k = 1'
+charts: []
+primary: start
+presets:
+- start: 27
+  step: 1
+- start: 6171
+  step: 1
+- start: 15
+  step: 1
+challenges:
+- check: abs(start - 27) < 0.5 and step >= 0.95
+- check: start >= 5000 and step >= 0.5
+- check: abs(start - 15) < 0.5 and step >= 0.99

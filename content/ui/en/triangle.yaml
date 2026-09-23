@@ -1,0 +1,5 @@
+triangle.ratioA: a / sin A
+triangle.ratioB: b / sin B
+triangle.ratioC: c / sin C
+triangle.inequality: shortest two sides vs. longest
+triangle.invalid: no triangle has these three sides — the two shorter ones can't reach each other

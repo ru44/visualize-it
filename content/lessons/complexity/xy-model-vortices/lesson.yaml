@@ -1,0 +1,47 @@
+id: xy-model-vortices
+subject: complexity
+difficulty: university
+equation: E = -J \sum_{\text{neighbours}} \cos(\theta_i - \theta_j)
+concepts:
+  - phase-transition
+  - vortices
+  - monte-carlo
+  - topological-order
+prerequisites:
+  - ising-magnetism
+related:
+  - ising-magnetism
+visualization:
+  type: xy-model
+  options: {}
+parameters:
+  temperature:
+    min: 0.1
+    max: 2
+    step: 0.05
+    value: 1.2
+  step:
+    min: 0
+    max: 150
+    step: 1
+    value: 0
+variables:
+  - J
+  - \theta
+derivation:
+  - E_i = -J \sum_{\text{neighbours}} \cos(\theta_i - \theta_j)
+  - P(\text{turn}) = \min\left(1, e^{-\Delta E / T}\right)
+  - n = \frac{1}{2\pi}\sum_{\text{loop}} \Delta\theta
+charts: []
+primary: step
+presets:
+  - temperature: 0.5
+    step: 150
+  - temperature: 0.89
+    step: 150
+  - temperature: 1.6
+    step: 150
+challenges:
+  - check: temperature < 0.6 and step >= 100
+  - check: temperature > 1.3 and step >= 80
+  - check: abs(temperature - 0.89) < 0.15 and step >= 150

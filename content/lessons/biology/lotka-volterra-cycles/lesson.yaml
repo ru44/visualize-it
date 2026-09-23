@@ -1,0 +1,88 @@
+id: lotka-volterra-cycles
+subject: biology
+difficulty: high-school
+equation: \frac{dx}{dt} = \alpha x - \beta xy, \qquad \frac{dy}{dt} = \delta\beta xy - \gamma y
+concepts:
+  - predator-prey
+  - phase-space
+  - limit-cycle
+  - population-dynamics
+prerequisites:
+  - logistic-population
+related:
+  - predator-prey
+visualization:
+  type: lotka-volterra
+  options: {}
+parameters:
+  alpha:
+    min: 0.3
+    max: 2
+    step: 0.05
+    value: 1
+  beta:
+    min: 0.02
+    max: 0.3
+    step: 0.01
+    value: 0.1
+  gamma:
+    min: 0.2
+    max: 1.5
+    step: 0.05
+    value: 0.6
+  delta:
+    min: 0.02
+    max: 0.3
+    step: 0.01
+    value: 0.1
+  x0:
+    min: 5
+    max: 80
+    step: 1
+    value: 40
+  y0:
+    min: 2
+    max: 40
+    step: 1
+    value: 9
+  tView:
+    min: 0
+    max: 1
+    step: 0.001
+    value: 0
+variables:
+  - x
+  - y
+  - \alpha
+  - \beta
+  - \gamma
+  - \delta
+derivation:
+  - \frac{dx}{dt}=0, \ \frac{dy}{dt}=0
+  - \alpha x=\beta xy \Rightarrow y^*=\alpha/\beta
+  - \delta\beta xy=\gamma y \Rightarrow x^*=\gamma/(\delta\beta)
+charts: []
+primary: x0
+presets:
+  - alpha: 1
+    beta: 0.1
+    gamma: 0.6
+    delta: 0.1
+    x0: 60
+    y0: 10
+  - alpha: 1
+    beta: 0.1
+    gamma: 0.6
+    delta: 0.1
+    x0: 15
+    y0: 3
+  - alpha: 1
+    beta: 0.1
+    gamma: 0.6
+    delta: 0.1
+    x0: 75
+    y0: 25
+challenges:
+  - check: abs(x0 - gamma / (delta * beta)) < 3 and abs(y0 - alpha / beta) < 2
+  - check: x0 > 2 * (gamma / (delta * beta))
+  - check: tView >= 0.99

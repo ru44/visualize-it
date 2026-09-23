@@ -1,0 +1,66 @@
+id: domain-and-range
+subject: functions
+difficulty: beginner
+equation: f(x) = \dfrac{\sqrt{x-a}}{x-b}
+concepts:
+- domain
+- range
+- square-root
+- division-by-zero
+prerequisites:
+- function-graph
+related:
+- piecewise-and-absolute-value
+visualization:
+  type: function-plot
+  options:
+    expr: sqrt(x - a) / (x - b)
+    domain:
+    - -6
+    - 10
+    range:
+    - -6
+    - 6
+    mode: plain
+parameters:
+  x:
+    min: -6
+    max: 10
+    step: 0.05
+    value: 6
+  a:
+    min: -4
+    max: 6
+    step: 0.5
+    value: 2
+  b:
+    min: -4
+    max: 10
+    step: 0.5
+    value: 8
+variables:
+- x
+- a
+- b
+derivation:
+- x - a \ge 0
+- x - b \neq 0
+- x \in [a, \infty),\ x \neq b
+charts: []
+primary: x
+presets:
+- x: 6
+  a: 2
+  b: 8
+- x: 0
+  a: -2
+  b: 0
+- x: 4
+  a: 4
+  b: 8
+challenges:
+- check: x < a
+- check: abs(x - b) < 0.05
+- check: sqrt(x - a) / (x - b)
+  target: 1
+  tol: 0.05

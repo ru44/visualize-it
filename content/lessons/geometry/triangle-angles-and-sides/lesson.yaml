@@ -1,0 +1,57 @@
+id: triangle-angles-and-sides
+subject: geometry
+difficulty: beginner
+equation: \angle A + \angle B + \angle C = 180^\circ
+concepts:
+  - angle sum
+  - triangle inequality
+  - longest side
+prerequisites:
+  - angles-and-parallel-lines
+related:
+  - pythagorean-theorem
+  - congruence-and-similarity
+visualization:
+  type: triangle
+  options: {}
+parameters:
+  a:
+    min: 1
+    max: 12
+    step: 0.1
+    value: 5
+  b:
+    min: 1
+    max: 12
+    step: 0.1
+    value: 6
+  c:
+    min: 1
+    max: 12
+    step: 0.1
+    value: 7
+variables:
+  - A
+  - B
+  - C
+derivation:
+  - \text{draw a line through vertex } C \text{ parallel to side } AB
+  - \text{the two angles this new line makes with sides } CA \text{ and } CB \text{ equal } \angle A \text{ and } \angle B \text{ — alternate angles on a line cut by a parallel, same idea as a ladder crossing parallel rungs}
+  - \angle A + \angle B + \angle C = 180^\circ \text{ because the three angles now sit side by side along one straight line}
+charts: []
+primary: a
+presets:
+  - a: 3
+    b: 4
+    c: 5
+  - a: 2
+    b: 2
+    c: 2
+  - a: 2
+    b: 3
+    c: 8
+challenges:
+  - check: 'abs(a - b) < 0.15 and abs(b - c) < 0.15'
+  - check: '(acos((a^2 + b^2 - c^2) / (2*a*b)) * 180 / pi)'
+    target: 100
+  - check: '(b^2 - ((b^2 - a^2 + c^2) / (2*c))^2) <= 0'

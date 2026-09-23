@@ -1,0 +1,9 @@
+shadow-triangles.hint: drag either tip, or move the sun-angle slider
+shadow-triangles.hStick: stick height
+shadow-triangles.sStick: stick's shadow
+shadow-triangles.hTree: tree height
+shadow-triangles.sTree: tree's shadow
+shadow-triangles.ratio: height ÷ shadow
+shadow-triangles.relation: the two triangles are
+shadow-triangles.similar: similar (same shape)
+shadow-triangles.congruent: congruent (same shape and size)

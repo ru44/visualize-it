@@ -1,0 +1,9 @@
+poly.hint: drag n · left, the shape · right, copies meeting at a point
+poly.sum: angle sum (n-2)·180°
+poly.each: each angle a
+poly.around: copies around the point
+poly.gap: gap left over
+poly.tiles: closes with no gap
+poly.shape: the shape
+poly.closes: closes perfectly — this shape tiles
+poly.leavesGap: leaves a gap — this shape can't tile alone

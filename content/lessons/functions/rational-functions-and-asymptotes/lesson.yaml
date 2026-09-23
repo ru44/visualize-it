@@ -1,0 +1,75 @@
+id: rational-functions-and-asymptotes
+subject: functions
+difficulty: high-school
+equation: f(x) = \dfrac{ax+b}{x-p}
+concepts:
+  - rational-function
+  - vertical-asymptote
+  - horizontal-asymptote
+  - domain
+prerequisites:
+  - function-graph
+related:
+  - limits-at-infinity
+  - one-sided-and-infinite-limits
+  - polynomial-shape
+visualization:
+  type: function-plot
+  options:
+    expr: (a*x+b)/(x-p)
+    domain:
+      - -6
+      - 10
+    range:
+      - -10
+      - 10
+    mode: plain
+parameters:
+  x:
+    min: -6
+    max: 10
+    step: 0.05
+    value: -1
+  a:
+    min: -4
+    max: 4
+    step: 0.1
+    value: 2
+  b:
+    min: -10
+    max: 10
+    step: 0.5
+    value: 1
+  p:
+    min: -4
+    max: 8
+    step: 0.5
+    value: 2
+variables:
+  - a
+  - b
+  - p
+  - x
+derivation:
+  - f(x) = \frac{ax+b}{x-p} = a + \frac{b+ap}{x-p}
+  - x \to p \;\Rightarrow\; \left|\frac{b+ap}{x-p}\right| \to \infty
+  - x \to \infty \;\Rightarrow\; \frac{b+ap}{x-p} \to 0 \;\Rightarrow\; f(x) \to a
+charts: []
+primary: p
+presets:
+  - a: 2
+    b: 1
+    p: 2
+    x: -1
+  - a: 0
+    b: 6
+    p: -2
+    x: 0
+  - a: 1
+    b: 2
+    p: -3
+    x: 0
+challenges:
+  - check: abs((a*x+b)/(x-p)) > 50
+  - check: abs(a) < 0.05 and b > 1
+  - check: abs(p + 3) < 0.1

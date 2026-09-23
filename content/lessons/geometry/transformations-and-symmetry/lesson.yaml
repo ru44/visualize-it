@@ -1,0 +1,70 @@
+id: transformations-and-symmetry
+subject: geometry
+difficulty: high-school
+equation: x' = x\cos\theta - y\sin\theta + t_x,\quad y' = x\sin\theta + y\cos\theta + t_y
+concepts:
+- translation
+- rotation
+- reflection
+- symmetry
+prerequisites: []
+related:
+- polygons-and-tessellation
+- vectors
+visualization:
+  type: transformations-and-symmetry
+  options: {}
+parameters:
+  angle:
+    min: 0
+    max: 359
+    step: 1
+    value: 40
+    unit: "°"
+  tx:
+    min: -3
+    max: 3
+    step: 0.1
+    value: 1.5
+  ty:
+    min: -3
+    max: 3
+    step: 0.1
+    value: 0.5
+  flip:
+    min: 0
+    max: 1
+    step: 1
+    value: 0
+variables:
+- x
+- y
+- x'
+- y'
+- \theta
+- t_x
+- t_y
+derivation:
+- \text{translating first moves every point of the shape by the same vector } (t_x, t_y)
+- \text{rotating by } \theta \text{ about the origin turns } (x, y) \text{ into } (x\cos\theta - y\sin\theta,\; x\sin\theta + y\cos\theta)
+- \text{doing the rotation before adding the translation gives the combined rule } x' = x\cos\theta - y\sin\theta + t_x,\; y' = x\sin\theta + y\cos\theta + t_y
+charts: []
+primary: angle
+presets:
+- angle: 0
+  tx: 2
+  ty: 0
+  flip: 0
+- angle: 90
+  tx: 0
+  ty: 0
+  flip: 0
+- angle: 0
+  tx: 0
+  ty: 0
+  flip: 1
+challenges:
+- check: angle
+  target: 180
+- check: 'abs(flip - 1) < 0.5 and abs(angle) < 0.5'
+- check: 'abs(tx) < 0.05 and abs(ty) < 0.05 and angle > 170'

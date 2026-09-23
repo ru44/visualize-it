@@ -1,0 +1,55 @@
+id: swarm-synchronisation
+subject: complexity
+difficulty: high-school
+equation: \text{move toward neighbours and lock phase with them at once}
+concepts:
+  - flocking
+  - synchronization
+  - order-parameter
+prerequisites: []
+related:
+  - firefly-synchronisation
+  - game-of-life
+visualization:
+  type: swarm-sync
+  options: {}
+parameters:
+  n:
+    min: 8
+    max: 30
+    step: 1
+    value: 18
+  k:
+    min: 0
+    max: 2
+    step: 0.1
+    value: 0.6
+  step:
+    min: 0
+    max: 150
+    step: 1
+    value: 0
+variables:
+  - how many boids are moving and flashing on screen
+  - how strongly nearby boids pull each other's phase into step
+  - which generation of the flock you are watching
+derivation:
+  - \text{each boid steers toward the centre of its nearby neighbours}
+  - \text{each boid also nudges its phase toward those same neighbours}
+  - \text{space and phase settle together into one gathered, synchronised flock}
+charts: []
+primary: step
+presets:
+  - n: 18
+    k: 0.05
+    step: 150
+  - n: 18
+    k: 0.6
+    step: 150
+  - n: 28
+    k: 1.2
+    step: 100
+challenges:
+  - check: k >= 0.6 and step >= 100
+  - check: k < 0.1 and step >= 100
+  - check: abs(n - 28) < 1 and step >= 80

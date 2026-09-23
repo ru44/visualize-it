@@ -1,0 +1,42 @@
+id: conic-sections
+subject: geometry
+difficulty: university
+equation: r = \frac{l}{1 + e\cos\theta}
+concepts:
+- eccentricity
+- focus
+- ellipse
+- parabola
+- hyperbola
+prerequisites:
+- circle
+related:
+- eigenvectors
+visualization:
+  type: conics
+  options: {}
+parameters:
+  e:
+    min: 0
+    max: 2.2
+    step: 0.05
+    value: 0.6
+variables:
+- r
+- l
+- e
+- \theta
+derivation:
+- \text{a plane tilted at angle } \beta \text{ meets a cone of half-angle } \alpha \text{ in a curve with } e = \frac{\cos\beta}{\cos\alpha}
+- \text{every point on that curve is a fixed ratio } e \text{ of its distance from a line (the directrix) to its distance from a point (the focus)}
+- r = \frac{l}{1 + e\cos\theta} \text{ writes that ratio directly in polar coordinates centred on the focus}
+charts: []
+primary: e
+presets:
+- e: 0
+- e: 0.7
+- e: 1
+challenges:
+- check: 'e < 0.05'
+- check: 'abs(e - 1) < 0.05'
+- check: 'e > 1.3'

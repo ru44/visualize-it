@@ -1,0 +1,57 @@
+id: mandelbrot-set
+subject: numbers
+difficulty: high-school
+equation: 'z_{k+1} = z_k^2 + c'
+concepts:
+- complex numbers
+- iteration
+- self-similarity
+prerequisites:
+- complex-numbers
+related:
+- powers-of-complex-numbers
+visualization:
+  type: mandelbrot
+  options: {}
+parameters:
+  zoom:
+    min: 0
+    max: 8
+    step: 0.25
+    value: 0
+  cx:
+    min: -2
+    max: 1
+    step: 0.01
+    value: -0.5
+  cy:
+    min: -1.2
+    max: 1.2
+    step: 0.01
+    value: 0
+variables:
+- z
+- c
+- k
+derivation:
+- 'z_0 = 0'
+- 'z_{k+1} = z_k^2 + c'
+- '|z_k| > 2 \Rightarrow k \text{ is the escape step}'
+charts: []
+primary: zoom
+presets:
+- zoom: 0
+  cx: -0.5
+  cy: 0
+- zoom: 5
+  cx: -0.75
+  cy: 0.1
+- zoom: 4
+  cx: -1.25
+  cy: 0
+challenges:
+- check: zoom
+  target: 6
+  tol: 2
+- check: abs(cx + 0.75) < 0.05 and abs(cy - 0.1) < 0.05
+- check: abs(cx + 1.25) < 0.05 and abs(cy) < 0.05 and zoom >= 3

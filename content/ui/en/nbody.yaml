@@ -1,0 +1,7 @@
+nbody.hint: gravity acts between every pair of bodies · drag "second planet's mass" to change how much it perturbs the first
+nbody.bodies: bodies
+nbody.r1: distance, planet 1
+nbody.v1: speed, planet 1
+nbody.r2: distance, planet 2
+nbody.minsep: closest approach (1↔2)
+nbody.restart: ↻ restart

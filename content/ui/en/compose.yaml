@@ -1,0 +1,4 @@
+compose.hint: drag angle and k, watch the two squares separate
+compose.rotateThenStretch: rotate then stretch
+compose.stretchThenRotate: stretch then rotate
+compose.gap: gap between results

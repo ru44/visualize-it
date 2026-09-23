@@ -1,0 +1,74 @@
+id: damped-oscillation
+subject: physics
+difficulty: university
+equation: m\ddot x + c\dot x + kx = 0, \qquad \zeta = \dfrac{c}{2\sqrt{km}}
+concepts:
+- damping
+- oscillation
+- differential-equation
+prerequisites:
+- simple-harmonic-motion
+related:
+- simple-harmonic-motion
+visualization:
+  type: damped-spring
+  options: {}
+parameters:
+  k:
+    min: 5
+    max: 60
+    step: 1
+    value: 20
+    unit: N/m
+  m:
+    min: 0.2
+    max: 5
+    step: 0.1
+    value: 1
+    unit: kg
+  c:
+    min: 0
+    max: 20
+    step: 0.2
+    value: 2
+    unit: N·s/m
+  x0:
+    min: 0.2
+    max: 2
+    step: 0.1
+    value: 1
+    unit: m
+  t:
+    min: 0
+    max: 10
+    step: 0.02
+    value: 0
+    unit: s
+variables:
+- \zeta
+derivation:
+- m\ddot x + c\dot x + kx = 0\text{, released from } x_0 \text{ with zero velocity}
+- \zeta = \dfrac{c}{2\sqrt{km}}\text{, the damping ratio}
+- '\zeta<1\text{: swings and shrinks — } \zeta=1\text{: shortest return, no swing — } \zeta>1\text{: creeps back}'
+charts: []
+primary: c
+presets:
+- k: 20
+  m: 1
+  c: 0.6
+  x0: 1
+  t: 0
+- k: 20
+  m: 1
+  c: 8.8
+  x0: 1
+  t: 0
+- k: 20
+  m: 1
+  c: 18
+  x0: 1
+  t: 0
+challenges:
+- check: c / (2*sqrt(k*m)) < 0.5
+- check: abs(c / (2*sqrt(k*m)) - 1) < 0.03
+- check: c / (2*sqrt(k*m)) > 2

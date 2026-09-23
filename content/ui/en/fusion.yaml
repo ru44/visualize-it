@@ -1,0 +1,6 @@
+fusion.temperature: temperature
+fusion.confinement: confinement
+fusion.step: time
+fusion.events: fusion events
+fusion.restart: ↻ restart
+fusion.hint: ▶ nuclei repel until they crash close enough to fuse · drag "time" to step through

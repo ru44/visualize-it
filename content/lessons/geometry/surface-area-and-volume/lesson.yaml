@@ -1,0 +1,45 @@
+id: surface-area-and-volume
+subject: geometry
+difficulty: high-school
+equation: A = 6s^2,\quad V = s^3,\quad \dfrac{A}{V} = \dfrac{6}{s}
+concepts:
+- surface area
+- volume
+- square-cube law
+- scaling
+prerequisites:
+- circle
+related:
+- nets-and-solids
+- pythagorean-theorem
+visualization:
+  type: surface-area-and-volume
+  options: {}
+parameters:
+  s:
+    min: 0.2
+    max: 4
+    step: 0.05
+    value: 1
+    unit: m
+variables:
+- A
+- V
+- s
+derivation:
+- \text{a cube of side } s \text{ has 6 identical square faces, each of area } s^2 \text{, so } A = 6s^2
+- \text{stacking a base layer of } s\times s\times 1 \text{ unit cubes } s \text{ layers high gives } V = s\cdot s\cdot s = s^3
+- \text{dividing the two gives the ratio } \dfrac{A}{V} = \dfrac{6s^2}{s^3} = \dfrac{6}{s} \text{, which shrinks as } s \text{ grows}
+charts: []
+primary: s
+presets:
+- s: 0.3
+- s: 1
+- s: 3
+challenges:
+- check: s
+  target: 1
+- check: 6*s^2
+  target: 24
+- check: s^3
+  target: 27

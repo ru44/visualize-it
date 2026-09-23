@@ -1,0 +1,48 @@
+id: angles-and-parallel-lines
+subject: geometry
+difficulty: beginner
+equation: \alpha = \beta
+concepts:
+  - parallel lines
+  - transversal
+  - corresponding angles
+  - alternate angles
+  - co-interior angles
+prerequisites: []
+related:
+  - triangle-angles-and-sides
+visualization:
+  type: parallel-lines
+  options: {}
+parameters:
+  theta:
+    min: 15
+    max: 165
+    step: 1
+    value: 55
+    unit: °
+  pair:
+    min: 0
+    max: 2
+    step: 1
+    value: 0
+variables:
+  - \alpha
+  - \beta
+derivation:
+  - \text{a step ladder's rungs are parallel; the ladder itself is a straight transversal crossing every rung}
+  - \text{slide the ladder along the wall without turning it, and it still crosses each parallel rung at the same tilt}
+  - \alpha = \beta \text{ — the angle the ladder makes with one rung equals the angle it makes with every other rung}
+charts: []
+primary: pair
+presets:
+  - theta: 65
+    pair: 0
+  - theta: 50
+    pair: 1
+  - theta: 100
+    pair: 2
+challenges:
+  - check: 'pair == 0 and abs(theta - 40) < 2'
+  - check: 'pair == 1 and abs(theta - 100) < 3'
+  - check: 'pair == 2 and abs(theta - 130) < 3'

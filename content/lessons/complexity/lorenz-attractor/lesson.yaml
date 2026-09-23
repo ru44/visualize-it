@@ -1,0 +1,72 @@
+id: lorenz-attractor
+subject: complexity
+difficulty: university
+equation: \dot x = \sigma(y-x), \quad \dot y = x(\rho-z)-y, \quad \dot z = xy-\beta z
+concepts:
+- chaos
+- sensitive-dependence
+- attractor
+prerequisites:
+- derivative
+related:
+- game-of-life
+visualization:
+  type: lorenz
+  options: {}
+parameters:
+  sigma:
+    min: 1
+    max: 20
+    step: 0.5
+    value: 10
+  rho:
+    min: 0.5
+    max: 40
+    step: 0.5
+    value: 28
+  beta:
+    min: 0.5
+    max: 5
+    step: 0.1
+    value: 2.7
+  sep:
+    min: 0
+    max: 4
+    step: 0.05
+    value: 1
+  t:
+    min: 0
+    max: 1
+    step: 0.002
+    value: 1
+variables:
+- \sigma
+- \rho
+- \beta
+- x, y, z
+derivation:
+- \dot x = \sigma(y-x)
+- \dot y = x(\rho-z)-y
+- \dot z = xy-\beta z
+charts: []
+primary: rho
+presets:
+- sigma: 10
+  rho: 10
+  beta: 2.7
+  sep: 0
+  t: 1
+- sigma: 10
+  rho: 28
+  beta: 2.7
+  sep: 1
+  t: 1
+- sigma: 10
+  rho: 28
+  beta: 2.7
+  sep: 3.5
+  t: 0.35
+challenges:
+- check: rho < 20
+- check: rho > 24 and sep > 2
+- check: abs(sigma - 10) < 0.5 and abs(beta - 2.7) < 0.15 and rho > 28

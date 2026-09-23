@@ -1,0 +1,47 @@
+id: small-world-networks
+subject: complexity
+difficulty: high-school
+equation: p \uparrow \Rightarrow L \downarrow \text{ fast, while } C \text{ stays high}
+concepts:
+  - graph
+  - network
+  - emergence
+prerequisites: []
+related:
+  - game-of-life
+visualization:
+  type: small-world
+  options: {}
+parameters:
+  p:
+    min: 0
+    max: 1
+    step: 0.02
+    value: 0
+  k:
+    min: 2
+    max: 8
+    step: 2
+    value: 4
+variables:
+  - p
+  - L
+  - C
+derivation:
+  - \text{start from a ring where each node links to its } k \text{ nearest neighbours}
+  - \text{rewire each link to a uniformly random node with probability } p
+  - p \uparrow \Rightarrow L \downarrow \text{ fast, while } C \text{ stays high for small } p
+charts: []
+primary: p
+presets:
+  - p: 0
+    k: 4
+  - p: 0.1
+    k: 4
+  - p: 1
+    k: 6
+challenges:
+  - check: abs(p - 0) < 0.01 and k == 4
+  - check: p >= 0.5
+  - check: k
+    target: 8

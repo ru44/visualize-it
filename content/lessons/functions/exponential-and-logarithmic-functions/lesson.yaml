@@ -1,0 +1,67 @@
+id: exponential-and-logarithmic-functions
+subject: functions
+difficulty: high-school
+equation: y = b^x \;\Longleftrightarrow\; x = \log_b y
+concepts:
+  - exponential-function
+  - logarithmic-function
+  - inverse-function
+  - growth
+  - decay
+prerequisites:
+  - function-graph
+  - exponents-and-powers
+related:
+  - logarithms
+  - exponential-growth
+visualization:
+  type: function-plot
+  options:
+    expr: "sel==0 ? b^x : log(x, b)"
+    domain:
+      - 0.05
+      - 6
+    range:
+      - -3
+      - 9
+    mode: plain
+parameters:
+  x:
+    min: 0.05
+    max: 6
+    step: 0.02
+    value: 1
+  sel:
+    min: 0
+    max: 1
+    step: 1
+    value: 0
+  b:
+    min: 0.2
+    max: 12
+    step: 0.1
+    value: 2
+variables:
+  - b
+  - x
+  - y
+derivation:
+  - b^x = y
+  - \log_b(b^x) = \log_b y
+  - x = \log_b y
+charts: []
+primary: b
+presets:
+  - sel: 0
+    b: 2
+    x: 3
+  - sel: 0
+    b: 0.5
+    x: 2
+  - sel: 1
+    b: 10
+    x: 5
+challenges:
+  - check: sel==0 and b>1.9 and x>3.5
+  - check: sel==0 and b<0.6 and x>3
+  - check: sel==1 and b>9 and x>4

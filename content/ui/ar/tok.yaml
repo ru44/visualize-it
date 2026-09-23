@@ -1,0 +1,12 @@
+tok.read: الحروف المقروءة
+tok.tokens: الرموز التي وُجدت
+tok.state: الحالة الحالية
+tok.done: انتهى
+tok.tokensLabel: الرموز
+tok.reading: يقرأ…
+tok.hint: ▶ حرّك «الحروف المقروءة» لتحريك المؤشر حرفًا حرفًا
+tok.st.number: رقم
+tok.st.text: اسم
+tok.st.operator: عملية
+tok.st.syntax: علامة
+tok.st.space: فراغ

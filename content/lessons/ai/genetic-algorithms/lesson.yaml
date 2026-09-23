@@ -1,0 +1,47 @@
+id: genetic-algorithms
+subject: ai
+difficulty: beginner
+equation: P(\text{parent}=i) = \dfrac{f_i}{\sum_j f_j}
+concepts:
+  - genetic-algorithm
+  - selection
+  - crossover
+  - mutation
+  - fitness
+prerequisites: []
+related:
+  - natural-selection
+visualization:
+  type: genetic-algorithm
+  options: {}
+parameters:
+  mutationRate:
+    min: 0.01
+    max: 0.4
+    step: 0.01
+    value: 0.06
+  gen:
+    min: 0
+    max: 13
+    step: 1
+    value: 0
+variables:
+  - how often a gene is replaced at random when a child is made
+  - which generation of the population you are looking at
+derivation:
+  - \text{start with a random population of flight paths}
+  - P(\text{parent}=i) = \dfrac{f_i}{\sum_j f_j}
+  - \text{cross two parents' genes, mutate with probability } \mu \text{, repeat}
+charts: []
+primary: gen
+presets:
+  - mutationRate: 0.06
+    gen: 0
+  - mutationRate: 0.06
+    gen: 13
+  - mutationRate: 0.3
+    gen: 13
+challenges:
+  - check: gen >= 12 and mutationRate < 0.1
+  - check: gen <= 1
+  - check: mutationRate >= 0.25 and gen >= 12

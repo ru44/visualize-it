@@ -1,0 +1,11 @@
+imgf.hint: ▶ نافذة 3×3 تتحرك بكسلًا بكسل · حرّك «البكسل» لتتقدّم خطوة خطوة
+imgf.source: الأصلية
+imgf.output: بعد الترشيح
+imgf.kernel: نوع الترشيح
+imgf.k.blur: تمويه
+imgf.k.sharpen: توضيح
+imgf.k.edge: كشف الحواف
+imgf.pixel: الصف، العمود
+imgf.done: عدد وحدات البكسل المنجزة
+imgf.value: قيمة الخرج
+imgf.restart: ↻ من البداية

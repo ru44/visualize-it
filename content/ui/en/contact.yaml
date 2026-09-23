@@ -1,0 +1,8 @@
+contact.step: step
+contact.infected: infected now
+contact.ever: infected at some point
+contact.status: status
+contact.spreading: spreading
+contact.extinct: died out
+contact.restart: ↻ restart
+contact.hint: ▶ one infected cell in the centre · drag "step" to step through
