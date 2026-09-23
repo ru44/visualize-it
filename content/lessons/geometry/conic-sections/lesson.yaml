@@ -15,6 +15,9 @@ related:
 visualization:
   type: conics
   options: {}
+visualization3d:
+  type: cone
+  options: {}
 parameters:
   e:
     min: 0

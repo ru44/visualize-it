@@ -15,6 +15,9 @@ visualization:
   type: quark-builder
   options:
     mode: build
+visualization3d:
+  type: proton
+  options: {}
 primary: q1
 parameters:
   q1:

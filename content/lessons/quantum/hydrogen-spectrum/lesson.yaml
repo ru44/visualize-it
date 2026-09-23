@@ -14,6 +14,9 @@ related:
 visualization:
   type: energy-levels
   options: {}
+visualization3d:
+  type: orbitals
+  options: {}
 parameters:
   ni:
     min: 2

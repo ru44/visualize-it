@@ -13,6 +13,9 @@ related:
 visualization:
   type: lorenz
   options: {}
+visualization3d:
+  type: lorenz
+  options: {}
 parameters:
   sigma:
     min: 1

@@ -15,6 +15,9 @@ related:
 visualization:
   type: nets-and-solids
   options: {}
+visualization3d:
+  type: net
+  options: {}
 parameters:
   fold:
     min: 0

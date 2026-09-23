@@ -27,6 +27,9 @@ visualization:
       - 0
       - 60
     mode: plain
+visualization3d:
+  type: black-hole
+  options: {}
 primary: x
 parameters:
   x:

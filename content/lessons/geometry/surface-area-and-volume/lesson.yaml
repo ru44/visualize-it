@@ -15,6 +15,9 @@ related:
 visualization:
   type: surface-area-and-volume
   options: {}
+visualization3d:
+  type: solids
+  options: {}
 parameters:
   s:
     min: 0.2

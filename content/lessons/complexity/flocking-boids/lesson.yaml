@@ -15,6 +15,9 @@ visualization:
   type: boids
   options:
     mode: flock
+visualization3d:
+  type: boids
+  options: {}
 parameters:
   sep:
     min: 1

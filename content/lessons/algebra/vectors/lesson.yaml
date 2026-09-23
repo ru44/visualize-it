@@ -16,6 +16,9 @@ related:
 visualization:
   type: matrix-transform
   options: {}
+visualization3d:
+  type: vector
+  options: { mode: add }
 parameters:
   a:
     min: -3

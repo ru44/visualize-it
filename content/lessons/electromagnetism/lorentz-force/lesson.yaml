@@ -16,6 +16,9 @@ related:
 visualization:
   type: lorentz-force
   options: {}
+visualization3d:
+  type: lorentz-helix
+  options: {}
 parameters:
   q:
     min: -3

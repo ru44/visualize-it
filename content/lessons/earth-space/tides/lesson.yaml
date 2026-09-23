@@ -17,6 +17,9 @@ visualization:
     domain: [0, 48]
     range: [-3, 3]
     mode: plain
+visualization3d:
+  type: tides
+  options: {}
 parameters:
   A:
     min: 0.5
