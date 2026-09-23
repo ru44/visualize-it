@@ -4,7 +4,8 @@ import { t } from '../i18n'
 import Readouts from '../components/Readouts.vue'
 
 // Records every comparison/swap of an algorithm on a fixed array, then plays the trace.
-// options.algorithm: 'bubble' | 'selection' | 'insertion' | 'merge' | 'quick'. params: n (size), step (0..1 progress).
+// options.algorithm: one of ALGS, or 'choose' to let the param `alg` (an index into ALGS) pick.
+// params: n (size), step (0..1 progress), alg (only in 'choose' mode).
 const props = defineProps<{ params: Record<string, number>; options: Record<string, any> }>()
 const emit = defineEmits<{ set: [name: string, value: number] }>()
 
@@ -23,12 +24,20 @@ const start = computed(() => {
   return Array.from({ length: n.value }, () => 5 + Math.floor(r() * 95))
 })
 
+// Every algorithm the picture can run. The order is the order of the `alg` slider.
+const ALGS = ['bubble', 'selection', 'insertion', 'cocktail', 'shell', 'heap', 'quick', 'merge', 'timsort', 'counting', 'radix'] as const
+const algName = computed(() => {
+  const chosen = props.options.algorithm ?? 'bubble'
+  if (chosen !== 'choose') return chosen
+  return ALGS[Math.max(0, Math.min(ALGS.length - 1, Math.round(props.params.alg ?? 0)))]
+})
+
 const trace = computed<Frame[]>(() => {
   const a = start.value.slice()
   const frames: Frame[] = [{ arr: a.slice(), cmp: null, swapped: false, sorted: [] }]
   const rec = (cmp: [number, number] | null, swapped: boolean, sorted: number[]) => frames.length < 4000 && frames.push({ arr: a.slice(), cmp, swapped, sorted: sorted.slice() })
   const sorted: number[] = []
-  const alg = props.options.algorithm ?? 'bubble'
+  const alg = algName.value
   if (alg === 'bubble') {
     for (let i = 0; i < a.length; i++) {
       for (let j = 0; j < a.length - 1 - i; j++) {
@@ -60,6 +69,87 @@ const trace = computed<Frame[]>(() => {
       qs(lo, i - 1); qs(i + 1, hi)
     }
     qs(0, a.length - 1)
+  } else if (alg === 'cocktail') {
+    // Bubble sort that walks up, then back down, so a small value at the end moves fast.
+    let lo = 0
+    let hi = a.length - 1
+    while (lo < hi) {
+      for (let j = lo; j < hi; j++) { rec([j, j + 1], false, sorted); if (a[j] > a[j + 1]) ([a[j], a[j + 1]] = [a[j + 1], a[j]]), rec([j, j + 1], true, sorted) }
+      sorted.push(hi--)
+      for (let j = hi; j > lo; j--) { rec([j - 1, j], false, sorted); if (a[j - 1] > a[j]) ([a[j - 1], a[j]] = [a[j], a[j - 1]]), rec([j - 1, j], true, sorted) }
+      sorted.push(lo++)
+    }
+    if (lo === hi) sorted.push(lo)
+  } else if (alg === 'shell') {
+    // Insertion sort over shrinking gaps: far-apart swaps first, so little is left to do at gap 1.
+    for (let gap = a.length >> 1; gap > 0; gap >>= 1) {
+      for (let i = gap; i < a.length; i++) {
+        let j = i
+        while (j >= gap) { rec([j - gap, j], false, sorted); if (a[j - gap] > a[j]) ([a[j - gap], a[j]] = [a[j], a[j - gap]]), rec([j - gap, j], true, sorted), (j -= gap); else break }
+      }
+    }
+    for (let i = 0; i < a.length; i++) sorted.push(i)
+  } else if (alg === 'heap') {
+    // Build a heap, then repeatedly move the largest to the end. No extra memory, never quadratic.
+    const sift = (lo: number, hi: number) => {
+      let root = lo
+      while (2 * root + 1 <= hi) {
+        let child = 2 * root + 1
+        if (child + 1 <= hi) { rec([child, child + 1], false, sorted); if (a[child] < a[child + 1]) child++ }
+        rec([root, child], false, sorted)
+        if (a[root] >= a[child]) return
+        ;[a[root], a[child]] = [a[child], a[root]]
+        rec([root, child], true, sorted)
+        root = child
+      }
+    }
+    for (let i = (a.length - 2) >> 1; i >= 0; i--) sift(i, a.length - 1)
+    for (let end = a.length - 1; end > 0; end--) {
+      ;[a[0], a[end]] = [a[end], a[0]]
+      rec([0, end], true, sorted)
+      sorted.unshift(end)
+      sift(0, end - 1)
+    }
+    sorted.unshift(0)
+  } else if (alg === 'timsort') {
+    // What Python and Java use: sort short runs with insertion sort, then merge the runs.
+    const RUN = 8
+    const insertionRange = (lo: number, hi: number) => {
+      for (let i = lo + 1; i <= hi; i++) {
+        let j = i
+        while (j > lo) { rec([j - 1, j], false, sorted); if (a[j - 1] > a[j]) ([a[j - 1], a[j]] = [a[j], a[j - 1]]), rec([j - 1, j], true, sorted), j--; else break }
+      }
+    }
+    const mergeRange = (lo: number, mid: number, hi: number) => {
+      const tmp: number[] = []
+      let i = lo
+      let j = mid + 1
+      while (i <= mid && j <= hi) { rec([i, j], false, sorted); tmp.push(a[i] <= a[j] ? a[i++] : a[j++]) }
+      while (i <= mid) tmp.push(a[i++])
+      while (j <= hi) tmp.push(a[j++])
+      tmp.forEach((v, k) => { a[lo + k] = v; rec([lo + k, lo + k], true, sorted) })
+    }
+    for (let lo = 0; lo < a.length; lo += RUN) insertionRange(lo, Math.min(lo + RUN - 1, a.length - 1))
+    for (let size = RUN; size < a.length; size *= 2)
+      for (let lo = 0; lo + size < a.length; lo += 2 * size) mergeRange(lo, lo + size - 1, Math.min(lo + 2 * size - 1, a.length - 1))
+    for (let i = 0; i < a.length; i++) sorted.push(i)
+  } else if (alg === 'counting') {
+    // No comparisons at all: count how many of each value, then write them back in order.
+    const min = Math.min(...a)
+    const counts = new Array(Math.max(...a) - min + 1).fill(0)
+    for (let i = 0; i < a.length; i++) { counts[a[i] - min]++; rec([i, i], false, sorted) }
+    let w = 0
+    for (let v = 0; v < counts.length; v++)
+      for (let c = 0; c < counts[v]; c++) { a[w] = v + min; rec([w, w], true, sorted); sorted.push(w); w++ }
+  } else if (alg === 'radix') {
+    // Also comparison-free: bucket by the last digit, then by the next one.
+    for (const place of [1, 10]) {
+      const buckets: number[][] = Array.from({ length: 10 }, () => [])
+      for (let i = 0; i < a.length; i++) { buckets[Math.floor(a[i] / place) % 10].push(a[i]); rec([i, i], false, sorted) }
+      let w = 0
+      for (const b of buckets) for (const v of b) { a[w] = v; rec([w, w], true, sorted); w++ }
+    }
+    for (let i = 0; i < a.length; i++) sorted.push(i)
   } else {
     // merge sort, in place via auxiliary array, recording writes as "swaps"
     const ms = (lo: number, hi: number) => {
@@ -103,6 +193,7 @@ watch([n, seed], () => (emit('set', 'step', 0), (playing.value = true)))
 
 const bw = computed(() => (W - 40) / n.value)
 const readouts = computed(() => [
+  { label: t('sort.algorithm'), value: t(`sort.alg.${algName.value}` as any), color: 'var(--fg)' },
   { label: t('sort.step'), value: `${fi.value} / ${trace.value.length - 1}` },
   { label: t('sort.compares'), value: String(compares.value), color: 'var(--accent)' },
   { label: t('sort.swaps'), value: String(swaps.value), color: 'var(--accent-2)' },

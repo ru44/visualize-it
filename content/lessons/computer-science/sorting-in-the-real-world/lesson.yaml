@@ -1,0 +1,59 @@
+id: sorting-in-the-real-world
+subject: computer-science
+difficulty: high-school
+equation: T(n) = O(n \log n)
+concepts:
+  - sorting
+  - timsort
+  - heap-sort
+  - radix-sort
+  - stable-sort
+prerequisites:
+  - algorithms-and-complexity
+  - merge-sort
+related:
+  - quicksort
+  - bubble-sort
+  - merge-sort
+  - algorithms-and-complexity
+visualization:
+  type: sort-steps
+  options:
+    algorithm: choose
+parameters:
+  alg:
+    min: 0
+    max: 10
+    step: 1
+    value: 8
+  n:
+    min: 4
+    max: 40
+    step: 1
+    value: 24
+  step:
+    min: 0
+    max: 1
+    step: 0.001
+    value: 0
+variables:
+  - n
+  - log2 n
+  - sorting
+derivation:
+  - \text{compare two items at a time} \Rightarrow \text{at least } \log_2(n!) \text{ comparisons}
+  - \log_2(n!) \approx n\log_2 n - 1.44n
+  - T(n) = O(n \log n) \text{ is the best any comparison sort can do}
+charts: []
+primary: alg
+presets:
+  - alg: 8
+    n: 24
+  - alg: 5
+    n: 24
+  - alg: 10
+    n: 24
+challenges:
+  - check: abs(alg - 8) < 0.5 and step >= 0.99
+  - check: abs(alg - 5) < 0.5 and step >= 0.99
+  - check: abs(alg - 10) < 0.5 and step >= 0.99

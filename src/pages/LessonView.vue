@@ -226,7 +226,8 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
         <p v-if="has3d && settings.isPhone && !view3d" class="border-t px-4 py-2 text-xs" style="border-color: var(--line); color: var(--muted)">{{ t('three.phone') }}</p>
       </section>
 
-      <aside class="surface space-y-6 self-start p-5 lg:sticky lg:top-20 lg:row-span-2">
+      <!-- The panel spans the chart row too, but only when there are charts; otherwise it would stretch an empty row. -->
+      <aside class="surface space-y-6 self-start p-5 lg:sticky lg:top-20" :class="lesson.charts?.length ? 'lg:row-span-2' : ''">
         <div>
           <div class="mb-2 flex items-center justify-between">
             <p class="label">{{ t('lesson.controls') }}</p>
