@@ -266,6 +266,18 @@ sort.swaps: swaps
 sort.done: sorted
 sort.hint: ▶ runs the algorithm · drag the slider to step through
 sort.shuffle: ↻ shuffle
+sort.algorithm: algorithm
+sort.alg.bubble: Bubble sort
+sort.alg.selection: Selection sort
+sort.alg.insertion: Insertion sort
+sort.alg.cocktail: Cocktail shaker sort
+sort.alg.shell: Shell sort
+sort.alg.heap: Heap sort
+sort.alg.quick: Quicksort
+sort.alg.merge: Merge sort
+sort.alg.timsort: Timsort (Python, Java)
+sort.alg.counting: Counting sort
+sort.alg.radix: Radix sort
 gsearch.visited: visited
 gsearch.frontier: in the queue
 gsearch.pathLen: path length

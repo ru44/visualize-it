@@ -266,6 +266,18 @@ sort.swaps: التبديلات
 sort.done: مرتّب
 sort.hint: ▶ شغّل الخوارزمية · اسحب المنزلق للتقدّم خطوة خطوة
 sort.shuffle: ↻ اخلط
+sort.algorithm: الخوارزمية
+sort.alg.bubble: ترتيب الفقاعة
+sort.alg.selection: الترتيب بالاختيار
+sort.alg.insertion: الترتيب بالإدراج
+sort.alg.cocktail: الفقاعة ذهابًا وإيابًا
+sort.alg.shell: ترتيب شل
+sort.alg.heap: الترتيب بالكومة
+sort.alg.quick: الترتيب السريع
+sort.alg.merge: الترتيب بالدمج
+sort.alg.timsort: تيم سورت (بايثون وجافا)
+sort.alg.counting: الترتيب بالعدّ
+sort.alg.radix: الترتيب بالجذر
 gsearch.visited: تمّت زيارتها
 gsearch.frontier: في الطابور
 gsearch.pathLen: طول المسار
