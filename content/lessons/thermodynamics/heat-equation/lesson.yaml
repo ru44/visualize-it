@@ -1,0 +1,53 @@
+id: heat-equation
+subject: thermodynamics
+difficulty: high-school
+equation: \frac{\partial T}{\partial t} = \alpha \frac{\partial^2 T}{\partial x^2}
+concepts:
+  - heat-conduction
+  - diffusion
+  - steady-state
+prerequisites: []
+related:
+  - specific-heat
+  - first-law-thermodynamics
+visualization:
+  type: heat-bar
+  options: {}
+parameters:
+  alpha:
+    min: 0.05
+    max: 1
+    step: 0.05
+    value: 0.3
+  width:
+    min: 5
+    max: 60
+    step: 5
+    value: 20
+  step:
+    min: 0
+    max: 200
+    step: 1
+    value: 0
+variables:
+  - \alpha
+derivation:
+  - \text{heat flows down the slope, so the flux} \propto -\frac{\partial T}{\partial x}
+  - T_i(t+\Delta t) = T_i + \alpha \Delta t\, \frac{T_{i-1} - 2T_i + T_{i+1}}{\Delta x^2}
+  - \alpha = \frac{k}{\rho c}
+charts: []
+primary: step
+presets:
+  - alpha: 0.9
+    width: 10
+    step: 80
+  - alpha: 0.1
+    width: 50
+    step: 180
+  - alpha: 0.4
+    width: 25
+    step: 120
+challenges:
+  - check: alpha > 0.7 and step >= 60
+  - check: alpha < 0.15 and step >= 150
+  - check: abs(width - 40) < 5 and alpha > 0.5 and step >= 100

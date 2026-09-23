@@ -1,0 +1,63 @@
+id: n-body-orbits
+subject: physics
+difficulty: university
+equation: F_{ij} = \dfrac{G\,m_i m_j}{r_{ij}^{2}}
+concepts:
+- gravitation
+- n-body-problem
+- chaos
+- orbit
+prerequisites:
+- newtons-second-law
+- universal-gravitation
+related:
+- universal-gravitation
+- circular-motion
+visualization:
+  type: n-body
+  options: {}
+parameters:
+  n:
+    min: 2
+    max: 3
+    step: 1
+    value: 3
+  m2:
+    min: 0
+    max: 400
+    step: 10
+    value: 120
+  t:
+    min: 0
+    max: 1
+    step: 0.002
+    value: 0
+variables:
+- F_{ij}
+- m_i
+- m_j
+- r_{ij}
+- a_i
+- v_i
+- r_i
+derivation:
+- F_{ij} = \dfrac{G\,m_i m_j}{r_{ij}^{2}}
+- a_i = \dfrac{1}{m_i}\displaystyle\sum_{j \neq i} F_{ij}
+- r_i(t+\Delta t) = r_i(t) + v_i(t)\,\Delta t
+charts: []
+primary: m2
+presets:
+- n: 2
+  m2: 0
+  t: 0.4
+- n: 3
+  m2: 120
+  t: 0.6
+- n: 3
+  m2: 380
+  t: 0.85
+challenges:
+- check: n
+  target: 2
+- check: n == 3 and m2 > 300
+- check: n == 3 and m2 < 40

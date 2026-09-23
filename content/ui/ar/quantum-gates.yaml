@@ -1,0 +1,14 @@
+qgate.hint: اضغط بوابة لتغييرها · اضغط قياس لأخذ عينة من النتيجة
+qgate.gateA: البوابة على A
+qgate.gateB: البوابة على B
+qgate.cnot: CNOT
+qgate.on: تعمل
+qgate.off: متوقفة
+qgate.shots: 'قياسات (00/01/10/11)'
+qgate.noCnot: CNOT متوقفة
+qgate.probs: الاحتمالات
+qgate.measure: قياس
+qgate.tally: '{n} قياسًا'
+qgate.name.I: 'I (بلا تأثير)'
+qgate.name.X: 'X (قلب)'
+qgate.name.H: 'H (مزج متساوٍ)'

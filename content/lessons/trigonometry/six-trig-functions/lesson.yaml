@@ -1,0 +1,47 @@
+id: six-trig-functions
+subject: trigonometry
+difficulty: high-school
+equation: \tan\theta = \frac{\sin\theta}{\cos\theta}, \quad \cot\theta = \frac{1}{\tan\theta}, \quad \sec\theta = \frac{1}{\cos\theta}, \quad \csc\theta = \frac{1}{\sin\theta}
+concepts:
+- sine
+- cosine
+- tangent
+- cotangent
+- secant
+- cosecant
+prerequisites:
+- unit-circle
+related:
+- tangent-function
+visualization:
+  type: six-trig
+  options: {}
+parameters:
+  theta:
+    min: 0
+    max: 360
+    step: 1
+    value: 40
+    unit: °
+variables:
+- \theta
+- \sin\theta
+- \cos\theta
+- \tan\theta
+- \cot\theta
+- \sec\theta
+- \csc\theta
+derivation:
+- \sin\theta = \text{height of the point}, \quad \cos\theta = \text{its distance sideways from the centre}
+- \tan\theta = \frac{\sin\theta}{\cos\theta} \text{ is the segment cut on the line } x=1
+- \cot\theta = \frac{\cos\theta}{\sin\theta} \text{ is the segment cut on the line } y=1,\ \sec\theta \text{ and } \csc\theta \text{ reach those same lines from the centre}
+charts: []
+primary: theta
+presets:
+- theta: 30
+- theta: 150
+- theta: 240
+challenges:
+- check: 'abs(tan(theta*pi/180) - 1) < 0.02'
+- check: 'cos(theta*pi/180) < 0 and sin(theta*pi/180) < 0'
+- check: 'abs(sin(theta*pi/180) - 1) < 0.01'

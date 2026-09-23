@@ -1,0 +1,50 @@
+id: fourier-epicycles
+subject: engineering
+difficulty: university
+equation: y(\theta) = \frac{4}{\pi}\sum_{k=1}^{n} \frac{\sin\big((2k-1)\theta\big)}{2k-1}
+concepts:
+- harmonics
+- fourier series
+- superposition
+prerequisites:
+- fourier-series
+related:
+- sampling-and-aliasing
+visualization:
+  type: epicycles
+  options: {}
+parameters:
+  n:
+    min: 1
+    max: 12
+    step: 1
+    value: 5
+  t:
+    min: 0
+    max: 1
+    step: 0.005
+    value: 0
+variables:
+- y
+- \theta
+- n
+- k
+derivation:
+- \text{each harmonic } k \text{ is a circle of radius } \frac{4}{\pi(2k-1)} \text{ spinning } 2k-1 \text{ times as fast as the first}
+- \text{chain the circles tip to base, one spinning inside the reach of the last}
+- \text{the final tip's height is } y(\theta), \text{ the sum of every harmonic at once, tracing the wave as } \theta \text{ sweeps around}
+charts: []
+primary: n
+presets:
+- n: 1
+  t: 0
+- n: 3
+  t: 0
+- n: 12
+  t: 0
+challenges:
+- check: n
+  target: 12
+- check: n
+  target: 1
+- check: 'n >= 6 and t > 0.4 and t < 0.6'

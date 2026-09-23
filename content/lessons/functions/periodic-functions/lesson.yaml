@@ -1,0 +1,76 @@
+id: periodic-functions
+subject: functions
+difficulty: high-school
+equation: f(x) = A\cos\left(\frac{2\pi x}{T}\right) + D
+concepts:
+  - periodic-function
+  - period
+  - amplitude
+  - repetition
+prerequisites:
+  - function-graph
+  - unit-circle
+related:
+  - sine-function-parameters
+  - sine-wave
+visualization:
+  type: function-plot
+  options:
+    expr: A*cos(2*pi*x/T) + D
+    domain:
+      - 0
+      - 24
+    range:
+      - -3
+      - 18
+    mode: plain
+parameters:
+  x:
+    min: 0
+    max: 24
+    step: 0.05
+    value: 2
+  A:
+    min: 0.5
+    max: 6
+    step: 0.1
+    value: 3
+  T:
+    min: 0.5
+    max: 14
+    step: 0.1
+    value: 4
+  D:
+    min: -2
+    max: 14
+    step: 0.5
+    value: 6
+variables:
+  - A
+  - T
+  - D
+  - x
+  - f(x)
+derivation:
+  - f(x+T) = A\cos\left(\frac{2\pi(x+T)}{T}\right)+D = A\cos\left(\frac{2\pi x}{T} + 2\pi\right)+D
+  - \cos(\theta + 2\pi) = \cos\theta
+  - f(x+T) = A\cos\left(\frac{2\pi x}{T}\right)+D = f(x)
+charts: []
+primary: T
+presets:
+  - A: 4
+    D: 12
+    T: 12
+    x: 3
+  - A: 1.2
+    D: 1.5
+    T: 12.4
+    x: 6
+  - A: 1
+    D: 0
+    T: 0.8
+    x: 0.4
+challenges:
+  - check: abs(T-12) < 0.3 and abs(A-4) < 0.3
+  - check: T < 1 and D < 2
+  - check: abs(A + D - 16) < 0.3

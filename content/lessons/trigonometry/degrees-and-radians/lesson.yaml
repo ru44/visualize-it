@@ -1,0 +1,43 @@
+id: degrees-and-radians
+subject: trigonometry
+difficulty: high-school
+equation: \theta_{\text{rad}} = \dfrac{\pi}{180}\,\theta^\circ
+concepts:
+- radian
+- degree
+- arc length
+- angle conversion
+prerequisites:
+- unit-circle
+related:
+- sine-function-parameters
+visualization:
+  type: unit-circle
+  options: {}
+parameters:
+  theta:
+    min: 0
+    max: 360
+    step: 1
+    value: 60
+    unit: °
+variables:
+- \theta^\circ
+- \theta_{\text{rad}}
+derivation:
+- s = r\theta_{\text{rad}}
+- '\text{once all the way around, } s = 2\pi r \text{ and } \theta^\circ = 360^\circ'
+- \theta_{\text{rad}} = \dfrac{\pi}{180}\,\theta^\circ
+charts: []
+primary: theta
+presets:
+- theta: 90
+- theta: 57
+- theta: 270
+challenges:
+- check: 'theta'
+  target: 180
+- check: 'theta*pi/180'
+  target: 1
+  tol: 0.03
+- check: 'theta > 90 and theta*pi/180 < 2'

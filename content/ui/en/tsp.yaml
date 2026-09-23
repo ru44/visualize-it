@@ -1,0 +1,9 @@
+tsp.mode: method
+tsp.brute: check every route
+tsp.nn: nearest neighbour
+tsp.checked: routes checked
+tsp.best: route shown
+tsp.optimal: shortest possible
+tsp.gap: above shortest
+tsp.shuffle: ↻ new cities
+tsp.hint: ▶ city 0 (orange) is the start · dashed green is the shortest route

@@ -1,13 +1,11 @@
 nav.learn: تعلّم
 nav.graph: الرسم البياني
 nav.map: الخريطة
-nav.classic: المحاكاة القديمة
 nav.theme: بدّل المظهر
 nav.language: English
 nav.menu: القائمة
 footer.note: الرسوم هنا نماذج مبسّطة توضّح الفكرة.
 footer.map: خريطة التعلّم
-footer.classic: المحاكاة القديمة
 home.kicker: رياضيات · فيزياء · كهرباء · كيمياء · طيران
 home.title1: شاهد
 home.title2: معنى المعادلة.
@@ -192,19 +190,6 @@ graph.kind.param: وسيطي
 graph.kind.implicit: ضمني
 graph.kind.field: مجال متجهي
 graph.trange: t و θ من 0 إلى
-nav.sims: المحاكاة
-classic.title: معرض المحاكاة
-classic.lead: '{n} محاكاة مفتوحة للتجربة، من الفيزياء والرياضيات إلى علوم الحاسوب والأنظمة المعقّدة.'
-classic.cat.all: الكل
-classic.cat.physics: الفيزياء
-classic.cat.math: الرياضيات
-classic.cat.computer: علوم الحاسوب
-classic.cat.complex: الأنظمة المعقّدة
-classic.loading: جارٍ تحميل المحاكاة…
-classic.credit: المحاكاة من مشروع Visualize It الأصلي من إعداد ChanRT والمساهمين. النصوص داخلها بالإنجليزية.
-home.gallery.t: معرض المحاكاة
-home.gallery.d: '{n} محاكاة مفتوحة، من الكسيريات وأسراب الطيور إلى البندول المزدوج وخوارزميات الترتيب.'
-home.gallery.b: تصفّح المعرض
 subject.statistics: الإحصاء والاحتمالات
 subjectd.statistics: العدّ والصدفة والتوزيعات، وما يمكن أن تخبرك به البيانات.
 count.orderedHint: الترتيب هنا مهم، فـ(1,2) و(2,1) ترتيبان مختلفان. اضغط لتغيير k.
@@ -500,6 +485,8 @@ subject.cryptography: التشفير
 subjectd.cryptography: 'كيف تُحفظ الأسرار: الشيفرات والمفاتيح والتجزئة، والرياضيات التي تحمي كل رسالة.'
 subject.cosmos: الكون والجسيمات
 subjectd.cosmos: 'المادة المظلمة والطاقة المظلمة والكواركات والكوازارات: كيف نعرف أشياء لا نراها.'
+subject.complexity: الأنظمة المعقّدة
+subjectd.complexity: قواعد بسيطة ونتائج مدهشة. الحياة والأسراب والكسيريات والزحام ونقاط الانقلاب.
 dots.sec: '{n|one=ثانية واحدة|two=ثانيتان|few=# ثوانٍ|many=# ثانية|other=# ثانية}'
 dots.min: '{n|one=دقيقة واحدة|two=دقيقتان|few=# دقائق|many=# دقيقة|other=# دقيقة}'
 dots.hour: '{n|one=ساعة واحدة|two=ساعتان|few=# ساعات|many=# ساعة|other=# ساعة}'

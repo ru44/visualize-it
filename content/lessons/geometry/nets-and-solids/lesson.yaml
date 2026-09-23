@@ -1,0 +1,43 @@
+id: nets-and-solids
+subject: geometry
+difficulty: high-school
+equation: A = 6L^2
+concepts:
+- net
+- solid
+- surface area
+- fold
+prerequisites:
+- surface-area-and-volume
+related:
+- surface-area-and-volume
+- polygons-and-tessellation
+visualization:
+  type: nets-and-solids
+  options: {}
+parameters:
+  fold:
+    min: 0
+    max: 1
+    step: 0.01
+    value: 0
+variables:
+- A
+- L
+derivation:
+- \text{a cube's net is six equal squares, hinged edge to edge, each of area } L^2
+- \text{folding each flap up by } 90^\circ \text{ along its hinge does not stretch or overlap any square, so no area is gained or lost}
+- \text{once every flap is folded, the six squares close into a cube whose total surface area is still } A = 6L^2
+charts: []
+primary: fold
+presets:
+- fold: 0
+- fold: 0.5
+- fold: 1
+challenges:
+- check: fold
+  target: 0
+- check: fold
+  target: 0.5
+- check: fold
+  target: 1

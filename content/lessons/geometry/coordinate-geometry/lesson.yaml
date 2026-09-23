@@ -1,0 +1,68 @@
+id: coordinate-geometry
+subject: geometry
+difficulty: beginner
+equation: d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
+concepts:
+  - distance formula
+  - midpoint
+  - slope
+  - equation of a line
+prerequisites:
+  - pythagorean-theorem
+related:
+  - linear-equations
+visualization:
+  type: coordinate-plane
+  options: {}
+parameters:
+  x1:
+    min: 0
+    max: 10
+    step: 0.5
+    value: 1
+  y1:
+    min: 0
+    max: 10
+    step: 0.5
+    value: 1
+  x2:
+    min: 0
+    max: 10
+    step: 0.5
+    value: 5
+  y2:
+    min: 0
+    max: 10
+    step: 0.5
+    value: 4
+variables:
+  - x_1
+  - y_1
+  - x_2
+  - y_2
+  - d
+derivation:
+  - \text{the horizontal gap between the two points is } x_2 - x_1 \text{ and the vertical gap is } y_2 - y_1 \text{ — the two legs of a right triangle}
+  - '\text{by the Pythagorean theorem the straight-line distance is the hypotenuse, } d^2 = (x_2 - x_1)^2 + (y_2 - y_1)^2'
+  - d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
+charts: []
+primary: x2
+presets:
+  - x1: 1
+    y1: 1
+    x2: 5
+    y2: 4
+  - x1: 2
+    y1: 8
+    x2: 9
+    y2: 8
+  - x1: 0
+    y1: 0
+    x2: 6
+    y2: 8
+challenges:
+  - check: 'sqrt((x2 - x1)^2 + (y2 - y1)^2)'
+    target: 5
+  - check: 'abs((x1 + x2)/2 - 4) < 0.2 and abs((y1 + y2)/2 - 4) < 0.2'
+  - check: '(y2 - y1) / (x2 - x1)'
+    target: 2

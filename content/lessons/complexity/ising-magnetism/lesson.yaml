@@ -1,0 +1,48 @@
+id: ising-magnetism
+subject: complexity
+difficulty: high-school
+equation: E = -J \sum_{\text{neighbours}} s_i s_j
+concepts:
+  - phase-transition
+  - magnetism
+  - monte-carlo
+  - emergence
+prerequisites: []
+related:
+  - game-of-life
+  - xy-model-vortices
+visualization:
+  type: ising
+  options: {}
+parameters:
+  temperature:
+    min: 0.5
+    max: 5
+    step: 0.1
+    value: 3.5
+  step:
+    min: 0
+    max: 200
+    step: 1
+    value: 0
+variables:
+  - J
+  - s
+  - M
+derivation:
+  - \Delta E = 2 J s_i \sum_{\text{neighbours}} s_j
+  - P(\text{flip}) = \min\left(1, e^{-\Delta E / T}\right)
+  - M = \frac{1}{N}\sum_{i=1}^{N} s_i
+charts: []
+primary: step
+presets:
+  - temperature: 1.5
+    step: 150
+  - temperature: 2.27
+    step: 150
+  - temperature: 4
+    step: 150
+challenges:
+  - check: temperature < 2 and step >= 100
+  - check: temperature > 3 and step >= 60
+  - check: abs(temperature - 2.27) < 0.3 and step >= 150

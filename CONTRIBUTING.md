@@ -26,7 +26,6 @@ content/
       ar.md, fr.md …   one file per language, same structure
   lessons/<subject>/_order.yaml   the order lessons appear in that subject
   ui/<lang>.yaml       interface strings (buttons, labels, messages)
-  classic/             titles and descriptions of the classic simulations
 ```
 
 `pnpm check` compiles `content/` into `src/generated/` and rejects anything malformed: bad YAML, a missing section, a formula that does not evaluate, LaTeX that does not render, a translation whose maths differs from the English. The same check runs in CI, so a pull request cannot break the site.

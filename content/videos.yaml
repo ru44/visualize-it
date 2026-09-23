@@ -102,3 +102,8 @@ cosmos:
   - { title: Kurzgesagt, url: 'https://www.youtube.com/@kurzgesagt', by: Kurzgesagt, lang: en, note: Animated films about the universe. }
   - { title: ScienceClic English, url: 'https://www.youtube.com/@ScienceClicEN', by: ScienceClic, lang: en }
   - { title: الدحيح, url: 'https://www.youtube.com/@Eldaheeh', by: الدحيح, lang: ar, note: حلقات عربية عن الكون والنجوم والثقوب السوداء. }
+complexity:
+  - { title: Veritasium, url: 'https://www.youtube.com/@veritasium', by: Veritasium, lang: en, note: Chaos, emergence and why simple rules surprise us. }
+  - { title: Numberphile, url: 'https://www.youtube.com/@numberphile', by: Numberphile, lang: en, note: The Game of Life, fractals and strange attractors. }
+  - { title: Kurzgesagt, url: 'https://www.youtube.com/@kurzgesagt', by: Kurzgesagt, lang: en }
+  - { title: الدحيح, url: 'https://www.youtube.com/@Eldaheeh', by: الدحيح, lang: ar }

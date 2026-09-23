@@ -1,0 +1,8 @@
+nets.hint: حرّك fold — 0 مفروشة مسطحة، 1 مكعب مغلق
+nets.fold: fold
+nets.hinge: زاوية المفصل
+nets.area: المساحة السطحية الكلية
+nets.state: الحالة
+nets.closed: مكعب مغلق
+nets.flat: مفروشة مسطحة
+nets.folding: طور الطي

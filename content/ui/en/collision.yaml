@@ -1,0 +1,9 @@
+coll.hint: momentum is always conserved · drag "restitution e" to see how much kinetic energy survives
+coll.momentum: momentum
+coll.keBefore: KE before
+coll.keAfter: KE after
+coll.keLost: KE lost
+coll.restart: ↻ restart
+coll.ke: kinetic energy
+coll.before: before
+coll.after: after

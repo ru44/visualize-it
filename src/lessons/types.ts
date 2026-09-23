@@ -25,6 +25,7 @@ export type Subject =
   | 'relativity'
   | 'cryptography'
   | 'cosmos'
+  | 'complexity'
 export type Difficulty = 'beginner' | 'high-school' | 'university' | 'advanced'
 
 export interface Video {

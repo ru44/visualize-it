@@ -1,0 +1,46 @@
+id: contact-process
+subject: complexity
+difficulty: high-school
+equation: \lambda_c \approx \frac{r}{4}
+concepts:
+  - phase-transition
+  - epidemic-model
+  - critical-point
+  - cellular-automaton
+prerequisites: []
+related:
+  - sir-epidemic
+visualization:
+  type: contact-process
+  options: {}
+parameters:
+  rate:
+    min: 0
+    max: 0.5
+    step: 0.01
+    value: 0.15
+  step:
+    min: 0
+    max: 150
+    step: 1
+    value: 0
+variables:
+  - \lambda
+  - r
+derivation:
+  - \text{a healthy cell with } n \text{ infected neighbours catches the infection with probability } 1-(1-\lambda)^n
+  - \text{an infected cell recovers to healthy with fixed probability } r \text{ every step}
+  - \text{a mean-field balance between new infections and recoveries gives the critical rate } \lambda_c \approx \frac{r}{4}
+charts: []
+primary: step
+presets:
+  - rate: 0.05
+    step: 80
+  - rate: 0.3
+    step: 80
+  - rate: 0.125
+    step: 150
+challenges:
+  - check: rate <= 0.08 and step >= 60
+  - check: rate >= 0.25 and step >= 60
+  - check: abs(rate - 0.125) < 0.02 and step >= 100

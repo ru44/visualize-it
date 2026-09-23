@@ -1,0 +1,62 @@
+id: projectile-with-drag
+subject: physics
+difficulty: university
+equation: \dfrac{dv_x}{dt} = -k v\,v_x,\quad \dfrac{dv_y}{dt} = -g-k v\,v_y
+concepts:
+- projectile-motion
+- air-resistance
+- drag
+- kinematics
+prerequisites:
+- projectile-motion
+related:
+- projectile-motion
+- terminal-velocity
+visualization:
+  type: drag-projectile
+  options: {}
+parameters:
+  v0:
+    min: 5
+    max: 40
+    step: 0.5
+    value: 25
+    unit: m/s
+  th:
+    min: 5
+    max: 85
+    step: 1
+    value: 45
+    unit: "°"
+  k:
+    min: 0
+    max: 0.08
+    step: 0.002
+    value: 0.02
+variables:
+- v
+- v_x
+- v_y
+- k
+- g
+derivation:
+- v=\sqrt{v_x^2+v_y^2}
+- \dfrac{dv_x}{dt}=-k v\,v_x,\quad \dfrac{dv_y}{dt}=-g-k v\,v_y
+- \text{Drag removes energy every instant, so the range shrinks and the best angle drops below } 45^\circ
+charts: []
+primary: k
+presets:
+- v0: 25
+  th: 45
+  k: 0
+- v0: 25
+  th: 45
+  k: 0.03
+- v0: 25
+  th: 38
+  k: 0.05
+challenges:
+- check: k
+  target: 0
+- check: k > 0.04
+- check: k > 0.02 and th < 40

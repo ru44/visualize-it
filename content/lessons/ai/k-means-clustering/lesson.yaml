@@ -1,0 +1,46 @@
+id: k-means-clustering
+subject: ai
+difficulty: beginner
+equation: \arg\min_{c_1,\dots,c_k} \sum_i \min_j \lVert x_i - c_j\rVert^2
+concepts:
+  - clustering
+  - unsupervised-learning
+  - centroid
+  - distance-metric
+prerequisites: []
+related:
+  - logistic-regression
+visualization:
+  type: k-means-clustering
+  options: {}
+parameters:
+  k:
+    min: 1
+    max: 6
+    step: 1
+    value: 3
+  iter:
+    min: 0
+    max: 14
+    step: 1
+    value: 0
+variables:
+  - how many groups you ask the algorithm to find
+  - which round of the update you are looking at
+derivation:
+  - \text{pick } k \text{ starting centres}
+  - \text{assign each point to its nearest centre}
+  - \text{move each centre to the average of its points; repeat}
+charts: []
+primary: k
+presets:
+  - k: 3
+    iter: 10
+  - k: 1
+    iter: 5
+  - k: 6
+    iter: 12
+challenges:
+  - check: abs(k - 3) < 0.5 and iter >= 8
+  - check: k == 1 and iter >= 3
+  - check: k >= 5 and iter >= 10

@@ -1,0 +1,9 @@
+collatz.step: step
+collatz.value: value
+collatz.max: peak value
+collatz.parity: parity
+collatz.even: even
+collatz.odd: odd
+collatz.hint: starting from {n} · even → half, odd → triple plus one
+collatz.restart: ↻ restart
+collatz.axisHint: height is log scale

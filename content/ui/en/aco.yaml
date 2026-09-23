@@ -1,0 +1,6 @@
+aco.iter: generation
+aco.genBest: best this generation
+aco.globalBest: best so far
+aco.rho: evaporation rate
+aco.shuffle: ↻ new cities
+aco.hint: ▶ thicker lines carry more pheromone · green is the best tour found so far

@@ -1,0 +1,11 @@
+imgf.hint: ▶ the 3×3 window slides pixel by pixel · drag "pixel" to step through
+imgf.source: original
+imgf.output: filtered
+imgf.kernel: filter
+imgf.k.blur: blur
+imgf.k.sharpen: sharpen
+imgf.k.edge: edge detect
+imgf.pixel: row, column
+imgf.done: pixels done
+imgf.value: output value
+imgf.restart: ↻ restart

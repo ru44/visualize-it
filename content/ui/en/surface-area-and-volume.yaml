@@ -1,0 +1,8 @@
+sav.hint: drag s — the dashed cube is a fixed 1 m reference
+sav.side: s — side
+sav.area: surface area 6s²
+sav.volume: volume s³
+sav.ratio: cube area ÷ volume
+sav.sphere: sphere area ÷ volume
+sav.cylinder: cylinder area ÷ volume
+sav.refLabel: 1 m reference

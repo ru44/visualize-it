@@ -52,7 +52,7 @@ The full curve plotted here is Planck's blackbody law, and its near-perfect matc
 ## Real world
 
 ### Penzias and Wilson's accidental discovery
-Their 1965 measurement of the microwave background, made while trying to remove noise from a radio antenna, won them the 1965 Nobel Prize in Physics.
+Their 1965 measurement of the microwave background, made while trying to remove noise from a radio antenna, won them the 1978 Nobel Prize in Physics.
 
 ### The COBE and Planck satellites
 Later missions mapped the glow's temperature across the whole sky to within millionths of a degree, revealing the seeds of every galaxy that would ever form.

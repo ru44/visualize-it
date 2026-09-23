@@ -1,0 +1,8 @@
+lv.hint: ▶ the loop keeps retracing itself · drag "time" to move along it
+lv.phase: predators vs prey
+lv.overTime: both populations over time
+lv.t: time
+lv.prey: prey
+lv.pred: predators
+lv.swing: prey swing (max − min)
+lv.restart: ↻ restart

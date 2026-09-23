@@ -1,0 +1,10 @@
+strobe.rpm: سرعة الدولاب
+strobe.fps: معدل أخذ العينات
+strobe.apparent: السرعة الظاهرة
+strobe.direction: يبدو
+strobe.forward: يدور للأمام
+strobe.backward: يدور للخلف
+strobe.frozen: متوقفًا
+strobe.wheel: الدولاب الحقيقي
+strobe.camera: ما تراه الكاميرا
+strobe.hint: ▶ اليسار يدور فعلًا · اليمين يظهر فقط ما تلتقطه الكاميرا من عينات

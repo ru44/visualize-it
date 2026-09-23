@@ -1,0 +1,10 @@
+strobe.rpm: wheel speed
+strobe.fps: sampling rate
+strobe.apparent: apparent speed
+strobe.direction: looks like
+strobe.forward: forward
+strobe.backward: backward
+strobe.frozen: frozen
+strobe.wheel: actual wheel
+strobe.camera: camera view
+strobe.hint: ▶ left spins for real · right shows only what the camera samples

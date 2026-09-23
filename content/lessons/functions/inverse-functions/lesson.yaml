@@ -1,0 +1,62 @@
+id: inverse-functions
+subject: functions
+difficulty: beginner
+equation: f(x) = mx + b, \quad f^{-1}(x) = \dfrac{x-b}{m}
+concepts:
+- inverse
+- undo
+- reflection
+- linear-function
+prerequisites:
+- function-graph
+- slope
+related:
+- composing-functions
+visualization:
+  type: inverse-function
+  options:
+    domain:
+    - -40
+    - 130
+parameters:
+  m:
+    min: 0.2
+    max: 3
+    step: 0.05
+    value: 1.8
+  b:
+    min: -40
+    max: 60
+    step: 1
+    value: 32
+  x:
+    min: -40
+    max: 130
+    step: 0.5
+    value: 20
+variables:
+- m
+- b
+- x
+derivation:
+- y = mx + b
+- y - b = mx
+- x = \dfrac{y-b}{m} \;\Rightarrow\; f^{-1}(y) = \dfrac{y-b}{m}
+charts: []
+primary: x
+presets:
+- m: 1.8
+  b: 32
+  x: 20
+- m: 1.609
+  b: 0
+  x: 10
+- m: 0.5
+  b: 0
+  x: 10
+challenges:
+- check: m*x + b
+  target: 300
+- check: abs(m - 1) < 0.03 and abs(b) < 0.5
+- check: (x - b) / m
+  target: -10

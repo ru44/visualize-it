@@ -1,0 +1,8 @@
+trsy.hint: dashed = original · solid = transformed · strip below repeats it
+trsy.angle: rotation θ about O
+trsy.translate: translation (tx, ty)
+trsy.flip: reflection
+trsy.on: on
+trsy.off: off
+trsy.pattern1: repeating by translation — a strip pattern
+trsy.pattern2: repeating by translation + reflection — a glide pattern

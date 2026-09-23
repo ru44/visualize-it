@@ -1,0 +1,60 @@
+id: polar-coordinates
+subject: trigonometry
+difficulty: high-school
+equation: r = \sqrt{a^2 + b^2}, \quad \theta = \arctan\!\left(\dfrac{b}{a}\right)
+concepts:
+  - polar-coordinates
+  - distance-and-bearing
+  - magnitude
+  - argument
+prerequisites:
+  - unit-circle
+related:
+  - complex-numbers
+  - powers-of-complex-numbers
+  - vectors
+visualization:
+  type: complex-plane
+  options:
+    op: pow
+parameters:
+  a:
+    min: -2
+    max: 2
+    step: 0.05
+    value: 1.1
+  b:
+    min: -2
+    max: 2
+    step: 0.05
+    value: 0.4
+  n:
+    min: 1
+    max: 6
+    step: 1
+    value: 1
+variables:
+  - a
+  - b
+  - r
+  - \theta
+derivation:
+  - a = r\cos\theta, \quad b = r\sin\theta
+  - a^2+b^2 = r^2\cos^2\theta + r^2\sin^2\theta = r^2 \quad\Rightarrow\quad r=\sqrt{a^2+b^2}
+  - \dfrac{b}{a} = \dfrac{r\sin\theta}{r\cos\theta} = \tan\theta \quad\Rightarrow\quad \theta = \arctan\!\left(\dfrac{b}{a}\right)
+charts: []
+primary: a
+presets:
+  - a: 1.5
+    b: 0.8
+    n: 1
+  - a: -1
+    b: 1.2
+    n: 1
+  - a: 1.1
+    b: 0.4
+    n: 5
+challenges:
+  - check: 'abs(sqrt(a^2+b^2) - 1.5) < 0.05'
+  - check: 'atan2(b,a) > 1.4 and atan2(b,a) < 1.7 and sqrt(a^2+b^2) > 1'
+  - check: 'n >= 5 and (sqrt(a^2+b^2))^n > 5'

@@ -1,0 +1,50 @@
+id: area-and-perimeter
+subject: geometry
+difficulty: beginner
+equation: A \le \frac{P^2}{4\pi}
+concepts:
+  - perimeter
+  - area
+  - rectangle
+  - isoperimetric inequality
+prerequisites:
+  - circle
+related:
+  - triangle-angles-and-sides
+visualization:
+  type: isoperimetric
+  options: {}
+parameters:
+  P:
+    min: 12
+    max: 32
+    step: 1
+    value: 24
+    unit: m
+  f:
+    min: 0.05
+    max: 0.95
+    step: 0.01
+    value: 0.5
+variables:
+  - A
+  - P
+  - w
+  - h
+derivation:
+  - \text{for a rectangle of perimeter } P \text{ and width } w, \text{ the height is } h = \frac{P}{2} - w \text{, so its area is } A = w\left(\frac{P}{2} - w\right)
+  - \text{this is a downward parabola in } w \text{, maximised at } w = \frac{P}{4} \text{ — a square}
+  - A \le \frac{P^2}{4\pi} \text{ holds for every shape of perimeter } P \text{, with equality only for the circle}
+charts: []
+primary: f
+presets:
+  - P: 24
+    f: 0.15
+  - P: 24
+    f: 0.5
+  - P: 32
+    f: 0.7
+challenges:
+  - check: 'abs(f - 0.5) < 0.03'
+  - check: 'f * (1 - f) * (P / 2)^2 < 0.5 * (P / 4)^2'
+  - check: 'P / (2 * pi) > 4'

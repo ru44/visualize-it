@@ -1,0 +1,87 @@
+id: transformations-of-graphs
+subject: functions
+difficulty: beginner
+equation: g(x) = k \cdot f\big(s(x-h)\big) + d, \quad f(x) = \sin x
+concepts:
+- transformation
+- shift
+- stretch
+- reflection
+prerequisites:
+- function-graph
+related:
+- composing-functions
+visualization:
+  type: function-plot
+  options:
+    expr: d + k*sin(s*(x - h))
+    domain:
+    - -10
+    - 10
+    range:
+    - -6
+    - 6
+    mode: plain
+parameters:
+  x:
+    min: -10
+    max: 10
+    step: 0.05
+    value: 2
+  k:
+    min: -3
+    max: 3
+    step: 0.05
+    value: 1
+  h:
+    min: -6
+    max: 6
+    step: 0.1
+    value: 0
+  s:
+    min: -2
+    max: 2
+    step: 0.05
+    value: 1
+  d:
+    min: -4
+    max: 4
+    step: 0.1
+    value: 0
+variables:
+- x
+- k
+- h
+- s
+- d
+derivation:
+- f(x) \to f\big(s(x-h)\big)
+- f\big(s(x-h)\big) \to k\,f\big(s(x-h)\big)
+- k\,f\big(s(x-h)\big) \to k\,f\big(s(x-h)\big) + d
+charts: []
+primary: x
+presets:
+- x: 2
+  k: 1
+  h: 0
+  s: 1
+  d: 0
+- x: 2
+  k: 2
+  h: 0
+  s: 1
+  d: 3
+- x: 2
+  k: -1
+  h: 2
+  s: 0.5
+  d: -1
+challenges:
+- check: d - abs(k)
+  target: 0
+- check: k
+  target: -2
+  tol: 0.05
+- check: abs(s)
+  target: 2
+  tol: 0.05

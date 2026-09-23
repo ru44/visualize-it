@@ -1,0 +1,57 @@
+id: collective-behaviour
+subject: complexity
+difficulty: high-school
+equation: \text{group error} < \text{typical individual error}
+concepts:
+  - wisdom-of-crowds
+  - collective-motion
+  - noise-cancellation
+  - self-organization
+prerequisites:
+  - vicsek-alignment
+related:
+  - vicsek-alignment
+  - flocking-boids
+visualization:
+  type: collective-choice
+  options: {}
+parameters:
+  n:
+    min: 4
+    max: 200
+    step: 2
+    value: 40
+  individualNoise:
+    min: 0
+    max: 180
+    step: 5
+    value: 70
+  t:
+    min: 0
+    max: 200
+    step: 1
+    value: 80
+variables:
+  - group size
+  - how wrong a single follower's private guess typically is
+  - step
+derivation:
+  - \text{every follower gets its own noisy private guess at the true direction}
+  - \text{each one blends that guess with the average heading of nearby neighbours}
+  - \text{independent errors cancel in the average, so the group's error shrinks as the group grows}
+charts: []
+primary: n
+presets:
+  - n: 6
+    individualNoise: 70
+    t: 100
+  - n: 40
+    individualNoise: 70
+    t: 100
+  - n: 180
+    individualNoise: 70
+    t: 100
+challenges:
+  - check: n <= 8
+  - check: n >= 150
+  - check: individualNoise >= 150 and n >= 150

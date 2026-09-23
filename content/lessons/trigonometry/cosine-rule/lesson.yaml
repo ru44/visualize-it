@@ -1,0 +1,62 @@
+id: cosine-rule
+subject: trigonometry
+difficulty: high-school
+equation: c^2 = a^2+b^2-2ab\cos C
+concepts:
+- cosine rule
+- law of cosines
+- oblique triangle
+- Pythagorean theorem
+prerequisites:
+- solving-right-triangles
+- pythagorean-theorem
+related:
+- sine-rule
+visualization:
+  type: triangle
+  options: {}
+parameters:
+  a:
+    min: 1
+    max: 9
+    step: 0.1
+    value: 3
+    unit: m
+  b:
+    min: 1
+    max: 9
+    step: 0.1
+    value: 4
+    unit: m
+  c:
+    min: 1
+    max: 9
+    step: 0.1
+    value: 5
+    unit: m
+variables:
+- a
+- b
+- c
+- C
+derivation:
+- (b - a\cos C)^2 + (a\sin C)^2 = c^2
+- b^2 - 2ab\cos C + a^2\cos^2 C + a^2\sin^2 C = c^2
+- a^2+b^2-2ab\cos C = c^2
+charts: []
+primary: c
+presets:
+- a: 3
+  b: 4
+  c: 5
+- a: 5
+  b: 5
+  c: 8.8
+- a: 5
+  b: 7
+  c: 9
+challenges:
+- check: 'acos((a^2+b^2-c^2)/(2*a*b))*180/pi'
+  target: 90
+- check: 'acos((a^2+b^2-c^2)/(2*a*b))*180/pi > 120 and a > 6'
+- check: 'a+b-c < 1 and a+b > c'

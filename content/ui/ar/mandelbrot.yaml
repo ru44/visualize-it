@@ -1,0 +1,5 @@
+mandel.zoom: التكبير
+mandel.center: المركز (حقيقي، تخيلي)
+mandel.iter: عدد التكرارات
+mandel.inside: نسبة الداخل في المجموعة
+mandel.hint: اللون = سرعة هروب z = z² + c · حرّك «zoom» لتقترب

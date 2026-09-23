@@ -1,13 +1,11 @@
 nav.learn: Learn
 nav.graph: Graph
 nav.map: Map
-nav.classic: Classic sims
 nav.theme: Switch theme
 nav.language: العربية
 nav.menu: Menu
 footer.note: Pictures here are simplified models — made to show the idea clearly.
 footer.map: Learning map
-footer.classic: Classic simulations
 home.kicker: Maths · Physics · Electricity · Chemistry · Flight
 home.title1: See what the
 home.title2: equation means.
@@ -192,19 +190,6 @@ graph.kind.param: Parametric
 graph.kind.implicit: Implicit
 graph.kind.field: Vector field
 graph.trange: t, θ from 0 to
-nav.sims: Simulations
-classic.title: Simulation gallery
-classic.lead: '{n} open-ended simulations to play with — physics, mathematics, computer science and complex systems.'
-classic.cat.all: All
-classic.cat.physics: Physics
-classic.cat.math: Mathematics
-classic.cat.computer: Computer science
-classic.cat.complex: Complex systems
-classic.loading: Loading the simulation…
-classic.credit: Simulation from the original Visualize It project by ChanRT and contributors. Its on-screen text is in English.
-home.gallery.t: Simulation gallery
-home.gallery.d: '{n} open-ended simulations: fractals, flocking birds, double pendulums, sorting algorithms and more.'
-home.gallery.b: Browse the gallery
 subject.statistics: Statistics & probability
 subjectd.statistics: Counting, chance, distributions and what data can tell you.
 count.orderedHint: 'Order matters: (1,2) and (2,1) are different arrangements. Tap to change k.'
@@ -500,6 +485,8 @@ subject.cryptography: Cryptography
 subjectd.cryptography: 'How secrets are kept: ciphers, keys, hashes and the maths that protects every message.'
 subject.cosmos: The universe & particles
 subjectd.cosmos: 'Dark matter, dark energy, quarks and quasars: how we know about things we cannot see.'
+subject.complexity: Complex systems
+subjectd.complexity: 'Simple rules, surprising results: life, flocks, fractals, traffic and tipping points.'
 dots.sec: '{n|one=# second|other=# seconds}'
 dots.min: '{n|one=# minute|other=# minutes}'
 dots.hour: '{n|one=# hour|other=# hours}'

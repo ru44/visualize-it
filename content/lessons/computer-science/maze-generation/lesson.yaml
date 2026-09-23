@@ -1,0 +1,52 @@
+id: maze-generation
+subject: computer-science
+difficulty: high-school
+equation: E = V - 1
+concepts:
+  - maze-generation
+  - spanning-tree
+  - depth-first-search
+  - randomized-algorithms
+prerequisites:
+  - depth-first-search
+related:
+  - breadth-first-search
+visualization:
+  type: maze-gen
+  options: {}
+parameters:
+  algo:
+    min: 0
+    max: 1
+    step: 1
+    value: 0
+  size:
+    min: 5
+    max: 18
+    step: 1
+    value: 10
+  step:
+    min: 0
+    max: 1
+    step: 0.001
+    value: 0
+variables:
+  - V
+  - E
+derivation:
+  - '\text{a perfect maze is a spanning tree, connected with no cycles}'
+  - '\text{a tree on } V \text{ cells always has exactly } E = V - 1 \text{ edges}'
+  - '\text{so carving exactly } V - 1 \text{ walls connects every cell by one unique path}'
+charts: []
+primary: algo
+presets:
+  - algo: 0
+    size: 10
+  - algo: 1
+    size: 10
+  - algo: 0
+    size: 16
+challenges:
+  - check: algo < 0.5 and step >= 0.99
+  - check: algo >= 0.5 and step >= 0.99
+  - check: size >= 15 and step >= 0.99

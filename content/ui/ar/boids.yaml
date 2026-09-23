@@ -1,0 +1,6 @@
+boids.t: الخطوة
+boids.order: الانتظام (0-1)
+boids.fleeing: يهرب الآن
+boids.clusters: عدد المجموعات
+boids.restart: ↻ من البداية
+boids.hint: ▶ يطبّق قاعدة التوجيه كل خطوة · حرّك المنزلقات لتغيير شكل السرب

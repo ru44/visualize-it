@@ -1,0 +1,55 @@
+id: hopfield-memory
+subject: ai
+difficulty: beginner
+equation: w_{ij} = \sum_{p} x_i^{p} x_j^{p}, \qquad s_i \leftarrow \operatorname{sign}\left(\sum_{j\neq i} w_{ij}s_j\right)
+concepts:
+  - hopfield-network
+  - associative-memory
+  - hebbian-learning
+  - energy-function
+prerequisites: []
+related:
+  - activation-functions
+visualization:
+  type: hopfield
+  options: {}
+parameters:
+  noise:
+    min: 0
+    max: 50
+    step: 5
+    value: 20
+  pattern:
+    min: 0
+    max: 2
+    step: 1
+    value: 0
+  step:
+    min: 0
+    max: 16
+    step: 1
+    value: 0
+variables:
+  - how many of the memory's cells are flipped before recall starts
+  - which of the three stored memories you are testing
+  - how many recall sweeps have run
+derivation:
+  - w_{ij} = \sum_{p} x_i^{p} x_j^{p} \quad (i \neq j)
+  - s_i \leftarrow \operatorname{sign}\left(\sum_{j\neq i} w_{ij}s_j\right)
+  - \text{sweep every cell this way, in a fixed order, until nothing changes}
+charts: []
+primary: noise
+presets:
+  - pattern: 0
+    noise: 15
+    step: 12
+  - pattern: 1
+    noise: 35
+    step: 14
+  - pattern: 2
+    noise: 50
+    step: 16
+challenges:
+  - check: noise >= 40 and step >= 12
+  - check: noise <= 10 and step >= 2
+  - check: pattern == 2 and noise >= 30

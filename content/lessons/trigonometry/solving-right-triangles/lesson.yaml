@@ -1,0 +1,52 @@
+id: solving-right-triangles
+subject: trigonometry
+difficulty: high-school
+equation: \sin\theta = \dfrac{a}{c}, \quad \cos\theta = \dfrac{b}{c}, \quad \tan\theta = \dfrac{a}{b}
+concepts:
+- SOH CAH TOA
+- right triangle
+- trigonometric ratio
+- hypotenuse
+prerequisites:
+- pythagorean-theorem
+- unit-circle
+related:
+- angles-of-elevation-and-depression
+- sine-rule
+visualization:
+  type: right-triangle
+  options: {}
+parameters:
+  a:
+    min: 0.5
+    max: 8
+    step: 0.1
+    value: 6
+  b:
+    min: 0.5
+    max: 8
+    step: 0.1
+    value: 1.5
+variables:
+- a
+- b
+- c
+- \theta
+derivation:
+- c = \sqrt{a^2+b^2}
+- \sin\theta = \dfrac{a}{c}, \quad \cos\theta = \dfrac{b}{c}
+- \tan\theta = \dfrac{\sin\theta}{\cos\theta} = \dfrac{a}{b}
+charts: []
+primary: a
+presets:
+- a: 6
+  b: 1.5
+- a: 1
+  b: 5
+- a: 4
+  b: 2
+challenges:
+- check: 'atan2(a,b)*180/pi'
+  target: 45
+- check: 'atan2(a,b)*180/pi > 70 and b < 2'
+- check: 'atan2(a,b)*180/pi < 15 and a > 1'

@@ -1,0 +1,44 @@
+id: trig-identities
+subject: trigonometry
+difficulty: high-school
+equation: \sin^2\theta + \cos^2\theta = 1, \quad \tan\theta = \dfrac{\sin\theta}{\cos\theta}
+concepts:
+  - pythagorean-identity
+  - sine
+  - cosine
+  - tangent
+  - unit-circle
+prerequisites:
+  - unit-circle
+related:
+  - six-trig-functions
+  - tangent-function
+visualization:
+  type: unit-circle
+  options: {}
+parameters:
+  theta:
+    min: 0
+    max: 360
+    step: 1
+    value: 40
+    unit: °
+variables:
+  - \theta
+  - \sin\theta
+  - \cos\theta
+  - \tan\theta
+derivation:
+  - x^2 + y^2 = 1
+  - x = \cos\theta, \quad y = \sin\theta \quad\Rightarrow\quad \sin^2\theta + \cos^2\theta = 1
+  - \tan\theta = \dfrac{y}{x} = \dfrac{\sin\theta}{\cos\theta}
+charts: []
+primary: theta
+presets:
+  - theta: 25
+  - theta: 115
+  - theta: 205
+challenges:
+  - check: 'abs(tan(theta*pi/180) - 1) < 0.02'
+  - check: 'sin(theta*pi/180) > 0.9 and cos(theta*pi/180) < 0'
+  - check: 'abs(sin(theta*pi/180)^2 - 0.25) < 0.01 and cos(theta*pi/180) < 0'

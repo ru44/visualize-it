@@ -1,0 +1,59 @@
+id: congruence-and-similarity
+subject: geometry
+difficulty: beginner
+equation: \frac{h_1}{s_1} = \frac{h_2}{s_2}
+concepts:
+  - congruence
+  - similarity
+  - similar triangles
+  - scale factor
+prerequisites:
+  - triangle-angles-and-sides
+related:
+  - area-and-perimeter
+visualization:
+  type: shadow-triangles
+  options: {}
+parameters:
+  sun:
+    min: 15
+    max: 75
+    step: 1
+    value: 40
+    unit: °
+  hStick:
+    min: 0.3
+    max: 3
+    step: 0.05
+    value: 1.2
+  hTree:
+    min: 0.3
+    max: 12
+    step: 0.1
+    value: 6
+variables:
+  - h_1
+  - s_1
+  - h_2
+  - s_2
+derivation:
+  - \text{the sun's rays are parallel, so they meet the stick and the tree at the same angle above the ground}
+  - '\text{both triangles also have a right angle where the object meets the ground, so the two triangles are similar, with corresponding sides in one fixed ratio}'
+  - \frac{h_1}{s_1} = \frac{h_2}{s_2} \text{ — cross-multiplying this ratio finds the tree's height from two measured shadows}
+charts: []
+primary: hTree
+presets:
+  - sun: 40
+    hStick: 1.2
+    hTree: 6
+  - sun: 60
+    hStick: 1
+    hTree: 10
+  - sun: 25
+    hStick: 1.5
+    hTree: 1.5
+challenges:
+  - check: 'abs(hStick - hTree) < 0.05'
+  - check: 'hTree / tan(sun * pi / 180) > 15'
+  - check: 'tan(sun * pi / 180)'
+    target: 2

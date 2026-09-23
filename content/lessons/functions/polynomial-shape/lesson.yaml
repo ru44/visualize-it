@@ -1,0 +1,68 @@
+id: polynomial-shape
+subject: functions
+difficulty: high-school
+equation: f(x) = a\,x^n + \text{(lower-degree terms)}
+concepts:
+  - polynomial
+  - degree
+  - end-behaviour
+  - turning-point
+  - root
+prerequisites:
+  - function-graph
+  - quadratic-functions
+related:
+  - quadratic-roots
+  - rational-functions-and-asymptotes
+visualization:
+  type: function-plot
+  options:
+    expr: "n==2 ? a*(x^2-4) : (n==3 ? a*(x^3-3*x) : (n==4 ? a*(x^4-5*x^2+4) : a*(x^5-5*x^3+4*x)))"
+    domain:
+      - -2.3
+      - 2.3
+    range:
+      - -10
+      - 10
+    mode: plain
+parameters:
+  x:
+    min: -2.3
+    max: 2.3
+    step: 0.02
+    value: 0
+  n:
+    min: 2
+    max: 5
+    step: 1
+    value: 3
+  a:
+    min: -2
+    max: 2
+    step: 0.1
+    value: 1
+variables:
+  - n
+  - a
+  - x
+  - f(x)
+derivation:
+  - \text{a degree-}n\text{ polynomial crosses zero at most } n \text{ times}
+  - \text{between two consecutive crossings the curve must turn back at least once}
+  - \text{so the curve has at most } n-1 \text{ turns}
+charts: []
+primary: n
+presets:
+  - n: 2
+    a: 1
+    x: 0
+  - n: 3
+    a: -1
+    x: 0
+  - n: 5
+    a: 1
+    x: 1
+challenges:
+  - check: n==4 and a>0.3
+  - check: n==3 and a<-0.3
+  - check: n==5 and abs(x-1)<0.05

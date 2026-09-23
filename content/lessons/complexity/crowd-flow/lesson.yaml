@@ -1,0 +1,53 @@
+id: crowd-flow
+subject: complexity
+difficulty: high-school
+equation: g \downarrow \Rightarrow \text{the crowd backs up at the doorway}
+concepts:
+  - agent-based-model
+  - self-organization
+  - emergence
+prerequisites: []
+related:
+  - game-of-life
+visualization:
+  type: crowd-flow
+  options: {}
+parameters:
+  gap:
+    min: 0.15
+    max: 1
+    step: 0.05
+    value: 0.35
+  n:
+    min: 10
+    max: 50
+    step: 5
+    value: 30
+  t:
+    min: 0
+    max: 150
+    step: 1
+    value: 0
+variables:
+  - g
+  - n
+derivation:
+  - \text{each walker heads for the far side and steers away from anyone close by}
+  - \text{walkers going opposite ways repel each other more than walkers going the same way, so lanes form}
+  - g \downarrow \Rightarrow \text{walkers queue and the doorway clogs}
+charts: []
+primary: gap
+presets:
+  - gap: 0.9
+    n: 30
+    t: 60
+  - gap: 0.35
+    n: 30
+    t: 60
+  - gap: 0.2
+    n: 45
+    t: 100
+challenges:
+  - check: gap >= 0.8 and t >= 40
+  - check: gap <= 0.25 and n >= 40 and t >= 60
+  - check: abs(n - 45) < 3 and t >= 80

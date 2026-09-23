@@ -1,0 +1,7 @@
+perc.p: fraction open
+perc.open: cells open
+perc.status: status
+perc.spans: crosses top to bottom
+perc.notYet: does not cross yet
+perc.restart: ↻ restart
+perc.hint: ▶ each cell has a fixed random threshold · sweeps "fraction open" upward
