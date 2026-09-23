@@ -19,7 +19,7 @@ home.step1.d: اختر مادة من الأسفل، أو اكتب أي معاد�
 home.step2.t: 2 · جرّب بنفسك
 home.step2.d: اسحب الرسم أو حرّك المنزلق، وستتغيّر الأرقام أمامك مباشرة.
 home.step3.t: 3 · اقرأ السبب
-home.step3.d: شرح قصير بلغة بسيطة، والرياضيات الرسمية موجودة لمن يريدها فقط.
+home.step3.d: شرح قصير بلغة بسيطة، والصيغ الرياضية موجودة لمن يريدها فقط.
 home.subjects: اختر مادة
 home.subjects.d: كل مادة مسار قصير من الدروس، يبدأ بأسهل فكرة ثم يتدرّج.
 home.lessons: '{n|zero=لا دروس|one=درس واحد|two=درسان|few=# دروس|many=# درسًا|other=# درس}'
@@ -41,7 +41,7 @@ lesson.dragHint: حرّك أحد المنزلقات، أو اسحب على ال�
 lesson.variables: معاني الرموز
 lesson.meaning: ما معنى ذلك؟
 lesson.intuition: مبسّط
-lesson.formal: رسمي
+lesson.formal: بالمعادلة
 lesson.derivation: من أين تأتي الصيغة؟
 lesson.steps: خطوة بخطوة
 lesson.realWorld: أين نستخدمها؟
@@ -423,8 +423,8 @@ guided.simple: العرض المبسّط
 guided.tryTitle: جرّب هذا
 guided.why: لماذا يحدث هذا؟
 guided.more: أخبرني أكثر
-guided.showMaths: أرِني الرياضيات
-guided.hideMaths: أخفِ الرياضيات
+guided.showMaths: أرِني المعادلات
+guided.hideMaths: أخفِ المعادلات
 guided.moreSliders: '{n|one=شيء آخر يمكن تغييره|two=شيئان آخران يمكن تغييرهما|few=# أشياء أخرى يمكن تغييرها|other=# شيئًا آخر يمكن تغييره}'
 home.start2: 'ابدأ بدقيقتين: ما هو الميل؟'
 subject.ai: الذكاء الاصطناعي وتعلم الآلة
