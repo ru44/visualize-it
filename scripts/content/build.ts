@@ -239,16 +239,47 @@ const videosRaw = YAML.parse(readFileSync(join(CONTENT, 'videos.yaml'), 'utf8'))
 const videos = z.partialRecord(z.enum(SUBJECTS), z.array(Video)).safeParse(videosRaw)
 if (!videos.success) for (const i of videos.error.issues) err('content/videos.yaml', `${i.path.join('.')}: ${i.message}`)
 
+// ---- classic simulations -----------------------------------------------------------------------------
+const classic = YAML.parse(readFileSync(join(CONTENT, 'classic', 'manifest.yaml'), 'utf8'))
+const classicText: Record<string, any> = {}
+for (const f of readdirSync(join(CONTENT, 'classic'))) if (f.endsWith('.yaml') && f !== 'manifest.yaml') classicText[f.replace('.yaml', '')] = YAML.parse(readFileSync(join(CONTENT, 'classic', f), 'utf8'))
+// The simulations' own words: content/classic/text/<lang>/<sim-id>.yaml maps each English string on
+// the page (as embed.js reads it) to its translation. {0}, {1} stand for numbers the page fills in.
+const classicPageText: Record<string, Record<string, Record<string, string>>> = {}
+const textDir = join(CONTENT, 'classic', 'text')
+if (existsSync(textDir))
+  for (const lang of readdirSync(textDir)) {
+    classicPageText[lang] = {}
+    for (const f of readdirSync(join(textDir, lang)).filter((x) => x.endsWith('.yaml'))) {
+      const id = f.replace('.yaml', '')
+      const where = `content/classic/text/${lang}/${f}`
+      if (!classic.some((c: { id: string }) => c.id === id)) err(where, `no simulation called "${id}"`)
+      let d: unknown
+      try { d = YAML.parse(readFileSync(join(textDir, lang, f), 'utf8')) ?? {} } catch (e: any) { err(where, `invalid YAML: ${String(e.message).split('\n')[0]}`); continue }
+      const out: Record<string, string> = {}
+      for (const [k, v] of Object.entries(d as Record<string, unknown>)) {
+        if (typeof v !== 'string' || !v.trim()) { err(where, `"${k.slice(0, 40)}" has no translation`); continue }
+        const ph = (x: string) => (x.match(/\{\d+\}/g) ?? []).sort().join()
+        if (ph(k) !== ph(v)) err(where, `"${k.slice(0, 40)}": the placeholders {0}, {1}… must match`)
+        out[k] = v
+      }
+      classicPageText[lang][id] = out
+    }
+  }
+
 // ---- write --------------------------------------------------------------------------------------------
 const write = (name: string, data: unknown) => writeFileSync(join(OUT, name), JSON.stringify(data))
 write('lessons.json', lessons)
 for (const [lang, t] of Object.entries(texts)) write(`lessons.${lang}.json`, t)
 for (const [lang, d] of Object.entries(ui)) write(`ui.${lang}.json`, d)
+write('classic.json', classic)
 write('videos.json', videos.success ? videos.data : {})
 const models = collectModels(ROOT)
 for (const [n, m] of Object.entries(models)) if (m.bytes > 6e6) err(`public/models/${n}.glb`, `${(m.bytes / 1e6).toFixed(1)} MB is too heavy for the web (keep models under 6 MB)`)
 write('models.json', models)
 for (const [lang, d] of Object.entries(notation)) write(`notation.${lang}.json`, d)
+for (const [lang, d] of Object.entries(classicText)) write(`classic.${lang}.json`, d)
+for (const [lang, d] of Object.entries(classicPageText)) write(`classic-text.${lang}.json`, d)
 writeFileSync(join(OUT, 'languages.json'), JSON.stringify(Object.keys(ui)))
 
 const langs = Object.keys(texts)

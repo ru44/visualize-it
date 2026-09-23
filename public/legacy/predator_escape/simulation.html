@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>Predator Escape | Visualize It</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keyword"
+    content="collective behaviour, flocking behaviour, interactive, boids, boids simulation, couzin model, predator escape">
+  <meta name="og:image"
+    content="https://github.com/visualize-it/visualize-it.github.io/raw/main/images_webp/collective_behaviour.webp">
+
+  <!-- Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script src="utils.js" defer></script>
+  <script src="basic.js" defer></script>
+  <script src="user_input.js" defer></script>
+  <script src="Vector.js" defer></script>
+  <script src="Boid.js" defer></script>
+  <script src="tests.js" defer></script>
+  <script src="predefs.js" defer></script>
+  <script src="simulation.js" defer></script>
+
+
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="../embed.css"><script src="../embed.js"></script>
+</head>
+
+<body>
+  <nav class="nav-extended" style="background:black; margin-top: 0mm">
+    <div class="nav-wrapper">
+      <h1 id="main-heading">Visualize It</h1>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent tabs-fixed-width">
+        <li class="tab"><a href="../index.html" style="font-size: larger;">Home</a></li>
+        <li class="tab"><a href="../about.html" style="font-size: larger;">About</a></li>
+      </ul>
+    </div>
+  </nav>
+</body>
+
+<div class="text">
+  <h2>Predator Escape</h2>
+  <center>
+    <p>A simple model that depicts how boids perceive and escape predators</p>
+  </center>
+
+  <div class="container" style="width: 90%">
+    <div style="background:black; padding: 15px; border: 2px red solid;">
+      <center>
+        <b>This real-time simulation is computationally complex and may induce unresponsiveness
+          on lower-end devices</b>
+      </center>
+    </div>
+    <br>
+
+    <center>
+      <span>
+        (If the simulation hasn't started then please hover your pointer over the canvas)
+      </span>
+    </center>
+    <div class="row">
+      <div class="col s12 l12">
+        <center>
+          <canvas id="canvas"></canvas>
+        </center>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12 l4">
+        <center>
+          <span id="num-display"></span> <br>
+          <button class="btn purple darken-4" onclick="addBoids()">Add</button>
+          <button class="btn purple darken-4" onclick="removeBoids()">Remove</button>
+          <button class="btn purple darken-4" onclick="clearBoids()">Clear</button>
+        </center>
+      </div>
+
+      <div class="col s12 l4">
+        <center>
+          <button id="reflect-button" class="btn purple darken-4" onclick="toggleReflection()">Reflection: Off</button>
+        </center>
+      </div>
+
+      <div class="col s12 l4">
+        <center>
+          <button id="pause-button" onclick="pauseToggle()" class="btn purple darken-4">Pause</button>
+          <button onclick="initParams()" class="btn purple darken-4">Restart</button>
+        </center>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h3>Details</h3>
+
+  <p>
+    Meaning of boid colors:
+  <ol>
+    <li>
+      <b>Light Blue:</b> The boid hasn't detected any predator. The predator may lie in its blind spot, or it may be far
+      away.
+    </li>
+    <li>
+      <b>Green:</b> The boid has detected the predator, but the predator is not that close
+    </li>
+    <li>
+      <b>Red:</b> The boid has detected the predator, and the predator is close enough to be a threat
+    </li>
+  </ol>
+  Now, we have two instincts at work here: (a) Collective Behaviour and (b) Predator Avoidance. In order to understand
+  the dynamics of Collective Behaviour, please visit <a href="../collective_behaviour/simulation.html">this page</a>.
+  The dynamics of predator avoidance is simple: go in the opposite direction of predator approach. The main question is,
+  how do we make these two behaviours operate together? We define a lower radii \(r_1\) and an upper radii
+  \(r_2\). Let the distance of the predator from the boid be \(d\), and assume that the predator <b>does not lie</b>
+  in the blind spot of the boid, then:
+  <ol>
+    <li>
+      <b>\( d < r_1 \):</b> Predator avoidance will dominate the boid's behaviour
+    </li>
+    <li>
+      <b>\( d > r_2 \):</b> The boid will continue to follow the rules of collective behaviour
+    </li>
+    <li>
+      <b>\( r_1 < d < r_2 \):</b> The boid will follow a weighted average of predator escape and
+      collective behaviour. The weight of predator escape 'w' is given by:
+      \[ w_p = \frac{d - r_2}{r_1 - r_2} \]
+      The weight of collective behaviour is therefore \(w_c = 1 - w_p\). The boid will seek to move in the direction
+      given by the weightage average of these two instincts.
+  </ol>
+  If the predator lies in the blind spot of the boid, then irrespective of the value of \(d\), the boid will continue
+  following the rules of collective behaviour since it has not detected the predator.
+  </p>
+
+  <hr>
+
+  <b>Note:</b>
+  <ol>
+    <li>
+      This simulation is preferably viewed on a desktop/laptop.
+    </li>
+    <li>
+      The method of combining both behaviours is inspired by a similar method in molecular dynamics: in order to
+      reduce the time complexity of molecular simulations from \(O(N^2)\) to \( \approx O(N) \), one can cutoff the
+      operating potential at some distance \( r_c \). However, this causes the force to be discontinuous at \( r_c \).
+      This problem presents itself in the form of anomalous acceleration of individual molecules. In order to remedy
+      this, one defines two radii \( r_1 \) and \( r_2 \), and brings the potential down to zero between these two radii
+      in a smooth manner using switching functions of various degrees.
+    </li>
+  </ol>
+
+  <hr>
+
+  <p class="center-align">Developed by ChanRT | Fork me at <a href="https://www.github.com/chanrt">GitHub</a></p>
+</div>
+
+</html>

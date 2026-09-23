@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>Porous Percolation | Visualize It</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="percolation, porous percolation, interactive, visualization">
+  <meta name="og:image" content="https://github.com/visualize-it/visualize-it.github.io/raw/main/images_webp/porous_percolation.webp">
+
+  <!-- Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script src="../helper.js" defer></script>
+  <script src="basic.js" defer></script>
+  <script src="user_input.js" defer></script>
+  <script src="simulation.js" defer></script>
+
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="../embed.css"><script src="../embed.js"></script>
+</head>
+
+<body>
+  <nav class="nav-extended" style="background:black; margin-top: 0mm">
+    <div class="nav-wrapper">
+      <h1 id="main-heading">Visualize It</h1>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent tabs-fixed-width">
+        <li class="tab"><a href="../index.html" style="font-size: larger;">Home</a></li>
+        <li class="tab"><a href="../about.html" style="font-size: larger;">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="text">
+    <h2>Porous Percolation</h2>
+    <center>
+      <p>
+        Percolation is the study of flow of fluid through porous media. This model simulates the flow of a fluid through
+        a two-dimensional grid. Brown cells represent the medium. Blue cells represent fluid / water whereas black
+        cells represent empty space. Fluid from a cell can flow to its four adjacent neighbours.
+      </p>
+    </center>
+    <br>
+
+    <div class="container" style="width:90%">
+      <div class="row">
+        <div class="col s12 l8">
+          <canvas id="canvas"></canvas>
+        </div>
+        <div class="col s12 l4">
+          <center>
+            <p id="prob-display"></p>
+            <input id="prob-input" type="range" min="0" max="1" step="0.01" oninput="updateParams('prob')"
+              onchange="updateParams('prob')">
+            <p>Moving the above slider will immediately update the grid</p>
+            <button class="btn purple darken-4" onclick="initParams()">Reset Grid</button>
+            <button class="btn purple darken-4" onclick="refill()">Refill</button>
+            <hr>
+            <p>
+              Porosity is the fraction of the grid that is empty. When porosity is above 0.59, then the fluid is most
+              likely to flow from the top to the bottom (or 'percolate')
+            </p>
+          </center>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <b>Note:</b>
+    <ol>
+      <li>When porosity is above 0.59, the medium is likely to have a contiguous space that spans the entirety
+        of the grid. This is called a 'percolating cluster' or a 'spanning cluster'</li>
+      </li>
+      <li>
+        There will be cases when the fluid does not percolate even when porosity is above 0.59 (and vice versa). This is
+        due to defects of the random number generator, and the finiteness of the grid.
+      </li>
+      <li>
+        Related: <a href="../bernoulli_percolation/simulation.html">Bernoulli Percolation</a>,
+        <a href="../tdp/simulation.html">Directed Percolation</a>,
+        <a href="../contact_process/simulation.html">Contact Process</a>.
+      </li>
+    </ol>
+
+    <br>
+    <hr>
+
+    <p class="center-align">Developed by ChanRT | Fork me at <a href="https://www.github.com/chanrt">GitHub</a></p>
+  </div>
+</body>
+
+</html>

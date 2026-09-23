@@ -1,0 +1,15 @@
+# Arabic for the words on the flocking_game simulation page. Keys are the English exactly as the page shows it;
+# values are the Arabic. Keep HTML tags, numbers and {0}-style placeholders as they are.
+"Predators and Flocking Behaviour": "المفترسات وسلوك القطيع"
+"Work in progress": "العمل جارٍ عليها"
+"Number of boids: 55": "عدد الطيور: 55"
+"Number of boids: {0}": "عدد الطيور: {0}"
+"Add Boid": "أضف طائرًا"
+"Clear": "مسح"
+"Restart": "إعادة التشغيل"
+"Density slider: Press 'restart' for changes to reflect": "منزلق الكثافة: اضغط 'إعادة التشغيل' لتطبيق التغيير"
+"Density per 100 x 100 square units: 0.5": "الكثافة لكل 100×100 وحدة مربعة: 0.5"
+"Density per 100 x 100 square units: {0}": "الكثافة لكل 100×100 وحدة مربعة: {0}"
+"Tortuosity histogram - updated every 180 time steps": "مدرّج التعرّج التكراري - يتحدّث كل 180 خطوة زمنية"
+"Red histogram - Attraction; Blue histogram - Orientation; Green histogram - Persistence": "المدرّج الأحمر للانجذاب. المدرّج الأزرق للتوجّه. المدرّج الأخضر للثبات"
+"X-axis: Attraction, Y-axis: Orientation. Parameter: Number of deaths (lighter color implies more relative deaths)": "المحور الأفقي: الانجذاب. المحور الرأسي: التوجّه. اللون يمثّل عدد الوفيات، وكلما كان أفتح دلّ على وفيات أكثر نسبيًا"

@@ -3,6 +3,21 @@ nav.graph: الرسم البياني
 nav.map: الخريطة
 nav.theme: بدّل المظهر
 nav.language: English
+nav.classic: المحاكاة القديمة
+footer.classic: المحاكاة القديمة
+nav.sims: المحاكاة
+classic.title: معرض المحاكاة
+classic.lead: '{n} محاكاة مفتوحة للتجربة، من الفيزياء والرياضيات إلى علوم الحاسوب والأنظمة المعقّدة.'
+classic.cat.all: الكل
+classic.cat.physics: الفيزياء
+classic.cat.math: الرياضيات
+classic.cat.computer: علوم الحاسوب
+classic.cat.complex: الأنظمة المعقّدة
+classic.loading: جارٍ تحميل المحاكاة…
+classic.credit: محاكاة من مشروع Visualize It الأصلي لـ ChanRT والمساهمين معه، تعمل كما كانت تمامًا، ونصوصها مترجمة.
+home.gallery.t: معرض المحاكاة
+home.gallery.d: '{n} محاكاة مفتوحة، من الكسيريات وأسراب الطيور إلى البندول المزدوج وخوارزميات الترتيب.'
+home.gallery.b: تصفّح المعرض
 nav.menu: القائمة
 footer.note: الرسوم هنا نماذج مبسّطة توضّح الفكرة.
 footer.map: خريطة التعلّم

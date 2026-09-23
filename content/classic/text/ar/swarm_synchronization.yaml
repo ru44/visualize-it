@@ -1,0 +1,8 @@
+# Arabic for the words on the swarm_synchronization simulation page. Keys are the English exactly as the page shows it;
+# values are the Arabic. Keep HTML tags, numbers and {0}-style placeholders as they are.
+"Swarm Synchronization | Visualize It": "تزامن الأسراب | Visualize It"
+"Visualize It": "Visualize It"
+"<a href=\"../index.html\" style=\"font-size: larger;\">Home</a>": "<a href=\"../index.html\" style=\"font-size: larger;\">الرئيسية</a>"
+"<a href=\"../about.html\" style=\"font-size: larger;\">About</a>": "<a href=\"../about.html\" style=\"font-size: larger;\">عن الموقع</a>"
+"Swarm Synchronization": "تزامن الأسراب"
+"Developed by ChanRT | Fork me at <a href=\"https://www.github.com/chanrt\">GitHub</a>": "طوّره ChanRT | عدّل عليه على <a href=\"https://www.github.com/chanrt\">GitHub</a>"

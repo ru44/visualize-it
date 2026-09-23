@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>Sorting Algorithms | Visualize It</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keyword" content="sorting, sorting algorithms, algorithms, visualization">
+  <meta name="og:image" content="https://github.com/visualize-it/visualize-it.github.io/raw/main/images_webp/sorting_algos.webp">
+
+  <!-- Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script src="../helper.js" defer></script>
+  <script src="basic.js" defer></script>
+  <script src="user_input.js" defer></script>
+  <script src="bubble_sort.js" defer></script>
+  <script src="insertion_sort.js" defer></script>
+  <script src="selection_sort.js" defer></script>
+  <script src="cocktail_shaker_sort.js" defer></script>
+  <script src="Heap.js" defer></script>
+  <script src="heap_sort.js" defer></script>
+  <script src="merge_sort.js" defer></script>
+  <script src="quick_sort.js" defer></script>
+  <script src="sorting_algos.js" defer></script>
+
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="../embed.css"><script src="../embed.js"></script>
+</head>
+
+<body>
+  <nav class="nav-extended" style="background:black; margin-top: 0mm">
+    <div class="nav-wrapper">
+      <h1 id="main-heading">Visualize It</h1>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent tabs-fixed-width">
+        <li class="tab"><a href="../index.html" style="font-size: larger;">Home</a></li>
+        <li class="tab"><a href="../about.html" style="font-size: larger;">About</a></li>
+      </ul>
+    </div>
+  </nav>
+</body>
+
+<div class="text">
+  <h2>Sorting Algorithms</h2>
+
+  <center>
+    <p>
+      Sorting algorithms are ubiquitous in computer science. This webpage provides a visual demonstration of some
+      popular sorting algorithms.
+    </p>
+  </center>
+
+  <hr>
+
+  <h3>Visualization</h3>
+
+  <p>
+    The height of the candles represents their numerical value. Initially, the candles are randomly distributed. You
+    can use various sorting algorithms to put them in ascending order. Sorted sections of the list are shown in blue,
+    whereas unsorted sections are shown in red. In divide-andconquer algorithms like quick sort and merge sort,
+    sections of the list being ignored are colored gray. White candles convey that the iterator is at their position.
+    Yellow candles are used to depict candles of interest, eg: the maximum number envountered <em>so far</em> during
+    selection sort. In quick sort, the pivot candle is colored purple (and is placed at the end of the list).
+  </p>
+
+  <div class="container" style="width:90%">
+    <div class="row">
+      <div class="col s12 l8">
+        <canvas id="canvas"></canvas>
+      </div>
+      <div class="col s12 l4">
+        <center>
+          <b>Metrics:</b>
+          <p class="jittery" id="params-display"></p>
+          <br> <br>
+          <b>Choose a sorting algorithm:</b>
+          <div class="input-field col s12 black">
+            <select class="browser-default" id="algo-select" onchange="updateParams('algo')"
+              oninput="updateParams('algo')">
+              <option value="bubble">Bubble Sort</option>
+              <option value="selection">Selection Sort</option>
+              <option value="insertion">Insertion Sort</option>
+              <option value="cocktail">Cocktail Shaker Sort</option>
+              <option value="heap">Heap Sort</option>
+              <option value="quick">Quick Sort</option>
+              <option value="merge">Merge Sort</option>
+            </select>
+          </div>
+          <br>
+          <button class="btn purple darken-4" onclick="initAlgo()">Restart</button>
+        </center>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <hr>
+
+  <h3>Description</h3>
+  <ol>
+    <li>
+      <b>Bubble sort:</b> A simple sorting algorithm that just goes through the list comparing adjacent elements and
+      swapping them if they are not in order. It's performance and utiity are very poor, and is primarily taught for
+      educational purposes. It has an average time complexity of O(n<sup>2</sup>). However, if the machine performing
+      the sort has a sizeable probability of not comparing elements properly, then bubble sort is the most fault
+      tolerant algorithm in this list (since it makes frequent comparisons, and can detect mistakes made previously).
+    </li>
+    <br>
+    <li>
+      <b>Selection sort:</b> Another simple sorting algorithm. It scans all N elements, finds the largest one, and puts
+      it at the Nth position. Then, it scans all N-1 elements, finds the largest one, puts it at the (N-1)th position,
+      and so on. It is as worse as bubble sort, with an average time complexity of O(n<sup>2</sup>). It doesn't use the
+      advantages from an approimately sorted list. However, it is noted for it's simplicity.
+    </li>
+    <br>
+    <li>
+      <b>Insertion sort:</b> An algorithm that most humans likely use unconsciously to sort things. It considers the
+      first k elements to be sorted, and figures out where the (k+1)th element should be placed within the sorted
+      portion. Although it's time complexity is still O(n<sup>2</sup>), insertion sort has significant advantages over
+      the last two. It is extremely good to sorting lists that are already approximately sorted, nearing a time
+      complexity of O(n) in this case. Even if a list is already sorted, it can readily accept another element and put
+      it in it's correct place.
+    </li>
+    <br>
+    <li>
+      <b>Cocktail Shaker sort:</b> A variation of selection sort that scans for the maximum element while going forward,
+      and the minimum element while going backwards. It is useful for electromechanical machines that use a physical
+      data reader to scan and sort through values sorted in a tape.
+    </li>
+    <br>
+    <li>
+      <b>Heap sort:</b> A slightly complex sorting algorithm that uses a data structure called heaps. First algorithm on
+      this list to have a time complexity of O(n log n), although it comes with a space complexity of O(n), and the only
+      algorithm on this list to require explicit space. It is extremely good at keeping frequently updated lists sorted
+      dynamically, an advantage conferred by the data structure that it is built on. For information on the heap data
+      structure, please refer <a href="https://www.geeksforgeeks.org/heap-data-structure/"
+        target="_blank">GeeksForGeeks</a> website.
+    </li>
+    <br>
+    <li>
+      <b>Quick sort:</b> As the name implies, it has the fastest time complexity of O(n log n) despite not requiring any
+      explicit memory. It randomly choses an element as a pivot, and transports all elements lower than the pivot to the
+      left, and the elements greater than the pivot to the right of the pivot. The same operation is repeated on the
+      portion of the list to the left and right of the pivot, recursively. Despite it's charasmatic name, it is
+      difficult to implement, and certain choices of pivots can be disastrous on it's runtime.
+    </li>
+    <br>
+    <li>
+      <b>Merge sort:</b> The industrial standard for sorting huge lists. It recursively divides the list into smaller
+      lists, sorts the smaller ones and merges them in the right way. It always has a time complexity of O(n log n). A
+      merge sort routine with multithreading support can sort billions of numbers in no time. However, it uses some
+      auxillary memory while merging, and is really difficult to implement.
+    </li>
+  </ol>
+
+  <br>
+  <hr>
+
+  <b>Note:</b>
+  <ol>
+    <li>If the simulation freezes then please refresh the page</li>
+    <li>
+      Related: <a href="../maze_generation/simulation.html">Maze Generation</a>
+    </li>
+  </ol>
+
+  <br>
+  <hr>
+
+  <p class="center-align">Developed by ChanRT | Fork me at <a href="https://www.github.com/chanrt">GitHub</a></p>
+</div>
+
+</html>

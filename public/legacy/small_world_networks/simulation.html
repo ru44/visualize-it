@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>Small-World Networks | Visualize It</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="small world network, network topology, graph topology, visualization, interactive">
+  <meta name="og:image" content="https://github.com/visualize-it/visualize-it.github.io/raw/main/images_webp/small_world_networks.webp">
+
+  <!-- Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script src="../helper.js" defer></script>
+  <script src="basic.js" defer></script>
+  <script src="user_input.js" defer></script>
+  <script src="simulation.js" defer></script>
+  <script src="Node.js" defer></script>
+  <script src="Edge.js" defer></script>
+
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="../embed.css"><script src="../embed.js"></script>
+</head>
+
+<body>
+  <nav class="nav-extended" style="background:black; margin-top: 0mm">
+    <div class="nav-wrapper">
+      <h1 id="main-heading">Visualize It</h1>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent tabs-fixed-width">
+        <li class="tab"><a href="../index.html" style="font-size: larger;">Home</a></li>
+        <li class="tab"><a href="../about.html" style="font-size: larger;">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="text">
+    <h2>Small-World Networks</h2>
+    <p>
+      A network is a set of nodes and edges. It is an abstraction for many real-world systems: social circles, gene
+      circuits, neuronal networks, power grids, etc. Small-world networks are those network topologies which are as
+      densely clustered as regular lattices, but the distance between any two nodes is as low as in random graphs. Most
+      examples of real-life networks have been found to be small-world networks, and they have been studied for their
+      interesting properties. The below interactive visualization allows you to interpolate between a regular lattice
+      and a random graph, thereby showcasing the middle-ground of small-world networks.
+    </p>
+    <br>
+
+    <div class="container" style="width:90%">
+      <div class="row">
+        <div class="col s12 l8">
+          <canvas id="canvas"></canvas>
+        </div>
+        <div class="col s12 l4">
+          <center>
+            <hr>
+            <b>Calculated Parameters:</b>
+            <br> <br>
+            <span id="c-display"></span> <br>
+            <span id="l-display"></span>
+            <br> <br>
+            <hr>
+            <b>Network Control:</b> <br> <br>
+            <span id="n-display"></span>
+            <input type="range" id="n-input" min="4" max="50" value="20" step="1" class="slider"
+              oninput="updateParams('n')" onchange="updateParams('n')" />
+            <br> <br>
+            <span id="k-display"></span>
+            <input type="range" id="k-input" min="2" value="4" step="1" class="slider" oninput="updateParams('k')"
+              onchange="updateParams('k')" />
+            <br> <br>
+            <span id="p-display"></span>
+            <input type="range" id="p-input" min="0" max="1" value="0" step="0.01" class="slider"
+              oninput="updateParams('p')" onchange="updateParams('p')" />
+            <hr>
+          </center>
+        </div>
+      </div>
+    </div>
+    <p>
+      In the above interactive visualization, the white color dots arranged along a circle represent the nodes of the
+      network, whereas the straight and curved lines connecting them represent the edges. Red color edges have more
+      propensity to get rewired than blue colored ones. Before rewiring, all nodes are uniformly connected to their
+      nearest nodes, thereby constituting a regular lattice. As the rewire propensity increases, the regular lattice
+      transforms into a random graph.
+    </p>
+
+    <br>
+    <hr>
+    <h3>Explanation</h3>
+    <p>
+      <b>Clustering coefficient</b> represents the tight-knit nature of a node's neighbourhood, averaged across all
+      nodes. To be more precise, if a node \(n\) has \(k_n\) neighbours, then these \(k_n\) neigbours can have a maximum
+      of \(k_n (k_n - 1) / 2\) connections between them (if they're fully connected). The extent to which this maximum
+      connectedness is achieved across all nodes is called the clustering coefficient.
+      <br>
+      <b>Characteristic length</b> is the length of the shortest path between two nodes, averaged across all possible
+      pairs of nodes.
+      <br> <br>
+      A regular lattice with, say 30 nodes and 4 edges per node, is characterized by a high clustering coefficient and
+      high characteristic length. As soon as some edges get rewired, this introduces <b>shortcuts</b> in the network
+      which brings down the characteristic length, while having not much effect on the clustering coefficient. This is
+      the realm of small-world networks, and its effects are more prevalent in bigger graphs with sparser connections.
+      As the rewiring propensity
+      is increased, the regular network unravels, giving rise to a random graph which has both: low clustering
+      coefficient and low characteristic length.
+      <br> <br>
+      Small-world networks have many special properties: contagions (disease or rumours) spread faster, consensus is
+      correctly established, strategies find it difficult to establish, information is delivered faster, oscillators
+      find
+      it easier to establish synchrony, etc. These properties definitely play a role in the the real-world networks that
+      are structured as small-world networks, and may play a role behind fascinating properties observed in them.
+    </p>
+
+    <br>
+    <hr>
+
+    <b>Note:</b>
+    <ol>
+      <li>This interactive visualization is inspired by the research paper titled "Collective dynamics of small-world
+        networks" by Duncan Watts & Steven Strogatz, published in Nature in 1998 (<a
+          href="https://www.nature.com/articles/30918" target="_blank">link</a>)</li>
+      <li>Clustering coefficient is straightforward to compute, whereas characteristic length computation requires
+        Djikstra's algorithm to run, so this website may lag on lower-end devices when simulated with large networks.
+      </li>
+      <li>
+        <b>Related:</b> <a href="../porous_percolation/simulation.html">Porous percolation</a>
+      </li>
+    </ol>
+
+    <br>
+    <hr>
+
+    <p class="center-align">Developed by ChanRT | Fork me at <a href="https://www.github.com/chanrt">GitHub</a></p>
+  </div>
+</body>
+
+</html>

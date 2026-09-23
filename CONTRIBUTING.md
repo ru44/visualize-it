@@ -110,6 +110,18 @@ The language switch in the navigation cycles through every language found in `co
 
 A lesson opts into 3D with `visualization3d: { type, options }` in `lesson.yaml`; types are registered in `src/viz3d/registry.ts`. A scene is a component using `useThree()` from `src/viz3d/useThree.ts`, with the same `params`/`options` props as 2D visualizations. Models are `.glb` files in `public/models/`, listed with their licence in `content/models.yaml` and loaded with `loadModel(name)`; scenes must still work when a model is missing.
 
+## Translate a classic simulation
+
+The 62 original simulations in `public/legacy/` are never edited. Their words are swapped at runtime by `public/legacy/embed.js`, using `content/classic/text/<lang>/<id>.yaml`:
+
+```yaml
+"Simulation": "المحاكاة"
+"<b>Instructions:</b>": "<b>التعليمات:</b>"
+"Frames per second: {0}": "عدد الإطارات في الثانية: {0}"
+```
+
+Keys are the English exactly as the page shows it; keep any HTML tags in the translation. `{0}`, `{1}` stand for numbers the page fills in while it runs. To list every string on a page, open `/legacy/<id>/simulation.html?vi-extract=1` and read the `VI-EXTRACT` line in the browser console. `pnpm check` reports empty values, broken YAML and mismatched placeholders.
+
 ## Add a lesson
 
 ```bash

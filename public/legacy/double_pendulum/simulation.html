@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>Double Pendulum | Visualize It</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="double pendulum, chaos, interactive, butterfly effect, simulation">
+  <meta name="og:image"
+    content="https://github.com/visualize-it/visualize-it.github.io/raw/main/images_webp/double_pendulum.webp">
+
+  <!-- Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script src="../helper.js" defer></script>
+  <script src="basic.js" defer></script>
+  <script src="user_input.js" defer></script>
+  <script src="simulation.js" defer></script>
+  <script src="pendulum.js" defer></script>
+
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="../embed.css"><script src="../embed.js"></script>
+</head>
+
+<body>
+  <nav class="nav-extended" style="background:black; margin-top: 0mm">
+    <div class="nav-wrapper">
+      <h1 id="main-heading">Visualize It</h1>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent tabs-fixed-width">
+        <li class="tab"><a href="../index.html" style="font-size: larger;">Home</a></li>
+        <li class="tab"><a href="../about.html" style="font-size: larger;">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="text">
+    <h2>Double Pendulum</h2>
+    <center>
+      <p>A double pendulum is composed of one pendulum suspended from another pendulum. Although its behaviour is
+        completely deterministic, a small change in the initial conditions will drasticallly affect the behaviour of the
+        system later on. This phenomenon is known as chaos. Due to this, making long-term predictions for a chaotic
+        system's behaviour is meaningless. In the below simulation, we have two double pendulums such that their initial
+        conditions differ by a small value. Observe how this small difference leads to a drastic change in the
+        pendulum's trajectory.</p>
+    </center>
+    <br>
+
+    <div class="container" style="width:90%">
+      <div class="row">
+        <div class="col s12 l8">
+          <canvas id="canvas"></canvas>
+        </div>
+        <div class="col s12 l4">
+          <center>
+            <button id="pause-button" class="btn purple darken-4" onclick="pauseToggle()">Resume</button>
+            <button class="btn purple darken-4" onclick="initParams()">Restart</button>
+            <br>
+            <p>
+              Pressing 'Restart' button will reset the simulation to the initial state
+            </p>
+            <hr>
+
+            <b>Blue Pendulum:</b> <br>
+            <span id="t1-1-display"></span>
+            <input id="t1-1-input" type="range" min="0" max="360" value="0" step="1" oninput="updateParams('t1_1')"
+              onchange="updateParams('t1_1')" />
+            <span id="t2-1-display"></span>
+            <input id="t2-1-input" type="range" min="0" max="360" value="0" step="1" oninput="updateParams('t2_1')"
+              onchange="updateParams('t2_1')" />
+            <br>
+            <hr>
+            <b>Red Pendulum:</b> <br>
+            <span id="t1-2-display"></span>
+            <input id="t1-2-input" type="range" min="0" max="360" value="0" step="1" oninput="updateParams('t1_2')"
+              onchange="updateParams('t1_2')" />
+            <span id="t2-2-display"></span>
+            <input id="t2-2-input" type="range" min="0" max="360" value="0" step="1" oninput="updateParams('t2_2')"
+              onchange="updateParams('t2_2')" />
+            <p>
+              Modifying any parameters above or below, will automatically pause the simulation. Click on 'Resume' button
+              to start simulation
+            </p>
+          </center>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <h5>Use these fields to set values with high precision:</h5> <br>
+        <div class="col s12 l6">
+          <center>
+            <b>Blue pendulum</b>
+            <p>&theta;<sub>1</sub> (in degrees)<input id="t1-1-text" type="text" value="0"
+                oninput="updateParams('t1_1_text')" onchange="updateParams('t1_1_text')" /></p>
+            <p>&theta;<sub>2</sub> (in degrees)<input id="t2-1-text" type="text" value="0"
+                oninput="updateParams('t2_1_text')" onchange="updateParams('t2_1_text')" /></p>
+          </center>
+        </div>
+        <div class="col s12 l6">
+          <center>
+            <b>Red pendulum</b>
+            <p>&theta;<sub>1</sub> (in degrees)<input id="t1-2-text" type="text" value="0"
+                oninput="updateParams('t1_2_text')" onchange="updateParams('t1_2_text')" /></p>
+            <p>&theta;<sub>2</sub> (in degrees)<input id="t2-2-text" type="text" value="0"
+                oninput="updateParams('t2_2_text')" onchange="updateParams('t2_2_text')" /></p>
+          </center>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <b>Note:</b>
+    <ol>
+      <li>You can choose any values of &theta;<sub>1</sub> and &theta;<sub>2</sub> for the two double pendulums.
+        However, for observing the phenomenon of chaos, they need to differ from each other by a small value.</li>
+      <li>Under the above circumstances, it may take a couple of oscillations of the double pendulum for their
+        behaviours to diverge.</li>
+      <li>Dynamics of the two bobs of the each double pendulum can be obtained from <a
+          href="https://en.wikipedia.org/wiki/Double_pendulum" target="_blank">here</a>. This simulation uses the
+        equations of motion derived using Lagrangian mechanics.</li>
+      <li>
+        Related: <a href="../conway_game/simulation.html">Conway's Game of Life</a>, 
+        <a href="../lorenz_system/simulation.html">Lorenz System</a>, 
+        <a href="../planetary_motion/simulation.html">Planetary Motion</a>.
+      </li>
+    </ol>
+
+    <br>
+    <hr>
+
+    <p class="center-align">Developed by ChanRT | Fork me at <a href="https://www.github.com/chanrt">GitHub</a></p>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>Mandelbrot Fractal | Visualize It</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keyword" content="mandelbrot, mandelbrot set, mandelbrot fractal, interactive, fractals">
+  <meta name="og:image" content="https://github.com/visualize-it/visualize-it.github.io/raw/main/images_webp/mandelbrot_fractal.webp">
+
+  <!-- Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="basic.js" defer></script>
+  <script src="mandelbrot_fractal.js" defer></script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="../embed.css"><script src="../embed.js"></script>
+</head>
+
+<body>
+  <nav class="nav-extended" style="background:black; margin-top: 0mm">
+    <div class="nav-wrapper">
+      <h1 id="main-heading">Visualize It</h1>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent tabs-fixed-width">
+        <li class="tab"><a href="../index.html" style="font-size: larger;">Home</a></li>
+        <li class="tab"><a href="../about.html" style="font-size: larger;">About</a></li>
+      </ul>
+    </div>
+  </nav>
+</body>
+
+<div class="text">
+  <h2>Mandelbrot Fractal</h2>
+
+  <p>The Mandelbrot Set is a set of complex numbers \( c\) such that \( f(z) = z^2 + c \) does not diverge when
+    recursively iterated from \( z_0 = 0 + 0i \). The Mandelbrot Fractal is obtained when a coloring scheme is applied
+    based on the number of iterations taken for \( z \) to diverge.</p>
+
+  <br>
+  <center>
+    <div class="container" style="width: 100%">
+      <div class="row">
+        <div class="col s12 l8">
+          <canvas id="canvas"></canvas>
+          <br>
+          <p id="fps-display"></p>
+        </div>
+        <div class="col s12 l4">
+          <button onclick="toggleAnimation()" class="btn purple darken-4" id="play-button">Start</button>
+          <button onclick="initParams()" class="btn purple darken-4">Reset</button>
+          <br> <br>
+          <button onclick="zoomIn()" class="btn purple darken-4">Zoom in</button>
+          <button onclick="zoomOut()" class="btn purple darken-4">Zoom out</button>
+          <br> <br>
+          <b>Movement Controls</b>
+          <br> <br>
+          <button onclick="left()" class="btn purple darken-4">Left</button>
+          <button onclick="right()" class="btn purple darken-4">Right</button>
+          <br> <br>
+          <button onclick="up()" class="btn purple darken-4">Up</button>
+          <button onclick="down()" class="btn purple darken-4">Down</button>
+          <br> <br>
+
+          <b>Interesting regions</b>
+          <br> <br>
+          <button class="btn purple darken-4" onclick="area(1)">Spirals</button>
+          <br><br>
+          <button class="btn purple darken-4" onclick="area(2)">Self Similar</button>
+          <br><br>
+          <button class="btn purple darken-4" onclick="area(3)">Fractal Islands</button>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col s12 l6">
+          <b>Coloring Schemes</b>
+          <br> <br>
+          <button class="btn purple darken-4" onclick="color(1)">Full Color 1</button>
+          <button class="btn purple darken-4" onclick="color(4)">Full Color 2</button>
+          <br><br>
+          <button class="btn purple darken-4" onclick="color(2)">Blue Scale</button>
+          <button class="btn purple darken-4" onclick="color(3)">Gray Scale</button>
+        </div>
+        <div class="col s12 l6">
+          <b>Number of iterations</b>
+          <br> <br>
+          <button class="btn purple darken-4" onclick="iterations(100)">100</button>
+          <button class="btn purple darken-4" onclick="iterations(128)">128</button>
+          <button class="btn purple darken-4" onclick="iterations(256)">256</button>
+          <br> <br>
+          <button class="btn purple darken-4" onclick="iterations(512)">512</button>
+          <button class="btn purple darken-4" onclick="iterations(768)">768</button>
+          <button class="btn purple darken-4" onclick="iterations(1024)">1024</button>
+        </div>
+      </div>
+    </div>
+  </center>
+
+  <br>
+  <hr>
+
+  <h3>Description</h3>
+  <p>The X-coordinate of the default configuration (press 'reset' to obtain) ranges from -2.5 to 1 whereas the
+    Y-coordinate ranges from -1 to +1. The complex number \( c \) is equal to \( x_0 + i y_0 \), where \( x_0 \) and \(
+    y_0 \) are
+    coordinates within their respective ranges of X and Y. \( f(z) \) is recursively iterated from \( z_0 = 0 + i0 \).
+    It diverges if \( |z| > 2 \). The magnitude of \( z \) is checked at every iteration, until a maximum number of
+    iterations (100 in this case). If \( |z| \) is never greater than 2, then it is highly probably that it never
+    diverges, and is a part of the Mandelbrot set.</p>
+
+  <p>Elements of the Mandelbrot set are colored black, whereas elements that diverge are coloured on the basis of number
+    of iterations they take to diverge. This coloring scheme gives rise to the Mandelbrot Fractal, which is highly
+    self-similar, detailed and hypnotic in nature.</p>
+
+  <br>
+  <hr>
+  <br>
+
+  <b>Note:</b>
+
+  <ol>
+    <li>An offline, full-screen, interactive version of the Mandelbrot Fractal is available <a
+        href="https://github.com/chanrt/mandelbrot-fractal" target="_blank">here</a>. Requires Java to run.</li>
+    <li>This simulation, despite being highly optimized, is computationally heavy, and may lag on lower-end computers.
+    </li>
+    <li>If the region being simulated has a greater proportion of elements belonging to the Mandelbrot set, then it will
+      take longer to generate.</li>
+  </ol>
+
+  <br>
+  <hr>
+
+  <p class="center-align">Developed by ChanRT | Fork me at <a href="https://www.github.com/chanrt">GitHub</a></p>
+</div>
+
+</html>

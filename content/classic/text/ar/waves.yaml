@@ -1,0 +1,16 @@
+# Arabic for the words on the waves simulation page. Keys are the English exactly as the page shows it;
+# values are the Arabic. Keep HTML tags, numbers and {0}-style placeholders as they are.
+"Waves | Visualize It": "الموجات | Visualize It"
+"Visualize It": "Visualize It"
+"<a href=\"../index.html\" style=\"font-size: larger;\">Home</a>": "<a href=\"../index.html\" style=\"font-size: larger;\">الرئيسية</a>"
+"<a href=\"../about.html\" style=\"font-size: larger;\">About</a>": "<a href=\"../about.html\" style=\"font-size: larger;\">حول</a>"
+"Waves": "الموجات"
+"Drag the blue line to induce a disturbance at the left end": "اسحب الخط الأزرق لتُحدث اضطرابًا عند الطرف الأيسر"
+"Reset": "إعادة الضبط"
+"Pause": "إيقاف مؤقت"
+"Resume": "استئناف"
+"Some standard waves": "أشكال موجية معروفة"
+"Sine": "جيبية"
+"Square": "مربعة"
+"Triangle": "مثلثية"
+"Developed by ChanRT | Fork me at <a href=\"https://www.github.com/chanrt\">GitHub</a>": "طوّره ChanRT، وشفرته المصدرية على <a href=\"https://www.github.com/chanrt\">GitHub</a>"
