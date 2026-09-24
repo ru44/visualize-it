@@ -14,6 +14,10 @@ related:
 visualization:
   type: moon-phases
   options: {}
+visualization3d:
+  type: seasons
+  options:
+    mode: moon
 parameters:
   day:
     min: 0

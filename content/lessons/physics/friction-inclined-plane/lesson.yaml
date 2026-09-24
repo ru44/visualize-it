@@ -23,6 +23,10 @@ visualization:
       - -6
       - 10
     mode: plain
+visualization3d:
+  type: block-force
+  options:
+    mode: incline
 parameters:
   mu:
     min: 0

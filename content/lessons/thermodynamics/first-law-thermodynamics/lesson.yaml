@@ -60,6 +60,10 @@ derivation:
   - W = \int_{V_1}^{V_2} \frac{nRT}{V}\,dV = nRT\big[\ln V\big]_{V_1}^{V_2}
   - W = nRT\ln\!\frac{V_2}{V_1}, \qquad \Delta U = 0 \;\Rightarrow\; Q = W
 charts: []
+visualization3d:
+  type: gas-box
+  options:
+    mode: first-law
 primary: b
 presets:
   - n: 1

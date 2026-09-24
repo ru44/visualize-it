@@ -16,6 +16,10 @@ related:
 visualization:
   type: lensing
   options: {}
+visualization3d:
+  type: spacetime
+  options:
+    mode: lensing
 primary: offset
 parameters:
   M:

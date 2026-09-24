@@ -52,6 +52,10 @@ derivation:
   - Q_{\text{melt}} = mL_f, \quad t_2 = t_1 + \frac{Q_{\text{melt}}}{P}
   - Q_{\text{water}} = mc_{\text{water}}(100 - 0), \quad t_3 = t_2 + \frac{Q_{\text{water}}}{P}
 charts: []
+visualization3d:
+  type: gas-box
+  options:
+    mode: specific-heat
 primary: P
 presets:
   - P: 2000

@@ -26,6 +26,10 @@ visualization:
       - -2
       - 22
     mode: tangent
+visualization3d:
+  type: airfoil
+  options:
+    mode: wings
 parameters:
   AR:
     min: 4

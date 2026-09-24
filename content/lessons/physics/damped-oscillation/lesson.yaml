@@ -13,6 +13,9 @@ related:
 visualization:
   type: damped-spring
   options: {}
+visualization3d:
+  type: spring
+  options: { mode: damped }
 parameters:
   k:
     min: 5

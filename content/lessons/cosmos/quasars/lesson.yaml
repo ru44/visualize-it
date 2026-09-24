@@ -23,6 +23,9 @@ visualization:
     - 0
     - 60
     mode: plain
+visualization3d:
+  type: orbit
+  options: { mode: quasar }
 primary: x
 parameters:
   eta:

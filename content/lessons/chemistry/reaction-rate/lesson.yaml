@@ -72,6 +72,10 @@ charts:
     marker: T
     series:
       - Af*exp(-Ea/(8.314*x))
+visualization3d:
+  type: gas-box
+  options:
+    mode: reaction-rate
 primary: x
 presets:
   - T: 293

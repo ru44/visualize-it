@@ -54,6 +54,10 @@ charts:
       - 1 - 250/x
       - 1 - 300/x
       - 1 - 350/x
+visualization3d:
+  type: gas-box
+  options:
+    mode: entropy
 primary: x
 presets:
   - Tc: 300
