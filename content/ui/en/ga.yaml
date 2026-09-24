@@ -1,6 +1,0 @@
-ga.hint: ▶ the fittest paths breed each round · drag "generation" to step through
-ga.gen: generation
-ga.reached: reached target
-ga.avgFitness: average fitness
-ga.bestFitness: best fitness
-ga.restart: ↻ restart

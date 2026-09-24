@@ -1,7 +1,0 @@
-walk.steps: steps
-walk.rms: spread across walkers
-walk.expected: expected (√N)
-walk.tracked: tracked walker
-walk.hint: one line per walker · shaded band = √N
-walk.restart: ↻ restart
-walk.axisHint: N steps →

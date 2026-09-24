@@ -1,6 +1,0 @@
-hilbert.grid: الشبكة
-hilbert.cells: الخلايا
-hilbert.step: النقطة
-hilbert.locality: المسافة قبل {n} خطوات
-hilbert.hint: يزور المنحنى كل خلية مرة واحدة، ولا يقفز أبدًا بعيدًا
-hilbert.restart: ↻ من البداية

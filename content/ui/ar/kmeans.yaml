@@ -1,8 +1,0 @@
-kmeans.hint: ▶ ينتقل كل مركز إلى متوسط نقاطه · حرّك «الجولة» لتتقدّم خطوة خطوة
-kmeans.k: عدد المجموعات k
-kmeans.iter: الجولة
-kmeans.cost: مجموع المسافات
-kmeans.converged: استقرت
-kmeans.yes: نعم
-kmeans.no: ليس بعد
-kmeans.shuffle: ↻ نقاط جديدة

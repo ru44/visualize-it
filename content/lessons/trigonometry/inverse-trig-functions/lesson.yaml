@@ -12,7 +12,6 @@ prerequisites:
   - unit-circle
   - pythagorean-theorem
 related:
-  - six-trig-functions
   - tangent-function
 visualization:
   type: right-triangle

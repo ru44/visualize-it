@@ -1,6 +1,0 @@
-boids.t: step
-boids.order: order (0-1)
-boids.fleeing: fleeing now
-boids.clusters: groups
-boids.restart: ↻ restart
-boids.hint: ▶ runs the steering rule every step · drag the radii to reshape the flock

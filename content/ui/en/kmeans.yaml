@@ -1,8 +1,0 @@
-kmeans.hint: ▶ centres move to the average of their points · drag "round" to step through
-kmeans.k: clusters k
-kmeans.iter: round
-kmeans.cost: total distance
-kmeans.converged: settled
-kmeans.yes: yes
-kmeans.no: not yet
-kmeans.shuffle: ↻ new points

@@ -1,6 +1,0 @@
-rd.feed: feed rate F
-rd.kill: kill rate k
-rd.step: iteration
-rd.coverage: covered by B
-rd.restart: ↻ restart
-rd.hint: ▶ runs the reaction · drag "iteration" to step through

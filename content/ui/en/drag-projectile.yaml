@@ -1,8 +1,0 @@
-drag.hint: dashed = no drag · solid = with drag
-drag.rangeNo: range, no drag
-drag.rangeDrag: range, with drag
-drag.lost: range lost
-drag.height: max height, with drag
-drag.xLabel: distance
-drag.noDrag: no drag
-drag.withDrag: with drag

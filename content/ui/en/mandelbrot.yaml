@@ -1,5 +1,0 @@
-mandel.zoom: zoom
-mandel.center: centre (real, imaginary)
-mandel.iter: iterations
-mandel.inside: inside the set
-mandel.hint: colour = how fast z = z² + c escapes · drag "zoom" to go in

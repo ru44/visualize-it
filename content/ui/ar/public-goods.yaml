@@ -1,6 +1,0 @@
-pg.gen: الجولة
-pg.cooperators: المتعاونون
-pg.defectors: المتنصّلون
-pg.loners: المنعزلون
-pg.restart: ↻ من البداية
-pg.hint: ▶ كل خلية تقلّد الجار (أو نفسها) الأعلى ربحًا

@@ -500,8 +500,6 @@ subject.cryptography: Cryptography
 subjectd.cryptography: 'How secrets are kept: ciphers, keys, hashes and the maths that protects every message.'
 subject.cosmos: The universe & particles
 subjectd.cosmos: 'Dark matter, dark energy, quarks and quasars: how we know about things we cannot see.'
-subject.complexity: Complex systems
-subjectd.complexity: 'Simple rules, surprising results: life, flocks, fractals, traffic and tipping points.'
 subject.nuclear: Nuclear physics
 subjectd.nuclear: "Inside the atom's core: why nuclei hold together, why some fall apart, and how fission and fusion release energy."
 dots.sec: '{n|one=# second|other=# seconds}'

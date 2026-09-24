@@ -1,6 +1,0 @@
-sandpile.drops: grains dropped
-sandpile.grains: grains on the pile
-sandpile.avalanche: last avalanche size
-sandpile.maxAvalanche: biggest avalanche so far
-sandpile.restart: ↻ restart
-sandpile.hint: ▶ drops one grain at a time · drag "grains dropped" to step through

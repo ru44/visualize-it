@@ -1,7 +1,0 @@
-walk.steps: الخطوات
-walk.rms: التفرّق بين المسارات
-walk.expected: المتوقّع (√N)
-walk.tracked: المسار المتتبَّع
-walk.hint: خط لكل مسار · الحزام المظلّل = √N
-walk.restart: ↻ من البداية
-walk.axisHint: ← N خطوة

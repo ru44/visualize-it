@@ -1,6 +1,0 @@
-xy.temperature: temperature
-xy.step: sweep
-xy.order: alignment
-xy.vortexPairs: vortex pairs
-xy.restart: ↻ restart
-xy.hint: ▶ runs the Metropolis rule · drag "sweep" to step through

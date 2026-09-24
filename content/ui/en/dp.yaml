@@ -1,8 +1,0 @@
-dp.gen: time step
-dp.active: active sites now
-dp.ever: active at some point
-dp.status: status
-dp.alive: still active
-dp.dead: died out
-dp.restart: ↻ restart
-dp.hint: ▶ one active site at the top · drag "time step" to step through

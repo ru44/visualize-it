@@ -1,7 +1,0 @@
-maze.algo: algorithm
-maze.dfs: depth-first backtracking
-maze.prim: Prim's algorithm
-maze.opened: walls opened
-maze.cells: cells
-maze.shuffle: ↻ new maze
-maze.hint: ▶ carves the maze one wall at a time · drag "walls opened" to step through
