@@ -1,0 +1,13 @@
+binding.hint: ▶ اسحب المنحنى أو المنزلق لتحريك النواة المعلَّمة
+binding.fusionPays: ← الاندماج يطلق طاقة
+binding.fissionPays: الانشطار يطلق طاقة →
+binding.axisA: العدد الكتلي A
+binding.axisEbA: MeV / نوية
+binding.peak: 'القمة ≈ {v} MeV/نوية'
+binding.A: العدد الكتلي A
+binding.Z: البروتونات Z
+binding.N: النيوترونات N
+binding.eb: طاقة الترابط
+binding.ebA: لكل نوية
+viz3d.binding.note: النويات مرصوصة بمقياس حقيقي · اللون يبيّن كم جارًا قريبًا يشدّ كل نوية
+viz3d.binding.stats: 'Z{z} N{n} · {eba} MeV/A · السطح {surf}%'

@@ -1,0 +1,10 @@
+reactor.temperature: plasma temperature
+reactor.density: plasma density
+reactor.confinement: confinement time
+reactor.hint: ▶ drag the sliders to cross the ignition line below
+reactor.tripleProduct: triple product nTτ
+reactor.energy: 17.6 MeV per reaction
+reactor.ignition: ignition
+reactor.iter: ITER's target
+reactor.status.ignited: past ignition
+reactor.status.below: below ignition

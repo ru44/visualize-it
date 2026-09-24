@@ -1,0 +1,13 @@
+dose.source: everyday source
+dose.time: repeats
+dose.banana: a banana
+dose.dental: a dental X-ray
+dose.flight: a long flight
+dose.ct: a chest CT scan
+dose.background: a year of background
+dose.hint: ▶ log scale in millisieverts · drag "repeats" to pile up your chosen source
+dose.threshold: 100 mSv — where risk becomes measurable
+dose.perEvent: dose per exposure
+dose.repeatsLabel: number of times
+dose.total: your cumulative dose
+dose.years: ≈ years of background

@@ -1,5 +1,5 @@
 id: nuclear-fusion
-subject: physics
+subject: nuclear
 difficulty: university
 equation: \tfrac12 m v^2 \ge \frac{q_1 q_2}{4\pi\varepsilon_0 r}
 concepts:

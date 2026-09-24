@@ -1,0 +1,12 @@
+rdecay.hint: ▶ كل ذرة تضمحل في لحظتها العشوائية الخاصة · راقب العدد يستقر على المنحنى
+rdecay.restart: ↻ من البداية
+rdecay.halfLife: عمر النصف
+rdecay.elapsed: الزمن المنقضي
+rdecay.k: أعمار النصف الماضية (k)
+rdecay.alive: الذرات الباقية
+rdecay.expected: المتوقَّع (الصيغة)
+rdecay.axisK: أعمار النصف الماضية (k)
+rdecay.axisFrac: النسبة الباقية
+rdecay.legendTheory: N₀·(1/2)^k
+rdecay.legendActual: العدد الفعلي
+viz3d.rdecay.readout: '{a}/{n} باقية · k = {k}'

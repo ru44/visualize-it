@@ -1,0 +1,14 @@
+star.temperature: core temperature
+star.hint: ▶ drag "core temperature" to change which fuel is burning
+star.fuelLabel: burning now
+star.energy: energy this step
+star.unstable: unstable, no net energy yet
+star.bindingLabel: binding energy
+star.chartX: mass number A (log scale)
+star.chartY: MeV per nucleon
+star.peakLabel: iron-56 — peak, fusion stops paying off
+star.fuel.h: hydrogen → helium (p-p chain)
+star.fuel.he: helium → carbon (triple-alpha)
+star.fuel.c: carbon burning
+star.fuel.o: oxygen burning
+star.fuel.si: silicon burning → iron

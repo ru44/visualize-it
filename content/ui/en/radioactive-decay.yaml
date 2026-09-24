@@ -1,0 +1,12 @@
+rdecay.hint: ▶ each atom decays at its own random moment · watch the count settle onto the curve
+rdecay.restart: ↻ restart
+rdecay.halfLife: half-life
+rdecay.elapsed: elapsed time
+rdecay.k: half-lives passed (k)
+rdecay.alive: atoms left
+rdecay.expected: expected (formula)
+rdecay.axisK: half-lives elapsed (k)
+rdecay.axisFrac: fraction remaining
+rdecay.legendTheory: N₀·(1/2)^k
+rdecay.legendActual: actual count
+viz3d.rdecay.readout: '{a}/{n} left · k = {k}'

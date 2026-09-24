@@ -1,0 +1,58 @@
+id: size-of-the-nucleus
+subject: nuclear
+difficulty: university
+equation: \theta = 2\arctan\left(\frac{Zze^2}{8\pi\varepsilon_0 E b}\right)
+concepts:
+  - rutherford-scattering
+  - coulomb-barrier
+  - nuclear-radius
+  - impact-parameter
+prerequisites: []
+related:
+  - the-nucleus
+  - nuclear-fusion
+  - chart-of-nuclides
+visualization:
+  type: size-of-the-nucleus
+  options: {}
+visualization3d:
+  type: size-of-the-nucleus
+  options: {}
+parameters:
+  b:
+    min: 1
+    max: 300
+    step: 1
+    value: 20
+    unit: fm
+  E:
+    min: 1
+    max: 10
+    step: 0.5
+    value: 5
+    unit: MeV
+variables:
+  - Z
+  - z
+  - e
+  - E
+  - b
+derivation:
+  - F = \frac{Zze^2}{4\pi\varepsilon_0 r^2}
+  - b = \frac{Zze^2}{8\pi\varepsilon_0 E}\cot\left(\frac{\theta}{2}\right)
+  - \theta = 2\arctan\left(\frac{Zze^2}{8\pi\varepsilon_0 E b}\right)
+charts: []
+primary: b
+presets:
+  - b: 2
+    E: 5
+  - b: 50
+    E: 5
+  - b: 250
+    E: 5
+challenges:
+  - check: 2*atan((79*2*(1.602176634e-19)^2)/(8*pi*8.8541878128e-12*E*1.602176634e-13*b*1e-15))*180/pi > 150
+  - check: 2*atan((79*2*(1.602176634e-19)^2)/(8*pi*8.8541878128e-12*E*1.602176634e-13*b*1e-15))*180/pi < 5
+  - check: 2*atan((79*2*(1.602176634e-19)^2)/(8*pi*8.8541878128e-12*E*1.602176634e-13*b*1e-15))*180/pi
+    target: 90
+    tol: 5

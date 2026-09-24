@@ -1,0 +1,52 @@
+id: nuclear-fission
+subject: nuclear
+difficulty: high-school
+equation: E = \Delta m\, c^2
+concepts:
+  - fission
+  - mass-defect
+  - neutron
+  - chain-reaction
+prerequisites:
+  - mass-energy-equivalence
+related:
+  - nuclear-fusion
+  - chain-reaction
+visualization:
+  type: fission
+  options: {}
+visualization3d:
+  type: fission
+  options: {}
+parameters:
+  speed:
+    min: 0
+    max: 20000
+    step: 200
+    value: 1000
+    unit: km/s
+  time:
+    min: 0
+    max: 100
+    step: 1
+    value: 0
+variables:
+  - \Delta m
+  - c
+derivation:
+  - m_1 = 235.04 + 1.01
+  - m_2 = 140.91 + 91.93 + 3(1.01)
+  - E = (m_1 - m_2)\,c^2 \approx 168\text{ MeV}
+charts: []
+primary: time
+presets:
+  - speed: 1000
+    time: 100
+  - speed: 18000
+    time: 100
+  - speed: 1000
+    time: 40
+challenges:
+  - check: speed < 5000 and time >= 95
+  - check: speed >= 5000 and time >= 95
+  - check: speed < 5000 and time >= 30 and time <= 55

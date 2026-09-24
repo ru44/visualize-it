@@ -1,0 +1,55 @@
+id: mass-defect
+subject: nuclear
+difficulty: university
+equation: E_b = 931.5\, \Delta m
+concepts:
+  - mass-defect
+  - binding-energy
+  - mass-energy-equivalence
+prerequisites:
+  - binding-energy
+related:
+  - binding-energy
+  - radioactive-decay
+visualization:
+  type: mass-defect
+  options: {}
+visualization3d:
+  type: mass-defect
+  options: {}
+parameters:
+  Z:
+    min: 1
+    max: 12
+    step: 1
+    value: 2
+  N:
+    min: 0
+    max: 14
+    step: 1
+    value: 2
+variables:
+  - Z
+  - N
+  - m_p
+  - m_n
+  - M
+  - \Delta m
+  - E_b
+derivation:
+  - \Delta m = (Z m_p + N m_n) - M
+  - E_b = \Delta m\, c^2
+  - E_b = 931.5\, \Delta m
+charts: []
+primary: Z
+presets:
+  - Z: 2
+    N: 2
+  - Z: 6
+    N: 6
+  - Z: 6
+    N: 8
+challenges:
+  - check: Z == 2 and N == 2
+  - check: Z == 6 and N == 6
+  - check: Z == 6 and N == 8

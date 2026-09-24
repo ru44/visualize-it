@@ -1,0 +1,54 @@
+id: fusion-in-stars
+subject: nuclear
+difficulty: university
+equation: Q = \Delta m\,c^2
+concepts:
+  - nucleosynthesis
+  - binding-energy
+  - stellar-fusion
+  - iron-peak
+prerequisites:
+  - nuclear-fusion
+related:
+  - nuclear-fusion
+  - fusion-reactors
+visualization:
+  type: fusion-in-stars
+  options: {}
+visualization3d:
+  type: fusion-in-stars
+  options: {}
+parameters:
+  temperature:
+    min: 10
+    max: 3200
+    step: 10
+    value: 15
+    unit: MK
+  stage:
+    min: 0
+    max: 2
+    step: 1
+    value: 0
+variables:
+  - Q
+  - \Delta m
+  - E_b
+  - A
+derivation:
+  - \dfrac{E_b}{A} \text{ is the binding energy per nucleon, largest for } A \approx 56
+  - \text{fusing light nuclei toward } A=56 \text{ raises } \dfrac{E_b}{A} \text{ and releases energy } Q
+  - Q = \Delta m\,c^2 \text{, the energy released equals the mass lost times } c^2
+charts: []
+primary: temperature
+presets:
+  - temperature: 15
+    stage: 0
+  - temperature: 150
+    stage: 1
+  - temperature: 3000
+    stage: 0
+challenges:
+  - check: temperature >= 100 and temperature < 600
+  - check: temperature >= 2700
+  - check: temperature < 100 and stage == 2

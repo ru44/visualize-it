@@ -1,0 +1,14 @@
+nucleus.hint: ▶ drag Z (protons) and N (neutrons) to build a nucleus
+nucleus.element: element
+nucleus.protons: protons Z
+nucleus.neutrons: neutrons N
+nucleus.massNumber: mass number A
+nucleus.radius: radius R
+nucleus.status: status
+nucleus.stable: known stable isotope
+nucleus.unstable: not a known stable isotope
+nucleus.legendP: proton
+nucleus.legendN: neutron
+nucleus.isotopeOf: isotope {a}{sym}
+nucleus.radiusHint: nucleons pack like marbles, so volume (and R³) grows with A
+nucleus.ballHint: the same nucleus in 3D — a ball packed with A nucleons, radius ∝ A^(1/3)

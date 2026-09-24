@@ -1,0 +1,10 @@
+chain.k: multiplication factor k
+chain.generations: generations
+chain.population: population
+chain.status: status
+chain.dying: dying out
+chain.steady: holding steady
+chain.growing: growing
+chain.more: +{n} more
+chain.restart: ↻ restart
+chain.hint: ▶ each dot is a fission · lines fan out to the neutrons it starts

@@ -502,6 +502,8 @@ subject.cosmos: The universe & particles
 subjectd.cosmos: 'Dark matter, dark energy, quarks and quasars: how we know about things we cannot see.'
 subject.complexity: Complex systems
 subjectd.complexity: 'Simple rules, surprising results: life, flocks, fractals, traffic and tipping points.'
+subject.nuclear: Nuclear physics
+subjectd.nuclear: "Inside the atom's core: why nuclei hold together, why some fall apart, and how fission and fusion release energy."
 dots.sec: '{n|one=# second|other=# seconds}'
 dots.min: '{n|one=# minute|other=# minutes}'
 dots.hour: '{n|one=# hour|other=# hours}'

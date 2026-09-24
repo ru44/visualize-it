@@ -1,0 +1,15 @@
+abg.type: نوع الإشعاع
+abg.material: مادة الحاجز
+abg.thickness: سُمك الحاجز
+abg.alpha: ألفا (α)
+abg.beta: بيتا (β)
+abg.gamma: غاما (γ)
+abg.paper: ورق
+abg.aluminium: ألومنيوم
+abg.lead: رصاص
+abg.blocked: توقّف
+abg.passes: يمرّ
+abg.through: يمرّ
+abg.outcome: الحزمة المركَّزة
+abg.hint: ▶ ثلاث حزم تصطدم بجدار واحد · حرّك «مادة الحاجز» و«سُمك الحاجز» لتجربتهما
+abg.wall: الجدار

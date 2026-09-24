@@ -1,0 +1,12 @@
+iso.isotopeLabel: isotope
+iso.halfLife: half-life
+iso.remaining: remaining
+iso.doseDrop: decayed away
+iso.hint: ▶ both curves always show · drag "isotope" to pick which one the marker follows
+iso.scanWindow: typical scan window
+iso.chartX: hours since injection
+iso.chartY: fraction remaining
+iso.name.tc: technetium-99m
+iso.name.i: iodine-131
+iso.imaging: used for imaging
+iso.treatment: used for treatment

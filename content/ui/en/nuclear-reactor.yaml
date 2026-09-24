@@ -1,0 +1,13 @@
+npp.rods: control rod depth
+npp.moderator: moderator amount
+npp.power: power output
+npp.electric: electric power
+npp.status: status
+npp.shutdown: shut down
+npp.nomoderator: won't sustain — no moderator
+npp.running: running
+npp.fuel: fuel ≈ 4% U-235
+npp.rated: rated power P₀ = 1000 MW
+npp.turbine: turbine
+npp.generator: generator
+npp.hint: ▶ drag a control rod or the water level, or use the sliders

@@ -1,0 +1,14 @@
+nucleus.hint: ▶ حرّك Z (البروتونات) وN (النيوترونات) لتبني نواة
+nucleus.element: العنصر
+nucleus.protons: البروتونات Z
+nucleus.neutrons: النيوترونات N
+nucleus.massNumber: العدد الكتلي A
+nucleus.radius: نصف القطر R
+nucleus.status: الحالة
+nucleus.stable: نظير مستقر معروف
+nucleus.unstable: ليس نظيرًا مستقرًا معروفًا
+nucleus.legendP: بروتون
+nucleus.legendN: نيوترون
+nucleus.isotopeOf: النظير {a}{sym}
+nucleus.radiusHint: تتراصّ النكليونات كحبات رخام، فيتناسب الحجم (وR³) مع A
+nucleus.ballHint: النواة نفسها في بعد ثالث — كرة مرصوصة بـA نكليون، ونصف قطرها يتناسب مع جذر A التكعيبي

@@ -1,0 +1,13 @@
+binding.hint: ▶ drag the curve or the slider to move the marked nucleus
+binding.fusionPays: ← fusion releases energy
+binding.fissionPays: fission releases energy →
+binding.axisA: mass number A
+binding.axisEbA: MeV / nucleon
+binding.peak: 'peak ≈ {v} MeV/nucleon'
+binding.A: mass number A
+binding.Z: protons Z
+binding.N: neutrons N
+binding.eb: binding energy
+binding.ebA: per nucleon
+viz3d.binding.note: nucleons packed to scale · colour shows how many close neighbours glue each one down
+viz3d.binding.stats: 'Z{z} N{n} · {eba} MeV/A · surface {surf}%'

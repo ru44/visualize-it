@@ -1,0 +1,18 @@
+fission.speed: neutron speed
+fission.time: time
+fission.outcome: outcome
+fission.fission: fission
+fission.scatter: elastic scatter
+fission.neutrons: neutrons released
+fission.energy: energy released
+fission.restart: ↻ restart
+fission.hint: ▶ slow neutron → fission · fast neutron → bounces off · drag "time"
+fission.nucleus: U-235
+fission.compound: U-236*
+fission.heavy: Ba-141
+fission.light: Kr-92
+fission.neutron: n
+fission.prompt: right away
+fission.delayed: later, as fragments decay
+fission.total: total
+fission.none: —

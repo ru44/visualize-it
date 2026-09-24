@@ -1,0 +1,62 @@
+id: radioactive-decay
+subject: nuclear
+difficulty: high-school
+equation: N = N_0 \left(\frac{1}{2}\right)^{t/T_{1/2}}
+concepts:
+  - half-life
+  - exponential-decay
+  - radioactivity
+prerequisites:
+  - exponential-growth
+related:
+  - radioactive-dating
+  - mass-defect
+visualization:
+  type: radioactive-decay
+  options: {}
+visualization3d:
+  type: radioactive-decay
+  options: {}
+parameters:
+  halfLife:
+    min: 0
+    max: 13
+    step: 0.05
+    value: 3
+  time:
+    min: 0
+    max: 8
+    step: 0.05
+    value: 0
+  N0:
+    min: 10
+    max: 300
+    step: 1
+    value: 100
+    unit: atoms
+variables:
+  - N_0
+  - T_{1/2}
+  - t
+  - k
+  - N
+derivation:
+  - k = t / T_{1/2}
+  - N = N_0 \left(\frac12\right)^{k}
+  - N = N_0 \left(\frac12\right)^{t/T_{1/2}}
+charts: []
+primary: time
+presets:
+  - halfLife: 0.9042
+    time: 3
+    N0: 200
+  - halfLife: 6.3207
+    time: 1.5
+    N0: 150
+  - halfLife: 12.2129
+    time: 1
+    N0: 100
+challenges:
+  - check: abs(time - 1) < 0.05
+  - check: (0.5)^time < 0.05
+  - check: abs(halfLife - 6.3207) < 0.1 and abs(time - 2) < 0.05

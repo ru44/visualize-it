@@ -1,0 +1,56 @@
+id: nuclear-reactor
+subject: nuclear
+difficulty: high-school
+equation: P = (1-d)\,m\,P_0
+concepts:
+  - reactor
+  - control-rods
+  - moderator
+  - criticality
+prerequisites:
+  - chain-reaction
+related:
+  - chain-reaction
+  - nuclear-fission
+visualization:
+  type: nuclear-reactor
+  options: {}
+visualization3d:
+  type: nuclear-reactor
+  options: {}
+parameters:
+  rods:
+    min: 0
+    max: 100
+    step: 5
+    value: 50
+    unit: '%'
+  moderator:
+    min: 0
+    max: 100
+    step: 5
+    value: 80
+    unit: '%'
+variables:
+  - d
+  - m
+  - P_0
+derivation:
+  - d = 0,\ m = 1 \Rightarrow P = P_0
+  - d = 1 \Rightarrow P = 0
+  - P = (1-d)\,m\,P_0
+charts: []
+primary: rods
+presets:
+  - rods: 25
+    moderator: 100
+  - rods: 100
+    moderator: 80
+  - rods: 0
+    moderator: 100
+challenges:
+  - check: (1 - rods / 100) * (moderator / 100)
+    target: 0.75
+    tol: 0.05
+  - check: rods >= 100
+  - check: (1 - rods / 100) * (moderator / 100) > 0.9

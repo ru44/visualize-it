@@ -1,0 +1,10 @@
+mass.hint: ▶ the missing mass on the scale left as energy — sized by the flash above
+mass.note: tilt exaggerated to show it — the real difference is under 1% of the mass
+mass.left: separate protons + neutrons
+mass.right: the bound nucleus
+mass.A: mass number A
+mass.dm: mass defect Δm
+mass.eb: binding energy
+mass.parts: parts alone
+mass.nucleus: nucleus mass
+viz3d.mass.readout: '{e} MeV · Δm {d} u'

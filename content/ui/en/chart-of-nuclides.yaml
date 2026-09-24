@@ -1,0 +1,11 @@
+chart.hint: ▶ green dots — known stable nuclides · dashed line — N = Z · big dot — your nuclide
+chart.zAxis: protons Z
+chart.nAxis: neutrons N
+chart.protons: protons Z
+chart.neutrons: neutrons N
+chart.mass: mass number A
+chart.mode: status
+chart.bpa: binding energy / nucleon
+chart.stable: stable
+chart.nRich: neutron-rich · β⁻ decay
+chart.pRich: proton-rich · β⁺/EC decay
