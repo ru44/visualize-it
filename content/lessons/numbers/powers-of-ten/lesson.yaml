@@ -13,6 +13,9 @@ related:
 visualization:
   type: powers-of-ten
   options: { mode: size }
+visualization3d:
+  type: powers-of-ten
+  options: {}
 parameters:
   e:
     min: -15

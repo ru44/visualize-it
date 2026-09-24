@@ -15,6 +15,9 @@ visualization:
   type: ray-optics
   options:
     mode: refraction
+visualization3d:
+  type: fibre
+  options: {}
 parameters:
   theta1:
     min: 0

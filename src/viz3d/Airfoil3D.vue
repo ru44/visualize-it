@@ -9,10 +9,21 @@ import { loadModel, fit } from './models'
 // 'drag'    a body in a wind tunnel, drag arrow grows with v² — aerodynamics/drag-equation, params rho, Cd, A, x.
 // 'wings'   a wing whose span sets its aspect ratio, with lift/drag arrows — aerodynamics/lift-to-drag, params AR, x.
 // 'mach'    an aircraft with a Mach cone past Mach 1 — aerodynamics/mach-number, params x (air temp K), vAircraft.
-// 'venturi' a narrowing pipe, flow speeds up and pressure drops at the throat — aerodynamics/bernoulli, params v1, ratio.
+// 'venturi' a narrowing pipe, flow speeds up and pressure drops at the throat — aerodynamics/bernoulli, params v1, ratio;
+//           also physics/bernoulli-and-flow-rate, which drags absolute areas A1 and x=A2 instead of a ratio — options.map
+//           renames A2 to x for that lesson, and the venturi code below derives ratio = A2/A1 whenever A1 is supplied.
 const props = defineProps<{ params: Record<string, number>; options: Record<string, any> }>()
 const el = ref<HTMLElement>()
 const mode = (props.options?.mode as string | undefined) ?? 'craft'
+
+// Reads slider k: options.fixed pins a value with no slider, options.map renames a slider. Used only by
+// the venturi mode below — the other modes are untouched and keep reading props.params directly.
+function P(k: string, d: number): number {
+  const o = props.options ?? {}
+  if (o.fixed && k in o.fixed) return o.fixed[k]
+  const src = (o.map && o.map[k]) || k
+  return props.params[src] ?? d
+}
 
 function smoothstep(t: number) {
   const x = Math.max(0, Math.min(1, t))
@@ -139,8 +150,9 @@ useThree(
       scene.add(flow)
       let lastRatio = -1
       return (dt) => {
-        const v1 = props.params.v1 ?? 10
-        const ratio = Math.max(0.05, props.params.ratio ?? 0.5)
+        const v1 = P('v1', 10)
+        const A1 = P('A1', 0) // 0 = this lesson has no A1 slider, so fall back to a direct ratio slider
+        const ratio = Math.max(0.05, A1 > 0 ? P('A2', A1) / A1 : P('ratio', 0.5))
         const rt = R1 * Math.sqrt(ratio)
         if (Math.abs(ratio - lastRatio) > 1e-3) {
           pipe.geometry.dispose()

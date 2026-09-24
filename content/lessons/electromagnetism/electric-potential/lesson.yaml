@@ -17,6 +17,9 @@ related:
 visualization:
   type: electric-field
   options: {}
+visualization3d:
+  type: potential
+  options: {}
 parameters:
   q1:
     min: -5

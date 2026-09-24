@@ -15,6 +15,9 @@ visualization:
   type: ray-optics
   options:
     mode: lens
+visualization3d:
+  type: lens
+  options: {}
 parameters:
   f:
     min: 2

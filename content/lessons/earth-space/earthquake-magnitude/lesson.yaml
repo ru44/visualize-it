@@ -17,6 +17,9 @@ visualization:
     domain: [0, 9]
     range: [0, 20]
     mode: plain
+visualization3d:
+  type: quake
+  options: {}
 parameters:
   x:
     min: 0

@@ -21,6 +21,9 @@ visualization:
       - 0
       - 1200
     mode: plain
+visualization3d:
+  type: pressure
+  options: {}
 parameters:
   rho:
     min: 700

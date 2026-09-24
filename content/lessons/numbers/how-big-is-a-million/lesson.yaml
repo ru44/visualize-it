@@ -13,6 +13,9 @@ related:
 visualization:
   type: dot-grid
   options: { mode: scale }
+visualization3d:
+  type: million
+  options: {}
 parameters:
   e:
     min: 0

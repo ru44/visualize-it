@@ -14,6 +14,9 @@ related:
 visualization:
   type: buoyancy
   options: {}
+visualization3d:
+  type: buoyancy
+  options: {}
 parameters:
   rhoObj:
     min: 50

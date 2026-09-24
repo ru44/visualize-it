@@ -24,6 +24,9 @@ visualization:
       - -4.5
       - 4.5
     mode: tangent
+visualization3d:
+  type: faraday
+  options: {}
 parameters:
   B:
     min: 0.2
