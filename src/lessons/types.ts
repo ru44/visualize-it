@@ -25,7 +25,6 @@ export type Subject =
   | 'relativity'
   | 'cryptography'
   | 'cosmos'
-  | 'complexity'
   | 'nuclear'
 export type Difficulty = 'beginner' | 'high-school' | 'university' | 'advanced'
 

@@ -1,4 +1,0 @@
-lorenz.t: time
-lorenz.drift: distance between the two paths
-lorenz.restart: ↻ restart
-lorenz.hint: ▶ two paths start almost together · drag "sep" to change how far apart

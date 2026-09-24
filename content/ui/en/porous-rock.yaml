@@ -1,9 +1,0 @@
-rock.porosity: open pores
-rock.wet: wet cells
-rock.percolates: reaches bottom?
-rock.yes: yes
-rock.no: not yet
-rock.step: step
-rock.restart: ↻ restart
-rock.shuffle: ⟳ new sample
-rock.hint: ▶ water floods down from the top through open pores

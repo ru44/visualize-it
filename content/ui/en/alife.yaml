@@ -1,6 +1,0 @@
-alife.step: step
-alife.population: creatures alive
-alife.births: births this step
-alife.deaths: deaths this step
-alife.restart: ↻ restart
-alife.hint: ▶ each creature wanders, eats and splits · drag "step" to step through

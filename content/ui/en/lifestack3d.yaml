@@ -1,2 +1,0 @@
-viz3d.lifeStack.note: Each layer is one generation, stacked upward in time — a glider climbs as a staircase.
-lifestack3d.readout: 'gen {g}'

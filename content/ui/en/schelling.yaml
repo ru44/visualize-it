@@ -1,5 +1,0 @@
-sch.gen: round
-sch.unhappy: unhappy
-sch.moved: moved this round
-sch.restart: ↻ restart
-sch.hint: ▶ each dot moves when too many of its neighbours are the other colour

@@ -1,7 +1,0 @@
-damp.zeta: damping ratio ζ
-damp.regime: motion
-damp.under: underdamped
-damp.critical: critically damped
-damp.over: overdamped
-damp.x: position x
-damp.hint: ▶ drag "damping c" from none to a lot and watch the trace change shape

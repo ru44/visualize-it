@@ -1,9 +1,0 @@
-collatz.step: الخطوة
-collatz.value: القيمة
-collatz.max: أعلى قيمة
-collatz.parity: الزوجية
-collatz.even: زوجي
-collatz.odd: فردي
-collatz.hint: البداية من {n} · زوجي ← نصّفه، فردي ← ضاعفه ثلاثًا وزد واحدًا
-collatz.restart: ↻ من البداية
-collatz.axisHint: الارتفاع بمقياس لوغاريتمي

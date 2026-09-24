@@ -1,6 +1,0 @@
-pg.gen: round
-pg.cooperators: cooperators
-pg.defectors: defectors
-pg.loners: loners
-pg.restart: ↻ restart
-pg.hint: ▶ each cell copies whichever neighbour (or itself) earned the most

@@ -1,6 +1,0 @@
-choice.groupError: group's error
-choice.indivError: average follower's error
-choice.n: group size
-choice.target: true direction
-choice.group: group average
-choice.hint: ▶ each follower blends a noisy private guess with nearby neighbours · watch the group average settle near the truth

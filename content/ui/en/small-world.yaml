@@ -1,4 +1,0 @@
-sw.length: average path length L
-sw.clustering: clustering C
-sw.rewired: shortcuts rewired
-sw.hint: ▶ a ring of neighbours, with some links rewired at random

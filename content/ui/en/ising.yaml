@@ -1,6 +1,0 @@
-ising.temperature: temperature
-ising.step: sweep
-ising.magnetization: "|magnetization|"
-ising.energy: energy per spin
-ising.restart: ↻ restart
-ising.hint: ▶ runs the Metropolis rule · drag "sweep" to step through
