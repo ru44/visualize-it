@@ -15,6 +15,10 @@ related:
 visualization:
   type: drag-projectile
   options: {}
+visualization3d:
+  type: projectile
+  options:
+    mode: drag
 parameters:
   v0:
     min: 5

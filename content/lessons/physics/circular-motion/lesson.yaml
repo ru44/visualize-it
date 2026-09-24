@@ -23,6 +23,9 @@ visualization:
       - -4
       - 40
     mode: tangent
+visualization3d:
+  type: orbit
+  options: { mode: circular }
 parameters:
   rad:
     min: 1

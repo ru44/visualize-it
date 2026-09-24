@@ -18,6 +18,9 @@ visualization:
     domain: [6.4, 60]
     range: [0, 12]
     mode: plain
+visualization3d:
+  type: orbit
+  options: { mode: escape }
 parameters:
   x:
     min: 6.4

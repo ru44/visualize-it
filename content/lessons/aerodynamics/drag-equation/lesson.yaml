@@ -24,6 +24,10 @@ visualization:
       - -20
       - 900
     mode: tangent
+visualization3d:
+  type: airfoil
+  options:
+    mode: drag
 parameters:
   rho:
     min: 0.02

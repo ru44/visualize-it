@@ -24,6 +24,10 @@ visualization:
       - 260
       - 370
     mode: plain
+visualization3d:
+  type: airfoil
+  options:
+    mode: mach
 parameters:
   x:
     min: 200

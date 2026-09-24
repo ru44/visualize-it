@@ -15,6 +15,10 @@ related:
 visualization:
   type: collision
   options: {}
+visualization3d:
+  type: block-force
+  options:
+    mode: collision
 parameters:
   m1:
     min: 1
