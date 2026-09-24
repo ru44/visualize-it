@@ -17,6 +17,9 @@ visualization:
     domain: [0, 5]
     range: [0, 300]
     mode: plain
+visualization3d:
+  type: beam
+  options: {}
 parameters:
   F:
     min: 100

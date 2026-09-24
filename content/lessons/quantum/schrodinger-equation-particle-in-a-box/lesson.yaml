@@ -16,6 +16,9 @@ visualization:
   type: wave-function
   options:
     mode: box
+visualization3d:
+  type: quantum-box
+  options: {}
 parameters:
   n:
     min: 1

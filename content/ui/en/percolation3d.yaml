@@ -1,0 +1,3 @@
+percolation3d.threshold: '3D threshold ≈ 0.312 (2D ≈ 0.593)'
+percolation3d.spans: crosses top to bottom
+percolation3d.notYet: does not cross yet

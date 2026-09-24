@@ -22,6 +22,12 @@ visualization:
       - 0
       - 25
     mode: plain
+visualization3d:
+  type: airfoil
+  options:
+    mode: venturi
+    map:
+      A2: x
 parameters:
   v1:
     min: 0.5

@@ -16,6 +16,9 @@ related:
 visualization:
   type: rotation-curve
   options: {}
+visualization3d:
+  type: galaxy-disk
+  options: {}
 primary: halo
 parameters:
   halo:

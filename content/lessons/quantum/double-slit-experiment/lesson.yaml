@@ -15,6 +15,9 @@ related:
 visualization:
   type: double-slit
   options: {}
+visualization3d:
+  type: double-slit
+  options: {}
 parameters:
   d:
     min: 1

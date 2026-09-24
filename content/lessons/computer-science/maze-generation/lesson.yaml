@@ -14,6 +14,9 @@ related:
 visualization:
   type: maze-gen
   options: {}
+visualization3d:
+  type: maze
+  options: {}
 parameters:
   algo:
     min: 0

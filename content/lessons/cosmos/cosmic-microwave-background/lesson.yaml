@@ -22,6 +22,9 @@ visualization:
     - 0
     - 1.2
     mode: plain
+visualization3d:
+  type: cmb-sky
+  options: {}
 primary: T
 parameters:
   T:

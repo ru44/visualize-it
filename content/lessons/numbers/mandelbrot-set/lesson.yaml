@@ -13,6 +13,9 @@ related:
 visualization:
   type: mandelbrot
   options: {}
+visualization3d:
+  type: mandelbulb
+  options: {}
 parameters:
   zoom:
     min: 0

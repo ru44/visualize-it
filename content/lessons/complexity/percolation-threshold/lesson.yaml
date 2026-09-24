@@ -13,6 +13,9 @@ related:
 visualization:
   type: percolation
   options: {}
+visualization3d:
+  type: percolation
+  options: {}
 parameters:
   p:
     min: 0

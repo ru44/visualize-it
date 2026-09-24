@@ -14,6 +14,10 @@ related:
 visualization:
   type: vicsek
   options: {}
+visualization3d:
+  type: boids
+  options:
+    mode: vicsek
 parameters:
   r:
     min: 10

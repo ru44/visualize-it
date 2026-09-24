@@ -16,6 +16,10 @@ visualization:
   type: boids
   options:
     mode: couzin
+visualization3d:
+  type: boids
+  options:
+    mode: couzin
 parameters:
   rep:
     min: 0.5

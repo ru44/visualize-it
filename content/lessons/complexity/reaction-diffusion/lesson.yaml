@@ -13,6 +13,9 @@ related:
 visualization:
   type: reaction-diffusion
   options: {}
+visualization3d:
+  type: reaction-sphere
+  options: {}
 parameters:
   feed:
     min: 0.01

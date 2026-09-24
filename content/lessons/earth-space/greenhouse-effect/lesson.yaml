@@ -16,6 +16,9 @@ visualization:
     domain: [0, 0.95]
     range: [-40, 40]
     mode: plain
+visualization3d:
+  type: greenhouse
+  options: {}
 parameters:
   alb:
     min: 0.1

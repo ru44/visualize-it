@@ -14,6 +14,9 @@ visualization:
   type: wave-function
   options:
     mode: tunnel
+visualization3d:
+  type: tunnel
+  options: {}
 parameters:
   V:
     min: 0.5

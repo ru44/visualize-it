@@ -14,6 +14,9 @@ related:
 visualization:
   type: fusion
   options: {}
+visualization3d:
+  type: fusion
+  options: {}
 parameters:
   temperature:
     min: 0.2

@@ -13,6 +13,9 @@ related:
 visualization:
   type: hilbert-curve
   options: {}
+visualization3d:
+  type: hilbert
+  options: {}
 parameters:
   order:
     min: 1

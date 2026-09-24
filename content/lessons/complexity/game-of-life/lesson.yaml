@@ -12,6 +12,9 @@ related:
 visualization:
   type: game-of-life
   options: {}
+visualization3d:
+  type: life-stack
+  options: {}
 parameters:
   start:
     min: 0

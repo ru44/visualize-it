@@ -13,6 +13,9 @@ related:
 visualization:
   type: marching-squares
   options: {}
+visualization3d:
+  type: marching-cubes
+  options: {}
 parameters:
   level:
     min: 0.05

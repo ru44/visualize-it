@@ -16,6 +16,9 @@ related:
 visualization:
   type: electric-field
   options: {}
+visualization3d:
+  type: coulomb
+  options: {}
 parameters:
   q1:
     min: -5

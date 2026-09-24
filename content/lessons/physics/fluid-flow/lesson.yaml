@@ -14,6 +14,9 @@ related:
 visualization:
   type: fluid-flow
   options: {}
+visualization3d:
+  type: flow
+  options: {}
 parameters:
   U:
     min: 0.2
