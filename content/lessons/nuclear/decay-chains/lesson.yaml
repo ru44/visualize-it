@@ -1,0 +1,55 @@
+id: decay-chains
+subject: nuclear
+difficulty: university
+equation: \frac{N_i}{N_p} \approx \frac{T_i}{T_p}
+concepts:
+  - decay-chain
+  - half-life
+  - secular-equilibrium
+  - alpha-decay
+  - beta-decay
+prerequisites:
+  - alpha-beta-gamma
+related:
+  - alpha-beta-gamma
+  - radiation-dose
+  - radioactive-dating
+visualization:
+  type: decay-chains
+  options: {}
+visualization3d:
+  type: decay-chains
+  options: {}
+parameters:
+  chain:
+    min: 0
+    max: 2
+    step: 1
+    value: 0
+  time:
+    min: 0
+    max: 10
+    step: 0.1
+    value: 1
+variables:
+  - N_i
+  - N_p
+  - T_i
+  - T_p
+derivation:
+  - \frac{dN_i}{dt} \approx 0
+  - \frac{N_i}{T_i} \approx \frac{N_p}{T_p}
+  - \frac{N_i}{N_p} \approx \frac{T_i}{T_p}
+charts: []
+primary: time
+presets:
+  - chain: 0
+    time: 0
+  - chain: 0
+    time: 1
+  - chain: 2
+    time: 3
+challenges:
+  - check: chain == 0 and time > 1
+  - check: chain == 2 and time >= 5
+  - check: chain == 1 and 0.5^time < 0.01

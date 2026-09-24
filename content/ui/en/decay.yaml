@@ -1,0 +1,15 @@
+decay.uranium: uranium-238 series
+decay.actinium: actinium (uranium-235) series
+decay.thorium: thorium-232 series
+decay.hint: ▶ each step is one decay · drag "time" to watch the chain empty into its stable end
+decay.alpha: alpha step (−2, −2)
+decay.beta: beta step (+1, −1)
+decay.z: protons
+decay.n: neutrons
+decay.halfLives: half-lives elapsed
+decay.years: ≈ years elapsed
+decay.remaining: parent remaining
+decay.produced: stable end
+decay.radon: the radon isotope — a gas, it can seep from soil into homes
+decay.gas: gas — seeps from soil into homes
+decay.gasTag: gas

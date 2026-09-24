@@ -1,0 +1,56 @@
+id: chart-of-nuclides
+subject: nuclear
+difficulty: university
+equation: \frac{B}{A} = a_V - a_S A^{-1/3} - a_C \frac{Z(Z-1)}{A^{4/3}} - a_A \frac{(N-Z)^2}{A^2}
+concepts:
+  - valley-of-stability
+  - binding-energy
+  - beta-decay
+  - liquid-drop-model
+prerequisites: []
+related:
+  - the-nucleus
+  - size-of-the-nucleus
+  - nuclear-fusion
+visualization:
+  type: chart-of-nuclides
+  options: {}
+visualization3d:
+  type: chart-of-nuclides
+  options: {}
+parameters:
+  Z:
+    min: 1
+    max: 30
+    step: 1
+    value: 26
+  N:
+    min: 0
+    max: 45
+    step: 1
+    value: 30
+variables:
+  - B
+  - A
+  - Z
+  - N
+  - a
+derivation:
+  - B = a_V A - a_S A^{2/3}
+  - B = a_V A - a_S A^{2/3} - a_C \frac{Z(Z-1)}{A^{1/3}} - a_A \frac{(N-Z)^2}{A}
+  - \frac{B}{A} = a_V - a_S A^{-1/3} - a_C \frac{Z(Z-1)}{A^{4/3}} - a_A \frac{(N-Z)^2}{A^2}
+charts: []
+primary: Z
+presets:
+  - Z: 26
+    N: 30
+  - Z: 6
+    N: 8
+  - Z: 6
+    N: 4
+challenges:
+  - check: N - Z > 10
+  - check: Z==26 and N==30
+  - check: (15.8*(Z+N) - 18.3*(Z+N)^(2/3) - 0.714*Z*(Z-1)/(Z+N)^(1/3) - 23.2*(N-Z)^2/(Z+N)) / (Z+N)
+    target: 8.8
+    tol: 0.4

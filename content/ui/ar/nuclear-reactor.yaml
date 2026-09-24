@@ -1,0 +1,13 @@
+npp.rods: عمق قضبان التحكم
+npp.moderator: كمية المهدئ
+npp.power: القدرة الناتجة
+npp.electric: القدرة الكهربائية
+npp.status: الحالة
+npp.shutdown: متوقف
+npp.nomoderator: لا يستمر — بلا مهدئ
+npp.running: يعمل
+npp.fuel: الوقود ≈ 4% يورانيوم-235
+npp.rated: القدرة الاسمية P₀ = 1000 MW
+npp.turbine: العنفة
+npp.generator: المولّد
+npp.hint: ▶ اسحب قضيب تحكم أو مستوى الماء، أو استخدم المنزلقين

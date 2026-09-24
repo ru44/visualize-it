@@ -1,0 +1,48 @@
+id: binding-energy
+subject: nuclear
+difficulty: university
+equation: E_b = a_V A - a_S A^{2/3} - a_C \frac{Z(Z-1)}{A^{1/3}} - a_A \frac{(A-2Z)^2}{A}
+concepts:
+  - binding-energy
+  - mass-number
+  - strong-force
+  - fission
+  - fusion
+prerequisites: []
+related:
+  - mass-defect
+  - nuclear-fusion
+visualization:
+  type: binding-energy
+  options: {}
+visualization3d:
+  type: binding-energy
+  options: {}
+parameters:
+  A:
+    min: 2
+    max: 240
+    step: 1
+    value: 12
+variables:
+  - A
+  - Z
+  - E_b
+  - a_V
+  - a_S
+  - a_C
+  - a_A
+derivation:
+  - E_b \approx a_V A
+  - E_b \approx a_V A - a_S A^{2/3}
+  - E_b = a_V A - a_S A^{2/3} - a_C \frac{Z(Z-1)}{A^{1/3}} - a_A \frac{(A-2Z)^2}{A}
+charts: []
+primary: A
+presets:
+  - A: 4
+  - A: 56
+  - A: 235
+challenges:
+  - check: A >= 54 and A <= 64
+  - check: A > 150
+  - check: A < 20

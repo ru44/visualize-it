@@ -1,0 +1,15 @@
+abg.type: radiation type
+abg.material: shield material
+abg.thickness: shield thickness
+abg.alpha: alpha (α)
+abg.beta: beta (β)
+abg.gamma: gamma (γ)
+abg.paper: paper
+abg.aluminium: aluminium
+abg.lead: lead
+abg.blocked: blocked
+abg.passes: gets through
+abg.through: gets through
+abg.outcome: focused beam
+abg.hint: ▶ three beams meet one wall · drag "shield material" and "shield thickness" to test them
+abg.wall: the wall

@@ -1,0 +1,14 @@
+star.temperature: حرارة القلب
+star.hint: ▶ حرّك «حرارة القلب» لتغيير الوقود المحترق
+star.fuelLabel: يحترق الآن
+star.energy: طاقة هذه الخطوة
+star.unstable: غير مستقر، بلا طاقة صافية بعد
+star.bindingLabel: طاقة الربط
+star.chartX: العدد الكتلي A (مقياس لوغاريتمي)
+star.chartY: MeV لكل نيوكليون
+star.peakLabel: حديد-56 — القمة، يتوقف الاندماج عن الجدوى
+star.fuel.h: هيدروجين ← هيليوم (سلسلة البروتون-بروتون)
+star.fuel.he: هيليوم ← كربون (ثلاثي ألفا)
+star.fuel.c: احتراق الكربون
+star.fuel.o: احتراق الأكسجين
+star.fuel.si: احتراق السيليكون ← حديد

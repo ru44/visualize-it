@@ -107,3 +107,8 @@ complexity:
   - { title: Numberphile, url: 'https://www.youtube.com/@numberphile', by: Numberphile, lang: en, note: The Game of Life, fractals and strange attractors. }
   - { title: Kurzgesagt, url: 'https://www.youtube.com/@kurzgesagt', by: Kurzgesagt, lang: en }
   - { title: الدحيح, url: 'https://www.youtube.com/@Eldaheeh', by: الدحيح, lang: ar }
+nuclear:
+  - { title: Veritasium, url: 'https://www.youtube.com/@veritasium', by: Veritasium, lang: en, note: Radioactivity, reactors and the most radioactive places on Earth. }
+  - { title: Kurzgesagt, url: 'https://www.youtube.com/@kurzgesagt', by: Kurzgesagt, lang: en, note: Fission, fusion and nuclear energy, animated. }
+  - { title: minutephysics, url: 'https://www.youtube.com/@minutephysics', by: minutephysics, lang: en }
+  - { title: الدحيح, url: 'https://www.youtube.com/@Eldaheeh', by: الدحيح, lang: ar }

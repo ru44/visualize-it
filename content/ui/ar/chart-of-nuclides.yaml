@@ -1,0 +1,11 @@
+chart.hint: ▶ نقاط خضراء — نظائر مستقرة معروفة · خط متقطّع — N = Z · نقطة كبيرة — نظيرك
+chart.zAxis: البروتونات Z
+chart.nAxis: النيوترونات N
+chart.protons: البروتونات Z
+chart.neutrons: النيوترونات N
+chart.mass: العدد الكتلي A
+chart.mode: الحالة
+chart.bpa: طاقة الترابط / نكليون
+chart.stable: مستقرة
+chart.nRich: غنية بالنيوترونات · اضمحلال β⁻
+chart.pRich: غنية بالبروتونات · اضمحلال β⁺ أو أسر إلكتروني

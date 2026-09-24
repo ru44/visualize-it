@@ -1,0 +1,18 @@
+fission.speed: سرعة النيوترون
+fission.time: الزمن
+fission.outcome: النتيجة
+fission.fission: انشطار
+fission.scatter: ارتداد مرن
+fission.neutrons: النيوترونات المتحررة
+fission.energy: الطاقة المتحررة
+fission.restart: ↻ من البداية
+fission.hint: ▶ نيوترون بطيء ← انشطار · نيوترون سريع ← ارتداد · حرّك «الزمن»
+fission.nucleus: U-235
+fission.compound: U-236*
+fission.heavy: Ba-141
+fission.light: Kr-92
+fission.neutron: n
+fission.prompt: فورًا
+fission.delayed: لاحقًا مع تحلل الشظايا
+fission.total: المجموع
+fission.none: —

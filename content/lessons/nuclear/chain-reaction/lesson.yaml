@@ -1,0 +1,51 @@
+id: chain-reaction
+subject: nuclear
+difficulty: high-school
+equation: N_g = k^{g} N_0
+concepts:
+  - chain-reaction
+  - multiplication-factor
+  - criticality
+  - exponential-growth
+prerequisites:
+  - nuclear-fission
+related:
+  - nuclear-fission
+  - nuclear-reactor
+visualization:
+  type: chain-reaction
+  options: {}
+visualization3d:
+  type: chain-reaction
+  options: {}
+parameters:
+  k:
+    min: 0.5
+    max: 2.5
+    step: 0.05
+    value: 1
+  generations:
+    min: 0
+    max: 12
+    step: 1
+    value: 0
+variables:
+  - k
+  - g
+derivation:
+  - N_1 = k\,N_0
+  - N_2 = k\,N_1 = k^2 N_0
+  - N_g = k^{g} N_0
+charts: []
+primary: generations
+presets:
+  - k: 0.7
+    generations: 10
+  - k: 1
+    generations: 10
+  - k: 1.8
+    generations: 8
+challenges:
+  - check: k < 0.9 and generations >= 8
+  - check: abs(k - 1) < 0.01 and generations >= 5
+  - check: k > 1.5 and generations >= 6

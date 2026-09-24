@@ -1,0 +1,64 @@
+id: alpha-beta-gamma
+subject: nuclear
+difficulty: high-school
+equation: I = I_0\left(\frac{1}{2}\right)^{x/H}
+concepts:
+  - alpha-decay
+  - beta-decay
+  - gamma-decay
+  - radiation-shielding
+  - attenuation
+prerequisites: []
+related:
+  - nuclear-fusion
+  - decay-chains
+  - radiation-dose
+visualization:
+  type: alpha-beta-gamma
+  options: {}
+visualization3d:
+  type: alpha-beta-gamma
+  options: {}
+parameters:
+  type:
+    min: 0
+    max: 2
+    step: 1
+    value: 0
+  material:
+    min: 0
+    max: 2
+    step: 1
+    value: 1
+  thickness:
+    min: 0
+    max: 50
+    step: 0.5
+    value: 5
+    unit: mm
+variables:
+  - I_0
+  - H
+  - x
+  - k
+  - I
+derivation:
+  - I = I_0\left(\frac{1}{2}\right)^{k}
+  - k = \frac{x}{H}
+  - I = I_0\left(\frac{1}{2}\right)^{x/H}
+charts: []
+primary: thickness
+presets:
+  - type: 0
+    material: 0
+    thickness: 0.5
+  - type: 1
+    material: 1
+    thickness: 5
+  - type: 2
+    material: 2
+    thickness: 20
+challenges:
+  - check: type == 1 and material == 0 and thickness >= 12
+  - check: type == 2 and material == 2 and 0.5^(thickness/6.5) < 0.05
+  - check: type == 1 and material == 2 and thickness > 0 and thickness < 0.8

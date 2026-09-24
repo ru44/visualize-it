@@ -30,6 +30,7 @@ const paths: Record<Subject, string> = {
   cryptography: 'M6 11h12v10H6zM8 11V7a4 4 0 0 1 8 0v4M12 15v2',
   cosmos: 'M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0-6 0M4 18c2-6 14-10 16-12M18 4l.5 1.5L20 6l-1.5.5L18 8l-.5-1.5L16 6l1.5-.5z',
   complexity: 'M5 5h4v4H5zM15 5h4v4h-4zM10 10h4v4h-4zM5 15h4v4H5zM15 15h4v4h-4z',
+  nuclear: 'M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0M12 3v3M12 18v3M4.2 7.5l2.6 1.5M17.2 15l2.6 1.5M4.2 16.5l2.6-1.5M17.2 9l2.6-1.5',
   chemistry: 'M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3M7.5 15h9',
 }
 </script>

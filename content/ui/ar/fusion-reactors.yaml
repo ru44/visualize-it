@@ -1,0 +1,10 @@
+reactor.temperature: حرارة البلازما
+reactor.density: كثافة البلازما
+reactor.confinement: زمن الحصر
+reactor.hint: ▶ حرّك المنزلقات لتقطع خط الإشعال أسفله
+reactor.tripleProduct: الحاصل الثلاثي nTτ
+reactor.energy: 17.6 MeV لكل تفاعل
+reactor.ignition: الإشعال
+reactor.iter: هدف ITER
+reactor.status.ignited: تجاوز الإشعال
+reactor.status.below: دون الإشعال

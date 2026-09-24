@@ -1,0 +1,10 @@
+chain.k: معامل التضاعف k
+chain.generations: الأجيال
+chain.population: العدد
+chain.status: الحالة
+chain.dying: ينطفئ
+chain.steady: يستقر
+chain.growing: يتضخّم
+chain.more: +{n} أخرى
+chain.restart: ↻ من البداية
+chain.hint: ▶ كل نقطة انشطار · تتفرّع الخطوط إلى النيوترونات التي تطلقها

@@ -2,7 +2,7 @@
 // each `<lang>.md` holds the text. Validation errors name the file and the field.
 import { z } from 'zod'
 
-export const SUBJECTS = ['algebra', 'functions', 'calculus', 'geometry', 'trigonometry', 'statistics', 'physics', 'waves', 'electricity', 'electromagnetism', 'aerodynamics', 'thermodynamics', 'chemistry', 'computer-science', 'biology', 'earth-space', 'economics', 'engineering', 'discrete', 'ai', 'numbers', 'data', 'quantum', 'relativity', 'cryptography', 'cosmos', 'complexity'] as const
+export const SUBJECTS = ['algebra', 'functions', 'calculus', 'geometry', 'trigonometry', 'statistics', 'physics', 'waves', 'electricity', 'electromagnetism', 'aerodynamics', 'thermodynamics', 'chemistry', 'computer-science', 'biology', 'earth-space', 'economics', 'engineering', 'discrete', 'ai', 'numbers', 'data', 'quantum', 'relativity', 'cryptography', 'cosmos', 'complexity', 'nuclear'] as const
 export const LEVELS = ['beginner', 'high-school', 'university', 'advanced'] as const
 
 export const ParamSpec = z.object({ min: z.number(), max: z.number(), step: z.number().positive(), value: z.number(), unit: z.string().optional() })

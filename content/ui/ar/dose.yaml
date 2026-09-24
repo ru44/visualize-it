@@ -1,0 +1,13 @@
+dose.source: مصدر يومي
+dose.time: عدد المرات
+dose.banana: موزة
+dose.dental: أشعة سينية للأسنان
+dose.flight: رحلة طيران طويلة
+dose.ct: أشعة مقطعية للصدر
+dose.background: سنة من الإشعاع الخلفي
+dose.hint: ▶ مقياس لوغاريتمي بالميلي‌سيفرت · حرّك «عدد المرات» لتراكم المصدر الذي اخترته
+dose.threshold: 100 مليسيفرت — حيث يصبح الخطر قابلًا للقياس
+dose.perEvent: الجرعة في المرة الواحدة
+dose.repeatsLabel: عدد المرات
+dose.total: جرعتك التراكمية
+dose.years: ≈ سنوات من الإشعاع الخلفي

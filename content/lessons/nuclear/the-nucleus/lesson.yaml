@@ -1,0 +1,51 @@
+id: the-nucleus
+subject: nuclear
+difficulty: high-school
+equation: R = 1.2\,A^{1/3}
+concepts:
+  - nuclide
+  - isotope
+  - nuclear-radius
+  - strong-force
+prerequisites: []
+related:
+  - nuclear-fusion
+  - size-of-the-nucleus
+  - chart-of-nuclides
+visualization:
+  type: the-nucleus
+  options: {}
+visualization3d:
+  type: the-nucleus
+  options: {}
+parameters:
+  Z:
+    min: 1
+    max: 20
+    step: 1
+    value: 6
+  N:
+    min: 0
+    max: 24
+    step: 1
+    value: 6
+variables:
+  - R
+  - A
+derivation:
+  - V \propto A
+  - V = \tfrac{4}{3}\pi R^3 \propto A \Rightarrow R \propto A^{1/3}
+  - R = 1.2\,A^{1/3}\ \text{fm}
+charts: []
+primary: Z
+presets:
+  - Z: 1
+    N: 0
+  - Z: 1
+    N: 2
+  - Z: 6
+    N: 6
+challenges:
+  - check: Z==1 and N==1
+  - check: Z==6 and N==8
+  - check: Z==20 and N==24

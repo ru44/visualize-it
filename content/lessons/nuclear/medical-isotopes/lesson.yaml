@@ -1,0 +1,54 @@
+id: medical-isotopes
+subject: nuclear
+difficulty: high-school
+equation: N = N_0\left(\tfrac12\right)^{t/T_{1/2}}
+concepts:
+  - half-life
+  - radioactive-decay
+  - nuclear-medicine
+  - radiotracer
+prerequisites: []
+related:
+  - radioactive-dating
+  - nuclear-fusion
+visualization:
+  type: medical-isotopes
+  options: {}
+visualization3d:
+  type: medical-isotopes
+  options: {}
+parameters:
+  hours:
+    min: 0
+    max: 48
+    step: 1
+    value: 6
+    unit: h
+  isotope:
+    min: 0
+    max: 1
+    step: 1
+    value: 0
+variables:
+  - N
+  - N_0
+  - t
+  - T_{1/2}
+  - k
+derivation:
+  - k = t / T_{1/2}
+  - N = N_0\left(\tfrac12\right)^{k}
+  - \mathrm{activity} \propto N / T_{1/2}
+charts: []
+primary: hours
+presets:
+  - hours: 0
+    isotope: 0
+  - hours: 6
+    isotope: 0
+  - hours: 24
+    isotope: 1
+challenges:
+  - check: isotope == 0 and hours == 6
+  - check: isotope == 0 and 0.5^(hours/6) < 0.05
+  - check: isotope == 1 and hours >= 40

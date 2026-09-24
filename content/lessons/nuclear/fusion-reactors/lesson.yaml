@@ -1,0 +1,65 @@
+id: fusion-reactors
+subject: nuclear
+difficulty: university
+equation: nT\tau \ge \Lambda
+concepts:
+  - lawson-criterion
+  - tokamak
+  - magnetic-confinement
+  - deuterium-tritium
+prerequisites:
+  - nuclear-fusion
+related:
+  - nuclear-fusion
+  - fusion-in-stars
+visualization:
+  type: fusion-reactors
+  options: {}
+visualization3d:
+  type: fusion-reactors
+  options: {}
+parameters:
+  temperature:
+    min: 1
+    max: 30
+    step: 0.5
+    value: 10
+    unit: keV
+  density:
+    min: 0.1
+    max: 3
+    step: 0.1
+    value: 1
+    unit: "×10²⁰ m⁻³"
+  confinement:
+    min: 0.1
+    max: 10
+    step: 0.1
+    value: 3
+    unit: s
+variables:
+  - n
+  - T
+  - \tau
+  - \Lambda
+  - P
+derivation:
+  - \mathrm{^2H + \,^3H \to\, ^4He + n} + 17.6\text{ MeV}
+  - P \propto n^2
+  - nT\tau \ge \Lambda
+charts: []
+primary: temperature
+presets:
+  - temperature: 10
+    density: 1
+    confinement: 1
+  - temperature: 15
+    density: 1
+    confinement: 3
+  - temperature: 20
+    density: 2
+    confinement: 5
+challenges:
+  - check: density*1e20*temperature*confinement >= 3e21
+  - check: abs(temperature-15)<0.3 and abs(density-1)<0.05 and abs(confinement-3)<0.05
+  - check: density*1e20*temperature*confinement < 1e20 and temperature<5
