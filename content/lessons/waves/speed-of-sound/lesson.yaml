@@ -1,0 +1,61 @@
+id: speed-of-sound
+subject: waves
+difficulty: beginner
+equation: v = v_0 + 0.6\,T
+concepts:
+  - speed-of-sound
+  - medium
+  - temperature
+prerequisites:
+  - wave-basics
+related:
+  - reflection-and-echoes
+  - transverse-and-longitudinal
+visualization:
+  type: speed-of-sound
+  options: {}
+parameters:
+  T:
+    min: -20
+    max: 40
+    step: 1
+    value: 20
+    unit: '°C'
+  medium:
+    min: 0
+    max: 2
+    step: 1
+    value: 0
+  t:
+    min: 0
+    max: 10
+    step: 0.5
+    value: 3
+    unit: s
+variables:
+  - v
+  - v_0
+  - T
+  - d
+derivation:
+  - v = v_0 + 0.6\,T
+  - v(20\text{°C}) = 331 + 0.6(20) = 343\ \text{m/s}
+  - d = v\,t
+charts: []
+primary: T
+presets:
+  - T: 20
+    medium: 0
+    t: 3
+  - T: -10
+    medium: 0
+    t: 5
+  - T: 20
+    medium: 2
+    t: 0
+challenges:
+  - check: medium==1
+  - check: medium==2
+  - check: (331+0.6*T)*t
+    target: 1000
+    tol: 30

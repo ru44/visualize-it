@@ -1,0 +1,9 @@
+echo.d: البُعد d
+echo.v: السرعة v
+echo.delay: تأخير الصدى
+echo.source: المصدر
+echo.free: طرف حر
+echo.fixed: طرف ثابت
+echo.hintOut: تنتقل النبضة نحو الجدار
+echo.hintBack: تعود النبضة كصدى
+echo.tip: الطرف الثابت يقلب النبضة العائدة؛ الطرف الحر لا يفعل — والتوقيت واحد في الحالتين

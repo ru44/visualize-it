@@ -1,0 +1,56 @@
+id: temperature-and-kinetic-energy
+subject: thermodynamics
+difficulty: high-school
+equation: \overline{KE} = \tfrac{3}{2}k_BT, \qquad v_{rms} = \sqrt{\dfrac{3RT}{M}}
+concepts:
+  - temperature
+  - kinetic-theory
+  - absolute-zero
+  - rms-speed
+prerequisites: []
+related:
+  - gas-laws
+  - first-law-thermodynamics
+visualization:
+  type: molecular-speed
+  options: {}
+visualization3d:
+  type: gas-box
+  options: {}
+parameters:
+  T:
+    min: 1
+    max: 1000
+    step: 1
+    value: 293
+    unit: K
+  M:
+    min: 0.002
+    max: 0.044
+    step: 0.001
+    value: 0.029
+    unit: kg/mol
+variables:
+  - \overline{KE}
+  - k_B
+  - v_{rms}
+  - R
+  - M
+derivation:
+  - \overline{KE} = \tfrac12 m\overline{v^2} = \tfrac32 k_B T
+  - \overline{v^2} = \dfrac{3k_BT}{m} = \dfrac{3RT}{M}
+  - v_{rms} = \sqrt{\overline{v^2}} = \sqrt{\dfrac{3RT}{M}}
+charts: []
+primary: T
+presets:
+  - T: 293
+    M: 0.029
+  - T: 293
+    M: 0.004
+  - T: 77
+    M: 0.028
+challenges:
+  - check: sqrt(3*8.314*T/M)
+    target: 1500
+  - check: T < 100 and M > 0.02
+  - check: sqrt(3*8.314*T/M) > 2000 and M < 0.01

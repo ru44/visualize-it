@@ -1,0 +1,59 @@
+id: electric-power-and-energy-bills
+subject: electricity
+difficulty: beginner
+equation: \text{Cost} = \frac{Ptc}{1000}
+concepts:
+- power
+- energy
+- kilowatt-hour
+prerequisites:
+- ohms-law
+related:
+- voltage-and-energy
+visualization:
+  type: electric-power-and-energy-bills
+  options: {}
+primary: P
+parameters:
+  P:
+    min: 1
+    max: 3000
+    step: 1
+    value: 2000
+    unit: W
+  t:
+    min: 0.5
+    max: 730
+    step: 0.5
+    value: 5
+    unit: h/month
+  c:
+    min: 0.05
+    max: 0.6
+    step: 0.01
+    value: 0.28
+    unit: $/kWh
+variables:
+- P
+- t
+- E
+- c
+derivation:
+- E = Pt
+- E_{kWh} = \frac{Pt}{1000}
+- \text{Cost} = E_{kWh}c
+presets:
+  - P: 2200
+    t: 5
+    c: 0.28
+  - P: 150
+    t: 720
+    c: 0.28
+  - P: 9
+    t: 120
+    c: 0.28
+challenges:
+  - check: P*t*c/1000
+    target: 3
+  - check: P < 15 and P*t*c/1000 > 1
+  - check: P > 1900 and P*t*c/1000 < 2

@@ -1,0 +1,7 @@
+cc.hint: drag up and down on the wire to set the current
+cc.wireLabel: copper wire
+cc.chargeLabel: charge accumulated so far, Q = It
+cc.driftLabel: actual drift velocity
+cc.driftNote: how fast the electrons truly creep
+cc.caption: the dots move at a readable, stylised speed — not the real (far slower) drift speed
+cc3d.drift: drift speed

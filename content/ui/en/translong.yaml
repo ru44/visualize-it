@@ -1,0 +1,7 @@
+translong.hintT: transverse — each point moves perpendicular to the wave (a rope)
+translong.hintL: longitudinal — each point moves along the wave's own direction (sound, a spring)
+translong.lambda: wavelength λ
+translong.f: frequency f
+translong.A: amplitude A
+translong.compression: compression
+translong.rarefaction: rarefaction

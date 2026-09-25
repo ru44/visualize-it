@@ -1,0 +1,53 @@
+id: sound-intensity-and-decibels
+subject: waves
+difficulty: high-school
+equation: \beta = 10\log_{10}\!\left(\dfrac{I}{I_0}\right)
+concepts:
+  - sound-intensity
+  - decibel
+  - inverse-square-law
+prerequisites:
+  - wave-basics
+related:
+  - speed-of-sound
+  - reflection-and-echoes
+visualization:
+  type: sound-intensity-and-decibels
+  options: {}
+parameters:
+  dB0:
+    min: 30
+    max: 140
+    step: 1
+    value: 100
+    unit: dB
+  r:
+    min: 1
+    max: 100
+    step: 1
+    value: 5
+    unit: m
+variables:
+  - \beta, \beta_0
+  - I, I_0
+  - P
+  - r, r_0
+derivation:
+  - I = \dfrac{P}{4\pi r^2}
+  - \beta = 10\log_{10}\!\left(\dfrac{I}{I_0}\right)
+  - \beta(r) = \beta_0 - 20\log_{10}\!\left(\dfrac{r}{r_0}\right)
+charts: []
+primary: r
+presets:
+  - dB0: 30
+    r: 1
+  - dB0: 90
+    r: 5
+  - dB0: 140
+    r: 100
+challenges:
+  - check: dB0 - 20*log10(r)
+    target: 85
+  - check: dB0 - 20*log10(r)
+    target: 120
+  - check: dB0 - 20*log10(r) < 30

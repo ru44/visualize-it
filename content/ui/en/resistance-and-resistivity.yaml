@@ -1,0 +1,6 @@
+rr.hint: drag the length and cross-section sliders, or tap the wire to switch material
+rr.copper: copper
+rr.nichrome: nichrome
+rr.toggleHint: tap to switch material
+rr.resultLabel: resistance
+rr.caption: the wire is drawn to scale — longer and thinner both mean more resistance

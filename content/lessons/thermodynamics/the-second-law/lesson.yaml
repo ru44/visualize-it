@@ -1,0 +1,70 @@
+id: the-second-law
+subject: thermodynamics
+difficulty: university
+equation: S = k_B\ln\Omega, \qquad \frac{S}{k_B} \approx N\ln N - n_L\ln n_L - n_R\ln n_R
+concepts:
+  - second-law
+  - entropy
+  - irreversibility
+  - statistical-mechanics
+prerequisites: []
+related:
+  - entropy-and-heat-engines
+  - specific-heat
+visualization:
+  type: two-gas-mix
+  options: {}
+visualization3d:
+  type: gas-box
+  options:
+    mode: diffusion
+    fixed:
+      temp: 300
+      split: 50
+parameters:
+  nLeft:
+    min: 1
+    max: 100
+    step: 1
+    value: 90
+    unit: molecules
+  nRight:
+    min: 1
+    max: 100
+    step: 1
+    value: 10
+    unit: molecules
+  perm:
+    min: 0
+    max: 100
+    step: 1
+    value: 30
+    unit: '%'
+variables:
+  - entropy
+  - Boltzmann constant, 1.38×10⁻²³ J/K
+  - multiplicity — the number of microscopic arrangements matching this split
+  - number of molecules on the left side
+  - number of molecules on the right side
+  - total number of molecules, n_L + n_R
+derivation:
+  - \Omega(n_L,n_R) = \dfrac{N!}{n_L!\,n_R!} \;\text{counts the arrangements of } N \text{ molecules split } n_L/n_R \text{ between the two halves.}
+  - S = k_B\ln\Omega \;\text{(Boltzmann's definition of entropy).}
+  - \text{Stirling's approximation gives } S/k_B \approx N\ln N - n_L\ln n_L - n_R\ln n_R.
+charts: []
+primary: nLeft
+presets:
+  - nLeft: 95
+    nRight: 5
+    perm: 40
+  - nLeft: 50
+    nRight: 50
+    perm: 80
+  - nLeft: 80
+    nRight: 20
+    perm: 2
+challenges:
+  - check: abs(nLeft - nRight)
+    target: 0
+  - check: (nLeft+nRight)*log(nLeft+nRight) - nLeft*log(nLeft) - nRight*log(nRight) > 60 and abs(nLeft-nRight) > 10
+  - check: nLeft > 90 and perm < 5

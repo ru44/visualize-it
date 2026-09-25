@@ -1,0 +1,6 @@
+ve.hint: drag up and down on the pump to set the voltage
+ve.pump: battery (pump)
+ve.highLevel: high energy level
+ve.lowLevel: low energy level
+ve.energyLabel: energy per trip, E = QV
+ve.caption: each blob is a packet of charge; how high the pump lifts it sets how much energy it carries

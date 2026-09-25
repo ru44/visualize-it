@@ -1,0 +1,8 @@
+heat.hint: ارفع ΔT وراقب اللوحات الثلاث تشتد معًا — ثم جرّب k وT كلًا على حدة.
+heat.condTitle: التوصيل
+heat.convTitle: الحمل
+heat.radTitle: الإشعاع
+heat.cond: معدل التوصيل
+heat.conv: معدل الحمل
+heat.rad: القدرة المُشَعّة
+heat.rising: الهواء الساخن يرتفع

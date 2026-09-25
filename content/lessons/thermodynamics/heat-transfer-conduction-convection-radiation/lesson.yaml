@@ -1,0 +1,71 @@
+id: heat-transfer-conduction-convection-radiation
+subject: thermodynamics
+difficulty: high-school
+equation: \frac{Q_{cond}}{t} = \frac{kA\Delta T}{d}, \quad \frac{Q_{conv}}{t} = hA\Delta T, \quad \frac{Q_{rad}}{t} = \varepsilon\sigma A T^4
+concepts:
+  - conduction
+  - convection
+  - radiation
+  - stefan-boltzmann-law
+  - thermal-conductivity
+prerequisites: []
+related:
+  - thermal-conductivity-and-insulation
+  - specific-heat
+visualization:
+  type: heat-transfer
+  options: {}
+visualization3d:
+  type: room
+  options: {}
+parameters:
+  dT:
+    min: 5
+    max: 80
+    step: 1
+    value: 40
+    unit: °C
+  k:
+    min: 0.2
+    max: 400
+    step: 0.2
+    value: 15
+    unit: W/(m·K)
+  Tsurf:
+    min: 300
+    max: 800
+    step: 5
+    value: 350
+    unit: K
+variables:
+  - Q_{cond}, Q_{conv}, Q_{rad}
+  - k
+  - A
+  - \Delta T
+  - d
+  - h
+  - \varepsilon
+  - \sigma
+  - T
+derivation:
+  - '\text{Conduction (Fourier''s law): heat creeps through a solid at a rate proportional to } k, A, \Delta T \text{ and inversely to thickness } d.'
+  - '\text{Convection (Newton''s law of cooling): a moving fluid carries heat at a rate proportional to } h, A \text{ and } \Delta T, \text{ with } h \text{ absorbing the flow details.}'
+  - '\text{Radiation (Stefan-Boltzmann law): every warm surface radiates power proportional to its area and the fourth power of its absolute temperature } T.'
+charts: []
+primary: dT
+presets:
+  - dT: 70
+    k: 15
+    Tsurf: 350
+  - dT: 40
+    k: 0.2
+    Tsurf: 350
+  - dT: 60
+    k: 400
+    Tsurf: 800
+challenges:
+  - check: k*0.000025*dT/0.15
+    target: 1
+  - check: 0.9*5.67e-8*0.05*Tsurf^4
+    target: 500
+  - check: dT > 60 and k > 200

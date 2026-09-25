@@ -1,0 +1,8 @@
+bill.hint: drag the sliders below to change the appliance, how long it runs, and the tariff
+bill.meter: power meter (spins faster at higher power)
+bill.receiptTitle: monthly electricity bill
+bill.usageLabel: energy used
+bill.priceLabel: price per kWh
+bill.totalLabel: total
+bill.note: an estimate — real tariffs vary by time of day and region
+bill.caption: the meter's spin rate mirrors real power meters — faster spin, more energy per hour

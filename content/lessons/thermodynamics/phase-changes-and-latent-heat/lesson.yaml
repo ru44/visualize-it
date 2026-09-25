@@ -1,0 +1,52 @@
+id: phase-changes-and-latent-heat
+subject: thermodynamics
+difficulty: high-school
+equation: Q = mc\Delta T \;\text{(warming)}, \qquad Q = mL \;\text{(melting or boiling)}
+concepts:
+  - latent-heat
+  - phase-change
+  - specific-heat-capacity
+  - enthalpy
+prerequisites: []
+related:
+  - specific-heat
+  - first-law-thermodynamics
+visualization:
+  type: phase-change
+  options: {}
+parameters:
+  Q:
+    min: 0
+    max: 1000000
+    step: 2000
+    value: 100000
+    unit: J
+  m:
+    min: 0.05
+    max: 0.3
+    step: 0.01
+    value: 0.1
+    unit: kg
+variables:
+  - heat energy added, starting from ice at −20°C
+  - mass being heated
+  - specific heat capacity
+  - change in temperature
+  - latent heat of melting or boiling
+derivation:
+  - Q = mc\Delta T \;\text{ while the substance stays a single phase, so its temperature actually rises.}
+  - Q = mL \;\text{ during a phase change, when every joule breaks bonds instead of raising temperature.}
+  - '\text{Chaining ice} \to \text{water} \to \text{steam gives four stages: warm, melt (flat), warm, boil (flat).}'
+charts: []
+primary: Q
+presets:
+  - Q: 20000
+    m: 0.1
+  - Q: 79000
+    m: 0.1
+  - Q: 305000
+    m: 0.1
+challenges:
+  - check: Q > (m*2100*20+m*334000) and Q < (m*2100*20+m*334000+m*418600)
+  - check: Q > (m*2100*20+m*334000+m*418600+m*2256000)
+  - check: Q > (m*2100*20+m*334000+m*418600) and Q < (m*2100*20+m*334000+m*418600+m*2256000)

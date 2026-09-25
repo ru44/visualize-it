@@ -1,0 +1,9 @@
+echo.d: distance d
+echo.v: speed v
+echo.delay: echo delay
+echo.source: source
+echo.free: free end
+echo.fixed: fixed end
+echo.hintOut: the pulse travels out toward the wall
+echo.hintBack: the pulse returns as an echo
+echo.tip: fixed ends flip the returning pulse; free ends do not — the timing is the same either way

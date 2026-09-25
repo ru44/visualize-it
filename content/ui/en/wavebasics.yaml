@@ -1,0 +1,6 @@
+wavebasics.hint: shake the rope from the left; the ripple travels right
+wavebasics.lambda: wavelength λ
+wavebasics.f: frequency f
+wavebasics.v: speed v = fλ
+wavebasics.particle: a point on the rope only bobs up and down
+wavebasics.crest: this crest rides along at speed v

@@ -1,0 +1,62 @@
+id: boundary-layer
+subject: aerodynamics
+difficulty: university
+equation: \delta \approx \dfrac{5x}{\sqrt{\mathrm{Re}}}
+concepts:
+- boundary-layer
+- laminar-flow
+- turbulence
+- flow-separation
+prerequisites:
+- reynolds-number
+related:
+- drag-equation
+- wingtip-vortices-and-induced-drag
+visualization:
+  type: boundary-layer
+  options: {}
+primary: v
+parameters:
+  v:
+    min: 1
+    max: 80
+    step: 0.5
+    value: 25
+    unit: m/s
+  d:
+    min: 0.02
+    max: 0.7
+    step: 0.01
+    value: 0.043
+    unit: m
+  roughness:
+    min: 0
+    max: 1
+    step: 1
+    value: 0
+    unit: ''
+variables:
+- \delta
+- x
+- \mathrm{Re}
+derivation:
+- \delta^2/\nu \sim x/v
+- \delta \propto \sqrt{\nu x / v}
+- \delta \approx \dfrac{5x}{\sqrt{\mathrm{Re}_x}}
+charts: []
+presets:
+- v: 70
+  d: 0.043
+  roughness: 1
+- v: 70
+  d: 0.043
+  roughness: 0
+- v: 25
+  d: 0.22
+  roughness: 1
+challenges:
+- check: 'roughness>0.5 and 1.225*v*d/1.81e-5 > 40000'
+- check: 'roughness<0.5 and 1.225*v*d/1.81e-5 > 300000'
+- check: '1.225*v*d/1.81e-5'
+  target: 200000
+  tol: 20000

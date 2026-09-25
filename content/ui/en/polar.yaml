@@ -1,0 +1,8 @@
+polar.hint: unpolarised light settles into one direction after filter 1, then filter 2 cuts it further
+polar.theta: angle between filters θ
+polar.i1: after filter 1
+polar.i2: after filter 2
+polar.unpolarised: unpolarised light
+polar.filter1: filter 1
+polar.filter2: filter 2
+polar.screen: brightness reaching the screen

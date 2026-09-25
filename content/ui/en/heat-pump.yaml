@@ -1,0 +1,9 @@
+hp.hint: Widen the gap between T_c and T_h — watch both coefficients of performance fall.
+hp.cold: cold reservoir
+hp.hot: hot reservoir
+hp.compressor: compressor
+hp.copCool: COP (cooling)
+hp.copHeat: COP (heating)
+hp.compareTitle: heating energy delivered per unit of work
+hp.plainHeater: plain electric heater
+hp.thisHeatPump: this heat pump

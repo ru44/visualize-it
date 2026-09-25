@@ -1,0 +1,58 @@
+id: doppler-effect
+subject: waves
+difficulty: high-school
+equation: f_D = f\,\dfrac{v \pm v_o}{v \mp v_s}
+concepts:
+  - doppler-effect
+  - moving-source
+  - pitch-shift
+prerequisites:
+  - wave-basics
+related:
+  - speed-of-sound
+  - reflection-and-echoes
+visualization:
+  type: doppler-effect
+  options: {}
+visualization3d:
+  type: doppler
+  options: {}
+parameters:
+  f:
+    min: 200
+    max: 1000
+    step: 10
+    value: 500
+    unit: Hz
+  vs:
+    min: 0
+    max: 40
+    step: 1
+    value: 20
+    unit: m/s
+variables:
+  - f
+  - v
+  - v_s
+  - v_o
+  - f_1, f_2, f_D
+derivation:
+  - f_1 = f\,\dfrac{v}{v-v_s}
+  - f_2 = f\,\dfrac{v}{v+v_s}
+  - f_D = f\,\dfrac{v \pm v_o}{v \mp v_s}
+charts: []
+primary: vs
+presets:
+  - f: 500
+    vs: 20
+  - f: 800
+    vs: 35
+  - f: 300
+    vs: 5
+challenges:
+  - check: 343/(343 - vs)
+    target: 1.1
+  - check: 343/(343 + vs)
+    target: 0.9
+  - check: vs
+    target: 40

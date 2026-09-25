@@ -1,0 +1,4 @@
+mix.hint: Open the partition and watch entropy climb toward its maximum — never back down on its own.
+mix.perm: partition open
+mix.s: entropy S
+mix.smax: max entropy

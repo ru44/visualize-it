@@ -1,0 +1,72 @@
+id: kirchhoffs-laws
+subject: electricity
+difficulty: university
+equation: I_1 = I_2 + I_3
+concepts:
+- kirchhoffs-current-law
+- kirchhoffs-voltage-law
+- circuit-analysis
+prerequisites:
+- ohms-law
+- series-parallel
+related:
+- resistance-and-resistivity
+visualization:
+  type: kirchhoffs-laws
+  options: {}
+primary: R2
+parameters:
+  V:
+    min: 1
+    max: 24
+    step: 0.5
+    value: 12
+    unit: V
+  R1:
+    min: 1
+    max: 50
+    step: 1
+    value: 10
+    unit: Ω
+  R2:
+    min: 1
+    max: 100
+    step: 1
+    value: 30
+    unit: Ω
+  R3:
+    min: 1
+    max: 100
+    step: 1
+    value: 60
+    unit: Ω
+variables:
+- V
+- R_1
+- R_2
+- R_3
+- I_1
+- I_2
+- I_3
+derivation:
+- I_1 = I_2 + I_3
+- V = I_1R_1 + I_2R_2
+- I_2R_2 = I_3R_3
+presets:
+  - V: 12
+    R1: 10
+    R2: 30
+    R3: 60
+  - V: 9
+    R1: 5
+    R2: 20
+    R3: 20
+  - V: 6
+    R1: 2
+    R2: 10
+    R3: 90
+challenges:
+  - check: V/(R1+(R2*R3)/(R2+R3))
+    target: 0.5
+  - check: R3 > 2*R2
+  - check: V/(R1+(R2*R3)/(R2+R3)) < 0.3 and V >= 15

@@ -1,0 +1,6 @@
+4f.hint: ▶ raise throttle to climb, lower it to descend — watch which pair of arrows wins
+4f.thrustLabel: thrust (forward)
+4f.dragLabel: drag (backward)
+4f.liftLabel: lift (up, ⟂ path)
+4f.weightLabel: weight (straight down)
+4f.roc: rate of climb

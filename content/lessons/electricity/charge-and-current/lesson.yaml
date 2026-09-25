@@ -1,0 +1,66 @@
+id: charge-and-current
+subject: electricity
+difficulty: beginner
+equation: I = \frac{Q}{t}
+concepts:
+- charge
+- current
+- drift-velocity
+prerequisites: []
+related:
+- ohms-law
+- voltage-and-energy
+visualization:
+  type: charge-and-current
+  options: {}
+visualization3d:
+  type: charge-and-current
+  options: {}
+primary: I
+parameters:
+  I:
+    min: 0.1
+    max: 10
+    step: 0.1
+    value: 2
+    unit: A
+  A:
+    min: 0.1
+    max: 5
+    step: 0.1
+    value: 1.5
+    unit: mm²
+  t:
+    min: 1
+    max: 600
+    step: 1
+    value: 60
+    unit: s
+variables:
+- I
+- Q
+- t
+- n
+- A
+- e
+- L
+- v_d
+derivation:
+- I = \frac{Q}{t}
+- Q = nAeL \;\Rightarrow\; I = nAe\frac{L}{t}
+- \frac{L}{t} = v_d \;\Rightarrow\; v_d = \frac{I}{nAe}
+presets:
+  - I: 0.5
+    A: 0.2
+    t: 60
+  - I: 8
+    A: 1.5
+    t: 5
+  - I: 0.2
+    A: 0.3
+    t: 30
+challenges:
+  - check: I*t
+    target: 40
+  - check: I/(8.5e28*(A*1e-6)*1.6e-19) < 0.00005 and I >= 3
+  - check: A < 1 and I > 5

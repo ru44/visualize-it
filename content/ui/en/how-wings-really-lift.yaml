@@ -1,0 +1,6 @@
+hwl.hint: ▶ drag vertically to change α · watch the two dots race the top and bottom surface
+hwl.topLabel: top surface (faster, lower pressure)
+hwl.bottomLabel: bottom surface (slower, higher pressure)
+hwl.caption: Conceptual pressure map — not a CFD solution.
+hwl.tTop: top crossing time
+hwl.tBottom: bottom crossing time
