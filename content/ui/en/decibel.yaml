@@ -1,0 +1,12 @@
+decibel.hint: drag along the curve to move the listener nearer or farther
+decibel.r: distance r
+decibel.level: sound level
+decibel.status: status
+decibel.safe: safe
+decibel.caution: long exposure risky
+decibel.danger: immediate danger
+decibel.whisper: whisper
+decibel.damage: 8h damage limit
+decibel.jet: jet engine
+decibel.xlabel: distance from source (log scale, 1–100 m)
+decibel.ylabel: level (dB)

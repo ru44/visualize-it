@@ -1,0 +1,49 @@
+id: electrical-safety
+subject: electricity
+difficulty: beginner
+equation: I_b = \frac{V}{R_b}
+concepts:
+- fuses
+- circuit-breakers
+- earthing
+- rcd
+prerequisites:
+- ohms-law
+related:
+- batteries-and-internal-resistance
+visualization:
+  type: electrical-safety
+  options: {}
+primary: Rb
+parameters:
+  V:
+    min: 5
+    max: 400
+    step: 5
+    value: 230
+    unit: V
+  Rb:
+    min: 500
+    max: 500000
+    step: 500
+    value: 1000
+    unit: Ω
+variables:
+- I_b
+- V
+- R_b
+derivation:
+- I_b \propto V
+- R_b \equiv \frac{V}{I_b} \;\Rightarrow\; I_b = \frac{V}{R_b}
+- I_b > 0.03 \;\Rightarrow\; \text{the RCD trips}
+presets:
+  - V: 230
+    Rb: 100000
+  - V: 230
+    Rb: 1000
+  - V: 12
+    Rb: 1000
+challenges:
+  - check: V/Rb > 0.025 and V/Rb < 0.035
+  - check: V/Rb > 0.1 and V >= 200
+  - check: V/Rb < 0.001 and V >= 200

@@ -1,0 +1,9 @@
+phase.hint: ارفع Q من الصفر — راقب الجليد يتقلص، ثم مستوى الماء، ثم البخار.
+phase.ice: جليد، يسخن
+phase.melting: ينصهر (مستوى ثابت 0°C)
+phase.water: ماء سائل، يسخن
+phase.boiling: يغلي (مستوى ثابت 100°C)
+phase.steam: بخار
+phase.state: الحالة
+phase.burnTitle1: الرذاذ نفسه، الدرجة نفسها 100°C
+phase.burnTitle2: الطاقة الموصَّلة لكل غرام

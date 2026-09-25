@@ -1,0 +1,5 @@
+bir.hint: drag up and down anywhere to raise the internal resistance
+bir.batteryLabel: battery
+bir.emf: EMF
+bir.terminal: terminal V
+bir.caption: the gap between the two bars is voltage lost inside the battery itself

@@ -1,0 +1,65 @@
+id: helicopters-and-rotors
+subject: aerodynamics
+difficulty: university
+equation: v_i = \sqrt{\dfrac{T}{2\rho A}}
+concepts:
+- rotor
+- hover
+- disc-loading
+- swashplate
+prerequisites: []
+related:
+- propellers-and-jets
+- how-wings-really-lift
+visualization:
+  type: helicopters-and-rotors
+  options: {}
+visualization3d:
+  type: helicopters-and-rotors
+  options: {}
+primary: tilt
+parameters:
+  R:
+    min: 0.3
+    max: 16
+    step: 0.1
+    value: 3.84
+    unit: m
+  W:
+    min: 5
+    max: 600000
+    step: 5
+    value: 6076
+    unit: N
+  tilt:
+    min: -15
+    max: 15
+    step: 0.5
+    value: 0
+    unit: °
+variables:
+- v_i
+- T
+- \rho
+- A
+derivation:
+- L \approx \dot m\, w, \quad \dot m = \rho A v_i
+- v_i = \sqrt{T/(2\rho A)}
+- P = T\, v_i
+charts: []
+presets:
+- R: 3.84
+  W: 6076
+  tilt: 0
+- R: 16
+  W: 548800
+  tilt: 0
+- R: 3.84
+  W: 6076
+  tilt: 12
+challenges:
+- check: 'sqrt((W/cos(tilt*pi/180))/(2*1.225*pi*R^2))'
+  target: 8
+  tol: 1
+- check: '(W/cos(tilt*pi/180))/(pi*R^2) > 400'
+- check: 'tilt>10 and (W/cos(tilt*pi/180))/W > 1.01'

@@ -1,0 +1,53 @@
+id: refrigerators-and-heat-pumps
+subject: thermodynamics
+difficulty: university
+equation: COP_{cool} = \frac{T_c}{T_h - T_c}, \qquad COP_{heat} = \frac{T_h}{T_h - T_c}
+concepts:
+  - coefficient-of-performance
+  - refrigeration-cycle
+  - heat-pump
+  - second-law
+prerequisites: []
+related:
+  - entropy-and-heat-engines
+  - first-law-thermodynamics
+visualization:
+  type: heat-pump
+  options: {}
+parameters:
+  Tc:
+    min: 250
+    max: 285
+    step: 1
+    value: 277
+    unit: K
+  Th:
+    min: 290
+    max: 320
+    step: 1
+    value: 295
+    unit: K
+variables:
+  - coefficient of performance, cooling mode
+  - coefficient of performance, heating mode
+  - absolute temperature of the cold reservoir
+  - absolute temperature of the hot reservoir
+derivation:
+  - \text{A reversible (Carnot) refrigerator moves heat } Q_c \text{ from the cold side using work } W\text{, with } Q_c/W = T_c/(T_h-T_c).
+  - \text{The same cycle run as a heat pump delivers } Q_h = Q_c+W \text{ to the hot side, with } Q_h/W = T_h/(T_h-T_c).
+  - \text{A plain resistive heater turns all its work directly into heat, so its "COP" is exactly 1 — always worse than a heat pump.}
+charts: []
+primary: Th
+presets:
+  - Tc: 277
+    Th: 295
+  - Tc: 268
+    Th: 293
+  - Tc: 283
+    Th: 308
+challenges:
+  - check: Th/(Th-Tc)
+    target: 10
+  - check: Tc/(Th-Tc) < 4 and Tc < 260
+  - check: Th - Tc
+    target: 20

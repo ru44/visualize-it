@@ -1,0 +1,60 @@
+id: thermal-expansion
+subject: thermodynamics
+difficulty: high-school
+equation: \Delta L = \alpha L_0 \Delta T
+concepts:
+  - thermal-expansion
+  - linear-expansion-coefficient
+  - bimetallic-strip
+prerequisites: []
+related:
+  - temperature-and-kinetic-energy
+  - gas-laws
+visualization:
+  type: thermal-expansion
+  options: {}
+parameters:
+  alpha:
+    min: 1
+    max: 25
+    step: 1
+    value: 12
+    unit: ×10⁻⁶/°C
+  L0:
+    min: 1
+    max: 50
+    step: 1
+    value: 18
+    unit: m
+  dT:
+    min: -30
+    max: 60
+    step: 1
+    value: 35
+    unit: °C
+variables:
+  - \Delta L
+  - \alpha
+  - L_0
+  - \Delta T
+derivation:
+  - '\text{Each dimension of a solid grows almost linearly with temperature over modest ranges: } \alpha \text{ is that fractional growth per degree.}'
+  - \frac{\Delta L}{L_0} = \alpha \Delta T
+  - \Delta L = \alpha L_0 \Delta T
+charts: []
+primary: dT
+presets:
+  - alpha: 12
+    L0: 18
+    dT: 35
+  - alpha: 23
+    L0: 40
+    dT: 45
+  - alpha: 12
+    L0: 25
+    dT: -30
+challenges:
+  - check: (alpha*0.000001)*L0*dT
+    target: 0.02
+  - check: (alpha*0.000001)*L0*dT < 0
+  - check: alpha > 20 and L0 > 30 and dT > 40

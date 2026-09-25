@@ -1,0 +1,7 @@
+re.hint: ▶ drag L and v together — the body stays the same size, only the wake's character changes
+re.regime: regime
+re.laminar: laminar, smooth wake
+re.transitional: transitional
+re.turbulent: turbulent, chaotic wake
+re.axisHint: the dot's position on the dial below — bee, ball and jet all live on this one scale
+re.caption: Conceptual wake — not a CFD solution.

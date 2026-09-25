@@ -1,0 +1,9 @@
+phase.hint: Raise Q from zero — watch the ice shrink, then water level, then steam.
+phase.ice: ice, warming
+phase.melting: melting (0°C plateau)
+phase.water: liquid water, warming
+phase.boiling: boiling (100°C plateau)
+phase.steam: steam
+phase.state: state
+phase.burnTitle1: same splash, same 100°C
+phase.burnTitle2: energy delivered per gram

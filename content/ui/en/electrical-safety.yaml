@@ -1,0 +1,10 @@
+es.hint: drag the sliders below to change the touch voltage and body resistance
+es.live: live wire
+es.ground: to ground
+es.perceive: perceive
+es.hold: can't let go
+es.rcd: RCD trips
+es.fatal: danger zone
+es.tripped: an RCD would trip here
+es.safe: below the RCD trip point
+es.caption: the gauge is on a log scale — each mark is far more current than the last

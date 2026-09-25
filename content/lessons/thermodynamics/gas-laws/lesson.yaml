@@ -1,0 +1,65 @@
+id: gas-laws
+subject: thermodynamics
+difficulty: high-school
+equation: PV = nRT
+concepts:
+  - boyles-law
+  - charless-law
+  - gay-lussacs-law
+  - ideal-gas-law
+prerequisites: []
+related:
+  - temperature-and-kinetic-energy
+  - first-law-thermodynamics
+visualization:
+  type: gas-laws
+  options: {}
+visualization3d:
+  type: gas-box
+  options: {}
+parameters:
+  V:
+    min: 1
+    max: 30
+    step: 0.5
+    value: 10
+    unit: L
+  T:
+    min: 200
+    max: 400
+    step: 5
+    value: 293
+    unit: K
+  n:
+    min: 0.5
+    max: 3
+    step: 0.1
+    value: 1
+    unit: mol
+variables:
+  - P
+  - V
+  - n
+  - R
+  - T
+derivation:
+  - PV = nRT \;\text{ for a fixed amount of gas.}
+  - '\text{Hold } T \text{ fixed: } P \propto \dfrac{1}{V} \;\text{(Boyle''s law).}'
+  - '\text{Hold } V \text{ fixed: } P \propto T \;\text{(Gay-Lussac''s law); hold } P \text{ fixed and } V \propto T \;\text{(Charles''s law).}'
+charts: []
+primary: V
+presets:
+  - n: 1
+    T: 293
+    V: 3
+  - n: 0.5
+    T: 250
+    V: 8
+  - n: 1
+    T: 380
+    V: 10
+challenges:
+  - check: n*8.314*T/V
+    target: 300
+  - check: abs(T-293) < 15 and V < 5
+  - check: T < 230 and V < 10

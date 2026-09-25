@@ -1,0 +1,8 @@
+heat.hint: Raise ΔT and watch all three panels intensify — then try k and T on their own.
+heat.condTitle: Conduction
+heat.convTitle: Convection
+heat.radTitle: Radiation
+heat.cond: conduction rate
+heat.conv: convection rate
+heat.rad: radiated power
+heat.rising: warm air rises

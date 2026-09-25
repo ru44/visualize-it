@@ -1,0 +1,8 @@
+bl.hint: ▶ toggle dimples, drag speed and size — watch where the flow lets go
+bl.regime: layer
+bl.laminar: laminar (separates early)
+bl.turbulent: turbulent (clings on longer)
+bl.sep: separation angle
+bl.drag: drag force
+bl.wakeLabel: separated wake
+bl.caption: Conceptual flow around a sphere — not a CFD solution.

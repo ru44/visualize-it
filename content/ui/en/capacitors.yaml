@@ -1,0 +1,4 @@
+cap.hint: drag left and right across the plates to set the voltage
+cap.storedLabel: energy stored
+cap.flashNote: released in under a millisecond by a flash
+cap.caption: charge piles up on the plates; the field between them strengthens with voltage

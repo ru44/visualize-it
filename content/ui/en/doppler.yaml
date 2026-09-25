@@ -1,0 +1,7 @@
+doppler.hint: circles bunch ahead of the moving source, spread out behind it
+doppler.f1: heard ahead
+doppler.f: true frequency f
+doppler.f2: heard behind
+doppler.source: siren
+doppler.ahead: higher pitch ahead
+doppler.behind: lower pitch behind

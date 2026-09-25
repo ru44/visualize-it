@@ -1,0 +1,10 @@
+speedsound.hint: تعتمد سرعة الصوت على الوسط الذي يعبره
+speedsound.clickHint: اضغط عمودًا لتبديل الوسط
+speedsound.air: الهواء
+speedsound.water: الماء
+speedsound.steel: الفولاذ
+speedsound.speed: سرعة الصوت
+speedsound.distance: بُعد العاصفة
+speedsound.flash: ومضة البرق
+speedsound.count: 'عددتَ {t} ث'
+speedsound.away: 'العاصفة على بُعد ≈ {d} كم'

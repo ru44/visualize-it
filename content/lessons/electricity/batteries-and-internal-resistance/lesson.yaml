@@ -1,0 +1,60 @@
+id: batteries-and-internal-resistance
+subject: electricity
+difficulty: high-school
+equation: V = \varepsilon - Ir
+concepts:
+- emf
+- internal-resistance
+- terminal-voltage
+prerequisites:
+- ohms-law
+related:
+- voltage-and-energy
+visualization:
+  type: batteries-and-internal-resistance
+  options: {}
+primary: r
+parameters:
+  emf:
+    min: 1
+    max: 24
+    step: 0.1
+    value: 12.6
+    unit: V
+  r:
+    min: 0.01
+    max: 1
+    step: 0.01
+    value: 0.02
+    unit: Ω
+  R:
+    min: 0.1
+    max: 20
+    step: 0.1
+    value: 5
+    unit: Ω
+variables:
+- V
+- \varepsilon
+- I
+- r
+- R
+derivation:
+- V = \varepsilon - Ir
+- I = \frac{\varepsilon}{R+r}
+- V = IR
+presets:
+  - emf: 12.6
+    r: 0.02
+    R: 0.5
+  - emf: 12.6
+    r: 0.1
+    R: 0.5
+  - emf: 1.5
+    r: 0.15
+    R: 5
+challenges:
+  - check: emf - (emf/(R+r))*r
+    target: 10
+  - check: (emf/(R+r))*r > 3
+  - check: (emf/(R+r))*r < 0.1 and emf/(R+r) >= 5

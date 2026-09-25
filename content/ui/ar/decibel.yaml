@@ -1,0 +1,12 @@
+decibel.hint: اسحب على طول المنحنى لتقريب المستمع أو إبعاده
+decibel.r: البُعد r
+decibel.level: مستوى الصوت
+decibel.status: الحالة
+decibel.safe: آمن
+decibel.caution: تعرض طويل خطر
+decibel.danger: خطر فوري
+decibel.whisper: همسة
+decibel.damage: حد الضرر بعد 8 ساعات
+decibel.jet: محرك طائرة
+decibel.xlabel: البُعد عن المصدر (مقياس لوغاريتمي، 1–100 m)
+decibel.ylabel: المستوى (dB)

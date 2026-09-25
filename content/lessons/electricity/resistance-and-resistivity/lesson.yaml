@@ -1,0 +1,62 @@
+id: resistance-and-resistivity
+subject: electricity
+difficulty: high-school
+equation: R = \rho\frac{L}{A}
+concepts:
+- resistance
+- resistivity
+- resistors
+prerequisites:
+- ohms-law
+related:
+- kirchhoffs-laws
+- electric-power-and-energy-bills
+visualization:
+  type: resistance-and-resistivity
+  options: {}
+visualization3d:
+  type: resistance-and-resistivity
+  options: {}
+primary: L
+parameters:
+  L:
+    min: 0.1
+    max: 5
+    step: 0.1
+    value: 1
+    unit: m
+  A:
+    min: 0.1
+    max: 5
+    step: 0.1
+    value: 1
+    unit: mm²
+  mat:
+    min: 0
+    max: 1
+    step: 1
+    value: 0
+variables:
+- R
+- \rho
+- L
+- A
+derivation:
+- R \propto L
+- R \propto \frac{1}{A}
+- R = \rho\frac{L}{A}
+presets:
+  - L: 1
+    A: 1
+    mat: 0
+  - L: 4
+    A: 0.1
+    mat: 1
+  - L: 1
+    A: 0.1
+    mat: 1
+challenges:
+  - check: '(mat < 0.5 ? 1.68e-8 : 1.10e-6) * L / (A*1e-6)'
+    target: 0.05
+  - check: 'mat > 0.5 and (mat < 0.5 ? 1.68e-8 : 1.10e-6) * L / (A*1e-6) > 40 and A < 2'
+  - check: 'mat < 0.5 and (mat < 0.5 ? 1.68e-8 : 1.10e-6) * L / (A*1e-6) < 0.01 and L >= 2'

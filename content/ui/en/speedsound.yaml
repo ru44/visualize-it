@@ -1,0 +1,10 @@
+speedsound.hint: sound's speed depends on what it travels through
+speedsound.clickHint: click a bar to switch medium
+speedsound.air: air
+speedsound.water: water
+speedsound.steel: steel
+speedsound.speed: speed of sound
+speedsound.distance: storm distance
+speedsound.flash: lightning flash
+speedsound.count: 'you counted {t} s'
+speedsound.away: 'storm ≈ {d} km away'

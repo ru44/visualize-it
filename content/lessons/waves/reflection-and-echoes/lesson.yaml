@@ -1,0 +1,62 @@
+id: reflection-and-echoes
+subject: waves
+difficulty: beginner
+equation: t_{echo} = \dfrac{2d}{v}
+concepts:
+  - reflection
+  - echo
+  - fixed-end
+  - free-end
+prerequisites:
+  - wave-basics
+related:
+  - speed-of-sound
+  - standing-waves
+visualization:
+  type: reflection-and-echoes
+  options: {}
+parameters:
+  d:
+    min: 5
+    max: 800
+    step: 5
+    value: 50
+    unit: m
+  v:
+    min: 300
+    max: 1600
+    step: 10
+    value: 340
+    unit: m/s
+  endType:
+    min: 0
+    max: 1
+    step: 1
+    value: 0
+variables:
+  - d
+  - v
+  - t_{echo}
+derivation:
+  - \text{time out} = d/v
+  - \text{time back} = d/v
+  - t_{echo} = \dfrac{2d}{v}
+charts: []
+primary: d
+presets:
+  - d: 34
+    v: 340
+    endType: 0
+  - d: 750
+    v: 1500
+    endType: 0
+  - d: 5
+    v: 340
+    endType: 1
+challenges:
+  - check: 2*d/v
+    target: 0.5
+  - check: 2*d/v
+    target: 2
+    tol: 0.1
+  - check: endType==1 and d<10

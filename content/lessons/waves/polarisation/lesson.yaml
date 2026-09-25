@@ -1,0 +1,47 @@
+id: polarisation
+subject: waves
+difficulty: high-school
+equation: I_2 = I_1\cos^2\theta
+concepts:
+  - polarisation
+  - transverse-wave
+  - malus-law
+prerequisites:
+  - wave-basics
+related:
+  - transverse-and-longitudinal
+  - refraction-snells-law
+visualization:
+  type: polarisation
+  options: {}
+visualization3d:
+  type: polariser
+  options: {}
+parameters:
+  theta:
+    min: 0
+    max: 180
+    step: 1
+    value: 90
+    unit: '°'
+variables:
+  - I_0
+  - I_1
+  - I_2
+  - \theta
+derivation:
+  - I_1 = \tfrac{1}{2}I_0
+  - I_2 = I_1\cos^2\theta
+  - I_2 = \tfrac{1}{2}I_0\cos^2\theta
+charts: []
+primary: theta
+presets:
+  - theta: 0
+  - theta: 90
+  - theta: 45
+challenges:
+  - check: theta
+    target: 90
+  - check: cos(theta*pi/180)^2
+    target: 0.5
+  - check: theta < 20 or theta > 160
