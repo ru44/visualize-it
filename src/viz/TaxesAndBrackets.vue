@@ -39,9 +39,9 @@ const marginalW = computed(() => (marginalRate.value / GAUGE.max) * GAUGE.w)
 const avgW = computed(() => (avgRate.value / GAUGE.max) * GAUGE.w)
 
 const readouts = computed(() => [
-  { label: 'x', value: `$${fmt(income.value, 0)}` },
-  { label: 'b', value: `$${fmt(threshold.value, 0)}` },
-  { label: 'T', value: `$${fmt(tax.value, 0)}`, color: 'var(--accent)' },
+  { label: 'x', value: `${fmt(income.value, 0)} ${t('tax.currency')}` },
+  { label: 'b', value: `${fmt(threshold.value, 0)} ${t('tax.currency')}` },
+  { label: 'T', value: `${fmt(tax.value, 0)} ${t('tax.currency')}`, color: 'var(--accent)' },
   { label: t('tax.marginalShort'), value: `${fmt(marginalRate.value, 0)}%`, color: 'var(--accent-2)' },
   { label: t('tax.averageShort'), value: `${fmt(avgRate.value, 1)}%`, color: 'var(--accent)' },
 ])
@@ -58,7 +58,7 @@ const readouts = computed(() => [
       <rect :x="SCALE.x" :y="SCALE.y" :width="slice1W" :height="SCALE.h" rx="8" fill="var(--accent-2)" fill-opacity="0.7" />
       <rect :x="px(slice1)" :y="SCALE.y" :width="slice2W" :height="SCALE.h" fill="var(--accent)" fill-opacity="0.85" />
       <line :x1="thresholdX" :x2="thresholdX" :y1="SCALE.y - 8" :y2="SCALE.y + SCALE.h + 8" stroke="var(--fg)" stroke-width="2" stroke-dasharray="4 3" />
-      <text :x="thresholdX" :y="SCALE.y + SCALE.h + 24" text-anchor="middle" font-size="11" fill="var(--muted)">b = ${{ fmt(threshold, 0) }}</text>
+      <text :x="thresholdX" :y="SCALE.y + SCALE.h + 24" text-anchor="middle" font-size="11" fill="var(--muted)">b = {{ fmt(threshold, 0) }} {{ t('tax.currency') }}</text>
       <text v-if="slice1W > 70" :x="SCALE.x + slice1W / 2" :y="SCALE.y + SCALE.h / 2 + 4" text-anchor="middle" font-size="12" font-weight="600" fill="var(--fg)">10%</text>
       <text v-if="slice2W > 50" :x="px(slice1) + slice2W / 2" :y="SCALE.y + SCALE.h / 2 + 4" text-anchor="middle" font-size="12" font-weight="600" fill="var(--fg)">25%</text>
 

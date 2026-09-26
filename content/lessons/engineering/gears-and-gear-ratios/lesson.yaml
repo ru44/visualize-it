@@ -22,13 +22,13 @@ parameters:
     max: 60
     step: 1
     value: 20
-    unit: teeth
+    unit: ""
   N2:
     min: 8
     max: 60
     step: 1
     value: 20
-    unit: teeth
+    unit: ""
   w1:
     min: 10
     max: 3200

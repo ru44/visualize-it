@@ -6,3 +6,4 @@ tax.averageLabel: average rate (tax owed ÷ income)
 tax.marginalShort: marg.
 tax.averageShort: avg.
 tax.caption: the average rate always sits below the marginal rate, once any income crosses the threshold
+tax.currency: '$'
