@@ -1,0 +1,20 @@
+jt.customers: customers
+jt.orders: orders
+jt.result: result
+jt.innerJoin: inner join
+jt.leftJoin: left join
+jt.id: id
+jt.name: name
+jt.orderId: order id
+jt.amount: amount
+jt.noMatch: no match
+jt.rowsReturned: rows returned
+jt.noOrders: customers with no orders
+jt.orphanState: that customer is
+jt.none: none
+jt.kept: kept
+jt.dropped: dropped
+jt.sara: Sara
+jt.omar: Omar
+jt.lina: Lina
+jt.yousef: Yousef

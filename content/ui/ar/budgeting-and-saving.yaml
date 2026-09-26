@@ -1,0 +1,7 @@
+budget.hint: اسحب المنزلقات أدناه لتغيير الدخل والإنفاق وعدد الأشهر
+budget.barTitle: دخل هذا الشهر، مقسّمًا إلى منفق ومُدَّخر
+budget.spentLabel: منفق
+budget.savedLabel: مُدَّخر
+budget.chartTitle: إجمالي المدخرات، شهرًا بعد شهر
+budget.monthsUnit: شهر
+budget.caption: خط مستقيم؛ نفس الادخار يُجمع شهرًا بعد شهر

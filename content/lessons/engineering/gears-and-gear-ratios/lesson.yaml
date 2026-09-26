@@ -1,0 +1,75 @@
+id: gears-and-gear-ratios
+subject: engineering
+difficulty: high-school
+equation: \omega_2 = \omega_1\frac{N_1}{N_2}, \qquad \tau_2 = \tau_1\frac{N_2}{N_1}
+concepts:
+  - gear-ratio
+  - angular-speed
+  - torque
+  - mechanical-advantage
+prerequisites: []
+related:
+  - levers-pulleys-and-mechanical-advantage
+visualization:
+  type: gears-and-gear-ratios
+  options: {}
+visualization3d:
+  type: gears-and-gear-ratios
+  options: {}
+parameters:
+  N1:
+    min: 8
+    max: 60
+    step: 1
+    value: 20
+    unit: teeth
+  N2:
+    min: 8
+    max: 60
+    step: 1
+    value: 20
+    unit: teeth
+  w1:
+    min: 10
+    max: 3200
+    step: 10
+    value: 300
+    unit: rpm
+  tau1:
+    min: 1
+    max: 200
+    step: 1
+    value: 20
+    unit: N·m
+variables:
+  - \omega_1
+  - \omega_2
+  - N_1
+  - N_2
+  - \tau_1
+  - \tau_2
+derivation:
+  - \omega_1 N_1 = \omega_2 N_2
+  - \omega_2 = \omega_1\frac{N_1}{N_2}
+  - \tau_1\omega_1 = \tau_2\omega_2 \implies \tau_2 = \tau_1\frac{N_2}{N_1}
+charts: []
+primary: N2
+presets:
+  - N1: 14
+    N2: 42
+    w1: 60
+    tau1: 20
+  - N1: 10
+    N2: 40
+    w1: 3000
+    tau1: 150
+  - N1: 48
+    N2: 12
+    w1: 60
+    tau1: 5
+challenges:
+  - check: N2/N1
+    target: 4
+    tol: 0.05
+  - check: w1>=200 and w1*N1/N2 < 50
+  - check: tau1*N2/N1 > 300

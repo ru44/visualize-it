@@ -1,0 +1,50 @@
+id: joins-between-tables
+subject: data
+difficulty: beginner
+equation: R = \text{join}(A, B, \text{key})
+concepts:
+- joins
+- inner join
+- left join
+- foreign key
+- relational database
+prerequisites:
+- tables-and-filtering
+related:
+- tables-and-filtering
+- grouping-and-totals
+visualization:
+  type: join-tables
+  options: {}
+primary: mode
+parameters:
+  mode:
+    min: 0
+    max: 1
+    step: 1
+    value: 0
+  orphan:
+    min: 0
+    max: 1
+    step: 1
+    value: 1
+variables:
+- A
+- B
+- R
+derivation:
+- \text{inner join keeps a row only when its key appears in both } A \text{ and } B
+- \text{left join keeps every row of } A, \text{ filling the blanks when } B \text{ has no match}
+- R = \text{join}(A, B, \text{key}) \text{ is the table shown on the right}
+presets:
+- mode: 0
+  orphan: 1
+- mode: 1
+  orphan: 1
+- mode: 1
+  orphan: 0
+challenges:
+- check: mode
+  target: 1
+- check: mode == 0 and orphan == 1
+- check: mode == 1 and orphan == 0

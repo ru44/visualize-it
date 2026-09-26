@@ -1,0 +1,9 @@
+co.hint: drag heart rate and stroke volume
+co.heart: one beat, one squeeze
+co.loop: one lap = one full trip of your blood around the body
+co.gauge: cardiac output
+co.hr: heart rate HR
+co.sv: stroke volume SV
+co.co: cardiac output CO
+co.time: time to circulate 5 L
+co.caption: CO = HR × SV — the loop's real lap time is 5000 mL ÷ CO

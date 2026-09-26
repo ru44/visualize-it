@@ -1,0 +1,8 @@
+gears.hint: drag the sliders — the gears mesh and spin at the true ratio
+gears.ratio: gear ratio
+gears.w2: driven speed
+gears.tau2: driven torque
+gears.power: power transmitted
+gears.driver: driver
+gears.driven: driven
+gears3d.ratio: ratio

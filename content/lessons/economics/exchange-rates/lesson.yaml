@@ -1,0 +1,58 @@
+id: exchange-rates
+subject: economics
+difficulty: beginner
+equation: c = p\,e, \quad f = \dfrac{m}{e}
+concepts:
+  - exchange-rate
+  - imports
+  - currency
+related:
+  - inflation
+visualization:
+  type: exchange-rates
+  options: {}
+primary: e
+parameters:
+  p:
+    min: 10
+    max: 2000
+    step: 10
+    value: 300
+    unit: USD
+  e:
+    min: 15
+    max: 60
+    step: 0.5
+    value: 30
+    unit: EGP/USD
+  m:
+    min: 500
+    max: 50000
+    step: 250
+    value: 5000
+    unit: EGP
+variables:
+  - p
+  - e
+  - m
+  - c
+  - f
+derivation:
+  - c = p\,e
+  - f = \dfrac{m}{e}
+  - "\\text{as } e \\text{ rises (a weaker local currency), } c \\text{ rises and } f \\text{ falls}"
+presets:
+  - p: 50
+    e: 20
+    m: 2000
+  - p: 300
+    e: 30
+    m: 5000
+  - p: 300
+    e: 50
+    m: 5000
+challenges:
+  - check: p*e
+    target: 9000
+  - check: e > 40 and p*e > 12000
+  - check: m/e < 100 and e > 45

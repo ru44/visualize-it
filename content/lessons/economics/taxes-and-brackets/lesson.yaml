@@ -1,0 +1,47 @@
+id: taxes-and-brackets
+subject: economics
+difficulty: beginner
+equation: T = 0.10\min(x,b) + 0.25\max(0,x-b)
+concepts:
+  - taxation
+  - marginal-rate
+  - average-rate
+related:
+  - budgeting-and-saving
+visualization:
+  type: taxes-and-brackets
+  options: {}
+primary: x
+parameters:
+  x:
+    min: 5000
+    max: 200000
+    step: 1000
+    value: 45000
+    unit: $/yr
+  b:
+    min: 10000
+    max: 100000
+    step: 1000
+    value: 40000
+    unit: $/yr
+variables:
+  - x
+  - b
+  - T
+derivation:
+  - "\\text{first } b \\text{ dollars, taxed at } 10\\%, \\quad 0.10\\,\\min(x,b)"
+  - "\\text{everything above } b \\text{, taxed at } 25\\%, \\quad 0.25\\,\\max(0,x-b)"
+  - "T = 0.10\\,\\min(x,b) + 0.25\\,\\max(0,x-b)"
+presets:
+  - x: 18000
+    b: 40000
+  - x: 55000
+    b: 40000
+  - x: 140000
+    b: 40000
+challenges:
+  - check: (0.10*min(x,b)+0.25*max(0,x-b))/x*100
+    target: 15
+  - check: x > b and (0.10*min(x,b)+0.25*max(0,x-b))/x*100 < 20
+  - check: x > 60000 and (0.10*min(x,b)+0.25*max(0,x-b))/x*100 < 12

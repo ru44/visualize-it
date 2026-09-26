@@ -1,0 +1,10 @@
+mut.hint: drag the sequence length, mutation rate and generations
+mut.strip: a 60-base window of the sequence — red boxes have changed
+mut.n: sequence length N
+mut.mu: mutation rate μ
+mut.g: generations g
+mut.e: expected mutations E
+mut.frac: fraction of bases changed
+mut.xaxis: generations
+mut.yaxis: expected mutations
+mut.caption: E ≈ Nμg, the same accumulation biologists use as a molecular clock

@@ -1,0 +1,9 @@
+trusses.hint: drag the brace's drop h — a steeper brace carries the same load with less force
+trusses.theta: brace angle
+trusses.Fbrace: brace force (compression)
+trusses.Farm: arm force (tension)
+trusses.arm: arm — tension
+trusses.brace: brace — compression
+trusses.whyTitle: why triangles are stiff
+trusses.racks: square racks
+trusses.rigid: triangle rigid

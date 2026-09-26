@@ -1,0 +1,8 @@
+bases.hint: 'drag N and the base b, and watch the digit boxes fill in'
+bases.inwords: written in base
+bases.reads: reads as
+bases.base: base
+bases.clock: as a clock would read it
+bases.decimal: N (base 10)
+bases.inbase: 'in base {b}'
+bases.digitcount: digits used

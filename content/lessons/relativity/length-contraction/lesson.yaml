@@ -1,0 +1,56 @@
+id: length-contraction
+subject: relativity
+difficulty: high-school
+equation: L = \dfrac{L_0}{\gamma} = L_0\sqrt{1-v^2/c^2}
+concepts:
+  - length contraction
+  - Lorentz factor
+  - special relativity
+  - proper length
+prerequisites:
+  - the-speed-of-light-is-constant
+related:
+  - the-speed-of-light-is-constant
+  - special-relativity-time-dilation
+visualization:
+  type: length-contraction
+  options: {}
+visualization3d:
+  type: relativistic-rod
+  options: {}
+primary: v
+parameters:
+  v:
+    min: 0
+    max: 0.99
+    step: 0.001
+    value: 0.6
+  L0:
+    min: 2
+    max: 20
+    step: 0.5
+    value: 10
+    unit: m
+variables: []
+derivation:
+  - 2L'\,\dfrac{\gamma^2}{c} = \gamma\,\dfrac{2L_0}{c} \quad \text{(the same round-trip time, measured from the platform, for a lengthwise light clock)}
+  - L' = \dfrac{L_0}{\gamma}
+  - L = L_0\sqrt{1-v^2/c^2} \le L_0
+charts: []
+presets:
+  - v: 0.6
+    L0: 10
+  - v: 0.9
+    L0: 20
+  - v: 0.99
+    L0: 5
+challenges:
+  - check: 1/sqrt(1-v^2)
+    target: 2
+    tol: 0.1
+  - check: sqrt(1-v^2)
+    target: 0.2
+    tol: 0.03
+  - check: L0
+    target: 20
+    tol: 1

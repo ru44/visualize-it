@@ -1,0 +1,9 @@
+trusses.hint: حرّك ميل الدعامة h — دعامة أشدّ انحدارًا تحمل الحمل نفسه بقوة أقلّ
+trusses.theta: زاوية الدعامة
+trusses.Fbrace: قوة الدعامة (انضغاط)
+trusses.Farm: قوة الذراع (شدّ)
+trusses.arm: الذراع — شدّ
+trusses.brace: الدعامة — انضغاط
+trusses.whyTitle: لماذا المثلثات صلبة
+trusses.racks: المربّع يتمايل
+trusses.rigid: المثلث صلب

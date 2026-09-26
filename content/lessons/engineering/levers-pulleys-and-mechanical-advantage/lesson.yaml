@@ -1,0 +1,71 @@
+id: levers-pulleys-and-mechanical-advantage
+subject: engineering
+difficulty: beginner
+equation: F_{eff}\,d_{eff} = F_{load}\,d_{load}, \qquad M = \frac{d_{eff}}{d_{load}} = \frac{F_{load}}{F_{eff}}
+concepts:
+  - lever
+  - mechanical-advantage
+  - torque-balance
+  - work-conservation
+prerequisites: []
+related:
+  - gears-and-gear-ratios
+visualization:
+  type: levers-pulleys-and-mechanical-advantage
+  options: {}
+parameters:
+  Fload:
+    min: 50
+    max: 4000
+    step: 10
+    value: 800
+    unit: N
+  dload:
+    min: 0.02
+    max: 2
+    step: 0.01
+    value: 0.3
+    unit: m
+  deff:
+    min: 0.1
+    max: 4
+    step: 0.05
+    value: 1.5
+    unit: m
+  h:
+    min: 1
+    max: 50
+    step: 1
+    value: 10
+    unit: cm
+variables:
+  - F_{eff}
+  - d_{eff}
+  - F_{load}
+  - d_{load}
+  - M
+derivation:
+  - F_{eff}\,d_{eff} = F_{load}\,d_{load} \quad\text{(torque balance about the fulcrum)}
+  - M = \frac{d_{eff}}{d_{load}} = \frac{F_{load}}{F_{eff}}
+  - F_{eff} = \frac{F_{load}}{M}
+charts: []
+primary: deff
+presets:
+  - Fload: 1500
+    dload: 0.05
+    deff: 0.9
+    h: 3
+  - Fload: 600
+    dload: 0.3
+    deff: 1.2
+    h: 15
+  - Fload: 3000
+    dload: 0.1
+    deff: 2
+    h: 8
+challenges:
+  - check: Fload/(deff/dload)
+    target: 100
+    tol: 5
+  - check: deff/dload > 15 and Fload > 1000
+  - check: deff/dload < 1.5 and Fload/(deff/dload) > Fload*0.7

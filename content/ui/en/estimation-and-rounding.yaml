@@ -1,0 +1,9 @@
+fermi.hint: 'drag the area and density to change the estimate, then drag the rounding'
+fermi.area: scalp area
+fermi.density: hair density
+fermi.headline: the estimate, rounded
+fermi.sigfig: 'kept to {s} significant figure(s) — the rest are set to zero'
+fermi.scale: order of magnitude
+fermi.estimate: raw estimate
+fermi.rounded: rounded estimate
+fermi.magnitude: order of magnitude

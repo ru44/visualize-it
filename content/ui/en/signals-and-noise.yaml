@@ -1,0 +1,9 @@
+snr.hint: drag N up — the bold average pulls cleanly out of the noise
+snr.single: SNR (single trace)
+snr.averaged: SNR (averaged)
+snr.noiseAvg: noise after averaging
+snr.n: traces averaged
+snr.true: true signal
+snr.singleTrace: single trace
+snr.avgTrace: N-trace average
+snr.xlabel: sample

@@ -1,0 +1,57 @@
+id: percentages-in-daily-life
+subject: numbers
+difficulty: beginner
+equation: 'F = P\left(1+\frac{p_1}{100}\right)\left(1+\frac{p_2}{100}\right)'
+concepts:
+- percentages
+- discounts
+- percentage change
+prerequisites:
+- fractions-and-decimals
+related:
+- percent-and-compound-growth
+visualization:
+  type: percentages-in-daily-life
+  options: {}
+parameters:
+  P:
+    min: 1
+    max: 200
+    step: 1
+    value: 50
+  p1:
+    min: -50
+    max: 100
+    step: 5
+    value: 20
+  p2:
+    min: -50
+    max: 100
+    step: 5
+    value: 0
+variables:
+- P
+- p_1
+- p_2
+- F
+derivation:
+- '100\times(1+0.50) = 150'
+- '150\times(1-0.50) = 75'
+- '75 \ne 100'
+primary: p1
+presets:
+- P: 50
+  p1: 20
+  p2: 0
+- P: 80
+  p1: -30
+  p2: 8
+- P: 100
+  p1: 50
+  p2: -50
+challenges:
+- check: P*(1+p1/100)*(1+p2/100)
+  target: 60
+  tol: 1.5
+- check: p1 == 50 and p2 == -50 and P == 100
+- check: P*(1+p1/100)*(1+p2/100) < P and p1 > 0 and p2 < 0

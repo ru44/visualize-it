@@ -1,0 +1,4 @@
+eid.hint: drag the power meter to change the frequency f (log scale)
+eid.coil: driver coil
+eid.target: nearby conductor
+eid.meterLabel: power delivered, P = ε²/R (log scale)

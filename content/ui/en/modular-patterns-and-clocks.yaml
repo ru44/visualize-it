@@ -1,0 +1,9 @@
+modg.hint: tap a number · numbers in the same column share a remainder
+modg.remainder: remainder
+modg.quotient: full rows (quotient)
+modg.digitsum: digit sum
+modg.div3: divisible by 3?
+modg.div9: divisible by 9?
+modg.div11: divisible by 11?
+modg.yes: 'yes'
+modg.no: 'no'

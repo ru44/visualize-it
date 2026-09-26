@@ -1,0 +1,65 @@
+id: magnets-and-field-lines
+subject: electromagnetism
+difficulty: beginner
+equation: B = \frac{\mu_0}{2\pi}\frac{m_1}{r^3}, \qquad F = \frac{3\mu_0}{2\pi}\frac{m_1 m_2}{r^4}
+concepts:
+  - magnetic-poles
+  - field-lines
+  - magnetic-dipole
+prerequisites: []
+related:
+  - lorentz-force
+  - amperes-law-and-solenoid
+visualization:
+  type: magnets-and-field-lines
+  options: {}
+visualization3d:
+  type: magnets-and-field-lines
+  options: {}
+parameters:
+  m1:
+    min: 0.02
+    max: 5
+    step: 0.02
+    value: 1
+    unit: A·m²
+  m2:
+    min: 0.02
+    max: 5
+    step: 0.02
+    value: 1
+    unit: A·m²
+  r:
+    min: 0.01
+    max: 0.3
+    step: 0.005
+    value: 0.05
+    unit: m
+variables:
+  - \mu_0
+  - B
+  - F
+derivation:
+  - B(r) = \frac{\mu_0}{2\pi}\frac{m_1}{r^3}
+  - F(r) = \frac{3\mu_0}{2\pi}\frac{m_1 m_2}{r^4}
+  - \mu_0 = 4\pi\times10^{-7}\ \text{T·m/A} \;\Rightarrow\; F = 6\times10^{-7}\dfrac{m_1 m_2}{r^4}\ \text{N}
+charts: []
+primary: r
+presets:
+- m1: 0.3
+  m2: 0.3
+  r: 0.15
+- m1: 2
+  m2: 2
+  r: 0.015
+- m1: 0.5
+  m2: 0.5
+  r: 0.04
+challenges:
+- check: '6e-7*m1*m2/r^4'
+  target: 1
+  tol: 0.1
+- check: '2e-7*m1/r^3'
+  target: 0.01
+  tol: 0.002
+- check: 'm1 <= 0.1 and m2 <= 0.1 and 6e-7*m1*m2/r^4 > 0.2'

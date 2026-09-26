@@ -1,0 +1,63 @@
+id: entanglement
+subject: quantum
+difficulty: high-school
+equation: p = \cos^2\!\left(\dfrac{\alpha-\beta}{2}\right)
+concepts:
+  - entanglement
+  - bell-inequality
+  - correlation
+prerequisites:
+  - schrodingers-cat-and-qubits
+  - spin-and-the-stern-gerlach-experiment
+related:
+  - quantum-gates-and-a-tiny-computer
+  - double-slit-experiment
+visualization:
+  type: entanglement
+  options: {}
+parameters:
+  a:
+    min: 0
+    max: 180
+    step: 5
+    value: 0
+    unit: "°"
+  b:
+    min: 0
+    max: 180
+    step: 5
+    value: 90
+    unit: "°"
+  shots:
+    min: 1
+    max: 500
+    step: 1
+    value: 100
+variables:
+  - \alpha
+  - \beta
+  - p
+derivation:
+  - \alpha = \beta \Rightarrow p = 1
+  - \alpha - \beta = 180^\circ \Rightarrow p = 0
+  - p = \cos^2\!\left(\dfrac{\alpha-\beta}{2}\right)
+charts: []
+primary: a
+presets:
+  - a: 0
+    b: 0
+    shots: 100
+  - a: 0
+    b: 90
+    shots: 200
+  - a: 0
+    b: 180
+    shots: 100
+challenges:
+  - check: cos((a-b)*pi/180/2)^2
+    target: 1
+    tol: 0.02
+  - check: cos((a-b)*pi/180/2)^2
+    target: 0.5
+    tol: 0.03
+  - check: abs(a-b) >= 170

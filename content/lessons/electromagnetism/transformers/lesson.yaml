@@ -1,0 +1,81 @@
+id: transformers
+subject: electromagnetism
+difficulty: high-school
+equation: \frac{V_s}{V_p}=\frac{N_s}{N_p}, \qquad P_{loss}=\left(\frac{P}{V_p}\right)^2 R
+concepts:
+  - transformer
+  - turns-ratio
+  - mutual-inductance
+  - power-transmission
+prerequisites:
+  - faradays-law
+related:
+  - faradays-law
+  - generators-and-ac
+visualization:
+  type: transformers
+  options: {}
+visualization3d:
+  type: transformers
+  options: {}
+parameters:
+  Np:
+    min: 10
+    max: 2000
+    step: 10
+    value: 1000
+  Ns:
+    min: 10
+    max: 2000
+    step: 10
+    value: 50
+  Vp:
+    min: 200
+    max: 400000
+    step: 100
+    value: 11000
+    unit: V
+  P:
+    min: 100
+    max: 2000000
+    step: 100
+    value: 1000000
+    unit: W
+  R:
+    min: 0.5
+    max: 20
+    step: 0.5
+    value: 5
+    unit: Ω
+variables:
+  - V_s
+  - I
+  - P_{loss}
+derivation:
+  - \frac{V_s}{V_p}=\frac{N_s}{N_p} \;\Rightarrow\; V_s = V_p\frac{N_s}{N_p}
+  - I = \frac{P}{V_p}
+  - P_{loss}=I^2R=\left(\frac{P}{V_p}\right)^2R
+charts: []
+primary: Vp
+presets:
+- Np: 1000
+  Ns: 50
+  Vp: 230
+  P: 100
+  R: 5
+- Np: 1000
+  Ns: 1000
+  Vp: 11000
+  P: 1000000
+  R: 5
+- Np: 1000
+  Ns: 1000
+  Vp: 400000
+  P: 1000000
+  R: 5
+challenges:
+- check: 'Vp*Ns/Np'
+  target: 12
+  tol: 1
+- check: 'P >= 900000 and P <= 1100000 and R >= 4 and R <= 6 and (P/Vp)^2*R < 5000'
+- check: 'Vp >= 10000 and Vp <= 12000 and Vp*Ns/Np >= 200000'

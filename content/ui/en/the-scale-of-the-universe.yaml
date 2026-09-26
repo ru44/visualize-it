@@ -1,0 +1,17 @@
+scale.hint: ▶ log scale — every step multiplies the distance by ten
+scale.moon: the Moon
+scale.sun: the Sun
+scale.proxima: Proxima Centauri
+scale.milkyway: centre of the Milky Way
+scale.andromeda: Andromeda Galaxy
+scale.edge: edge of the observable universe
+scale.current: your distance
+scale.exact: in light-years
+scale.nearest: closest landmark
+scale.sec: light-seconds
+scale.min: light-minutes
+scale.hour: light-hours
+scale.day: light-days
+scale.year: light-years
+scale.myr: million light-years
+scale.byr: billion light-years

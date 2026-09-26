@@ -1,0 +1,10 @@
+sg.hint: silver atoms leave the oven with a random spin direction, yet the screen only ever shows two spots
+sg.oven: oven
+sg.magnet: magnet
+sg.screen: screen
+sg.classical: classical guess
+sg.actual: the real result
+sg.up: spin up
+sg.down: spin down
+sg.count: atoms counted
+sg.separation: separation between the spots

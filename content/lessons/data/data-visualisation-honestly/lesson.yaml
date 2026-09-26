@@ -1,0 +1,48 @@
+id: data-visualisation-honestly
+subject: data
+difficulty: beginner
+equation: p = \dfrac{v_2 - v_1}{v_1} \times 100
+concepts:
+- data visualization
+- truncated axis
+- misleading charts
+- percentage change
+prerequisites:
+- tables-and-filtering
+related:
+- grouping-and-totals
+visualization:
+  type: honest-charts
+  options: {}
+primary: truncStart
+parameters:
+  truncStart:
+    min: 0
+    max: 78
+    step: 2
+    value: 0
+  gap:
+    min: 2
+    max: 20
+    step: 1
+    value: 8
+variables:
+- p
+- v_1
+- v_2
+derivation:
+- v_2 - v_1 \text{ is the real size of the difference}
+- \dfrac{v_2 - v_1}{v_1} \text{ compares that difference to the starting value}
+- p = \dfrac{v_2 - v_1}{v_1} \times 100 \text{ is the true percentage change, no matter how the axis is drawn}
+presets:
+- truncStart: 0
+  gap: 2
+- truncStart: 70
+  gap: 2
+- truncStart: 0
+  gap: 20
+challenges:
+- check: truncStart
+  target: 78
+- check: truncStart <= 2 and gap >= 18
+- check: truncStart >= 60 and gap <= 4

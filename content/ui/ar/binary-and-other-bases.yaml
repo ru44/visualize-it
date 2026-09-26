@@ -1,0 +1,8 @@
+bases.hint: 'حرّك N والقاعدة b وراقب مربعات الأرقام تمتلئ'
+bases.inwords: مكتوب بالقاعدة
+bases.reads: تُقرأ
+bases.base: القاعدة
+bases.clock: كما تقرأها ساعة
+bases.decimal: N (القاعدة 10)
+bases.inbase: 'بالقاعدة {b}'
+bases.digitcount: عدد الأرقام المستخدمة

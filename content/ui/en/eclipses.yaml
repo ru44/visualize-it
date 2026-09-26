@@ -1,0 +1,14 @@
+eclipses.hint: drag ω, then the distance slider
+eclipses.sun: Sun
+eclipses.earth: Earth
+eclipses.moon: Moon
+eclipses.offset: shadow offset
+eclipses.type: eclipse
+eclipses.total: total
+eclipses.annular: annular
+eclipses.partial: partial
+eclipses.none: none — shadow misses
+eclipses.umbra: umbra
+eclipses.penumbra: penumbra
+eclipses.antumbra: antumbra
+eclipses.node: node

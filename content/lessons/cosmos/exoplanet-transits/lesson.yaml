@@ -1,0 +1,52 @@
+id: exoplanet-transits
+subject: cosmos
+difficulty: high-school
+equation: d = \frac{R_p^2}{R_s^2}
+concepts:
+- exoplanets
+- transit photometry
+- light curves
+prerequisites: []
+related:
+- parallax-and-distances
+- life-of-a-star
+- quasars
+visualization:
+  type: exoplanet-transits
+  options: {}
+visualization3d:
+  type: exoplanet-transits
+  options: {}
+primary: Rp
+parameters:
+  Rp:
+    min: 0.5
+    max: 11.5
+    step: 0.1
+    value: 1
+    unit: R⊕
+  Rs:
+    min: 0.12
+    max: 2
+    step: 0.01
+    value: 1
+    unit: R☉
+variables:
+- d
+- R_p
+- R_s
+derivation:
+- \frac{R_p}{R_s}
+- \left(\frac{R_p}{R_s}\right)^2
+- d = \frac{R_p^2}{R_s^2}
+presets:
+- Rp: 1
+  Rs: 1
+- Rp: 11.2
+  Rs: 1
+- Rp: 0.92
+  Rs: 0.12
+challenges:
+- check: (Rp*6371/(Rs*696000))^2 > 0.05
+- check: (Rp*6371/(Rs*696000))^2 < 0.0001
+- check: Rs < 0.15 and Rp > 5

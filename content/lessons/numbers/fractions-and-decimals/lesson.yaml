@@ -1,0 +1,47 @@
+id: fractions-and-decimals
+subject: numbers
+difficulty: beginner
+equation: '\frac{n}{d} = n \div d'
+concepts:
+- fractions
+- decimals
+- equivalent fractions
+prerequisites:
+- place-value
+related:
+- percentages-in-daily-life
+visualization:
+  type: fractions-and-decimals
+  options: {}
+parameters:
+  n:
+    min: 0
+    max: 8
+    step: 1
+    value: 3
+  d:
+    min: 1
+    max: 8
+    step: 1
+    value: 4
+variables:
+- n
+- d
+derivation:
+- '\frac{3}{4} = 3\div4'
+- '3\div4 = 0.75'
+- '0.75 = \frac{75}{100}'
+primary: n
+presets:
+- n: 1
+  d: 2
+- n: 3
+  d: 4
+- n: 7
+  d: 8
+challenges:
+- check: n/d
+  target: 0.5
+  tol: 0.05
+- check: n == 7 and d == 8
+- check: n/d >= 1

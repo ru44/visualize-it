@@ -1,0 +1,58 @@
+id: budgeting-and-saving
+subject: economics
+difficulty: beginner
+equation: S = I - X, \quad T = S\,m
+concepts:
+  - budgeting
+  - saving
+  - cash-flow
+related:
+  - compound-interest
+visualization:
+  type: budgeting-and-saving
+  options: {}
+primary: m
+parameters:
+  I:
+    min: 300
+    max: 5000
+    step: 50
+    value: 1200
+    unit: $/mo
+  X:
+    min: 100
+    max: 4000
+    step: 50
+    value: 900
+    unit: $/mo
+  m:
+    min: 1
+    max: 60
+    step: 1
+    value: 12
+    unit: mo
+variables:
+  - I
+  - X
+  - S
+  - m
+  - T
+derivation:
+  - S = I - X
+  - T = S\,m
+  - T = (I - X)\,m
+presets:
+  - I: 800
+    X: 750
+    m: 12
+  - I: 1200
+    X: 900
+    m: 24
+  - I: 2000
+    X: 1950
+    m: 12
+challenges:
+  - check: (I-X)*m
+    target: 3600
+  - check: I - X < 100 and (I-X)*m > 500
+  - check: I > 3000 and (I-X)*m < 1000

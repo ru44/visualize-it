@@ -1,0 +1,47 @@
+id: quantum-gates-and-a-tiny-computer
+subject: quantum
+difficulty: high-school
+equation: H|0\rangle = \frac{1}{\sqrt{2}}\big(|0\rangle+|1\rangle\big)
+concepts:
+  - quantum-gate
+  - superposition
+  - quantum-computing
+prerequisites:
+  - schrodingers-cat-and-qubits
+  - entanglement
+related:
+  - entanglement
+visualization:
+  type: quantum-gates
+  options: {}
+parameters:
+  gate:
+    min: 0
+    max: 2
+    step: 1
+    value: 0
+  shots:
+    min: 1
+    max: 1000
+    step: 1
+    value: 100
+variables:
+  - X
+  - H
+derivation:
+  - X|0\rangle = |1\rangle
+  - H|0\rangle = \frac{1}{\sqrt{2}}\big(|0\rangle+|1\rangle\big)
+  - \text{CNOT}:\ |1,0\rangle \to |1,1\rangle
+charts: []
+primary: gate
+presets:
+  - gate: 0
+    shots: 50
+  - gate: 1
+    shots: 300
+  - gate: 2
+    shots: 500
+challenges:
+  - check: gate == 0
+  - check: gate == 1 and shots >= 500
+  - check: gate == 2

@@ -1,0 +1,55 @@
+id: eclipses
+subject: earth-space
+difficulty: high-school
+equation: h = d\sin\left(i\sin\omega\right)
+concepts:
+  - solar-eclipses
+  - umbra-and-penumbra
+  - orbital-nodes
+prerequisites:
+  - moon-phases
+related:
+  - moon-phases
+  - kepler-orbits
+visualization:
+  type: eclipses
+  options: {}
+visualization3d:
+  type: eclipses
+  options: {}
+parameters:
+  omega:
+    min: 0
+    max: 180
+    step: 1
+    value: 90
+    unit: "°"
+  dist:
+    min: 356.5
+    max: 406.7
+    step: 0.5
+    value: 384.4
+    unit: "thousand km"
+variables:
+  - h
+  - d
+  - i
+  - \omega
+  - \beta
+derivation:
+  - \beta = i\sin\omega
+  - h = d\sin\beta
+  - h < 6371\text{ km} \Rightarrow \text{the umbra can reach Earth}
+charts: []
+primary: omega
+presets:
+- omega: 2
+  dist: 372
+- omega: 2
+  dist: 400
+- omega: 90
+  dist: 384.4
+challenges:
+- check: dist*1000*sin(5.14*sin(omega*pi/180)*pi/180) < 6371
+- check: dist*1000*sin(5.14*sin(omega*pi/180)*pi/180) >= 6371 and dist*1000*sin(5.14*sin(omega*pi/180)*pi/180) < 9900
+- check: dist*1000*sin(5.14*sin(omega*pi/180)*pi/180) >= 9900

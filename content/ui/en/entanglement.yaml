@@ -1,0 +1,14 @@
+ent.hint: a shared pair is sent to two far-apart boxes; only comparing notes afterward shows the correlation
+ent.alice: Alice
+ent.bob: Bob
+ent.source: source
+ent.measureOne: measure one pair
+ent.measureMany: 'run {n|one=# pair|other=# pairs}'
+ent.match: match
+ent.mismatch: mismatch
+ent.predicted: predicted match chance
+ent.observed: observed match rate
+ent.aliceAlone: Alice's own results, by themselves
+ent.pairs: pairs measured
+ent.quantum: quantum (real)
+ent.classicalGuess: classical guess — a hidden pre-agreed note

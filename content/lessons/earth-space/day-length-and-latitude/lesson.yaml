@@ -1,0 +1,56 @@
+id: day-length-and-latitude
+subject: earth-space
+difficulty: high-school
+equation: D = \frac{24}{\pi}\arccos\left(-\tan(\phi)\tan(\delta)\right)
+concepts:
+  - day-length
+  - latitude
+  - polar-day-and-night
+prerequisites:
+  - seasons
+related:
+  - seasons
+visualization:
+  type: day-length
+  options: {}
+visualization3d:
+  type: seasons
+  options: {}
+parameters:
+  day:
+    min: 0
+    max: 365
+    step: 1
+    value: 172
+  lat:
+    min: -90
+    max: 90
+    step: 1
+    value: 45
+    unit: "°"
+variables:
+  - \phi
+  - \delta
+  - \epsilon
+  - x
+  - H
+  - D
+derivation:
+  - \delta = \epsilon\sin\left(\frac{2\pi(x-80)}{365}\right)
+  - \cos H = -\tan(\phi)\tan(\delta)
+  - D = \frac{24}{\pi}H
+charts: []
+primary: day
+presets:
+- lat: 0
+  day: 172
+- lat: 60
+  day: 172
+- lat: 71
+  day: 172
+challenges:
+- check: 24/pi*acos(max(-1,min(1,-tan(lat*pi/180)*tan(23.4*pi/180*sin(2*pi*(day-80)/365)))))
+  target: 12
+  tol: 0.3
+- check: lat > 60 and 24/pi*acos(max(-1,min(1,-tan(lat*pi/180)*tan(23.4*pi/180*sin(2*pi*(day-80)/365))))) > 23.5
+- check: lat > 60 and 24/pi*acos(max(-1,min(1,-tan(lat*pi/180)*tan(23.4*pi/180*sin(2*pi*(day-80)/365))))) < 0.5

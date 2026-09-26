@@ -1,0 +1,51 @@
+id: the-speed-of-light-is-constant
+subject: relativity
+difficulty: high-school
+equation: c\,\Delta t = \sqrt{(2L)^2 + (v\,\Delta t)^2}
+concepts:
+  - constancy of the speed of light
+  - light clock
+  - Michelson-Morley experiment
+  - special relativity
+prerequisites: []
+related:
+  - special-relativity-time-dilation
+  - length-contraction
+visualization:
+  type: light-clock-train
+  options: {}
+primary: v
+parameters:
+  v:
+    min: 0
+    max: 0.9
+    step: 0.001
+    value: 0.3
+  L:
+    min: 0.5
+    max: 3
+    step: 0.1
+    value: 1.5
+    unit: m
+variables: []
+derivation:
+  - c\,\Delta t = \sqrt{(2L)^2 + (v\,\Delta t)^2} \quad \text{(the diagonal path still covers it at speed } c\text{)}
+  - \Delta t = \dfrac{2L}{\sqrt{c^2-v^2}} = \dfrac{2L/c}{\sqrt{1-v^2/c^2}} = \gamma\,\Delta t_0
+  - \gamma = \dfrac{1}{\sqrt{1-v^2/c^2}} \ge 1 \quad \text{for every train speed } v < c
+charts: []
+presets:
+  - v: 0.00064
+    L: 1.5
+  - v: 0.5
+    L: 1.5
+  - v: 0.866
+    L: 1.5
+challenges:
+  - check: 1/sqrt(1-v^2)
+    target: 2
+    tol: 0.05
+  - check: v
+    target: 0.00064
+  - check: L
+    target: 1
+    tol: 0.05

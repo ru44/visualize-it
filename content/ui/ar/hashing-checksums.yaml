@@ -1,0 +1,12 @@
+hc.hint0: كل مفتاح يقفز مباشرة إلى الوعاء k mod m
+hc.hint1: بدّل corrupt لتتلف بايتًا واحدًا أثناء النقل
+hc.key: المفتاح
+hc.buckets: الأوعية
+hc.collisions: التصادمات
+hc.loadFactor: معامل الامتلاء
+hc.sender: المرسل
+hc.receiver: المستقبل
+hc.checksumSender: مجموع تحقق المرسل
+hc.checksumReceiver: مجموع تحقق المستقبل
+hc.match: المجموعان متطابقان
+hc.mismatch: المجموعان مختلفان

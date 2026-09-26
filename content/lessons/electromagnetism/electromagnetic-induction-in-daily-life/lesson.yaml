@@ -1,0 +1,72 @@
+id: electromagnetic-induction-in-daily-life
+subject: electromagnetism
+difficulty: high-school
+equation: \varepsilon_{rms}=\frac{AB\,2\pi f}{\sqrt2}, \qquad P=\frac{\varepsilon_{rms}^2}{R}
+concepts:
+  - eddy-currents
+  - mutual-inductance
+  - induction-heating
+prerequisites:
+  - faradays-law
+related:
+  - faradays-law
+  - generators-and-ac
+visualization:
+  type: electromagnetic-induction-in-daily-life
+  options: {}
+visualization3d:
+  type: electromagnetic-induction-in-daily-life
+  options: {}
+parameters:
+  B:
+    min: 0.0001
+    max: 0.02
+    step: 0.0001
+    value: 0.005
+    unit: T
+  A:
+    min: 0.0001
+    max: 0.002
+    step: 0.0001
+    value: 0.0003
+    unit: m²
+  f:
+    min: 1000
+    max: 200000
+    step: 1000
+    value: 25000
+    unit: Hz
+  R:
+    min: 0.0001
+    max: 1
+    step: 0.0001
+    value: 0.0001
+    unit: Ω
+variables:
+  - \varepsilon_{rms}
+  - P
+derivation:
+  - B(t)=B\sin(2\pi f t) \;\Rightarrow\; \varepsilon(t)=AB\,2\pi f\cos(2\pi f t)
+  - \varepsilon_{rms}=\frac{AB\,2\pi f}{\sqrt2}
+  - P=\frac{\varepsilon_{rms}^2}{R}
+charts: []
+primary: f
+presets:
+- B: 0.005
+  A: 0.0003
+  f: 25000
+  R: 0.0001
+- B: 0.002
+  A: 0.001
+  f: 150000
+  R: 0.24
+- B: 0.0001
+  A: 0.0001
+  f: 7000
+  R: 0.001
+challenges:
+- check: '(A*B*2*pi*f/sqrt(2))^2/R'
+  target: 300
+  tol: 50
+- check: 'f >= 100000 and f <= 200000 and (A*B*2*pi*f/sqrt(2))^2/R > 5 and (A*B*2*pi*f/sqrt(2))^2/R < 10'
+- check: 'f <= 10000 and (A*B*2*pi*f)/sqrt(2) > 0.0001'

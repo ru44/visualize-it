@@ -1,0 +1,6 @@
+qg.hint: build the circuit with «circuit stage», then measure it and see what comes back
+qg.wireA: qubit A
+qg.wireB: qubit B
+qg.measureOne: measure once
+qg.measureMany: 'run {n|one=# measurement|other=# measurements}'
+qg.results: results so far

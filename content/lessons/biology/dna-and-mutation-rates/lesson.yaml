@@ -1,0 +1,61 @@
+id: dna-and-mutation-rates
+subject: biology
+difficulty: high-school
+equation: E = N\mu g
+concepts:
+  - mutation-rate
+  - molecular-clock
+  - dna-replication
+prerequisites:
+  - bacterial-growth
+related:
+  - natural-selection
+  - hardy-weinberg
+visualization:
+  type: mutation
+  options: {}
+primary: g
+parameters:
+  N:
+    min: 100
+    max: 5000
+    step: 50
+    value: 1000
+  mu:
+    min: 0.01
+    max: 100
+    step: 0.01
+    value: 1
+  g:
+    min: 1
+    max: 1000
+    step: 1
+    value: 100
+variables:
+  - E
+  - N
+  - \mu
+  - g
+derivation:
+  - \text{expected mutations per copy} = N\mu
+  - \text{after } g \text{ independent copying rounds}, \quad E \approx N\mu g \quad (\mu g \ll 1)
+  - \dfrac{E}{N} = \mu g = \text{fraction of bases changed}
+charts: []
+presets:
+- N: 1000
+  mu: 0.01
+  g: 10
+- N: 1000
+  mu: 0.5
+  g: 1000
+- N: 1000
+  mu: 50
+  g: 50
+challenges:
+- check: N*mu*g/1e6
+  target: 50
+  tol: 5
+- check: mu>=50 and g>=20
+- check: mu*g/1e6
+  target: 0.01
+  tol: 0.002

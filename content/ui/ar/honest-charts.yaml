@@ -1,0 +1,9 @@
+hn.honest: محور أمين (يبدأ من 0)
+hn.truncated: محور مبتور
+hn.lastYear: العام الماضي
+hn.thisYear: هذا العام
+hn.axisWarning: المحور يبدأ من {n}، لا من 0
+hn.sameNumbers: يرسم الرسمان الرقمين نفسهما تمامًا
+hn.pctDiff: الفرق الحقيقي بالنسبة المئوية
+hn.honestRatio: الرسم الأمين، نسبة العمودين
+hn.truncRatio: الرسم المبتور، نسبة العمودين

@@ -1,0 +1,57 @@
+id: photosynthesis-and-light
+subject: biology
+difficulty: high-school
+equation: 'P = P_{max}\dfrac{I}{K+I} - R, \qquad P_{max} = P_0\min\!\left(1, \dfrac{C}{C_{ref}}\right)'
+concepts:
+  - photosynthesis
+  - light-saturation
+  - limiting-factor
+prerequisites:
+  - enzyme-kinetics
+related:
+  - enzyme-kinetics
+  - diffusion-and-osmosis
+visualization:
+  type: photosynthesis
+  options: {}
+primary: I
+parameters:
+  I:
+    min: 0
+    max: 2000
+    step: 10
+    value: 400
+    unit: μmol/m²/s
+  C:
+    min: 100
+    max: 1200
+    step: 10
+    value: 420
+    unit: ppm
+variables:
+  - P
+  - I
+  - C
+  - K
+  - R
+  - P_{max}
+  - P_0
+  - C_{ref}
+derivation:
+  - 'P_{max} = P_0 \min\!\left(1, \dfrac{C}{C_{ref}}\right)'
+  - 'P = P_{max}\dfrac{I}{K+I} - R'
+  - '\text{compensation point:} P = 0 \implies I = \dfrac{RK}{P_{max}-R}'
+charts: []
+presets:
+- I: 100
+  C: 420
+- I: 1500
+  C: 420
+- I: 1500
+  C: 1000
+challenges:
+- check: I>1000 and C>=400 and C<=450
+- check: C>=800 and I>=1000
+- check: 20*min(1,C/800)*(I/(200+I)) - 1
+  target: 0
+  tol: 0.3

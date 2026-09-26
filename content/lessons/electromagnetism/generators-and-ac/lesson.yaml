@@ -1,0 +1,79 @@
+id: generators-and-ac
+subject: electromagnetism
+difficulty: high-school
+equation: v(t) = V_{peak}\sin(2\pi f t), \qquad V_{peak}=NBA\,2\pi f
+concepts:
+  - ac-generator
+  - sine-wave
+  - slip-rings
+  - grid-frequency
+prerequisites: []
+related:
+  - faradays-law
+  - transformers
+  - electric-motors
+visualization:
+  type: generators-and-ac
+  options: {}
+visualization3d:
+  type: generators-and-ac
+  options: {}
+parameters:
+  N:
+    min: 10
+    max: 300
+    step: 5
+    value: 100
+  B:
+    min: 0.1
+    max: 1
+    step: 0.05
+    value: 0.5
+    unit: T
+  A:
+    min: 0.002
+    max: 0.1
+    step: 0.001
+    value: 0.05
+    unit: m²
+  rpm:
+    min: 60
+    max: 3600
+    step: 30
+    value: 3000
+    unit: rpm
+  t:
+    min: 0
+    max: 0.1
+    step: 0.0005
+    value: 0.02
+    unit: s
+variables:
+  - f
+  - v
+  - V_{peak}
+derivation:
+  - f = \frac{\text{rpm}}{60}
+  - v(t) = N\frac{d\Phi}{dt} = NBA\,2\pi f\sin(2\pi f t)
+  - V_{peak} = NBA\,2\pi f
+charts: []
+primary: rpm
+presets:
+- N: 200
+  B: 0.3
+  A: 0.002
+  rpm: 300
+- N: 150
+  B: 0.4
+  A: 0.01
+  rpm: 600
+- N: 250
+  B: 0.6
+  A: 0.08
+  rpm: 3000
+challenges:
+- check: 'N*B*A*2*pi*(rpm/60)'
+  target: 4
+  tol: 0.5
+- check: 'abs(rpm/60 - 50) < 1'
+- check: 'A <= 0.01 and B <= 0.4 and N*B*A*2*pi*(rpm/60) > 50'

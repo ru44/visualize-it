@@ -1,0 +1,9 @@
+hn.honest: honest axis (starts at 0)
+hn.truncated: truncated axis
+hn.lastYear: last year
+hn.thisYear: this year
+hn.axisWarning: axis starts at {n}, not 0
+hn.sameNumbers: both charts plot the exact same two numbers
+hn.pctDiff: true % difference
+hn.honestRatio: honest chart, bar ratio
+hn.truncRatio: truncated chart, bar ratio

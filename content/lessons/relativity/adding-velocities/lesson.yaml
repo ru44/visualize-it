@@ -1,0 +1,51 @@
+id: adding-velocities
+subject: relativity
+difficulty: high-school
+equation: w = \dfrac{u+v}{1+uv/c^2}
+concepts:
+  - velocity addition
+  - special relativity
+  - speed limit
+prerequisites:
+  - the-speed-of-light-is-constant
+related:
+  - the-speed-of-light-is-constant
+  - special-relativity-time-dilation
+visualization:
+  type: velocity-addition
+  options: {}
+primary: u
+parameters:
+  u:
+    min: 0
+    max: 0.99
+    step: 0.001
+    value: 0.8
+  v:
+    min: 0
+    max: 0.99
+    step: 0.001
+    value: 0.8
+variables: []
+derivation:
+  - w_{\text{naive}} = u + v \quad \text{(what everyday, slow-speed addition would predict)}
+  - w = \dfrac{u+v}{1+uv/c^2} \quad \text{(what the Lorentz transformation actually gives)}
+  - w < c \quad \text{for any } u < c \text{ and } v < c
+charts: []
+presets:
+  - u: 0.8
+    v: 0.8
+  - u: 0.99
+    v: 0.99
+  - u: 0.5
+    v: 0.5
+challenges:
+  - check: u
+    target: 0.8
+    tol: 0.02
+  - check: v
+    target: 0.99
+    tol: 0.02
+  - check: (u+v)/(1+u*v)
+    target: 0.9756
+    tol: 0.01

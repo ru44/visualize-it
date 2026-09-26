@@ -1,0 +1,56 @@
+id: estimation-and-rounding
+subject: numbers
+difficulty: beginner
+equation: 'N \approx A\times\rho'
+concepts:
+- Fermi estimates
+- rounding
+- significant figures
+prerequisites:
+- place-value
+related:
+- powers-of-ten
+visualization:
+  type: estimation-and-rounding
+  options: {}
+parameters:
+  A:
+    min: 300
+    max: 700
+    step: 10
+    value: 500
+  rho:
+    min: 100
+    max: 300
+    step: 10
+    value: 200
+  s:
+    min: 1
+    max: 4
+    step: 1
+    value: 1
+variables:
+- A
+- \rho
+- N
+derivation:
+- 'N \approx 500\times200'
+- 'N \approx 100000'
+- 'N \approx 1\times10^{5}'
+primary: A
+presets:
+- A: 500
+  rho: 200
+  s: 1
+- A: 600
+  rho: 150
+  s: 2
+- A: 350
+  rho: 300
+  s: 1
+challenges:
+- check: A*rho
+  target: 100000
+  tol: 8000
+- check: s == 1
+- check: A*rho > 150000

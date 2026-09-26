@@ -1,0 +1,12 @@
+las.hint: pump enough atoms into the excited state and light bouncing between the mirrors grows instead of fading
+las.mirror1: fully reflective mirror
+las.mirror2: output mirror (lets a sliver out)
+las.medium: gain medium
+las.excited: excited atom
+las.ground: ground-state atom
+las.output: output beam
+las.spontaneous: spontaneous emission — escapes sideways, never amplified
+las.amplification: amplification G
+las.inversion: population inversion ΔN
+las.pump: pump fraction η
+las.passes: cavity passes
