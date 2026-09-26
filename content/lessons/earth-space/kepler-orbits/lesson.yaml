@@ -25,7 +25,7 @@ parameters:
     max: 50
     step: 0.1
     value: 6.8
-    unit: "thousand km"
+    unit: "×1000 km"
 variables:
   - G
   - M

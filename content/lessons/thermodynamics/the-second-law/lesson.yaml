@@ -27,13 +27,13 @@ parameters:
     max: 100
     step: 1
     value: 90
-    unit: molecules
+    unit: ""
   nRight:
     min: 1
     max: 100
     step: 1
     value: 10
-    unit: molecules
+    unit: ""
   perm:
     min: 0
     max: 100

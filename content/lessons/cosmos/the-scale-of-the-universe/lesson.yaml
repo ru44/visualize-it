@@ -21,7 +21,7 @@ parameters:
     max: 11
     step: 0.05
     value: 0
-    unit: power of ten
+    unit: ""
 variables:
 - d
 - c
