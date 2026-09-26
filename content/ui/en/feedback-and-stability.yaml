@@ -1,0 +1,8 @@
+feedback.hint: drag g and d — the same gain can settle down or run away depending on the lag
+feedback.threshold: rough stability limit
+feedback.verdict: verdict
+feedback.stable: stable
+feedback.unstable: unstable (growing)
+feedback.final: temperature after 30 steps
+feedback.target: target
+feedback.xlabel: step n

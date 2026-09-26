@@ -1,0 +1,56 @@
+id: the-equivalence-principle
+subject: relativity
+difficulty: high-school
+equation: y = \tfrac{1}{2}at^2
+concepts:
+  - equivalence principle
+  - general relativity
+  - gravitational light bending
+  - free fall
+prerequisites: []
+related:
+  - gravity-as-curved-spacetime
+  - the-speed-of-light-is-constant
+visualization:
+  type: equivalence-elevator
+  options: {}
+visualization3d:
+  type: accelerating-elevator
+  options: {}
+primary: a
+parameters:
+  a:
+    min: 1
+    max: 20
+    step: 0.1
+    value: 9.81
+    unit: m/s^2
+  u:
+    min: 0.5
+    max: 5
+    step: 0.1
+    value: 2.5
+    unit: m/s
+variables: []
+derivation:
+  - y = \tfrac{1}{2}at^2 \quad \text{(a floating ball's height above where it started, in the elevator's own frame)}
+  - t_{\text{cross}} = \dfrac{W}{u} \quad \text{(time to cross a cabin of width } W \text{ at speed } u\text{)}
+  - y_{\text{light}} = \tfrac{1}{2}a\left(\dfrac{W}{c}\right)^2 \ll y_{\text{ball}} \quad \text{(light crosses so fast its own fall is unmeasurably small)}
+charts: []
+presets:
+  - a: 9.81
+    u: 2.5
+  - a: 1.62
+    u: 2.5
+  - a: 20
+    u: 1
+challenges:
+  - check: a
+    target: 9.81
+    tol: 0.05
+  - check: a
+    target: 1.62
+    tol: 0.1
+  - check: u
+    target: 5
+    tol: 0.1

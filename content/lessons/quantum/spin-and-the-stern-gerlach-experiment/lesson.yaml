@@ -1,0 +1,57 @@
+id: spin-and-the-stern-gerlach-experiment
+subject: quantum
+difficulty: high-school
+equation: s = \dfrac{21300\,G}{v^2}
+concepts:
+  - spin
+  - quantization
+  - magnetic-moment
+prerequisites:
+  - schrodingers-cat-and-qubits
+related:
+  - entanglement
+  - uncertainty-principle
+visualization:
+  type: stern-gerlach
+  options: {}
+visualization3d:
+  type: stern-gerlach
+  options: {}
+parameters:
+  G:
+    min: 2
+    max: 12
+    step: 0.5
+    value: 6
+    unit: T/cm
+  v:
+    min: 400
+    max: 900
+    step: 10
+    value: 650
+    unit: m/s
+variables:
+  - s
+  - G
+  - v
+derivation:
+  - s \propto G
+  - s \propto \frac{1}{v^2}
+  - s = \frac{21300\,G}{v^2}
+charts: []
+primary: G
+presets:
+  - G: 4
+    v: 800
+  - G: 10
+    v: 500
+  - G: 2
+    v: 900
+challenges:
+  - check: 21300*G/v^2
+    target: 0.5
+    tol: 0.05
+  - check: G >= 10 and v <= 500
+  - check: 21300*G/v^2
+    target: 0.05
+    tol: 0.01

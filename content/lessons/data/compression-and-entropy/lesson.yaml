@@ -1,0 +1,56 @@
+id: compression-and-entropy
+subject: data
+difficulty: beginner
+equation: C = \dfrac{S_0}{S_1}
+concepts:
+- lossless compression
+- run-length encoding
+- Huffman coding
+- entropy
+prerequisites:
+- bits-bytes-and-data-sizes
+related:
+- bits-bytes-and-data-sizes
+- column-storage-and-bigquery
+visualization:
+  type: compression-entropy
+  options: {}
+primary: view
+parameters:
+  view:
+    min: 0
+    max: 1
+    step: 1
+    value: 0
+  reps:
+    min: 2
+    max: 12
+    step: 1
+    value: 6
+  skew:
+    min: 1
+    max: 9
+    step: 1
+    value: 5
+variables:
+- C
+- S_0
+- S_1
+- n
+- b
+derivation:
+- S_0 = n \times b
+- S_1 = 2b
+- C = \dfrac{S_0}{S_1} = \dfrac{n}{2}
+presets:
+- view: 0
+  reps: 2
+- view: 0
+  reps: 12
+- view: 1
+  skew: 8
+challenges:
+- check: reps
+  target: 12
+- check: view == 1 and skew <= 2
+- check: view == 1 and skew >= 8

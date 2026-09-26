@@ -392,6 +392,13 @@ d:
   group: operator
   simple: Times.
   example: 3 × 4 = 12.
+\div:
+  name: division sign
+  read: divided by
+  meaning: Division — split the left number into that many equal parts, or share it that many ways.
+  group: operator
+  simple: Divided by.
+  example: 3 ÷ 4 = 0.75.
 \sqrt:
   name: square root
   read: the square root of

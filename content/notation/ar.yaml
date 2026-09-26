@@ -392,6 +392,13 @@ d:
   group: operator
   simple: ضرب.
   example: 3 × 4 = 12.
+\div:
+  name: علامة القسمة
+  read: مقسومًا على
+  meaning: القسمة — قسّم العدد الأيسر إلى هذا العدد من الأجزاء المتساوية، أو وزّعه بهذا العدد من الطرق.
+  group: operator
+  simple: مقسوم على.
+  example: 3 ÷ 4 = 0.75.
 \sqrt:
   name: الجذر التربيعي
   read: جذر

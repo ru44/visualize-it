@@ -1,0 +1,9 @@
+cloud.hint: اسحب T وTd أدناه
+cloud.ground: الأرض
+cloud.temp: درجة الحرارة (°م)
+cloud.height: الارتفاع (م)
+cloud.base: قاعدة السحابة
+cloud.fog: ضباب — الهواء مشبع أصلًا عند الأرض
+cloud.clear: هواء جاف — لا سحابة ضمن المدى
+cloud.tLine: درجة حرارة الهواء
+cloud.tdLine: نقطة الندى

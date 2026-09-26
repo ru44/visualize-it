@@ -1,0 +1,8 @@
+feedback.hint: حرّك g و d — الكسب نفسه قد يستقرّ أو ينفلت تبعًا للتأخّر
+feedback.threshold: حدّ الاستقرار التقريبي
+feedback.verdict: الحكم
+feedback.stable: مستقرّ
+feedback.unstable: غير مستقرّ (ينمو)
+feedback.final: الحرارة بعد 30 خطوة
+feedback.target: الهدف
+feedback.xlabel: الخطوة n

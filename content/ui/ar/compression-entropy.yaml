@@ -1,0 +1,10 @@
+ce.hintRepeat: ارفع reps ليتجمّع تكرار أطول في زوج واحد (رمز، عدد)
+ce.hintHuffman: ارفع skew ليصبح رمز واحد أكثر تكرارًا — الرموز المتكررة تستحق شفرة أقصر
+ce.originalBits: الحجم الأصلي
+ce.compressedBits: الحجم المضغوط
+ce.ratio: نسبة الضغط
+ce.avgBits: متوسط البتّات لكل رمز
+ce.fixedBits: بتّات ثابتة لكل رمز
+ce.smallerBy: أصغر بنسبة
+ce.run: التكرار
+ce.count: العدد

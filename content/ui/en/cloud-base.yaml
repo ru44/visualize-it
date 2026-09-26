@@ -1,0 +1,9 @@
+cloud.hint: drag T and Td below
+cloud.ground: ground
+cloud.temp: temperature (°C)
+cloud.height: height (m)
+cloud.base: cloud base
+cloud.fog: fog — already saturated at the ground
+cloud.clear: dry — no cloud in view
+cloud.tLine: air temperature
+cloud.tdLine: dew point

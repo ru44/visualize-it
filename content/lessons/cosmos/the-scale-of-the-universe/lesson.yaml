@@ -1,0 +1,43 @@
+id: the-scale-of-the-universe
+subject: cosmos
+difficulty: beginner
+equation: d = 10^{m}
+concepts:
+- cosmic distance scale
+- light-year
+- logarithmic scale
+prerequisites: []
+related:
+- parallax-and-distances
+- expanding-universe-hubble-law
+- cosmic-microwave-background
+visualization:
+  type: the-scale-of-the-universe
+  options: {}
+primary: mag
+parameters:
+  mag:
+    min: -8
+    max: 11
+    step: 0.05
+    value: 0
+    unit: power of ten
+variables:
+- d
+- c
+- t
+- m
+derivation:
+- d = c\,t
+- 1\ \text{ly} = c \cdot 1\ \text{yr}
+- d = 10^{m}\ \text{ly}
+presets:
+- mag: -7.39
+- mag: 6.4
+- mag: 10.67
+challenges:
+- check: mag
+  target: -7.39
+  tol: 0.2
+- check: mag > 9
+- check: mag < -5

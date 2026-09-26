@@ -1,0 +1,45 @@
+id: electromagnetic-waves-and-the-spectrum
+subject: electromagnetism
+difficulty: high-school
+equation: c = \lambda f, \qquad \lambda = 10^{e}
+concepts:
+  - electromagnetic-spectrum
+  - wavelength
+  - frequency
+  - photon-energy
+prerequisites: []
+related:
+  - transverse-and-longitudinal
+  - photons-and-plancks-constant
+visualization:
+  type: electromagnetic-waves-and-the-spectrum
+  options: {}
+visualization3d:
+  type: electromagnetic-waves-and-the-spectrum
+  options: {}
+parameters:
+  e:
+    min: -12
+    max: 3
+    step: 0.1
+    value: -2
+variables:
+  - \lambda
+  - f
+  - c
+derivation:
+  - \lambda = 10^{e}\ \text{m}
+  - c = \lambda f \;\Rightarrow\; f = \frac{c}{\lambda}
+  - f = \frac{3\times10^{8}}{10^{e}} = 3\times10^{8-e}\ \text{Hz}
+charts: []
+primary: e
+presets:
+- e: 0.5
+- e: -6.3
+- e: -10
+challenges:
+- check: '3*10^(8-e)'
+  target: 100000000
+  tol: 20000000
+- check: '3*10^(8-e) > 400000000000000 and 3*10^(8-e) < 750000000000000'
+- check: '3*10^(8-e) > 10000000000000000000'

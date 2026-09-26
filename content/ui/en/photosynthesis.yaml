@@ -1,0 +1,10 @@
+ph.hint: drag light intensity and CO₂ concentration
+ph.xaxis: light intensity I (μmol photons/m²/s)
+ph.yaxis: rate P
+ph.p0line: highest possible plateau (CO₂ not limiting)
+ph.i: light I
+ph.c: CO₂ C
+ph.p: net rate P
+ph.pmax: plateau at this CO₂, Pmax
+ph.comp: compensation point
+ph.caption: the curve bends over once light stops being the limiting factor — CO₂ takes over

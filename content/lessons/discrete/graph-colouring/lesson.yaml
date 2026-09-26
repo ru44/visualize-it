@@ -1,0 +1,50 @@
+id: graph-colouring
+subject: discrete
+difficulty: high-school
+equation: \chi(G) \le \Delta(G) + 1
+concepts:
+  - graph-colouring
+  - chromatic-number
+  - greedy-algorithm
+  - planar-graph
+  - scheduling
+prerequisites:
+  - graphs-and-euler-paths
+related:
+  - graphs-and-euler-paths
+  - pigeonhole-and-counting
+visualization:
+  type: graph-colouring
+  options: {}
+parameters:
+  k:
+    min: 1
+    max: 4
+    step: 1
+    value: 2
+  order:
+    min: 0
+    max: 6
+    step: 1
+    value: 0
+variables:
+  - G
+  - \chi
+  - \Delta
+derivation:
+  - \text{colour the regions one at a time, giving each the smallest colour number not already used by an already-coloured neighbour}
+  - \text{any region touches at most } \Delta(G) \text{ neighbours, so at most } \Delta(G) \text{ colours can already be forbidden when its turn comes}
+  - \text{with } \Delta(G)+1 \text{ colours available, one is always left free, so this method never fails when } k = \Delta(G)+1
+charts: []
+primary: k
+presets:
+  - k: 2
+    order: 0
+  - k: 3
+    order: 0
+  - k: 4
+    order: 2
+challenges:
+  - check: 'k==2'
+  - check: 'k==4'
+  - check: 'order==6'

@@ -1,0 +1,9 @@
+stress.hint: ارفع σ — بعد الخطّ المتقطّع تتوقّف المادة عن الارتداد الكامل
+stress.strain: الانفعال
+stress.state: الحالة
+stress.plastic: لدن (دائم)
+stress.elastic: مرن (يرتدّ)
+stress.residual: الانفعال الدائم لو أُزيل الحمل الآن
+stress.yieldStrain: الانفعال عند الخضوع
+stress.xlabel: الانفعال ε (%)
+stress.ylabel: الإجهاد σ (ميغاباسكال)

@@ -1,0 +1,53 @@
+id: heart-rate-and-blood-flow
+subject: biology
+difficulty: beginner
+equation: \mathrm{CO} = \mathrm{HR} \times \mathrm{SV}
+concepts:
+  - cardiac-output
+  - heart-rate
+  - stroke-volume
+prerequisites: []
+related:
+  - diffusion-and-osmosis
+  - bacterial-growth
+visualization:
+  type: cardiac-output
+  options: {}
+primary: HR
+parameters:
+  HR:
+    min: 40
+    max: 200
+    step: 1
+    value: 70
+    unit: bpm
+  SV:
+    min: 40
+    max: 150
+    step: 1
+    value: 70
+    unit: mL
+variables:
+  - \mathrm{CO}
+  - \mathrm{HR}
+  - \mathrm{SV}
+derivation:
+  - \text{one beat ejects } \mathrm{SV} \text{ of blood}
+  - \mathrm{HR} \text{ beats happen every minute}
+  - \mathrm{CO} = \mathrm{HR}\times \mathrm{SV} \ (\text{mL/min}), \qquad \mathrm{CO}[\text{L/min}] = \dfrac{\mathrm{HR}\times \mathrm{SV}}{1000}
+charts: []
+presets:
+- HR: 70
+  SV: 70
+- HR: 140
+  SV: 90
+- HR: 190
+  SV: 130
+challenges:
+- check: HR*SV/1000
+  target: 5
+  tol: 0.3
+- check: HR*SV/1000
+  target: 25
+  tol: 2
+- check: HR>150 and SV>90

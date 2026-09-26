@@ -1,0 +1,48 @@
+id: binary-and-other-bases
+subject: numbers
+difficulty: high-school
+equation: 'N = d_2\,b^{2} + d_1\,b^{1} + d_0\,b^{0}'
+concepts:
+- number bases
+- positional notation
+- base 60
+prerequisites:
+- place-value
+related:
+- powers-of-ten
+visualization:
+  type: binary-and-other-bases
+  options: {}
+parameters:
+  N:
+    min: 0
+    max: 3599
+    step: 1
+    value: 130
+  b:
+    min: 2
+    max: 60
+    step: 1
+    value: 2
+variables:
+- d_k
+- b^k
+- N
+derivation:
+- '130 = 8\times16 + 2\times1'
+- '130 = 8\times16^{1} + 2\times16^{0}'
+- '130_{10} = 82_{16}'
+primary: b
+presets:
+- N: 130
+  b: 2
+- N: 130
+  b: 16
+- N: 130
+  b: 60
+challenges:
+- check: N
+  target: 3599
+  tol: 5
+- check: b == 60
+- check: b == 16 and N == 130

@@ -1,0 +1,4 @@
+tf.hint: drag along the power line below to change the transmission voltage V_p
+tf.primary: primary
+tf.secondary: secondary
+tf.lossCaption: power lost to heat in the line, as a share of the power sent

@@ -1,0 +1,6 @@
+pctlife.hint: 'drag p1 and p2 and watch the price move through each step'
+pctlife.start: starting price
+pctlife.after1: after the first change
+pctlife.after2: after the second change
+pctlife.net: net change
+pctlife.overall: overall change from the start

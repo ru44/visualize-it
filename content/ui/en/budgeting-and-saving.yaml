@@ -1,0 +1,7 @@
+budget.hint: drag the sliders below to change income, spending and the number of months
+budget.barTitle: this month's income, split into spent and saved
+budget.spentLabel: spent
+budget.savedLabel: saved
+budget.chartTitle: total saved, month by month
+budget.monthsUnit: mo
+budget.caption: a straight line — the same saving added up, month after month

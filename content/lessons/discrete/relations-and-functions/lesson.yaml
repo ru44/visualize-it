@@ -1,0 +1,44 @@
+id: relations-and-functions
+subject: discrete
+difficulty: beginner
+equation: R \subseteq A \times B, \quad \text{function} \iff \text{every } a\in A \text{ has exactly one arrow out}
+concepts:
+  - relation
+  - function
+  - domain
+  - codomain
+  - injective
+  - surjective
+prerequisites:
+  - sets-and-venn-diagrams
+related:
+  - sets-and-venn-diagrams
+  - quantifiers
+visualization:
+  type: relations-and-functions
+  options: {}
+parameters:
+  code:
+    min: 0
+    max: 511
+    step: 1
+    value: 273
+variables:
+  - R
+  - A
+  - B
+  - \times
+derivation:
+  - R \subseteq A \times B \text{ pairs each element of } A \text{ with zero, one, or many elements of } B
+  - R \text{ is a function exactly when every } a \in A \text{ has one and only one arrow leaving it}
+  - \text{that function is one-to-one (injective) when, in addition, no two different elements of } A \text{ point to the same element of } B
+charts: []
+primary: code
+presets:
+  - code: 273
+  - code: 35
+  - code: 137
+challenges:
+  - check: '(mod(floor(code/1),2)+mod(floor(code/2),2)+mod(floor(code/4),2)==1) and (mod(floor(code/8),2)+mod(floor(code/16),2)+mod(floor(code/32),2)==1) and (mod(floor(code/64),2)+mod(floor(code/128),2)+mod(floor(code/256),2)==1)'
+  - check: '((mod(floor(code/1),2)+mod(floor(code/2),2)+mod(floor(code/4),2)==1) and (mod(floor(code/8),2)+mod(floor(code/16),2)+mod(floor(code/32),2)==1) and (mod(floor(code/64),2)+mod(floor(code/128),2)+mod(floor(code/256),2)==1)) and not((mod(floor(code/1),2)+mod(floor(code/8),2)+mod(floor(code/64),2)==1) and (mod(floor(code/2),2)+mod(floor(code/16),2)+mod(floor(code/128),2)==1) and (mod(floor(code/4),2)+mod(floor(code/32),2)+mod(floor(code/256),2)==1))'
+  - check: 'not((mod(floor(code/1),2)+mod(floor(code/2),2)+mod(floor(code/4),2)==1) and (mod(floor(code/8),2)+mod(floor(code/16),2)+mod(floor(code/32),2)==1) and (mod(floor(code/64),2)+mod(floor(code/128),2)+mod(floor(code/256),2)==1))'

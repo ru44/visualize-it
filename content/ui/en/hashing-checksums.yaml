@@ -1,0 +1,12 @@
+hc.hint0: each key jumps straight to bucket k mod m
+hc.hint1: flip corrupt to damage one byte in transit
+hc.key: key
+hc.buckets: buckets
+hc.collisions: collisions
+hc.loadFactor: load factor
+hc.sender: sender
+hc.receiver: receiver
+hc.checksumSender: sender checksum
+hc.checksumReceiver: receiver checksum
+hc.match: checksums match
+hc.mismatch: checksums disagree

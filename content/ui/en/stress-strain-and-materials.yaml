@@ -1,0 +1,9 @@
+stress.hint: drag σ up — past the dashed line the material stops springing all the way back
+stress.strain: strain
+stress.state: state
+stress.plastic: plastic (permanent)
+stress.elastic: elastic (springs back)
+stress.residual: permanent strain if released now
+stress.yieldStrain: strain at yield
+stress.xlabel: strain ε (%)
+stress.ylabel: stress σ (MPa)

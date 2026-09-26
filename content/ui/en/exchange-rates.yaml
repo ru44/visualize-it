@@ -1,0 +1,9 @@
+fx.hint: drag the sliders below to change the price, the exchange rate, and how many pounds to convert
+fx.dialTitle: exchange rate — pounds per dollar
+fx.strong: strong pound
+fx.weak: weak pound
+fx.costTitle: cost of the import
+fx.costCaption: import price × exchange rate
+fx.fxTitle: your pounds, converted
+fx.fxCaption: pounds ÷ exchange rate
+fx.caption: the same rate drives both panels — a weaker pound raises the left bar and lowers the right one

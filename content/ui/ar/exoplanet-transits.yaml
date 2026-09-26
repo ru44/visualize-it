@@ -1,0 +1,8 @@
+transit.hint: ▶ راقب الكوكب يعبر أمام النجم، ثم اقرأ الانخفاض الذي يتركه في الضوء
+transit.caption: الأحجام مبالغ فيها — الأرقام أسفله حقيقية
+transit.time: الزمن (ساعات من منتصف العبور)
+transit.brightness: السطوع
+transit.depth: عمق العبور
+transit.depthPpm: العمق، بأجزاء من المليون
+transit.duration: مدة العبور
+transit.ratio: R_p / R_s

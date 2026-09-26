@@ -1,0 +1,8 @@
+tax.hint: drag the sliders below to change income and where the higher bracket starts
+tax.scaleTitle: income, split into the two taxed slices
+tax.gaugeTitle: marginal rate versus average rate
+tax.marginalLabel: marginal rate (tax on the next dollar)
+tax.averageLabel: average rate (tax owed ÷ income)
+tax.marginalShort: marg.
+tax.averageShort: avg.
+tax.caption: the average rate always sits below the marginal rate, once any income crosses the threshold

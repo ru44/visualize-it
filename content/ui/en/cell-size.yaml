@@ -1,0 +1,10 @@
+cs.hint: drag the cell's radius and how active it is
+cs.sa: surface area
+cs.v: volume
+cs.ratio: 'SA : V ratio'
+cs.depth: oxygen reaches this deep
+cs.starved: starved volume
+cs.core: starved core — too far from the surface
+cs.safe: fully supplied — every part is close enough to the surface
+cs.caption: cross-section, not to scale — the 3D view shows the true solid
+cs.gauge: SA/V (μm⁻¹)

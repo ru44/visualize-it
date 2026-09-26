@@ -1,0 +1,62 @@
+id: stress-strain-and-materials
+subject: engineering
+difficulty: high-school
+equation: \sigma = E\varepsilon\ \ (\varepsilon\le\varepsilon_Y), \qquad \sigma = Y + E_p(\varepsilon-\varepsilon_Y)\ \ (\varepsilon>\varepsilon_Y)
+concepts:
+  - youngs-modulus
+  - elastic-deformation
+  - plastic-deformation
+  - yield-stress
+prerequisites: []
+related:
+  - beam-bending
+  - bridges-and-trusses
+visualization:
+  type: stress-strain-and-materials
+  options: {}
+parameters:
+  E:
+    min: 0.01
+    max: 210
+    step: 0.01
+    value: 200
+    unit: GPa
+  Y:
+    min: 1
+    max: 400
+    step: 1
+    value: 250
+    unit: MPa
+  sigma:
+    min: 0
+    max: 500
+    step: 1
+    value: 100
+    unit: MPa
+variables:
+  - \sigma
+  - \varepsilon
+  - E
+  - Y
+  - E_p
+  - \varepsilon_Y
+derivation:
+  - \varepsilon_Y = \frac{Y}{E}
+  - \varepsilon \le \varepsilon_Y \implies \sigma = E\varepsilon
+  - \varepsilon > \varepsilon_Y \implies \sigma = Y + E_p(\varepsilon-\varepsilon_Y)
+charts: []
+primary: sigma
+presets:
+  - E: 200
+    Y: 250
+    sigma: 100
+  - E: 200
+    Y: 250
+    sigma: 400
+  - E: 0.05
+    Y: 15
+    sigma: 8
+challenges:
+  - check: sigma < Y and E > 100
+  - check: sigma > Y and E > 100
+  - check: E < 1 and sigma < Y

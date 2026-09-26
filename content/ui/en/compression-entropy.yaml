@@ -1,0 +1,10 @@
+ce.hintRepeat: raise reps to compress a longer run into one (symbol, count) pair
+ce.hintHuffman: raise skew to make one symbol more common — frequent symbols earn shorter codes
+ce.originalBits: original size
+ce.compressedBits: compressed size
+ce.ratio: compression ratio
+ce.avgBits: average bits per symbol
+ce.fixedBits: fixed-length bits per symbol
+ce.smallerBy: smaller by
+ce.run: run
+ce.count: count

@@ -1,0 +1,5 @@
+gcol.hint: tap a region to start colouring from there · touching regions may not share a colour
+gcol.k: colours allowed
+gcol.used: colours used
+gcol.conflicts: clashes
+gcol.order: colouring order

@@ -1,0 +1,7 @@
+negnum.hint: 'drag the start and the change and watch the thermometer and the number line together'
+negnum.thermometer: thermometer
+negnum.numberline: number line
+negnum.freezing: freezing (0°)
+negnum.start: starting temperature
+negnum.change: change
+negnum.end: final temperature

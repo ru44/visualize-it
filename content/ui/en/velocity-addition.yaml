@@ -1,0 +1,4 @@
+vadd.hint: Three markers race the same track — light, the naive sum u + v, and the true speed w.
+vadd.naive: naive sum
+vadd.light: light, c
+vadd.impossible: faster than light — impossible

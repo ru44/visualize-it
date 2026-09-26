@@ -1,0 +1,61 @@
+id: signals-and-noise
+subject: engineering
+difficulty: high-school
+equation: S = \frac{A}{\sigma}, \qquad S_N = \frac{A}{\sigma_{\text{avg}}} = S\sqrt N
+concepts:
+  - signal-to-noise-ratio
+  - averaging
+  - random-noise
+prerequisites: []
+related:
+  - sampling-and-aliasing
+  - low-pass-filter
+visualization:
+  type: signals-and-noise
+  options: {}
+parameters:
+  A:
+    min: 0.2
+    max: 5
+    step: 0.1
+    value: 2
+    unit: mV
+  sigma:
+    min: 0.2
+    max: 10
+    step: 0.1
+    value: 4
+    unit: mV
+  N:
+    min: 1
+    max: 200
+    step: 1
+    value: 1
+variables:
+  - A
+  - \sigma
+  - N
+  - S
+  - S_N
+derivation:
+  - \sigma_{\text{avg}} = \frac{\sigma}{\sqrt N}
+  - S = \frac{A}{\sigma}
+  - S_N = \frac{A}{\sigma_{\text{avg}}} = S\sqrt N
+charts: []
+primary: N
+presets:
+  - A: 2
+    sigma: 4
+    N: 1
+  - A: 2
+    sigma: 4
+    N: 16
+  - A: 1
+    sigma: 6
+    N: 100
+challenges:
+  - check: A/sigma < 1
+  - check: A/sigma*sqrt(N) > 3
+  - check: A/sigma*sqrt(N)
+    target: 2
+    tol: 0.1

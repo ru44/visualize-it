@@ -1,0 +1,9 @@
+fermi.hint: 'حرّك المساحة والكثافة لتغيير التقدير، ثم حرّك مستوى التقريب'
+fermi.area: مساحة فروة الرأس
+fermi.density: كثافة الشعر
+fermi.headline: التقدير، مقرَّبًا
+fermi.sigfig: 'محتفَظ به لـ {s} رقم/أرقام معنوية — الباقي يُجعل صفرًا'
+fermi.scale: رتبة الحجم
+fermi.estimate: التقدير الخام
+fermi.rounded: التقدير المقرَّب
+fermi.magnitude: رتبة الحجم

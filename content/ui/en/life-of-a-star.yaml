@@ -1,0 +1,20 @@
+stlife.hint: ▶ drag «star's mass» and «age» to fast-forward a star's whole life
+stlife.stageMain: main sequence
+stlife.stageExpanding: expanding
+stlife.stageGiant: red giant
+stlife.stageSupergiant: red supergiant
+stlife.stageWD: white dwarf
+stlife.stageNS: neutron star
+stlife.stageBH: black hole
+stlife.supernova: supernova!
+stlife.birth: birth
+stlife.msEnd: leaves main sequence
+stlife.timeline: time, log scale
+stlife.stage: stage
+stlife.radius: radius
+stlife.lifetime: main-sequence lifetime
+stlife.age: time elapsed
+stlife.kyr: thousand years
+stlife.myr: million years
+stlife.gyr: billion years
+stlife.tyr: trillion years

@@ -1,0 +1,6 @@
+qg.hint: ابنِ الدارة عبر «مرحلة الدارة»، ثم قِسها وانظر ماذا تحصل
+qg.wireA: الكيوبت A
+qg.wireB: الكيوبت B
+qg.measureOne: قِس مرة واحدة
+qg.measureMany: 'شغّل {n|one=قياسًا واحدًا|two=قياسين|few=# قياسات|many=# قياسًا|other=# قياس}'
+qg.results: النتائج حتى الآن

@@ -1,0 +1,20 @@
+jt.customers: العملاء
+jt.orders: الطلبات
+jt.result: النتيجة
+jt.innerJoin: الربط الداخلي
+jt.leftJoin: الربط الأيسر
+jt.id: الرقم
+jt.name: الاسم
+jt.orderId: رقم الطلب
+jt.amount: المبلغ
+jt.noMatch: بلا تطابق
+jt.rowsReturned: عدد الصفوف الناتجة
+jt.noOrders: عملاء بلا طلبات
+jt.orphanState: هذا العميل
+jt.none: لا أحد
+jt.kept: يبقى
+jt.dropped: يُستبعد
+jt.sara: سارة
+jt.omar: عمر
+jt.lina: لينا
+jt.yousef: يوسف

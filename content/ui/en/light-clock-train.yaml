@@ -1,0 +1,4 @@
+lct.hint: A light clock bounces inside the train. Its diagonal speed, seen from the platform, never changes.
+lct.platform: platform (ground frame)
+lct.train: train's light clock
+lct.always: always this number, no matter how fast the train goes

@@ -1,0 +1,54 @@
+id: hashing-and-checksums
+subject: data
+difficulty: beginner
+equation: h = k \text{ mod } m
+concepts:
+- hash function
+- hash table
+- collision
+- checksum
+- data integrity
+prerequisites:
+- indexes-and-fast-search
+related:
+- indexes-and-fast-search
+- bits-bytes-and-data-sizes
+visualization:
+  type: hashing-checksums
+  options: {}
+primary: view
+parameters:
+  view:
+    min: 0
+    max: 1
+    step: 1
+    value: 0
+  m:
+    min: 4
+    max: 11
+    step: 1
+    value: 7
+  corrupt:
+    min: 0
+    max: 1
+    step: 1
+    value: 0
+variables:
+- h
+- k
+- m
+derivation:
+- k \text{ mod } m \text{ is the remainder after dividing } k \text{ by } m
+- h \text{ names exactly one of the } m \text{ buckets to look in first}
+- \text{two different keys landing on the same } h \text{ is called a collision}
+presets:
+- view: 0
+  m: 4
+- view: 0
+  m: 11
+- view: 1
+  corrupt: 1
+challenges:
+- check: view == 0 and m == 4
+- check: view == 0 and m == 11
+- check: view == 1 and corrupt == 1

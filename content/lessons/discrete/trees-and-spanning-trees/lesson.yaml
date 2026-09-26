@@ -1,0 +1,49 @@
+id: trees-and-spanning-trees
+subject: discrete
+difficulty: high-school
+equation: '|E| = |V| - 1'
+concepts:
+  - tree
+  - spanning-tree
+  - minimum-spanning-tree
+  - cycle
+  - greedy-algorithm
+prerequisites:
+  - graphs-and-euler-paths
+related:
+  - graphs-and-euler-paths
+  - graph-colouring
+visualization:
+  type: trees-and-spanning-trees
+  options: {}
+parameters:
+  step:
+    min: 0
+    max: 1
+    step: 0.01
+    value: 1
+  town:
+    min: 0
+    max: 7
+    step: 1
+    value: 0
+variables:
+  - E
+  - V
+derivation:
+  - '\text{start with the } |V| \text{ farms as isolated points: 0 pipes connect any of them}'
+  - \text{each new pipe that avoids a loop joins two separate groups into one, reducing the number of separate groups by exactly one}
+  - '|V| \text{ groups need exactly } |V|-1 \text{ such merges to become a single group, so } |E| = |V| - 1'
+charts: []
+primary: step
+presets:
+  - step: 1
+    town: 0
+  - step: 0.5
+    town: 6
+  - step: 0.14
+    town: 1
+challenges:
+  - check: 'abs(step-0.5)<0.02'
+  - check: 'abs(step-8/14)<0.02'
+  - check: 'town==6'

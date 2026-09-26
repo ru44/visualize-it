@@ -1,0 +1,4 @@
+risk.hint: drag the sliders below to change volatility, how many stocks, and their correlation
+risk.singleTitle: one stock — possible year-end returns
+risk.portfolioTitle: your portfolio — possible year-end returns
+risk.caption: same 13 sample outcomes on both rows, scaled by each row's own risk — watch them pull toward the middle

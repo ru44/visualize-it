@@ -1,0 +1,7 @@
+mst.hint: tap a farm to see which farms are already linked to it
+mst.considered: pipes considered
+mst.treeEdges: pipes laid
+mst.cost: total cost
+mst.rejected: rejected (would loop)
+mst.linked: farms linked to
+mst.groups: separate groups left

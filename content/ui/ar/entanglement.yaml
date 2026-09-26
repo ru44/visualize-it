@@ -1,0 +1,14 @@
+ent.hint: يُرسَل زوج مشترك إلى صندوقين بعيدين عن بعضهما؛ لا تظهر العلاقة بينهما إلا بمقارنة النتيجتين لاحقًا
+ent.alice: أليس
+ent.bob: بوب
+ent.source: المصدر
+ent.measureOne: قِس زوجًا واحدًا
+ent.measureMany: 'شغّل {n|one=# زوج|two=زوجين|few=# أزواج|many=# زوجًا|other=# زوج}'
+ent.match: تطابق
+ent.mismatch: تعارض
+ent.predicted: فرصة التطابق المتوقعة
+ent.observed: نسبة التطابق المشاهَدة
+ent.aliceAlone: نتائج أليس وحدها، بمعزل عن بوب
+ent.pairs: عدد الأزواج المقيسة
+ent.quantum: كمي (حقيقي)
+ent.classicalGuess: توقع كلاسيكي — ورقة متفق عليها سرًّا

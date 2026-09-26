@@ -1,0 +1,8 @@
+transit.hint: ▶ watch the planet cross the star, then read the dip it leaves in the light
+transit.caption: sizes exaggerated — readouts below are the true numbers
+transit.time: time (hours from mid-transit)
+transit.brightness: brightness
+transit.depth: transit depth
+transit.depthPpm: depth, in parts per million
+transit.duration: transit duration
+transit.ratio: R_p / R_s

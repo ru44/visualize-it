@@ -1,0 +1,48 @@
+id: negative-numbers
+subject: numbers
+difficulty: beginner
+equation: 'T_2 = T_1 + \Delta T'
+concepts:
+- negative numbers
+- number line
+- signed addition
+prerequisites:
+- place-value
+related:
+- fractions-and-decimals
+visualization:
+  type: negative-numbers
+  options: {}
+parameters:
+  T1:
+    min: -30
+    max: 40
+    step: 1
+    value: 5
+  dT:
+    min: -40
+    max: 40
+    step: 1
+    value: -12
+variables:
+- T_1
+- \Delta T
+- T_2
+derivation:
+- 'T_2 = 5 + (-12)'
+- 'T_2 = 5 - 12'
+- 'T_2 = -7'
+primary: dT
+presets:
+- T1: 5
+  dT: -12
+- T1: -3
+  dT: 10
+- T1: 0
+  dT: -25
+challenges:
+- check: T1 + dT
+  target: 0
+  tol: 0.5
+- check: T1 + dT < -20
+- check: T1 + dT > 30

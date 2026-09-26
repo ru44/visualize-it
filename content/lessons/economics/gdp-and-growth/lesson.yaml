@@ -1,0 +1,59 @@
+id: gdp-and-growth
+subject: economics
+difficulty: beginner
+equation: Y(t) = p\,(1+g/100)^t, \quad d \approx \dfrac{70}{g}
+concepts:
+  - gdp
+  - economic-growth
+  - rule-of-70
+related:
+  - compound-interest
+  - inflation
+visualization:
+  type: gdp-and-growth
+  options: {}
+primary: g
+parameters:
+  p:
+    min: 50
+    max: 5000
+    step: 50
+    value: 500
+    unit: $bn
+  g:
+    min: 0.5
+    max: 12
+    step: 0.25
+    value: 3
+    unit: "%/yr"
+  t:
+    min: 0
+    max: 60
+    step: 1
+    value: 20
+    unit: yr
+variables:
+  - Y
+  - p
+  - g
+  - t
+  - d
+derivation:
+  - Y(t) = p\,(1+g/100)^t
+  - "Y(d) = 2p \\quad \\Rightarrow \\quad (1+g/100)^d = 2"
+  - d \approx \dfrac{70}{g}
+presets:
+  - p: 2000
+    g: 1.5
+    t: 20
+  - p: 500
+    g: 5
+    t: 15
+  - p: 200
+    g: 9
+    t: 8
+challenges:
+  - check: (1+g/100)^t
+    target: 2
+  - check: 70/g < 8
+  - check: p < 300 and (1+g/100)^t > 3

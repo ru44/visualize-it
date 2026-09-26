@@ -1,0 +1,49 @@
+id: modular-patterns-and-clocks
+subject: discrete
+difficulty: beginner
+equation: n = q\cdot m + r, \quad 0 \le r < m
+concepts:
+  - remainder
+  - divisibility
+  - modular-arithmetic
+  - digit-sum-test
+prerequisites: []
+related:
+  - pigeonhole-and-counting
+  - sequences-and-recurrences
+visualization:
+  type: modular-patterns-and-clocks
+  options: {}
+parameters:
+  cols:
+    min: 3
+    max: 12
+    step: 1
+    value: 7
+  highlight:
+    min: 0
+    max: 47
+    step: 1
+    value: 23
+variables:
+  - n
+  - q
+  - m
+  - r
+derivation:
+  - '\text{arrange the whole numbers } 0,1,2,\dots \text{ in rows of length } m: \text{ each row is one full cycle}'
+  - n = q\cdot m + r \text{ where } q \text{ counts the full rows used and } r \text{ is how far into the next row}
+  - 0 \le r < m \text{ always, so every number with the same } r \text{ lands in the same column, the column of remainder } r
+charts: []
+primary: cols
+presets:
+  - cols: 7
+    highlight: 23
+  - cols: 10
+    highlight: 36
+  - cols: 11
+    highlight: 33
+challenges:
+  - check: 'abs(cols-7)<0.3 and mod(highlight,cols)==0'
+  - check: 'mod(floor(highlight/10)+mod(highlight,10),9)==0'
+  - check: 'mod(highlight,11)==0 and highlight>=11'
