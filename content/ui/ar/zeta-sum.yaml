@@ -1,12 +1,12 @@
 zeta.hint: اسحب النقطة على المنحنى
-zeta.works: هنا يستقر المجموع
+zeta.works: هنا يقف المجموع عند عدد
 zeta.fails: هنا يكبر المجموع بلا توقف
-zeta.beyond: هنا يصل السطح وحده
+zeta.beyond: هنا لا ينفع الجمع
 zeta.wall: الجدار
-zeta.adding: 'عدد الأعداد المجموعة: {n}'
+zeta.adding: 'جمعنا من الأعداد: {n}'
 zeta.total: المجموع حتى الآن
-zeta.curve: قيمة المنحنى
+zeta.curve: ارتفاع المنحنى
 zeta.none: لا قيمة هنا
-zeta.verdict: حال المجموع
-zeta.settles: يستقر
+zeta.verdict: المجموع
+zeta.settles: يقف عند عدد
 zeta.runs: يكبر بلا توقف
