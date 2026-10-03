@@ -1,0 +1,12 @@
+zeta.hint: drag the dot along the curve
+zeta.works: the sum settles here
+zeta.fails: the sum grows forever here
+zeta.beyond: only the surface reaches here
+zeta.wall: the wall
+zeta.adding: 'numbers added: {n}'
+zeta.total: total so far
+zeta.curve: value on the curve
+zeta.none: no value here
+zeta.verdict: the sum
+zeta.settles: settles
+zeta.runs: grows forever

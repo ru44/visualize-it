@@ -1,0 +1,50 @@
+id: sum-of-all-numbers
+subject: calculus
+difficulty: university
+equation: '\zeta(s) = 1^{-s} + 2^{-s} + 3^{-s} + \cdots, \qquad \zeta(-1) = -\frac{1}{12}'
+concepts:
+  - divergent-series
+  - zeta-function
+  - analytic-continuation
+prerequisites:
+  - limits-at-infinity
+related:
+  - improper-integrals
+  - taylor-series
+visualization:
+  type: zeta-sum
+  options: {}
+visualization3d:
+  type: zeta
+  options: {}
+parameters:
+  s:
+    min: -3
+    max: 4
+    step: 0.05
+    value: 2
+  N:
+    min: 1
+    max: 50
+    step: 1
+    value: 10
+variables:
+  - \zeta(s)
+  - s
+  - N
+derivation:
+  - '1 + 2 + 3 + \cdots + N = \frac{N(N+1)}{2}'
+  - '\zeta(s) = 1^{-s} + 2^{-s} + 3^{-s} + \cdots \qquad (s > 1)'
+  - '\zeta(2) = 1 + \frac{1}{4} + \frac{1}{9} + \cdots = \frac{\pi^2}{6}'
+  - '\zeta(-1) = -\frac{1}{12}'
+charts: []
+primary: s
+presets:
+  - { s: 2, N: 50 }
+  - { s: 1, N: 50 }
+  - { s: -1, N: 50 }
+  - { s: -3, N: 20 }
+challenges:
+  - { check: 'abs(s + 1) < 0.03' }
+  - { check: 'abs(s - 2) < 0.03 and N >= 40' }
+  - { check: 'abs(s + 2) < 0.03' }

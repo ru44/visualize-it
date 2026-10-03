@@ -81,3 +81,22 @@ ok2('Φ(−1) ≈ 0.1587', Math.abs(normalCdf(-1) - 0.1586553) < 2e-7, normalCdf
 ok2('68–95–99.7', Math.abs(normalCdf(1) - normalCdf(-1) - 0.6826895) < 3e-7 && Math.abs(normalCdf(2) - normalCdf(-2) - 0.9544997) < 3e-7, null)
 if (f2) { console.log(`\n${f2} FAILED (stats)`); process.exit(1) }
 console.log('all stats tests passed')
+
+// ---- zeta -------------------------------------------------------------------------------------
+import { zeta, zetaC } from '../src/engine/zeta'
+let f3 = 0
+const ok3 = (name: string, cond: boolean, got: unknown) => {
+  if (!cond) f3++
+  console.log(`${cond ? '✓' : '✗'} ${name}${cond ? '' : '  → got ' + JSON.stringify(got)}`)
+}
+ok3('ζ(2) = π²/6', near(zeta(2), Math.PI ** 2 / 6, 1e-10), zeta(2))
+ok3('ζ(4) = π⁴/90', near(zeta(4), Math.PI ** 4 / 90, 1e-10), zeta(4))
+ok3('ζ(−1) = −1/12', near(zeta(-1), -1 / 12, 1e-10), zeta(-1))
+ok3('ζ(0) = −1/2', near(zeta(0), -0.5, 1e-10), zeta(0))
+ok3('ζ(−2) = 0', Math.abs(zeta(-2)) < 1e-10, zeta(-2))
+ok3('ζ(−3) = 1/120', near(zeta(-3), 1 / 120, 1e-9), zeta(-3))
+ok3('ζ(1/2) ≈ −1.4603545', near(zeta(0.5), -1.4603545088, 1e-8), zeta(0.5))
+ok3('ζ(1/2 + 14.134725i) ≈ 0 (first zero)', Math.hypot(...zetaC(0.5, 14.134725142)) < 1e-6, zetaC(0.5, 14.134725142))
+ok3('ζ(2 + 3i) ≈ 0.7980 − 0.1138i', (() => { const [a, b] = zetaC(2, 3); return Math.abs(a - 0.7980219851) < 1e-7 && Math.abs(b + 0.1137443081) < 1e-7 })(), zetaC(2, 3))
+if (f3) { console.log(`\n${f3} FAILED (zeta)`); process.exit(1) }
+console.log('all zeta tests passed')
