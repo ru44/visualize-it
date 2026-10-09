@@ -29,19 +29,19 @@ home.start: Start with the first lesson
 home.how: How it works
 home.step1.t: 1 · Pick a topic
 home.step1.d: Choose a subject below, or type any equation you are curious about.
-home.step2.t: 2 · Play with it
-home.step2.d: Drag the picture or move a slider. The numbers change as you do.
-home.step3.t: 3 · Read why
-home.step3.d: A short plain-language explanation — the formal maths is there only if you want it.
+home.step2.t: 2 · Read the idea
+home.step2.d: A short story with real numbers explains what is going on, before any formula.
+home.step3.t: 3 · Try it yourself
+home.step3.d: Move a slider or drag the picture, then follow a few small steps to see the idea for yourself.
 home.subjects: Choose a subject
 home.subjects.d: Each subject is a short path of lessons, from the easiest idea upward.
 home.lessons: '{n|one=# lesson|other=# lessons}'
 home.demo: 'Move your pointer: the orange line shows how steep the curve is.'
 home.slope: steepness
-explore.placeholder: Type an equation, e.g. 2x + 5 = 17
+explore.placeholder: Type an equation here, e.g. 2x + 5 = 17
 explore.button: Show me
-explore.try: Try
-explore.help: You can type equations to solve, functions to draw, limits (lim) and integrals (∫).
+explore.try: Or tap an example
+explore.help: Ever wondered what an equation like 2x + 5 = 17 really says? Type one here, or tap an example below. We draw it and explain it in plain words.
 subject.back: All subjects
 subject.path: Follow the lessons in order, or jump to any one.
 subject.start: Start here
@@ -433,8 +433,8 @@ venn.complement: Aᶜ  complement
 guided.full: Full view
 guided.simple: Simple view
 guided.tryTitle: Try this
-guided.why: Why does this happen?
-guided.more: Tell me more
+guided.story: First, the idea
+guided.nowTry: Now try it yourself
 guided.showMaths: Show me the maths
 guided.hideMaths: Hide the maths
 guided.moreSliders: '{n|one=# more thing to change|other=# more things to change}'

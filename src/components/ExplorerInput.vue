@@ -25,7 +25,7 @@ function explore(q = query.value) {
         dir="ltr"
         :aria-label="t('lesson.equation')"
         :placeholder="t('explore.placeholder')"
-        class="num min-w-0 flex-1 bg-transparent py-2.5 text-[15px] outline-none placeholder:text-[var(--muted)] rtl:placeholder:text-right"
+        class="num min-w-0 flex-1 bg-transparent py-2.5 text-[15px] outline-none placeholder:text-[var(--muted)] rtl:placeholder:text-right rtl:placeholder:[direction:rtl]"
         autocomplete="off"
         spellcheck="false"
       />
