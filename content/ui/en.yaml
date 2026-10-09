@@ -435,6 +435,7 @@ guided.simple: Simple view
 guided.tryTitle: Try this
 guided.story: First, the idea
 guided.nowTry: Now try it yourself
+guided.more: Tell me more
 guided.showMaths: Show me the maths
 guided.hideMaths: Hide the maths
 guided.moreSliders: '{n|one=# more thing to change|other=# more things to change}'
