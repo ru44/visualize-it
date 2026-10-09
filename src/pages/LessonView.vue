@@ -32,11 +32,10 @@ const base = computed(() => (props.id ? getLesson(props.id) : buildAdhoc(query.v
 const lesson = computed(() => base.value && localize(base.value))
 const viz = computed(() => lesson.value && vizRegistry[lesson.value.visualization.type])
 
-// Guided view: the picture, one slider, concrete steps, then explanations revealed one at a time.
+// Guided view: the idea in plain words first, then the picture with one slider and concrete steps, maths folded.
 const primaryParam = computed(() => lesson.value?.primary ?? Object.keys(lesson.value?.parameters ?? {})[0])
-const revealed = ref(0)
 const showMaths = ref(false)
-watch(() => [props.id, query.value], () => ((revealed.value = 0), (showMaths.value = false)))
+watch(() => [props.id, query.value], () => (showMaths.value = false))
 const tryIt = computed(() => lesson.value?.tryIt ?? [])
 const doneSteps = reactive(new Set<number>())
 watch(() => props.id, () => doneSteps.clear())
@@ -104,6 +103,20 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
       <button class="rounded-[10px] border px-3 py-1.5 text-xs" style="border-color: var(--line); color: var(--muted)" @click="guided = false">{{ t('guided.full') }}</button>
     </header>
 
+    <section class="surface p-5">
+      <p class="label mb-3">{{ t('guided.story') }}</p>
+      <div class="space-y-4 text-[17px] leading-relaxed">
+        <p v-for="(tx, i) in lesson.explanation.intuition" :key="i"><MathText :text="tx" /></p>
+      </div>
+    </section>
+
+    <section v-if="lesson.realWorld.length" class="mt-6">
+      <h2 class="mb-2 text-lg font-semibold tracking-tight">{{ t('lesson.realWorld') }}</h2>
+      <ul class="divide-y" style="border-color: var(--line)"><li v-for="rw in lesson.realWorld" :key="rw.title" class="py-3 first:pt-0" style="border-color: var(--line)"><p class="font-medium">{{ rw.title }}</p><p class="text-sm leading-relaxed" style="color: var(--muted)"><MathText :text="rw.text" /></p></li></ul>
+    </section>
+
+    <h2 class="mt-8 text-xl font-semibold tracking-tight">{{ t('guided.nowTry') }}</h2>
+    <p class="mb-3 mt-1 text-sm" style="color: var(--muted)">{{ t('lesson.dragHint') }}</p>
     <section class="surface overflow-hidden">
       <div v-if="has3d" class="flex items-center justify-end gap-2 border-b px-3 py-1.5" style="border-color: var(--line)">
         <div class="flex gap-0.5 rounded-lg p-0.5 text-xs" style="background: var(--sunken)">
@@ -137,13 +150,9 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
     <Challenges class="mt-5" :challenges="lesson.challenges" :params="params" :lesson-id="id" />
 
     <section class="mt-5">
-      <button v-if="revealed < lesson.explanation.intuition.length" class="btn-primary w-full px-5 py-3 text-base" @click="revealed++">{{ revealed === 0 ? t('guided.why') : t('guided.more') }}</button>
-      <div v-if="revealed" class="surface mt-3 space-y-4 p-5 text-[17px] leading-relaxed">
-        <p v-for="(tx, i) in lesson.explanation.intuition.slice(0, revealed)" :key="i"><MathText :text="tx" /></p>
-        <div v-if="revealed >= lesson.explanation.intuition.length" class="flex flex-wrap gap-2 pt-1">
-          <button class="rounded-[10px] border px-4 py-2 text-sm" style="border-color: var(--line)" @click="showMaths = !showMaths">{{ showMaths ? t('guided.hideMaths') : t('guided.showMaths') }}</button>
-          <button class="rounded-[10px] border px-4 py-2 text-sm font-medium transition-colors" :style="progress.isDone(id) ? 'background: var(--pos); border-color: var(--pos); color: #fff' : 'border-color: var(--line)'" @click="progress.toggle(id)">{{ progress.isDone(id) ? t('progress.undo') : t('progress.markDone') }}</button>
-        </div>
+      <div class="flex flex-wrap gap-2">
+        <button class="rounded-[10px] border px-4 py-2 text-sm" style="border-color: var(--line)" @click="showMaths = !showMaths">{{ showMaths ? t('guided.hideMaths') : t('guided.showMaths') }}</button>
+        <button class="rounded-[10px] border px-4 py-2 text-sm font-medium transition-colors" :style="progress.isDone(id) ? 'background: var(--pos); border-color: var(--pos); color: #fff' : 'border-color: var(--line)'" @click="progress.toggle(id)">{{ progress.isDone(id) ? t('progress.undo') : t('progress.markDone') }}</button>
       </div>
       <div v-if="showMaths" class="surface mt-3 space-y-5 p-5">
         <div><p class="label mb-2">{{ t('lesson.equation') }}</p><div class="overflow-x-auto text-lg"><Katex :tex="lesson.equation" display /></div></div>
@@ -161,11 +170,6 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
         </div>
         <RouterLink to="/notation" class="block text-xs underline" style="color: var(--accent)">{{ t('lesson.notationLink') }}</RouterLink>
       </div>
-    </section>
-
-    <section v-if="lesson.realWorld.length && revealed >= lesson.explanation.intuition.length" class="mt-6">
-      <h2 class="mb-2 text-lg font-semibold tracking-tight">{{ t('lesson.realWorld') }}</h2>
-      <ul class="divide-y" style="border-color: var(--line)"><li v-for="rw in lesson.realWorld" :key="rw.title" class="py-3 first:pt-0" style="border-color: var(--line)"><p class="font-medium">{{ rw.title }}</p><p class="text-sm leading-relaxed" style="color: var(--muted)"><MathText :text="rw.text" /></p></li></ul>
     </section>
 
     <nav v-if="neighbours && (neighbours.prev || neighbours.next)" class="mt-10 grid gap-4 sm:grid-cols-2">
