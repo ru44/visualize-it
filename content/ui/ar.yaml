@@ -435,6 +435,7 @@ guided.simple: العرض المبسّط
 guided.tryTitle: جرّب هذا
 guided.story: الفكرة أولًا
 guided.nowTry: الآن جرّب بنفسك
+guided.more: أخبرني أكثر
 guided.showMaths: أرِني المعادلات
 guided.hideMaths: أخفِ المعادلات
 guided.moreSliders: '{n|one=شيء آخر يمكن تغييره|two=شيئان آخران يمكن تغييرهما|few=# أشياء أخرى يمكن تغييرها|other=# شيئًا آخر يمكن تغييره}'
