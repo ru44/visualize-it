@@ -1,0 +1,6 @@
+hw.hint: drag across the square to set p, the share of allele A in the gene pool
+hw.square: one random baby · egg × sperm
+hw.areas: 'the areas are the genotype shares: p², 2pq, q²'
+hw.village: the same shares as 100 villagers
+hw.legend: AA {aa} · Aa {ab} · aa {bb}
+hw.equilibrium: no selection, no migration, random mating — and these shares repeat, generation after generation

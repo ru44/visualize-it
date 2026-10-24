@@ -1,0 +1,4 @@
+rcc.hint: slide x to scrub time — the capacitor fills up and the current dies away
+rcc.charged: charged
+rcc.scrub: drag here to scrub t
+rcc.caption: after one τ = {tau} s the gap to full is cut to 37% — five τ and it is done

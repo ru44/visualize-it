@@ -1,0 +1,8 @@
+acp.hint: slide φ — the volts and amps stay big, yet the lamp can still starve
+acp.phasors: v and i spinning at 50 Hz (slowed), with φ held between them
+acp.lag: the current runs this far behind the voltage
+acp.lamp: the lamp runs on average power only
+acp.starved: power factor near zero — energy just sloshes back and forth
+acp.pf: power factor cos φ = {pf}
+acp.window: avg over [a, b]
+acp.windowLabel: window average = {w} W

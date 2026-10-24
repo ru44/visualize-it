@@ -13,16 +13,7 @@ related:
   - series-parallel
   - rlc-resonance
 visualization:
-  type: function-plot
-  options:
-    expr: V0*I0*sin(2*pi*50*x)*sin(2*pi*50*x - phi)
-    domain:
-      - 0
-      - 0.04
-    range:
-      - -55
-      - 55
-    mode: area
+  type: ac-power
 parameters:
   V0:
     min: 1

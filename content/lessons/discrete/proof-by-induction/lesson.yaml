@@ -12,16 +12,7 @@ prerequisites:
 related:
   - sequences-and-recurrences
 visualization:
-  type: function-plot
-  options:
-    expr: x*(x+1)/2
-    domain:
-      - 0
-      - 20
-    range:
-      - 0
-      - 210
-    mode: plain
+  type: domino-induction
 parameters:
   x:
     min: 0

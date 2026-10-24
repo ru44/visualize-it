@@ -22,9 +22,9 @@ charts:
 
 ## Try it
 
-1. Drag $p$ toward 0.5 and watch the "one of each" group (Aa) become the largest share.
-2. Drag $p$ close to 1. The "two A" group takes over almost the whole population.
-3. Drag $p$ close to 0. The "two a" group takes over instead.
+1. Drag $p$ toward 0.5 and watch the square split into four equal patches — the "one of each" group (Aa) becomes the largest share, 50 of the 100 villagers.
+2. Drag $p$ close to 1. The AA patch floods the square, and the "two A" villagers take over almost the whole population.
+3. Drag $p$ close to 0. The "two a" corner takes over instead — the same counting, mirrored.
 
 ## Real-life examples
 

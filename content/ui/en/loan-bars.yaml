@@ -1,0 +1,13 @@
+loan.hint: drag across the bars to inspect any month — every bar is the same payment, split differently
+loan.title: every month you pay {pay} — the split is what changes
+loan.payment: monthly payment
+loan.interestNow: interest in month {m}
+loan.principalNow: principal that month
+loan.balance: balance left
+loan.totalInterest: total interest over the loan
+loan.tipping: 'month {m}: principal starts winning'
+loan.month: month {m}
+loan.legendInterest: interest (the bank's slice)
+loan.legendPrincipal: principal (pays the debt)
+loan.legendBalance: remaining balance
+loan.caption: borrow {loan} and hand the bank {total} in interest on top — the red wedge is why early extra payments punch so hard

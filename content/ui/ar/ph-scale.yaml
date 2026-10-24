@@ -1,0 +1,15 @@
+phx.hint: اسحب المؤشر على الطرف الحمضي — كل درجة pH قفزة ×10 في H⁺
+phx.stomach: حمض المعدة
+phx.lemon: ليمون
+phx.vinegar: خل
+phx.tomato: طماطم
+phx.milk: حليب
+phx.water: ماء نقي
+phx.soap: صابون
+phx.bleach: مُبيّض
+phx.acidZone: 'منزلقك يغطي هذا الطرف الحمضي: من pH 1 إلى 4'
+phx.beaker: 'H⁺ في الكأس، بمقياس حقيقي: {n} {n|one=نقطة|two=نقطتان|few=نقاط|many=نقطة|other=نقطة}'
+phx.ladder: سُلّم العشرة أضعاف
+phx.ladderNote: درجة pH واحدة نزولًا = عشرة أضعاف أيونات H⁺ في الكأس نفسها
+phx.waterNote: ×{n} أكثر حموضة من الماء النقي (pH 7)
+phx.vsWater: مقارنةً بالماء النقي

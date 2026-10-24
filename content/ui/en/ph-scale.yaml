@@ -1,0 +1,15 @@
+phx.hint: drag the marker along the acid end — each pH step is a ×10 jump in H⁺
+phx.stomach: stomach acid
+phx.lemon: lemon
+phx.vinegar: vinegar
+phx.tomato: tomato
+phx.milk: milk
+phx.water: pure water
+phx.soap: soap
+phx.bleach: bleach
+phx.acidZone: 'your slider covers this acid end: pH 1 to 4'
+phx.beaker: 'H⁺ in the beaker, to scale: {n} {n|one=dot|other=dots}'
+phx.ladder: the tenfold ladder
+phx.ladderNote: one pH step down = ten times more H⁺ ions in the same glass
+phx.waterNote: ×{n} more acidic than pure water (pH 7)
+phx.vsWater: vs pure water

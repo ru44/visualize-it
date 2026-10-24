@@ -15,16 +15,7 @@ related:
   - chemical-equilibrium
   - titration-curve
 visualization:
-  type: function-plot
-  options:
-    expr: E0 - (0.05916/n)*log10(x)
-    domain:
-      - 0.001
-      - 1000
-    range:
-      - 0
-      - 2
-    mode: plain
+  type: galvanic-cell
 parameters:
   E0:
     min: 0.1

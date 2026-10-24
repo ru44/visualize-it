@@ -12,16 +12,7 @@ related:
   - gps-and-time
   - mass-energy-equivalence
 visualization:
-  type: function-plot
-  options:
-    expr: 1/sqrt(1-x^2)
-    domain:
-      - 0
-      - 0.99
-    range:
-      - 0
-      - 8
-    mode: tangent
+  type: light-clock
 primary: x
 parameters:
   x:

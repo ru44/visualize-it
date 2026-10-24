@@ -12,16 +12,7 @@ prerequisites:
 related:
   - natural-selection
 visualization:
-  type: function-plot
-  options:
-    expr: 2*x*(1-x)
-    domain:
-      - 0
-      - 1
-    range:
-      - 0
-      - 1
-    mode: plain
+  type: hardy-weinberg
 parameters:
   x:
     min: 0

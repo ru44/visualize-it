@@ -19,9 +19,9 @@ variables:
 
 ## Try it
 
-1. Watch the shaded area between markers a and b. It is the energy delivered in that window.
-2. Raise the slider "phase lag φ" toward its maximum. Watch the shaded area dip below zero more and more.
-3. Set a = 0 and b = 0.02 s (one full cycle) and read the average-power value. It shrinks as φ grows.
+1. Watch the two spinning arrows: voltage leads, current trails φ behind. Their product is the blue power curve below, and the shaded patch between a and b is the energy delivered in that window.
+2. Raise the slider "phase lag φ" toward its maximum. The arrows pull apart, the curve dips below zero more and more, and the lamp dims although V0 and I0 never changed.
+3. Set a = 0 and b = 0.02 s (one full cycle) and read the window average. It matches ½V0I0·cos φ — and shrinks as φ grows.
 
 ## Real-life examples
 

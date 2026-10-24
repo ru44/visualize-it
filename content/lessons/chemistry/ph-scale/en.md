@@ -13,9 +13,9 @@ variables:
 
 ## Try it
 
-1. Drag the point «[H⁺]» left, toward tiny concentrations. Watch pH climb.
-2. Drag it right instead, toward larger concentrations. Watch pH fall.
-3. Notice how the curve steepens near zero — that bending tangent is the signature of a logarithm.
+1. Drag the marker toward the red end of the strip. The pH falls toward stomach acid, and the crowd of H⁺ dots in the beaker thickens.
+2. Drag it the other way, toward the tomato at pH 4. The pH climbs and the beaker almost empties.
+3. Step the pH from 3 to 2 and watch the beaker — one unit along the strip means ten times the ions, the signature of a logarithm.
 
 ## Real-life examples
 
@@ -31,7 +31,7 @@ variables:
 
 ## Intuition
 
-Picture lemon juice, with about 0.01 mol/L of hydrogen ions, next to black coffee, with roughly a thousand times fewer. On screen, drag the point left, toward tinier concentrations, and pH climbs; drag it right, toward larger concentrations, and pH falls. Near $[\mathrm{H^+}] = 0.1$ the curve is almost flat, but as you approach zero it shoots upward — that steep bend is the signature of a logarithm.
+Picture lemon juice, with about 0.01 mol/L of hydrogen ions, next to black coffee, with roughly a thousand times fewer. On screen both sit on the same 0–14 strip, alongside stomach acid, vinegar and bleach. Drag the marker and watch the beaker underneath: every single step down the strip multiplies the crowd of H⁺ dots by ten, starting from $[\mathrm{H^+}] = 0.1$ at the acid end — which is how a strip of just fourteen steps covers a more than trillion-fold range.
 
 Because the scale is logarithmic, moving from pH 5 to pH 4 is not a small change — it means ten times more hydrogen ions. Two solutions three pH units apart differ in acidity by a factor of 1000, even though their pH values sit close together on the slider.
 
