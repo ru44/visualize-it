@@ -1,0 +1,22 @@
+nas.hint: pick a layout with mode, then pull a disk with dead — watch which layout keeps your photos
+nas.box: the NAS — your own cloud at home
+nas.stripe: stripe (RAID 0)
+nas.mirror: mirror (RAID 1)
+nas.parity: parity (RAID 5)
+nas.disks: disks
+nas.mode: layout
+nas.raw: raw space
+nas.usable: usable space
+nas.oneDead: one disk dies…
+nas.ok: files survive
+nas.lostAll: everything is lost
+nas.gone: the stripes on the dead disk are gone — the file cannot be reassembled
+nas.copySaves: the mirror copy takes over without missing a beat
+nas.rebuild: the missing stripes are recomputed from parity — slower, but nothing lost
+nas.pull: set dead to 1 to pull the first disk
+nas.capacity: capacity
+nas.usableOf: '{u} TB usable of {raw} TB raw'
+nas.stripeNote: all the space, none of the safety
+nas.mirrorNote: half the space, every byte twice
+nas.parityNote: one disk's worth pays for the safety net
+nas.caption: a NAS is a box of disks on your network — RAID decides how the box spends space to buy safety

@@ -503,6 +503,8 @@ subject.cosmos: The universe & particles
 subjectd.cosmos: 'Dark matter, dark energy, quarks and quasars: how we know about things we cannot see.'
 subject.nuclear: Nuclear physics
 subjectd.nuclear: "Inside the atom's core: why nuclei hold together, why some fall apart, and how fission and fusion release energy."
+subject.networking: Networks & the internet
+subjectd.networking: 'How your data travels: routers, Wi-Fi, Bluetooth, VPN tunnels, private clouds and the box of disks that never forgets.'
 dots.sec: '{n|one=# second|other=# seconds}'
 dots.min: '{n|one=# minute|other=# minutes}'
 dots.hour: '{n|one=# hour|other=# hours}'

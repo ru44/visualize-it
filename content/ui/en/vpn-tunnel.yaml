@@ -1,0 +1,17 @@
+vpn.hint: flip the vpn switch and watch what the ISP's eye can still read
+vpn.you: your laptop
+vpn.pipe: the encrypted tunnel
+vpn.server: VPN server
+vpn.site: the site
+vpn.ispSees: your ISP sees
+vpn.encrypted: one pipe, destination hidden, contents sealed
+vpn.tunnel: tunnel
+vpn.on: ON
+vpn.off: OFF
+vpn.overhead: wrapper per packet
+vpn.efficiency: efficiency
+vpn.siteSees: the site sees
+vpn.vpnAddr: the VPN server's address
+vpn.homeAddr: your home address
+vpn.goodput: 'your data: G = {g} Mbps'
+vpn.caption: a VPN hides where you go from your ISP and where you are from the site — the wrapper bytes are the fare

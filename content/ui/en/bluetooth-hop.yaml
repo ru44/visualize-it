@@ -1,0 +1,12 @@
+bt.hint: raise k and watch the crowded band — your pair hops in sync, rivals land where they like
+bt.channels: channels
+bt.rivals: rival pairs nearby
+bt.rate: hops per second
+bt.phone: your phone
+bt.earbud: your earbud
+bt.myCh: 'channel {c}'
+bt.hopNo: 'hop №{n}'
+bt.clash: collision! a rival landed on your channel
+bt.clear: channel clear — packet delivered
+bt.retry: a clash costs one hop, and at 1600 hops a second the retry lands 625 µs later
+bt.caption: both sides compute the same hop sequence from the pairing secret, so they jump together without ever announcing where

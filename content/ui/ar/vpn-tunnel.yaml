@@ -1,0 +1,17 @@
+vpn.hint: اقلب مفتاح vpn وراقب ما تستطيع عين مزوّد الإنترنت قراءته بعدُ
+vpn.you: حاسوبك
+vpn.pipe: النفق المشفّر
+vpn.server: خادم VPN
+vpn.site: الموقع
+vpn.ispSees: مزوّد الإنترنت يرى
+vpn.encrypted: أنبوب واحد، وجهة مخفية، ومحتوى مختوم
+vpn.tunnel: النفق
+vpn.on: يعمل
+vpn.off: متوقف
+vpn.overhead: الغلاف لكل رزمة
+vpn.efficiency: الكفاءة
+vpn.siteSees: الموقع يرى
+vpn.vpnAddr: عنوان خادم VPN
+vpn.homeAddr: عنوان بيتك
+vpn.goodput: 'بياناتك: G = {g} ميغابت/ث'
+vpn.caption: يخفي VPN وجهتك عن مزوّد الإنترنت، ومكانك عن الموقع — وبايتات الغلاف هي أجرة الرحلة
