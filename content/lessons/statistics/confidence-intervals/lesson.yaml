@@ -1,0 +1,49 @@
+id: confidence-intervals
+subject: statistics
+difficulty: high-school
+equation: m \pm z\dfrac{\sigma}{\sqrt{n}}
+concepts:
+- confidence-interval
+- standard-error
+- sampling
+- estimation
+prerequisites:
+- normal-distribution
+- mean-and-spread
+related:
+- hypothesis-testing
+- sampling-and-polls
+visualization:
+  type: forest-of-intervals
+parameters:
+  n:
+    min: 4
+    max: 400
+    step: 4
+    value: 24
+  z:
+    min: 0.5
+    max: 3
+    step: 0.01
+    value: 1.96
+variables:
+- m
+- z
+- \sigma
+derivation:
+- \text{sample means scatter around } \mu \text{ with spread } \dfrac{\sigma}{\sqrt{n}}
+- m \pm z\dfrac{\sigma}{\sqrt{n}} \text{ catches } \mu \text{ whenever } m \text{ lands within } z \text{ standard errors of it}
+- z = 1.96 \Rightarrow \text{about 95 of every 100 intervals catch } \mu
+charts: []
+primary: z
+presets:
+- n: 24
+  z: 1.96
+- n: 100
+  z: 1.96
+- n: 24
+  z: 1
+challenges:
+- check: abs(z - 1.96) < 0.015
+- check: 2*z*10/sqrt(n) <= 2
+- check: abs(z - 2.58) < 0.02 and n <= 50

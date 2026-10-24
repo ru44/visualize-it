@@ -1,0 +1,58 @@
+id: sampling-and-polls
+subject: statistics
+difficulty: high-school
+equation: E = 1.96\sqrt{\dfrac{p(1-p)}{n}}
+concepts:
+- sampling
+- margin-of-error
+- bias
+- polling
+prerequisites:
+- probability-basics
+- confidence-intervals
+related:
+- hypothesis-testing
+- mean-and-spread
+visualization:
+  type: poll-sample
+parameters:
+  p:
+    min: 20
+    max: 80
+    step: 1
+    value: 52
+    unit: "%"
+  n:
+    min: 50
+    max: 5000
+    step: 50
+    value: 1000
+  bias:
+    min: 0
+    max: 10
+    step: 0.5
+    value: 0
+    unit: "%"
+variables:
+- E
+- p
+derivation:
+- E = 1.96\sqrt{\dfrac{p(1-p)}{n}}
+- n = 1000, p = 0.5 \Rightarrow E = 0.031
+- \text{quadrupling } n \text{ only halves } E \text{ and bias survives any } n
+charts: []
+primary: n
+presets:
+- p: 52
+  n: 1000
+  bias: 0
+- p: 52
+  n: 200
+  bias: 0
+- p: 52
+  n: 5000
+  bias: 5
+challenges:
+- check: 1.96*sqrt((p/100)*(1 - p/100)/n)*100 <= 1.5 and bias < 0.25
+- check: abs(n - 200) < 1 and 1.96*sqrt((p/100)*(1 - p/100)/n)*100 >= 6.9
+- check: bias >= 4.5 and n >= 4500

@@ -1,0 +1,6 @@
+ci.hint: thirty labs, one truth — widen z or grow n and watch who still misses
+ci.forest: caught the truth here
+ci.theory: theoretical catch rate
+ci.labs: 30 labs, same experiment
+ci.missed: '{n} {n|one=interval|other=intervals} missed'
+ci.caption: a confidence level is a promise about the method, not about any single interval
