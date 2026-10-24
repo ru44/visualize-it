@@ -26,6 +26,7 @@ export type Subject =
   | 'cryptography'
   | 'cosmos'
   | 'nuclear'
+  | 'networking'
 export type Difficulty = 'beginner' | 'high-school' | 'university' | 'advanced'
 
 export interface Video {

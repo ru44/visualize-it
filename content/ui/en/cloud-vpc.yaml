@@ -1,0 +1,9 @@
+vpc.hint: slide p to carve the block finer — more subnets, fewer addresses each
+vpc.internet: the internet
+vpc.igw: internet gateway
+vpc.fence: nothing crosses this fence uninvited
+vpc.block: rented block
+vpc.public: public subnets
+vpc.private: private subnets
+vpc.more: '+{n} more subnets'
+vpc.caption: 'each tile holds {h} usable addresses — the 🌍 tiles face the world, the 🔒 tiles can only be reached from inside'

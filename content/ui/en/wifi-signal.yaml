@@ -1,0 +1,7 @@
+wifi.hint: drag the phone across the floor plan — distance and walls both eat the signal
+wifi.router: Wi-Fi router
+wifi.bars: signal bars
+wifi.speed: usable speed
+wifi.budget: transmit power, minus the first-metre cost, minus distance, minus walls
+wifi.dead: dead zone — the signal drowned below the noise
+wifi.caption: radio fades with the square of distance, and every wall takes its own fixed bite

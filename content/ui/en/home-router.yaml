@@ -1,0 +1,11 @@
+rtr.hint: slide d and p — every gadget gets a private address, the world sees only one
+rtr.home: your home
+rtr.router: router
+rtr.natTable: NAT table (who asked for what)
+rtr.internet: the internet
+rtr.subnet: private subnet
+rtr.capacity: addresses available
+rtr.devices: devices connected
+rtr.publicIp: public address (shared)
+rtr.full: 'subnet full — {cap} addresses are not enough for this house'
+rtr.caption: the router rewrites every outgoing packet onto the one public address, and its table routes every reply back to the right gadget

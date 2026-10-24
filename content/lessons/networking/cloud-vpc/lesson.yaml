@@ -1,0 +1,50 @@
+id: cloud-vpc
+subject: networking
+difficulty: high-school
+equation: S = 2^{p-16}, \qquad H = 2^{32-p} - 2
+concepts:
+- vpc
+- cloud
+- subnet
+- gateway
+- security
+prerequisites:
+- routers
+- vpn
+related:
+- nas-and-raid
+- vpn
+visualization:
+  type: cloud-vpc
+parameters:
+  p:
+    min: 18
+    max: 26
+    step: 1
+    value: 20
+  pub:
+    min: 1
+    max: 4
+    step: 1
+    value: 1
+variables:
+- S
+- H
+- p
+derivation:
+- \text{the rented block holds } 2^{16} = 65536 \text{ addresses}
+- S = 2^{p-16}
+- H = 2^{32-p} - 2
+charts: []
+primary: p
+presets:
+- p: 20
+  pub: 1
+- p: 18
+  pub: 2
+- p: 24
+  pub: 4
+challenges:
+- check: abs(2^(p-16) - 16) < 0.5
+- check: 2^(32-p) - 2 >= 4000
+- check: abs(2^(p-16) - 16) < 0.5 and pub < 1.5

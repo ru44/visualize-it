@@ -1,0 +1,46 @@
+id: routers
+subject: networking
+difficulty: beginner
+equation: H = 2^{32-p} - 2
+concepts:
+- router
+- nat
+- ip-address
+- subnet
+prerequisites: []
+related:
+- wifi
+- vpn
+visualization:
+  type: home-router
+parameters:
+  p:
+    min: 24
+    max: 30
+    step: 1
+    value: 24
+  d:
+    min: 1
+    max: 8
+    step: 1
+    value: 4
+variables:
+- H
+- p
+derivation:
+- H = 2^{32-p} - 2
+- p = 24 \Rightarrow H = 2^{8} - 2 = 254
+- p = 30 \Rightarrow H = 2^{2} - 2 = 2
+charts: []
+primary: d
+presets:
+- p: 24
+  d: 4
+- p: 30
+  d: 2
+- p: 24
+  d: 8
+challenges:
+- check: abs(2^(32-p) - 2 - 254) < 0.5
+- check: abs(2^(32-p) - 2 - 2) < 0.5
+- check: d > 7.5
