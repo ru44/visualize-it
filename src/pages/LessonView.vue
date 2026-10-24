@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, defineAsyncComponent, nextTick, reactive, ref, watch } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { getLesson, lessons } from '../lessons'
 import { localize, hasTranslation } from '../lessons/localize'
 import { buildAdhoc } from '../engine/adhoc'
@@ -66,9 +66,29 @@ watch(level, async () => {
 function reset() {
   for (const k of Object.keys(params)) delete params[k]
   for (const [k, spec] of Object.entries(base.value?.parameters ?? {})) params[k] = spec.value
+  // A shared link carries its sliders as ?p.name=value — restore them over the defaults.
+  for (const [k, v] of Object.entries(route.query)) {
+    if (!k.startsWith('p.')) continue
+    const n = Number(v)
+    if (Number.isFinite(n)) setParam(k.slice(2), n)
+  }
 }
 // Reset only when the lesson itself changes — not when its text is re-translated.
 watch(() => [props.id, query.value], reset, { immediate: true })
+
+// Mirror the sliders back into the URL (debounced), so the address bar is always a shareable snapshot.
+const router = useRouter()
+let urlTimer = 0
+watch(params, () => {
+  clearTimeout(urlTimer)
+  urlTimer = window.setTimeout(() => {
+    if (!base.value || !props.id) return
+    const q: Record<string, string> = {}
+    for (const [k, v] of Object.entries(route.query)) if (!k.startsWith('p.') && v != null) q[k] = String(v)
+    for (const [k, v] of Object.entries(params)) if (base.value.parameters[k] && v !== base.value.parameters[k].value) q['p.' + k] = String(v)
+    router.replace({ query: q }).catch(() => {})
+  }, 350)
+})
 
 function loadPreset(values: Record<string, number>) {
   for (const [k, v] of Object.entries(values)) setParam(k, v)
@@ -92,6 +112,11 @@ const neighbours = computed(() => {
 const linked = (ids: string[]) => ids.map((id) => ({ id, lesson: getLesson(id) && localize(getLesson(id)!) }))
 const glossary = computed(() => (lesson.value?.symbols ?? []).map((tok) => ({ tok, e: notation.value[tok] })).filter((x) => x.e))
 const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--accent-2)' }
+const reportUrl = computed(() => {
+  const title = encodeURIComponent(`[lesson] ${lesson.value?.title ?? props.id ?? ''}`)
+  const body = encodeURIComponent(`Lesson: ${location.href}\n\nWhat is wrong:\n`)
+  return `https://github.com/ru44/visualize-it/issues/new?title=${title}&body=${body}`
+})
 </script>
 
 <template>
@@ -130,7 +155,7 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
           </div>
         </div>
         <Scene3D v-if="show3d" :type="lesson.visualization3d!.type" :options="lesson.visualization3d!.options" :params="params" @set="setParam" />
-        <component :is="viz" v-else-if="viz" :params="params" :options="lesson.visualization.options" @set="setParam" />
+        <component :is="viz" v-else-if="viz" role="group" :aria-label="lesson.title" :params="params" :options="lesson.visualization.options" @set="setParam" />
         <div v-if="primaryParam && lesson.parameters[primaryParam]" class="border-t px-5 py-4" style="border-color: var(--line)">
           <ParamSlider :name="primaryParam" :spec="lesson.parameters[primaryParam]" :value="params[primaryParam]" @set="setParam" />
           <RealLife v-if="lesson.presets.length" class="mt-4" :presets="lesson.presets" :lesson-id="id" @load="loadPreset" />
@@ -240,7 +265,7 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
           </div>
         </div>
         <Scene3D v-if="show3d" :type="lesson.visualization3d!.type" :options="lesson.visualization3d!.options" :params="params" @set="setParam" />
-        <component :is="viz" v-else-if="viz" :params="params" :options="lesson.visualization.options" @set="setParam" />
+        <component :is="viz" v-else-if="viz" role="group" :aria-label="lesson.title" :params="params" :options="lesson.visualization.options" @set="setParam" />
         <p v-if="has3d && settings.isPhone && !view3d" class="border-t px-4 py-2 text-xs" style="border-color: var(--line); color: var(--muted)">{{ t('three.phone') }}</p>
       </section>
 
@@ -374,6 +399,11 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
     </div>
 
     <VideoList v-if="id" class="mt-12" :videos="lesson.videos ?? []" :search-query="`${lesson.title} ${t('videos.explained')}`" />
+
+    <p v-if="id" class="mt-10 text-sm" style="color: var(--muted)">
+      {{ t('lesson.reportQ') }}
+      <a :href="reportUrl" target="_blank" rel="noopener" class="underline hover:text-[var(--fg)]">{{ t('lesson.reportA') }}</a>
+    </p>
 
     <nav v-if="neighbours && (neighbours.prev || neighbours.next)" class="mt-14 grid gap-4 sm:grid-cols-2">
       <RouterLink v-if="neighbours.prev" :to="`/lesson/${neighbours.prev.id}`" class="surface lift p-4">
