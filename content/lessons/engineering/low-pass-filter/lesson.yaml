@@ -16,16 +16,7 @@ related:
   - decibels
   - fourier-series
 visualization:
-  type: function-plot
-  options:
-    expr: 20*log10(1/sqrt(1 + (x/fc)^2))
-    domain: [1, 1000]
-    range: [-45, 3]
-    mode: plain
-  charts:
-    - domain: [1, 1000]
-      series:
-        - -atan(x/fc)*180/pi
+  type: filter-box
 parameters:
   fc:
     min: 10

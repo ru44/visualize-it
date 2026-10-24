@@ -12,16 +12,7 @@ prerequisites:
 related:
   - price-controls
 visualization:
-  type: function-plot
-  options:
-    expr: x*(a - b*x)
-    domain:
-      - 0
-      - 50
-    range:
-      - 0
-      - 1300
-    mode: tangent
+  type: market-stall
 parameters:
   a:
     min: 50

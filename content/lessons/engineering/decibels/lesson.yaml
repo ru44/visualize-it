@@ -11,16 +11,7 @@ prerequisites:
 related:
   - low-pass-filter
 visualization:
-  type: function-plot
-  options:
-    expr: 10*log10(x)
-    domain: [1, 1000000]
-    range: [0, 65]
-    mode: plain
-  charts:
-    - domain: [0, 10]
-      series:
-        - 10*log10(2^x)
+  type: loudness-ladder
 parameters:
   x:
     min: 1

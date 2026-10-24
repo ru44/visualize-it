@@ -1,0 +1,6 @@
+nrg.hint: set the launch speed — the ball coasts exactly as high as its kinetic energy can pay for
+nrg.launch: 'launched at {v} m/s'
+nrg.top: 'coasts to h = {h} m'
+nrg.bars: same energy, two forms
+nrg.swap: every joule of motion buys exactly one joule of height — and back again on the way down
+nrg.caption: double the speed and the ball climbs four times as high — the v² is the whole story

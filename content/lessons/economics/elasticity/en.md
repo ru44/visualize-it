@@ -24,9 +24,9 @@ charts:
 
 ## Try it
 
-1. Watch the revenue curve. Drag $x$, the price, up from a low value and see it climb.
-2. Keep dragging $x$ higher. At some point the tangent line on the curve flattens, then tips down — revenue has started falling instead of rising.
-3. Check the elasticity chart below: it crosses the value 1 at exactly the price where the tangent went flat.
+1. Drag $x$, the price, up from a low value and watch the shaded rectangle — price × buyers — grow with it.
+2. Keep dragging $x$ higher. Past the |E| = 1 flag the queue thins faster than the price rises, and the rectangle starts shrinking instead.
+3. Check the elasticity chart below: it crosses the value 1 at exactly the price where the rectangle peaks.
 
 ## Real-life examples
 
@@ -42,9 +42,9 @@ charts:
 
 ## Intuition
 
-Imagine a concert where a free ticket would draw 100 fans, but every extra dollar on the price scares off 2 of them — that relationship is the demand line on screen. At a ticket price of 20, 60 fans still buy, and the tangent line on the revenue curve below still points up: the extra dollar you gain from everyone who stays outweighs the value of the few fans you lose. Demand is inelastic here, meaning buyers barely react to the price.
+Imagine a concert where a free ticket would draw 100 fans, but every extra dollar on the price scares off 2 of them — that relationship is the demand line on screen. At a ticket price of 20, 60 fans still buy, and the revenue rectangle under the line is still growing: the extra dollar you gain from everyone who stays outweighs the value of the few fans you lose. Demand is inelastic here, meaning buyers barely react to the price.
 
-Now drag $x$, the price, higher still: past some point the tangent line flattens, then tips down — each further price rise now loses more ticket sales than it gains in extra revenue per ticket, and demand has become elastic. The elasticity chart below crosses the value 1 exactly where that tangent goes flat, marking the single price that earns the most total revenue.
+Now drag $x$, the price, higher still: past the flag where the rectangle peaks, each further price rise loses more ticket sales than it gains in extra revenue per ticket, and demand has become elastic. The elasticity chart below crosses the value 1 exactly at that peak, marking the single price that earns the most total revenue.
 
 ## Formal
 

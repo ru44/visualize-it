@@ -20,9 +20,9 @@ charts:
 
 ## Try it
 
-1. Watch the point at low speed on the curve.
-2. Drag the point from low to high speed. Watch the tangent line get steeper as you go.
-3. Compare speed v with speed 2v — the curve's height doesn't just double, it quadruples.
+1. Set a low speed and read the bars: a gentle throw carries only a few joules, and the ghost ball barely leaves the ground.
+2. Drag the speed up and watch the ghost climb — each extra unit of speed buys more height than the last one did.
+3. Compare speed v with speed 2v — the coasting height doesn't just double, it quadruples.
 
 ## Real-life examples
 
@@ -38,9 +38,9 @@ charts:
 
 ## Intuition
 
-Picture a 0.6 kg basketball thrown at 8 m/s: it carries about 19 joules of kinetic energy, the energy of motion. Drag the point from low to high speed along the curve: it doesn't rise steadily, it bends upward, and the tangent line gets visibly steeper as you go, meaning each extra unit of speed adds more energy than the last one did.
+Picture a 0.6 kg basketball thrown at 8 m/s: it carries about 19 joules of kinetic energy, the energy of motion. Drag the speed slider from low to high and watch the ghost ball's resting height: it doesn't rise steadily, it leaps — each extra unit of speed adds more energy, and buys more height, than the last one did.
 
-Go from speed v to speed 2v instead: the curve's height doesn't merely double, it quadruples, because doubling a number and squaring it multiplies the result by four. That's the physical reason braking distance from double the speed is roughly four times longer — all that extra kinetic energy has to be removed by the same friction force over a longer stopping distance.
+Go from speed v to speed 2v instead: the coasting height doesn't merely double, it quadruples, because doubling a number and squaring it multiplies the result by four. That's the physical reason braking distance from double the speed is roughly four times longer — all that extra kinetic energy has to be removed by the same friction force over a longer stopping distance.
 
 ## Formal
 

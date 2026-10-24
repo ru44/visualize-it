@@ -14,17 +14,7 @@ related:
   - velocity-time-area
   - projectile-motion
 visualization:
-  type: function-plot
-  options:
-    expr: x0 + v0*x + 0.5*a*x^2
-    domain:
-      - 0
-      - 10
-    range:
-      - -10
-      - 60
-    mode: tangent
-    showDerivative: true
+  type: kinematics-road
 parameters:
   x0:
     min: -5

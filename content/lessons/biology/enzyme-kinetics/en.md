@@ -26,13 +26,13 @@ charts:
 
 ## Try it
 
-1. Watch the curve sit near zero at low substrate concentration — almost no reaction happening yet.
-2. Drag [S] up steadily. The rate climbs fast at first, almost one enzyme molecule per substrate molecule.
-3. Keep dragging past Km. The curve flattens out, creeping toward Vmax but never quite touching it.
+1. Start at low [S] and watch the bench: substrate is scarce, most machines sit idle, and the rate meter barely lifts.
+2. Drag [S] up to Km. Exactly half the enzymes light up busy and the meter reads half of Vmax — that is all Km means.
+3. Keep dragging past Km. The cloud thickens but the bench is already nearly full — the meter creeps toward Vmax and flattens, machines saturated.
 
 ## Real-life examples
 
-- **Lactase digesting milk sugar.** A fast, sensitive enzyme (Vmax = 8, Km = 1.5) working on a modest amount of lactose ([S] = 3) is already well up its curve, breaking sugar down quickly.
+- **Lactase digesting milk sugar.** A fast, sensitive enzyme (Vmax = 8, Km = 1.5) working on a modest amount of lactose ([S] = 3) already keeps most of the bench busy, breaking sugar down quickly.
 - **Alcohol dehydrogenase clearing ethanol.** The liver's enzyme (Vmax = 4, Km = 4) working at a matching substrate level ([S] = 4) runs at exactly half speed — this is part of what keeps blood-alcohol clearance roughly steady.
 - **An enzyme swamped with substrate.** With plenty of substrate available ([S] = 25) and a moderate Km = 2, the enzyme is almost completely saturated, running close to its ceiling, Vmax = 5.
 
@@ -44,9 +44,9 @@ charts:
 
 ## Intuition
 
-Your saliva contains an enzyme called amylase that starts breaking down starch into sugar the moment you start chewing bread — but only up to a point. Drag the substrate-concentration slider, $[S]$, up from zero. The reaction rate climbs steeply at first: with few substrate molecules around, every enzyme quickly finds one to bind. Watch the curve bend over as $[S]$ keeps growing. Eventually nearly every enzyme is already busy, so adding more substrate barely helps, and the rate creeps toward its ceiling, $V_{max}$, without quite reaching it.
+Your saliva contains an enzyme called amylase that starts breaking down starch into sugar the moment you start chewing bread — but only up to a point. Drag the substrate-concentration slider, $[S]$, up from zero. The reaction rate climbs steeply at first: with few substrate molecules around, every enzyme quickly finds one to bind. Watch the bench fill up as $[S]$ keeps growing. Eventually nearly every enzyme is already busy, so adding more substrate barely helps, and the rate creeps toward its ceiling, $V_{max}$, without quite reaching it.
 
-The straight line touching the curve at your chosen point is steep on the rising part and nearly flat once you are past a certain level. That level is called $K_m$. It marks the substrate concentration where the rate reaches exactly half of $V_{max}$. A small $K_m$ means the enzyme saturates, and nears its top speed, even at low substrate concentrations.
+Watch the busy count rather than the formula: there is a level where exactly half the bench is working, and that level is called $K_m$. It marks the substrate concentration where the rate reaches exactly half of $V_{max}$. A small $K_m$ means the enzyme saturates, and nears its top speed, even at low substrate concentrations.
 
 ## Formal
 

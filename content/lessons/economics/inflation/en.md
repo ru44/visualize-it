@@ -20,8 +20,8 @@ charts:
 
 ## Try it
 
-1. Watch the curve. It shows how much a fixed 100 can still buy after $x$ years of rising prices.
-2. Drag $p$ (inflation rate) up. The curve dives much faster — even a couple of extra percent erodes savings a lot over decades.
+1. Watch the note. It shows how much a fixed 100 can still buy after $x$ years of rising prices — the loaves below count it out.
+2. Drag $p$ (inflation rate) up. The note shrinks much faster — even a couple of extra percent erodes savings a lot over decades.
 3. Now drag $x$ (years elapsed) forward. The same inflation rate keeps eating away at your money's value the longer it continues.
 
 ## Real-life examples
@@ -38,9 +38,9 @@ charts:
 
 ## Intuition
 
-Suppose a loaf of bread costs 2 today, and prices climb by $p$, the inflation rate, set to 8% a year on the slider. The curve on screen shows $V$: how much your original 100 currency units can still buy after $x$ years. Drag $x$ forward and the curve falls the same shape compound growth rises, only in reverse — the same rate that used to buy a whole loaf buys a smaller slice of it every year that passes.
+Suppose a loaf of bread costs 2 today, and prices climb by $p$, the inflation rate, set to 8% a year on the slider. The shrinking note on screen shows $V$: how much your original 100 currency units can still buy after $x$ years. Drag $x$ forward and the note shrinks along the same compound path that growth climbs, only in reverse — the same rate that used to buy a whole loaf buys a smaller slice of it every year that passes.
 
-Now raise $p$ instead: even a rate that sounds modest, kept up for decades, drags the curve down much faster, because small yearly increases keep stacking on top of each other. The chart below shows the mirror image: the price of that same basket of goods, marching upward as $p$ compounds — money's power to buy things falls exactly as fast as the price tag on those things rises.
+Now raise $p$ instead: even a rate that sounds modest, kept up for decades, shrinks the note much faster, because small yearly increases keep stacking on top of each other. The basket's price tag shows the mirror image: the cost of the same goods, marching upward as $p$ compounds — money's power to buy things falls exactly as fast as the price tag on those things rises.
 
 ## Formal
 
@@ -77,7 +77,7 @@ even with no change in what is bought.
 
 ### Savings under a mattress
 Cash held without earning interest loses purchasing power every year
-prices rise, visible directly on this lesson's curve.
+prices rise, visible directly in this lesson's shrinking note.
 
 ### Wage negotiations
 Workers negotiate for raises above inflation to see a real increase in

@@ -1,0 +1,6 @@
+enz.hint: flood the bench with substrate — the machines saturate, not the formula
+enz.cloud: substrate molecules, drifting
+enz.busy: machines busy
+enz.bench: 'the bench: {n} of 10 enzymes working right now'
+enz.half: '[S] = Km — exactly half the machines busy, exactly half speed'
+enz.caption: an enzyme can only be so busy — past saturation, extra substrate just queues

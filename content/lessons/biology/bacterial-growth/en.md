@@ -16,9 +16,9 @@ variables:
 
 ## Try it
 
-1. Watch the curve start flat near $t=0$: just the starting cell count, and nothing more yet.
-2. Drag the time slider forward. The curve climbs slowly at first, then rockets upward.
-3. Now drag the doubling-time slider, $T$, down. The same stretch of time now fits many more doublings, and the curve rockets up even faster.
+1. Watch the dish near $t=0$: just the starting handful of colonies, and the counter matching them.
+2. Drag the time slider forward. The dish stays calm for most of the run, then floods — the counter rockets past what the dish can even draw.
+3. Now drag the doubling-time slider, $T$, down. The timeline's tick marks crowd together, and the same stretch of time fits many more doublings.
 
 ## Real-life examples
 
@@ -34,9 +34,9 @@ variables:
 
 ## Intuition
 
-E. coli bacteria in a warm, nutrient-rich broth can double in number roughly every 20 minutes: one cell becomes two, two become four, and within ten hours one cell has become more than a billion. Drag the time slider, labelled $t$, forward from zero. Watch the population $N$ climb slowly at first, then faster and faster — each doubling adds as many cells as every doubling before it combined. The straight line touching the curve at your chosen point shows the instantaneous growth rate there. Watch it tilt steeper the further you drag, even though the doubling time $T$ never changes.
+E. coli bacteria in a warm, nutrient-rich broth can double in number roughly every 20 minutes: one cell becomes two, two become four, and within ten hours one cell has become more than a billion. Drag the time slider, labelled $t$, forward from zero. Watch the population $N$ climb slowly at first, then faster and faster — each doubling adds as many cells as every doubling before it combined. On the timeline, every tick is one doubling: the dish looks almost empty for most of the run and then fills in the last few ticks, even though the doubling time $T$ never changes.
 
-Now drag the doubling-time slider, $T$, down instead. The same population doubles more often in a given stretch of time, so the curve rockets up much faster; a longer $T$ does the opposite, stretching the climb out. But no real culture keeps doubling forever: nutrients run out and waste builds up, so real bacterial growth eventually bends over into a flatter, S-shaped curve instead — the logistic curve covered in another lesson.
+Now drag the doubling-time slider, $T$, down instead. The same population doubles more often in a given stretch of time, so the dish floods much sooner; a longer $T$ does the opposite, stretching the climb out. But no real culture keeps doubling forever: nutrients run out and waste builds up, so real bacterial growth eventually bends over into a flatter, S-shaped curve instead — the logistic curve covered in another lesson.
 
 ## Formal
 

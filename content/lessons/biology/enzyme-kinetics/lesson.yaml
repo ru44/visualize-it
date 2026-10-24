@@ -12,16 +12,7 @@ prerequisites:
 related:
   - diffusion-and-osmosis
 visualization:
-  type: function-plot
-  options:
-    expr: Vmax*x/(Km + x)
-    domain:
-      - 0
-      - 30
-    range:
-      - 0
-      - 11
-    mode: tangent
+  type: enzyme-kinetics
 parameters:
   Vmax:
     min: 1

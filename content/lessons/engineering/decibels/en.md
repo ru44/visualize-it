@@ -7,7 +7,7 @@ summary: >-
 parameters:
   x: x — power ratio P/P₀
 variables:
-  - L — the level in decibels, the quantity actually plotted
+  - L — the level in decibels, the height on the ladder
   - P — the power being measured
   - P_0 — the reference power that L is measured against
 charts:
@@ -20,8 +20,8 @@ charts:
 
 ## Try it
 
-1. Watch the curve. It plots the decibel level $L$ for a power ratio $x$, squeezing a huge range onto a small vertical scale.
-2. Drag $x$ from 1 toward a million. The curve rises fast at first, then flattens almost completely.
+1. Compare the two bars. The same ratio $x$ is invisible on the raw linear bar yet sits at a clean rung of the ladder, $L$ decibels up.
+2. Drag $x$ from 1 toward a million. The ladder marker climbs in equal steps — one rung per ×10 — while the linear bar only wakes up at the very end.
 3. Notice that every time you double $x$, $L$ climbs by the same 3 dB, no matter where you started.
 
 ## Real-life examples
@@ -38,9 +38,9 @@ charts:
 
 ## Intuition
 
-A whisper measures about 20 dB and a jet engine about 140 dB — a difference so large that describing it in raw power would mean writing a 1 followed by twelve zeros. The curve on screen plots $L$, the level in decibels, against $x$, the ratio of the power you're measuring to a fixed reference power. Drag $x$ from 1 up toward a million and the curve rises fast at first, then flattens almost completely, because each extra factor of ten in power only adds another fixed 10 dB, no matter how huge the ratio has already become.
+A whisper measures about 20 dB and a jet engine about 140 dB — a difference so large that describing it in raw power would mean writing a 1 followed by twelve zeros. The ladder on screen shows $L$, the level in decibels, for $x$, the ratio of the power you're measuring to a fixed reference power. Drag $x$ from 1 up toward a million and the marker climbs rung by equal rung, because each extra factor of ten in power only adds another fixed 10 dB, no matter how huge the ratio has already become.
 
-That squashing is exactly what your ears do naturally: a sound needs roughly ten times the power to seem twice as loud, so a scale that compresses huge power ranges into small, evenly spaced steps matches how loudness is actually perceived. A jump from 1 to 10 on the slider looks the same size on the curve as a jump from 100,000 to 1,000,000 — both add exactly 10 dB.
+That squashing is exactly what your ears do naturally: a sound needs roughly ten times the power to seem twice as loud, so a scale that compresses huge power ranges into small, evenly spaced steps matches how loudness is actually perceived. A jump from 1 to 10 on the slider looks the same size on the ladder as a jump from 100,000 to 1,000,000 — both add exactly 10 dB.
 
 ## Formal
 
