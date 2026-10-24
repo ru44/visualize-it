@@ -792,3 +792,10 @@ find.placeholder: Search {n} lessons by name or idea…
 find.none: 'Nothing matches "{q}".'
 find.tip: Try a word like "prime", "orbit", "battery" — or a subject name.
 find.hint: ↑ ↓ to move · Enter to open · Ctrl K or / to summon
+nav.practice: Practice
+practice.title: Daily practice
+practice.lead: Five challenges picked for {date}. Solve each one inside its lesson — a fresh mix is dealt every day.
+practice.progress: '{done}/{total} solved'
+practice.allDone: Mix complete — come back tomorrow for a new hand.
+practice.reviewNote: Picks favour lessons you have already finished, so old skills stay sharp.
+practice.totals: 'All time: {n} {n|one=challenge|other=challenges} solved across {m} {m|one=lesson|other=lessons}.'

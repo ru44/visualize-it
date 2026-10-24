@@ -792,3 +792,10 @@ find.placeholder: ابحث في {n} درسًا بالاسم أو الفكرة…
 find.none: 'لا شيء يطابق «{q}».'
 find.tip: جرّب كلمة مثل «أولي» أو «مدار» أو «بطارية» — أو اسم قسم.
 find.hint: ↑ ↓ للتنقل · Enter للفتح · Ctrl K أو / للاستدعاء
+nav.practice: تمرين
+practice.title: التمرين اليومي
+practice.lead: خمسة تحديات اختيرت ليوم {date}. حُلّ كلًّا منها داخل درسه — وتُوزَّع تشكيلة جديدة كل يوم.
+practice.progress: 'حُلّ {done}/{total}'
+practice.allDone: اكتملت التشكيلة — عُد غدًا ليد جديدة.
+practice.reviewNote: الاختيار يفضّل الدروس التي أنهيتها، لتبقى المهارات القديمة حادة.
+practice.totals: 'الإجمالي: {n} {n|one=تحدٍّ|two=تحديان|few=تحديات|many=تحديًا|other=تحدٍّ} محلولة في {m} {m|one=درس|two=درسين|few=دروس|many=درسًا|other=درس}.'

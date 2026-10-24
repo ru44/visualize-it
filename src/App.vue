@@ -27,6 +27,7 @@ watch(() => route.fullPath, () => (menu.value = false))
         <div class="flex items-center gap-0.5 text-sm sm:gap-1">
           <div class="hidden items-center gap-0.5 sm:flex sm:gap-1">
             <RouterLink to="/#subjects" class="rounded-lg px-2.5 py-1.5 hover:bg-[var(--sunken)] sm:px-3" style="color: var(--muted)">{{ t('nav.learn') }}</RouterLink>
+            <RouterLink to="/practice" class="rounded-lg px-2.5 py-1.5 hover:bg-[var(--sunken)] sm:px-3" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.practice') }}</RouterLink>
             <RouterLink to="/graph" class="rounded-lg px-2.5 py-1.5 hover:bg-[var(--sunken)] sm:px-3" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.graph') }}</RouterLink>
             <RouterLink to="/classic" class="rounded-lg px-2.5 py-1.5 hover:bg-[var(--sunken)] sm:px-3" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.sims') }}</RouterLink>
             <RouterLink to="/notation" class="rounded-lg px-3 py-1.5 hover:bg-[var(--sunken)]" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.notation') }}</RouterLink>
@@ -73,6 +74,7 @@ watch(() => route.fullPath, () => (menu.value = false))
       </div>
       <div v-if="menu" id="mainmenu" class="border-t px-3 py-2 text-[15px] sm:hidden" style="border-color: var(--line); background: var(--bg)">
         <RouterLink to="/#subjects" class="block rounded-lg px-3 py-2.5 hover:bg-[var(--sunken)]">{{ t('nav.learn') }}</RouterLink>
+        <RouterLink to="/practice" class="block rounded-lg px-3 py-2.5 hover:bg-[var(--sunken)]" active-class="!text-[var(--accent)]">{{ t('nav.practice') }}</RouterLink>
         <RouterLink to="/graph" class="block rounded-lg px-3 py-2.5 hover:bg-[var(--sunken)]" active-class="!text-[var(--accent)]">{{ t('nav.graph') }}</RouterLink>
         <RouterLink to="/classic" class="block rounded-lg px-3 py-2.5 hover:bg-[var(--sunken)]" active-class="!text-[var(--accent)]">{{ t('nav.sims') }}</RouterLink>
         <RouterLink to="/notation" class="block rounded-lg px-3 py-2.5 hover:bg-[var(--sunken)]" active-class="!text-[var(--accent)]">{{ t('nav.notation') }}</RouterLink>
