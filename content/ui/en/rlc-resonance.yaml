@@ -1,0 +1,4 @@
+rlc.hint: tune the frequency on the curve — the dots slosh hardest exactly at f₀
+rlc.meter: sloshing amplitude I(f)
+rlc.dial: drag to tune f
+rlc.caption: at f₀ the coil and the capacitor cancel each other, leaving only R to limit the current

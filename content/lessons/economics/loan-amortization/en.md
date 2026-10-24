@@ -25,9 +25,9 @@ charts:
 
 ## Try it
 
-1. Watch the balance curve. It starts at the full loan amount and falls to zero by the end of the term.
-2. Drag $x$ (months elapsed) forward. The balance barely drops in the early months, then falls faster near the end.
-3. Now raise $L$ or $r$ instead. The whole curve sits higher, since a bigger loan or a costlier rate means more is still owed at any given month.
+1. Watch the bars: every one is the same monthly payment, but at the start the red interest slice eats most of it. The thin line is the balance, starting at the full loan.
+2. Drag $x$ (months elapsed) forward. The green principal slice grows month by month, and the dashed flag marks the tipping month where it first beats the interest.
+3. Now raise $L$ or $r$ instead. The red slices fatten and the tipping month slides later — a bigger loan or a costlier rate keeps you in interest territory longer.
 
 ## Real-life examples
 
@@ -43,9 +43,9 @@ charts:
 
 ## Intuition
 
-Take a 250,000 mortgage at 6% interest over 30 years, or 360 months: in the very first payment, well over 1,000 of it is interest, and only a small amount actually reduces what is owed. The curve on screen, $B$, is exactly that remaining balance, plotted against $x$, the number of months since the loan started. Drag $x$ forward from zero and watch the balance barely move at first, then fall faster and faster as it nears the end of the term.
+Take a 250,000 mortgage at 6% interest over 30 years, or 360 months: in the very first payment, well over 1,000 of it is interest, and only a small amount actually reduces what is owed. The thin line on screen, $B$, is exactly that remaining balance, sliding down across the bars as $x$, the number of months since the loan started, advances. Drag $x$ forward from zero and watch the balance barely move at first, then fall faster and faster as it nears the end of the term.
 
-Now drag $L$ or $r$, the loan amount or the interest rate, up instead: the whole balance curve sits higher throughout, since a bigger loan or a costlier rate both mean more is still owed at any given month. Look at the interest-share chart below: early on, most of the fixed monthly payment goes to interest, and only a small remainder chips away at the balance — exactly why the first years of a mortgage barely dent what is owed.
+Now drag $L$ or $r$, the loan amount or the interest rate, up instead: the whole balance curve sits higher throughout, since a bigger loan or a costlier rate both mean more is still owed at any given month. Look at the red slices of the bars: early on, most of the fixed monthly payment goes to interest, and only a small remainder chips away at the balance — exactly why the first years of a mortgage barely dent what is owed.
 
 ## Formal
 

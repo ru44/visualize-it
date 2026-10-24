@@ -14,16 +14,7 @@ related:
   - series-parallel
   - ac-power
 visualization:
-  type: function-plot
-  options:
-    expr: V / sqrt(R^2 + (2*pi*x*L/1000 - 1/(2*pi*x*C*1e-6))^2)
-    domain:
-      - 10
-      - 400
-    range:
-      - 0
-      - 1.1
-    mode: tangent
+  type: rlc-resonance
 parameters:
   V:
     min: 1

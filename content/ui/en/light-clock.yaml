@@ -1,0 +1,7 @@
+lc.hint: drag on the right to set the ship's speed — both photons fly at the same speed of light
+lc.you: your clock (at rest)
+lc.ship: ship's clock · v = {v} c
+lc.ticks: 'ticks: {n}'
+lc.geom: same light speed, longer diagonal path — so the moving tick must take longer
+lc.oneTick: 1 ship tick, in your seconds
+lc.afterTen: ship ticks after your 10

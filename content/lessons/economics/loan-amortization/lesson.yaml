@@ -11,16 +11,7 @@ prerequisites:
 related:
   - present-value
 visualization:
-  type: function-plot
-  options:
-    expr: L*((1+r/1200)^N - (1+r/1200)^x)/((1+r/1200)^N - 1)
-    domain:
-      - 0
-      - 360
-    range:
-      - 0
-      - 100000
-    mode: plain
+  type: loan-bars
 parameters:
   L:
     min: 1000

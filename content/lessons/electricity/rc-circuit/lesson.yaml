@@ -13,16 +13,7 @@ prerequisites:
 related:
   - sine-wave
 visualization:
-  type: function-plot
-  options:
-    expr: V0*(1 - exp(-x/(R*C/1000)))
-    domain:
-      - 0
-      - 10
-    range:
-      - -1
-      - 13
-    mode: tangent
+  type: rc-circuit
 parameters:
   V0:
     min: 1

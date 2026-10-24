@@ -1,0 +1,6 @@
+dom.hint: drag along the row — knock over n dominoes and read the staircase below
+dom.base: 'base case: push №1'
+dom.step: k falls → k+1 falls
+dom.rect: two staircases = rectangle
+dom.twin: the pale twin staircase doubles the sum into an n×(n+1) rectangle
+dom.empty: no dominoes down yet — push the first one, that is the base case

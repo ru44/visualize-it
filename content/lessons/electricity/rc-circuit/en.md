@@ -23,8 +23,8 @@ charts:
 
 ## Try it
 
-1. Drag the point along the curve. Watch the tangent line: steep at first, almost flat by the end.
-2. Raise the slider "resistance R". The whole curve stretches out sideways — charging takes longer.
+1. Drag across the small chart (or slide the time x). Early on, the current dots race around the loop; by the end they crawl — the first moments do most of the work.
+2. Raise the slider "resistance R". The time constant grows, the dots slow down, and the plates collect their + and − far more gradually.
 3. Set the time x to R×C (in seconds). Read the capacitor's voltage: it has reached about 63% of the supply.
 
 ## Real-life examples
@@ -41,7 +41,7 @@ charts:
 
 ## Intuition
 
-Think of filling a bathtub through a narrow tap connected to the mains, but where the water pressure available drops the fuller the tub gets: at first, with the tub empty, water rushes in fast; as it nears full, hardly any more flows in. That is exactly how a capacitor charges through a resistor. On screen, drag the point along the blue curve, labelled $x$ for time in seconds, and watch the tangent line — steep near the start, nearly flat by the end.
+Think of filling a bathtub through a narrow tap connected to the mains, but where the water pressure available drops the fuller the tub gets: at first, with the tub empty, water rushes in fast; as it nears full, hardly any more flows in. That is exactly how a capacitor charges through a resistor. On screen, scrub the time slider $x$ and watch the circuit itself: the dots of current sprint while the plates are empty and crawl once the capacitor pushes back — fast filling near the start, a near-standstill by the end.
 
 Set the time slider to $x = RC$ — with the starting values that is 2 seconds — and read the capacitor's voltage: it has reached about 63% of the supply, no matter what $V_0$, $R$ or $C$ actually are. By $x = 5RC$ it is within 1% of full. Raise the slider "resistance R" or "capacitance C" and the whole curve stretches sideways without changing its shape — a bigger resistor or a bigger capacitor simply takes longer to fill.
 

@@ -10,9 +10,9 @@ parameters:
 
 ## Try it
 
-1. Watch the blue curve, labelled gamma. Near x = 0 it barely lifts off the ground — drag the dot along the curve and see how flat it stays at everyday, slow speeds.
-2. Push x toward 0.9. The curve suddenly shoots upward, and the orange tangent line steepens sharply — gamma is growing very fast now.
-3. Push x all the way to 0.99. Gamma climbs past 7: a clock moving this fast would tick more than seven times slower than a clock at rest.
+1. Leave v/c at 0.5 and watch the two clocks: both photons fly at the same speed, but the ship's photon must chase its sliding mirrors along a diagonal, and its tick counter already falls behind yours.
+2. Drag the ship (or the slider x) up to 0.9: the diagonal stretches, gamma passes 2.3, and the ship's clock visibly ticks less than half as often as yours.
+3. Push x all the way to 0.99 and look at the triangle below: the diagonal is now seven times the mirror gap — the geometry alone forces the ship's clock to tick once for your seven.
 
 ## Real-life examples
 
@@ -28,9 +28,9 @@ parameters:
 
 ## Intuition
 
-Drag the dot along the blue curve by raising the slider x, which stands for speed as a fraction of light speed. At low x the curve barely rises above 1, meaning a fast-moving clock ticks almost exactly like a resting one — this is why you never notice time dilation on a plane or even a rocket.
+A light clock is the simplest clock imaginable: a photon bouncing between two mirrors, one tick per round trip. On screen you own the left clock, and an identical one slides by on a ship at the slider's fraction x of light speed. Both photons must fly at the same speed — that is Einstein's rule — but the ship's photon has to chase its moving mirrors along a diagonal, a strictly longer path. At everyday speeds the diagonal is barely longer, which is why you never notice time dilation on a plane or even a rocket.
 
-Keep pushing x toward 1 and the curve bends sharply upward, with the orange tangent line growing steeper and steeper at the dot. That climbing number is called $\gamma$, and it tells you how many times slower a moving clock ticks compared with a clock that stayed still — at x = 0.98 it is already above 5.
+A longer path at the same speed simply takes longer, so the ship's tick lasts more than yours — and the triangle under the clocks measures exactly how much. That stretching factor is called $\gamma$, and it tells you how many times slower the moving clock ticks compared with a clock that stayed still — at x = 0.98 it is already above 5.
 
 ## Formal
 
@@ -60,4 +60,4 @@ Though their orbital speed is a tiny fraction of light speed, GPS satellites mov
 Beams at facilities like CERN reach speeds where gamma exceeds a thousand, letting physicists watch unstable particles survive thousands of times longer than they would at rest.
 
 ### Why astronauts age very slightly slower
-Astronauts on the International Space Station move fast enough that, after months in orbit, they return a few milliseconds younger than people who stayed on Earth — a real, measured example of this curve.
+Astronauts on the International Space Station move fast enough that, after months in orbit, they return a few milliseconds younger than people who stayed on Earth — a real, measured example of this effect.

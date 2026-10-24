@@ -19,9 +19,9 @@ variables:
 
 ## Try it
 
-1. Drag the frequency point along the curve. Current is small at the edges and peaks in the middle.
-2. Lower the slider "resistance R". Watch the peak grow taller and narrower.
-3. Read the frequency where the peak sits — that is the resonant frequency f0.
+1. Drag along the resonance curve (or slide f). Watch the dots in the loop: they barely tremble at the edges and slosh wildly as you pass the middle.
+2. Lower the slider "resistance R". The peak grows taller and narrower, and the amplitude bar slams to full right at f0.
+3. Read the frequency under the green flag — that is the resonant frequency f0, where the coil and the capacitor cancel.
 
 ## Real-life examples
 
@@ -37,7 +37,7 @@ variables:
 
 ## Intuition
 
-Turn the dial on an old analogue radio and, out of all the stations broadcasting at once, only one comes through clearly at a time — the rest stay silent. That happens because the radio's tuning circuit favours one particular frequency and rejects the others, and the picture on screen shows exactly that favouritism as a curve. Drag the frequency point along the blue curve, labelled $x$ in Hz, and watch the current climb and fall: it is small at low and high frequencies, and peaks sharply near one frequency in the middle, called the resonant frequency.
+Turn the dial on an old analogue radio and, out of all the stations broadcasting at once, only one comes through clearly at a time — the rest stay silent. That happens because the radio's tuning circuit favours one particular frequency and rejects the others, and the picture on screen shows exactly that favouritism as a curve. Drag the marker along the curve, labelled $x$ in Hz, and watch the current dots in the circuit slosh harder and softer: the sloshing is feeble at low and high frequencies, and peaks sharply near one frequency in the middle, called the resonant frequency.
 
 That peak happens because an inductor (coil) resists fast changes in current more and more as frequency rises, while a capacitor resists slow changes more and more as frequency falls — only right at the resonant frequency do these two opposing effects cancel out, leaving the circuit acting like a plain resistor and letting the most current through. Shrink the slider "resistance R", keeping the default "inductance L" and "capacitance C", and watch the peak grow taller and narrower — that is a radio tuner becoming more selective, rejecting neighbouring stations more sharply.
 

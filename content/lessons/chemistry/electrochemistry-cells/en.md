@@ -17,9 +17,9 @@ variables:
 
 ## Try it
 
-1. Drag «reaction quotient Q» up, away from 1. Watch the voltage curve fall as products build up.
-2. Raise «electrons transferred n» instead. The same drop in Q now costs less voltage.
-3. Raise «standard cell potential E⁰». The whole curve shifts upward — a stronger battery to start with.
+1. Drag «reaction quotient Q» up, away from 1. The product beaker crowds up, the voltmeter sags, and the electrons on the wire visibly slow down.
+2. Raise «electrons transferred n» instead. The same climb in Q now costs less voltage — the needle barely moves.
+3. Raise «standard cell potential E⁰». The voltmeter jumps and the electrons hurry — a stronger battery to start with.
 
 ## Real-life examples
 
@@ -35,7 +35,7 @@ variables:
 
 ## Intuition
 
-Picture a fresh AA battery, rated 1.5 V, versus one that has been running a flashlight for hours: the flashlight is visibly dimmer, because the battery's voltage has sagged below its rating. On screen, drag the slider «reaction quotient Q» up, away from 1, to picture that used-up battery: reactants have been consumed and products have piled up. Watch the voltage curve fall as you drag — same chemistry, same standard rating, but less push left.
+Picture a fresh AA battery, rated 1.5 V, versus one that has been running a flashlight for hours: the flashlight is visibly dimmer, because the battery's voltage has sagged below its rating. On screen, drag the slider «reaction quotient Q» up, away from 1, to picture that used-up battery: reactants have been consumed and products have piled up. Watch the voltmeter fall and the electron stream slow as you drag — same chemistry, same standard rating, but less push left.
 
 Now drag «electrons transferred n» instead. With more electrons changing hands in each reaction event, the same rise in Q costs less voltage, so a battery with a larger n holds its voltage more steadily as it discharges. That's the whole content of the Nernst equation: voltage equals the standard rating, minus a penalty that grows as the reaction quotient Q climbs.
 
@@ -58,7 +58,7 @@ The Nernst equation is why a cell's voltage can be used to measure concentration
 ## Real world
 
 ### Why a battery's voltage sags as it runs down
-As a battery discharges, reactants are consumed and products accumulate, raising $Q$ and steadily lowering the voltage below its fresh, standard value — the same curve this lesson's slider traces.
+As a battery discharges, reactants are consumed and products accumulate, raising $Q$ and steadily lowering the voltage below its fresh, standard value — exactly what this lesson's Q slider acts out.
 
 ### The Daniell cell and early batteries
 The Daniell cell's reliable 1.10 V output made it one of the first practical batteries, used to power early telegraph systems in the 19th century.

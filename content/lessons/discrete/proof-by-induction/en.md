@@ -21,9 +21,9 @@ variables:
 
 ## Try it
 
-1. Drag x to 10 and read the curve's value, 55 — the same total as stacking cans 1 through 10 in a triangle.
-2. Watch the second curve n²/2 sitting just below the first, and note the gap between them at your chosen x.
-3. Push x all the way to 20 and read the running sum at the top of its range.
+1. Drag x to 10: ten dominoes topple, and the staircase below stacks rows 1 through 10 into 55 squares — with its pale twin completing a 10×11 rectangle.
+2. Watch the two labels beside the rectangle: the counted sum and n(n+1)/2 always agree, because two staircases are exactly one rectangle.
+3. Push x all the way to 20, then back to 0 — with no push on the first domino, nothing falls, which is why a proof needs its base case.
 
 ## Real-life examples
 
@@ -39,7 +39,7 @@ variables:
 
 ## Intuition
 
-Stack cans in a triangle 10 rows tall, 1 can in row 1 up to 10 cans in row 10, and counting them all by hand gives 55 cans. Drag the slider x to 10 and the chart's curve lands at that same number, tracing the running sum $1 + 2 + \cdots + n$ as one smooth shape instead of a pile of separate additions.
+Stack cans in a triangle 10 rows tall, 1 can in row 1 up to 10 cans in row 10, and counting them all by hand gives 55 cans. Drag the slider x to 10 and the staircase on screen stacks those same rows into 55 squares, showing the running sum $1 + 2 + \cdots + n$ as one picture instead of a pile of separate additions.
 
 The chart also draws a second curve, $n^2/2$, close to the first one but not identical. At x = 10 the exact sum sits at 55 while the comparison curve sits at 50, a gap of 5 that comes from the leftover x/2 term hiding inside the exact formula. Watch the two curves separate slightly for small x and nearly meet for large x, an early look at how one formula can approximate another.
 

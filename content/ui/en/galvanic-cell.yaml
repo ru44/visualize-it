@@ -1,0 +1,11 @@
+cell.hint: slide E⁰, n and Q — the voltmeter follows the Nernst equation live
+cell.volts: voltmeter
+cell.dead: dead battery — equilibrium
+cell.anode: anode (−) · e.g. Zn
+cell.anodeNote: metal dissolves, electrons leave
+cell.cathode: cathode (+) · e.g. Cu
+cell.cathodeNote: ions grab electrons, metal plates on
+cell.bridge: salt bridge
+cell.qLabel: reaction quotient
+cell.qNote: big Q = crowded product side, so the cell pushes weaker
+cell.caption: a battery is a redox reaction forced to send its electrons the long way round

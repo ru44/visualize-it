@@ -14,16 +14,7 @@ related:
   - dilution-molarity
   - chemical-equilibrium
 visualization:
-  type: function-plot
-  options:
-    expr: -log10(x)
-    domain:
-      - 0.0001
-      - 0.1
-    range:
-      - 0
-      - 5
-    mode: tangent
+  type: ph-scale
 parameters:
   x:
     min: 0.0001
