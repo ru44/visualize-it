@@ -1,0 +1,49 @@
+id: hypothesis-testing
+subject: statistics
+difficulty: high-school
+equation: z = \dfrac{h - 0.5}{0.5/\sqrt{n}}
+concepts:
+- hypothesis-test
+- significance
+- null-hypothesis
+- p-value
+prerequisites:
+- normal-distribution
+- probability-basics
+related:
+- confidence-intervals
+- law-of-large-numbers
+visualization:
+  type: coin-court
+parameters:
+  obs:
+    min: 50
+    max: 70
+    step: 0.5
+    value: 55
+    unit: "%"
+  n:
+    min: 10
+    max: 2000
+    step: 10
+    value: 100
+variables:
+- z
+- h
+derivation:
+- \text{a fair coin's share of heads scatters with spread } \dfrac{0.5}{\sqrt{n}}
+- z = \dfrac{h - 0.5}{0.5/\sqrt{n}}
+- z > 1.96 \text{ happens by pure luck about 2 or 3 times in 100}
+charts: []
+primary: n
+presets:
+- obs: 55
+  n: 100
+- obs: 55
+  n: 2000
+- obs: 70
+  n: 10
+challenges:
+- check: abs((obs/100 - 0.5)*sqrt(n)/0.5 - 1.96) < 0.05
+- check: abs(obs - 55) < 0.3 and (obs/100 - 0.5)*sqrt(n)/0.5 >= 1.96
+- check: obs >= 65 and (obs/100 - 0.5)*sqrt(n)/0.5 < 1.96

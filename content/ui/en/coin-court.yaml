@@ -1,0 +1,13 @@
+hyp.hint: same observed share, different n — significance is about the evidence, not the headline
+hyp.obs: observed heads
+hyp.fair: a fair coin's territory · 50%
+hyp.edge: z = 1.96
+hyp.flips: flips
+hyp.verdictL: verdict
+hyp.luck: could be luck
+hyp.rigged: beyond luck
+hyp.verdictOk: could easily be luck — case dismissed
+hyp.verdictBad: beyond reasonable luck — the coin has questions to answer
+hyp.okNote: a fair coin wanders this far quite often; collect more flips before accusing anyone
+hyp.badNote: a fair coin lands this far out less than 5 times in 100 — luck is no longer a good story
+hyp.caption: the bell narrows as 1/√n — the same 55% is nothing at 100 flips and damning at 2000
