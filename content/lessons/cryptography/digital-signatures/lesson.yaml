@@ -14,14 +14,26 @@ related:
 - elliptic-curve-cryptography
 - block-ciphers-and-aes
 visualization:
-  type: hash-avalanche
-  options:
-    mode: avalanche
-    text: pay 100
+  type: digital-signature
 parameters:
-  pos:
+  p:
+    min: 2
+    max: 13
+    step: 1
+    value: 5
+  q:
+    min: 2
+    max: 13
+    step: 1
+    value: 11
+  m:
+    min: 2
+    max: 20
+    step: 1
+    value: 7
+  tamper:
     min: 0
-    max: 6
+    max: 5
     step: 1
     value: 0
 variables:
@@ -31,18 +43,25 @@ variables:
 - n
 - \bmod
 derivation:
-- \text{treat the order's hash as } h = 13
-- s = h^{d} \bmod n = 13^{27} \bmod 55 = 7 \quad \text{(sign with private exponent } d = 27\text{)}
-- s^{e} \bmod n = 7^{3} \bmod 55 = 13 = h \quad \text{(anyone can verify with public exponent } e = 3\text{)}
+- h = (m^{2} + 1) \bmod n = (49 + 1) \bmod 55 = 50
+- s = h^{d} \bmod n = 50^{27} \bmod 55 = 30
+- s^{e} \bmod n = 30^{3} \bmod 55 = 50 = h
 charts: []
-primary: pos
+primary: tamper
 presets:
-- pos: 0
-- pos: 4
-- pos: 5
+- p: 5
+  q: 11
+  m: 7
+  tamper: 0
+- p: 5
+  q: 11
+  m: 7
+  tamper: 1
+- p: 13
+  q: 11
+  m: 12
+  tamper: 0
 challenges:
-- check: pos
-  target: 4
-- check: pos
-  target: 0
-- check: pos >= 4 and pos <= 6
+- check: abs(p-5)<0.5 and abs(q-11)<0.5 and abs(m-7)<0.5 and tamper<0.5
+- check: tamper>0.5
+- check: abs(p-13)<0.5 and abs(q-11)<0.5 and tamper<0.5
