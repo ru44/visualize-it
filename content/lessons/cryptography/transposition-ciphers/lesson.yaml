@@ -1,0 +1,52 @@
+id: transposition-ciphers
+subject: cryptography
+difficulty: beginner
+equation: T = 2(r - 1)
+concepts:
+- cryptography
+- transposition
+- permutation
+- rail-fence
+prerequisites:
+- caesar-cipher
+related:
+- vigenere-cipher
+- frequency-analysis
+- block-ciphers-and-aes
+visualization:
+  type: transposition-cipher
+  options:
+    text: WE ARE DISCOVERED RUN
+parameters:
+  rails:
+    min: 2
+    max: 6
+    step: 1
+    value: 3
+  pos:
+    min: 0
+    max: 17
+    step: 1
+    value: 0
+variables:
+- r
+- T
+derivation:
+- T = 2(r - 1)
+- '\text{letter } i \text{ rides the zigzag: down } r \text{ rails, back up, and again}'
+- c = \text{row 1, then row 2, } \dots \text{ (the same letters, new places)}
+charts: []
+primary: rails
+presets:
+  - rails: 3
+    pos: 0
+  - rails: 2
+    pos: 4
+  - rails: 6
+    pos: 9
+challenges:
+  - check: rails
+    target: 3
+  - check: rails
+    target: 5
+  - check: mod(pos, 2*(rails-1)) < 0.5 and pos > 0.5

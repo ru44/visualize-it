@@ -1,0 +1,12 @@
+rsa.hint: slide p, q and m — Bob builds the lock, Alice snaps it shut
+rsa.alice: Alice
+rsa.bob: Bob
+rsa.message: the message
+rsa.public: public key
+rsa.private: private key
+rsa.publishes: Bob publishes the open padlock (n, e)
+rsa.eve: 'Eve sees n = {n}, e = {e} and c = {c} — to open it she must factor n'
+rsa.samePrime: p and q must be different primes — n = p² is trivial to factor
+rsa.tooSmall: these primes are too small to build a working key
+rsa.msgTooBig: m must stay below n
+rsa.factor: 'the whole secret is that {n} = p × q is hard to undo at real sizes (617 digits, not 3)'

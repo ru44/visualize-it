@@ -1,0 +1,9 @@
+dh.hint: slide a and b — the two sides always land on the same colour
+dh.alice: Alice
+dh.bob: Bob
+dh.public: public paint, everyone sees it
+dh.secret: private — never sent
+dh.channel: public channel — everything in here is visible
+dh.shared: shared secret s
+dh.eve: Eve sees only
+dh.same: same colour, never sent

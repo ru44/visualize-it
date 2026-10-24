@@ -1,0 +1,13 @@
+stream.hint: each letter is XORed with one keystream byte — try giving both messages the same nonce
+stream.msg: message {n}
+stream.nonce: nonce
+stream.nonces: nonces
+stream.plain: plain
+stream.keystream: keystream
+stream.cipher: cipher
+stream.attack: what an eavesdropper computes — cipher 1 ⊕ cipher 2
+stream.equals: '= plain 1 ⊕ plain 2'
+stream.leaking: keystream reused — leak
+stream.safe: no reuse
+stream.reuseWarn: same key + same nonce → the keystream cancels out and the two messages leak into each other
+stream.freshNote: different nonces → different keystreams; the two ciphertexts tell Eve nothing

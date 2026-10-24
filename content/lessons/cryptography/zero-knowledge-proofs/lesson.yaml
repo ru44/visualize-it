@@ -1,0 +1,50 @@
+id: zero-knowledge-proofs
+subject: cryptography
+difficulty: university
+equation: q = \left(\frac{1}{2}\right)^{n}
+concepts:
+- zero-knowledge
+- interactive-proof
+- soundness
+- privacy
+prerequisites:
+- one-way-functions
+related:
+- digital-signatures
+- hash-functions
+visualization:
+  type: zero-knowledge
+  options: {}
+parameters:
+  rounds:
+    min: 1
+    max: 20
+    step: 1
+    value: 3
+  cheat:
+    min: 0
+    max: 1
+    step: 1
+    value: 0
+variables:
+- q
+- n
+derivation:
+- \text{a bluffer survives one round with probability } \frac{1}{2}
+- q = \left(\frac{1}{2}\right)^{n} \text{ after } n \text{ independent rounds}
+- n = 20 \Rightarrow q = \frac{1}{1048576}, \text{ and the verifier still learns nothing}
+charts: []
+primary: rounds
+presets:
+  - rounds: 3
+    cheat: 0
+  - rounds: 3
+    cheat: 1
+  - rounds: 20
+    cheat: 1
+challenges:
+  - check: 2^rounds >= 1024
+  - check: cheat
+    target: 1
+  - check: rounds
+    target: 20

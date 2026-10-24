@@ -1,0 +1,17 @@
+sig.hint: slide m and tamper — Alice seals the contract, a forger meddles, Bob checks the seal
+sig.alice: Alice
+sig.bob: Bob
+sig.message: the contract
+sig.public: public key
+sig.private: private key
+sig.publishes: 'Alice hangs out her open lock (n = {n}, e = {e}) — anyone can check a seal, only she can press one'
+sig.sends: the seal carries the contract's fingerprint, locked with Alice's private key
+sig.forger: 'forged on the way: +{t}'
+sig.recompute: Bob re-computes the fingerprint himself
+sig.unseal: the public key opens the seal
+sig.match: seal matches — this is Alice's exact contract
+sig.noMatch: seal broken — the contract was changed on the way
+sig.collision: the forgery slipped through! this toy fingerprint is too small — real hashes make such collisions impossible
+sig.samePrime: p and q must be different primes — n = p² is trivial to factor
+sig.tooSmall: these primes are too small to build a working key
+sig.forge: 'pressing a new seal on the changed contract needs d — locked behind factoring {n}'

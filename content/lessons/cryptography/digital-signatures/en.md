@@ -1,55 +1,61 @@
 ---
-title: 'Digital signatures: proving a message wasn''t changed'
-summary: Anyone can check a digital signature, yet only one person could ever have created it — the same trick behind every verified download and "verified" badge.
+title: 'Digital signatures: a seal only one ring can press'
+summary: >-
+  Alice presses a seal only her private key can make, and the seal holds the
+  contract's fingerprint — change a single digit on the way and the check snaps
+  red, the trick behind verified updates, contracts and card payments.
 parameters:
-  pos: character changed
+  p: p — Alice's first secret prime (the slider snaps to the nearest prime)
+  q: q — Alice's second secret prime
+  m: m — the contract, written as a number
+  tamper: tamper — how much a forger adds to the contract in transit
 variables:
-  - the signature
-  - the message's short fingerprint (its hash)
+  - the signature, the pressed seal
+  - the contract's short fingerprint (its hash)
   - the signer's private exponent
-  - the shared modulus, public knowledge
+  - the public modulus, built from the signer's two primes
   - the remainder after dividing by n, applied after raising to a power
 ---
 
 ## Try it
 
-1. Look at the two labels: both start as "pay 100", the amount an order requests to be paid.
-2. Drag «pos» to choose which character of "pay 100" gets changed, and watch the right-hand 256-square fingerprint scramble completely.
-3. Watch the count at the bottom: about half of the 256 squares flip, however small the change to the order was — exactly the trace an attacker's edit would leave behind.
+1. Keep p = 5, q = 11, m = 7 and tamper = 0 and follow the journey: the contract squashes to the fingerprint 50, Alice's private key d = 27 presses the seal 30 onto it, and Bob's check opens the seal back to 50 — green, the contract is hers and untouched.
+2. Now slide tamper to 1: the contract arrives as 8 with fingerprint 10, but the seal still opens to 50 — the mismatch flips the verdict red, and the forgery is caught.
+3. Put tamper back to 0 and slide m instead: every contract gets a different seal from the same ring, and the check stays green — Alice can re-sign anything, the forger never can.
 
 ## Real-life examples
 
-1. **The original signed order.** «pos» = 0 changes only the "p" of "pay", showing that even the least important-looking letter still scrambles the fingerprint completely.
-2. **An attacker edits the amount's leading digit.** «pos» = 4 changes the "1" in "100" to something else, turning a 100-unit payment into a forged, different amount.
-3. **An attacker edits a trailing zero.** «pos» = 5 changes one of the zeros in "100", again producing an unrecognizable fingerprint the old signature can no longer match.
+- **The sealed contract.** With p = 5 and q = 11, the contract m = 7 carries the seal 30; Bob opens it to 50, the exact fingerprint he computes himself — the order is genuine.
+- **A forged amount.** Same contract, tamper = 1: what arrives reads 8 and fingerprints to 10, yet the seal still opens to 50 — a bank catches the edit instantly.
+- **A different ring.** p = 13 and q = 11 build n = 143: the contract m = 12 now carries the seal 63, which opens to its fingerprint 2 — any key pair works, as long as it is Alice's.
 
 ## Test yourself
 
-1. Set «pos» to 4, the digit that decides the payment's amount.
-2. Set «pos» back to 0, the very first letter of the order.
-3. Choose any «pos» from 4 to 6, anywhere inside the number "100".
+1. Set the textbook signing — p = 5, q = 11 and m = 7 with tamper at 0 — and read the seal s = 30.
+2. Turn forger: push tamper above zero and watch Bob's verdict flip red.
+3. Give Alice the biggest ring here — p = 13 with q = 11, tamper back at 0 — and keep the verdict green.
 
 ## Intuition
 
-Imagine a bank approves a payment order that reads "pay 100", and needs a way to prove later that this exact order, and no other, was approved. On screen, both labels start out as "pay 100"; drag «pos» to change one character of it, and the right-hand grid of 256 small squares recomputes a brand-new fingerprint for the edited order, live. Compare it with the left grid, the fingerprint of the untouched order: the squares outlined in red are the ones that flipped, and roughly half of all 256 always do, however small the edit.
+Kings used to press a ring into hot wax: anyone could recognize the imprint, and nobody else owned the ring. On screen, Alice does the digital version. Her contract is the coloured number on the left; it gets squashed into a short fingerprint, and her private key presses a seal onto that fingerprint. The sealed contract then travels to Bob — and the tamper slider lets a forger bump the number on the way, so you can watch what happens to the seal.
 
-A signature does not sign the whole order directly; it signs the order's short fingerprint instead. With a tiny toy version of RSA where $n = 55$ and a private key $d = 27$, signing the fingerprint $h = 13$ gives $s = h^{d} \bmod n = 13^{27} \bmod 55 = 7$.
+The seal is RSA run backwards. Encryption locks with the public key so that only the private one opens it; a signature does the opposite — Alice locks the fingerprint with her private key, $s = h^{d} \bmod n$, and anyone can open it with the public one. Out falls the fingerprint $h$ that Alice sealed; Bob recomputes the fingerprint of whatever contract actually arrived and compares the two. Changing the contract is easy — pressing a matching new seal is not, because that needs $d$.
 
 ## Formal
 
-To sign a message, first hash it to a short fingerprint $h = H(M)$, then raise that fingerprint to the private exponent, $s = h^{d} \bmod n$; only the signer, who alone knows $d$, can produce a valid $s$ for a given $h$.
+To sign a message, first hash it to a short fingerprint $h = H(m)$, then raise the fingerprint to the private exponent: $s = h^{d} \bmod n$. To verify, anyone computes $s^{e} \bmod n$ with the public key and checks that it equals the fingerprint of the message that actually arrived — only the signer could have produced an $s$ that passes, because pressing it needs $d$.
 
-Anyone can check the signature using the public exponent $e$, by testing whether $s^{e} \bmod n = h$; with the toy numbers above, $7^{3} \bmod 55 = 13$, which does equal the original fingerprint, so the signature checks out.
+Worked through with the sim's numbers: Alice's primes $p=5$ and $q=11$ give $n=55$ and $\varphi(n)=40$, so her keys are $e=3$ and $d=27$. The contract $m=7$ squashes to the fingerprint $h = (7^{2} + 1) \bmod 55 = 50$, the seal is $s = 50^{27} \bmod 55 = 30$, and opening it gives $30^{3} \bmod 55 = 50$ — the fingerprint again, so the seal holds.
 
 ## Advanced
 
-Signing the fingerprint instead of the full message keeps signing fast even for huge files, and it works only because hashing has the avalanche property: change a single character anywhere in the order and its fingerprint $h$ becomes an unrelated number, so the old signature $s$ no longer satisfies $s^{e} \bmod n = h$ for the new hash, and the forgery is caught instantly. Real systems never sign a raw hash exactly like this toy example; standard schemes such as RSA-PSS add carefully designed padding first, because textbook RSA signing on its own is vulnerable to certain forgery tricks that padding blocks.
+Signing the fingerprint instead of the full contract keeps signing fast even for huge files — but it only works if the fingerprint is impossible to collide. The sim's toy rule is tiny, and with small primes you can even find two contracts that share a fingerprint, letting a forgery slip through with a warning; real hashes are 256 bits long, and no one has ever found two colliding documents. Real systems also never sign a raw hash exactly like this toy does: standard schemes such as RSA-PSS add carefully designed padding first, because textbook RSA signing on its own is vulnerable to forgery tricks that the padding blocks.
 
 ## Derivation
 
-1. Compute the order's fingerprint with a public hash function; here, as a stand-in, treat that fingerprint as the number 13.
-2. Raise the fingerprint to the private exponent and reduce modulo $n$, producing the signature: $13^{27} \bmod 55 = 7$.
-3. Anyone can raise that signature to the public exponent and reduce modulo $n$ again, and it lands back on the original fingerprint, $7^{3} \bmod 55 = 13$, proving the signature is genuine.
+1. Squash the contract into its short fingerprint with the public rule; the default contract $7$ becomes $50$.
+2. Press the seal: raise the fingerprint to the private exponent and reduce modulo $n$, giving $50^{27} \bmod 55 = 30$.
+3. Anyone can open the seal with the public exponent, $30^{3} \bmod 55 = 50$, and land back on the fingerprint — compare it with the fingerprint of what arrived, and the contract is proven untouched.
 
 ## Real world
 
