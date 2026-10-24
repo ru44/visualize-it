@@ -45,7 +45,7 @@ function step(now: number) {
 }
 
 onMounted(() => {
-  raf = requestAnimationFrame(step)
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) raf = requestAnimationFrame(step)
 })
 onUnmounted(() => cancelAnimationFrame(raf))
 

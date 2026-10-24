@@ -799,3 +799,5 @@ practice.progress: '{done}/{total} solved'
 practice.allDone: Mix complete — come back tomorrow for a new hand.
 practice.reviewNote: Picks favour lessons you have already finished, so old skills stay sharp.
 practice.totals: 'All time: {n} {n|one=challenge|other=challenges} solved across {m} {m|one=lesson|other=lessons}.'
+lesson.reportQ: Spotted a mistake in this lesson?
+lesson.reportA: Tell us on GitHub

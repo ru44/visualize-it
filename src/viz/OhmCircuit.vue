@@ -107,7 +107,8 @@ function tick(now: number) {
 
 onMounted(() => {
   last = performance.now()
-  raf = requestAnimationFrame(tick)
+  dots.value = baseOffsets.map((o) => pointAtLength(o))
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) raf = requestAnimationFrame(tick)
 })
 onUnmounted(() => cancelAnimationFrame(raf))
 

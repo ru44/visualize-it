@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { t, locale } from './i18n'
 import { useSettings } from './stores/settings'
@@ -10,11 +10,13 @@ const settings = useSettings()
 const menu = ref(false)
 const route = useRoute()
 watch(() => route.fullPath, () => (menu.value = false))
+// ?embed=1 strips the chrome so a lesson can live inside an iframe on a teacher's page.
+const embed = computed(() => route.query.embed != null)
 </script>
 
 <template>
   <div class="flex min-h-screen flex-col">
-    <nav class="sticky top-0 z-20 border-b backdrop-blur-md" style="border-color: var(--line); background: color-mix(in srgb, var(--bg) 82%, transparent)">
+    <nav v-if="!embed" class="sticky top-0 z-20 border-b backdrop-blur-md" style="border-color: var(--line); background: color-mix(in srgb, var(--bg) 82%, transparent)">
       <div class="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 lg:px-8">
         <RouterLink to="/" class="flex items-center gap-2 font-semibold tracking-tight">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -93,7 +95,7 @@ watch(() => route.fullPath, () => (menu.value = false))
       </RouterView>
     </div>
 
-    <footer class="mt-16 border-t" style="border-color: var(--line)">
+    <footer v-if="!embed" class="mt-16 border-t" style="border-color: var(--line)">
       <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-6 text-sm lg:px-8" style="color: var(--muted)">
         <p>{{ t('footer.note') }}</p>
         <p class="flex gap-4">

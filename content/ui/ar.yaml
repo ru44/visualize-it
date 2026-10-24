@@ -799,3 +799,5 @@ practice.progress: 'حُلّ {done}/{total}'
 practice.allDone: اكتملت التشكيلة — عُد غدًا ليد جديدة.
 practice.reviewNote: الاختيار يفضّل الدروس التي أنهيتها، لتبقى المهارات القديمة حادة.
 practice.totals: 'الإجمالي: {n} {n|one=تحدٍّ|two=تحديان|few=تحديات|many=تحديًا|other=تحدٍّ} محلولة في {m} {m|one=درس|two=درسين|few=دروس|many=درسًا|other=درس}.'
+lesson.reportQ: وجدت خطأ في هذا الدرس؟
+lesson.reportA: أخبرنا على GitHub

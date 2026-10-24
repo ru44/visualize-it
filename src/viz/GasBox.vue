@@ -228,7 +228,8 @@ onMounted(() => {
 
   ensureParticles()
   last = performance.now()
-  raf = requestAnimationFrame(tick)
+  draw()
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) raf = requestAnimationFrame(tick)
 })
 onUnmounted(() => {
   cancelAnimationFrame(raf)
