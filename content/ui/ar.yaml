@@ -787,3 +787,8 @@ test.title: اختبر نفسك
 test.lead: حرّك المنزلقات حتى يصبح كل سؤال أخضر.
 test.solved: حُلّ {n} من {total}
 test.correct: صحيح!
+find.title: ابحث في الدروس
+find.placeholder: ابحث في {n} درسًا بالاسم أو الفكرة…
+find.none: 'لا شيء يطابق «{q}».'
+find.tip: جرّب كلمة مثل «أولي» أو «مدار» أو «بطارية» — أو اسم قسم.
+find.hint: ↑ ↓ للتنقل · Enter للفتح · Ctrl K أو / للاستدعاء

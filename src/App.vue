@@ -3,6 +3,7 @@ import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { t, locale } from './i18n'
 import { useSettings } from './stores/settings'
+import SearchPalette, { searchOpen } from './components/SearchPalette.vue'
 
 const settings = useSettings()
 // On phones the links live in a menu; it closes whenever the page changes.
@@ -32,6 +33,17 @@ watch(() => route.fullPath, () => (menu.value = false))
             <RouterLink to="/map" class="hidden rounded-lg px-3 py-1.5 hover:bg-[var(--sunken)] md:block" style="color: var(--muted)" active-class="!text-[var(--fg)]">{{ t('nav.map') }}</RouterLink>
             <button class="rounded-lg border px-2.5 py-1 text-sm hover:border-[var(--accent)]" style="border-color: var(--line)" @click="settings.nextLocale()">{{ t('nav.language') }}</button>
           </div>
+          <button
+            class="grid h-9 w-9 place-items-center rounded-lg hover:bg-[var(--sunken)]"
+            :aria-label="t('find.title')"
+            :title="t('find.title') + ' · Ctrl K'"
+            @click="searchOpen = true"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="M20 20l-3.5-3.5" />
+            </svg>
+          </button>
           <button
             class="grid h-9 w-9 place-items-center rounded-lg hover:bg-[var(--sunken)]"
             :aria-label="t('nav.theme')"
@@ -68,6 +80,8 @@ watch(() => route.fullPath, () => (menu.value = false))
         <button class="mt-1 block w-full rounded-lg border px-3 py-2 text-start hover:border-[var(--accent)]" style="border-color: var(--line)" @click="settings.nextLocale()">{{ t('nav.language') }}</button>
       </div>
     </nav>
+
+    <SearchPalette />
 
     <div class="flex-1">
       <RouterView v-slot="{ Component, route }">
