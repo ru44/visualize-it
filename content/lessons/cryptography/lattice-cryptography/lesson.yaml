@@ -1,0 +1,58 @@
+id: lattice-cryptography
+subject: cryptography
+difficulty: advanced
+equation: t \approx a\,u + b\,v
+concepts:
+- lattice
+- closest-vector-problem
+- post-quantum
+- ml-kem
+prerequisites:
+- diffie-hellman
+- rsa-encryption
+related:
+- elliptic-curve-cryptography
+visualization:
+  type: lattice-crypto
+  options: {}
+parameters:
+  tx:
+    min: -8
+    max: 8
+    step: 0.25
+    value: 3.25
+  ty:
+    min: -8
+    max: 8
+    step: 0.25
+    value: 2.5
+  basis:
+    min: 0
+    max: 1
+    step: 1
+    value: 0
+variables:
+- u, v
+- t
+- a, b
+derivation:
+- \text{the lattice is every point } a\,u + b\,v \text{ with whole numbers } a, b
+- '\text{good basis: round } a \text{ and } b \text{ to whole numbers and land on the closest point}'
+- '\text{bad basis: the same rounding lands far away, and no quantum shortcut is known}'
+charts: []
+primary: basis
+presets:
+  - tx: 3.25
+    ty: 2.5
+    basis: 0
+  - tx: 4
+    ty: 3.5
+    basis: 1
+  - tx: 4
+    ty: 3.5
+    basis: 0
+challenges:
+  - check: basis
+    target: 1
+  - check: abs(tx - 4) < 0.1 and abs(ty - 3.5) < 0.1 and basis > 0.5
+  - check: basis < 0.5 and abs(tx - 4) < 0.1 and abs(ty - 3.5) < 0.1

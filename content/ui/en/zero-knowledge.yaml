@@ -1,0 +1,15 @@
+zk.hint: Peggy proves she can open the door without showing the password — round after round
+zk.door: the magic door
+zk.victor: Victor
+zk.peggy: Peggy
+zk.rows: the rounds — Victor shouts a side, Peggy comes out of it
+zk.meter: a bluffer's chance of surviving every round
+zk.after: 'after {n|one=one round|other=# rounds}'
+zk.rounds: rounds
+zk.odds: bluffing survives
+zk.learned: Victor learned
+zk.nothing: nothing but “she can”
+zk.verdict: verdict
+zk.caught: 'caught bluffing in round {n}'
+zk.lucky: survived on pure luck
+zk.convinced: Victor is convinced

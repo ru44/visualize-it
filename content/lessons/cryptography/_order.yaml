@@ -4,10 +4,17 @@
 - diffie-hellman
 - rsa-encryption
 - xor-and-one-time-pad
+- stream-ciphers
 - vigenere-cipher
+- transposition-ciphers
 - frequency-analysis
+- enigma-machine
 - hash-functions
 - password-salting
+- confusion-and-diffusion
 - block-ciphers-and-aes
 - digital-signatures
 - elliptic-curve-cryptography
+- secret-sharing
+- zero-knowledge-proofs
+- lattice-cryptography

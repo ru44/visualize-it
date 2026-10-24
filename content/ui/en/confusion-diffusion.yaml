@@ -1,0 +1,9 @@
+confdiff.hint: flip one input bit and watch how far the change spreads in each cipher
+confdiff.inputs: two inputs, one bit apart
+confdiff.flipped: '← bit {i} is flipped'
+confdiff.xor: key only (like Caesar)
+confdiff.sbox: substitute only — confusion
+confdiff.spn: substitute + shuffle, {r} rounds — confusion and diffusion
+confdiff.bits: bits changed
+confdiff.goal: a good cipher
+confdiff.half: the marker is the goal — about half of all bits should change, so the outputs look unrelated

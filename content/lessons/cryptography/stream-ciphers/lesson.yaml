@@ -1,0 +1,61 @@
+id: stream-ciphers
+subject: cryptography
+difficulty: high-school
+equation: c_i = p_i \oplus k_i
+concepts:
+- stream-cipher
+- keystream
+- nonce
+- chacha20
+prerequisites:
+- xor-and-one-time-pad
+related:
+- block-ciphers-and-aes
+- vigenere-cipher
+- diffie-hellman
+visualization:
+  type: stream-cipher
+  options:
+    m1: ATTACK
+    m2: RETIRE
+parameters:
+  key:
+    min: 0
+    max: 255
+    step: 1
+    value: 90
+  nonce:
+    min: 0
+    max: 255
+    step: 1
+    value: 7
+  nonce2:
+    min: 0
+    max: 255
+    step: 1
+    value: 8
+variables:
+- p_i
+- c_i
+- k_i
+derivation:
+- k_i = G(\text{key},\ \text{nonce},\ i)
+- c_i = p_i \oplus k_i, \qquad p_i = c_i \oplus k_i
+- c_i \oplus c'_i = p_i \oplus p'_i \text{ when the same keystream is used twice}
+charts: []
+primary: nonce2
+presets:
+  - key: 90
+    nonce: 7
+    nonce2: 8
+  - key: 90
+    nonce: 7
+    nonce2: 7
+  - key: 200
+    nonce: 3
+    nonce2: 150
+challenges:
+  - check: abs(nonce - nonce2) < 0.5
+  - check: abs(nonce - nonce2) > 0.5 and abs(key - 200) < 0.5
+  - check: key
+    target: 255

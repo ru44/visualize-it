@@ -1,0 +1,8 @@
+enigma.hint: click a letter on the right to press a key and follow the signal
+enigma.rotors: rotor windows
+enigma.rotor: rotor {n}
+enigma.reflector: reflector
+enigma.keyboard: keyboard & lamps
+enigma.in: key pressed
+enigma.out: lamp lit
+enigma.mirror: pressing the output gives back

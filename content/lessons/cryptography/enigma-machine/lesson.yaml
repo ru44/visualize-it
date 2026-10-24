@@ -1,0 +1,67 @@
+id: enigma-machine
+subject: cryptography
+difficulty: high-school
+equation: c = \sigma^{-1}\!\left(U(\sigma(p))\right)
+concepts:
+- rotor-machine
+- enigma
+- polyalphabetic
+- cryptanalysis
+prerequisites:
+- vigenere-cipher
+related:
+- frequency-analysis
+- xor-and-one-time-pad
+- caesar-cipher
+visualization:
+  type: enigma-machine
+  options: {}
+parameters:
+  r1:
+    min: 0
+    max: 25
+    step: 1
+    value: 0
+  r2:
+    min: 0
+    max: 25
+    step: 1
+    value: 0
+  r3:
+    min: 0
+    max: 25
+    step: 1
+    value: 0
+  letter:
+    min: 0
+    max: 25
+    step: 1
+    value: 0
+variables:
+- \sigma
+- U
+derivation:
+- \sigma = \text{three rotors in a row; each press turns them, so the path changes with every letter}
+- U = \text{the reflector bounces the signal back through all three rotors}
+- c = \sigma^{-1}(U(\sigma(p))) \Rightarrow \text{the same setting decrypts its own message}
+charts: []
+primary: letter
+presets:
+  - r1: 0
+    r2: 0
+    r3: 0
+    letter: 0
+  - r1: 11
+    r2: 4
+    r3: 21
+    letter: 4
+  - r1: 0
+    r2: 0
+    r3: 25
+    letter: 17
+challenges:
+  - check: abs(r1) + abs(r2) + abs(r3) < 0.5
+  - check: letter
+    target: 4
+  - check: r3
+    target: 25

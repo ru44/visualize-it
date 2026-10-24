@@ -1,50 +1,50 @@
 ---
 title: 'Diffie–Hellman: agreeing on a secret in public'
 summary: >-
-  Two people who have never met privately can still agree on a secret number
-  in full view of an eavesdropper, which is the trick that lets two computers
-  set up a private channel over the open internet.
+  Two people who have never met mix their way to the same secret colour while
+  everyone watches — the trick that lets two computers set up a private
+  channel over the open internet.
 parameters:
-  n: n — the shared clock size, called p in the worked example
-  a: a — the shared starting point, called g (the generator)
-  k: k — how many powers to show, Alice's secret exponent in the example
+  g: g — the public base everyone agrees on, drawn as a shared pot of paint
+  a: a — Alice's secret exponent, her private pigment
+  b: b — Bob's secret exponent, his private pigment
 variables:
-  - the remainder after dividing by n, applied after every multiplication
+  - the remainder after dividing by p, applied after every multiplication
 ---
 
 ## Try it
 
-1. Set k to 6, Alice's secret exponent, with a = 5 and n = 23, and read the public number she lands on and sends across the room.
-2. Now set k to 15, Bob's secret exponent, and read the different public number he sends back.
-3. Set k to 1, the smallest possible secret, and notice how little climbing that leaves for anyone trying to guess it.
+1. Set g to 5 and a to 6: Alice mixes the public paint with her private pigment and lands on the public colour A = 8, which crosses the channel for everyone to see.
+2. Slide b back and forth and watch Bob's side: whatever he picks, the two boxes at the bottom always settle on the exact same colour — a secret that was never sent.
+3. Now wiggle a with everything else fixed: the bottom colour changes on both sides at once, yet nothing new ever crosses the middle except the two public mixes.
 
 ## Real-life examples
 
-- **Alice's secret, k = 6.** With the shared numbers g = 5 and p = 23, Alice's secret exponent 6 produces the public number 8 that she sends across the room.
-- **Bob's secret, k = 15.** Using the same shared numbers, Bob's secret exponent 15 produces the public number 19 that he sends back.
-- **A barely-secret exponent, k = 1.** With k = 1 the "secret" is just the public base itself, showing why real Diffie–Hellman always picks a much larger, unpredictable exponent.
+- **The worked exchange.** With g = 5, Alice's secret 6 and Bob's secret 9: Alice sends 8, Bob sends 11, and both privately mix their way to the same shared secret, 9.
+- **Different secrets, same trick.** Change the secrets to a = 3 and b = 7: the public numbers change completely, but the two bottom boxes still match perfectly.
+- **A weak base.** Set g to 2 with a = 11 and the public colour collapses to 1 — real systems choose g and p carefully precisely so that nothing this predictable can happen.
 
 ## Test yourself
 
-1. With a = 5 and n = 23, find the secret exponent k that makes the widget land on 8, Alice's public number.
-2. Keeping a = 5 and n = 23, find the secret exponent that lands on 19, Bob's public number.
-3. Set k down to 1, the smallest secret exponent the slider allows.
+1. With g = 5, find the secret exponent a that makes Alice's public number land on 8.
+2. Keeping g = 5, find the secret exponent b that makes Bob's public number land on 11.
+3. Still at g = 5, set the two secrets so both bottom boxes land on the shared secret 9.
 
 ## Intuition
 
-Picture Alice and Bob shouting numbers across a room full of eavesdroppers, agreeing out loud that everyone can hear g = 5 and p = 23 — a shared base and clock size, both public. Alice picks a secret exponent — set k to 6 to see it — and the widget climbs $g^{k} \bmod p$ just like the one-way function lesson, landing on 8: that is the number she actually shouts across the room.
+Picture Alice and Bob at opposite ends of a crowded room, each holding the same pot of public paint — everyone can see it, that is the base $g$. Each of them stirs in a private pigment, their secret number, and holds up the result: those mixed colours, $A = g^{a} \bmod p$ and $B = g^{b} \bmod p$, are shouted across the room in the open.
 
-Bob does the same climb with his own secret exponent, 15, landing on 19, which he shouts back. Neither of them has revealed their secret number, only where it lands on the public clock — and yet each can now combine the other's public landing spot with their own secret exponent and arrive at the exact same number, 2, without ever sending it.
+Here is the magic: Alice stirs her own pigment into Bob's public mix, Bob stirs his into Alice's, and both land on the identical final colour — the shared secret $s$ — without it ever crossing the room. The eavesdropper in the middle holds the public paint and both public mixes, but unmixing a colour back into its pigments is exactly the discrete logarithm problem from the one-way functions lesson: easy to do forwards, hopeless to undo.
 
 ## Formal
 
 Alice picks a secret $a$ and publishes $A = g^{a} \bmod p$; Bob picks a secret $b$ and publishes $B = g^{b} \bmod p$. Alice then computes $B^{a} \bmod p$ and Bob computes $A^{b} \bmod p$; both equal $g^{ab} \bmod p$, the shared secret $s = g^{ab} \bmod p$.
 
-With $g=5$, $p=23$, Alice's secret $a=6$ and Bob's secret $b=15$: $A = 5^{6} \bmod 23 = 8$ and $B = 5^{15} \bmod 23 = 19$. Alice computes $19^{6} \bmod 23$, Bob computes $8^{15} \bmod 23$, and both reach 2 — the shared secret, even though it was never sent.
+With $g=5$, $p=23$, Alice's secret $a=6$ and Bob's secret $b=9$: $A = 5^{6} \bmod 23 = 8$ and $B = 5^{9} \bmod 23 = 11$. Alice computes $11^{6} \bmod 23$, Bob computes $8^{9} \bmod 23$, and both reach 9 — the shared secret, even though it was never sent.
 
 ## Advanced
 
-An eavesdropper who records $g=5$, $p=23$, $A=8$ and $B=19$ still cannot get the shared secret without recovering $a$ or $b$ from $A$ or $B$ — exactly the discrete logarithm problem from the previous lesson. With $p=23$ that search takes seconds; real Diffie–Hellman uses primes hundreds of digits long, where the same search would outlast the age of the universe with all of today's computers combined.
+An eavesdropper who records $g=5$, $p=23$, $A=8$ and $B=11$ still cannot get the shared secret without recovering $a$ or $b$ from $A$ or $B$ — exactly the discrete logarithm problem. With $p=23$ that search takes seconds; real Diffie–Hellman uses primes hundreds of digits long, where the same search would outlast the age of the universe with all of today's computers combined. Modern connections usually run this exchange on elliptic curves (ECDH), where the same idea needs far shorter keys.
 
 ## Derivation
 
@@ -55,7 +55,7 @@ An eavesdropper who records $g=5$, $p=23$, $A=8$ and $B=19$ still cannot get the
 ## Real world
 
 ### HTTPS and TLS
-Every time a browser opens a secure padlock icon, it likely just ran a version of this exchange to agree on a session key with the server.
+Every time a browser shows a secure padlock icon, it likely just ran a version of this exchange to agree on a session key with the server.
 
 ### VPNs
 Virtual private networks establish an encrypted tunnel by first agreeing on a shared secret this same way, without ever transmitting it directly.

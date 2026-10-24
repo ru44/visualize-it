@@ -12,45 +12,46 @@ prerequisites:
 - one-way-functions
 related:
 - rsa-encryption
+- stream-ciphers
 visualization:
-  type: mod-clock
+  type: diffie-hellman
   options:
-    mode: pow
+    p: 23
 parameters:
-  n:
+  g:
     min: 2
-    max: 30
-    step: 1
-    value: 23
-  a:
-    min: 0
-    max: 29
+    max: 10
     step: 1
     value: 5
-  k:
+  a:
     min: 1
-    max: 22
+    max: 11
     step: 1
     value: 6
+  b:
+    min: 1
+    max: 11
+    step: 1
+    value: 9
 variables:
 - \bmod
 derivation:
 - A = g^{a} \bmod p = 5^{6} \bmod 23 = 8
-- B = g^{b} \bmod p = 5^{15} \bmod 23 = 19
-- A^{b} \bmod p = B^{a} \bmod p = g^{ab} \bmod p = 2
+- B = g^{b} \bmod p = 5^{9} \bmod 23 = 11
+- s = B^{a} \bmod p = A^{b} \bmod p = 9
 charts: []
-primary: k
+primary: a
 presets:
-  - n: 23
-    a: 5
-    k: 6
-  - n: 23
-    a: 5
-    k: 15
-  - n: 23
-    a: 5
-    k: 1
+  - g: 5
+    a: 6
+    b: 9
+  - g: 5
+    a: 3
+    b: 7
+  - g: 2
+    a: 11
+    b: 5
 challenges:
-  - check: abs(a-5)<0.5 and abs(n-23)<0.5 and abs(mod(a^k,n)-8)<0.5
-  - check: abs(a-5)<0.5 and abs(n-23)<0.5 and abs(mod(a^k,n)-19)<0.5
-  - check: abs(k-1)<0.5
+  - check: abs(g-5)<0.5 and abs(mod(g^a, 23) - 8)<0.5
+  - check: abs(g-5)<0.5 and abs(mod(g^b, 23) - 11)<0.5
+  - check: abs(g-5)<0.5 and abs(mod(mod(g^b, 23)^a, 23) - 9)<0.5

@@ -1,44 +1,40 @@
 ---
-title: 'RSA key length: outrunning brute force'
+title: 'RSA: a padlock anyone can snap shut'
 summary: >-
-  RSA lets anyone lock a message for you with a key you publish openly, and
-  the only thing standing between an eavesdropper and your private key is how
-  long that key is.
+  Bob hands out thousands of open padlocks; anyone can click one shut around a
+  message, but only Bob's private key opens it — and the gap between locking
+  and unlocking is the difficulty of factoring one giant number.
 parameters:
-  x: x — key length in bits
+  p: p — Bob's first secret prime (the slider snaps to the nearest prime)
+  q: q — Bob's second secret prime
+  m: m — the message Alice wants to lock, written as a number
 variables:
   - the remainder after dividing by n, applied after raising to a power
-charts:
-  - title: 'Years to try every key by brute force, at a trillion guesses a second (log scale)'
-    xLabel: key length x (bits)
-    yLabel: log10(years)
-    series:
-      - log10(years) to search all keys
 ---
 
 ## Try it
 
-1. Drag the key-length slider, x, up from 0 and watch the curve climb — read the y-axis value, log10(years), at a few points along the way.
-2. Set x to 512 and read where the curve sits on the y-axis; that height is how many zeros follow the 1 in the number of years to crack it.
-3. Push x up to 2048, the top of the slider, and read how much higher the curve has climbed compared to x = 512.
+1. Keep p = 5, q = 11 and m = 7 and follow the journey left to right: the open padlock (n = 55, e = 3) travels to Alice, her message leaves as the locked box c = 13, and Bob's private key d = 27 opens it back to exactly 7.
+2. Slide m up and down and watch only the locked box change — the padlock and the key never move, because one lock serves every message.
+3. Now drag q down until it sits on the same prime as p: the picture stops with a warning, because a lock built from one prime squared gives its factors away instantly.
 
 ## Real-life examples
 
-- **512-bit keys, once common.** Early web encryption used 512-bit RSA keys, since retired because the curve at x = 512 is already climbable by determined attackers with enough hardware.
-- **1024-bit keys, the old standard.** For years, 1024-bit keys were the default for secure websites, sitting much higher on the curve but still eventually judged too short.
-- **2048-bit keys, today's standard.** Most secure sites now use 2048-bit RSA keys, where the curve's height puts brute-force cracking beyond any computer built with current technology.
+- **The textbook numbers.** p = 5 and q = 11 give n = 55; locking m = 7 produces the box c = 13, and Bob's d = 27 brings back exactly 7.
+- **A different lock.** p = 3 and q = 11 build a smaller padlock, n = 33 — the same kind of message locks into a completely different box, with a different key.
+- **The biggest lock here.** p = 13 and q = 11 give n = 143, still laughably small: any computer factors it in a blink, which is why real locks use an n of 617 digits.
 
 ## Test yourself
 
-1. Push the slider all the way to x = 2048, today's standard key length.
-2. Pull the slider back down to x = 512, an old key length no longer considered safe.
-3. Drag the slider until the curve's height, log10(years) on the y-axis, reaches 50 or higher — that's already 10^50 years to search everything.
+1. Set the textbook run — p = 5, q = 11 and the message m = 7 — and read c = 13 off the locked box.
+2. Break the lock on purpose: drag p and q onto the same prime and read what the warning says.
+3. Build the biggest padlock these sliders allow: p = 13 with q = 11.
 
 ## Intuition
 
-Imagine a machine trying a trillion different keys every second, non-stop, hunting for the one exact key that unlocks a message — even at that speed, a short enough key falls in seconds, but every extra bit added to the key length doubles how long the search takes. Drag the slider, x, key length in bits, and watch the marker climb the single curve on screen: its height is $\log_{10}$ of how many years that same trillion-guesses-a-second machine would need to try every possible key of that length.
+Bob makes two secret primes, multiplies them into one public number $n$, and hangs an open padlock stamped $(n, e)$ where anyone can grab it. Alice clicks it shut around her message — on screen, $m$ turns into the locked box $c$ — and from that moment not even she can reopen it: snapping a padlock shut needs no key, opening it does.
 
-At x = 256 the marker sits near 57, meaning about $10^{57}$ years to search every key. That is far longer than the roughly $10^{10}$ years the universe has existed. Push x up toward 2048, the length real websites use today, and the curve keeps rising in a straight, almost unremarkable line, even though the number it stands for grows utterly beyond anything a computer could ever finish searching.
+The eavesdropper watches everything cross the wire: the padlock $(n, e)$ and the locked box $c$. Her only way in is to split $n$ back into the two primes it came from, and that is the whole secret of RSA — multiplying $5 \times 11$ is instant, but un-multiplying a 617-digit $n$ is beyond every computer on Earth running together for longer than the universe has existed.
 
 ## Formal
 
@@ -48,7 +44,7 @@ Worked through with tiny numbers: choose $p=5$, $q=11$, so $n=pq=55$ and $\varph
 
 ## Advanced
 
-Encrypt the message $m=7$: $c = m^{e} \bmod n = 7^{3} \bmod 55 = 13$. Decrypt it back: $c^{d} \bmod n = 13^{27} \bmod 55 = 7$, recovering the original message exactly. Anyone who knows $n$ could recover $d$ from $e$ by factoring $n$ back into $p$ and $q$ — but for the real system's 2048-bit $n$, factoring is the hard, one-way step that keeps the private key safe even though the public key is, well, public. In practice RSA is too slow to encrypt whole messages directly, so it usually just encrypts a short random key for a much faster cipher that does the rest of the work.
+Encrypt the message $m=7$: $c = m^{e} \bmod n = 7^{3} \bmod 55 = 13$. Decrypt it back: $c^{d} \bmod n = 13^{27} \bmod 55 = 7$, recovering the original message exactly. Anyone who knows $n$ could recover $d$ from $e$ by factoring $n$ back into $p$ and $q$ — but for the real system's 2048-bit $n$, factoring is the hard, one-way step that keeps the private key safe even though the public key is, well, public. In practice RSA is too slow to encrypt whole messages directly, so it usually just locks a short random key for a much faster cipher that does the rest of the work.
 
 ## Derivation
 

@@ -1,0 +1,60 @@
+id: confusion-and-diffusion
+subject: cryptography
+difficulty: high-school
+equation: \text{changed bits} \approx \frac{n}{2}
+concepts:
+- confusion
+- diffusion
+- avalanche-effect
+- shannon
+prerequisites:
+- caesar-cipher
+- xor-and-one-time-pad
+related:
+- block-ciphers-and-aes
+- hash-functions
+- transposition-ciphers
+visualization:
+  type: confusion-diffusion
+  options: {}
+parameters:
+  flip:
+    min: 0
+    max: 15
+    step: 1
+    value: 0
+  rounds:
+    min: 1
+    max: 4
+    step: 1
+    value: 1
+  key:
+    min: 0
+    max: 255
+    step: 1
+    value: 58
+variables:
+- n
+derivation:
+- '\text{confusion: the key''s effect on each output bit is tangled, not a simple shift}'
+- '\text{diffusion: each input bit must spread its influence to about half the output bits}'
+- \text{one pass is never enough, so repeat substitute} \to \text{shuffle, round after round}
+charts: []
+primary: rounds
+presets:
+  - flip: 0
+    rounds: 1
+    key: 58
+  - flip: 0
+    rounds: 4
+    key: 58
+  - flip: 15
+    rounds: 4
+    key: 200
+challenges:
+  - check: rounds
+    target: 4
+  - check: flip
+    target: 15
+  - check: rounds
+    target: 1

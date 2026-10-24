@@ -1,0 +1,10 @@
+lattice.hint: drag the target point, then switch the basis — same grid, very different luck
+lattice.basis: basis
+lattice.good: short & nearly square
+lattice.bad: long & skewed
+lattice.rounded: rounded coordinates
+lattice.dist: distance found
+lattice.best: closest possible
+lattice.actual: true closest
+lattice.hit: rounding found the closest point
+lattice.miss: rounding missed — with a bad basis the problem is hard, and that hardness is the lock

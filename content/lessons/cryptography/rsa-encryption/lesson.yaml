@@ -12,45 +12,45 @@ prerequisites:
 - exponential-vs-polynomial
 related:
 - one-way-functions
-- logarithms
+- digital-signatures
 visualization:
-  type: function-plot
-  options:
-    expr: x*log10(2)
-    domain:
-    - 0
-    - 2048
-    range:
-    - 0
-    - 640
-    mode: plain
+  type: rsa-lock
+  options: {}
 parameters:
-  x:
-    min: 0
-    max: 2048
-    step: 8
-    value: 256
+  p:
+    min: 2
+    max: 13
+    step: 1
+    value: 5
+  q:
+    min: 2
+    max: 13
+    step: 1
+    value: 11
+  m:
+    min: 2
+    max: 20
+    step: 1
+    value: 7
 variables:
 - \bmod
 derivation:
 - \text{choose } p=5,\ q=11,\ n=pq=55,\ \varphi(n)=(p-1)(q-1)=40
 - \text{pick } e=3; \text{ solve } ed \equiv 1 \bmod \varphi(n) \Rightarrow d=27 \text{ since } 3\times27=81=2\times40+1
 - c = m^{e} \bmod n = 7^{3} \bmod 55 = 13, \qquad c^{d} \bmod n = 13^{27} \bmod 55 = 7
-charts:
-- domain:
-  - 0
-  - 2048
-  marker: x
-  series:
-  - x*log10(2) - 12 - 7.5
-primary: x
+charts: []
+primary: m
 presets:
-  - x: 512
-  - x: 1024
-  - x: 2048
+  - p: 5
+    q: 11
+    m: 7
+  - p: 3
+    q: 11
+    m: 8
+  - p: 13
+    q: 11
+    m: 2
 challenges:
-  - check: x
-    target: 2048
-  - check: x
-    target: 512
-  - check: x*log10(2) - 19.5 >= 50
+  - check: abs(p-5)<0.5 and abs(q-11)<0.5 and abs(m-7)<0.5
+  - check: abs(p-q)<0.5
+  - check: abs(p-13)<0.5 and abs(q-11)<0.5
