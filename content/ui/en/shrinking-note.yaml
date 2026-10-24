@@ -1,0 +1,16 @@
+inf.hint: set the yearly rate and slide the years — the note shrinks, the basket's tag climbs
+inf.note: the 100 note, in real buying power
+inf.yearZero: year 0
+inf.worth: 'now buys what {v} used to'
+inf.buys: what it still buys
+inf.buysNote: '{n} of the 10 loaves it bought in year 0'
+inf.basket: the same basket now costs
+inf.wasHundred: it cost 100 in year 0
+inf.rule: 'rule of 72: at {p}% prices double every ≈{n} years'
+inf.zero: at 0% the note never shrinks
+inf.years: years
+inf.power: buying power of 100
+inf.index: price index
+inf.halve: power halves in
+inf.halveYears: '≈{n} years'
+inf.caption: the note in your drawer keeps its number and quietly loses its meaning

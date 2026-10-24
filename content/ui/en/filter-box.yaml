@@ -1,0 +1,7 @@
+lpf.hint: raise the input frequency past the cutoff — the wave squeezes through ever smaller
+lpf.in: 'in: full swing at {f} Hz'
+lpf.out: 'out: {h}% of the swing'
+lpf.box: low-pass filter
+lpf.corner: f = f_c — the −3 dB corner, 71% of the swing survives
+lpf.note: the filter never chops — it fades, 20 dB for every ×10 in frequency
+lpf.caption: bass through the wall, treble lost — every wall, tone knob and smoothing circuit is this box

@@ -13,16 +13,7 @@ related:
   - work-and-energy
   - momentum-and-impulse
 visualization:
-  type: function-plot
-  options:
-    expr: 0.5*m*x^2
-    domain:
-      - 0
-      - 12
-    range:
-      - -4
-      - 80
-    mode: tangent
+  type: energy-hill
 parameters:
   m:
     min: 0.5

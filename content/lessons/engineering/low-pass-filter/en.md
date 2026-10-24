@@ -20,9 +20,9 @@ charts:
 
 ## Try it
 
-1. Watch the curve sit nearly flat near 0 dB at low frequency, then bend over and dive as frequency climbs.
+1. Set the signal frequency low and watch the box: the output wave leaves with nearly its full swing — the filter waves the lows straight through.
 2. Drag $f_c$ (cutoff frequency) up. The whole corner slides right, letting higher frequencies through before the rolloff starts.
-3. Now drag $x$ (signal frequency) across the corner near $f_c$. Watch the gain fall and the phase shift grow toward −90°.
+3. Now drag $x$ (signal frequency) across the corner near $f_c$. The output wave squashes and slips behind the input — gain falling, phase shift growing toward −90°.
 
 ## Real-life examples
 
@@ -38,7 +38,7 @@ charts:
 
 ## Intuition
 
-Turn the treble knob down on a stereo, and the shimmer of cymbals fades while the bass line stays just as loud — that knob is quietly setting the cutoff of a filter like this one. The curve on screen plots the gain in decibels against $x$, the signal's frequency: it sits nearly flat near 0 dB at low frequency, then bends over and dives as $x$ climbs past $f_c$, the cutoff frequency set by the slider.
+Turn the treble knob down on a stereo, and the shimmer of cymbals fades while the bass line stays just as loud — that knob is quietly setting the cutoff of a filter like this one. On screen the wave enters the box at full swing and leaves squashed: the output keeps nearly all of it at low $x$, the signal's frequency, then fades fast as $x$ climbs past $f_c$, the cutoff frequency set by the slider — the small Bode inset records the same dive in decibels.
 
 Drag $f_c$ up and the whole bend slides right, letting higher frequencies through before the rolloff starts. Alongside the volume change, the filter also delays the signal — the phase chart below shows that delay growing from near 0° at low frequency toward −90° once the frequency is far above $f_c$.
 

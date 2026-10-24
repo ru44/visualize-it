@@ -1,0 +1,7 @@
+dish.hint: slide the clock — calm for most of the run, then the dish explodes
+dish.dish: the petri dish
+dish.overflow: 'drawing 360 of {n} — the rest no longer fit'
+dish.timeline: one doubling every {T} minutes
+dish.doublings: doublings so far
+dish.startedWith: started with {n} cells
+dish.caption: nothing changed at the end — it doubled exactly as calmly as it did at the start

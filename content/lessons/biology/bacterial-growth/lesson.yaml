@@ -11,16 +11,7 @@ prerequisites:
 related:
   - logistic-population
 visualization:
-  type: function-plot
-  options:
-    expr: N0*2^(x/T)
-    domain:
-      - 0
-      - 600
-    range:
-      - 0
-      - 11000000
-    mode: tangent
+  type: petri-dish
 parameters:
   N0:
     min: 1

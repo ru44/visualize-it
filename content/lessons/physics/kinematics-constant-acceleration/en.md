@@ -13,20 +13,20 @@ variables:
   - position at $t=0$
   - velocity at $t=0$
   - constant acceleration
-  - 'time (the horizontal axis, labelled $x$ on the plot)'
+  - 'time (the scrubbed moment, labelled $x$ on the slider)'
 ---
 
 ## Try it
 
-1. Watch the point move along the curve as time passes.
-2. Drag the point along the curve and watch the tangent line's slope — that slope is the object's velocity at that instant.
-3. Set "acceleration a" to zero. The curve straightens into a line: constant speed, no speeding up.
+1. Scrub time along the road and watch the car roll past the metre marks, dropping a breadcrumb every second.
+2. Read the two arrows: the velocity arrow grows (or shrinks) as time passes, while the acceleration arrow never changes — that is what "constant acceleration" means.
+3. Set "acceleration a" to zero. The breadcrumbs fall evenly spaced: constant speed, no speeding up.
 
 ## Real-life examples
 
 1. **A car braking to a stop.** Starting at 8 m/s (about 29 km/h) and braking at 3 m/s², the car's position traces a downward-curving parabola until it stops.
 2. **An elevator starting to rise.** From rest, an elevator accelerating at a gentle 1 m/s² smoothly builds up speed without jolting passengers.
-3. **A skateboarder on a gentle slope.** Starting 2 m along at 1 m/s and speeding up at 2 m/s² down the hill, the position curve bends upward faster and faster.
+3. **A skateboarder on a gentle slope.** Starting 2 m along at 1 m/s and speeding up at 2 m/s² down the hill, the breadcrumbs spread farther apart every second.
 
 ## Test yourself
 
@@ -36,9 +36,9 @@ variables:
 
 ## Intuition
 
-Picture a car starting at 8 m/s and braking hard at 3 m/s² until it stops. Drag the point along the curve and watch the tangent line: its slope is the car's velocity at that instant, and the dashed derivative curve traces that same slope over time as a straight line, because velocity changes at a steady rate under constant acceleration.
+Picture a car starting at 8 m/s and braking hard at 3 m/s² until it stops. Scrub the time slider and watch the road: the velocity arrow shortens steadily while the breadcrumbs bunch closer together — and the inset x–t curve records the same story as a flattening slope, because velocity changes at a steady rate under constant acceleration.
 
-Now set "acceleration a" to zero: the curve straightens into a plain sloped line and the derivative curve goes flat, showing constant velocity with no speeding up or slowing down. Make "acceleration a" negative with a positive "initial velocity v₀" instead: the tangent starts steep and positive, flattens to zero at the peak, then tilts negative — the object slows, stops, and reverses, exactly like a ball thrown straight up.
+Now set "acceleration a" to zero: the breadcrumbs fall evenly spaced and the inset curve straightens into a plain sloped line — constant velocity, no speeding up or slowing down. Make "acceleration a" negative with a positive "initial velocity v₀" instead: the car speeds forward, slows, pauses at the v = 0 flag, then rolls back — exactly like a ball thrown straight up.
 
 ## Formal
 

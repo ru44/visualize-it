@@ -1,0 +1,13 @@
+mkt.hint: drag the price along the demand line — revenue is the shaded rectangle, price × buyers
+mkt.axis: buyers Q against price x
+mkt.price: price x
+mkt.tag: 'your price: {x}'
+mkt.queue: 'the queue: Q = {q} buyers'
+mkt.empty: priced everyone away
+mkt.best: revenue peaks at price
+mkt.atPeak: '|E| = 1 — this is the top of the revenue hill'
+mkt.raise: demand barely flinches here — raising the price grows revenue
+mkt.lower: buyers are fleeing — lowering the price grows revenue
+mkt.inelastic: inelastic — few alternatives, people pay up
+mkt.elastic: elastic — easy to walk away
+mkt.caption: the same rectangle trade-off sets fuel prices, streaming fees and bus fares

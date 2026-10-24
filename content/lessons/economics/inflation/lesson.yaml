@@ -13,16 +13,7 @@ related:
   - present-value
   - compound-interest
 visualization:
-  type: function-plot
-  options:
-    expr: 100/(1 + p/100)^x
-    domain:
-      - 0
-      - 40
-    range:
-      - 0
-      - 100
-    mode: plain
+  type: shrinking-note
 parameters:
   p:
     min: 0

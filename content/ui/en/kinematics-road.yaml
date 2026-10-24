@@ -1,0 +1,5 @@
+road.hint: scrub time along the road — the growing gaps between breadcrumbs are the acceleration
+road.crumbs: a breadcrumb every whole second
+road.turning: v = 0 — the turning point
+road.readEq: the same journey, written as the equation
+road.caption: position curves, velocity tilts, acceleration is the one constant arrow
