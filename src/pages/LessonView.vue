@@ -297,7 +297,7 @@ const badge = { exact: 'var(--pos)', numeric: 'var(--accent)', warning: 'var(--a
       </section>
     </div>
 
-    <Challenges v-if="id" class="mt-8" :challenges="lesson.challenges" :params="params" :lesson-id="id" />
+    <Challenges v-if="id" id="challenges" class="mt-8 scroll-mt-20" :challenges="lesson.challenges" :params="params" :lesson-id="id" />
 
     <div class="mt-12 grid gap-x-12 gap-y-10 lg:grid-cols-2">
       <section ref="explain" class="scroll-mt-20">
