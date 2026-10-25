@@ -6,7 +6,7 @@ const packs = import.meta.glob<{ default: Record<string, NotationEntry> }>('../g
 const byLang: Record<string, Record<string, NotationEntry>> = Object.fromEntries(Object.entries(packs).map(([k, v]) => [k.match(/notation\.(.+)\.json$/)![1], v.default]))
 
 /** The notation guide in the current language (English entries fill any gap). */
-export const notation = computed<Record<string, NotationEntry>>(() => ({ ...byLang.en, ...(byLang[locale.value] ?? {}) }))
+export const notation = computed<Record<string, NotationEntry>>(() => ({ ...byLang.en, ...byLang[locale.value] }))
 
 /** How a token is shown: a LaTeX command renders as itself; decorations get a sample letter. */
 export function displayTex(token: string): string {

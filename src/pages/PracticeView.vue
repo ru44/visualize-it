@@ -1,97 +1,24 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { t, locale } from '../i18n'
-import { lessons, getLesson } from '../lessons'
+import { getLesson } from '../lessons'
 import { localize } from '../lessons/localize'
-import { useProgress } from '../stores/progress'
+import { usePractice } from '../stores/practice'
 import SubjectIcon from '../components/SubjectIcon.vue'
 import MathText from '../components/MathText.vue'
 
-// The daily mix: five challenges picked deterministically for today and frozen in localStorage,
-// favouring lessons the learner has already finished so old skills stay sharp. Solving happens
-// inside the lesson page (which records it); this page just deals the hand and keeps score.
-const progress = useProgress()
-const d = new Date()
-const dateKey = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`
+// The page is a thin view over the practice store: it localizes today's dealt hand and keeps score.
+const practice = usePractice()
 
-function mulberry(seed: number) {
-  return () => {
-    seed |= 0
-    seed = (seed + 0x6d2b79f5) | 0
-    let z = Math.imul(seed ^ (seed >>> 15), 1 | seed)
-    z = (z + Math.imul(z ^ (z >>> 7), 61 | z)) ^ z
-    return ((z ^ (z >>> 14)) >>> 0) / 4294967296
-  }
-}
-const seed = [...dateKey].reduce((a, c) => (Math.imul(a, 31) + c.charCodeAt(0)) | 0, 7)
-
-function shuffled<T>(arr: T[], rnd: () => number): T[] {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(rnd() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
-
-function dealMix(): { id: string; i: number }[] {
-  const rnd = mulberry(seed)
-  const entry = (id: string, i: number) => ({ id, i })
-  const review = lessons.flatMap((l) => l.challenges.map((_, i) => entry(l.id, i)).filter((e) => progress.isDone(l.id) || progress.isSolved(e.id, e.i)))
-  const fresh = lessons.flatMap((l) => l.challenges.map((_, i) => entry(l.id, i)).filter((e) => !progress.isDone(l.id) && !progress.isSolved(e.id, e.i)))
-  const pool = [...shuffled(review, rnd), ...shuffled(fresh, rnd)]
-  const picked: { id: string; i: number }[] = []
-  const used = new Set<string>()
-  for (const e of pool) {
-    if (picked.length === 5) break
-    if (used.has(e.id)) continue
-    used.add(e.id)
-    picked.push(e)
-  }
-  for (const e of pool) {
-    if (picked.length === 5) break
-    if (!picked.includes(e)) picked.push(e)
-  }
-  return picked
-}
-
-// Freeze today's hand so solving a lesson mid-day cannot reshuffle it.
-const KEY = 'dailyMix'
-function todaysMix(): { id: string; i: number }[] {
-  try {
-    const saved = JSON.parse(localStorage.getItem(KEY) ?? 'null')
-    if (saved?.date === dateKey && Array.isArray(saved.mix) && saved.mix.every((e: any) => getLesson(e.id)?.challenges[e.i])) return saved.mix
-  } catch {}
-  const mix = dealMix()
-  try {
-    localStorage.setItem(KEY, JSON.stringify({ date: dateKey, mix }))
-  } catch {}
-  return mix
-}
-
-const mix = todaysMix()
 const cards = computed(() => {
   void locale.value
-  return mix.map((e) => {
+  return practice.mix.map((e) => {
     const l = localize(getLesson(e.id)!)
-    // A card counts only when solved today — review cards are old solves dealt back on purpose,
-    // so they start the day unchecked and must be re-earned inside the lesson.
-    return { ...e, title: l.title, subject: l.subject, text: l.challenges[e.i]?.text ?? '', solved: progress.solvedOn(e.id, e.i) === dateKey }
+    return { ...e, title: l.title, subject: l.subject, text: l.challenges[e.i]?.text ?? '', solved: practice.solvedToday(e.id, e.i) }
   })
 })
 const doneToday = computed(() => cards.value.filter((c) => c.solved).length)
-const allTime = computed(() => {
-  let solved = 0
-  const touched = new Set<string>()
-  for (const l of lessons)
-    for (let i = 0; i < l.challenges.length; i++)
-      if (progress.isSolved(l.id, i)) {
-        solved++
-        touched.add(l.id)
-      }
-  return { n: solved, m: touched.size }
-})
-const dateLabel = d.toLocaleDateString(locale.value === 'ar' ? 'ar' : 'en-GB', { weekday: 'long', day: 'numeric', month: 'long' })
+const dateLabel = practice.today.toLocaleDateString(locale.value === 'ar' ? 'ar' : 'en-GB', { weekday: 'long', day: 'numeric', month: 'long' })
 </script>
 
 <template>
@@ -128,6 +55,6 @@ const dateLabel = d.toLocaleDateString(locale.value === 'ar' ? 'ar' : 'en-GB', {
     </ol>
 
     <p class="mt-6 text-sm" style="color: var(--muted)">{{ t('practice.reviewNote') }}</p>
-    <p v-if="allTime.n" class="mt-1 text-sm" style="color: var(--muted)">{{ t('practice.totals', allTime) }}</p>
+    <p v-if="practice.allTime.n" class="mt-1 text-sm" style="color: var(--muted)">{{ t('practice.totals', practice.allTime) }}</p>
   </main>
 </template>

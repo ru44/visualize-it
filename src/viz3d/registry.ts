@@ -9,11 +9,11 @@ import { defineAsyncComponent, type Component } from 'vue'
 const ALIASES: Record<string, string> = { SurfaceMesh: 'surface' }
 
 const kebab = (name: string) => name.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()
-const modules = import.meta.glob('./*3D.vue')
+const modules = import.meta.glob('./**/*3D.vue')
 
 export const viz3dRegistry: Record<string, Component> = Object.fromEntries(
   Object.entries(modules).map(([path, load]) => {
-    const name = path.slice(2, -6)
+    const name = path.split('/').pop()!.slice(0, -6)
     return [ALIASES[name] ?? kebab(name), defineAsyncComponent(load as () => Promise<{ default: Component }>)]
   }),
 )
