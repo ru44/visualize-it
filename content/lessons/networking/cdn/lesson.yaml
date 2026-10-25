@@ -1,0 +1,60 @@
+id: cdn
+subject: networking
+difficulty: high-school
+equation: \bar{t} = \frac{H\,t_e + (100 - H)\,t_o}{100}
+concepts:
+- cdn
+- caching
+- edge
+- speed-of-light
+prerequisites:
+- latency-and-bandwidth
+related:
+- dns
+- cloud-vpc
+visualization:
+  type: cdn-map
+parameters:
+  do:
+    min: 100
+    max: 12000
+    step: 100
+    value: 9000
+    unit: km
+  de:
+    min: 10
+    max: 500
+    step: 10
+    value: 50
+    unit: km
+  H:
+    min: 0
+    max: 100
+    step: 5
+    value: 90
+    unit: '%'
+variables:
+- \bar{t}
+- t_e
+- t_o
+- H
+derivation:
+- '\text{light in fibre: a round trip over } d \text{ km costs about } \frac{d}{100} \text{ ms}'
+- t_e = \frac{d_e}{100}, \qquad t_o = \frac{d_o}{100}
+- \bar{t} = \frac{H\,t_e + (100 - H)\,t_o}{100}
+charts: []
+primary: H
+presets:
+- do: 9000
+  de: 50
+  H: 95
+- do: 9000
+  de: 50
+  H: 0
+- do: 9000
+  de: 50
+  H: 50
+challenges:
+- check: H >= 90 and de <= 50
+- check: H == 0 and do >= 9000
+- check: (H*de/100 + (100-H)*do/100)/100 <= 2 and do >= 5000

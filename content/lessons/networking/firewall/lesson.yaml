@@ -1,0 +1,55 @@
+id: firewall
+subject: networking
+difficulty: beginner
+equation: \text{exposure} \propto n_{\text{open}}
+concepts:
+- firewall
+- ports
+- attack-surface
+- services
+prerequisites:
+- routers
+related:
+- vpn
+- tcp
+visualization:
+  type: firewall-doors
+parameters:
+  web:
+    min: 0
+    max: 1
+    step: 1
+    value: 1
+  ssh:
+    min: 0
+    max: 1
+    step: 1
+    value: 0
+  R:
+    min: 10
+    max: 500
+    step: 10
+    value: 100
+variables:
+- n_{\text{open}}
+- R
+derivation:
+- \text{65,535 numbered doors exist; a firewall bricks them all shut by default}
+- '\text{each service you run opens exactly one: } n_{\text{open}} = \text{web} + \text{ssh}'
+- \text{a scanner making } R \text{ tries/min knocks } 1440\,R \text{ times a day; only open doors ever answer}
+charts: []
+primary: ssh
+presets:
+- web: 1
+  ssh: 0
+  R: 100
+- web: 1
+  ssh: 1
+  R: 300
+- web: 0
+  ssh: 0
+  R: 500
+challenges:
+- check: web == 1 and ssh == 0
+- check: ssh == 1 and R >= 300
+- check: web == 0 and ssh == 0

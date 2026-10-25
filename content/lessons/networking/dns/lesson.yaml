@@ -1,0 +1,57 @@
+id: dns
+subject: networking
+difficulty: beginner
+equation: t_{\text{miss}} = 4\,t_{\text{RTT}}, \qquad t_{\text{hit}} = t_{\text{RTT}}
+concepts:
+- dns
+- name-resolution
+- caching
+- hierarchy
+prerequisites:
+- routers
+related:
+- cdn
+- tcp
+visualization:
+  type: dns-chain
+parameters:
+  step:
+    min: 0
+    max: 4
+    step: 1
+    value: 0
+  cache:
+    min: 0
+    max: 1
+    step: 1
+    value: 0
+  rtt:
+    min: 10
+    max: 200
+    step: 10
+    value: 50
+    unit: ms
+variables:
+- t_{\text{miss}}
+- t_{\text{hit}}
+- t_{\text{RTT}}
+derivation:
+- '\text{a cold lookup pays 4 round trips: resolver, root, registry, the site''s own server}'
+- t_{\text{miss}} = 4\,t_{\text{RTT}}
+- '\text{a warm cache answers at the first stop: } t_{\text{hit}} = t_{\text{RTT}}'
+charts: []
+primary: step
+presets:
+- step: 4
+  cache: 0
+  rtt: 50
+- step: 4
+  cache: 1
+  rtt: 50
+- step: 4
+  cache: 0
+  rtt: 200
+challenges:
+- check: cache == 0 and step >= 4
+- check: cache == 1 and step >= 1 and rtt <= 20
+- check: cache == 0 and rtt >= 150 and step >= 4

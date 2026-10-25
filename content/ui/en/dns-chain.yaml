@@ -1,0 +1,20 @@
+dns.hint: ▶ drag "step" to walk the lookup — flip "cache" and watch the chain collapse to one hop
+dns.you: your browser
+dns.resolver: resolver
+dns.root: root
+dns.tld: .example registry
+dns.auth: the site's own
+dns.ask: '"what address is visualize-it.example?"'
+dns.rootSays: 'root: "no idea — but .example lives over there"'
+dns.tldSays: 'registry: "ask the site''s own name server"'
+dns.authSays: 'the site''s server: "that''s me — here''s the address"'
+dns.answer: the answer travels home
+dns.cached: '"I answered that a minute ago — here, from memory"'
+dns.skipped: skipped — the resolver remembered
+dns.name: looking up
+dns.trips: round trips
+dns.clock: elapsed
+dns.result: address
+dns.elapsed: 'elapsed: {ms} ms'
+dns.worst: 'full chain at this RTT: {ms} ms'
+dns.caption: nobody knows every address — each stop just knows who to ask next, and the resolver writes the answer down

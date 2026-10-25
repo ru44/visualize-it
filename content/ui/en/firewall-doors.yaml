@@ -1,0 +1,22 @@
+fw.hint: ▶ 65,535 numbered doors, bricked shut by default — every service you run opens exactly one
+fw.wall: the firewall
+fw.open: doors open
+fw.sealed: doors sealed
+fw.probes: attack probes
+fw.day: day
+fw.sshDoor: door 22
+fw.answering: answering strangers
+fw.brick: solid brick
+fw.webOn: web — open on purpose
+fw.webOff: web — closed, site dark
+fw.sshOn: remote login — forgotten open
+fw.sshOff: remote login — sealed
+fw.visitors: honest visitors, heading for 443
+fw.bot: 'scanner bot · {r} tries/min'
+fw.webServer: your web site
+fw.serving: serving happily through 443
+fw.unreachable: unreachable — nothing is open
+fw.sshServer: remote login (SSH)
+fw.guessing: a stranger is guessing passwords…
+fw.safe: behind brick — scanners bounce off
+fw.caption: a firewall is not a shield in front of a door — it is the wall itself, and the only openings are the ones you chose

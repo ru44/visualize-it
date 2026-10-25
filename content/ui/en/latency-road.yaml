@@ -1,0 +1,14 @@
+lat.hint: ▶ the road's length is latency, its lanes are bandwidth — they answer different questions
+lat.you: you
+lat.server: server
+lat.pingRider: ping
+lat.length: 'length: L = {l} ms round trip'
+lat.lanes: '{b} Mbps'
+lat.gamer: the gamer asks — how long is the road?
+lat.gamerNote: one tiny packet, there and back; lanes don't help
+lat.downloader: the downloader asks — {s} MB, how fast?
+lat.downloaderNote: a convoy; what matters is how many lanes
+lat.caption: latency is the length of the road, bandwidth its width — money widens the road easily, but shortening it fights the speed of light
+lat.ping: ping (round trip)
+lat.firstByte: first byte after
+lat.stream: streaming the file

@@ -1,0 +1,11 @@
+cdn.hint: ▶ light in fibre covers about 100 km per millisecond of round trip — distance IS latency
+cdn.ocean: an ocean the request must cross
+cdn.you: you
+cdn.edge: edge copy
+cdn.origin: origin server
+cdn.edgeTrip: trip to the edge
+cdn.originTrip: trip to the origin
+cdn.hitRate: answered from the edge
+cdn.avg: 'average request: {ms} ms'
+cdn.noCdn: 'without a CDN, every request: {ms} ms'
+cdn.caption: you cannot make light faster, so the CDN moves the shop closer — the same file, copied into a fridge down the street

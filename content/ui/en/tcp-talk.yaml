@@ -1,0 +1,14 @@
+tcp.hint: ▶ ten stripes of a picture cross a stormy line — drag the loss and flip the acknowledgements
+tcp.mode: protocol
+tcp.loss: line drops
+tcp.delivered: picture delivered
+tcp.resends: resends needed
+tcp.storm: 'the storm: drops {p}% of everything'
+tcp.sender: sender
+tcp.receiver: receiver
+tcp.again: sent again — no thank-you note came back
+tcp.complete: every stripe arrived — the picture is whole
+tcp.holes: '{n} stripes never arrived, and nobody will ever resend them'
+tcp.tcpNote: TCP waits for a little thank-you note (ACK) per packet; no note → send it again
+tcp.udpNote: UDP never looks back — fine for a video call, fatal for a bank transfer
+tcp.caption: the line is allowed to be terrible — the protocol's stubborn bookkeeping is what makes it reliable
