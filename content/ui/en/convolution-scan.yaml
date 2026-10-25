@@ -1,0 +1,13 @@
+conv.hint: ▶ drag "pos" to slide the stencil — pick a kernel and the same image answers a different question
+conv.input: the image (12×12)
+conv.output: what the layer sees (10×10)
+conv.stencil: the stencil (3×3)
+conv.kernel: kernel
+conv.kV: vertical edges
+conv.kH: horizontal edges
+conv.kBlur: blur (average)
+conv.at: stencil at
+conv.dot: multiply-and-sum
+conv.done: pixels computed
+conv.legend: green = positive response, red = negative, bright = strong — the output lights up where the pattern lives
+conv.caption: one tiny stencil, slid everywhere, finds a feature anywhere it hides — stack layers of these and edges become eyes, eyes become faces

@@ -1,0 +1,17 @@
+law.hint: ▶ two sliders, one law — grow the brain, grow the diet, and watch which term stops paying
+law.params: parameters N
+law.paramsUnit: params
+law.tokens: training tokens D
+law.tokensUnit: tokens
+law.loss: loss (lower = smarter)
+law.compute: training compute ≈ 6ND
+law.brain: the brain
+law.diet: the reading diet
+law.lossLabel: 'loss {l}'
+law.floor: the floor E — no size removes it
+law.termN: 'brain-size term: {v}'
+law.termD: 'data term: {v}'
+law.balanced: ≈ 20 tokens per parameter — the balanced recipe
+law.inset: loss vs model size, at this diet
+law.insetX: model size (log) →
+law.caption: the curve never bends up — bigger keeps helping — but it flattens, and the law says where the next dollar buys more, brain or books

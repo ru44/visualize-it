@@ -1,0 +1,49 @@
+id: diffusion
+subject: ai
+difficulty: high-school
+equation: x_u = (1-u)\,\varepsilon + u\,x_0
+concepts:
+- diffusion
+- denoising
+- image-generation
+- seeds
+prerequisites:
+- neural-network
+related:
+- rlhf
+- word-embeddings
+visualization:
+  type: diffusion-reveal
+parameters:
+  step:
+    min: 0
+    max: 100
+    step: 1
+    value: 0
+  seed:
+    min: 1
+    max: 6
+    step: 1
+    value: 1
+variables:
+- x_u
+- u
+- \varepsilon
+- x_0
+derivation:
+- '\text{training: take a real picture } x_0 \text{, blend noise in, and teach the model to point back toward clean}'
+- x_u = (1-u)\,\varepsilon + u\,x_0 \text{ spans the whole walk between static and picture}
+- '\text{generation runs the pointer in reverse: start at pure } \varepsilon \text{ and step toward a picture that never existed}'
+charts: []
+primary: step
+presets:
+- step: 0
+  seed: 1
+- step: 100
+  seed: 1
+- step: 100
+  seed: 2
+challenges:
+- check: step == 0
+- check: step >= 95 and seed == 1
+- check: seed >= 2 and step >= 95

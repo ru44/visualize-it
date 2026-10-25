@@ -4,7 +4,13 @@
 - logistic-regression
 - activation-functions
 - neural-network
+- convolution
+- tokenization
 - word-embeddings
 - attention
 - next-word-prediction
 - temperature-and-softmax
+- scaling-laws
+- rlhf
+- diffusion
+- ai-agents
