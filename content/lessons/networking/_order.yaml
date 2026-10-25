@@ -1,6 +1,12 @@
 - routers
 - wifi
 - bluetooth
+- latency-and-bandwidth
+- packet-switching
+- tcp
+- dns
+- cdn
+- firewall
 - vpn
 - cloud-vpc
 - nas-and-raid

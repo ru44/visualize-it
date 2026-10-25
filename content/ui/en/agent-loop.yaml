@@ -1,0 +1,36 @@
+agent.hint: ▶ drag "t" to run the errand — then take the toolbox away, or starve the budget, and run it again
+agent.task: 'the errand: "find tomorrow''s forecast and text it to Mom"'
+agent.model: the model
+agent.tool: a tool
+agent.result: result
+agent.ctx: context
+agent.lap: lap
+agent.loops: loops used
+agent.budget: loop budget
+agent.toolbox: toolbox
+agent.toolsOn: available
+agent.toolsOff: taken away
+agent.state: episode
+agent.running: running…
+agent.idle: ready
+agent.done: errand done
+agent.died: out of budget
+agent.guess: guessed
+agent.checklist: the errand, broken into trips
+agent.s1: look up tomorrow's forecast
+agent.s2: read the forecast page
+agent.s3: draft the message
+agent.s4: send it to Mom
+agent.ctxBar: the context — all the agent remembers
+agent.c1: results
+agent.c2: forecast
+agent.c3: draft
+agent.c4: sent ✓
+agent.doneMsg: sent — 23°, light rain. ✓
+agent.doneSub: four trips around the loop, each adding what the next one needed
+agent.diedMsg: stopped mid-errand
+agent.diedSub: the budget ran out before the checklist did
+agent.guessMsg: '"probably sunny, around 25°?"'
+agent.guessSub: fluent, confident, and checked against nothing — a guess in a nice suit
+agent.waiting: drag t to start the episode
+agent.caption: the loop is the whole trick — model proposes, tool acts, result returns to the context, repeat — and the model alone, without the loop, can only talk

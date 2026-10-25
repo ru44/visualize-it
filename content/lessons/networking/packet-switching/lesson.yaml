@@ -1,0 +1,58 @@
+id: packet-switching
+subject: networking
+difficulty: beginner
+equation: k = \left\lceil \frac{1000\,S}{P} \right\rceil
+concepts:
+- packets
+- routing
+- redundancy
+- reassembly
+prerequisites:
+- latency-and-bandwidth
+related:
+- tcp
+- routers
+visualization:
+  type: packet-switch
+parameters:
+  S:
+    min: 1
+    max: 60
+    step: 1
+    value: 12
+    unit: KB
+  P:
+    min: 200
+    max: 1500
+    step: 100
+    value: 1500
+    unit: B
+  cut:
+    min: 0
+    max: 1
+    step: 1
+    value: 0
+variables:
+- k
+- S
+- P
+derivation:
+- \text{a message of } S \text{ KB is } 1000\,S \text{ bytes}
+- \text{each packet carries at most } P \text{ bytes}
+- k = \left\lceil \frac{1000\,S}{P} \right\rceil \text{ packets, each finding its own route}
+charts: []
+primary: cut
+presets:
+- S: 12
+  P: 1500
+  cut: 0
+- S: 12
+  P: 200
+  cut: 0
+- S: 12
+  P: 1500
+  cut: 1
+challenges:
+- check: ceil(1000*S/P) == 8
+- check: cut == 1
+- check: P <= 300 and ceil(1000*S/P) >= 40

@@ -1,0 +1,59 @@
+id: rlhf
+subject: ai
+difficulty: high-school
+equation: R = w_h H + w_s S - \beta K
+concepts:
+- rlhf
+- reward-model
+- alignment
+- reward-hacking
+prerequisites:
+- next-word-prediction
+related:
+- temperature-and-softmax
+- scaling-laws
+visualization:
+  type: rlhf-arena
+parameters:
+  wh:
+    min: 0
+    max: 10
+    step: 1
+    value: 5
+  ws:
+    min: 0
+    max: 10
+    step: 1
+    value: 5
+  beta:
+    min: 0
+    max: 10
+    step: 1
+    value: 2
+variables:
+- R
+- w_h
+- H
+- w_s
+- S
+- K
+derivation:
+- \text{human raters rank answers, and a reward model learns to imitate their taste}
+- R = w_h H + w_s S - \beta K \text{ then scores every answer the model proposes}
+- \text{the } \beta K \text{ leash holds the student near its base model, so it cannot drift into nonsense that merely scores well}
+charts: []
+primary: beta
+presets:
+- wh: 5
+  ws: 5
+  beta: 2
+- wh: 9
+  ws: 0
+  beta: 0
+- wh: 7
+  ws: 4
+  beta: 5
+challenges:
+- check: beta == 0 and wh >= 8 and ws <= 1
+- check: beta >= 4 and wh >= 6 and ws <= 5
+- check: ws >= 8 and wh <= 2

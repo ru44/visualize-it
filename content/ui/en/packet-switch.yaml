@@ -1,0 +1,11 @@
+pkt.hint: ▶ no wire belongs to you — the message is chopped up and every piece finds its own way
+pkt.msg: message
+pkt.size: packet size
+pkt.routes: routes in use
+pkt.twoRoutes: two, in parallel
+pkt.oneRoute: one — rerouted
+pkt.linkDown: link down
+pkt.sender: sender
+pkt.receiver: receiver
+pkt.shelf: 'the reassembly shelf: packets slot back into order, however they arrived'
+pkt.caption: cut a cable and the packets shrug and go around — the network was designed to survive exactly this

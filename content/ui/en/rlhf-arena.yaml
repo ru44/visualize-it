@@ -1,0 +1,14 @@
+rlhf.hint: ▶ three answers, one reward — move the weights and the crown moves; slacken the leash and watch who wins
+rlhf.prompt: '"my code crashes with a null error — what do I do?"'
+rlhf.base: base model
+rlhf.candA: A — the honest fix
+rlhf.noteA: checks the stack trace, admits one unknown
+rlhf.candB: B — warm but vague
+rlhf.noteB: '"that sounds frustrating! maybe restart?"'
+rlhf.candC: C — confident invention
+rlhf.noteC: cites a fix() function that does not exist
+rlhf.help: sounds helpful
+rlhf.care: careful / safe
+rlhf.drift: drift from base
+rlhf.winner: the crown goes to
+rlhf.caption: the reward only measures what raters can see — C sounds best, and only the leash (β) and a taste for care keep the crown honest

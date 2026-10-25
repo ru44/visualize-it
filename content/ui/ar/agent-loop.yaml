@@ -1,0 +1,36 @@
+agent.hint: ▶ اسحب «t» لتنفيذ المشوار — ثم خذ صندوق الأدوات، أو جوّع الميزانية، ونفّذه من جديد
+agent.task: 'المشوار: «اعرف طقس الغد وأرسله رسالةً إلى أمي»'
+agent.model: النموذج
+agent.tool: أداة
+agent.result: النتيجة
+agent.ctx: السياق
+agent.lap: لفة
+agent.loops: لفات مستخدمة
+agent.budget: ميزانية اللفات
+agent.toolbox: صندوق الأدوات
+agent.toolsOn: متاح
+agent.toolsOff: مأخوذ
+agent.state: الحلقة
+agent.running: تعمل…
+agent.idle: جاهزة
+agent.done: اكتمل المشوار
+agent.died: نفدت الميزانية
+agent.guess: خمّن
+agent.checklist: المشوار مقسّمًا رحلات
+agent.s1: ابحث عن طقس الغد
+agent.s2: اقرأ صفحة التوقعات
+agent.s3: صِغ الرسالة
+agent.s4: أرسلها إلى أمي
+agent.ctxBar: السياق — كل ما يتذكره الوكيل
+agent.c1: نتائج
+agent.c2: توقعات
+agent.c3: مسودة
+agent.c4: أُرسلت ✓
+agent.doneMsg: أُرسلت — 23°، مطر خفيف. ✓
+agent.doneSub: أربع لفات حول الحلقة، كلٌّ تضيف ما تحتاجه التالية
+agent.diedMsg: توقف في منتصف المشوار
+agent.diedSub: نفدت الميزانية قبل أن تنفد القائمة
+agent.guessMsg: '«مشمس غالبًا، نحو 25°؟»'
+agent.guessSub: طليق وواثق وغير مُتحقَّق من شيء — تخمين في بذلة أنيقة
+agent.waiting: اسحب t لبدء الحلقة
+agent.caption: الحلقة هي الحيلة كلها — النموذج يقترح، والأداة تفعل، والنتيجة تعود إلى السياق، ثم التكرار — والنموذج وحده، بلا حلقة، لا يستطيع إلا الكلام

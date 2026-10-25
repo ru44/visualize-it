@@ -1,0 +1,15 @@
+dfu.hint: ▶ drag "step" to walk out of the static — change the seed and the same walk finds a different picture
+dfu.step: denoised
+dfu.noise: noise left
+dfu.seed: seed
+dfu.verdict: the canvas
+dfu.clean: a clean picture
+dfu.static: pure static
+dfu.emerging: something emerging…
+dfu.trainDir: training walked this way (add noise)
+dfu.genDir: generation walks this way (remove noise)
+dfu.pure: pure noise
+dfu.picture: the picture
+dfu.side: how it was taught
+dfu.sideGen: how it creates
+dfu.caption: the model never learned to draw — it learned to remove a little noise, and running that tiny skill a hundred times backwards is what drawing is

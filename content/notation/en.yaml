@@ -1004,3 +1004,19 @@ o:
   meaning: 'Grows strictly slower than: o(h) vanishes faster than h.'
   group: calculus
   simple: 'Grows strictly slower than: o(h) vanishes faster than h.'
+\lceil:
+  name: ceiling (open)
+  read: the ceiling of
+  meaning: Opens the ceiling bracket, which rounds its contents up to the next whole number.
+  group: operator
+  simple: Round up — even a little left over still needs one more whole one.
+  example: ⌈8.1⌉ = 9 because a ninth packet must carry the leftover bytes.
+  lesson: packet-switching
+\rceil:
+  name: ceiling (close)
+  read: end ceiling
+  meaning: Closes the ceiling bracket that rounds its contents up.
+  group: operator
+  simple: The closing half of the round-up bracket.
+  example: ⌈8.1⌉ = 9 — whatever sits between the brackets is rounded up.
+  lesson: packet-switching

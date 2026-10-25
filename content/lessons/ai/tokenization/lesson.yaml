@@ -1,0 +1,48 @@
+id: tokenization
+subject: ai
+difficulty: beginner
+equation: k \approx \frac{c}{4}
+concepts:
+- tokens
+- bpe
+- vocabulary
+- subwords
+prerequisites:
+- what-is-machine-learning
+related:
+- word-embeddings
+- next-word-prediction
+visualization:
+  type: tokenizer
+parameters:
+  merges:
+    min: 0
+    max: 30
+    step: 1
+    value: 0
+  text:
+    min: 0
+    max: 2
+    step: 1
+    value: 0
+variables:
+- k
+- c
+- m
+derivation:
+- '\text{with no merges, every character is its own token: } k = c'
+- \text{each of the } m \text{ merges glues the commonest adjacent pair into one new vocabulary chip}
+- \text{big trained vocabularies land near } k \approx \frac{c}{4} \text{ for English prose}
+charts: []
+primary: merges
+presets:
+- merges: 0
+  text: 0
+- merges: 25
+  text: 0
+- merges: 12
+  text: 2
+challenges:
+- check: merges == 0
+- check: text == 0 and merges >= 25
+- check: text == 2 and merges >= 10

@@ -1,0 +1,10 @@
+tok.hint: ▶ drag "merges" to grow the vocabulary — each step glues the most frequent pair into one token
+tok.sample: the text
+tok.chars: characters
+tok.tokens: tokens
+tok.ratio: chars per token
+tok.vocabGrown: vocabulary grown
+tok.lastMerge: newest token in the vocabulary
+tok.cost: 'the model reads (and you pay for) {n} tokens'
+tok.marker: ▁ marks "starts a word"
+tok.caption: the model never sees letters or words — only these learned chips, which is why rare words cost more and why it struggles to count the letters in one

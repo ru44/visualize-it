@@ -1,0 +1,48 @@
+id: convolution
+subject: ai
+difficulty: high-school
+equation: y = \sum K \cdot x
+concepts:
+- convolution
+- kernel
+- feature-map
+- vision
+prerequisites:
+- neural-network
+related:
+- activation-functions
+- attention
+visualization:
+  type: convolution-scan
+parameters:
+  kernel:
+    min: 0
+    max: 2
+    step: 1
+    value: 0
+  pos:
+    min: 0
+    max: 100
+    step: 1
+    value: 0
+variables:
+- y
+- K
+- x
+derivation:
+- \text{lay the small stencil on a patch of the image}
+- '\text{multiply matching cells and add them up: } y = \sum K \cdot x'
+- \text{slide one step and repeat; the same weights ask the same question everywhere}
+charts: []
+primary: pos
+presets:
+- kernel: 0
+  pos: 100
+- kernel: 1
+  pos: 100
+- kernel: 2
+  pos: 50
+challenges:
+- check: kernel == 0 and pos >= 99
+- check: kernel == 2 and pos >= 99
+- check: kernel == 1 and pos >= 40 and pos <= 60
