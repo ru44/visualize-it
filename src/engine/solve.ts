@@ -77,7 +77,7 @@ export function solve(lhs: string, rhs: string): Solution | null {
       if (l[0]) steps.push({ tex: `${polyTex([0, d[1]])} = ${ratTex(r[0] - l[0])}`, note: t(l[0] > 0 ? 'solve.sub' : 'solve.add', { k: ratTex(Math.abs(l[0])) }) })
       const x = (r[0] - l[0]) / d[1]
       steps.push(d[1] !== 1 ? { tex: `x = \\frac{${ratTex(r[0] - l[0])}}{${ratTex(d[1])}} = ${ratTex(x)}`, note: t('solve.divide', { k: ratTex(d[1]) }) } : { tex: `x = ${ratTex(x)}`, note: t('solve.done') })
-      steps.push({ tex: `${ratTex(l[1] * x + l[0])} = ${ratTex(r[1] * x + r[0])} \;\\checkmark`, note: t('solve.check') })
+      steps.push({ tex: `${ratTex(l[1] * x + l[0])} = ${ratTex(r[1] * x + r[0])} \\;\\checkmark`, note: t('solve.check') })
       return { steps, roots: [x], expr, check: { status: verified([x]) ? 'exact' : 'warning', text: t('trust.solveExact') } }
     }
 
@@ -110,6 +110,6 @@ export function solve(lhs: string, rhs: string): Solution | null {
 
   const roots = scanRoots(g)
   steps.push({ tex: rhs.trim() === '0' ? `f(x) = ${toTex(lhs)}` : `${toTex(lhs)} - \\left(${toTex(rhs)}\\right) = 0`, note: t('solve.numStd') })
-  steps.push({ tex: roots.length ? rootsTex(roots.slice(0, 8), true) + (roots.length > 8 ? ',\;\\dots' : '') : `\\text{${t('solve.none')}}`, note: t('solve.numRoots') })
+  steps.push({ tex: roots.length ? rootsTex(roots.slice(0, 8), true) + (roots.length > 8 ? ',\\;\\dots' : '') : `\\text{${t('solve.none')}}`, note: t('solve.numRoots') })
   return { steps, roots, expr, check: { status: 'numeric', text: t(roots.length ? 'trust.solveNumeric' : 'trust.solveNoneRange') } }
 }

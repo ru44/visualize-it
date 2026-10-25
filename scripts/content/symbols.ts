@@ -9,7 +9,7 @@ export function symbolsOf(tex: string): string[] {
   const out = new Set<string>()
   // strip \text{…} / \mathrm{…} / \operatorname{…} contents (words, units), and numbers
   let s = tex.replace(/\\\\/g, ' ').replace(/&/g, ' ').replace(/\\(text|mathrm|operatorname|textbf|textit)\s*\{[^{}]*\}/g, (m, cmd) => (out.add('\\' + (cmd === 'mathrm' ? 'mathrm' : 'text')), ' '))
-  s = s.replace(/\\(?:left|right)\s*[.(){}\[\]|]/g, ' ').replace(/\\[,;:!> ]/g, ' ')
+  s = s.replace(/\\(?:left|right)\s*[.(){}[\]|]/g, ' ').replace(/\\[,;:!> ]/g, ' ')
   // decorated letters: \dot{m} \hat{p} \bar{x} \vec{v}
   s = s.replace(/\\(dot|ddot|hat|bar|vec|tilde)\s*\{?\s*(\\?[A-Za-z]+)\s*\}?/g, (_, cmd, letter) => (out.add('\\' + cmd), out.add(letter), ' '))
   // \mathbb{R} \mathcal{F}
