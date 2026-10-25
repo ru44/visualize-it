@@ -74,7 +74,9 @@ const cards = computed(() => {
   void locale.value
   return mix.map((e) => {
     const l = localize(getLesson(e.id)!)
-    return { ...e, title: l.title, subject: l.subject, text: l.challenges[e.i]?.text ?? '', solved: progress.isSolved(e.id, e.i) }
+    // A card counts only when solved today — review cards are old solves dealt back on purpose,
+    // so they start the day unchecked and must be re-earned inside the lesson.
+    return { ...e, title: l.title, subject: l.subject, text: l.challenges[e.i]?.text ?? '', solved: progress.solvedOn(e.id, e.i) === dateKey }
   })
 })
 const doneToday = computed(() => cards.value.filter((c) => c.solved).length)

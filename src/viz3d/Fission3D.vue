@@ -11,7 +11,9 @@ import { t } from '../i18n'
 // of clusters (heavier/slower, lighter/faster — momentum conservation), something the flat picture
 // can only fake with two circles. A fast neutron just grazes the ball and flies off instead.
 const props = defineProps<{ params: Record<string, number>; options: Record<string, any> }>()
+const emit = defineEmits<{ set: [name: string, value: number] }>()
 const el = ref<HTMLElement>()
+const playing = ref(!matchMedia('(prefers-reduced-motion: reduce)').matches)
 const N = 40
 const HEAVY_N = 24
 const R0 = 0.55
@@ -69,14 +71,22 @@ useThree(
     const v3 = new THREE.Vector3()
 
     let lastKey = ''
-    return () => {
+    let acc = 0
+    return (dt: number) => {
       const speed = Math.max(0, Math.min(20000, props.params.speed ?? 1000))
       const timePct = Math.max(0, Math.min(100, props.params.time ?? 0))
+      acc += dt
+      if (playing.value && acc > 0.07) {
+        acc = 0
+        if (timePct >= 100) playing.value = false
+        else emit('set', 'time', timePct + 1)
+      }
       const key = `${speed.toFixed(0)}|${timePct.toFixed(0)}`
       if (key === lastKey) return
       lastKey = key
       const tt = timePct / 100
-      const slow = speed < SLOW_MAX
+      const still = speed <= 0 // a neutron with no speed never arrives, so nothing ever happens
+      const slow = !still && speed < SLOW_MAX
 
       const compound = slow ? smooth(0.15, 0.25, tt) * (1 - smooth(0.25, 0.35, tt)) : 0
       const stretch = slow ? smooth(0.25, 0.6, tt) : 0
@@ -101,7 +111,10 @@ useThree(
         if (ejected[i].visible) ejected[i].position.copy(v3.copy(EJECT_DIRS[i]).multiplyScalar(1.5 * split))
       }
 
-      if (slow) {
+      if (still) {
+        incoming.visible = true
+        incoming.position.set(-2, 0, 0)
+      } else if (slow) {
         incoming.visible = tt < 0.15
         if (incoming.visible) incoming.position.copy(lerpV(new THREE.Vector3(-2, 0, 0), new THREE.Vector3(-R0 - 0.1, 0, 0), tt / 0.15))
       } else {
@@ -111,7 +124,7 @@ useThree(
 
       const fissioned = slow && split >= 0.999
       tag.position.set(0, R0 + 1.1, 0)
-      const label1 = slow ? t('fission.fission') : t('fission.scatter')
+      const label1 = still ? t('fission.still') : slow ? t('fission.fission') : t('fission.scatter')
       const label2 = fissioned ? `≈${fmt(198, 0)} MeV` : t('fission.none')
       paintLabel(tag, `${label1} · ${label2}`, theme.pos)
     }
@@ -121,5 +134,11 @@ useThree(
 </script>
 
 <template>
-  <div ref="el" class="h-full w-full" />
+  <div class="relative h-full w-full">
+    <div ref="el" class="h-full w-full" />
+    <div class="absolute end-3 top-3 flex gap-1">
+      <button class="num rounded-lg border px-2.5 py-1 text-xs" style="border-color: var(--line); background: var(--panel); color: var(--muted)" @click="playing = !playing">{{ playing ? t('plot.pause') : t('plot.play') }}</button>
+      <button class="num rounded-lg border px-2.5 py-1 text-xs" style="border-color: var(--line); background: var(--panel); color: var(--muted)" @click="emit('set', 'time', 0); playing = true">{{ t('fission.restart') }}</button>
+    </div>
+  </div>
 </template>
