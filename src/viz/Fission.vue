@@ -22,7 +22,8 @@ const SLOW_MAX = 5000
 const speed = computed(() => Math.max(0, Math.min(20000, props.params.speed ?? 1000)))
 const timePct = computed(() => Math.max(0, Math.min(100, props.params.time ?? 0)))
 const t01 = computed(() => timePct.value / 100)
-const isSlow = computed(() => speed.value < SLOW_MAX)
+const still = computed(() => speed.value <= 0) // a neutron with no speed never arrives: nothing happens
+const isSlow = computed(() => !still.value && speed.value < SLOW_MAX)
 
 const lerp = (a: number, b: number, u: number) => a + (b - a) * u
 const clamp01 = (u: number) => Math.max(0, Math.min(1, u))
@@ -31,6 +32,7 @@ const smooth = (a: number, b: number, x: number) => { const u = clamp01((x - a) 
 // ---- neutron trajectory ---------------------------------------------------------------------
 const neutron = computed(() => {
   const u = t01.value
+  if (still.value) return { x: 50, y: CY }
   if (isSlow.value) {
     if (u >= 0.15) return null // absorbed into the nucleus
     return { x: lerp(50, CX - R0 - 4, u / 0.15), y: CY }
@@ -41,8 +43,8 @@ const neutron = computed(() => {
 })
 
 // ---- nucleus shape (slow path): compound nucleus -> stretch -> split ------------------------
-const stretch = computed(() => smooth(0.25, 0.6, t01.value))
-const split = computed(() => smooth(0.6, 1, t01.value))
+const stretch = computed(() => (isSlow.value ? smooth(0.25, 0.6, t01.value) : 0))
+const split = computed(() => (isSlow.value ? smooth(0.6, 1, t01.value) : 0))
 const compound = computed(() => (isSlow.value ? smooth(0.15, 0.25, t01.value) * (1 - smooth(0.25, 0.35, t01.value)) : 0))
 const rx = computed(() => R0 * lerp(1, 2.15, stretch.value) * (1 - split.value))
 const ry = computed(() => R0 * lerp(1, 0.55, stretch.value) * (1 - split.value))
@@ -93,7 +95,7 @@ onUnmounted(() => cancelAnimationFrame(raf))
 const readouts = computed(() => [
   { label: t('fission.speed'), value: `${fmt(speed.value, 0)} km/s` },
   { label: t('fission.time'), value: `${fmt(timePct.value, 0)}%` },
-  { label: t('fission.outcome'), value: isSlow.value ? t('fission.fission') : t('fission.scatter'), color: isSlow.value ? 'var(--pos)' : 'var(--muted)' },
+  { label: t('fission.outcome'), value: still.value ? t('fission.still') : isSlow.value ? t('fission.fission') : t('fission.scatter'), color: isSlow.value ? 'var(--pos)' : 'var(--muted)' },
   { label: t('fission.neutrons'), value: isSlow.value ? String(freeNeutrons.value.length) : '0' },
   { label: t('fission.energy'), value: fissioned.value ? `≈${fmt(energy.value.total, 0)} MeV` : t('fission.none'), color: fissioned.value ? 'var(--pos)' : undefined },
 ])

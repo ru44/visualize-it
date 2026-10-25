@@ -47,6 +47,6 @@ presets:
   - speed: 1000
     time: 40
 challenges:
-  - check: speed < 5000 and time >= 95
+  - check: speed > 0 and speed < 5000 and time >= 95
   - check: speed >= 5000 and time >= 95
-  - check: speed < 5000 and time >= 30 and time <= 55
+  - check: speed > 0 and speed < 5000 and time >= 30 and time <= 55
