@@ -13,6 +13,9 @@
   --accent-2: #d9730d;
   --pos: #0d9488;
   --neg: #e11d48;
+  /* Pattern-test puzzles: printed-test paper that stays light in both themes, so 'white' and 'black' stay true. */
+  --paper: #ffffff;
+  --ink: #1d1d22;
 }
 :root[data-theme='dark'] {
   --bg: #0b0b0d;
@@ -27,6 +30,8 @@
   --accent-2: #f5b453;
   --pos: #2dd4bf;
   --neg: #fb7185;
+  --paper: #e6e6ea;
+  --ink: #141418;
 }
 
 html {
