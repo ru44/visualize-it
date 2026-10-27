@@ -9,6 +9,7 @@ Every concept follows the same path: **Equation → Visualization → Manipulati
 - **Equation Explorer** — type `∫₀⁴ x² dx`, `lim(x→0) sin(x)/x`, `2x + 5 = 17`, `C(52,5)`, `7!`, `V = IR`… and get an interactive visualization
 - **Step-by-step solver** — linear and quadratic equations with every transformation explained; numeric roots for anything else
 - **343 lessons in 27 subjects**, in English and Arabic — algebra, functions, calculus, geometry, trigonometry, statistics & probability, discrete mathematics, numbers & big numbers, mechanics, waves & optics, electricity, electromagnetism, aerodynamics, thermodynamics, nuclear physics, quantum physics, gravity & relativity, the universe (dark matter, dark energy, quarks, quasars), chemistry, computer science, cryptography, AI & machine learning, data & big data, biology, earth & space, economics & finance, signals & engineering
+- **Pattern reasoning test** (`/patterns`) — 60 original IQ-style matrix puzzles in five sets of twelve (the length of Raven's Standard Progressive Matrices), a score with a rough IQ estimate, every answer explained, and a lesson on the five rules behind matrix puzzles that starts with the ones the student missed; fully anonymous — it runs in the browser and the answers live only in that tab. `pnpm test` proves every puzzle has exactly one answer a solver can reach and that the options alone never give it away
 - **Real life and self-test in every lesson with sliders** — one-tap real situations that set the sliders (a car braking, a phone charging…) and challenges the learner solves by moving them; the build proves every challenge can be solved
 - **Optional 3D scenes** (three.js) on lessons that opt in; **symbol guide** explaining every letter used in any formula; **progress checklist**; **video links** per subject
 - **Graphing engine** (`/graph`) — functions, polar, parametric, implicit curves and vector fields with zoom, pan, derivative overlay and auto-generated parameter sliders
@@ -39,6 +40,7 @@ content/        all lesson text and interface strings — YAML + Markdown, one f
 scripts/content build.ts compiles content/ → src/generated/*.json and validates every file; new-lesson.ts scaffolds
 src/engine/     explorer (input parsing), math, analysis (checked limits/integrals/roots), stats, solve, adhoc
 src/viz/        visualization components + registry (type → component)
+src/patterns/   the pattern test: item bank (items.ts), generator and scoring (engine.ts), drawing, explanations
 src/stores/     Pinia: settings (language, theme, level), progress (lessons marked done)
 src/pages/      Home, SubjectView, LessonView (renders any lesson), GraphView, MapView, Classic*
 ```

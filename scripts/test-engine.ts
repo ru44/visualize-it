@@ -100,3 +100,80 @@ ok3('ζ(1/2 + 14.134725i) ≈ 0 (first zero)', Math.hypot(...zetaC(0.5, 14.13472
 ok3('ζ(2 + 3i) ≈ 0.7980 − 0.1138i', (() => { const [a, b] = zetaC(2, 3); return Math.abs(a - 0.7980219851) < 1e-7 && Math.abs(b + 0.1137443081) < 1e-7 })(), zetaC(2, 3))
 if (f3) { console.log(`\n${f3} FAILED (zeta)`); process.exit(1) }
 console.log('all zeta tests passed')
+
+// ---- pattern test -----------------------------------------------------------------------------
+// Every item must have exactly one answer that a careful solver can reach, and the options must
+// not give it away. The solver below tries every rule the lesson teaches, along rows and down
+// columns; any rule that fits all eight visible pictures must predict the same missing value.
+import { testItems, practiceItems, PER_SET } from '../src/patterns/items'
+import { draw } from '../src/patterns/draw'
+import { KIND_ATTRS, RANGE, MOD, isSet, isFlat, ruleOf, wrap, type Attr, type Item } from '../src/patterns/engine'
+let f4 = 0
+const ok4 = (name: string, cond: boolean, got: unknown) => {
+  if (!cond) f4++
+  if (!cond) console.log(`✗ ${name}  → got ${JSON.stringify(got)}`)
+}
+function predictions(g: number[][], attr: Attr): number[] {
+  const out = new Set<number>()
+  const dif = (a: number, b: number) => (MOD[attr] ? wrap(attr, b - a) : b - a)
+  const reads = [(i: number) => g[i], (i: number) => [g[0][i], g[1][i], g[2][i]]]
+  const sorted = (a: number[]) => [...a].sort((x, y) => x - y).join()
+  const ops: ((a: number, b: number) => number)[] = isSet(attr) ? [(a, b) => a | b, (a, b) => a & b, (a, b) => a ^ b, (a, b) => a & ~b, (a, b) => b & ~a] : attr === 'count' ? [(a, b) => a + b, (a, b) => a - b, (a, b) => b - a] : []
+  for (const read of reads) {
+    const [A, B, C] = [read(0), read(1), read(2)] // C[2] is the gap
+    if (A[0] === A[1] && A[1] === A[2] && B[0] === B[1] && B[1] === B[2] && C[0] === C[1]) out.add(C[1])
+    const d = dif(A[0], A[1])
+    if (d !== 0 && dif(A[1], A[2]) === d && dif(B[0], B[1]) === d && dif(B[1], B[2]) === d && dif(C[0], C[1]) === d) out.add(wrap(attr, C[1] + d))
+    if (new Set(A).size === 3 && sorted(A) === sorted(B) && C[0] !== C[1] && A.includes(C[0]) && A.includes(C[1])) out.add(A.find((v) => v !== C[0] && v !== C[1])!)
+    for (const op of ops) if (op(A[0], A[1]) === A[2] && op(B[0], B[1]) === B[2]) out.add(op(C[0], C[1]))
+  }
+  return [...out]
+}
+function checkItem(it: Item, name: string) {
+  const look = (c: Item['cells'][number]) => JSON.stringify(draw(c))
+  const looks = it.options.map(look)
+  ok4(`${name}: eight options that all look different`, looks.length === 8 && new Set(looks).size === 8, looks.length)
+  ok4(`${name}: the answer is the missing picture`, looks[it.answer] === look(it.cells[8]) && looks.filter((l) => l === look(it.cells[8])).length === 1, it.answer)
+  ok4(`${name}: no blank pictures`, [...it.cells, ...it.options].every((c) => draw(c).length > 0), null)
+  const spec = it.spec
+  spec.parts.forEach((p, k) => {
+    for (const attr of KIND_ATTRS[p.kind]) {
+      const [lo, hi] = RANGE[attr]
+      const vals = [...it.cells, ...it.options].map((c) => c[k].v[attr]!)
+      ok4(`${name}: ${p.kind}.${attr} stays within ${lo}–${hi}`, vals.every((v) => Number.isInteger(v) && v >= lo && v <= hi), vals)
+      const dims = spec.dims.filter((d) => d.part === k && d.attr === attr)
+      if (!isFlat(ruleOf(p, attr))) ok4(`${name}: ${p.kind}.${attr} follows a rule, so the options must test it`, dims.length > 0, null)
+      if (!dims.length) continue
+      const g = [0, 1, 2].map((r) => [0, 1, 2].map((c) => it.cells[r * 3 + c][k].v[attr]!))
+      const pred = predictions(g, attr)
+      ok4(`${name}: ${p.kind}.${attr} has one answer a solver can reach`, pred.length === 1 && pred[0] === g[2][2], { predicts: pred, truth: g[2][2] })
+    }
+  })
+  const bits = it.dims.filter((d) => d.bit !== undefined)
+  // If every toggled stroke were extra, the answer would be the option with the fewest lines.
+  if (bits.length >= 2) ok4(`${name}: toggled strokes both add and remove`, bits.some((d) => d.right & (1 << d.bit!)) && bits.some((d) => !(d.right & (1 << d.bit!))), bits)
+  ok4(`${name}: three different features`, new Set(it.dims.map((d) => `${d.part}.${d.attr}.${d.bit}`)).size === 3, it.dims)
+  for (const [k, p] of spec.parts.entries()) {
+    const at = (attr: Attr) => [...it.cells, ...it.options].map((c) => c[k].v[attr]!)
+    if (p.role === 'outer') ok4(`${name}: outer figures leave room inside`, at('shape').every((s) => [1, 2, 3, 4].includes(s)) && at('fill').every((x) => x <= 1), at('shape'))
+    if (p.kind === 'group') ok4(`${name}: small copies use shapes that stay distinct when small`, at('shape').every((s) => ![2, 3].includes(s)), at('shape'))
+    if (p.kind === 'shape' && p.role === 'main' && spec.parts.some((q) => q.kind === 'dot')) ok4(`${name}: the figure clears the dot's ring`, at('size').every((s) => s <= 2), at('size'))
+  }
+}
+ok4('the test has 60 items in five sets of twelve', testItems.length === 60 && PER_SET * 5 === 60, testItems.length)
+testItems.forEach((it) => checkItem(it, `item ${it.n}`))
+for (const [fam, items] of Object.entries(practiceItems)) items.forEach((it) => checkItem(it, `practice ${fam} ${it.n}`))
+const places = Array.from({ length: 8 }, (_, p) => testItems.filter((it) => it.answer === p).length)
+ok4('right answers spread evenly over the eight places', Math.max(...places) - Math.min(...places) <= 1, places)
+const allLooks = testItems.map((it) => JSON.stringify(it.cells.map((c) => draw(c))))
+ok4('no item repeats another', new Set(allLooks).size === allLooks.length, null)
+if (f4) { console.log(`\n${f4} FAILED (pattern test)`); process.exit(1) }
+console.log(`all pattern-test checks passed (${testItems.length} items, ${Object.values(practiceItems).flat().length} practice)`)
+import { roughIq } from '../src/patterns/engine'
+const iqs = Array.from({ length: 61 }, (_, r) => roughIq(r))
+ok4('the rough IQ puts the assumed average adult (42/60) at 100', iqs[42].iq === 100, iqs[42])
+ok4('the rough IQ rises with every right answer', iqs.every((x, r) => r === 0 || x.iq > iqs[r - 1].iq), iqs.map((x) => x.iq))
+ok4('a perfect score stays a modest estimate', iqs[60].iq <= 135 && iqs[60].iq >= 125, iqs[60])
+ok4('very low scores give no number', iqs[20].tooLow && !iqs[30].tooLow, [iqs[20], iqs[30]])
+if (f4) { console.log(`\n${f4} FAILED (rough IQ)`); process.exit(1) }
+console.log('rough IQ checks passed')

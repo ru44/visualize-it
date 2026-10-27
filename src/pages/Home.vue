@@ -71,6 +71,14 @@ const steps = [1, 2, 3].map((i) => ({ title: `home.step${i}.t` as Key, text: `ho
         </li>
       </ul>
 
+      <RouterLink to="/patterns" class="surface lift mt-4 flex flex-wrap items-center justify-between gap-4 p-5">
+        <span>
+          <span class="block text-lg font-medium">{{ t('home.patterns.t') }}</span>
+          <span class="mt-1 block max-w-2xl text-sm leading-relaxed" style="color: var(--muted)">{{ t('home.patterns.d') }}</span>
+        </span>
+        <span class="btn-primary px-5 py-2.5 text-sm">{{ t('home.patterns.b') }}</span>
+      </RouterLink>
+
       <RouterLink to="/classic" class="surface lift mt-4 flex flex-wrap items-center justify-between gap-4 p-5">
         <span>
           <span class="block text-lg font-medium">{{ t('home.gallery.t') }}</span>

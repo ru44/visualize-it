@@ -1,0 +1,171 @@
+pat.title: Pattern reasoning test
+pat.kicker: 60 puzzles · IQ-style matrices · anonymous
+pat.lead: Each puzzle is a grid of nine pictures with the last one missing. Find the rules that run along the rows, then pick the picture that completes the grid.
+pat.fact.items: 60 puzzles in 5 sets of 12, from easy to hard — the length of a full printed matrix test.
+pat.fact.time: No time limit. Plan on about 40 minutes; the clock is only there so you can see your pace.
+pat.fact.skip: Skip any puzzle and come back to it before you finish.
+pat.fact.after: At the end you get your score, a rough IQ estimate, every answer explained, and a lesson that starts with the rules you missed.
+pat.private.t: Fully anonymous
+pat.private.d: No name, no account, no tracking. The test runs entirely in your browser. Your answers never leave this device, and they are erased when you close this tab.
+pat.lessonFirst: Rather learn first? Read the five rules
+pat.how.t: How to read a puzzle
+pat.how.d: Read each row from left to right. Something changes along it — the shape, the number, the colour, the size, the lines. Find the rule in the top two rows, then use it to build the missing picture before you look at the options.
+pat.sample: Try an example first
+pat.start: Start the test
+pat.question: 'Puzzle {n} of {total}'
+pat.set: 'Set {s} of 5'
+pat.choose: Choose the picture that completes the grid
+pat.option: 'Option {n}'
+pat.prev: Previous
+pat.next: Next
+pat.skip: Skip for now
+pat.finish: Finish and see my score
+pat.answered: '{n} of {total} answered'
+pat.time: Time
+pat.keys: 'Keyboard: 1–8 to choose, arrow keys to move.'
+pat.jump: 'Go to puzzle {n}'
+pat.left: '{n|one=One puzzle is|other=# puzzles are} still unanswered. Every unanswered puzzle counts as wrong.'
+pat.finishAnyway: Finish anyway
+pat.keepGoing: Keep going
+pat.startOver: Erase my answers and start over
+pat.eraseSure: Tap again to erase every answer
+pat.grid: 'Puzzle {n}: a 3 by 3 grid of pictures; the bottom-right one is missing.'
+
+pat.res.title: Your result
+pat.res.scoreLabel: right answers
+pat.res.sets: By set
+pat.res.setLabel: 'Set {s}'
+pat.res.rules: By rule
+pat.res.rulesNote: Every wrong option breaks particular rules, so your choices show which rules you already see and which ones you missed.
+pat.res.noData: not tested
+pat.res.iq.label: rough IQ estimate
+pat.res.iq.range: 'likely between {low} and {high}'
+pat.res.iq.tooLow: Too few right answers to estimate. Start with the lesson, then try again.
+pat.res.iq.next: 'Every extra right answer adds about 2 points. Get {n} more right next time to reach about {iq}.'
+pat.res.iq.t: How rough is this number?
+pat.res.iq.d: A real IQ compares you with thousands of people your age who took the same test. Nobody has done that for this test yet, so we borrow the usual pattern of 60-puzzle matrix tests. We assume an average adult gets about 42 right, and two adults in three land within about 8 of that. Treat the number as a starting point, not a verdict. It assumes you are 16 or older, and a retake runs high because you have seen the puzzles before. Your score out of 60 and your rule-by-rule results are exact.
+pat.res.grow: Scores on puzzles like these rise with practice. Your lesson starts with the rules you missed most.
+pat.res.lesson: Start my lesson
+pat.res.review: Review my answers
+pat.res.onlyWrong: The ones I missed
+pat.res.all: All 60
+pat.res.allRight: You got every puzzle right.
+pat.res.got: Right
+pat.res.missed: Missed
+pat.res.skipped: Skipped
+pat.res.yours: Your answer
+pat.res.right: Right answer
+pat.res.retake: Take the test again
+pat.res.erase: Erase my answers
+pat.res.erased: Your answers are erased. Nothing was ever sent anywhere.
+
+pat.rule.constant: Stays the same
+pat.rule.progression: Step by step
+pat.rule.distribution: Each one once
+pat.rule.combine: Add or take away
+pat.rule.xor: Only the differences
+pat.rule.score: '{right} of {total}'
+
+pat.lesson.title: The five rules behind pattern puzzles
+pat.lesson.lead: Most grid puzzles of this kind, in this test and in printed matrix tests, are built from the same five rules. Once you can spot them, the puzzles stop looking random.
+pat.lesson.yours: From your test
+pat.lesson.weakest: Start here
+pat.lesson.takeFirst: Take the test first, and this lesson will start with the rules you found hardest.
+pat.lesson.method.t: A method for any puzzle
+pat.lesson.method.1: Look at the top row only. List what changes from left to right — shape, number, colour, size, direction, lines.
+pat.lesson.method.2: For each thing that changes, ask which of the five rules it follows.
+pat.lesson.method.3: Check every rule on the middle row. A rule that fails there is the wrong rule.
+pat.lesson.method.4: Build the missing picture in your head first. Then look at the options and cross out every one that breaks a rule.
+pat.lesson.constant.idea: One thing stays exactly the same along a row. Every picture in the row has the same shape, or the same colour. Another row may use a different value, but it keeps that value all the way along too.
+pat.lesson.constant.spot: Easy to see and easy to forget. When the other rules are hard, check that your answer still keeps what never changes.
+pat.lesson.progression.idea: Something grows or shrinks by the same step from one picture to the next. Two dots, four dots, six dots. An arrow that turns an eighth of a turn each time. A shape that gains one side.
+pat.lesson.progression.spot: Compare neighbours. If the change from the first picture to the second is the same as the change from the second to the third, it is a progression.
+pat.lesson.distribution.idea: Each row uses the same three values, once each, in a different order. A circle, a triangle and a square in every row, and never two of the same in one row.
+pat.lesson.distribution.spot: Ask what the bottom row is still missing. If it already has a circle and a triangle, the answer has the square.
+pat.lesson.combine.idea: The third picture is made from the first two. Add the shapes up, take the second away from the first, or lay one picture over the other and keep everything.
+pat.lesson.combine.spot: Count, or lay the first two pictures over each other in your head. Then compare what you get with the third.
+pat.lesson.xor.idea: Lay the first two pictures over each other. Whatever they share disappears. Whatever appears in only one of them stays.
+pat.lesson.xor.spot: The trap is to keep everything. If a line is in both of the first two pictures but missing from the third, the shared parts are cancelling out.
+pat.lesson.example: Worked example
+pat.lesson.step1: Start with the top row. What changes from left to right?
+pat.lesson.step2: 'The same rules work on the middle row. Rules in this puzzle: {list}.'
+pat.lesson.step3: Use the rules on the bottom row to build the missing picture.
+pat.lesson.next: Next step
+pat.lesson.again: Start over
+pat.lesson.yourTurn: Your turn
+pat.lesson.right: Right.
+pat.lesson.wrong: Not this one. Look again, or see why.
+pat.lesson.why: Show why
+pat.lesson.traps.t: Four traps
+pat.lesson.traps.1: Looking at the options first. They are built to look right, and each wrong one breaks only one or two rules.
+pat.lesson.traps.2: Checking one row only. A rule that fits the top row can fail on the middle one.
+pat.lesson.traps.3: Following one feature. Many puzzles run two or three rules at once, on the shape and the number and the colour.
+pat.lesson.traps.4: Keeping lines that should cancel. When a line is in both of the first two pictures, check whether it survives in the third.
+pat.lesson.origin.t: Where the five rules come from
+pat.lesson.origin.d: In 1990 the psychologists Patricia Carpenter, Marcel Just and Peter Shell studied how people solve Raven's Progressive Matrices, the best-known puzzle test of this kind. They found that its puzzles can be described with just five kinds of rule — the five on this page. This test uses those rules with new pictures. Every wrong option differs from the right one in one, two or three features, so you cannot find the answer from the options alone.
+pat.lesson.retake: Take the test
+pat.lesson.back: Back to my results
+
+pat.attr.shape: the shape
+pat.attr.size: the size
+pat.attr.fill: the colour
+pat.attr.count: the number of shapes
+pat.attr.rot: the arrow's direction
+pat.attr.pos: the dot's place
+pat.attr.lines: the lines
+pat.attr.dots: the dots
+pat.attr.outer.shape: the outer shape
+pat.attr.outer.size: the size of the outer shape
+pat.attr.outer.fill: the colour of the outer shape
+pat.attr.inner.shape: the inner shape
+pat.attr.inner.size: the size of the inner shape
+pat.attr.inner.fill: the colour of the inner shape
+
+pat.val.shape.0: triangle
+pat.val.shape.1: square
+pat.val.shape.2: pentagon
+pat.val.shape.3: hexagon
+pat.val.shape.4: circle
+pat.val.shape.5: diamond
+pat.val.shape.6: star
+pat.val.size.0: tiny
+pat.val.size.1: small
+pat.val.size.2: medium
+pat.val.size.3: large
+pat.val.size.4: huge
+pat.val.fill.0: white
+pat.val.fill.1: light grey
+pat.val.fill.2: dark grey
+pat.val.fill.3: black
+pat.val.pos.0: top left
+pat.val.pos.1: top middle
+pat.val.pos.2: top right
+pat.val.pos.3: middle right
+pat.val.pos.4: bottom right
+pat.val.pos.5: bottom middle
+pat.val.pos.6: bottom left
+pat.val.pos.7: middle left
+
+pat.why.same: '{attr} is the same in every picture ({v}), so the answer has it too.'
+pat.why.row: '{attr} stays the same along each row, so the bottom row keeps it ({v}).'
+pat.why.step: '{attr} changes by the same step along each row: {a}, then {b}, so next comes {c}.'
+pat.why.sidesUp: 'Each step along a row adds one side: {a}, then {b}, so next comes {c}.'
+pat.why.sidesDown: 'Each step along a row takes away one side: {a}, then {b}, so next comes {c}.'
+pat.why.turn: 'The arrow turns {deg}° {dir} at every step: {a}, then {b}, so next comes {c}.'
+pat.why.move: 'The dot moves {k|one=one place|other=# places} {dir} round the edge at every step, so after {b} comes {c}.'
+pat.cw: clockwise
+pat.ccw: anticlockwise
+pat.why.each: '{attr} takes three values in every row, each once: {x}, {y} and {z}. The bottom row already has {a} and {b}, so the missing one is {c}.'
+pat.why.add: 'In each row, the number of shapes in the third picture is the first two added: {sum}.'
+pat.why.sub: 'In each row, take the second number away from the first: {sum}.'
+pat.why.set.const: Each row repeats the same picture.
+pat.why.set.dist3: Every row shows the same three pictures, each once. The bottom row is missing the one it has not used yet.
+pat.why.set.or: Lay the first two pictures of a row over each other. The third keeps everything from both.
+pat.why.set.diff: Start from the first picture and take away everything the second one shows. What is left is the third.
+pat.why.set.xor: Lay the first two pictures over each other. What they share disappears, and what appears in only one of them stays.
+
+pat.miss.value: '{attr}: you chose {chose}, the rule gives {right}.'
+pat.miss.extraLines: 'Your choice has {n|one=an extra line|other=# extra lines}.'
+pat.miss.missingLines: 'Your choice is missing {n|one=a line|other=# lines}.'
+pat.miss.extraDots: 'Your choice has {n|one=an extra dot|other=# extra dots}.'
+pat.miss.missingDots: 'Your choice is missing {n|one=a dot|other=# dots}.'

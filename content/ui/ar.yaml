@@ -801,3 +801,7 @@ practice.reviewNote: الاختيار يفضّل الدروس التي أنهي�
 practice.totals: 'الإجمالي: {n} {n|one=تحدٍّ|two=تحديان|few=تحديات|many=تحديًا|other=تحدٍّ} محلولة في {m} {m|one=درس|two=درسين|few=دروس|many=درسًا|other=درس}.'
 lesson.reportQ: وجدت خطأ في هذا الدرس؟
 lesson.reportA: أخبرنا على GitHub
+nav.patterns: اختبار الأنماط
+home.patterns.t: اختبار التفكير بالأنماط
+home.patterns.d: 60 لغزًا على طريقة اختبارات الذكاء، مع درجتك وتقدير تقريبي لنسبة ذكائك وشرح كل جواب ودرس مبني على أخطائك. بلا اسم ولا تسجيل، ولا يغادر جهازك شيء.
+home.patterns.b: ابدأ الاختبار

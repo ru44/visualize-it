@@ -56,5 +56,13 @@ const dateLabel = practice.today.toLocaleDateString(locale.value === 'ar' ? 'ar'
 
     <p class="mt-6 text-sm" style="color: var(--muted)">{{ t('practice.reviewNote') }}</p>
     <p v-if="practice.allTime.n" class="mt-1 text-sm" style="color: var(--muted)">{{ t('practice.totals', practice.allTime) }}</p>
+
+    <RouterLink to="/patterns" class="surface lift mt-10 flex flex-wrap items-center justify-between gap-4 p-5">
+      <span>
+        <span class="block text-lg font-medium">{{ t('home.patterns.t') }}</span>
+        <span class="mt-1 block text-sm leading-relaxed" style="color: var(--muted)">{{ t('home.patterns.d') }}</span>
+      </span>
+      <span class="btn-primary px-5 py-2.5 text-sm">{{ t('home.patterns.b') }}</span>
+    </RouterLink>
   </main>
 </template>

@@ -801,3 +801,7 @@ practice.reviewNote: Picks favour lessons you have already finished, so old skil
 practice.totals: 'All time: {n} {n|one=challenge|other=challenges} solved across {m} {m|one=lesson|other=lessons}.'
 lesson.reportQ: Spotted a mistake in this lesson?
 lesson.reportA: Tell us on GitHub
+nav.patterns: Pattern test
+home.patterns.t: Pattern reasoning test
+home.patterns.d: '60 IQ-style grid puzzles: a score, a rough IQ estimate, every answer explained, and a lesson built from your mistakes. Anonymous — nothing leaves your device.'
+home.patterns.b: Take the test
