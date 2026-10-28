@@ -1,0 +1,49 @@
+id: dialer-codes
+subject: networking
+difficulty: high-school
+equation: t_{\text{resp}} = n\,t_{\text{RTT}}
+concepts:
+- mmi
+- ussd
+- supplementary-services
+- telephony
+prerequisites:
+- routers
+related:
+- dns
+- packet-switching
+visualization:
+  type: mmi-dialer
+parameters:
+  code:
+    min: 0
+    max: 4
+    step: 1
+    value: 1
+  rtt:
+    min: 10
+    max: 300
+    step: 10
+    value: 50
+    unit: ms
+variables:
+- t_{\text{resp}}
+- n
+- t_{\text{RTT}}
+derivation:
+- '\text{all digits? the dialer places a call. a string shaped } \text{*\#SC\#} \text{ is not a call}'
+- '\text{answered on the phone (IMEI): } n = 0,\ t_{\text{resp}} = 0'
+- '\text{a question for the carrier (call-forward status, a USSD menu): } n = 1,\ t_{\text{resp}} = t_{\text{RTT}}'
+charts: []
+primary: code
+presets:
+- code: 1
+  rtt: 50
+- code: 2
+  rtt: 50
+- code: 3
+  rtt: 120
+challenges:
+- check: code == 1 or code == 4
+- check: code == 3
+- check: (code == 2 or code == 3) and rtt >= 150
