@@ -12,6 +12,9 @@ pat.how.t: How to read a puzzle
 pat.how.d: Read each row from left to right. Something changes along it — the shape, the number, the colour, the size, the lines. Find the rule in the top two rows, then use it to build the missing picture before you look at the options.
 pat.sample: Try an example first
 pat.start: Start the test
+pat.form.t: Version
+pat.form.d: Taking the test again? Pick a version you have not done yet. All three have the same rules and the same difficulty, with different puzzles.
+pat.form.name: 'Version {v}'
 pat.question: 'Puzzle {n} of {total}'
 pat.set: 'Set {s} of 5'
 pat.choose: Choose the picture that completes the grid
@@ -43,7 +46,7 @@ pat.res.iq.range: 'likely between {low} and {high}'
 pat.res.iq.tooLow: Too few right answers to estimate. Start with the lesson, then try again.
 pat.res.iq.next: 'Every extra right answer adds about 2 points. Get {n} more right next time to reach about {iq}.'
 pat.res.iq.t: How rough is this number?
-pat.res.iq.d: A real IQ compares you with thousands of people your age who took the same test. Nobody has done that for this test yet, so we borrow the usual pattern of 60-puzzle matrix tests. We assume an average adult gets about 42 right, and two adults in three land within about 8 of that. Treat the number as a starting point, not a verdict. It assumes you are 16 or older, and a retake runs high because you have seen the puzzles before. Your score out of 60 and your rule-by-rule results are exact.
+pat.res.iq.d: A real IQ compares you with thousands of people your age who took the same test. Nobody has done that for this test yet, so we borrow the usual pattern of 60-puzzle matrix tests. We assume an average adult gets about 42 right, and two adults in three land within about 8 of that. Treat the number as a starting point, not a verdict. It assumes you are 16 or older, and taking the same version again runs high because you have seen its puzzles, so retake with another version. Your score out of 60 and your rule-by-rule results are exact.
 pat.res.grow: Scores on puzzles like these rise with practice. Your lesson starts with the rules you missed most.
 pat.res.lesson: Start my lesson
 pat.res.review: Review my answers
@@ -55,7 +58,7 @@ pat.res.missed: Missed
 pat.res.skipped: Skipped
 pat.res.yours: Your answer
 pat.res.right: Right answer
-pat.res.retake: Take the test again
+pat.res.retake: 'Take version {v}'
 pat.res.erase: Erase my answers
 pat.res.erased: Your answers are erased. Nothing was ever sent anywhere.
 
@@ -105,6 +108,18 @@ pat.lesson.origin.t: Where the five rules come from
 pat.lesson.origin.d: In 1990 the psychologists Patricia Carpenter, Marcel Just and Peter Shell studied how people solve Raven's Progressive Matrices, the best-known puzzle test of this kind. They found that its puzzles can be described with just five kinds of rule — the five on this page. This test uses those rules with new pictures. Every wrong option differs from the right one in one, two or three features, so you cannot find the answer from the options alone.
 pat.lesson.retake: Take the test
 pat.lesson.back: Back to my results
+
+pat.train.title: Rule practice
+pat.train.lead: New puzzles for one rule at a time, as many as you like. Solve three in a row on the first try and the puzzles get harder. Nothing here counts towards your score, and nothing is saved.
+pat.train.pick: Choose a rule
+pat.train.level: 'Level {n} of {max}'
+pat.train.streak: 'First-try streak: {n}'
+pat.train.done: 'Puzzles done: {n}'
+pat.train.next: Next puzzle
+pat.train.up: Three in a row on the first try. The puzzles get harder from now on.
+pat.train.down: Two misses in a row, so the next puzzles are a little easier.
+pat.train.more: More puzzles for this rule
+pat.train.lesson: Read the lesson for this rule
 
 pat.attr.shape: the shape
 pat.attr.size: the size

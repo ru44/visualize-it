@@ -8,6 +8,7 @@
 // from up; ring places 0–7 clockwise from the top-left corner. Strokes 0 top · 1 right · 2 bottom
 // · 3 left · 4 ╲ · 5 ╱ · 6 vertical middle · 7 horizontal middle; dots 0–8 row by row.
 import { buildBank, FAMILIES, type Attr, type DimSpec, type Family, type Item, type ItemSpec, type PartSpec, type Role, type Rule, type Triple } from './engine'
+import { variantOf } from './variant'
 
 const [tri, sq, pent, hex, circ, dia, star] = [0, 1, 2, 3, 4, 5, 6]
 
@@ -137,4 +138,9 @@ export const PRACTICE: Record<Family, ItemSpec[]> = {
 
 export const PER_SET = 12
 export const testItems: Item[] = buildBank(TEST, 1990)
+
+/** Versions of the test for retakes: version 1 is the bank above, the others are its puzzles re-dressed. */
+export const FORMS = 3
+const forms: Item[][] = [testItems]
+export const getForm = (f: number): Item[] => (forms[f] ??= buildBank(TEST.map((spec, i) => variantOf(spec, 1000 * f + i) ?? spec), 1990 + f))
 export const practiceItems = Object.fromEntries(FAMILIES.map((fam, i) => [fam, buildBank(PRACTICE[fam], 101 + i)])) as Record<Family, Item[]>

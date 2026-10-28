@@ -14,6 +14,7 @@ export const router = createRouter({
     { path: '/practice', component: () => import('./pages/PracticeView.vue'), meta: { title: 'practice.title' } },
     { path: '/patterns', component: () => import('./pages/PatternTest.vue'), meta: { title: 'pat.title' } },
     { path: '/patterns/lesson', component: () => import('./pages/PatternLesson.vue'), meta: { title: 'pat.lesson.title' } },
+    { path: '/patterns/train', component: () => import('./pages/PatternTrain.vue'), meta: { title: 'pat.train.title' } },
     { path: '/notation', component: () => import('./pages/NotationView.vue'), meta: { title: 'notation.title' } },
     { path: '/graph', component: () => import('./pages/GraphView.vue'), meta: { title: 'graph.title' } },
     { path: '/map', component: () => import('./pages/MapView.vue'), meta: { title: 'map.title' } },

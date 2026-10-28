@@ -74,6 +74,9 @@ const tx = (k: string) => t(k as Key)
         <p class="label mb-4">{{ t('pat.lesson.yourTurn') }} · <span class="num">{{ k + 1 }}</span></p>
         <PatternPuzzle :item="it" />
       </div>
+      <RouterLink :to="`/patterns/train?rule=${f}`" class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium" style="color: var(--accent)">
+        {{ t('pat.train.more') }} <span class="rtl:-scale-x-100" aria-hidden="true">→</span>
+      </RouterLink>
     </section>
 
     <section class="mt-14">

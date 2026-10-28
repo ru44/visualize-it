@@ -38,6 +38,8 @@ export interface DimSpec {
 export interface ItemSpec {
   parts: PartSpec[]
   dims: [DimSpec, DimSpec, DimSpec]
+  /** Which rule row each grid row shows (default 0, 1, 2). Every rule works row by row, so any order stays valid. */
+  rows?: Triple
 }
 
 export interface Part {
@@ -124,8 +126,12 @@ export function ruleOf(p: PartSpec, attr: Attr): Rule {
 /** True when the rule gives one value everywhere — nothing to work out. */
 export const isFlat = (rule: Rule) => rule.r === 'const' && rule.v[0] === rule.v[1] && rule.v[1] === rule.v[2]
 
+export const rowOf = (spec: ItemSpec, r: number) => spec.rows?.[r] ?? r
+/** The value of one feature in grid row r, column c. */
+export const valueIn = (spec: ItemSpec, k: number, attr: Attr, r: number, c: number) => valueAt(ruleOf(spec.parts[k], attr), attr, rowOf(spec, r), c)
+
 export const cellAt = (spec: ItemSpec, r: number, c: number): Cell =>
-  spec.parts.map((p) => ({ kind: p.kind, role: p.role, v: Object.fromEntries(KIND_ATTRS[p.kind].map((a) => [a, valueAt(ruleOf(p, a), a, r, c)])) }))
+  spec.parts.map((p, k) => ({ kind: p.kind, role: p.role, v: Object.fromEntries(KIND_ATTRS[p.kind].map((a) => [a, valueIn(spec, k, a, r, c)])) }))
 
 /** The value a wrong option uses for one feature: a plausible slip, never the right value. */
 function altValue(spec: ItemSpec, d: DimSpec, right: number): number {
@@ -139,9 +145,9 @@ function altValue(spec: ItemSpec, d: DimSpec, right: number): number {
       break
     }
     case 'prog':
-      return valueAt(rule, d.attr, 2, 1) // forgot the last step
+      return valueIn(spec, d.part, d.attr, 2, 1) // forgot the last step
     case 'dist3':
-      return valueAt(rule, d.attr, 2, 0) // repeated a value the row already has
+      return valueIn(spec, d.part, d.attr, 2, 0) // repeated a value the row already has
     case 'add':
     case 'sub':
       return right < RANGE.count[1] ? right + 1 : right - 1 // miscounted by one
