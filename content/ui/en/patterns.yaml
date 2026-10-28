@@ -62,6 +62,36 @@ pat.res.retake: 'Take version {v}'
 pat.res.erase: Erase my answers
 pat.res.erased: Your answers are erased. Nothing was ever sent anywhere.
 
+pat.hist.offT: Keep your results on this device?
+pat.hist.offD: Turn this on to see your best score and how you improve from one try to the next. Only your score, version, date and rule results are kept, in this browser alone, and nothing is sent anywhere. Leave it off on a shared computer.
+pat.hist.on: Remember my results
+pat.hist.t: Your progress
+pat.hist.best: Personal best
+pat.hist.latest: This attempt
+pat.hist.attempts: Attempts
+pat.hist.up: '{n|one=# more right answer|other=# more right answers} than last time'
+pat.hist.down: '{n|one=# fewer right answer|other=# fewer right answers} than last time'
+pat.hist.same: Same as last time
+pat.hist.first: Your first saved attempt
+pat.hist.oneMore: Take another version to start your progress line.
+pat.hist.point: 'Attempt {n}'
+pat.hist.chart: 'Your score in each of {n} attempts; best {best}, latest {last}, out of 60.'
+pat.hist.table: Show as a table
+pat.hist.col.date: Date
+pat.hist.col.score: Score
+pat.hist.col.iq: Rough IQ
+pat.hist.forget: Forget my results
+pat.hist.saved: Kept in this browser only. Forget them any time.
+pat.hist.bestSoFar: 'Your best so far: {s} of 60, over {n|one=# attempt|other=# attempts}. Can you beat it?'
+
+pat.share.t: Share your result
+pat.share.d: A picture of your score and your rules, with no name on it. Send it to a friend and see who does better.
+pat.share.share: Share
+pat.share.download: Download image
+pat.share.alt: 'Your result card: {s} of 60'
+pat.share.anon: Anonymous · no sign-up
+pat.share.dare: Can you beat it?
+
 pat.rule.constant: Stays the same
 pat.rule.progression: Step by step
 pat.rule.distribution: Each one once
