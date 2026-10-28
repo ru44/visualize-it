@@ -1,7 +1,7 @@
 // Words for a puzzle: why the answer is right, and what a chosen option got wrong. Everything is
 // worked out from the item's rules, so every one of the 60 explanations is exact.
 import { t, locale, type Key } from '../i18n'
-import { isFlat, isSet, ruleOf, valueAt, type Attr, type Family, type Item, type PartSpec } from './engine'
+import { isFlat, isSet, ruleOf, valueIn, type Attr, type Family, type Item, type PartSpec } from './engine'
 
 const ARROWS = ['↑', '↗', '→', '↘', '↓', '↙', '←', '↖']
 /** Keeps numbers, sums and arrows left-to-right inside Arabic sentences. */
@@ -38,7 +38,7 @@ function features(item: Item): [number, Attr][] {
 function why(item: Item, k: number, attr: Attr): string {
   const p = item.spec.parts[k]
   const rule = ruleOf(p, attr)
-  const at = (r: number, c: number) => valueAt(rule, attr, r, c)
+  const at = (r: number, c: number) => valueIn(item.spec, k, attr, r, c)
   const lab = (v: number) => valueLabel(attr, v)
   const name = attrLabel(p, attr)
   const [a, b, c] = [at(2, 0), at(2, 1), at(2, 2)]

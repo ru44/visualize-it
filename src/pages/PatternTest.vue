@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { t, isRtl, type Key } from '../i18n'
-import { testItems, practiceItems, PER_SET } from '../patterns/items'
+import { testItems, practiceItems, PER_SET, FORMS } from '../patterns/items'
 import { FAMILIES, roughIq } from '../patterns/engine'
 import { explainItem, explainPick, ruleName } from '../patterns/explain'
 import { usePatterns } from '../stores/patterns'
@@ -20,14 +20,17 @@ const sample = practiceItems.distribution[0]
 const erased = ref(false)
 const top = () => scrollTo({ top: 0 })
 
-function begin() {
-  store.start()
+// Retakes use another version: the same rules and difficulty, puzzles the student has not seen.
+const version = ref(0)
+const nextVersion = computed(() => (store.form + 1) % FORMS)
+function begin(v = version.value) {
+  store.start(v)
   erased.value = false
   top()
 }
 
 // ---- the test ----------------------------------------------------------------------------------
-const item = computed(() => testItems[store.current])
+const item = computed(() => store.items[store.current])
 const setOf = (i: number) => Math.floor(i / PER_SET)
 const now = ref(Date.now())
 const clock = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`
@@ -88,7 +91,7 @@ onUnmounted(() => {
 const score = computed(() => store.score)
 const onlyWrong = ref(true)
 const review = computed(() =>
-  testItems.map((it, i) => ({ it, pick: store.answers[i], ok: store.answers[i] === it.answer })).filter((r) => !onlyWrong.value || !r.ok),
+  store.items.map((it, i) => ({ it, pick: store.answers[i], ok: store.answers[i] === it.answer })).filter((r) => !onlyWrong.value || !r.ok),
 )
 const pct = (right: number, all: number) => (all ? (100 * right) / all : 0)
 const iq = computed(() => roughIq(score.value?.right ?? 0))
@@ -132,8 +135,28 @@ function erase() {
         </section>
       </div>
 
-      <div class="mt-7 flex flex-wrap items-center gap-4">
-        <button class="btn-primary px-6 py-3 text-base" @click="begin">{{ t('pat.start') }}</button>
+      <div class="mt-7">
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="label">{{ t('pat.form.t') }}</span>
+          <div class="flex rounded-lg border p-0.5 text-sm" style="border-color: var(--line)" role="radiogroup" :aria-label="t('pat.form.t')">
+            <button
+              v-for="v in FORMS"
+              :key="v"
+              role="radio"
+              :aria-checked="version === v - 1"
+              class="num rounded-md px-3 py-1"
+              :style="version === v - 1 ? 'background: var(--sunken); color: var(--fg)' : 'color: var(--muted)'"
+              @click="version = v - 1"
+            >
+              {{ v }}
+            </button>
+          </div>
+        </div>
+        <p class="mt-2 max-w-xl text-sm leading-relaxed" style="color: var(--muted)">{{ t('pat.form.d') }}</p>
+      </div>
+
+      <div class="mt-5 flex flex-wrap items-center gap-4">
+        <button class="btn-primary px-6 py-3 text-base" @click="begin()">{{ t('pat.start') }}</button>
         <RouterLink to="/patterns/lesson" class="text-sm underline" style="color: var(--muted)">{{ t('pat.lessonFirst') }}</RouterLink>
       </div>
 
@@ -152,7 +175,7 @@ function erase() {
       <div class="flex flex-wrap items-baseline justify-between gap-2">
         <h1 class="text-lg font-semibold">
           {{ t('pat.question', { n: store.current + 1, total }) }}
-          <span class="ms-2 text-sm font-normal" style="color: var(--muted)">{{ t('pat.set', { s: setOf(store.current) + 1 }) }}</span>
+          <span class="ms-2 text-sm font-normal" style="color: var(--muted)">{{ t('pat.set', { s: setOf(store.current) + 1 }) }} · {{ t('pat.form.name', { v: store.form + 1 }) }}</span>
         </h1>
         <span class="text-sm" style="color: var(--muted)">{{ t('pat.time') }} <span class="num">{{ elapsed }}</span></span>
       </div>
@@ -215,7 +238,7 @@ function erase() {
     <!-- ---- the result ---- -->
     <template v-else-if="score">
       <p class="label" style="color: var(--accent)">{{ t('pat.title') }}</p>
-      <h1 class="mt-1 text-3xl font-bold tracking-tight">{{ t('pat.res.title') }}</h1>
+      <h1 class="mt-1 text-3xl font-bold tracking-tight">{{ t('pat.res.title') }} <span class="text-lg font-normal" style="color: var(--muted)">· {{ t('pat.form.name', { v: store.form + 1 }) }}</span></h1>
 
       <section class="surface mt-6 grid gap-8 p-6 sm:grid-cols-2 md:grid-cols-[auto_auto_1fr]">
         <div>
@@ -301,7 +324,8 @@ function erase() {
       </section>
 
       <div class="mt-10 flex flex-wrap gap-3">
-        <button class="btn-primary px-5 py-2.5" @click="begin">{{ t('pat.res.retake') }}</button>
+        <RouterLink to="/patterns/train" class="rounded-[10px] border px-5 py-2.5 hover:border-[var(--accent)]" style="border-color: var(--line)">{{ t('pat.train.title') }}</RouterLink>
+        <button class="btn-primary px-5 py-2.5" @click="begin(nextVersion)">{{ t('pat.res.retake', { v: nextVersion + 1 }) }}</button>
         <button class="rounded-[10px] border px-5 py-2.5 hover:border-[var(--neg)]" style="border-color: var(--line)" @click="erase">{{ t('pat.res.erase') }}</button>
       </div>
     </template>
