@@ -1,0 +1,33 @@
+mmi.hint: ▶ drag "code" through five things you can type — watch where each one goes, and whether the carrier is asked
+mmi.c.number: a phone number
+mmi.c.mmi: 'an MMI code (*#SC#)'
+mmi.c.ss: an MMI code → the network
+mmi.c.ussd: a USSD string
+mmi.c.secret: an Android secret code
+mmi.a.call: rings the other phone
+mmi.a.imei: shows this phone's IMEI
+mmi.a.cf: 'reply: forwarding is off'
+mmi.a.ussd: 'reply: a balance menu'
+mmi.a.secret: opens a built-in info screen
+mmi.dest.phone: the phone itself
+mmi.dest.network: the carrier network
+mmi.dest.app: an app on the phone
+mmi.dest.call: a phone call
+mmi.r.typed: you typed
+mmi.r.kind: read as
+mmi.r.handled: handled by
+mmi.r.time: answer takes
+mmi.instant: instant
+mmi.verb.dial: → place a call
+mmi.verb.route: → not a call
+mmi.key.wrap: 'the * and # wrapper'
+mmi.key.sc: the service code
+mmi.foot.call: the dialer sees only digits, so it rings the number — no code is involved
+mmi.foot.local: answered on the phone itself — nothing is sent to the carrier, so the reply is instant
+mmi.foot.net: 'sent to the carrier as a request — one round trip, about {ms} ms, then the reply pops up'
+mmi.caption: 'the same keypad does three jobs: dial a call, ask the carrier a question, or poke an app on the phone — the shape of what you type decides which'
+mmi.q.digits: 'only digits?'
+mmi.q.pattern: 'wrapped in * and #?'
+mmi.q.where: 'who can answer it?'
+mmi.yes: yes
+mmi.no: no
