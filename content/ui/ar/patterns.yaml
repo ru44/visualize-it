@@ -62,6 +62,36 @@ pat.res.retake: 'أدِّ النسخة {v}'
 pat.res.erase: امحُ إجاباتي
 pat.res.erased: مُحيت إجاباتك. ولم يُرسَل منها شيء إلى أي مكان.
 
+pat.hist.offT: تحفظ نتائجك على هذا الجهاز؟
+pat.hist.offD: فعّل هذا لترى أفضل درجة لك وكيف تتحسن من محاولة إلى التي تليها. نحفظ درجتك والنسخة والتاريخ ونتيجتك في كل قاعدة فقط، في هذا المتصفح وحده، ولا يُرسل شيء إلى أي مكان. لا تفعّله على جهاز مشترك.
+pat.hist.on: احفظ نتائجي
+pat.hist.t: تقدّمك
+pat.hist.best: أفضل درجة
+pat.hist.latest: هذه المحاولة
+pat.hist.attempts: المحاولات
+pat.hist.up: '{n|one=إجابة صحيحة واحدة|two=إجابتان صحيحتان|few=# إجابات صحيحة|many=# إجابة صحيحة|other=# إجابة صحيحة} أكثر من المرة السابقة'
+pat.hist.down: '{n|one=إجابة صحيحة واحدة|two=إجابتان صحيحتان|few=# إجابات صحيحة|many=# إجابة صحيحة|other=# إجابة صحيحة} أقل من المرة السابقة'
+pat.hist.same: مثل المرة السابقة
+pat.hist.first: أول محاولة محفوظة لك
+pat.hist.oneMore: أدِّ نسخة أخرى ليبدأ خط تقدّمك.
+pat.hist.point: 'المحاولة {n}'
+pat.hist.chart: 'درجتك في كل محاولة من {n|two=محاولتين|few=# محاولات|many=# محاولة|other=# محاولة}؛ الأفضل {best} والأخيرة {last} من 60.'
+pat.hist.table: اعرضها جدولًا
+pat.hist.col.date: التاريخ
+pat.hist.col.score: الدرجة
+pat.hist.col.iq: نسبة الذكاء التقريبية
+pat.hist.forget: انسَ نتائجي
+pat.hist.saved: محفوظة في هذا المتصفح وحده. تستطيع أن تمحوها متى شئت.
+pat.hist.bestSoFar: 'أفضل درجة لك حتى الآن: {s} من 60، في {n|one=محاولة واحدة|two=محاولتين|few=# محاولات|many=# محاولة|other=# محاولة}. هل تتجاوزها؟'
+
+pat.share.t: شارك نتيجتك
+pat.share.d: صورة فيها درجتك وقواعدك، وليس فيها اسمك. أرسلها إلى صديق، وانظر من يتفوق.
+pat.share.share: شارك
+pat.share.download: نزّل الصورة
+pat.share.alt: 'بطاقة نتيجتك: {s} من 60'
+pat.share.anon: بلا اسم · بلا تسجيل
+pat.share.dare: هل تتجاوز هذه النتيجة؟
+
 pat.rule.constant: يبقى كما هو
 pat.rule.progression: خطوة بعد خطوة
 pat.rule.distribution: كلٌّ مرة واحدة

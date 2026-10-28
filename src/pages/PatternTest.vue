@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { t, isRtl, type Key } from '../i18n'
 import { testItems, practiceItems, PER_SET, FORMS } from '../patterns/items'
 import { FAMILIES, roughIq } from '../patterns/engine'
@@ -9,6 +9,8 @@ import PatternGrid from '../components/patterns/PatternGrid.vue'
 import PatternOptions from '../components/patterns/PatternOptions.vue'
 import PatternPuzzle from '../components/patterns/PatternPuzzle.vue'
 import PatternCell from '../components/patterns/PatternCell.vue'
+import PatternProgress from '../components/patterns/PatternProgress.vue'
+import { renderCard } from '../patterns/card'
 
 // One page, three moments: the introduction, the sixty puzzles, the result. The store decides
 // which one shows, so a reload lands back where the student was.
@@ -21,7 +23,10 @@ const erased = ref(false)
 const top = () => scrollTo({ top: 0 })
 
 // Retakes use another version: the same rules and difficulty, puzzles the student has not seen.
-const version = ref(0)
+// With results kept on this device, the picker already points at the version after the last one.
+const lastKept = store.history?.[store.history.length - 1]
+const version = ref(lastKept ? (lastKept.f + 1) % FORMS : 0)
+const bestKept = computed(() => (store.history?.length ? Math.max(...store.history.map((a) => a.s)) : null))
 const nextVersion = computed(() => (store.form + 1) % FORMS)
 function begin(v = version.value) {
   store.start(v)
@@ -105,6 +110,53 @@ function erase() {
   erased.value = true
   top()
 }
+
+// ---- the picture to share --------------------------------------------------------------------------
+const card = ref<{ blob: Blob; url: string } | null>(null)
+const canShare = ref(false)
+async function makeCard() {
+  const sc = score.value
+  if (!sc) return
+  const q = iq.value
+  const blob = await renderCard({
+    rtl: isRtl(),
+    site: 'visualize·it',
+    title: t('pat.title'),
+    score: sc.right,
+    total,
+    scoreLabel: t('pat.res.scoreLabel'),
+    iq: q.tooLow ? '< 70' : `≈ ${q.iq}`,
+    iqLabel: t('pat.res.iq.label'),
+    iqRange: q.tooLow ? '' : t('pat.res.iq.range', { low: q.low, high: q.high }),
+    version: t('pat.form.name', { v: store.form + 1 }),
+    rules: FAMILIES.map((f) => {
+      const x = sc.byFamily[f]
+      return { name: ruleName(f), value: x.total ? t('pat.rule.score', x) : t('pat.res.noData'), share: x.total ? x.right / x.total : 0 }
+    }),
+    anon: t('pat.share.anon'),
+    dare: t('pat.share.dare'),
+    url: `${location.host}${location.pathname}#/patterns`,
+    puzzle: sample.cells,
+  })
+  if (card.value) URL.revokeObjectURL(card.value.url)
+  card.value = { blob, url: URL.createObjectURL(blob) }
+  canShare.value = !!navigator.canShare?.({ files: [new File([blob], 'pattern-test.png', { type: 'image/png' })] })
+}
+watch(view, (v) => v === 'results' && makeCard(), { immediate: true })
+onUnmounted(() => card.value && URL.revokeObjectURL(card.value.url))
+async function share() {
+  if (!card.value) return
+  try {
+    await navigator.share({ files: [new File([card.value.blob], 'pattern-test.png', { type: 'image/png' })], title: t('pat.title') })
+  } catch {}
+}
+function download() {
+  if (!card.value) return
+  const a = document.createElement('a')
+  a.href = card.value.url
+  a.download = 'pattern-test.png'
+  a.click()
+}
 </script>
 
 <template>
@@ -153,6 +205,7 @@ function erase() {
           </div>
         </div>
         <p class="mt-2 max-w-xl text-sm leading-relaxed" style="color: var(--muted)">{{ t('pat.form.d') }}</p>
+        <p v-if="bestKept !== null" class="mt-2 text-sm font-medium">{{ t('pat.hist.bestSoFar', { s: bestKept, n: store.history!.length }) }}</p>
       </div>
 
       <div class="mt-5 flex flex-wrap items-center gap-4">
@@ -271,6 +324,15 @@ function erase() {
         </RouterLink>
       </section>
 
+      <PatternProgress v-if="store.history?.length" class="mt-4" :attempts="store.history" @forget="store.remember(false)" />
+      <section v-else class="surface mt-4 flex flex-wrap items-center justify-between gap-4 p-5">
+        <div class="max-w-xl">
+          <h2 class="font-semibold">{{ t('pat.hist.offT') }}</h2>
+          <p class="mt-1 text-sm leading-relaxed" style="color: var(--muted)">{{ t('pat.hist.offD') }}</p>
+        </div>
+        <button class="btn-primary px-4 py-2 text-sm" @click="store.remember(true)">{{ t('pat.hist.on') }}</button>
+      </section>
+
       <section class="mt-4 grid gap-4 sm:grid-cols-2">
         <div class="surface p-5">
           <h2 class="font-semibold">{{ t('pat.res.iq.t') }}</h2>
@@ -281,6 +343,18 @@ function erase() {
           <span class="text-sm leading-relaxed">{{ t('pat.res.grow') }}</span>
           <span class="btn-primary mt-4 self-start px-5 py-2.5 text-sm">{{ t('pat.res.lesson') }}</span>
         </RouterLink>
+      </section>
+
+      <section class="surface mt-4 grid items-center gap-5 p-5 sm:grid-cols-[minmax(0,1fr)_auto]">
+        <div>
+          <h2 class="font-semibold">{{ t('pat.share.t') }}</h2>
+          <p class="mt-1 text-sm leading-relaxed" style="color: var(--muted)">{{ t('pat.share.d') }}</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <button v-if="canShare" class="btn-primary px-4 py-2 text-sm" @click="share">{{ t('pat.share.share') }}</button>
+            <button class="rounded-[10px] border px-4 py-2 text-sm hover:border-[var(--accent)] disabled:opacity-40" style="border-color: var(--line)" :disabled="!card" @click="download">{{ t('pat.share.download') }}</button>
+          </div>
+        </div>
+        <img v-if="card" :src="card.url" :alt="t('pat.share.alt', { s: score.right })" class="w-full rounded-lg border sm:w-80" style="border-color: var(--line)" />
       </section>
 
       <section class="mt-12">
