@@ -1,0 +1,21 @@
+towers.hint: ▶ drag your phone along the road (or the d slider) and watch which tower it uses
+towers.towerA: tower A
+towers.towerB: tower B
+towers.onA: on tower A
+towers.onB: on tower B
+towers.handover: handover
+towers.middle: middle
+towers.fromA: from tower A
+towers.fromB: from tower B
+towers.uses: what your phone uses
+towers.waits: B stronger, phone still waits
+towers.bars: '{n|one=# bar|other=# bars}'
+towers.noBars: no service
+towers.axisX: distance from tower A (km)
+towers.axisY: signal (dBm)
+towers.caption: 'your phone listens to both towers all the time; it moves your call only when the new one beats the old one by the margin H'
+towers.r.dA: to tower A
+towers.r.dB: to tower B
+towers.r.diff: B minus A (margin {h} dB)
+towers.r.on: connected to tower
+towers.r.bars: bars

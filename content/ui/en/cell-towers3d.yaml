@@ -1,0 +1,12 @@
+viz3d.towers.walk: ▶ walk to B
+viz3d.towers.pause: ❚❚ pause
+viz3d.towers.restart: ↺ back to A
+viz3d.towers.you: you
+viz3d.towers.on: 'on tower {t}'
+viz3d.towers.weaker: 'tower B is {db} weaker'
+viz3d.towers.waiting: 'tower B is {db} stronger, but not by the {h} margin yet'
+viz3d.towers.moved: 'tower B beat A by more than {h}, so the call moved'
+viz3d.towers.place0: open country
+viz3d.towers.place1: suburbs
+viz3d.towers.place2: city
+viz3d.towers.place3: dense city

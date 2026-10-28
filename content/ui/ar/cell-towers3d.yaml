@@ -1,0 +1,12 @@
+viz3d.towers.walk: ▶ امشِ إلى B
+viz3d.towers.pause: ❚❚ توقف
+viz3d.towers.restart: ↺ عُد إلى A
+viz3d.towers.you: أنت
+viz3d.towers.on: 'على البرج {t}'
+viz3d.towers.weaker: 'البرج B أضعف بـ {db}'
+viz3d.towers.waiting: 'البرج B أقوى بـ {db}، لكن ليس بهامش {h} بعد'
+viz3d.towers.moved: 'تفوق البرج B على A بأكثر من {h}، فانتقلت المكالمة'
+viz3d.towers.place0: ريف مفتوح
+viz3d.towers.place1: ضاحية
+viz3d.towers.place2: مدينة
+viz3d.towers.place3: مدينة مزدحمة
