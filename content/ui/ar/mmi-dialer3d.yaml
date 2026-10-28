@@ -1,0 +1,27 @@
+viz3d.mmi.you: هاتفك
+viz3d.mmi.tower: برج الاتصالات
+viz3d.mmi.carrier: المشغّل
+viz3d.mmi.other: الهاتف الآخر
+viz3d.mmi.typing: تكتب الرمز…
+viz3d.mmi.out: في طريقه إلى المشغّل
+viz3d.mmi.back: الرد في طريقه إليك
+viz3d.mmi.replied: 'وصل الرد بعد {ms}'
+viz3d.mmi.local: يجيب الهاتف بنفسه، ولا يخرج منه شيء
+viz3d.mmi.app: يسلّمه الهاتف إلى تطبيق فيه، ولا يخرج منه شيء
+viz3d.mmi.calling: يصل المشغّل إلى الهاتف الآخر عبر البرج القريب منه
+viz3d.mmi.ringing: الهاتف الآخر يرنّ
+viz3d.mmi.zero: '{ms}، فلا رحلة أصلًا'
+viz3d.mmi.slow: 'أبطأ من الحقيقة {k} مرة'
+viz3d.mmi.scr.wait: جارٍ تشغيل الرمز…
+viz3d.mmi.scr.call: جارٍ الاتصال…
+viz3d.mmi.scr.cf: تحويل المكالمات
+viz3d.mmi.scr.cf1: 'الصوت: لا تحويل'
+viz3d.mmi.scr.ussd: حسابي
+viz3d.mmi.scr.ussd1: 1 الرصيد
+viz3d.mmi.scr.ussd2: 2 الباقات
+viz3d.mmi.scr.ussd3: 3 الشحن
+viz3d.mmi.scr.app: اختبار
+viz3d.mmi.scr.app1: معلومات الهاتف
+viz3d.mmi.scr.app2: إحصاءات الاستخدام
+viz3d.mmi.scr.app3: معلومات Wi-Fi
+viz3d.mmi.scr.ring: مكالمة واردة
