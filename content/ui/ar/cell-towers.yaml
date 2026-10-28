@@ -1,0 +1,21 @@
+towers.hint: ▶ اسحب هاتفك على الطريق (أو منزلق d) وراقب أي برج يستعمل
+towers.towerA: البرج A
+towers.towerB: البرج B
+towers.onA: على البرج A
+towers.onB: على البرج B
+towers.handover: التسليم
+towers.middle: المنتصف
+towers.fromA: من البرج A
+towers.fromB: من البرج B
+towers.uses: ما يستعمله هاتفك
+towers.waits: B أقوى، والهاتف ينتظر
+towers.bars: '{n|zero=لا أعمدة|one=عمود واحد|two=عمودان|few=# أعمدة|many=# عمودًا|other=# عمود}'
+towers.noBars: لا توجد خدمة
+towers.axisX: البُعد عن البرج A (km)
+towers.axisY: الإشارة (dBm)
+towers.caption: 'يسمع هاتفك البرجين طوال الوقت، ولا ينقل مكالمتك إلا حين يتفوق البرج الجديد على القديم بالهامش H'
+towers.r.dA: إلى البرج A
+towers.r.dB: إلى البرج B
+towers.r.diff: B ناقص A (الهامش {h} dB)
+towers.r.on: متصل بالبرج
+towers.r.bars: الأعمدة

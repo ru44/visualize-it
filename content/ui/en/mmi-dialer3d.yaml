@@ -1,0 +1,27 @@
+viz3d.mmi.you: your phone
+viz3d.mmi.tower: cell tower
+viz3d.mmi.carrier: the carrier
+viz3d.mmi.other: the other phone
+viz3d.mmi.typing: typing the code…
+viz3d.mmi.out: on its way to the carrier
+viz3d.mmi.back: the reply is on its way back
+viz3d.mmi.replied: 'reply after {ms}'
+viz3d.mmi.local: answered inside the phone — nothing leaves it
+viz3d.mmi.app: handed to an app on the phone — nothing leaves it
+viz3d.mmi.calling: the carrier finds the other phone, through the tower near it
+viz3d.mmi.ringing: the other phone rings
+viz3d.mmi.zero: '{ms} — no trip at all'
+viz3d.mmi.slow: 'shown {k}× slower than real'
+viz3d.mmi.scr.wait: Running code…
+viz3d.mmi.scr.call: Calling…
+viz3d.mmi.scr.cf: Call forwarding
+viz3d.mmi.scr.cf1: 'Voice: not forwarded'
+viz3d.mmi.scr.ussd: My account
+viz3d.mmi.scr.ussd1: 1 Balance
+viz3d.mmi.scr.ussd2: 2 Bundles
+viz3d.mmi.scr.ussd3: 3 Top up
+viz3d.mmi.scr.app: Testing
+viz3d.mmi.scr.app1: Phone information
+viz3d.mmi.scr.app2: Usage statistics
+viz3d.mmi.scr.app3: Wi-Fi information
+viz3d.mmi.scr.ring: Incoming call

@@ -4,9 +4,11 @@ import Katex from './Katex.vue'
 
 // Plain text with inline $LaTeX$ segments. In right-to-left text (Arabic), plain Latin runs such as
 // "x = -5" or "F/m" are isolated as left-to-right islands so the bidi algorithm cannot scramble them.
+// So is a negative number, with its unit if one follows ("−95 dBm"); left in the Arabic run, its sign
+// would land on the wrong side and read "95−".
 const props = defineProps<{ text: string }>()
 const RTL_CHARS = /[\u0590-\u08FF]/
-const LATIN_RUN = /([A-Za-z](?:[A-Za-z0-9 =+\-−×·*/^().,<>≤≥%']*[A-Za-z0-9)%'])?)/
+const LATIN_RUN = /((?:(?<![\w.])[−-]\d[\d.,]*\s*)?[A-Za-z](?:[A-Za-z0-9 =+\-−×·*/^().,<>≤≥%']*[A-Za-z0-9)%'])?|(?<![\w.])[−-]\d[\d.,]*)/
 type Part = { s: string; kind: 'math' | 'text' | 'ltr' }
 const parts = computed<Part[]>(() => {
   const rtl = RTL_CHARS.test(props.text)

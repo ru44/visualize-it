@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { t, isRtl, type Key } from '../../i18n'
 import Readouts from '../../components/Readouts.vue'
+import { codeAt, type Dest, type Seg } from './mmiCodes'
 
 // networking/dialer-codes. params code (0..4, which string is dialed), rtt (one round trip to the
 // carrier, ms). The dialer is a small parser: all digits → a phone call; a string wrapped in * and #
@@ -13,22 +14,6 @@ defineEmits<{ set: [name: string, value: number] }>()
 const W = 800
 const H = 480
 
-type Seg = { s: string; k: 'px' | 'sc' | 'sx' | 'num' }
-type Dest = 'phone' | 'network' | 'app' | 'call'
-interface Code {
-  seg: Seg[]
-  kind: Key
-  dest: Dest
-  answer: Key
-  n: 0 | 1
-}
-const CODES: Code[] = [
-  { seg: [{ s: '070 123 4567', k: 'num' }], kind: 'mmi.c.number', dest: 'call', answer: 'mmi.a.call', n: 0 },
-  { seg: [{ s: '*#', k: 'px' }, { s: '06', k: 'sc' }, { s: '#', k: 'sx' }], kind: 'mmi.c.mmi', dest: 'phone', answer: 'mmi.a.imei', n: 0 },
-  { seg: [{ s: '*#', k: 'px' }, { s: '21', k: 'sc' }, { s: '#', k: 'sx' }], kind: 'mmi.c.ss', dest: 'network', answer: 'mmi.a.cf', n: 1 },
-  { seg: [{ s: '*', k: 'px' }, { s: '123', k: 'sc' }, { s: '#', k: 'sx' }], kind: 'mmi.c.ussd', dest: 'network', answer: 'mmi.a.ussd', n: 1 },
-  { seg: [{ s: '*#*#', k: 'px' }, { s: '4636', k: 'sc' }, { s: '#*#*', k: 'sx' }], kind: 'mmi.c.secret', dest: 'app', answer: 'mmi.a.secret', n: 0 },
-]
 // The figure stays left-to-right like every figure on the site, but its sentences take the reader's
 // direction, so Arabic keeps "50 ms" and "#" in place. A start-aligned label flips to "end" in Arabic
 // so it still grows rightwards from its x.
@@ -36,8 +21,7 @@ const dir = computed(() => (isRtl() ? 'rtl' : 'ltr'))
 const start = computed(() => (isRtl() ? 'end' : 'start'))
 const SEG_COLOR: Record<Seg['k'], string> = { px: 'var(--accent-2)', sc: 'var(--accent)', sx: 'var(--accent-2)', num: 'var(--fg)' }
 
-const idx = computed(() => Math.min(Math.max(Math.round(props.params.code ?? 0), 0), CODES.length - 1))
-const code = computed(() => CODES[idx.value])
+const code = computed(() => codeAt(props.params.code))
 const rtt = computed(() => Math.min(Math.max(props.params.rtt ?? 50, 10), 300))
 const raw = computed(() => code.value.seg.map((s) => s.s).join(''))
 const time = computed(() => code.value.n * rtt.value)

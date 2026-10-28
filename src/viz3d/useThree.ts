@@ -47,6 +47,11 @@ export function useThree(container: Ref<HTMLElement | undefined>, setup: (ctx: T
     renderer.setPixelRatio(Math.min(devicePixelRatio, 2))
     renderer.shadowMap.enabled = true
     renderer.shadowMap.type = THREE.PCFSoftShadowMap
+    // setSize(…, false) below sizes only the drawing buffer (box × pixel ratio); without these the
+    // canvas shows at that buffer size, so on a 125 % or 200 % screen the scene overflows its box and
+    // is cropped.
+    renderer.domElement.style.width = '100%'
+    renderer.domElement.style.height = '100%'
     el.appendChild(renderer.domElement)
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(opts.fov ?? 45, 1, 0.1, 500)
