@@ -1,0 +1,13 @@
+viz3d.smith.walk: ▶ امشِ نحو جهاز الإرسال
+viz3d.smith.pause: ❚❚ توقف
+viz3d.smith.restart: ↺ عُد إلى الهوائي
+viz3d.smith.matched: تطابق تام، الموجة كلها تخرج من الهوائي
+viz3d.smith.bounce: 'يرتد {pct} من القدرة، وVSWR يساوي {vswr}'
+viz3d.smith.here: 'الكابل هنا يقرأ {z}'
+viz3d.smith.probe: تنظر من هنا
+viz3d.smith.seen: كما يبدو من العداد
+viz3d.smith.forward: الموجة الذاهبة
+viz3d.smith.reflected: الصدى الراجع
+viz3d.smith.total: ما يحمله الكابل
+viz3d.smith.heat: 'يرجع {pct} ويسخّن الجهاز'
+viz3d.smith.chart: مخطط سميث

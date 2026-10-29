@@ -1,0 +1,67 @@
+id: smith-chart
+subject: electricity
+difficulty: university
+equation: \Gamma = \frac{Z_L - Z_0}{Z_L + Z_0}
+concepts:
+- smith-chart
+- reflection-coefficient
+- impedance-matching
+- transmission-line
+- standing-wave-ratio
+prerequisites:
+- rlc-resonance
+related:
+- ac-power
+- standing-waves
+visualization:
+  type: smith-chart
+visualization3d:
+  type: smith-chart
+parameters:
+  R:
+    min: 0
+    max: 250
+    step: 1
+    value: 100
+    unit: Ω
+  X:
+    min: -250
+    max: 250
+    step: 1
+    value: 50
+    unit: Ω
+  d:
+    min: 0
+    max: 0.5
+    step: 0.005
+    value: 0
+    unit: λ
+variables:
+- \Gamma
+- Z_L
+- Z_0
+- z
+- r
+- x
+- j
+derivation:
+- z = \frac{Z_L}{Z_0} = r + jx
+- \Gamma = \frac{z - 1}{z + 1}
+- '\text{VSWR} = \frac{1 + |\Gamma|}{1 - |\Gamma|}'
+- \Gamma(d) = \Gamma(0)\, e^{-j\,4\pi d/\lambda}
+charts: []
+primary: R
+presets:
+- R: 100
+  X: 50
+  d: 0
+- R: 75
+  X: 0
+  d: 0
+- R: 100
+  X: 50
+  d: 0.125
+challenges:
+- check: ((R/50)^2 - 1 + (X/50)^2)^2 + (2*X/50)^2 < 0.01 * ((R/50 + 1)^2 + (X/50)^2)^2
+- check: abs((((R/50)^2 - 1 + (X/50)^2)^2 + (2*X/50)^2) / ((R/50 + 1)^2 + (X/50)^2)^2 - 0.25) < 0.01
+- check: abs(R - 100) < 0.5 and abs(X - 50) < 0.5 and abs(d - 0.125) < 0.003

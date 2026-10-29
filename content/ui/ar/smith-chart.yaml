@@ -1,0 +1,28 @@
+smith.hint: ▶ اسحب النقطة البرتقالية (أو منزلقي R وX)، والمركز هو التطابق التام
+smith.short: 0 Ω دائرة قصر
+smith.open: ∞ دائرة مفتوحة
+smith.match: 50 Ω تطابق تام
+smith.load: هوائيك
+smith.seen: كما يبدو من مسافة d على الكابل
+smith.vswrCircle: الصدى نفسه من أي مسافة
+smith.bend: ↺ أرني الرسم المسطح الذي جاء منه
+smith.unbend: ▶ اطوه من جديد إلى مخطط سميث
+smith.axisR: المقاومة R (Ω)
+smith.axisX: المفاعلة X (Ω)
+smith.cable: الكابل من فوق، من الجهاز إلى الهوائي
+smith.transmitter: جهاز الإرسال
+smith.antenna: الهوائي
+smith.here: تنظر من هنا
+smith.vmax: الأكبر
+smith.vmin: الأصغر
+smith.delivered: '{pct}% يصل إلى الهوائي'
+smith.bounced: '{pct}% يرتد'
+smith.seenSentence: 'من هنا يقرأ الكابل {z}'
+smith.toward: ↻ نحو جهاز الإرسال
+smith.caption: 'كلما ابتعدت النقطة عن المركز ارتد جزء أكبر من الإشارة، والمشي على الكابل لا يفعل إلا أن يدير النقطة'
+smith.r.load: الهوائي Z_L
+smith.r.z: مقسومًا على 50 Ω
+smith.r.gamma: الانعكاس Γ
+smith.r.vswr: VSWR
+smith.r.bounced: القدرة المرتدة
+smith.r.seen: ما يقرؤه الكابل
