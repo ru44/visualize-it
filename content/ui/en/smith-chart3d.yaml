@@ -1,0 +1,13 @@
+viz3d.smith.walk: ▶ walk toward the transmitter
+viz3d.smith.pause: ❚❚ pause
+viz3d.smith.restart: ↺ back to the antenna
+viz3d.smith.matched: 'a perfect match: the whole wave leaves the antenna'
+viz3d.smith.bounce: '{pct} of the power bounces back, VSWR {vswr}'
+viz3d.smith.here: 'the cable here reads {z}'
+viz3d.smith.probe: you look from here
+viz3d.smith.seen: seen from the meter
+viz3d.smith.forward: wave going out
+viz3d.smith.reflected: echo coming back
+viz3d.smith.total: what the cable carries
+viz3d.smith.heat: '{pct} comes back and heats the transmitter'
+viz3d.smith.chart: Smith chart

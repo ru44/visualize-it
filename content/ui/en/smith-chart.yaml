@@ -1,0 +1,28 @@
+smith.hint: ▶ drag the orange point (or the R and X sliders); the centre is a perfect match
+smith.short: 0 Ω short circuit
+smith.open: ∞ open circuit
+smith.match: 50 Ω perfect match
+smith.load: your antenna
+smith.seen: seen from d down the cable
+smith.vswrCircle: the same echo, from any distance
+smith.bend: ↺ show the flat graph it came from
+smith.unbend: ▶ fold it back into the Smith chart
+smith.axisR: resistance R (Ω)
+smith.axisX: reactance X (Ω)
+smith.cable: the cable from above, transmitter to antenna
+smith.transmitter: transmitter
+smith.antenna: antenna
+smith.here: you look from here
+smith.vmax: biggest
+smith.vmin: smallest
+smith.delivered: '{pct}% reaches the antenna'
+smith.bounced: '{pct}% bounces back'
+smith.seenSentence: 'from here the cable reads {z}'
+smith.toward: ↻ toward the transmitter
+smith.caption: 'the further the point is from the centre, the more of the signal bounces back; walking along the cable only turns the point'
+smith.r.load: antenna Z_L
+smith.r.z: divided by 50 Ω
+smith.r.gamma: reflection Γ
+smith.r.vswr: VSWR
+smith.r.bounced: power bounced back
+smith.r.seen: the cable reads
