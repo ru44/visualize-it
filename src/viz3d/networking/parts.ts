@@ -122,7 +122,7 @@ export function makeHouse(theme: Theme, w: number, d: number, h: number) {
 export function fader(obj: THREE.Object3D) {
   const mats: THREE.Material[] = []
   obj.traverse((o: any) => {
-    if (o.material) ((o.material.transparent = true), mats.push(o.material))
+    for (const m of o.material ? [o.material].flat() : []) ((m.transparent = true), mats.push(m))
   })
   let cur = -1
   return (o: number) => {
