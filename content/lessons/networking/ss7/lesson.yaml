@@ -1,0 +1,72 @@
+id: ss7
+subject: networking
+difficulty: high-school
+equation: t_{\text{wait}} = 2\,n\,h\,t_{\text{hop}}
+concepts:
+- ss7
+- signalling
+- call-setup
+- roaming
+- sms
+prerequisites:
+- dialer-codes
+related:
+- cell-towers
+- packet-switching
+- latency-and-bandwidth
+visualization:
+  type: ss7-signal
+visualization3d:
+  type: ss7-signal
+parameters:
+  mode:
+    min: 0
+    max: 2
+    step: 1
+    value: 0
+  step:
+    min: 0
+    max: 5
+    step: 1
+    value: 1
+  h:
+    min: 2
+    max: 8
+    step: 1
+    value: 3
+  hop:
+    min: 5
+    max: 300
+    step: 5
+    value: 20
+    unit: ms
+variables:
+- t_{\text{wait}}
+- n
+- h
+- t_{\text{hop}}
+derivation:
+- '\text{one message crosses } h \text{ links: } h\,t_{\text{hop}}'
+- '\text{there and back: } 2\,h\,t_{\text{hop}}'
+- '\text{a call needs one round trip } (n = 1)\text{, a text or a trip abroad needs two } (n = 2)'
+- t_{\text{wait}} = 2\,n\,h\,t_{\text{hop}}
+charts: []
+primary: step
+presets:
+- mode: 0
+  step: 2
+  h: 3
+  hop: 20
+- mode: 1
+  step: 4
+  h: 6
+  hop: 25
+- mode: 2
+  step: 5
+  h: 7
+  hop: 40
+challenges:
+- check: mode == 0 and step == 2
+- check: mode == 1 and step == 3
+- check: mode == 0 and 2*h*hop > 500
+- check: mode == 2 and step == 5 and 4*h*hop < 100
