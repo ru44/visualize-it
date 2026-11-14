@@ -1,0 +1,61 @@
+id: sun-distance
+subject: earth-space
+difficulty: high-school
+equation: \frac{D_S}{D_M} = \frac{1}{\cos\varphi}
+concepts:
+- right-triangle
+- cosine
+- half-moon
+- measurement-error
+prerequisites:
+- moon-distance
+- moon-phases
+related:
+- sun-size
+- eclipses
+- planet-distances
+- transit-of-venus
+- parallax-and-distances
+- earth-size
+visualization:
+  type: sun-distance
+visualization3d:
+  type: sun-distance
+parameters:
+  phi:
+    min: 60
+    max: 89.95
+    step: 0.01
+    value: 80
+    unit: °
+  err:
+    min: 0
+    max: 3
+    step: 0.05
+    value: 0
+    unit: °
+variables:
+- D_S
+- D_M
+- \varphi
+derivation:
+- '\cos\varphi = \frac{D_M}{D_S}'
+- '\frac{D_S}{D_M} = \frac{1}{\cos\varphi}'
+- 'D_S = \frac{D_M}{\cos\varphi}'
+charts: []
+primary: phi
+presets:
+- phi: 87
+  err: 0
+- phi: 89.85
+  err: 0
+- phi: 87
+  err: 3
+challenges:
+- check: 1/cos(phi*pi/180)
+  target: 19
+  tol: 0.57
+- check: err == 0 and 1/cos(phi*pi/180) > 350 and 1/cos(phi*pi/180) < 430
+- check: 384400/cos(phi*pi/180)/1e6
+  target: 149.6
+  tol: 7.5

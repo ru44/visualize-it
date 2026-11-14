@@ -138,15 +138,18 @@ export function arrow(dir: THREE.Vector3, origin: THREE.Vector3, length: number,
 /** A text label that always faces the camera (canvas sprite). */
 export function label(text: string, color = '#333', size = 0.5) {
   const c = document.createElement('canvas')
-  c.width = 256
-  c.height = 64
   const x = c.getContext('2d')!
-  x.font = '500 40px Inter, sans-serif'
+  const font = '500 40px Inter, "IBM Plex Sans Arabic", sans-serif'
+  x.font = font
+  // long text gets a wider canvas (and a wider sprite) instead of being cut at the edges
+  c.width = Math.max(256, Math.ceil(x.measureText(text).width) + 16)
+  c.height = 64
+  x.font = font
   x.fillStyle = color
   x.textAlign = 'center'
-  x.fillText(text, 128, 46)
+  x.fillText(text, c.width / 2, 46)
   const tex = new THREE.CanvasTexture(c)
   const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false }))
-  s.scale.set(size * 4, size, 1)
+  s.scale.set((size * c.width) / 64, size, 1)
   return s
 }

@@ -1,0 +1,58 @@
+id: earth-size
+subject: earth-space
+difficulty: beginner
+equation: C = \frac{360^\circ}{\theta}\,d
+concepts:
+  - earth-circumference
+  - parallel-rays
+  - eratosthenes
+prerequisites: []
+related:
+  - moon-size
+  - moon-distance
+  - sun-distance
+  - sun-size
+  - parallax-and-distances
+  - seasons
+visualization:
+  type: earth-size
+  options: {}
+visualization3d:
+  type: earth-size
+  options: {}
+parameters:
+  theta:
+    min: 1
+    max: 30
+    step: 0.1
+    value: 10
+    unit: '°'
+  d:
+    min: 100
+    max: 3000
+    step: 10
+    value: 500
+    unit: km
+variables:
+  - C
+  - \theta
+  - d
+  - R
+derivation:
+  - \frac{\theta}{360^\circ} = \frac{d}{C}
+  - C = \frac{360^\circ}{\theta}\,d
+  - R = \frac{C}{2\pi}
+charts: []
+primary: theta
+presets:
+  - theta: 7.2
+    d: 800
+  - theta: 7.2
+    d: 843
+  - theta: 9
+    d: 1000
+challenges:
+  - check: abs(360/theta*d - 40008) < 800
+  - check: 360/theta*d/(2*pi)
+    target: 6371
+  - check: theta > 20 and abs(360/theta*d - 40000) < 800

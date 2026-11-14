@@ -1,0 +1,62 @@
+id: sun-size
+subject: earth-space
+difficulty: beginner
+equation: D_S = n\,D_M
+concepts:
+  - similar-triangles
+  - solar-eclipse
+  - scale
+  - heliocentrism
+prerequisites:
+  - moon-size
+  - sun-distance
+related:
+  - planet-distances
+  - transit-of-venus
+  - eclipses
+  - moon-distance
+  - earth-size
+  - moon-phases
+visualization:
+  type: sun-size
+visualization3d:
+  type: sun-size
+parameters:
+  n:
+    min: 2
+    max: 450
+    step: 1
+    value: 50
+  cover:
+    min: 0
+    max: 100
+    step: 1
+    value: 100
+    unit: '%'
+variables:
+  - D_S
+  - n
+  - D_M
+  - d_S
+  - d_M
+derivation:
+  - '\frac{D_S}{d_S} = \frac{D_M}{d_M}'
+  - 'd_S = n\,d_M'
+  - 'D_S = n\,D_M'
+charts: []
+primary: n
+presets:
+  - n: 19
+    cover: 100
+  - n: 400
+    cover: 100
+  - n: 400
+    cover: 50
+challenges:
+  - check: 3474*n/1e6
+    target: 1.39
+    tol: 0.02
+  - check: 3474*n/12742
+    target: 109
+    tol: 0.1
+  - check: 3474*n < 12742

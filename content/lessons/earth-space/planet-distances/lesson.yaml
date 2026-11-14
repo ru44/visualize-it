@@ -1,0 +1,55 @@
+id: planet-distances
+subject: earth-space
+difficulty: beginner
+equation: r = \sin\varepsilon_{\max}
+concepts:
+  - elongation
+  - right-triangle
+  - astronomical-unit
+  - heliocentrism
+prerequisites:
+  - sun-distance
+  - sun-size
+related:
+  - transit-of-venus
+  - kepler-orbits
+  - earth-size
+  - moon-distance
+  - eclipses
+  - parallax-and-distances
+visualization:
+  type: planet-distances
+visualization3d:
+  type: planet-distances
+parameters:
+  r:
+    min: 0.1
+    max: 0.95
+    step: 0.01
+    value: 0.5
+    unit: AU
+  a:
+    min: 0
+    max: 360
+    step: 1
+    value: 60
+    unit: °
+variables:
+  - r
+  - \varepsilon_{\max}
+derivation:
+  - '\sin\varepsilon_{\max} = \frac{r}{1\,\text{AU}}'
+  - r = \sin\varepsilon_{\max}
+charts: []
+primary: a
+presets:
+  - r: 0.72
+    a: 44
+  - r: 0.39
+    a: 67
+  - r: 0.72
+    a: 180
+challenges:
+  - check: abs(r - 0.72) < 0.015 and abs(atan2(r*sin(a*pi/180), 1 - r*cos(a*pi/180))*180/pi) > 45.5
+  - check: abs(r - 0.5) < 0.011 and abs(atan2(r*sin(a*pi/180), 1 - r*cos(a*pi/180))*180/pi) > 29.5
+  - check: abs(r - 0.39) < 0.015 and abs(atan2(r*sin(a*pi/180), 1 - r*cos(a*pi/180))*180/pi) > 22.3

@@ -1,0 +1,23 @@
+planet-distances.hint: '▶ drag the planet round its orbit and hunt for the biggest angle'
+planet-distances.sun: 'Sun'
+planet-distances.earth: 'Earth'
+planet-distances.planet: 'planet'
+planet-distances.earthOrbit: "Earth's orbit: 1 AU from the Sun"
+planet-distances.planetOrbit: "the planet's orbit: {r} AU"
+planet-distances.morning: 'the morning sky, just before sunrise'
+planet-distances.evening: 'the evening sky, just after sunset'
+planet-distances.lost: "lost in the Sun's glare"
+planet-distances.apart: '{x}° from the Sun'
+planet-distances.gauge: 'the angle you see, from 0° to 90°'
+planet-distances.maxTick: 'biggest possible: {x}°'
+planet-distances.right1: 'the biggest angle: the sight line'
+planet-distances.right2: 'just touches the orbit, at a right angle'
+planet-distances.hunt1: 'the angle is not at its peak yet'
+planet-distances.hunt2: 'keep moving the planet round'
+planet-distances.formula: 'sin {x}° = {r} AU'
+planet-distances.million: 'million km'
+planet-distances.r.now: 'angle seen now'
+planet-distances.r.max: 'biggest possible angle'
+planet-distances.r.au: 'distance from the Sun'
+planet-distances.r.km: 'in km, once we know the AU'
+planet-distances.d3.note: 'the sight line from Earth to the planet, and the angle you would see'

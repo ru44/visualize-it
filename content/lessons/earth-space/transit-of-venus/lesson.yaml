@@ -1,0 +1,64 @@
+id: transit-of-venus
+subject: earth-space
+difficulty: high-school
+equation: '\text{AU} = \frac{b}{\Delta}\cdot\frac{r}{1 - r}'
+concepts:
+  - transit-of-venus
+  - astronomical-unit
+  - parallax
+  - edmond-halley
+prerequisites:
+  - planet-distances
+related:
+  - planet-distances
+  - sun-distance
+  - sun-size
+  - earth-size
+  - moon-distance
+  - parallax-and-distances
+  - kepler-orbits
+visualization:
+  type: transit-of-venus
+  options: {}
+visualization3d:
+  type: transit-of-venus
+  options: {}
+parameters:
+  b:
+    min: 1000
+    max: 12000
+    step: 100
+    value: 6000
+    unit: km
+  delta:
+    min: 2
+    max: 60
+    step: 0.1
+    value: 30
+    unit: '″'
+  t:
+    min: 0
+    max: 100
+    step: 1
+    value: 50
+    unit: '%'
+variables:
+  - '\text{AU}'
+  - b
+  - '\Delta'
+  - r
+derivation:
+  - '\text{shift of Venus} = \frac{b}{(1-r)\,\text{AU}}'
+  - '\text{shift of the Sun} = \frac{b}{\text{AU}}'
+  - '\Delta = \frac{b}{\text{AU}}\cdot\frac{r}{1-r}'
+  - '\text{AU} = \frac{b}{\Delta}\cdot\frac{r}{1 - r}'
+charts: []
+primary: delta
+presets:
+  - { b: 10000, delta: 36, t: 50 }
+  - { b: 10000, delta: 35.2, t: 50 }
+  - { b: 2000, delta: 7.2, t: 50 }
+challenges:
+  - { check: 'b/(delta/206265)*0.723/(1-0.723)/1e6', target: 149.6, tol: 3 }
+  - { check: 'b < 5000 and abs(b/(delta/206265)*0.723/(1-0.723)/1e6 - 149.6) < 3' }
+  - { check: 'b/(delta/206265)*0.723/(1-0.723)/1e6', target: 153, tol: 1.5 }
