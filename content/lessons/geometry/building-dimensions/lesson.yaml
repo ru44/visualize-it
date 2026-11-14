@@ -1,0 +1,70 @@
+id: building-dimensions
+subject: geometry
+difficulty: beginner
+added: '2026-11-14'
+equation: V_n = 2^n
+concepts:
+  - dimension
+  - cube
+  - doubling
+prerequisites:
+  - what-is-a-dimension
+related:
+  - what-is-a-dimension
+  - tesseract
+  - higher-dimensions
+  - nets-and-solids
+  - coordinate-geometry
+visualization:
+  type: hypercube
+  options:
+    min: 0
+    max: 3
+visualization3d:
+  type: hypercube
+  options:
+    min: 0
+    max: 3
+parameters:
+  n:
+    min: 0
+    max: 3
+    step: 1
+    value: 2
+  sweep:
+    min: 0
+    max: 100
+    step: 1
+    value: 100
+    unit: '%'
+  spin:
+    min: 0
+    max: 360
+    step: 1
+    value: 30
+    unit: '°'
+variables:
+  - V_n
+  - E_n
+  - n
+derivation:
+  - V_0 = 1
+  - V_n = 2\,V_{n-1}
+  - V_n = 2^n
+  - E_n = 2\,E_{n-1} + V_{n-1}
+charts: []
+primary: sweep
+presets:
+  - n: 1
+    sweep: 100
+    spin: 30
+  - n: 2
+    sweep: 50
+    spin: 30
+  - n: 3
+    sweep: 100
+    spin: 30
+challenges:
+  - check: n == 3 and sweep == 100
+  - check: n == 2 and sweep == 100
+  - check: n == 3 and abs(sweep - 50) < 3

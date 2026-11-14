@@ -1,0 +1,70 @@
+id: tesseract
+subject: geometry
+difficulty: beginner
+added: '2026-11-14'
+equation: E_n = n\,2^{\,n-1}
+concepts:
+  - tesseract
+  - projection
+  - fourth-dimension
+prerequisites:
+  - what-is-a-dimension
+  - building-dimensions
+related:
+  - building-dimensions
+  - higher-dimensions
+  - slicing-higher-dimensions
+  - nets-and-solids
+  - eleven-dimensions
+visualization:
+  type: hypercube
+  options:
+    min: 3
+    max: 4
+visualization3d:
+  type: hypercube
+  options:
+    min: 3
+    max: 4
+parameters:
+  n:
+    min: 3
+    max: 4
+    step: 1
+    value: 4
+  spin:
+    min: 0
+    max: 360
+    step: 1
+    value: 40
+    unit: '°'
+  sweep:
+    min: 0
+    max: 100
+    step: 1
+    value: 100
+    unit: '%'
+variables:
+  - E_n
+  - n
+derivation:
+  - \text{each corner has } n \text{ edges}
+  - '\text{corners: } 2^n'
+  - '\text{each edge has two ends: } E_n = \frac{n\,2^n}{2}'
+  - E_n = n\,2^{\,n-1}
+charts: []
+primary: spin
+presets:
+  - n: 3
+    spin: 40
+    sweep: 100
+  - n: 4
+    spin: 0
+    sweep: 100
+  - n: 4
+    spin: 40
+    sweep: 40
+challenges:
+  - check: n == 4 and sweep == 100
+  - check: n == 3 and sweep == 100
+  - check: n == 4 and abs(spin - 90) < 4

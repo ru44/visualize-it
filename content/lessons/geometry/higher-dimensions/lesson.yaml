@@ -1,0 +1,63 @@
+id: higher-dimensions
+subject: geometry
+difficulty: beginner
+added: '2026-11-14'
+equation: F_k = \binom{n}{k}\,2^{\,n-k}
+concepts:
+  - hypercube
+  - counting
+  - high-dimensional-data
+prerequisites:
+  - building-dimensions
+  - tesseract
+related:
+  - tesseract
+  - building-dimensions
+  - distance-in-any-dimension
+  - eleven-dimensions
+  - slicing-higher-dimensions
+  - coordinate-geometry
+visualization:
+  type: hypercube
+  options:
+    min: 4
+    max: 11
+visualization3d:
+  type: hypercube
+  options:
+    min: 4
+    max: 11
+parameters:
+  n:
+    min: 4
+    max: 11
+    step: 1
+    value: 5
+  spin:
+    min: 0
+    max: 360
+    step: 1
+    value: 40
+    unit: '°'
+variables:
+  - F_k
+  - n
+  - k
+derivation:
+  - '\text{choose the } k \text{ directions the piece spreads in: } \binom{n}{k}'
+  - '\text{the other } n-k \text{ coordinates are each } +1 \text{ or } -1\text{: } 2^{\,n-k}'
+  - F_k = \binom{n}{k}\,2^{\,n-k}
+charts: []
+primary: n
+presets:
+  - n: 5
+    spin: 40
+  - n: 8
+    spin: 40
+  - n: 11
+    spin: 40
+challenges:
+  - check: n == 8
+  - check: n*2^(n-1) > 10000
+  - check: n == 5
+  - check: n == 8

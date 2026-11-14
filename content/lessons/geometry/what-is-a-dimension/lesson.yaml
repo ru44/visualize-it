@@ -1,0 +1,46 @@
+id: what-is-a-dimension
+subject: geometry
+difficulty: beginner
+added: '2026-11-14'
+equation: P = (x_1, x_2, \dots, x_n)
+concepts:
+  - dimension
+  - coordinates
+  - degrees-of-freedom
+prerequisites: []
+related:
+  - building-dimensions
+  - tesseract
+  - higher-dimensions
+  - coordinate-geometry
+visualization:
+  type: what-is-dimension
+  options: {}
+visualization3d:
+  type: what-is-dimension
+  options: {}
+parameters:
+  n: { min: 1, max: 3, step: 1, value: 2 }
+  x: { min: 0, max: 10, step: 0.5, value: 6 }
+  y: { min: 0, max: 10, step: 0.5, value: 3 }
+  z: { min: 0, max: 10, step: 0.5, value: 2 }
+variables:
+  - P
+  - x_1
+  - x_2
+  - x_3
+  - n
+derivation:
+  - 'n = 1\text{: } P = (x_1)'
+  - 'n = 2\text{: } P = (x_1, x_2)'
+  - 'n = 3\text{: } P = (x_1, x_2, x_3)'
+charts: []
+primary: n
+presets:
+  - { n: 1, x: 3.5, y: 0, z: 0 }
+  - { n: 2, x: 6, y: 3, z: 0 }
+  - { n: 3, x: 6, y: 3, z: 9 }
+challenges:
+  - check: abs(x - 2) < 0.3 and abs(y - 8) < 0.3 and n == 2
+  - check: n == 3 and abs(x - 4) < 0.3 and abs(y - 4) < 0.3 and abs(z - 5) < 0.3
+  - check: n == 1 and abs(x - 7) < 0.3

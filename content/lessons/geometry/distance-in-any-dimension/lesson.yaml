@@ -1,0 +1,50 @@
+id: distance-in-any-dimension
+subject: geometry
+difficulty: beginner
+added: '2026-11-14'
+equation: d = \sqrt{x_1^2 + x_2^2 + \dots + x_n^2}
+concepts:
+  - distance
+  - pythagorean-theorem
+  - higher-dimensions
+prerequisites:
+  - what-is-a-dimension
+related:
+  - pythagorean-theorem
+  - coordinate-geometry
+  - tesseract
+  - higher-dimensions
+  - eleven-dimensions
+visualization:
+  type: distance-in-any-dimension
+  options: {}
+visualization3d:
+  type: distance-in-any-dimension
+  options: {}
+parameters:
+  n: { min: 1, max: 11, step: 1, value: 2 }
+  a: { min: 1, max: 10, step: 0.5, value: 1, unit: m }
+variables:
+  - d
+  - x_1
+  - x_2
+  - x_3
+  - x_n
+  - n
+  - a
+derivation:
+  - 'n = 2\text{: } d^2 = x_1^2 + x_2^2'
+  - 'n = 3\text{: } d^2 = (x_1^2 + x_2^2) + x_3^2'
+  - d = \sqrt{x_1^2 + x_2^2 + \dots + x_n^2}
+  - '\text{equal steps } a\text{: } d = a\sqrt{n}'
+charts: []
+primary: n
+presets:
+  - { n: 2, a: 1 }
+  - { n: 4, a: 1 }
+  - { n: 11, a: 1 }
+challenges:
+  - check: a == 1 and n == 9
+  - check: a == 1 and n == 4
+  - check: n > 3 and abs(a*sqrt(n) - 10) < 0.05
+  - check: n == 4

@@ -1,0 +1,69 @@
+id: slicing-higher-dimensions
+subject: geometry
+difficulty: beginner
+added: '2026-11-14'
+equation: r = \sqrt{R^2 - h^2}
+concepts:
+  - cross-section
+  - slice
+  - higher-dimensions
+prerequisites:
+  - higher-dimensions
+related:
+  - what-is-a-dimension
+  - building-dimensions
+  - tesseract
+  - higher-dimensions
+  - distance-in-any-dimension
+  - eleven-dimensions
+  - pythagorean-theorem
+  - nets-and-solids
+visualization:
+  type: slicing-higher-dimensions
+  options: {}
+visualization3d:
+  type: slicing-higher-dimensions
+  options: {}
+parameters:
+  n:
+    min: 2
+    max: 4
+    step: 1
+    value: 3
+  h:
+    min: -10
+    max: 10
+    step: 0.1
+    value: 4
+    unit: cm
+  R:
+    min: 2
+    max: 10
+    step: 0.5
+    value: 5
+    unit: cm
+variables:
+  - r
+  - R
+  - h
+derivation:
+  - R^2 = r^2 + h^2
+  - r^2 = R^2 - h^2
+  - r = \sqrt{R^2 - h^2}
+charts: []
+primary: h
+presets:
+  - n: 3
+    h: 4
+    R: 5
+  - n: 4
+    h: 0
+    R: 5
+  - n: 2
+    h: 4.9
+    R: 5
+challenges:
+  - check: abs(R - 5) < 0.01 and abs(sqrt(max(R^2 - h^2, 0)) - 3) < 0.1
+  - check: n == 4 and abs(h) >= R
+  - check: abs(R - 8) < 0.01 and abs(h) < 0.05
+  - check: abs(sqrt(max(R^2 - h^2, 0)) - R/2) < 0.12

@@ -1,0 +1,67 @@
+id: eleven-dimensions
+subject: geometry
+difficulty: beginner
+added: '2026-11-14'
+equation: \theta = \frac{2r}{D}
+concepts:
+  - extra-dimensions
+  - m-theory
+  - angular-resolution
+prerequisites:
+  - higher-dimensions
+related:
+  - what-is-a-dimension
+  - building-dimensions
+  - tesseract
+  - higher-dimensions
+  - slicing-higher-dimensions
+  - distance-in-any-dimension
+visualization:
+  type: eleven-dimensions
+  options: {}
+visualization3d:
+  type: eleven-dimensions
+  options: {}
+parameters:
+  r:
+    min: 1
+    max: 50
+    step: 1
+    value: 10
+    unit: mm
+  D:
+    min: 0.5
+    max: 200
+    step: 0.5
+    value: 5
+    unit: m
+  a:
+    min: 0
+    max: 360
+    step: 5
+    value: 60
+    unit: °
+variables:
+  - \theta
+  - r
+  - D
+derivation:
+  - '\text{width of the hose: } 2r'
+  - \theta = \frac{2r}{D}
+  - '\text{it looks like a line when } \theta < 0.0003'
+charts: []
+primary: D
+presets:
+  - r: 10
+    D: 5
+    a: 60
+  - r: 10
+    D: 100
+    a: 60
+  - r: 1
+    D: 4
+    a: 60
+challenges:
+  - check: 2*(r/1000)/D < 0.0003
+  - check: D >= 100 and 2*(r/1000)/D >= 0.0003
+  - check: r == 10 and abs(D - 66.7) < 1.5
