@@ -215,7 +215,10 @@
     if (e.data.type === 'vi-text') applyText(e.data.dict, e.data.lang, e.data.dir)
   })
   function report() {
-    var h = Math.max(document.body ? document.body.scrollHeight : 0, root.scrollHeight)
+    // The body's own height, not the document's: a document is never shorter than its frame, so a frame
+    // that was once taller (the English text, before a shorter translation went in) could never shrink.
+    var b = document.body
+    var h = b && document.compatMode === 'CSS1Compat' ? Math.ceil(b.getBoundingClientRect().bottom + (window.pageYOffset || 0)) : Math.max(b ? b.scrollHeight : 0, root.scrollHeight)
     window.parent.postMessage({ type: 'vi-height', height: h }, location.origin)
   }
   window.addEventListener('load', function () {

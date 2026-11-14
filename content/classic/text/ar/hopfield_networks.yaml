@@ -15,7 +15,7 @@
 "Memorize": "احفظ"
 "Recall": "استرجع"
 "Description": "الوصف"
-"The inspiration for Hopfield network comes from spin-glass systems in physics. A hopfield network of": "استلهم مخترعو شبكة هوبفيلد فكرتها من أنظمة الزجاج المغزلي في الفيزياء. شبكة هوبفيلد مكوّنة من"
+"The inspiration for Hopfield network comes from spin-glass systems in physics. A hopfield network of": "جاءت فكرة شبكة هوبفيلد من مواد مغناطيسية يدرسها الفيزيائيون اسمها spin glass. شبكة هوبفيلد مكوّنة من"
 "nodes is a fully connected network. Each node can take either discrete or continuous values. In this case, the nodes are discrete (+/- 1). A pair of nodes connected by an edge with a positive weight have a tendency to correlate, and vice versa. We define the energy of the system as follows:": "عقدة متصلة بعضها ببعض اتصالًا كاملًا. يمكن لكل عقدة أن تأخذ قيمة متصلة أو منفصلة، وهنا هي قيم منفصلة (+1 أو -1). حين يكون وزن الضلع بين عقدتين موجبًا تميل العقدتان إلى التوافق، والعكس حين يكون سالبًا. نعرّف طاقة النظام كالتالي:"
 "Here,": "هنا،"
 "is a vector that represents the state of the network and": "متجه يمثّل حالة الشبكة، و"
