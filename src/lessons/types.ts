@@ -62,6 +62,8 @@ export interface Lesson {
   title: string
   subject: Subject
   difficulty: Difficulty
+  /** The day the lesson was added (YYYY-MM-DD), when known. */
+  added?: string
   /** LaTeX shown as the headline equation. */
   equation: string
   summary: string

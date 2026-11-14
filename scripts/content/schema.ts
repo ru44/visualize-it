@@ -2,7 +2,36 @@
 // each `<lang>.md` holds the text. Validation errors name the file and the field.
 import { z } from 'zod'
 
-export const SUBJECTS = ['algebra', 'functions', 'calculus', 'geometry', 'trigonometry', 'statistics', 'physics', 'waves', 'electricity', 'electromagnetism', 'aerodynamics', 'thermodynamics', 'chemistry', 'computer-science', 'biology', 'earth-space', 'economics', 'engineering', 'discrete', 'ai', 'numbers', 'data', 'quantum', 'relativity', 'cryptography', 'cosmos', 'nuclear', 'networking'] as const
+export const SUBJECTS = [
+  'algebra',
+  'functions',
+  'calculus',
+  'geometry',
+  'trigonometry',
+  'statistics',
+  'physics',
+  'waves',
+  'electricity',
+  'electromagnetism',
+  'aerodynamics',
+  'thermodynamics',
+  'chemistry',
+  'computer-science',
+  'biology',
+  'earth-space',
+  'economics',
+  'engineering',
+  'discrete',
+  'ai',
+  'numbers',
+  'data',
+  'quantum',
+  'relativity',
+  'cryptography',
+  'cosmos',
+  'nuclear',
+  'networking',
+] as const
 export const LEVELS = ['beginner', 'high-school', 'university', 'advanced'] as const
 
 export const ParamSpec = z.object({ min: z.number(), max: z.number(), step: z.number().positive(), value: z.number(), unit: z.string().optional() })
@@ -13,6 +42,11 @@ export const LessonYaml = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/, 'kebab-case id'),
   subject: z.enum(SUBJECTS),
   difficulty: z.enum(LEVELS),
+  /** The day this lesson was added. The lessons that share the LATEST date are shown as "new"; a later batch takes the label over. */
+  added: z
+    .string()
+    .regex(/^\d{4}-\d{2}-\d{2}$/, 'YYYY-MM-DD')
+    .optional(),
   /** Headline equation, LaTeX. */
   equation: z.string().min(1),
   concepts: z.array(z.string()).default([]),
@@ -39,9 +73,7 @@ export const LessonYaml = z.object({
   challenges: z.array(z.object({ check: z.string(), target: z.number().optional(), tol: z.number().positive().optional() })).default([]),
   /** Extra videos for this lesson (subject-level ones live in content/videos.yaml). */
   videos: z.array(Video).default([]),
-  charts: z
-    .array(z.object({ domain: z.tuple([z.number(), z.number()]), marker: z.string().optional(), series: z.array(z.string()).min(1) }))
-    .default([]),
+  charts: z.array(z.object({ domain: z.tuple([z.number(), z.number()]), marker: z.string().optional(), series: z.array(z.string()).min(1) })).default([]),
 })
 export type LessonYaml = z.infer<typeof LessonYaml>
 

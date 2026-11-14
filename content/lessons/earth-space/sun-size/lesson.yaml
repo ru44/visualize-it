@@ -1,6 +1,7 @@
 id: sun-size
 subject: earth-space
 difficulty: beginner
+added: '2026-11-14'
 equation: D_S = n\,D_M
 concepts:
   - similar-triangles

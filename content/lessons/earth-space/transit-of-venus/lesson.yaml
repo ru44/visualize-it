@@ -1,6 +1,7 @@
 id: transit-of-venus
 subject: earth-space
 difficulty: high-school
+added: '2026-11-14'
 equation: '\text{AU} = \frac{b}{\Delta}\cdot\frac{r}{1 - r}'
 concepts:
   - transit-of-venus

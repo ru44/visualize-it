@@ -1,6 +1,7 @@
 id: moon-distance
 subject: earth-space
 difficulty: beginner
+added: '2026-11-14'
 equation: D_M = d_M\,\frac{L}{c}
 concepts:
 - similar-triangles

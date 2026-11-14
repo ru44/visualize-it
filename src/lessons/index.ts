@@ -14,6 +14,7 @@ export function merge(l: any, t: LessonText): Lesson {
     id: l.id,
     subject: l.subject,
     difficulty: l.difficulty,
+    added: l.added,
     equation: l.equation,
     concepts: l.concepts,
     prerequisites: l.prerequisites,
@@ -28,15 +29,32 @@ export function merge(l: any, t: LessonText): Lesson {
     variables: (l.variables as string[]).map((symbol, i) => ({ symbol, meaning: t.variables[i] ?? '' })),
     explanation: { intuition: t.intuition, formal: t.formal, advanced: t.advanced?.length ? t.advanced : undefined },
     tryIt: t.tryIt ?? [],
-    presets: ((l.presets ?? []) as Record<string, number>[]).map((params, i) => ({ params, label: t.presets?.[i]?.label ?? '', text: t.presets?.[i]?.text ?? '' })),
+    presets: ((l.presets ?? []) as Record<string, number>[]).map((params, i) => ({
+      params,
+      label: t.presets?.[i]?.label ?? '',
+      text: t.presets?.[i]?.text ?? '',
+    })),
     challenges: ((l.challenges ?? []) as { check: string; target?: number; tol?: number }[]).map((c, i) => ({ ...c, text: t.challenges?.[i] ?? '' })),
     primary: l.primary,
     derivation: (l.derivation as string[]).map((tex, i) => ({ tex, note: t.derivationNotes[i] ?? '' })),
     realWorld: t.realWorld,
-    charts: (l.charts as any[]).map((c, i) => ({ domain: c.domain, marker: c.marker, title: t.charts?.[i]?.title ?? '', xLabel: t.charts?.[i]?.xLabel ?? '', yLabel: t.charts?.[i]?.yLabel ?? '', series: (c.series as string[]).map((expr, j) => ({ expr, label: t.charts?.[i]?.series[j] ?? expr })) })),
+    charts: (l.charts as any[]).map((c, i) => ({
+      domain: c.domain,
+      marker: c.marker,
+      title: t.charts?.[i]?.title ?? '',
+      xLabel: t.charts?.[i]?.xLabel ?? '',
+      yLabel: t.charts?.[i]?.yLabel ?? '',
+      series: (c.series as string[]).map((expr, j) => ({ expr, label: t.charts?.[i]?.series[j] ?? expr })),
+    })),
   }
 }
 
 const byId = new Map(lessons.map((l) => [l.id, l]))
 export const getLesson = (id: string) => byId.get(id)
+
+const latest = lessons.reduce((m, l) => (l.added && l.added > m ? l.added : m), '')
+/** The latest batch: every lesson whose `added` date is the most recent one. A newer batch takes the label over by itself. */
+export const newLessons: Lesson[] = latest ? lessons.filter((l) => l.added === latest) : []
+const newIds = new Set(newLessons.map((l) => l.id))
+export const isNew = (id: string) => newIds.has(id)
 export const subjects: Subject[] = [...new Set(lessons.map((l) => l.subject))]

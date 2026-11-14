@@ -1,6 +1,7 @@
 id: sun-distance
 subject: earth-space
 difficulty: high-school
+added: '2026-11-14'
 equation: \frac{D_S}{D_M} = \frac{1}{\cos\varphi}
 concepts:
 - right-triangle

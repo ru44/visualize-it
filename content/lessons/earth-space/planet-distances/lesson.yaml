@@ -1,6 +1,7 @@
 id: planet-distances
 subject: earth-space
 difficulty: beginner
+added: '2026-11-14'
 equation: r = \sin\varepsilon_{\max}
 concepts:
   - elongation

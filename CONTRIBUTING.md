@@ -132,6 +132,8 @@ Fill `lesson.yaml` and `en.md`, add the id to `content/lessons/calculus/_order.y
 
 `primary:` in `lesson.yaml` names the one slider the guided view shows first (defaults to the first parameter).
 
+`added: 'YYYY-MM-DD'` in `lesson.yaml` is the day the lesson was added (`pnpm new-lesson` fills it in). The lessons that share the latest date appear in the "New lessons" section of the home page and carry a "new" label in their subject; the next batch takes the label over, so nothing needs to be removed by hand.
+
 `lesson.yaml` picks a visualization by `type`. The types and their options are the components registered in `src/viz/registry.ts`; `function-plot` (any expression in `x`, with modes plain / secant / tangent / limit / riemann / area), `ode-system` (any system of differential equations), `surface-3d` and `discrete-dist` cover most new lessons without code. Parameters are declared with ranges in `lesson.yaml` and appear as sliders; their labels come from each language file.
 
 ## Add a visualization

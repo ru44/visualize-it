@@ -1,6 +1,7 @@
 id: earth-size
 subject: earth-space
 difficulty: beginner
+added: '2026-11-14'
 equation: C = \frac{360^\circ}{\theta}\,d
 concepts:
   - earth-circumference

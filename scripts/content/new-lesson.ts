@@ -16,6 +16,7 @@ writeFileSync(
   `id: ${id}
 subject: ${subject}
 difficulty: beginner        # beginner | high-school | university | advanced
+added: '${new Date().toISOString().slice(0, 10)}'         # the lessons with the latest date carry the "new" label
 equation: 'f(x) = x^2'      # LaTeX shown as the headline
 concepts: []
 prerequisites: []           # lesson ids the learner should know first
