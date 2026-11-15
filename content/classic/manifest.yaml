@@ -375,7 +375,7 @@
     - path: xy_model/simulation.html
       label: Simulation
 - id: toner_tu
-  category: physics
+  category: complex
   title: Toner-Tu Field Theory
   description: "A continuum theory of flocking: density and velocity fields of self-propelled particles."
   image: ""

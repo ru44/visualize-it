@@ -91,7 +91,7 @@ subjectd.calculus: How things change (derivatives) and how they add up (integral
 subjectd.geometry: Shapes, lengths and areas you can stretch with your hands.
 subjectd.trigonometry: Circles, angles and the waves they create.
 subjectd.physics: Forces, motion and energy.
-subjectd.waves: 'Vibrations that travel: sound, strings and resonance.'
+subjectd.waves: 'Vibrations that travel: sound, light, strings and resonance.'
 subjectd.electricity: Voltage, current, resistance and circuits.
 subjectd.electromagnetism: Charges, fields and the forces between them.
 subjectd.aerodynamics: How wings lift, why drag grows, and what stall means.
@@ -245,7 +245,7 @@ adhoc.count.formal: $P(n,k) = \dfrac{n!}{(n-k)!}$, $\;C(n,k) = \dbinom{n}{k} = \
 trust.countExact: Computed with exact integer arithmetic (no rounding), so every digit is correct.
 count.tooMany: too many to draw
 subject.computer-science: Computer science
-subjectd.computer-science: How computers count, decide, sort, search and learn — step by step.
+subjectd.computer-science: How computers count, decide, sort and search — step by step.
 subject.biology: Biology
 subjectd.biology: Populations, epidemics, genes, enzymes and cells, as living systems you can steer.
 subject.earth-space: Earth & space

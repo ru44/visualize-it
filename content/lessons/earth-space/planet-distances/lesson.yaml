@@ -1,6 +1,6 @@
 id: planet-distances
 subject: earth-space
-difficulty: beginner
+difficulty: high-school
 added: '2026-11-14'
 equation: r = \sin\varepsilon_{\max}
 concepts:

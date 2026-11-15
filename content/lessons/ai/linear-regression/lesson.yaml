@@ -1,5 +1,5 @@
 id: linear-regression
-subject: computer-science
+subject: ai
 difficulty: high-school
 equation: \hat y = mx + c, \qquad L(m,c) = \frac{1}{n}\sum_i (y_i - (mx_i+c))^2
 concepts:

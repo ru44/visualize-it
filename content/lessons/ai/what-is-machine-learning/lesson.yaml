@@ -8,9 +8,9 @@ concepts:
   - loss
   - training
 prerequisites:
-  - linear-regression
   - gradient
 related:
+  - linear-regression
   - loss-landscape
   - overfitting
 visualization:

@@ -1,6 +1,6 @@
 id: distance-in-any-dimension
 subject: geometry
-difficulty: beginner
+difficulty: high-school
 added: '2026-11-14'
 equation: d = \sqrt{x_1^2 + x_2^2 + \dots + x_n^2}
 concepts:

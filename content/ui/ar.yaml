@@ -91,7 +91,7 @@ subjectd.calculus: كيف تتغيّر الأشياء (المشتقات) وكي�
 subjectd.geometry: أشكال وأطوال ومساحات يمكنك تمديدها بيديك.
 subjectd.trigonometry: الدوائر والزوايا والموجات الناتجة عنها.
 subjectd.physics: القوى والحركة والطاقة.
-subjectd.waves: اهتزازات تنتقل، كالصوت والأوتار والرنين.
+subjectd.waves: اهتزازات تنتقل، كالصوت والضوء والأوتار والرنين.
 subjectd.electricity: الجهد والتيار والمقاومة والدوائر.
 subjectd.electromagnetism: الشحنات والمجالات والقوى بينها.
 subjectd.aerodynamics: كيف يرفع الجناح الطائرة، ولماذا يزداد السحب، وما معنى الانهيار.
@@ -245,7 +245,7 @@ adhoc.count.formal: $P(n,k) = \dfrac{n!}{(n-k)!}$، $\;C(n,k) = \dbinom{n}{k} = 
 trust.countExact: حسبناها بحساب الأعداد الصحيحة الدقيق (بلا تقريب)، فكل رقم هنا صحيح.
 count.tooMany: أكثر من أن نرسمها
 subject.computer-science: علوم الحاسوب
-subjectd.computer-science: كيف تعدّ الحواسيب وتقرّر وترتّب وتبحث وتتعلّم، خطوة بخطوة.
+subjectd.computer-science: كيف تعدّ الحواسيب وتقرّر وترتّب وتبحث، خطوة بخطوة.
 subject.biology: الأحياء
 subjectd.biology: المجتمعات والأوبئة والجينات والإنزيمات والخلايا، كأنظمة حية يمكنك توجيهها.
 subject.earth-space: الأرض والفضاء

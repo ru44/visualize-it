@@ -1,6 +1,6 @@
 id: higher-dimensions
 subject: geometry
-difficulty: beginner
+difficulty: high-school
 added: '2026-11-14'
 equation: F_k = \binom{n}{k}\,2^{\,n-k}
 concepts:

@@ -1,6 +1,6 @@
 id: tesseract
 subject: geometry
-difficulty: beginner
+difficulty: high-school
 added: '2026-11-14'
 equation: E_n = n\,2^{\,n-1}
 concepts:
