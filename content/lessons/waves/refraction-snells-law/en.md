@@ -1,69 +1,62 @@
 ---
 title: Refraction and Snell's law
-summary: >-
-  A straw in a glass of water looks bent, and a lens can focus light to a
-  point, because light bends whenever it crosses into a material where it
-  travels at a different speed — one equation predicts exactly how much.
+summary: 'Measure light’s angles from the normal and use refractive index to predict its direction across a boundary.'
 parameters:
-  theta1: angle of incidence θ₁
-  n1: refractive index of medium 1
-  n2: refractive index of medium 2
+  theta1: 'θ₁ — angle from the normal'
+  n1: 'n₁ — index of the incident medium'
+  n2: 'n₂ — index of the transmitted medium'
 variables:
-  - refractive indices of the first and second medium
-  - angle of incidence and angle of refraction, both measured from the normal
-  - speed of light in the first and second medium
+  - 'refractive indices on the two sides'
+  - 'incident and transmitted angles from the normal'
+  - 'phase speeds in the two media'
 ---
 
 ## Try it
 
-1. Drag the incoming ray at the top. Watch it bend as it crosses into the lower material.
-2. Raise "refractive index of medium 2" (n2). The transmitted ray bends closer to the vertical dashed line.
-3. Push the incidence angle θ1 toward 89°. Watch more and more light reflect instead of passing through.
+1. Set n1 = 1, n2 = 1.5 and θ₁ = 40°. The transmitted angle is about 25.4°, measured from the dashed normal line.
+2. Keep the indices fixed and reduce θ₁ to 0°. The ray goes straight through. Its speed can still change even though its direction does not.
+3. Set n1 = n2. The transmitted ray keeps its direction and the reflected share becomes zero in this ideal model. Then restore different indices and compare the readout as you increase θ₁.
 
 ## Real-life examples
 
-1. **A straw in a glass of water.** Light going from air (n1 = 1) into water (n2 = 1.33) at 40° bends toward the vertical, which is why the straw looks broken at the surface.
-2. **A pencil pressed against a glass block.** Light entering glass (n1 = 1, n2 = 1.5) at 50° bends even more sharply, because glass slows light down more than water does.
-3. **A fish looking up out of the water.** Light leaving water (n1 = 1.33) for air (n2 = 1) at 30° bends away from the vertical, squeezing the fish's whole view of the sky into a narrow circle overhead.
+1. **Air to water.** With approximate indices 1 and 1.33 and incidence 40°, refraction is about 28.9°. The ray bends toward the normal.
+2. **Air to glass.** With indices 1 and 1.5 and incidence 50°, refraction is about 30.7°.
+3. **Water to air.** With indices 1.33 and 1 and incidence 30°, refraction is about 41.7°. The ray bends away from the normal. These material indices are representative values.
 
 ## Test yourself
 
-1. Set the angle of incidence θ1 to exactly 45°.
-2. Find values of θ1, n1 and n2 that bend the refracted ray to exactly 25° from the vertical.
-3. Find values that bend the refracted ray to just 5° from the vertical — nearly straight through.
+1. Set the incidence angle to 45°.
+2. Find indices and an incidence angle that give a transmitted angle of 25°.
+3. Find settings that give a transmitted angle within 0.5° of 5°.
 
 ## Intuition
 
-Dip a straw into a glass of water and look at it from the side: the straw appears to bend right where it enters the surface, even though it is perfectly straight. That happens because light travels slower in water than in air, and the picture on screen recreates it directly. Drag the incoming ray (top left) to change its angle from the vertical — this is the angle of incidence, $\theta_1$ — and start it around 40°, measured from the dashed vertical line, not from the water's surface. Watch the shaded strip below the boundary: darkening it raises $n_2$, the refractive index of the lower material, a number like 1 for air or about 1.33 for water that measures how strongly a material slows light down.
+The normal is an imaginary line perpendicular to the surface. Measure both ray angles from this line, not along the surface. A higher refractive index means a lower phase speed of light. At oblique incidence, entering a higher-index medium turns the transmitted ray toward the normal; entering a lower-index medium turns it away.
 
-Push $\theta_1$ toward grazing incidence, close to 90°, and watch the readout for the reflected share climb: some light always bounces back at the boundary between two different materials. The transmitted ray always bends toward the vertical line when it enters a denser material (a higher $n_2$), and away from it when leaving one. At $\theta_1 = 0°$, straight down the middle, there is no bending at all, no matter how different $n_1$ and $n_2$ are — which is why looking straight down into a pool shows no distortion, only a view from the side does.
+A change in speed does not always mean a change in direction: a ray arriving along the normal continues straight. The diagram also includes reflection. Use the reflected-percentage readout to compare energy fractions; the brightness of the drawn lines is adjusted for visibility and is not an exact scale. Refractive index is an optical property, not another name for mass density.
 
 ## Formal
 
-Snell's law: $n_1 \sin\theta_1 = n_2 \sin\theta_2$, with both angles measured from the normal to the boundary, not from the surface itself.
+Snell's law is $n_1\sin\theta_1=n_2\sin\theta_2$. Both angles are measured from the normal. When transmission is possible, $\theta_2=\arcsin[(n_1/n_2)\sin\theta_1]$.
 
-Refractive index is defined by how much a medium slows light down: $n = c/v$, so a higher $n_2$ means a slower wave and, by Snell's law, a smaller $\theta_2$ — the ray bends toward the normal when entering a denser medium.
+Refractive index is $n=c/v$, where v is phase speed in the medium and c is vacuum light speed. Frequency stays unchanged across a stationary boundary, so wavelength changes with speed. If $n_1\sin\theta_1>n_2$, no real transmitted ray angle exists: the ideal interface gives total internal reflection.
 
 ## Advanced
 
-Snell's law follows from requiring the wavefronts to stay continuous across the boundary: the two rays must have the same trace speed along the interface, which forces $\sin\theta_1/v_1 = \sin\theta_2/v_2$. It is the same continuity condition that, applied to the full wave equation with boundary conditions on the electric and magnetic fields, also yields the Fresnel reflection and transmission coefficients shown in the readouts here.
+This model assumes a flat boundary between transparent, isotropic, nonabsorbing media. Matching wave phase along the boundary gives Snell's law. The reflected percentage is the average of the two Fresnel power reflectances for unpolarised light. Reflection depends on polarisation; it is not correct to say that every individual polarisation always has some reflected power at every angle.
 
 ## Derivation
 
-1. Matching how fast the wavefronts sweep along the boundary in each medium gives $\sin\theta_1/\sin\theta_2 = v_1/v_2$.
-2. Refractive index is defined as $n = c/v$, so each medium's speed is $v_1 = c/n_1$ and $v_2 = c/n_2$.
-3. Substituting the speeds turns the ratio into Snell's familiar form, $n_1\sin\theta_1 = n_2\sin\theta_2$.
+1. Match the wave phase along the boundary to relate the sines of the angles to the propagation speeds; use the cross-multiplied form at normal incidence.
+2. Express each phase speed as vacuum light speed divided by refractive index.
+3. Substitute and rearrange to obtain Snell's law.
 
 ## Real world
 
-### Apparent depth of a swimming pool
-Light leaving an underwater object bends away from the normal as it exits into air, so the pool bottom looks shallower than it really is.
+### Apparent depth
 
-### Rainbows and prisms
-A prism refracts different wavelengths by slightly different amounts, fanning white light out into its spectrum of colors.
+Light from a submerged object changes direction as it leaves water. Tracing the emerging rays backward makes the object appear at a different depth. Looking nearly straight down does not remove the apparent-depth effect for the bundle of rays entering an eye.
 
-### Desert mirages
-Hot air near the ground has a lower refractive index than the cooler air above it, bending light upward and making the sky look like a puddle on the road.
+### A prism
 
-### A late sunset
-Earth's atmosphere refracts sunlight enough that the sun is still visible for a few minutes after it has geometrically dropped below the horizon.
+Refractive index can depend on wavelength, so different colours can emerge in different directions. The current model uses one index per medium and does not separate colours.

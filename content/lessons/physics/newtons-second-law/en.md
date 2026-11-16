@@ -1,17 +1,14 @@
 ---
 title: Newton's second law
-summary: >-
-  Push harder and something speeds up faster; push the same object once it's
-  heavier and you need much more force for the same effect, which is why
-  trucks need bigger engines than small cars.
+summary: 'Relate the net force on a constant-mass object to how quickly its velocity changes.'
 parameters:
-  F: force F
-  m: mass m
+  F: 'F — net horizontal force'
+  m: 'm — mass'
 variables:
-  - the net force pushing the block
-  - 'the block''s mass, shown by its size'
-  - 'the resulting acceleration, F divided by m'
-  - 'the block''s velocity, which grows steadily under constant acceleration'
+  - 'sum of external horizontal forces on the block'
+  - 'constant mass of the block'
+  - 'acceleration: rate of change of velocity'
+  - 'velocity, starting from zero in each animation cycle'
 charts:
   - title: Velocity and position over time
     xLabel: t (s)
@@ -23,51 +20,50 @@ charts:
 
 ## Try it
 
-1. Watch the crate. It starts still and speeds up as the arrow pushes it.
-2. Raise the slider «force F». The crate reaches the end of the floor much sooner.
-3. Now raise «mass m» instead. The same push barely moves the heavier crate. Acceleration = force ÷ mass.
+1. Set F = 10 N and m = 2 kg. The acceleration is 5 m/s²: velocity increases by 5 m/s each second while this net force acts.
+2. Keep m = 2 kg and raise F to 20 N. Acceleration doubles to 10 m/s². Changing a control restarts the block from rest.
+3. Keep F = 20 N and raise m to 4 kg. Acceleration returns to 5 m/s². The block's size represents mass; compare the acceleration readout rather than treating arrow lengths as exact measurements.
 
 ## Real-life examples
 
-1. **Pushing a shopping cart.** A steady 20 N push on a 15 kg cart: it speeds up by about 1.3 m/s every second.
-2. **Kicking a football.** A hard kick of 50 N on a 0.5 kg ball gives a huge acceleration, which is why the ball leaves your foot so fast.
-3. **Moving a heavy box.** 30 N on a 20 kg box barely gets it going: 1.5 m/s².
+1. **An ideal cart.** A net horizontal force of 20 N on a 15 kg cart gives acceleration 20/15 ≈ 1.33 m/s². Any opposing forces must already be included in that net force.
+2. **A light object.** A net force of 50 N on 0.5 kg gives 100 m/s². If it acts for 0.1 s, the velocity changes by 10 m/s; the duration matters too.
+3. **A heavier block.** A net force of 30 N on 20 kg gives 1.5 m/s². Starting from rest, after 2 s the velocity is 3 m/s and the displacement is 3 m.
 
 ## Test yourself
 
-1. Make the crate accelerate at exactly 2 m/s².
-2. Set the mass to 10 kg, then find the force that gives an acceleration of 1.5 m/s².
-3. Make the acceleration as gentle as 0.5 m/s².
+1. Make the acceleration 2 m/s².
+2. Set m = 10 kg and choose a force giving acceleration 1.5 m/s².
+3. Make the acceleration approximately 0.5 m/s².
 
 ## Intuition
 
-Picture pushing a 15 kg shopping cart with a steady 20 N push — about as hard as a firm shove. Drag the slider "force F" and watch the orange arrow on the crate grow or shrink to match: a bigger push always makes the crate leap off the starting line faster, and you see the effect the moment you move the slider.
+Pushing an object does not directly set its speed. The net force changes its velocity. In this model a 10 N force on a 2 kg block produces an acceleration of 5 m/s². Starting from rest, the block reaches 5 m/s after one second and 10 m/s after two seconds, provided the same net force continues to act.
 
-Now keep the push the same and drag "mass m" up instead, until the block on screen grows as big as a loaded delivery truck. The same push barely moves it now — the green acceleration arrow shrinks even though the orange force arrow hasn't changed, because the same push now has far more mass to share it with.
+Net force means the combined effect of all external forces, including any resistance. With the net force fixed, doubling the mass halves the acceleration. With the mass fixed, doubling the net force doubles it. The animation repeatedly starts from rest when the block reaches the screen edge; this reset is for display, not part of the physical law. The lower chart plots velocity and displacement with their different units on a shared numerical scale.
 
 ## Formal
 
-Newton's second law states that the net force on an object equals the rate of change of its momentum: $F = \dfrac{dp}{dt}$.
+For a constant-mass object in an inertial frame, $\mathbf F_{\mathrm{net}}=m\mathbf a$. An inertial frame is one in which an object with zero net force maintains constant velocity. Force and acceleration are vectors, so the relation applies to their components in each direction.
 
-For an object of constant mass, momentum is $p = mv$, so $F = m\dfrac{dv}{dt} = ma$ — force equals mass times acceleration.
+In this one-dimensional example, $a=F/m$, with mass in kilograms, force in newtons and acceleration in metres per second squared. For constant net force and a start from rest at zero position, $v=at$ and $x=\tfrac12at^2$. Zero net force means zero acceleration, not necessarily zero velocity.
 
 ## Advanced
 
-In general $\mathbf{F} = d\mathbf{p}/dt$; for variable mass (a rocket) the $\dot m$ term matters. Given $\mathbf{F}(\mathbf{x}, \mathbf{v}, t)$ the law is a second-order ODE, so position and velocity at one instant determine the whole motion.
+For a fixed set of particles, the external net force is the time derivative of total momentum, F = dp/dt. In classical mechanics, a constant-mass particle has p = mv, giving F = ma. Applying momentum balance to a rocket requires accounting for the momentum carried away by expelled material; differentiating the rocket's changing mass alone is not sufficient.
 
 ## Derivation
 
-1. Momentum is mass times velocity — a measure of how hard it is to stop something moving.
-2. Force is defined as how quickly momentum changes over time.
-3. When the mass stays constant it comes out of the derivative, leaving force equal to mass times acceleration.
+1. For a constant-mass particle in classical mechanics, momentum is mass multiplied by velocity.
+2. Newton's second law relates external net force to the rate of change of momentum for the system being followed.
+3. With mass constant, take it outside the derivative. The derivative of velocity is acceleration, giving F = ma.
 
 ## Real world
 
-### Cars
-A more powerful engine applies more force, so the same car accelerates faster for a given mass.
+### Comparing loads
 
-### Rockets
-As a rocket burns fuel its mass falls, so the same thrust produces ever greater acceleration.
+The same net force gives a loaded cart less acceleration than an empty cart. A comparison of applied pushes must also account for differences in resistance.
 
-### Sports
-A heavier shot put needs a much larger push than a light ball to leave the hand with the same acceleration.
+### Changing direction
+
+An object can accelerate while keeping the same speed if its direction changes. Circular motion is an example, so “acceleration” means more than speeding up.

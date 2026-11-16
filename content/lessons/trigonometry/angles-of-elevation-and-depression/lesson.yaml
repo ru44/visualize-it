@@ -3,15 +3,15 @@ subject: trigonometry
 difficulty: high-school
 equation: \tan\theta = \dfrac{a}{b}
 concepts:
-- angle of elevation
-- angle of depression
-- alternate angles
-- right triangle
+  - angle of elevation
+  - angle of depression
+  - alternate angles
+  - right triangle
 prerequisites:
-- solving-right-triangles
+  - solving-right-triangles
 related:
-- sine-rule
-- cosine-rule
+  - sine-rule
+  - cosine-rule
 visualization:
   type: right-triangle
   options: {}
@@ -29,25 +29,25 @@ parameters:
     value: 40
     unit: m
 variables:
-- a
-- b
-- \theta
+  - a
+  - b
+  - \theta
 derivation:
-- \text{the observer's horizontal sightline and the ground are parallel lines}
-- \text{the line of sight is a transversal, so the angle of elevation equals the angle of depression measured from the other end}
-- \tan\theta = \dfrac{a}{b}
+  - \text{horizontal reference lines through the two endpoints are parallel in the flat model}
+  - \text{the line of sight is a transversal, so alternate interior angles give equal elevation and depression angles}
+  - \tan\theta = \dfrac{a}{b}
 charts: []
 primary: a
 presets:
-- a: 30
-  b: 40
-- a: 52
-  b: 1000
-- a: 100
-  b: 150
+  - a: 30
+    b: 40
+  - a: 52
+    b: 1000
+  - a: 100
+    b: 150
 challenges:
-- check: 'atan2(a,b)*180/pi'
-  target: 3
-  tol: 0.3
-- check: 'atan2(a,b)*180/pi > 45'
-- check: 'a > 80 and atan2(a,b)*180/pi < 20'
+  - check: 'atan2(a,b)*180/pi'
+    target: 3
+    tol: 0.3
+  - check: 'atan2(a,b)*180/pi > 45'
+  - check: 'a > 80 and atan2(a,b)*180/pi < 20'

@@ -1,69 +1,63 @@
 ---
 title: 'Implication and equivalence'
-summary: >-
-  Comparing XOR with "if... then" and "if and only if" shows why swapping an
-  implication's two halves can turn a true statement false.
+summary: 'Distinguish “if p, then q” from “p and q have the same truth value.”'
 parameters:
-  a: a — first input (0 or 1)
-  b: b — second input (0 or 1)
+  a: 'a — first statement: false (0) or true (1)'
+  b: 'b — second statement: false (0) or true (1)'
 variables:
-  - 'p, q: propositions, each either true (1) or false (0)'
-  - 'XOR: true when exactly one of p, q is true, false when they agree'
-  - 'implies: false only when p is true and q is false'
-  - 'if and only if: true when p and q share the same truth value'
-  - 'NOT: flips true to false and false to true'
+  - 'p, q: statements represented by a and b'
+  - 'XOR: true when exactly one statement is true'
+  - 'Implication: if p, then q'
+  - 'Equivalence: p and q have the same truth value'
+  - 'NOT: reverses a truth value'
 ---
 
 ## Try it
 
-1. Flip switch a to 1 and switch b to 1 and watch the gate's lamp — it stays dark, because XOR only lights up when the two inputs disagree.
-2. Flip switch b back to 0 so a = 1 and b = 0: the lamp turns on, and the row (1, 0) lights up in the truth table on the right.
-3. Try all four combinations of a and b and read off the sum column each time — that column is exactly what XOR computes.
+1. Set a = 1 and b = 1. The displayed XOR output is 0 because the inputs agree. Equivalence would be true for this pair.
+2. Keep a = 1 and set b = 0. XOR becomes 1. This is also the only pair that makes the implication “if a, then b” false.
+3. Set a = 0 and b = 1. XOR is still 1, but the implication is now true. The XOR output alone cannot tell you whether an implication is true.
 
 ## Real-life examples
 
-1. **Rain wets the ground.** It rains (a = 1) and the ground is wet (b = 1): the promise "if it rains, the ground gets wet" holds exactly as you would expect.
-2. **A sprinkler wets the ground without rain.** It does not rain (a = 0) but a sprinkler left the ground wet anyway (b = 1): the implication still holds, since it only promises what happens when it does rain.
-3. **A covered patio stays dry in the rain.** It rains (a = 1) but a covered patio stays dry (b = 0): this is the one combination that breaks the promise "if it rains, the ground gets wet."
+1. **Condition and result both hold.** Let p mean “it rains” and q mean “I carry an umbrella.” With a = 1 and b = 1, “if it rains, I carry an umbrella” is true. XOR is 0 because p and q agree.
+2. **The result without the condition.** With a = 0 and b = 1, I carry an umbrella although it does not rain. This does not contradict the implication: it says nothing about what I do when it does not rain. XOR is 1.
+3. **A counterexample.** With a = 1 and b = 0, it rains and I have no umbrella. This makes the implication false. XOR is 1 because the inputs differ.
 
 ## Test yourself
 
-1. Find the one combination of switches where the promise "if it rains, the ground gets wet" is broken.
-2. Find a combination where rain and wet ground disagree, yet the promise still holds true.
-3. Find a combination where rain and wet ground are equivalent, both false at once.
+1. Set a = 1 and b = 0: the pair that makes “if a, then b” false.
+2. Set a = 0 and b = 1: the original implication is true, but its converse is false.
+3. Make both statements false. They are equivalent for this pair, and XOR is 0.
 
 ## Intuition
 
-Set switch a to 1 and switch b to 1: both up, yet the lamp above the gate stays dark. Set both back to 0 and the lamp is still dark. Only when exactly one switch is up, a = 1 with b = 0, or a = 0 with b = 1, does the lamp light, because XOR rewards disagreement between its two inputs rather than agreement. OR is different: it would happily light up with both switches on.
+“If a number is a multiple of 4, then it is even” makes a promise about multiples of 4. To disprove it, we would need a multiple of 4 that is not even. An even number such as 6 does not disprove it: the statement never says that every even number is a multiple of 4.
 
-Picture a weather rule instead: a = 1 means it rained, and b = 1 means the ground got wet. The implication "if it rains, the ground gets wet" only breaks in one situation, when a = 1 but b = 0, rain with no wet ground; every other combination of the two switches keeps the rule true, even a = 0 with b = 0. "If and only if" is stricter: it is true only when a and b agree, both up or both down, which is almost the opposite pattern from the XOR lamp above.
+An implication has a direction, from a condition to a conclusion. Equivalence asks for both directions and is true when the two statements agree. The diagram displays a third rule, XOR: its output is 1 when the inputs differ. Equivalence reverses that output; implication requires us to distinguish (1, 0) from (0, 1).
 
 ## Formal
 
-$p \oplus q$ (XOR) is true exactly when p and q differ. $p \Rightarrow q$ is true in every case except p true and q false — notably it is true whenever p itself is false, however strange that first sounds. $p \iff q$ is true exactly when $p \Rightarrow q$ and $q \Rightarrow p$ both hold, i.e. when p and q share the same truth value.
+$p \Rightarrow q$ is false only when p is true and q is false. In every other case it is true. The converse $q \Rightarrow p$ reverses the direction and need not have the same truth value. The contrapositive $\neg q \Rightarrow \neg p$ always has the same truth value as the original implication.
 
-Every implication has a converse and a contrapositive. The converse of $p \Rightarrow q$ is $q \Rightarrow p$, a different statement that need not be true. The contrapositive, $\neg q \Rightarrow \neg p$, is logically identical to the original: same truth value in every row.
+$p \iff q$ means that both implications hold, so p and q have the same truth value. In contrast, $p \oplus q$ is true exactly when their truth values differ. This XOR rule is the one shown by the diagram and its table.
 
 ## Advanced
 
-"If it rains, the ground is wet" is $p \Rightarrow q$ with p = "it rains" and q = "the ground is wet". The converse, "if the ground is wet, it rains", can fail — a sprinkler could have wet the ground with no rain at all — so a true implication never licenses swapping its two halves. Only the contrapositive, "if the ground is not wet, it did not rain", is guaranteed by the original statement, and proofs often use it precisely because it is easier to argue.
+A true implication does not automatically describe a cause. It is a relationship between truth values. When proving a mathematical implication, we must rule out every case where the condition is true and the conclusion false. Proving the contrapositive can be useful because it rules out the same cases from another starting point.
 
 ## Derivation
 
-1. $p \Rightarrow q$ fails in exactly one row of the truth table: p true, q false; every other combination makes it true.
-2. Swap and negate both sides to get the contrapositive $\neg q \Rightarrow \neg p$, and check it fails in that same single row, so the two statements always match.
-3. Swap without negating to get the converse $q \Rightarrow p$; it fails whenever q is true and p is false, a different row, so it is a genuinely different claim.
+1. The implication fails only when its condition holds but its conclusion does not: p = 1 and q = 0.
+2. The contrapositive fails when q = 0 and p = 1, exactly the same case. The two statements therefore agree in every row.
+3. The converse fails when q = 1 and p = 0, a different case. Reversing the original implication needs a separate argument.
 
 ## Real world
 
-### Parity and checksums
-XOR compares bits for disagreement and underlies parity bits and checksums that catch single-bit errors in transmitted data.
+### Describing shapes
 
-### Warranty and legal conditions
-"If you break the seal, the warranty is void" only tells you what happens after breaking the seal — an intact seal alone does not prove nothing broke, only the contrapositive does.
+Every square is a rectangle. The converse is false: a rectangle with sides 2 and 3 is not a square. A definition that works in both directions must add the missing condition.
 
-### Network switching
-A signal reaches exactly one of two paths when a switch is in XOR-like exclusive mode, ensuring the two outputs never carry the same pulse at once.
+### Program requirements
 
-### Mathematical proofs
-Proving "if n² is even then n is even" is often easier as its contrapositive, "if n is odd then n² is odd", which is logically the same claim.
+“If the input is empty, show an error” specifies what must happen for an empty input. It does not say that an empty input is the only possible cause of an error.

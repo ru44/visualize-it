@@ -1,71 +1,64 @@
 ---
 title: Simple harmonic motion
-summary: >-
-  This is why a pendulum clock keeps steady time no matter how far it
-  swings, and why every guitar string and car suspension settles into its
-  own natural rhythm.
+summary: 'Follow an ideal spring released from rest, and see how mass and stiffness set its oscillation period.'
 parameters:
-  A: amplitude A
-  k: spring constant k
-  m: mass m
-  x: time t
+  A: 'A — maximum displacement from equilibrium'
+  k: 'k — spring stiffness'
+  m: 'm — oscillating mass'
+  x: 't — time since release'
 variables:
-  - amplitude — how far the mass is pulled back initially
-  - spring stiffness
-  - oscillating mass
-  - angular frequency of oscillation
+  - 'maximum displacement from equilibrium'
+  - 'spring stiffness'
+  - 'constant oscillating mass'
+  - 'angular frequency in radians per second'
 ---
 
 ## Try it
 
-1. Let it animate and watch the mass swing back and forth on the spring.
-2. Drag "amplitude A" wider or narrower. Time the gap between peaks — it stays the same.
-3. Now drag "spring constant k" or "mass m" instead. The time between peaks visibly stretches or shrinks.
+1. Set A = 3 m, k = 1 N/m and m = 1 kg. The position starts at +3 m with zero velocity and repeats after about 6.28 s.
+2. Keep k and m fixed and reduce A to 1 m. The excursion and maximum speed decrease, but the time between successive peaks remains about 6.28 s.
+3. Keep m = 1 kg and increase k to 4 N/m. The period halves to about 3.14 s. In 2D, compare the position curve with its dashed derivative: position extrema have zero velocity, while crossings of equilibrium have maximum speed.
 
 ## Real-life examples
 
-1. **A heavy mass on an industrial spring.** Pulled back 1 m with a 2 N/m spring holding a 3 kg mass, it swings back and forth every 7.7 seconds regardless of how far you pull it.
-2. **A stiff car suspension spring.** A stiffer 4 N/m spring with a lighter 0.5 kg load oscillates much faster, completing a cycle in about 2.2 seconds.
-3. **A soft, stretchy spring.** A soft 0.3 N/m spring with a 1 kg mass swings slowly, taking nearly 11.5 seconds per cycle — proof that a floppier spring means a slower oscillation.
+1. **A heavier model mass.** With A = 1 m, k = 2 N/m and m = 3 kg, the period is about 7.70 s and maximum speed about 0.816 m/s.
+2. **A stiffer, lighter model.** With A = 0.5 m, k = 4 N/m and m = 0.5 kg, the period is about 2.22 s and maximum speed about 1.41 m/s.
+3. **A softer model spring.** With A = 3 m, k = 0.3 N/m and m = 1 kg, the period is about 11.47 s and maximum speed about 1.64 m/s. These are idealized examples, not specifications for vehicle or industrial springs.
 
 ## Test yourself
 
-1. Make the oscillation period exactly 2π seconds (about 6.28 s).
-2. Find a mass of at least 3 kg that still gives a period of about 2π seconds.
-3. Make the swing as wide as possible (A = 4 m) while keeping the period under 2 seconds.
+1. Make the period approximately 6.28 s.
+2. Choose m at least 3 kg and a numerical k within 0.05 of m. In the given units this makes the period close to 2π seconds.
+3. Set A = 4 m and make the period less than 2 s.
 
 ## Intuition
 
-Picture a 3 kg mass on a spring with stiffness 2 N/m, pulled back 1 metre and let go. Let it animate and watch the tangent line and the dashed derivative curve: the derivative, its velocity, is zero exactly when the mass is at its farthest point, turning around, and largest exactly when it crosses the middle, moving fastest.
+Pull a mass away from its equilibrium position and release it from rest. The spring pulls it back toward equilibrium. At the centre, the restoring force is zero, but the mass is moving, so it passes through. On the other side the force slows it until it stops and reverses. Without damping, this sequence repeats without losing amplitude.
 
-Change "amplitude A" alone and the swing widens or narrows, but time the gap between peaks: it never changes. Now change "spring constant k" or "mass m" instead, and that gap visibly stretches or shrinks. Amplitude sets how far the mass swings; stiffness and mass alone set how fast it swings.
+The ideal restoring force is proportional to displacement and points in the opposite direction. A larger displacement therefore brings a proportionally larger acceleration, allowing a wider oscillation to take the same time. This amplitude-independent period belongs to the ideal linear model. The 3D scene measures positive displacement downward from its equilibrium marker; the 2D graph shows that displacement against time, with velocity overlaid on the same numerical scale in different units.
 
 ## Formal
 
-The equation of motion is $\ddot x + \omega^2 x = 0$ with $\omega = \sqrt{k/m}$ from $F = -kx = m\ddot x$; general solution $x(t) = A\cos(\omega t + \varphi)$.
+For positive mass m and stiffness k, $m\ddot x=-kx$, or $\ddot x+\omega^2x=0$ with $\omega=\sqrt{k/m}$. The position x is displacement from equilibrium, not the spring's total length. The display uses $x(t)=A\cos(\omega t)$, corresponding to release from x = A with zero initial velocity.
 
-Period $T = 2\pi/\omega = 2\pi\sqrt{m/k}$ is independent of amplitude $A$ — the defining feature of simple harmonic motion.
+The velocity is $v(t)=-A\omega\sin(\omega t)$ and the period is $T=2\pi\sqrt{m/k}$. Amplitude A changes the maximum displacement and speed but not the period. The angular frequency ω is in radians per second; cycles per second are $f=1/T=\omega/(2\pi)$.
 
 ## Advanced
 
-Amplitude-independence of the period is special to the exactly linear restoring force $F=-kx$; real springs and pendulums deviate from Hooke's law at large displacement, and their period then does depend slightly on amplitude — the isochronism seen here is an idealisation that clock and metronome designers approximate as closely as possible over their working amplitude range.
+Other initial conditions introduce a phase: x(t) = A cos(ωt+φ). The conserved energy is ½mv² + ½kx² = ½kA². For a vertical spring, measure x from the static equilibrium where gravity and spring force already balance. Damping reduces amplitude, and nonlinear restoring forces can make period depend on amplitude. A pendulum approximates simple harmonic motion only at small angles.
 
 ## Derivation
 
-1. Hooke's law plus Newton's second law.
-2. Try a sinusoidal solution and substitute back; it satisfies the equation for this $\omega$.
-3. The period is set entirely by $m$ and $k$, not by $A$ or $\varphi$.
+1. Combine the spring's restoring force with Newton's second law, using displacement from equilibrium.
+2. Substitute a cosine with angular frequency ω. Its second derivative is −ω² times itself, so the equation holds when ω² = k/m.
+3. One full cycle changes phase by 2π, giving T = 2π/ω. No amplitude appears in this period formula.
 
 ## Real world
 
-### Pendulum clocks and metronomes
-Their timekeeping relies on the amplitude-independence of the oscillation period.
+### Small oscillations
 
-### Vehicle suspension bounce
-A car body on its springs oscillates with a natural frequency set by spring stiffness and vehicle mass.
+Many systems near a stable equilibrium have an approximately linear restoring force. A spring-mass model can then describe small motion even when the full system is more complicated.
 
-### Musical instruments
-Strings, reeds and air columns all oscillate approximately harmonically, setting their pitch.
+### Comparing real and ideal springs
 
-### MEMS sensors
-Tiny spring-mass systems in accelerometers and gyroscopes are engineered oscillators governed by this same equation.
+A real oscillation may decay or change period at large amplitude. Observing those differences helps identify when damping or a nonlinear model is needed.

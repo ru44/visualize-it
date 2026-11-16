@@ -1,67 +1,60 @@
 ---
 title: Polygons and tessellation
-summary: >-
-  A shape's own corner angle decides whether copies of it can pack around a
-  point with no gap at all — which is exactly why floor tiles come in
-  triangles, squares and hexagons, never pentagons.
+summary: 'Calculate a regular polygon’s corner angle and check whether identical copies can meet edge to edge around a point.'
 parameters:
-  n: n — number of sides
+  n: 'n — number of sides of the regular polygon'
 variables:
-  - the number of sides of the polygon
-  - the sum of all its interior angles
-  - one interior angle, if the polygon is regular
+  - 'n: number of sides'
+  - 'S: sum of the interior angles'
+  - 'a: one interior angle of the regular polygon'
 ---
 
 ## Try it
 
-1. Drag «n — number of sides» up from 3. Watch the big shape on the left grow more sides and look rounder, while its readout «one interior angle» climbs.
-2. Look at the small copies fanned around the point on the right. At n = 6 they close up into a perfect ring with no gap.
-3. Move to n = 5 or n = 7. A wedge of empty space (shaded) is left over where the last copy doesn't quite reach the first — those shapes cannot tile a floor by themselves.
+1. Set n = 3, then 4, then 6. The interior angles are 60°, 90° and 120°. Six, four and three copies respectively fit around a point.
+2. Set n = 5. Each angle is 108°; three copies use 324°, leaving a 36° gap. A fourth copy would overlap.
+3. Set n = 8. Two 135° corners leave a 90° gap. This suggests filling that corner with a square when mixing tile shapes.
 
 ## Real-life examples
 
-1. **Triangular roof brace.** A triangle (n = 3) is the only polygon that can't be pushed out of shape without changing a side length, which is why builders brace roofs and towers with triangles, not squares.
-2. **Honeycomb cell.** Bees build with regular hexagons (n = 6): the shape that packs a flat sheet of wax with no wasted gaps while using the least wall per cell.
-3. **Stop sign.** A stop sign is a regular octagon (n = 8) — instantly recognisable by its corners, but on its own it cannot tile a wall; pavers only manage it by filling the gaps with small squares.
+1. **Equilateral triangular tiles.** At n = 3, six 60° corners meet to make 360°. Repeating the arrangement covers the plane.
+2. **Regular hexagonal tiles.** At n = 6, three 120° corners meet without a gap. Each tile has angle sum 720°.
+3. **Octagons with squares.** At n = 8, two 135° corners and one square's 90° corner total 360°. Regular octagons alone cannot provide this edge-to-edge tiling.
 
 ## Test yourself
 
-1. Make the shape a regular hexagon.
-2. Find a polygon bigger than a hexagon and see the gap it leaves when copies meet at a point.
-3. Push the interior angle sum to exactly 1440°.
+1. Set n to make a regular hexagon.
+2. Choose more than six sides and inspect the gap around the shared point.
+3. Find n giving an interior-angle sum of 1440°.
 
 ## Intuition
 
-Drag «n — number of sides» and watch the big polygon on the left gain corners one at a time. Each new corner also changes the angle at every corner: with few sides the corners are sharp, and as n grows the shape rounds out and each angle opens wider, creeping toward a flat 180°.
+A regular polygon has equal sides and equal interior angles. The drawing on the left shows one; the drawing on the right places copies around a shared vertex. To avoid both gaps and overlaps there, the corner angles must add to one full turn, 360°.
 
-Now look at the fan of small copies meeting at the point on the right — this is what happens if you try to surround one point on a floor with copies of the same tile, edge to edge, corner to corner. Each copy takes up a slice equal to its own interior angle. A full turn around a point is 360°, so the copies only close up with no gap when the interior angle divides evenly into 360° — try n = 3, 4 and 6 and watch the shaded gap disappear completely.
+A square contributes 90°, so four fit. A regular pentagon contributes 108°: three leave a gap and four exceed a full turn. This rules out an edge-to-edge tiling using only regular pentagons. It does not rule out every pentagonal tile; changing the angles changes the problem.
 
 ## Formal
 
-For any simple polygon with $n$ sides, the interior angles add to $S = (n-2)\cdot 180^\circ$. If the polygon is regular, every angle is equal, so each one measures $a = \dfrac{S}{n}$.
+A simple plane polygon with n sides has interior-angle sum $S=(n-2)180^\circ$. For a regular polygon, every angle is $a=S/n$. Here n is an integer at least 3, and “simple” means the boundary does not cross itself.
 
-Copies of a regular polygon tile the plane edge-to-edge around a single point exactly when $360^\circ$ divides evenly by $a$ — among the regular polygons, that only happens for the triangle, the square and the hexagon.
+An edge-to-edge tiling by one kind of regular polygon needs an integer number k of corners satisfying $ka=360^\circ$. This gives only $n=3,4,6$, and each of these admits such a tiling of the plane. The local angle check is necessary; the repeated constructions establish existence for these three cases.
 
 ## Advanced
 
-Semi-regular tilings mix two or more regular polygons around each vertex, such as squares and octagons, so long as the angles at every vertex still add to exactly 360°; there are exactly eight such Archimedean tilings of the plane. Irregular pentagons can still tile despite the regular one failing — over a dozen convex pentagon families are now known to tile, a classification finished only in 2017.
+A convex polygon can be split into n − 2 triangles by diagonals from one vertex. A nonconvex simple polygon also has the same angle sum, but may require a different triangulation. Irregular triangles, quadrilaterals and some pentagons can tile too. The restriction to three, four or six sides applies to using one regular polygon shape edge to edge.
 
 ## Derivation
 
-1. Pick one vertex of the $n$-sided polygon and draw every diagonal from it to the other vertices. This slices the polygon into $(n-2)$ non-overlapping triangles.
-2. Every triangle's three angles add to 180°, and together the triangles use up every interior angle of the polygon exactly once, with nothing left over and nothing counted twice.
-3. Multiplying gives the total, $S = (n-2)\cdot 180^\circ$, and splitting that total equally among a regular polygon's $n$ matching corners gives each one's angle, $a = \dfrac{S}{n}$.
+1. For the convex polygon shown, draw diagonals from one vertex to all nonadjacent vertices. This creates n − 2 triangles inside the polygon.
+2. The triangle angles partition the polygon's interior angles. Add 180° for each triangle to get the total.
+3. Divide that total by n for a regular polygon, whose n angles are equal. Then test how many such angles fit into 360°.
 
 ## Real world
 
-### Flooring and tiling
-Only equilateral triangles, squares and regular hexagons tile a floor edge-to-edge on their own, which is why those three shapes dominate paving, brickwork and bathroom tiles.
+### Designing a tile pattern
 
-### Nature
-Hexagonal packing shows up wherever a flat surface needs dividing with the least boundary per cell: honeycombs, dried mud cracks, and the pattern of a fly's compound eye.
+Check the sum of the tile corners meeting at a vertex. A gap or overlap there prevents a flat edge-to-edge layout, even if each individual tile looks suitable.
 
-### Sports and games
-A football (soccer ball) is stitched from hexagons and pentagons so the panels can curve into a sphere — flat hexagons alone can only tile a flat sheet, not close up into a ball.
+### Mixing shapes
 
-### Architecture
-Domes and geodesic structures break a curved surface into triangles because triangles are rigid and their angles are easy to cut and check on site, unlike floppier four- or five-sided panels.
+Squares and regular octagons can share a tiling because two octagon corners and one square corner total 360°. Mixing shapes changes the angle combinations available.

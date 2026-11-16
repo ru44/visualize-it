@@ -1,81 +1,65 @@
 ---
 title: Why do physicists talk about 11 dimensions?
-summary: >-
-  Far away, a hose looks like a line. Some physicists think space hides curled-up directions the same way, but no
-  experiment has confirmed it.
+summary: 'Use a thin cylinder to understand a compact direction, while separating that analogy from the unconfirmed physical proposal of extra dimensions.'
 parameters:
-  r: r — the radius of the hose, in mm
-  D: D — how far away you stand, in m
-  a: a — where the ant is round the hose, as an angle
+  r: 'r — cylinder radius in millimetres'
+  D: 'D — viewing distance in metres'
+  a: 'a — marker position around the circular cross-section, in degrees'
 variables:
-  - how wide the hose looks to you, as an angle in radians
-  - the radius of the hose (in the same unit as D, so a slider value in mm is divided by 1000)
-  - how far away you stand
+  - 'θ: approximate angular width in radians; readout uses milliradians'
+  - 'r: cylinder radius, converted to metres in the formula'
+  - 'D: viewing distance in metres'
 charts: []
 ---
 
 ## Try it
 
-1. Keep the hose at r = 10 mm and slide D from 5 m up to 100 m. The hose gets thinner. Somewhere near 67 m the verdict changes from "you see 2 dimensions" to "you see 1 dimension" and the ant on the hose turns into a dot on a line.
-2. Drag the ant round the circle in the middle. Even when the hose looks like a line to you, the ant can still walk round it, so the hidden direction is still there.
-3. Make the hose thinner, with r = 1 mm. It turns into a line much sooner. Read the number "this hose becomes a line at" below the picture.
+1. Set r = 10 mm and D = 5 m. The model gives angular width 0.004 radians, or 4 milliradians. Increase D to 100 m; it falls to 0.2 milliradians, below the chosen threshold of 0.3.
+2. Keep those settings and change a, or drag the marker around the cross-section. The circular direction remains present even when the distant view represents the hose as a line.
+3. Set r = 1 mm. The threshold distance becomes about 6.7 m. This is a result of the model's fixed resolution rule, not a universal limit for every observer or camera.
 
 ## Real-life examples
 
-- **A hose across the garden.** Standing 5 m from a hose 2 cm thick, you see how wide it is, about 13 times wider than the smallest detail your eye can separate. The ant's walk round it is easy to see.
-- **The same hose from the far end of a football field.** At 100 m it is thinner than the eye can separate. It looks like a plain line, but the ant can still walk round it.
-- **A thin thread across a room.** A thread 2 mm thick still looks like a thread from 4 m. Only beyond about 6.7 m does it become a line.
+1. **A nearby hose.** At r = 10 mm and D = 5 m, the diameter is 0.02 m. Its angular width is about 0.02/5 = 0.004 radians, above the model's threshold.
+2. **The same hose farther away.** At D = 100 m, its angular width is about 0.0002 radians. The model no longer resolves the width, although the surface still has two local directions.
+3. **A thinner cylinder.** At r = 1 mm and D = 4 m, the angular width is about 0.0005 radians, still above the threshold. It falls below the threshold beyond about 6.7 m.
 
 ## Test yourself
 
-1. Hide the hose's second dimension: make it look like a line.
-2. Keep it visible from at least 100 m. How thick must the hose be?
-3. Stand exactly where a hose 10 mm in radius turns into a line.
+1. Choose r and D so that the model's angular width is below 0.0003 radians.
+2. Keep D at least 100 m and make the angular width at least 0.0003 radians.
+3. Set r = 10 mm and D close to 66.7 m to locate the model's transition.
 
 ## Intuition
 
-Look at a garden hose from 100 m away. It looks like a line, and a line has one dimension: you can only go along it. Now think of an ant on the hose. It knows better. It can walk along the hose and also round it. The second direction is real, but it is curled up small. From far away, you cannot see it.
+A cylinder's surface allows motion along its length and around its circumference. Those are two local directions on the surface. From far away, the circumference can be too small to resolve, so a drawing may represent the cylinder by a line. The surface has not lost a dimension; the observation has lost detail.
 
-When does a curled-up direction disappear? Your eye can only separate details wider than about 0.0003 radian, which is 1/60 of a degree. A hose 2 cm thick, seen from 5 m, is much wider than that, so you see a tube. Move the distance slider. Beyond about 67 m, the hose is thinner than your eye can tell apart, and the verdict in the left picture says "you see 1 dimension". The ant is still on the hose, going round, but you cannot tell.
+The circular direction is called compact because travelling around it returns to the starting position after a finite distance. This offers an analogy for proposals with compact extra spatial dimensions. It does not show that space actually has them. The hose itself remains an ordinary object in three-dimensional space.
 
-In 1921 Theodor Kaluza, and in 1926 Oskar Klein, suggested that our universe might have an extra direction like that: curled up far too small to see. It was a clever idea, and later physicists kept coming back to it.
-
-String theory is a proposal that the smallest pieces of matter are tiny vibrating strings. Its maths only works with 10 dimensions: 9 of space and 1 of time. In 1995 Edward Witten showed that the five versions of string theory look like parts of one bigger theory, M-theory, with 11 dimensions: 10 of space and 1 of time. We notice 3 of space and 1 of time. The other 7 would be curled up, perhaps as small as about $10^{-35}$ m. The counter on the right adds it up: 3 + 1 + 7 = 11.
-
-Now the honest part. No experiment has found any sign of these extra dimensions so far, and particle colliders have looked. This is an unproven, beautiful idea, not a measured fact. This lesson shows why such directions could exist and still be invisible, not that they do exist.
+The number eleven comes from theoretical physics, not from the hose calculation. M-theory is a proposed framework connecting superstring theories, with eleven-dimensional supergravity as its low-energy description. The usual count is ten spatial dimensions and one time dimension. The display's 3 + 1 + 7 represents three familiar spatial directions, time, and seven additional spatial directions in a compactification picture. These are model assumptions, not measured counts of hidden directions. See [Witten's theoretical argument](https://arxiv.org/abs/hep-th/9503124).
 
 ## Formal
 
-A hose of radius $r$ seen from distance $D$ spans an angle of about $\theta = \frac{2r}{D}$ radians: its width $2r$ divided by the distance. The picture's sliders give $r$ in mm and $D$ in m, so $r$ is divided by 1000 first.
+For a side-on cylinder of radius r at distance D, with r much smaller than D and both lengths in the same unit, its angular width is approximately $\theta\approx2r/D$ radians. The slider gives r in millimetres, so the calculation first converts it to metres by dividing by 1000.
 
-A healthy human eye separates details only if they span more than about 0.0003 radian. If $\theta < 0.0003$ the hose looks like a line and its second dimension has "vanished" from view. Solving $\frac{2r}{D} = 0.0003$ gives the distance at which this happens, $D = \frac{2r}{0.0003}$. For $r = 10$ mm that is about 67 m.
+The display uses a fixed threshold $\theta_0=0.0003$ radians and marks the width unresolved when $\theta<\theta_0$. The transition occurs at $D\approx2r/\theta_0$. For r = 0.01 m, this gives about 66.7 m. Real visibility also depends on contrast, lighting and the observing system.
 
 ## Advanced
 
-The analogy is about a limit of seeing, not a proof of anything. Real searches do not use eyes. A particle collider probes small sizes with high-energy particles, because higher energy means shorter wavelength and finer detail. The sizes colliders reach are still many orders of magnitude bigger than $10^{-35}$ m, so they can only rule out some models in which the extra dimensions are large.
-
-Everything in this lesson about 10 and 11 dimensions rests on M-theory, which is a proposal that has not been confirmed by any experiment. Many physicists find it promising, and others are doubtful. Treat it as an open question.
+A compact dimension need not be a literal cylinder embedded in a larger visible room. The analogy only illustrates how a small length scale can be unresolved. It neither derives eleven dimensions nor fixes the size or shape of proposed extra dimensions. Mathematical consistency and experimental confirmation are separate requirements.
 
 ## Derivation
 
-1. The hose is seen side-on, so what you see is its width, the diameter: $\text{width of the hose: } 2r$.
-2. For small angles, width divided by distance gives the angle in radians: $\theta = \frac{2r}{D}$.
-3. If the angle is below what the eye can separate, the hose looks like a line: $\text{it looks like a line when } \theta < 0.0003$.
+1. The cylinder's physical width is its diameter, 2r. Convert radius and distance to the same unit.
+2. For a small angular width, divide that width by distance to obtain approximately 2r/D radians.
+3. Compare the result with the chosen threshold. Solving the equality gives the transition distance; below-threshold width is classified as unresolved in this model.
 
 ## Real world
 
-### A power line seen from a plane
+### Simplifying a distant view
 
-From high above, a power line looks like a thin line, even though it is a thick cable. Its width is below what your eye can separate at that distance.
+A thin cable may be drawn as a line when its width is not resolved. This changes the level of detail in the representation, not the cable's actual geometry.
 
-### A hair across the room
+### Testing physical proposals
 
-A hair has real width, but from across a room it looks like a line. Walk up close and its thickness appears.
-
-### A road on a satellite map
-
-On a satellite map, a road is a line with no visible width. It is really a strip several metres wide, and you only see that when you zoom in.
-
-### The Large Hadron Collider
-
-Experiments at the Large Hadron Collider have searched for signs of extra dimensions. They have found none so far, which is why 11 dimensions is still an idea, not a fact.
+Experiments test specific predicted signals. A CMS search reported in April 2025 found no significant excess in single-photon events with missing transverse momentum and used that result to constrain particular extra-dimension models. This neither confirms M-theory nor excludes every extra-dimension proposal. See [the CMS result](https://cms.cern/news/beyond-light-probing-dark-matter-and-extra-dimensions-cms).

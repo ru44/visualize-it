@@ -1,63 +1,60 @@
 ---
 title: Area under a curve
-summary: >-
-  A car that drives forward and then backs up needs to know exactly where it
-  ends up, not just how far it travelled — that is what this idea works out.
+summary: 'Use signed area under a velocity graph to distinguish change in position from total distance travelled.'
 parameters:
-  a: start a
-  b: end b
+  a: 'a — starting time'
+  b: 'b — ending time'
 variables:
-  - 'velocity at time t — here 2 sin t, forwards then backwards'
-  - start and end of the time window
+  - 'v(t): signed velocity, modelled as 2 sin t'
+  - 'a, b: integration bounds; use a ≤ b for elapsed time'
 ---
 
 ## Try it
 
-1. Drag «end b» to about 1.5. The teal region grows: the car has only driven forward so far.
-2. Keep dragging «end b» past 3.15. The shaded region peaks: the car is about to turn around.
-3. Push «end b» all the way to about 6.3. Red area appears and cancels the teal: the car has driven a full loop and returned near its start.
+1. Set a = 0 and b = 1.5. The velocity is positive throughout this interval, so displacement and distance both equal about 1.859.
+2. Increase b to 3.15. This is just beyond π, where the velocity changes from positive to negative. Displacement is near its maximum of 4.
+3. Increase b to 6.3. The signed areas nearly cancel, giving displacement about 0.000283, while total distance is about 8.00028. The motion is along one line, not around a loop.
 
 ## Real-life examples
 
-1. **Short errand.** Driving from second 0 to 1.5, before the car ever turns around: the whole shaded area counts as forward progress, a net displacement of about 1.9.
-2. **Longest outward leg.** Driving from 0 to about 3.15 seconds, right up to the turn-around point: net displacement peaks near 4, the largest one-way distance this car ever reaches.
-3. **A full loop back to the start.** Driving from 0 to about 6.3 seconds, one whole cycle: the forward push and the backward return cancel almost exactly, so net displacement drops back near zero.
+1. **Before reversing direction.** From 0 to 1.5 time units, the model moves about 1.859 length units in the positive direction.
+2. **Near the farthest point.** From 0 to 3.15, displacement is about 3.99993. The exact turning time is π, not 3.15.
+3. **Near the starting position.** From 0 to 6.3, displacement is close to zero. At exactly 2π it is zero, after a total distance of 8.
 
 ## Test yourself
 
-1. Find a time window (with «end b» at least 2 seconds after «start a») where the net displacement returns to 0.
-2. Make the net displacement as large as possible — about 4.
-3. Make the net displacement -3 (the car ends up 3 units behind where it started).
+1. Choose bounds with |b − a| greater than 2 and absolute signed integral less than 0.1.
+2. Make the signed integral within 0.15 of 4.
+3. Make the signed integral within 0.1 of −3. For a forward-time interpretation, choose a less than b.
 
 ## Intuition
 
-Picture a car on a straight road. It drives forward for the first three seconds, then slows, stops, and backs up for the next three. The wavy line on screen is the car's speed at every instant: when the line sits above the middle, the teal-shaded strip beneath it is distance gained, and when the line dips below, the red-shaded strip is distance given back.
+Imagine an object moving along a straight track. A positive velocity means motion in the chosen positive direction; a negative velocity means motion back the other way. The graph shows velocity, which can be negative, rather than speed, which cannot. A small velocity multiplied by a short duration gives a small signed change in position.
 
-Drag the slider «end b», the number of seconds of driving you are watching, out past 3.15. Red area starts eating into teal, and by about 6.3 seconds the two shaded areas match exactly — the car has looped back to right where it started, even though it never stopped moving. Teal minus red is called the net displacement: the straight-line distance between where the car started and where it ended up.
+Adding the positive and negative contributions gives displacement. Adding their magnitudes gives total distance. In this model the object stops momentarily and reverses direction at π, then returns to its starting position at 2π. Its displacement over that cycle is zero, but it has travelled 4 units outward and 4 units back. The shaded regions show the contributions; the graph itself is not a drawing of the object's path.
 
 ## Formal
 
-$\int_a^b f = A_{+} - A_{-}$, where $A_{+}$ and $A_{-}$ are the areas above and below the axis.
+For chronological bounds $a\leq b$ and continuous velocity v, displacement is $\int_a^b v(t)\,dt=A_+-A_-$, where A₊ and A₋ are nonnegative areas above and below the axis. Total distance is $\int_a^b|v(t)|\,dt=A_++A_-$. Displacement carries direction through its sign.
 
-Total distance is a different quantity: $\int_a^b |f(t)|\,dt = A_{+} + A_{-}$.
+Here $v(t)=2\sin t$, with the sine argument in radians, so $\int_a^b2\sin t\,dt=2\cos a-2\cos b$. If time is in seconds and velocity in metres per second, the integral is in metres. Reversing the bounds reverses an integral's sign; that reversed integral of speed is not a physical total distance.
 
 ## Advanced
 
-With $F(b) = \int_a^b f$, the Fundamental Theorem gives $F'(b) = f(b)$: the rate at which area accumulates equals the height of the curve at the moving edge. That is why the running total peaks exactly where $f$ crosses zero.
+For fixed a, the accumulated displacement F(b) has derivative F′(b) = v(b). A change of velocity from positive to negative produces a local maximum of displacement; a negative-to-positive change produces a local minimum. Merely having zero velocity does not guarantee either kind of extremum.
 
 ## Derivation
 
-1. An antiderivative of $2\sin t$ is $-2\cos t$.
-2. This is the running total plotted against the end time $b$.
-3. Equal areas above and below cancel exactly.
+1. The displayed derivation fixes a = 0. An antiderivative of 2 sin t is −2 cos t; evaluate it at b and at zero.
+2. Subtract the starting value −2 to obtain 2 − 2 cos b, the displacement up to b. This is the accumulated quantity, not the velocity curve drawn above.
+3. At b = 2π, cosine is 1 and the displacement is zero. Equal positive and negative areas cancel.
 
 ## Real world
 
-### Net vs. total
-A bank balance is the signed integral of cash flow; turnover is the unsigned one.
+### Flow into and out of a tank
 
-### AC electricity
-Mains current integrates to zero over a cycle — which is why RMS, not the average, measures its strength.
+If a signed flow rate is positive inward and negative outward, its integral gives the change in stored volume. Integrating the magnitude counts all volume passing through in either direction.
 
-### Work
-Force × distance, signed: a force opposing motion removes energy.
+### Motion measurements
+
+A velocity record distinguishes an object's final position from how far it travelled. Returning to the start makes displacement zero, not distance.

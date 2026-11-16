@@ -1,0 +1,5 @@
+block.force: 'net force F'
+block.mass: 'mass m'
+block.acceleration: 'acceleration a = F/m'
+block.velocity: 'velocity v'
+block.time: 'time t'

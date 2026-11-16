@@ -1,69 +1,62 @@
 ---
 title: Limits at infinity and horizontal asymptotes
-summary: >-
-  A skydiver falling from a plane can't fall faster than their top speed no
-  matter how long the fall continues — a horizontal asymptote is the number
-  a curve settles toward and never runs past, the same way.
+summary: 'Find the value a rational function approaches as its input grows, and distinguish an asymptote from a ceiling.'
 parameters:
-  a: a (limiting height)
-  b: b
-  x: x (drag far to the right)
+  a: 'a — limiting value'
+  b: 'b — positive denominator constant'
+  x: 'x — selected input'
 variables:
-  - coefficient of the leading term — becomes the asymptote height
-  - constant added to the denominator's leading term
-  - 'input, dragged out toward large values'
+  - 'a: coefficient of x² in the numerator'
+  - 'b: constant added to x² in the denominator'
+  - 'x: input increased to examine the limit'
 ---
 
 ## Try it
 
-1. Drag «x (drag far to the right)» out past 30 or 40. The curve flattens and hugs a horizontal line.
-2. Read the flat height and compare it to «a (limiting height)». They match.
-3. Change «b» and watch near x = 0: the curve reshapes there, but the flat height far to the right never moves.
+1. Set a = 2 and b = 3. Compare x = 5 with x = 50: the values are about 1.82143 and 1.99800, increasingly close to 2.
+2. Keep a = 2 and increase b. Finite-x values change, but the limiting value remains 2.
+3. Set a = 0.5 and b = 1. At x = 0 the value is 1; as x grows it approaches 0.5 from above. An asymptote need not be an upper bound.
 
 ## Real-life examples
 
-1. **Early reading, still settling.** With a = 2, b = 3 and x = 5, the curve hasn't reached its flat asymptote yet — it's still visibly changing.
-2. **Terminal velocity nearly reached.** With a = 1.5, b = 6 and x = 50, a falling object's speed has settled almost exactly onto its terminal value a.
-3. **An enzyme reaction near its maximum rate.** With a = 3.5, b = 1 and x = 45, the reaction rate has climbed close to its ceiling Vmax, here represented by a.
+1. **A visible difference.** At a = 2, b = 3 and x = 5, the value is 51/28 ≈ 1.82143, about 0.17857 below the limit.
+2. **A small difference.** At a = 1.5, b = 6 and x = 50, the value is about 1.49681, about 0.00319 below the limit.
+3. **Closer still.** At a = 3.5, b = 1 and x = 45, the value is about 3.49877, about 0.00123 below the limit.
 
 ## Test yourself
 
-1. Push x out far enough that the curve sits within 0.01 of its flat asymptote a.
-2. Make the asymptote higher than 3, and confirm the curve has settled within 0.05 of it.
-3. Keep x near 0 and make the curve's value more than 3 below the asymptote a.
+1. Make the difference between f(x) and a less than 0.01 in magnitude.
+2. Choose a greater than 3 and make that difference less than 0.05.
+3. Keep x less than 0.5 and make a − f(x) greater than 3.
 
 ## Intuition
 
-Picture a skydiver who has just jumped: at first they speed up quickly, but air resistance grows too, and eventually their falling speed stops increasing and settles at a fixed number — the terminal velocity. On screen, drag «x (drag far to the right)» out past 30 or 40, standing in for more and more time spent falling: the curve, however it wiggled near the start, flattens out and hugs a horizontal line.
+In the fraction (ax² + 1)/(x² + b), both numerator and denominator grow mainly like x² when x is large. The numerator contains a copies of that dominant term and the denominator one copy. Their ratio therefore approaches a. The constant terms still affect each finite reading, but their relative influence shrinks.
 
-Read off that flat height and compare it to the slider «a (limiting height)» — they match, no matter how «b» is set. Now change «b» and watch closely: it visibly reshapes the curve near the very start, where its effect is still comparable in size to everything else, but it has no effect at all on the flat height far to the right, because out there the fastest-growing term dwarfs everything else.
+The limiting line y = a is a horizontal asymptote. It describes behaviour far along the input axis, not a barrier the function can never cross. For this particular family, the difference from a has numerator 1 − ab, so its sign stays fixed, or the whole curve equals a when ab = 1. Other functions can cross their horizontal asymptotes.
 
 ## Formal
 
-$\lim_{x\to\infty}\frac{ax^2+1}{x^2+b} = a$, since dividing numerator and denominator by $x^2$ sends the constant terms to $0$.
+For the positive b used here, $f(x)=(ax^2+1)/(x^2+b)$ is defined for all real x. Dividing numerator and denominator by x² for nonzero x gives $f(x)=(a+1/x^2)/(1+b/x^2)$, hence $\lim_{x\to\infty}f(x)=a$. The same limit holds as x tends to negative infinity.
 
-The line $y=a$ is a horizontal asymptote: the graph approaches it as $x\to\infty$ but need not ever equal it.
+The exact error is $f(x)-a=(1-ab)/(x^2+b)$. Thus large x makes the error small; it need not make it zero. If $ab=1$, the error is already zero for every input. The control reaches only 60, so the algebra establishes the limit beyond the visible window.
 
 ## Advanced
 
-This is a special case of the general rule for rational functions $p(x)/q(x)$: if $\deg p = \deg q$, the limit at infinity is the ratio of leading coefficients; if $\deg p < \deg q$ it is $0$; if $\deg p > \deg q$ there is no finite limit (the function diverges, possibly along a slant asymptote).
+For a ratio of nonzero polynomials, compare their degrees. Equal degrees give a finite limit equal to the ratio of leading coefficients; a smaller numerator degree gives zero. A larger numerator degree gives no finite horizontal limit. Polynomial division can then describe the remaining large-input behaviour.
 
 ## Derivation
 
-1. Divide every term by $x^2$, the highest power present.
-2. Any constant divided by a growing $x^2$ vanishes in the limit.
-3. Substitute the vanished terms — only the leading coefficients survive.
+1. Divide each term in numerator and denominator by x². This rearrangement is used away from zero, which is sufficient for a limit at infinity.
+2. With a and b fixed, 1/x² and b/x² both approach zero as x grows.
+3. The denominator approaches 1 rather than zero, so the quotient approaches a/1.
 
 ## Real world
 
-### Terminal velocity
-Drag models like $v(t) \to v_{\text{terminal}}$ as $t\to\infty$ are horizontal-asymptote limits.
+### Average with fixed overhead
 
-### Michaelis–Menten enzyme kinetics
-Reaction rate approaches a maximum $V_{\max}$ as substrate concentration grows — a rational-function asymptote.
+In a model with total resource use F + cq for q items, average use is c + F/q. As q grows it approaches c. This is another rational-function limit, with its own formula and assumptions.
 
-### Long-run cost averages
-Average cost per unit as production scales up settles toward the marginal cost, the horizontal asymptote of a cost-ratio curve.
+### Estimating large-input behaviour
 
-### Signal-to-noise saturation
-Many detector responses saturate toward a fixed level as input intensity grows without bound.
+A limiting value helps approximate a formula at large inputs. An explicit error expression, when available, lets you check whether a particular input is large enough for the accuracy needed.

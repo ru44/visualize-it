@@ -55,6 +55,6 @@ presets:
   - { p: 2, a: 1, b: 50 }
   - { p: 1, a: 1, b: 30 }
 challenges:
-  - { check: 'p < 1 and (b^(1-p) - a^(1-p))/(1-p) > 5' }
-  - { check: 'p > 1 and (b^(1-p) - a^(1-p))/(1-p) < 2' }
-  - { check: '(b^(1-p) - a^(1-p))/(1-p)', target: 1, tol: 0.2 }
+  - { check: 'b > a and p < 1 and (b^(1-p) - a^(1-p))/(1-p) > 5' }
+  - { check: 'b > a and p > 1 and (b^(1-p) - a^(1-p))/(1-p) < 2' }
+  - { check: 'b > a ? (p == 1 ? log(b/a) : (b^(1-p) - a^(1-p))/(1-p)) : -1', target: 1, tol: 0.2 }

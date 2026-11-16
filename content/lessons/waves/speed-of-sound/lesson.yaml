@@ -56,6 +56,4 @@ presets:
 challenges:
   - check: medium==1
   - check: medium==2
-  - check: (331+0.6*T)*t
-    target: 1000
-    tol: 30
+  - check: medium==0 and abs((331+0.6*T)*t-1000)<=30

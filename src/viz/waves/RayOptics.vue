@@ -88,7 +88,7 @@ function pick(e: PointerEvent) {
         <text class="num" x="16" :y="P.y - 12" font-size="13" fill="var(--fg)">n₁ = {{ fmt(n1, 2) }}</text>
         <text class="num" x="16" :y="P.y + 22" font-size="13" fill="var(--fg)">n₂ = {{ fmt(n2, 2) }}</text>
         <line :x1="incStart.x" :y1="incStart.y" :x2="P.x" :y2="P.y" stroke="var(--accent-2)" stroke-width="3" />
-        <line :x1="P.x" :y1="P.y" :x2="reflEnd.x" :y2="reflEnd.y" stroke="var(--accent-2)" stroke-width="1.5" :stroke-opacity="tir ? 1 : 0.35 + refl" />
+        <line v-if="refl > 1e-12" :x1="P.x" :y1="P.y" :x2="reflEnd.x" :y2="reflEnd.y" stroke="var(--accent-2)" stroke-width="1.5" :stroke-opacity="tir ? 1 : 0.35 + refl" />
         <line v-if="refrEnd" :x1="P.x" :y1="P.y" :x2="refrEnd.x" :y2="refrEnd.y" stroke="var(--accent-2)" stroke-width="3" :stroke-opacity="1 - refl * 0.7" />
         <path :d="`M${P.x},${P.y - 60} A60,60 0 0 0 ${P.x - 60 * Math.sin(th1)},${P.y - 60 * Math.cos(th1)}`" fill="none" stroke="var(--fg)" />
         <text class="num" :x="P.x - 40" :y="P.y - 70" font-size="12" fill="var(--fg)">θ₁</text>
@@ -117,7 +117,12 @@ function pick(e: PointerEvent) {
           <line :x1="lx(di)" :y1="AX.y" :x2="lx(di)" :y2="ly(hi)" :stroke="virtual ? 'var(--pos)' : 'var(--neg)'" stroke-width="4" stroke-linecap="round" :stroke-dasharray="virtual ? '6 4' : ''" />
           <circle :cx="lx(di)" :cy="ly(hi)" r="5" :fill="virtual ? 'var(--pos)' : 'var(--neg)'" />
         </template>
-        <text v-else class="num" :x="AX.x + 40" y="60" font-size="13" fill="var(--muted)">{{ t('optics.none') }}</text>
+        <template v-else>
+          <line :x1="lx(-doo)" :y1="ly(ho)" :x2="lx(0)" :y2="ly(ho)" stroke="var(--fg)" stroke-width="1.5" />
+          <line :x1="lx(0)" :y1="ly(ho)" :x2="lx(28)" :y2="ly(ho - (ho / f) * 28)" stroke="var(--fg)" stroke-width="1.5" />
+          <line :x1="lx(-doo)" :y1="ly(ho)" :x2="lx(28)" :y2="ly(-(ho / doo) * 28)" stroke="var(--fg)" stroke-width="1.5" />
+          <text class="num" :x="AX.x + 40" y="60" font-size="13" fill="var(--muted)">{{ t('optics.none') }}</text>
+        </template>
       </template>
     </svg>
     <Readouts :items="readouts" />

@@ -1,71 +1,64 @@
 ---
 title: Standing waves on a string
-summary: >-
-  A jump rope shaken at one end settles into a shape that does not travel
-  anywhere — some points stay still while others swing widely — and how many
-  humps appear depends only on how fast you shake it.
+summary: 'Combine opposite travelling waves to make stationary nodes, and count the loops between a string’s fixed ends.'
 parameters:
-  A: amplitude A
-  'n': harmonic number n
-  f: frequency f
-  t: time t
-  x: position along string x
+  A: 'A — amplitude of each travelling wave'
+  n: 'n — number of loops'
+  f: 'f — oscillation frequency'
+  t: 't — time'
+  x: 'x — position along the string'
 variables:
-  - 'fixed string length, 6 m (both ends held still)'
-  - harmonic number — how many humps fit along the string
-  - amplitude and frequency of the oscillation
+  - 'string length, fixed at 6 m'
+  - 'positive integer counting half-wavelength loops'
+  - 'component amplitude and oscillation frequency'
 ---
 
 ## Try it
 
-1. Let it animate. Every point along the string moves up and down in place, but the pattern itself does not travel.
-2. Raise the slider "harmonic number n" one step at a time. Count the humps that appear.
-3. Watch the still points, called nodes — they mark the two ends and any point where the string barely moves at all.
+1. Set n = 2 and A = 1. Start the animation. The ends and midpoint stay at zero while the two loops alternate sides.
+2. Increase n from 1 to 6. Count n loops and n + 1 nodes, including the endpoints. Inspect the shape away from instants when the whole string crosses zero.
+3. Keep n fixed and change f. Oscillation becomes faster or slower without moving the nodes. The controls let shape and timing vary independently for exploration.
 
 ## Real-life examples
 
-1. **A guitar string's basic note.** Plucked in its simplest shape (harmonic n = 1, amplitude A = 1.2), the whole string swings as one big hump — this is the string's lowest, loudest note.
-2. **A string pinched exactly at its middle.** Touching the midpoint forces a still point there (n = 2, A = 0.8), splitting the string into two smaller humps that ring a higher note.
-3. **An organ pipe's higher overtone.** Air inside the pipe can also settle into a finer pattern (n = 4, A = 0.5), adding brightness on top of the pipe's basic tone.
+1. **One loop.** With n = 1, A = 1.2 and f = 0.5 Hz, the nodes are at 0 and 6 m. The midpoint's maximum displacement is 2.4, and a cycle takes 2 s.
+2. **Two loops.** With n = 2, A = 0.8 and f = 0.8 Hz, an additional node appears at 3 m. The largest displacement is 1.6.
+3. **Four loops.** With n = 4, A = 0.5 and f = 1.2 Hz, nodes are 1.5 m apart. The largest displacement is 1. These presets are separate patterns, not harmonics of one unchanged physical string.
 
 ## Test yourself
 
-1. Create the second harmonic: get exactly 2 humps with a still point in the middle (n = 2).
-2. Push the string to its highest possible harmonic: 6 humps at once (n = 6).
-3. Make the string wiggle slowly (frequency below 0.5 Hz) while still showing 3 humps (n = 3).
+1. Select n = 2 to obtain two loops.
+2. Select n = 6, the largest harmonic number available in this display.
+3. Show three loops oscillating at a frequency below 0.5 Hz.
 
 ## Intuition
 
-Shake one end of a long jump rope up and down while a friend holds the other end still, and try different shaking speeds. At most speeds the rope just flails around messily — but at a few special speeds it settles into a clean, repeating shape that seems to breathe in place instead of travelling anywhere. The picture on screen shows exactly this: press play and every point on the blue string moves up and down, yet the overall pattern stays fixed between the two ends. Some points, called nodes, barely move at all; others, halfway between nodes and called antinodes, swing with the largest reach.
+Send equal sinusoidal waves along a string in opposite directions. Their displacements add. At certain positions they always cancel, creating nodes. Halfway between adjacent nodes they combine to produce the largest motion; these positions are antinodes. The nodes stay in place even though each contributing wave travels.
 
-Raise the slider "harmonic number n" one step at a time and count the humps: at n = 1 the whole 6-metre string swings as one big hump; at n = 2 it splits into two smaller humps with a new still point in the middle; and so on. Only whole numbers of humps are allowed, because the string must stay motionless at both fixed ends no matter what. The slider "frequency f" controls how fast the pattern breathes in and out, and "amplitude A" controls how far each hump swings — neither one changes how many humps fit.
+For a string fixed at both ends, each end must be a node. The number n counts the half-wavelength loops that fit along the length. Here A is the amplitude of each travelling wave, so the largest standing-wave displacement is twice A. A point briefly crossing zero is not necessarily a node: a node stays there throughout the cycle.
 
 ## Formal
 
-$y(x,t) = 2A\sin(k_n x)\cos(\omega t)$ where $k_n = n\pi/L$, a superposition of a right- and left-travelling wave of equal amplitude.
+For length $L=6\ \mathrm{m}$, the displayed shape is $y(x,t)=2A\sin(n\pi x/L)\cos(2\pi ft)$. Its wavelength is $\lambda_n=2L/n$. The integer n is positive, and the maximum antinode displacement is $2A$.
 
-Nodes occur where $\sin(k_n x) = 0$: $x = 0, L/n, 2L/n, \dots, L$ — always including both fixed ends.
+Nodes satisfy $\sin(n\pi x/L)=0$, giving $x=jL/n$ for $j=0,1,\ldots,n$. On a physical ideal string with fixed wave speed v, the allowed frequencies are $f_n=nv/(2L)$. This display's independent n and f controls do not enforce that fixed-speed relation.
 
 ## Advanced
 
-Standing waves are the normal modes of the string: any physically allowed vibration (with both ends fixed) can be written as a superposition $\sum_n c_n \sin(n\pi x/L)\cos(2\pi f_n t + \varphi_n)$, a Fourier series in space at each instant in time — this is the same decomposition that underlies analysing any complex periodic sound as a sum of pure harmonics.
+A general vibration can combine several string modes; a plucked string need not vibrate in only the fundamental. Loudness does not follow from harmonic number alone. In the 3D view, the string follows the same equation. The nearby circular surface illustrates additional spatial patterns, but its shapes are schematic rather than exact drum modes; exact circular-membrane modes require different radial functions.
 
 ## Derivation
 
-1. Two identical waves travelling in opposite directions.
-2. Superpose them (waves add linearly).
-3. Sum-to-product identity: the space and time dependence factor apart — a standing pattern.
+1. Write two equal-amplitude sinusoidal waves travelling in opposite directions.
+2. Add their displacements using linear superposition.
+3. Apply the sine sum identity to separate the position-dependent shape from the time-dependent oscillation.
 
 ## Real world
 
-### Musical strings
-Guitar and piano strings vibrate in standing-wave harmonics, which determine the note and its overtones.
+### String instruments
 
-### Wind instruments
-Air columns in flutes and organ pipes form standing waves with nodes and antinodes set by the pipe's open or closed ends.
+An ideal fixed string has harmonic frequencies that are integer multiples of its fundamental. Real strings can depart from the ideal because of stiffness and other effects.
 
-### Microwave ovens
-Microwaves form standing waves inside the cavity, which is why food turntables exist — to avoid cold spots at the nodes.
+### Air columns
 
-### Bridge and building resonance
-Structures can develop standing-wave-like vibration modes under periodic loading such as wind or footsteps.
+Standing waves also occur in air columns, but the boundary conditions for pressure and particle displacement differ. An open pipe end is not simply a fixed string end.

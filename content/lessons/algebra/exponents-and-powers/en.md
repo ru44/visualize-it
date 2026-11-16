@@ -1,67 +1,66 @@
 ---
 title: Power functions and fractional exponents
-summary: >-
-  See how a single dial reshapes a curve into a line, a parabola, a
-  square-root, or a shrinking curve — the pattern behind area, volume, and
-  "inverse" relationships like sharing a bill.
+summary: 'Compare squaring, square roots and reciprocals by changing the exponent of a positive input.'
 parameters:
-  'n': exponent n
-  x: x
+  n: 'exponent n'
+  x: 'positive input x'
 variables:
-  - the exponent — can be negative or fractional
-  - 'the base, restricted here to positive values'
+  - 'exponent; may be positive, zero, negative or fractional'
+  - 'positive base being raised to the exponent'
 ---
 
 ## Try it
 
-1. Slide n from 2 down toward 0 and watch the curve straighten, then flatten.
-2. Push n past 0 into negative numbers and watch the curve's whole shape flip.
-3. Drag x left and right and read the curve's height at each point.
+1. Set x to 2 and compare n = 1, 2 and 3. The outputs are 2, 4 and 8. The exponent determines how many factors of 2 are multiplied.
+2. Keep x at 2 and set n to 0, then -1. The outputs are 1 and 0.5. A negative exponent takes a reciprocal rather than making the result negative.
+3. Set x to 4 and n to 0.5. The output is 2 because this exponent means square root.
 
 ## Real-life examples
 
-1. **Tiling a floor.** Doubling a square tile's side length (x=2) at exponent n=2 quadruples its area, from 1 to 4 square metres.
-2. **Packing a box.** Doubling a cube's side length (x=2) at exponent n=3 multiplies its volume by 8, from 1 to 8 cubic metres.
-3. **Splitting a bill.** At exponent n=-1, doubling the number of people sharing a fixed pizza bill (x=2) halves what each person pays, down to 0.5 of the original share.
+1. **Scaling an area.** With n = 2 and x = 2, the factor is 4. Doubling both side lengths of a square multiplies its area by four.
+2. **Scaling a volume.** With n = 3 and x = 2, the factor is 8. Doubling all three dimensions of a cube multiplies its volume by eight.
+3. **Sharing a fixed amount.** With n = -1 and x = 2, the factor is 0.5. Twice as many equal shares make each share half as large.
 
 ## Test yourself
 
-1. Set x to 2, then find the exponent that makes the curve reach exactly 8 there — the same growth a cube's volume shows when its side doubles.
-2. With the exponent set to -1, find the x where the curve drops to exactly 0.25 — like needing 4 people to quarter a shared bill.
-3. Find the one exponent that makes the curve perfectly flat, equal to 1, no matter where x sits.
+1. Set x to 2 and choose n to make the output about 8.
+2. Set n to -1 and choose x to make the output within 0.02 of 0.25.
+3. Find the exponent that gives 1 for every positive input.
 
 ## Intuition
 
-Double the side length of a square tile, from 1 metre to 2, and its area does not just double — it quadruples, from 1 square metre to 4. That is the curve you see here at exponent n = 2, plotted through the point where x = 2 reads 4 on the vertical axis. Slide n down to 1 and the curve straightens into a plain diagonal line, where the output always equals the input — doubling x now only doubles the result, like length itself instead of area.
+For a positive whole-number exponent, a power means repeated multiplication. Two cubed is 2 times 2 times 2, giving 8. Keep the input at 2 and change the exponent to see how the number of factors changes the result.
 
-Keep sliding n down to 0.5 and the curve becomes a square root: steep near zero, then flattening out as x grows. At n = 0 the curve turns dead flat at height 1, no matter what x is, because anything raised to the power zero equals 1. Push n negative instead, say to -1, and the curve flips character completely: it shoots up as x shrinks toward zero and settles toward zero as x grows — the same shape as a bill split among more and more people, where each share keeps shrinking.
+Other exponents extend the same pattern. The zero power of a positive number is 1. Exponent -1 gives its reciprocal, so 2 to the power -1 is one half. Exponent one half gives the square root, so 4 to that power is 2.
+
+Here x is always positive. This lets the exponent change continuously without leaving the real numbers. Notice that the graph always passes through (1, 1), because every power of 1 is 1. Changing the exponent changes the shape around that shared point.
 
 ## Formal
 
-For $x > 0$, $x^n$ is defined for every real $n$ via $x^n = e^{n \ln x}$, so fractional and negative exponents are as legitimate as integer ones.
+For positive x and any real n, define $x^n=e^{n\ln x}$. In particular, $x^0=1$ and $x^{-n}=1/x^n$. Negative exponents do not imply negative outputs.
 
-$x^{p/q} = \sqrt[q]{x^p}$ (for positive integers $p, q$), and $x^{-n} = 1/x^n$.
+For a positive integer q, $x^{1/q}$ is the positive q-th root of x. More generally, $x^{p/q}=(x^{1/q})^p$ for integer p and positive integer q, with x positive as throughout this lesson.
 
 ## Advanced
 
-Restricting to $x > 0$ is what makes $x^n = e^{n\ln x}$ well defined for every real $n$; for negative $x$, non-integer powers generally leave the real numbers (e.g. $(-1)^{1/2} = i$), which is why this lesson keeps the domain positive.
+Some negative inputs admit particular fractional powers as real numbers, such as the cube root of -8. Others do not, such as its square root. Keeping x positive avoids these domain differences. A power function varies the base x with a fixed exponent, whereas an exponential function varies the exponent with a fixed base.
 
 ## Derivation
 
-1. The defining law of exponents, true for integer $a, b$.
-2. Extend to rationals: $x^{1/q}$ is defined as the $q$-th root.
-3. Extend to every real $n$ using the exponential, agreeing with the rational case.
+1. Multiplying powers with the same positive base adds their exponents. For whole exponents, this follows by counting factors.
+2. Define the reciprocal of a root's degree as its exponent so that raising it back to that degree recovers x.
+3. The exponential-and-logarithm definition extends the rule to every real exponent and agrees with the earlier cases.
 
 ## Real world
 
-### Scaling laws
-Surface area scales as length squared, volume as length cubed — both power functions of the same variable.
+### Similar shapes
 
-### Inverse-square laws
-Gravity and light intensity fall off as $x^{-2}$, a negative-exponent power function.
+When all lengths are multiplied by a factor, area changes by its square and volume by its cube.
 
-### Allometry in biology
-Metabolic rate scales roughly as (body mass)$^{3/4}$ — a fractional exponent.
+### Equal sharing
 
-### Engineering safety factors
-Stress in a beam can scale with a fractional power of its dimensions, guiding how much a design can shrink or grow.
+The size of an equal share of a fixed total is proportional to the reciprocal of the number of shares.
+
+### Recovering a length
+
+Taking the square root of a square's area recovers its side length. The exponent one half reverses squaring on positive values.

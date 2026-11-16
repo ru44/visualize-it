@@ -1,69 +1,62 @@
 ---
 title: Reflection and echoes
-summary: >-
-  A pulse that hits a wall bounces back, and timing how long the round trip
-  takes tells you how far away the wall is — the idea behind echoes, sonar
-  and a bat's built-in radar.
+summary: 'An echo makes a round trip. Calculate its delay, and distinguish that timing from the way a rope pulse reflects.'
 parameters:
-  d: distance to the wall d
-  v: speed of the wave v
-  endType: end type
+  d: 'd — one-way distance'
+  v: 'v — propagation speed'
+  endType: 'end — 0: fixed, 1: free'
 variables:
-  - distance to the reflecting wall
-  - speed of the wave
-  - the round-trip echo delay
+  - 'one-way distance to the reflector'
+  - 'propagation speed in the medium'
+  - 'round-trip travel time'
 ---
 
 ## Try it
 
-1. Watch the pulse travel right, hit the wall, and bounce back toward the source. Read the echo delay in the readouts.
-2. Drag the distance slider d further out. The pulse takes longer to return, and the echo delay grows.
-3. Switch the end type slider between 0 and 1. At a fixed (hard) end the pulse flips upside down when it bounces; at a free end it bounces back the same way up — the timing is identical either way.
+1. Set d = 50 m and v = 340 m/s. The calculated round-trip delay is about 0.294 s.
+2. Double d to 100 m. The delay doubles. The animation keeps a fixed demonstration pace; read the calculated time rather than timing the animation.
+3. Switch endType between 0 (fixed) and 1 (free). The returning rope-displacement pulse changes sign at a fixed end, but not at a free end. The calculated travel time is unchanged.
 
 ## Real-life examples
 
-1. **Shouting at a cliff.** Standing 34 m from a rock face (d = 34, v = 340 m/s), your shout returns as a clear, separate echo about 0.2 seconds later.
-2. **Sonar pinging the seafloor.** A sonar pulse sent straight down to a 750 m seafloor in seawater (d = 750, v = 1500 m/s) takes a full second to return, giving the water's depth.
-3. **A bat's call near an open doorway.** Close to a soft, open boundary (d = 5, v = 340 m/s, free end) most of the pulse passes through rather than reflecting strongly, and what little returns comes back the same way up.
+1. **A reflector 34 m away.** With v = 340 m/s, the pulse travels 68 m in total and returns after 0.2 s. Whether a sound is heard as a separate echo also depends on the sound and surroundings.
+2. **An underwater reflector.** With d = 750 m and an assumed constant speed of 1500 m/s, the round trip takes 1 s.
+3. **An ideal free end.** With d = 5 m and v = 340 m/s, return time is about 0.0294 s. A rope-displacement pulse returns without inversion; this preset does not model sound passing through a doorway.
 
 ## Test yourself
 
-1. Set up an echo that takes exactly 0.5 seconds to return.
-2. Set up an echo that takes exactly 2 seconds to return.
-3. Switch to a free end with the wall closer than 10 m away.
+1. Choose d and v for a round-trip time of 0.5 s.
+2. Choose them for a round-trip time of 2 s.
+3. Select a free end and a distance less than 10 m.
 
 ## Intuition
 
-Shout toward a distant wall and, a short moment later, you hear your own shout come back — an echo. The sound did not vanish when it reached the wall; it bounced, retracing its path back to your ears, and the delay you hear is just the time the round trip took. The picture on screen shows exactly this: a pulse leaves the source, travels to the wall, and returns, with a readout timing the whole trip.
+Imagine sending a pulse toward a reflector 50 metres away. To return to you it must cover 50 metres out and 50 metres back. The measured delay therefore belongs to a 100-metre journey. Forgetting the return leg would make your estimated distance twice as large.
 
-Not every reflection looks the same. Off a hard wall — what physicists call a fixed end — the returning pulse comes back flipped upside down. Off a soft or open boundary — a free end — it comes back the same way up. Either way, the timing is unchanged: what matters for measuring distance is only how long the round trip took, not which way the pulse is flipped when it returns.
+The pulse shape illustrates displacement on an ideal rope. A fixed end cannot move, so the reflected displacement cancels the incident displacement at the end. This produces an inverted reflected pulse. An ideal free end reflects without that inversion. The illustration shows the trip schematically; it does not show the full overlap of the two pulses at the boundary. Sound pressure and rope displacement are different quantities, so do not apply this sign rule to every wave reflection.
 
 ## Formal
 
-A pulse travelling at speed $v$ covers the distance $d$ to a reflector and the same distance $d$ back, so the round-trip echo delay is $t_{echo} = 2d/v$. Measuring that delay and knowing the wave's speed is enough to recover the distance, $d = v\,t_{echo}/2$, without ever having to reach the reflector directly.
+For a stationary source and reflector separated by d in a uniform medium, the round-trip path is $2d$. At constant speed v, $t_{echo}=2d/v$, so the reflector distance is $d=vt_{echo}/2$.
 
-A fixed end forces the medium to stay still exactly at the boundary, which flips the reflected pulse's sign; a free end lets the boundary move freely, which keeps the reflected pulse's sign the same. Neither condition changes $v$ or the travel time, only the shape of what comes back.
+For transverse displacement on an ideal string, a fixed boundary requires $y=0$ at the end; an ideal free boundary requires $\partial y/\partial x=0$. These conditions give opposite-sign and same-sign reflected displacement pulses, respectively. They do not change the travel time through the unchanged string.
 
 ## Advanced
 
-Real sonar and radar systems send a short, sharp pulse rather than a single point so that the returning echo can be timed precisely against a known transmission moment; the sharper the pulse, the less two nearby reflectors' echoes overlap and blur together, which sets a limit on how close together two objects can be and still be told apart.
+The reflected quantity matters. For example, an ideal rigid wall reflects a sound-pressure disturbance without pressure inversion, although the normal particle motion must cancel at the wall. Also, a finite pulse has duration: nearby reflectors can produce overlapping echoes. The simple timing model assumes a clearly identifiable return and one known propagation speed. See [HyperPhysics on reflection](https://www.hyperphysics.phy-astr.gsu.edu/hbase/Sound/reflec.html).
 
 ## Derivation
 
-1. The pulse takes a time $d/v$ to travel out to the reflector.
-2. It takes the same time $d/v$ to travel back.
-3. Adding the two legs gives the total round-trip echo delay, $t_{echo} = 2d/v$.
+1. Divide the outward distance by speed: $d/v$.
+2. The return leg has the same distance and speed, so it also takes $d/v$.
+3. Add the two times to obtain $t_{echo} = 2d/v$.
 
 ## Real world
 
-### Bats
-Bats emit ultrasonic calls and time the echoes bouncing off insects and obstacles to build a moving picture of their surroundings in complete darkness.
+### Echo ranging
 
-### Sonar
-Ships and submarines send sound pulses through water and time their echoes off the seafloor or other vessels to measure depth and distance.
+Sonar estimates a reflector's distance from a sound pulse's round-trip time. Converting time to distance requires a suitable sound-speed estimate.
 
-### Medical ultrasound
-An ultrasound probe sends sound pulses into the body and times echoes reflecting off internal boundaries between tissues to build an image.
+### Waves on a string
 
-### Concert hall acoustics
-Architects shape walls and ceilings to control how sound reflects inside a hall, avoiding echoes that arrive late enough to be heard as a distinct, distracting repeat.
+A pulse on a stretched string illustrates the difference between fixed and free boundary conditions. Its vertical displacement is not a graph of sound pressure.

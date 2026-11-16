@@ -1,12 +1,12 @@
-poll.hint: grow n and the interval tightens — add bias and no sample size will save you
-poll.country: 'the country · {p}% truly in favour'
-poll.ringed: 'ringed: the {n} people actually asked'
-poll.true: true support
-poll.asked: people polled
-poll.poll: the poll says
-poll.truthMark: the truth
-poll.verdictL: did the interval catch it?
-poll.caught: yes — within the margin
-poll.missed: 'no — confidently wrong'
-poll.biasNote: 'the method leans {b} points — that shift never shrinks, however many you ask'
-poll.caption: honest noise halves only when you quadruple the sample; bias survives any sample
+poll.hint: 'Increasing n narrows the sampling margin; fixed bias shifts the estimate'
+poll.country: 'population illustration · {p}% true support'
+poll.ringed: 'illustrative highlighting · sample size {n}'
+poll.true: 'true support'
+poll.asked: 'sample size'
+poll.poll: 'illustrated estimate'
+poll.truthMark: 'true proportion'
+poll.verdictL: 'contains the true proportion?'
+poll.caught: 'yes'
+poll.missed: 'no'
+poll.biasNote: 'fixed upward bias: {b} percentage points'
+poll.caption: 'Four times the sample size halves the margin; fixed bias is unchanged'

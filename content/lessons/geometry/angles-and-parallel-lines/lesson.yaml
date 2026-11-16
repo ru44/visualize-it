@@ -30,9 +30,9 @@ variables:
   - \alpha
   - \beta
 derivation:
-  - \text{a step ladder's rungs are parallel; the ladder itself is a straight transversal crossing every rung}
-  - \text{slide the ladder along the wall without turning it, and it still crosses each parallel rung at the same tilt}
-  - \alpha = \beta \text{ — the angle the ladder makes with one rung equals the angle it makes with every other rung}
+  - '\text{parallel lines have equal corresponding angles under a translation along the transversal}'
+  - '\text{vertically opposite angles are equal, so alternate interior angles are equal too}'
+  - '\alpha + \beta = 180^\circ \text{ for same-side interior angles}'
 charts: []
 primary: pair
 presets:

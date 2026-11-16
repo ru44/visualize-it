@@ -1,71 +1,64 @@
 ---
 title: Transverse and longitudinal waves
-summary: >-
-  A rope wiggles side to side while a slinky's coils bunch and stretch along
-  its own length — two different ways a wave can shake a medium, and sound
-  travels the second way.
+summary: 'Classify a wave by comparing the direction of local displacement with the direction the pattern travels.'
 parameters:
-  f: frequency f
-  lambda: wavelength λ
-  A: amplitude A
+  f: 'f — oscillations per second'
+  lambda: 'λ — spacing between repeated features'
+  A: 'A — displacement amplitude'
 variables:
-  - the distance between one repeat of the pattern and the next
-  - how many times per second each point repeats its motion
-  - how far each point swings from its resting position
-  - the wave number, how many radians of the pattern fit in one metre
-  - the angular frequency, how many radians of oscillation happen each second
+  - 'distance between repeated features at one instant'
+  - 'complete local oscillations per second'
+  - 'maximum displacement from a material point’s resting position'
+  - 'spatial phase change in radians per metre'
+  - 'temporal phase change in radians per second'
 ---
 
 ## Try it
 
-1. Look at the top rope: each point moves up and down (transverse), while the pattern itself runs sideways.
-2. Look at the bottom row of dots: each point only moves left and right, bunching close together in some places and spreading out in others (longitudinal) — that squeeze is exactly how sound moves through air.
-3. Raise the wavelength slider λ. Both pictures stretch out: the rope's humps spread apart, and the dots' bunched clumps spread apart too, by the same amount.
+1. Set λ = 2 m, f = 0.8 Hz and A = 0.1 m. In the upper view, displacement is vertical while the pattern travels horizontally: this is transverse motion.
+2. Follow one dot in the lower view. It moves back and forth horizontally, parallel to pattern travel: this is longitudinal motion. Crowded regions are compressions; more spread-out regions are rarefactions.
+3. Increase λ to 4 m with f fixed. The repeated features become farther apart in both views. The model speed also increases from 1.6 to 3.2 m/s because frequency and wavelength are independently controlled here.
 
 ## Real-life examples
 
-1. **A long, slow rope wave.** A gentle, wide shake (λ = 3.5 m, f = 0.4 Hz) shows the up-and-down rope motion clearly, with wide, easy-to-count humps.
-2. **A short, fast rope wave.** A quick, tight shake (λ = 1 m, f = 1.2 Hz) packs the humps close together and sends them past quickly.
-3. **A medium wave, side by side.** A middling shake (λ = 2 m, f = 0.8 Hz) lets you compare the rope's sideways humps directly against the dots' bunching below it.
+1. **A long pattern.** At λ = 3.5 m, f = 0.4 Hz and A = 0.1 m, both patterns travel at 1.4 m/s. A local point repeats its motion every 2.5 s.
+2. **A short pattern.** At λ = 1 m, f = 1.2 Hz and A = 0.1 m, both patterns travel at 1.2 m/s. Local motion repeats about every 0.833 s.
+3. **Comparing directions.** At λ = 2 m, f = 0.8 Hz and A = 0.15 m, speed is 1.6 m/s in both views. The same scalar displacement formula is applied in different directions.
 
 ## Test yourself
 
-1. Squeeze the wavelength down to 1 m, so the dots bunch tightly and often.
-2. Stretch the wavelength past 3 m while keeping the frequency under 0.5 Hz — a long, slow wave in both pictures.
-3. Push the frequency to its fastest, 1.5 Hz.
+1. Set wavelength to 1 m.
+2. Make wavelength greater than 3 m and frequency less than 0.5 Hz.
+3. Set frequency to 1.5 Hz.
 
 ## Intuition
 
-Hold one end of a rope and shake it up and down: a hump runs away from your hand, and if you watch any single point on the rope, it only ever moves up and down, never sideways. That sideways-traveling, up-and-down-shaking motion is a transverse wave — light and every wave on a string behave this way.
+A wave's direction of travel need not be the direction in which the medium moves. On the upper rope, each point moves across the travel direction, so the wave is transverse. In the lower row, points move along the travel direction, so the wave is longitudinal. In both cases a pattern travels while local points oscillate around their own resting positions.
 
-Now hold a slinky stretched out and push-and-pull one end along its own length instead of shaking it sideways. A pulse of bunched-up coils runs down the slinky, and if you watch one coil, it only ever slides back and forth along the slinky's length, never sideways. That is a longitudinal wave, and it is exactly how sound travels: air molecules bump the next ones forward, then spring back, passing a pulse of squeezed air (compression) and thinned-out air (rarefaction) down the room without any single molecule crossing the space.
+Compression depends on how neighbouring displacements differ, not on which dot moves farthest forward. If neighbouring points move closer together, the material is compressed; if they separate, it is rarefied. In a small sinusoidal longitudinal wave, maximum compression occurs where displacement crosses zero with a negative spatial slope, not at the maximum positive displacement. The dots represent small material regions, not the detailed random motion of individual air molecules.
 
 ## Formal
 
-Both pictures share the same maths: a displacement $s(x,t) = A\sin(kx - \omega t)$, where $k = 2\pi/\lambda$ counts how many radians of pattern fit in each metre and $\omega = 2\pi f$ counts how many radians pass each second. The only difference is direction — in a transverse wave $s$ points perpendicular to the direction of travel; in a longitudinal wave $s$ points along it.
+Both illustrations use the scalar displacement $s(x,t)=A\sin(kx-\omega t)$, where x labels a resting position. The wavenumber is $k=2\pi/\lambda$ and angular frequency is $\omega=2\pi f$. In the transverse view s is perpendicular to propagation; in the longitudinal view it is parallel.
 
-Where a longitudinal wave's displacement $s(x,t)$ is largest and pointing forward, particles crowd together into a compression; where it is largest and pointing backward, they spread apart into a rarefaction. The bottom row of dots on screen is drawn from that same $s(x,t)$, applied sideways instead of up and down.
+A longitudinal material point's actual coordinate is $x+s(x,t)$. The local spacing changes in proportion to $1+\partial s/\partial x$. Negative displacement slope means compression, and positive slope means rarefaction. For the sinusoid, $\partial s/\partial x=Ak\cos(kx-\omega t)$. The selected amplitude range keeps $Ak<1$, preventing neighbouring material positions from reversing order in this model.
 
 ## Advanced
 
-Because a longitudinal wave needs particles that can be pushed together and pulled apart along the line of travel, it can move through anything that resists compression — gases, liquids and solids alike — which is why sound travels through air, water and steel. A transverse wave on a string needs tension holding the string taut to pull a displaced point back toward its neighbours; without that restoring sideways pull, a transverse mechanical wave has nothing to travel through, which is why sound in air is longitudinal, not transverse.
+For a small longitudinal disturbance, the density change is approximately proportional to minus the displacement gradient. Pressure and displacement therefore need not peak together. In an ordinary fluid, sound is a longitudinal pressure disturbance; solids can support both longitudinal and transverse elastic waves. Electromagnetic waves describe oscillating fields rather than material particles moving sideways.
 
 ## Derivation
 
-1. The wave number turns wavelength into a spatial rate: $k = 2\pi/\lambda$ radians per metre.
-2. The angular frequency turns frequency into a rate in time: $\omega = 2\pi f$ radians per second.
-3. Together they give the one formula both pictures are drawn from: $s(x,t) = A\sin(kx-\omega t)$.
+1. One spatial cycle corresponds to 2π radians over a wavelength, giving k = 2π/λ.
+2. Each temporal cycle takes 1/f seconds, giving ω = 2πf.
+3. Combine spatial and temporal phase in the sine function. Applying its displacement in different directions gives the two illustrated wave types.
 
 ## Real world
 
+### A stretched spring
+
+Moving an end along the spring can produce compressions; moving it sideways can produce transverse motion. The boundary conditions and restoring forces determine which waves propagate.
+
 ### Sound in air
-Speech, music and every sound you hear is a longitudinal pressure wave of compressions and rarefactions moving through the air to your ear.
 
-### Seismic P-waves and S-waves
-Earthquakes send both kinds at once — fast longitudinal P-waves that squeeze rock along their path, and slower transverse S-waves that shake it side to side.
-
-### Slinky demonstrations
-Physics classrooms use a stretched slinky to show both wave types on the same toy: shake it sideways for transverse, push-pull it for longitudinal.
-
-### Ultrasound imaging
-Medical ultrasound sends longitudinal pressure pulses into the body and times their echoes to build an image, the same compression-and-rarefaction idea as sound in air.
+The organized disturbance consists of small pressure and density changes that propagate through air. The air has no need to travel from the source to the listener with the sound.

@@ -1,63 +1,60 @@
 ---
 title: Angles and parallel lines
-summary: >-
-  A ladder crossing parallel rungs, or a road crossing railway tracks, makes
-  the same angle over and over — three named angle pairs explain why.
+summary: 'Use the positions of angle pairs to find which are equal and which add to 180° when a line crosses parallel lines.'
 parameters:
-  theta: transversal angle θ
-  pair: relationship
+  theta: 'θ — transversal angle in degrees'
+  pair: 'pair — corresponding (0), alternate interior (1), same-side interior (2)'
 variables:
-  - the highlighted angle on one crossing
-  - the highlighted angle on the other crossing
+  - 'α: first highlighted angle'
+  - 'β: second highlighted angle'
 ---
 
 ## Try it
 
-1. Drag the grey handle at the top. The diagonal line (the transversal) tilts, and both highlighted angles change together.
-2. Tap "corresponding". The two highlighted angles sit in the same spot at each crossing, and they always match.
-3. Tap "co-interior". Now the two highlighted angles sit between the parallel lines on the same side, and their sum stays 100°, 150°, 180° — always 180°, whatever θ is.
+1. Set theta = 65 and pair = 0 for corresponding angles. Both highlighted angles are 65°.
+2. Keep theta = 65 and choose pair = 1 for alternate interior angles. Their positions change, but both still measure 65°.
+3. Choose pair = 2 for same-side interior angles. They measure 65° and 115°. Change theta and check that their sum remains 180°.
 
 ## Real-life examples
 
-1. **A ladder against a wall.** θ = 65°: every rung of the ladder makes the same 65° angle with the ladder's rails, because the rungs are parallel and the rails are one straight transversal.
-2. **A staircase and its handrail.** θ = 50°: the handrail crosses the parallel edges of the steps, and the angle on one step matches the alternate angle on a step further along.
-3. **A level crossing.** θ = 100°: a road crosses two parallel railway tracks, and the two angles on the same side of the road add up to a straight 180°.
+1. **A diagonal brace.** Model two parallel horizontal beams crossed by a straight brace at 65°. Corresponding angles at the two crossings are both 65°.
+2. **A straight cut across strips.** With parallel strip edges and a cut at 50°, the highlighted alternate interior angles are both 50°.
+3. **A crossing on a plan.** With theta = 100° and pair = 2, the same-side interior angles are 100° and 80°, adding to 180°.
 
 ## Test yourself
 
-1. Set the corresponding angles to 40°.
-2. Set the alternate angles to 100°.
-3. Set the co-interior angles so one of them is 130° (the other is then 50°, since together they always reach 180°).
+1. Choose corresponding angles and set theta close to 40°.
+2. Choose alternate interior angles and set theta close to 100°.
+3. Choose same-side interior angles and set theta close to 130°, giving a second angle close to 50°.
 
 ## Intuition
 
-Picture a ladder leant against a wall, its rungs all parallel to the ground. The ladder itself is one straight bar crossing every rung — that straight bar is called a transversal. Because every rung is parallel to every other rung, the ladder meets each one at exactly the same tilt: drag the grey handle and watch the angle at the top crossing and the matching angle at the bottom crossing move together, always equal.
+The horizontal lines are parallel: they have the same direction and never meet. The sloping line crosses both and is called a transversal. At each crossing there are four angles. Changing the transversal's tilt changes their sizes, while the relationship between matching positions stays the same.
 
-Three pairs of angles get their own names depending on where they sit. "Corresponding" angles sit in the same corner at each crossing — top-right and top-right, say — and they are always equal. "Alternate" angles sit between the two parallel lines but on opposite sides of the transversal, and they are also always equal. "Co-interior" angles sit between the parallel lines on the same side of the transversal, and instead of being equal they always add up to a straight line: 180°.
+Corresponding angles occupy matching positions at the two crossings, and are equal. Alternate interior angles lie between the parallels on opposite sides of the transversal, and are also equal. Same-side interior angles lie between the parallels on the same side of the transversal. They add to 180°, so if one increases, the other decreases.
 
 ## Formal
 
-When a transversal crosses two parallel lines, corresponding angles are equal: $\alpha = \beta$. The same equality holds for alternate angles, because sliding one crossing along the transversal until it lands on the other turns a corresponding pair into an alternate pair without changing either angle.
+For two parallel lines cut by a transversal, corresponding angles satisfy $\alpha=\beta$, as do alternate interior angles. Opposite angles at a single crossing are equal because each is supplementary to the same adjacent angle.
 
-Co-interior angles are supplementary rather than equal: if one of the pair is $\alpha$, the other is $180^\circ - \alpha$, because together they fill the straight angle formed where the transversal crosses one of the parallel lines.
+Same-side interior angles satisfy $\alpha+\beta=180^\circ$, or $\beta=180^\circ-\alpha$. These angles are called supplementary. They are equal only in the special case where both are 90°.
 
 ## Advanced
 
-These facts are equivalent to the parallel postulate: assuming corresponding angles are equal for one transversal is enough to force the two lines to stay the same distance apart forever, and conversely, if two lines are not parallel a transversal's "corresponding" angles differ by exactly the angle between the lines.
+The converse tests are useful too: equal corresponding angles, equal alternate interior angles, or supplementary same-side interior angles imply that the two lines are parallel in a Euclidean plane. Identify the positions before applying a rule; equality of two arbitrary angles does not establish parallelism.
 
 ## Derivation
 
-1. A step ladder's rungs are parallel, and the ladder's own rails form one straight transversal crossing every rung.
-2. Slide an imaginary copy of the ladder up or down along the wall without turning it, and it still crosses each parallel rung at the same tilt, because parallel lines never converge.
-3. So the angle the ladder makes with one rung equals the angle it makes with every other rung: $\alpha = \beta$.
+1. Move one crossing to the other by a translation along the transversal. Parallel lines keep their direction, so matching angle positions have equal measures.
+2. At a crossing, opposite angles are equal. Combining this with corresponding-angle equality gives the alternate interior angle rule.
+3. The remaining interior angle is adjacent to an equal alternate angle on a straight line, so the same-side interior pair sums to 180°.
 
 ## Real world
 
-### Architecture
-Window mullions and floor beams are built parallel on purpose, so a single diagonal brace crosses them all at one predictable angle, which keeps the cutting angle the same for every piece.
+### Parallel beams and a brace
 
-### Road design
-Where a road crosses several parallel lanes of railway track at a level crossing, engineers use the co-interior angle rule to check the crossing is wide enough for a vehicle to clear all the tracks at once.
+A straight diagonal brace crossing parallel beams makes equal corresponding angles at each intersection. This lets us transfer an angle from one crossing to another in a drawing.
 
-### Optics
-Light bouncing between two parallel mirrors keeps hitting each one at the same angle, which is exactly the corresponding-angle rule applied to the light ray as a transversal.
+### Geometric proofs
+
+Drawing a line through a triangle's vertex parallel to its opposite side lets us move the two other angles to that vertex using alternate interior angles. Together they form a straight angle, proving the triangle-angle sum.

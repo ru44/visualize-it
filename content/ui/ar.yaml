@@ -220,18 +220,18 @@ coin.successes: النجاحات
 coin.proportion: النسبة حتى الآن
 coin.gap: البعد عن p
 coin.again: ↻ من جديد
-coin.band: المنطقة المظللة هي حيث تبقى 95% من التجارب
-bayes.hint: كل فرد من 1000 شخص. اسحب لتغيير مدى شيوع الحالة.
-bayes.tp: مريض ونتيجته موجبة
-bayes.fp: سليم ونتيجته موجبة
-bayes.fn: مريض ونتيجته سالبة
-bayes.tn: سليم ونتيجته سالبة
-bayes.has: 'لديه الحالة:'
-bayes.hasNot: ليس لديه الحالة
-bayes.positives: الذين نتيجتهم موجبة
-bayes.ofWhichIll: …منهم مرضى فعلًا
-bayes.posterior: P(مريض | موجب)
-bayes.prior: P(مريض) قبل الفحص
+coin.band: 'التظليل: نطاق تقريبي لـ95% من النتائج عند كل عدد ثابت من المحاولات'
+bayes.hint: "تقسيم المجتمع بحسب الحالة والنتيجة؛ اسحب لتغيير نسبة الانتشار."
+bayes.tp: "الحالة موجودة والنتيجة إيجابية"
+bayes.fp: "الحالة غير موجودة والنتيجة إيجابية"
+bayes.fn: "الحالة موجودة والنتيجة سلبية"
+bayes.tn: "الحالة غير موجودة والنتيجة سلبية"
+bayes.has: "الحالة موجودة"
+bayes.hasNot: "الحالة غير موجودة"
+bayes.positives: "الإيجابيات لكل 1000 بعد التقريب"
+bayes.ofWhichIll: "نسبة وجود الحالة بين الإيجابيات"
+bayes.posterior: "احتمال الحالة بعد نتيجة إيجابية"
+bayes.prior: "الاحتمال السابق"
 adhoc.count.title: مستكشف العدّ
 adhoc.count.summary: بكم طريقة؟ إجابة دقيقة تمامًا، مع رسم كل الترتيبات ما دام عددها قليلًا.
 adhoc.count.n: n — عدد العناصر المتاحة
@@ -391,6 +391,7 @@ buoy.hint: اسحب لأعلى أو لأسفل لتغيير كثافة الجس�
 buoy.weight: الوزن
 buoy.buoyancy: قوة الطفو
 buoy.submerged: الجزء المغمور
+buoy.neutral: متعادل الطفو
 buoy.state: النتيجة
 buoy.sinks: يغوص
 buoy.floats: يطفو

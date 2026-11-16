@@ -16,7 +16,7 @@ visualization:
   options:
     vars: [y]
     equations: ['k*y*(1 - y/K) - h']
-    initial: y0
+    initial: [y0]
     tMax: 40
 parameters:
   k:

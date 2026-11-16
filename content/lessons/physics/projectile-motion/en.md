@@ -1,66 +1,63 @@
 ---
 title: Projectile motion
-summary: >-
-  This is the physics behind every basketball arc, fountain jet and long
-  jump — and why 45° gives you the longest possible throw.
+summary: 'Split an ideal projectile’s motion into constant horizontal velocity and vertically accelerated motion under gravity.'
 parameters:
-  v: launch speed v
-  th: launch angle θ
-  x: horizontal position x
+  v: 'v — initial speed'
+  th: 'θ — launch angle above horizontal'
+  x: 'x — horizontal position'
 variables:
-  - launch speed
-  - launch angle above the horizontal
-  - 'gravitational acceleration, 9.81 m/s²'
-  - horizontal distance and height; the ground is y = 0
+  - 'speed at launch'
+  - 'launch angle above the horizontal'
+  - 'constant downward gravitational acceleration, 9.81 m/s²'
+  - 'horizontal position and height relative to the launch point'
 ---
 
 ## Try it
 
-1. Watch the ball launch and trace a curved path through the air.
-2. Drag the slider "launch angle θ" from 5° to 85°. Watch the landing point move out, peak, then come back.
-3. Now drag "launch speed v" up. The whole arc stretches further and higher.
+1. In the 2D view, pause the animation and set v = 20 m/s and θ = 45°. The trajectory returns to launch height at about x = 40.77 m.
+2. Move x along the curve. Its tangent is horizontal near x = 20.39 m, at the highest point. Vertical velocity is zero there, but horizontal velocity and downward acceleration are not.
+3. Keep v = 20 m/s and compare θ = 30° with 60°. Both ranges are about 35.31 m, but 60° gives a higher arc and longer flight. The 2D marker's playback speed is illustrative; x is horizontal position, not elapsed time.
 
 ## Real-life examples
 
-1. **A basketball free throw.** Launched at about 8 m/s and a steep 50° arc, the ball drops into the hoop from above.
-2. **A javelin throw.** At roughly 25 m/s and 35°, an elite throw balances launch angle against how far the javelin can travel before landing.
-3. **A golf drive.** A low, fast 15° launch at 30 m/s sends the ball skimming far down the fairway rather than arcing high.
+1. **A short ideal throw.** At 8 m/s and 50°, the same-height range is about 6.42 m and maximum height above launch is 1.91 m. A target at another height requires a different calculation.
+2. **A moderate angle.** At 25 m/s and 35°, the range is about 59.87 m and the maximum height about 10.48 m in this drag-free model.
+3. **A low angle.** At 30 m/s and 15°, the range is about 45.87 m while maximum height is only 3.07 m. These values describe an ideal projectile, not a realistic golf ball with lift and drag.
 
 ## Test yourself
 
-1. Make the ball land exactly 40 m away.
-2. Keep the launch speed at 20 m/s and find the angle that gives the greatest possible range.
-3. With speed fixed at 20 m/s, find an angle below 40° that lands the ball at the same 40 m distance as a 45° launch.
+1. Choose speed and angle giving a same-height range near 40 m.
+2. Set speed to 20 m/s and choose the angle that maximizes range in this model.
+3. Keep speed at 20 m/s and find an angle below 40° with range within 1 m of 40 m. The 45° range is about 40.77 m, not exactly 40 m.
 
 ## Intuition
 
-Picture a basketball launched at 8 m/s at a steep 50° angle: it does two independent things at once, drifting sideways at a steady speed while falling exactly as if it had been dropped. The tangent line on the curve shows its direction of travel at each moment, flat at the top of the arc, where all the vertical speed has been used up.
+After launch, imagine gravity is the only force. There is no horizontal acceleration, so equal time intervals give equal horizontal displacements. Vertically, the projectile begins with an upward velocity and loses 9.81 m/s of that component each second. It reaches zero vertical velocity at the top, then gains downward velocity. Combining these motions produces a parabola.
 
-Drag the slider "launch angle θ" from 5° up to 85°: the landing point moves out, peaks at 45°, then comes back in, and two angles that add up to 90°, say 30° and 60°, land in the same spot. The part of the curve below the ground is where the ball would keep going if the floor weren't there.
+The launch angle divides the initial velocity into horizontal and vertical components. A steeper launch gives more upward velocity but less horizontal velocity. At a fixed launch speed, equal launch and landing heights, and without drag, 45° balances these effects to give maximum range. The curve below y = 0 is a mathematical continuation after passing launch height, not a path through a solid floor. The 3D animation stops at the same-height landing point.
 
 ## Formal
 
-$x = v\cos\theta\, t$ and $y = v\sin\theta\, t - \tfrac12 g t^2$; eliminating $t$ gives the trajectory.
+Taking the launch point as the origin and upward as positive, $x=v\cos\theta\,t$ and $y=v\sin\theta\,t-\tfrac12gt^2$, with $g=9.81\ \mathrm{m/s^2}$. The model assumes constant gravity and no air resistance; v here is the initial speed, not the speed throughout flight.
 
-Range $R = \dfrac{v^2 \sin 2\theta}{g}$, maximum height $\dfrac{v^2\sin^2\theta}{2g}$.
+For positive launch angles below 90° and landing at the launch height, $T=2v\sin\theta/g$, $R=v^2\sin(2\theta)/g$, and $H=v^2\sin^2\theta/(2g)$. Here T is flight time, R horizontal range and H maximum height above launch. Since sine is at most one, range is largest at 45° under these assumptions.
 
 ## Advanced
 
-With linear drag $-b\mathbf{v}$ the components still decouple, but the path is no longer symmetric and the optimum angle drops below 45°. With quadratic drag the equations couple and must be integrated numerically.
+Eliminating time gives the displayed y(x) equation when the horizontal launch velocity is nonzero. Its slope is dy/dx = vᵧ/vₓ, a direction ratio, not the vertical velocity itself. Air resistance, spin, varying gravity or unequal endpoint heights change the problem; the 45° result cannot be carried over without checking the new assumptions.
 
 ## Derivation
 
-1. No horizontal force; constant downward force $mg$.
-2. Solve the first equation for the time.
-3. Substitute: a quadratic in $x$ — a parabola.
+1. Use zero horizontal acceleration and constant downward acceleration −g to write the two position equations.
+2. Solve the horizontal equation for time. This requires v cos θ to be nonzero.
+3. Substitute that time into the vertical equation to obtain the parabolic trajectory.
 
 ## Real world
 
-### Sport
-Basketball arcs, long jumps and golf drives are all launch-angle problems.
+### A thrown object
 
-### Fountains and hoses
-Each water droplet is a projectile; the stream draws the parabola for you.
+A dense object moving over a short distance may be approximately described by this model when air resistance is small. Use the actual launch and landing heights when comparing with a measurement.
 
-### Spaceflight
-Throw fast enough and the ground curves away as quickly as you fall — an orbit is a projectile that keeps missing.
+### A stream of water
+
+Droplets leaving a nozzle can trace an approximate projectile path. Air resistance, breakup of the stream and interactions between droplets limit the approximation.

@@ -30,9 +30,9 @@ variables:
 - V
 - s
 derivation:
-- \text{a cube of side } s \text{ has 6 identical square faces, each of area } s^2 \text{, so } A = 6s^2
-- \text{stacking a base layer of } s\times s\times 1 \text{ unit cubes } s \text{ layers high gives } V = s\cdot s\cdot s = s^3
-- \text{dividing the two gives the ratio } \dfrac{A}{V} = \dfrac{6s^2}{s^3} = \dfrac{6}{s} \text{, which shrinks as } s \text{ grows}
+  - '\text{six square faces of area }s^2\text{ give }A=6s^2'
+  - 'V=\text{base area}\times\text{height}=s^2\cdot s=s^3'
+  - '\frac{A}{V}=\frac{6s^2}{s^3}=\frac6s\quad(s>0)'
 charts: []
 primary: s
 presets:

@@ -1,74 +1,67 @@
 ---
 title: Transformations and symmetry
-summary: >-
-  Slide a tile, spin it, or flip it in a mirror — three different moves that
-  each leave every length and angle exactly as they were, which is why
-  wallpaper and floor patterns can repeat forever without a single seam.
+summary: 'Compare translation, rotation and reflection, then identify when a transformation leaves a shape unchanged.'
 parameters:
-  angle: θ — rotation angle
-  tx: t_x — sideways shift
-  ty: t_y — up/down shift
-  flip: reflect (0 off, 1 on)
+  angle: 'θ — rotation angle; positive is clockwise in this display'
+  tx: 't_x — horizontal shift; positive moves right'
+  ty: 't_y — vertical shift; positive moves down'
+  flip: 'reflect — off (0) or on (1), applied before rotation'
 variables:
-  - the x-coordinate of a point on the original tile
-  - the y-coordinate of a point on the original tile
-  - that point's x-coordinate after the move
-  - that point's y-coordinate after the move
-  - the angle turned through, measured around the pivot O
-  - how far the tile slides sideways
-  - how far the tile slides up or down
+  - 'x: original horizontal coordinate relative to O'
+  - 'y: original vertical coordinate, positive downward'
+  - 'x′: transformed horizontal coordinate'
+  - 'y′: transformed vertical coordinate'
+  - 'θ: angle of rotation about O before translation'
+  - 't_x: horizontal translation'
+  - 't_y: vertical translation'
 ---
 
 ## Try it
 
-1. Drag «t_x — sideways shift» and «t_y — up/down shift». The solid L-shaped tile slides away from the dashed original, but keeps exactly the same size and orientation — that's a translation.
-2. Drag «θ — rotation angle» instead, back to zero shift first. The solid tile swings around the black dot O like a hand on a clock — that's a rotation.
-3. Turn «reflect» on. The solid tile suddenly becomes the mirror image of the dashed one, flipped across the red dashed line through O — no amount of sliding or spinning alone could have produced that shape; only a reflection can.
+1. Set angle = 0, flip = 0 and ty = 0. Change tx from 0 to 2. Every point shifts two units horizontally.
+2. Reset tx = ty = 0 and keep flip = 0. Set angle = 90. The tile rotates about O; in this screen coordinate convention, positive rotation appears clockwise.
+3. Reset angle = 0 and set flip = 1 with both shifts zero. The result is a reflection across the vertical dashed line through O. Compare corresponding corners, not just the outline.
 
 ## Real-life examples
 
-1. **Sliding a tile across a floor.** Shift a paving tile 2 units sideways with no turn and no flip: every point of the tile moves by exactly the same amount, a pure translation.
-2. **Turning a steering wheel.** Spin the tile 90° about the centre point with no sideways shift: every point sweeps the same angle around O, a pure rotation.
-3. **Checking a mirror image.** Hold the tile up to a mirror with no slide and no spin: the reflection looks the same size but the L now curls the other way — you cannot rotate the original to match it.
+1. **A shifted copy.** With angle = 0, tx = 2, ty = 0 and flip = 0, the tile translates two units to the right without turning.
+2. **A quarter turn.** With angle = 90, zero shifts and flip = 0, every point rotates a quarter turn about O. Points farther from O travel farther, despite sharing the same angle.
+3. **A mirror copy.** With angle = 0, zero shifts and flip = 1, each point is reflected to the opposite side of the vertical axis at the same perpendicular distance.
 
 ## Test yourself
 
-1. Rotate the tile by exactly 180° about O.
-2. Turn reflection on with no rotation, so the tile is a plain mirror image of the original.
-3. Rotate close to 180° while keeping both shift sliders at zero, so the tile spins in place around O.
+1. Set angle = 180. Other settings are unrestricted by this check.
+2. Set flip = 1 and angle = 0. Set both shifts to zero as well to view a pure reflection.
+3. Set tx = ty = 0 and angle greater than 170°. The check accepts any angle above 170°, not only a half turn; keep flip = 0 to inspect rotation alone.
 
 ## Intuition
 
-Watch the dashed original tile and the solid coloured one together. However you drag the sliders, the solid tile is always exactly the same size and shape as the dashed one — same side lengths, same angles at every corner. Only its position, its direction of facing, or which way it curls can change; nothing about the tile itself is stretched or squashed.
+Translation moves every point by the same displacement. Rotation turns every point through the same angle about a centre. Reflection places points across a mirror line at equal perpendicular distances. All three preserve distances and angles, so the transformed tile is congruent to the original.
 
-A slide (translation) moves every point the same distance in the same direction, so the shape doesn't turn at all. A spin (rotation) instead keeps one point, the pivot O, fixed and swings every other point around it by the same angle, like the tile were pinned at O. A flip (reflection) is different from both: it turns the tile into its mirror image, so an L that curled to the right now curls to the left — no combination of sliding and spinning can ever undo that, only another flip can.
+A symmetry is a transformation that maps the whole shape onto itself, not merely onto a congruent copy elsewhere. For example, reflecting a square across a diagonal leaves the square unchanged as a set. A symmetric outline may also hide the difference between different point mappings; track particular corners when comparing a reflection with a rotation.
 
 ## Formal
 
-A rotation by $\theta$ about the origin followed by a translation sends the point $(x, y)$ to $(x', y')$ where $x' = x\cos\theta - y\sin\theta + t_x$ and $y' = x\sin\theta + y\cos\theta + t_y$.
+With reflection off, rotating by θ about the origin and then translating sends $(x,y)$ to $(x',y')$, where $x'=x\cos\theta-y\sin\theta+t_x$ and $y'=x\sin\theta+y\cos\theta+t_y$. These formulas preserve distances between points.
 
-A reflection across the vertical axis through the origin instead sends $(x, y)$ to $(-x, y)$; combining that with a rotation and translation gives every rigid motion of the plane, direct or mirrored.
+Reflection in the vertical axis sends $(x,y)$ to $(-x,y)$. Here that reflection, when enabled, happens before rotation and translation. The display takes positive y downward, so positive ty moves down and positive θ appears clockwise. With the usual upward y-axis, the same rotation formulas describe a counterclockwise turn.
 
 ## Advanced
 
-These are exactly the isometries of the plane: maps that preserve distance between every pair of points. Every isometry is one of only four kinds — translation, rotation, reflection, or glide reflection (a reflection combined with a translation along the mirror line) — and any pattern that repeats under some of these, like wallpaper or a frieze border, belongs to one of a small, fully classified list of symmetry groups.
+The order of transformations matters. Rotating a point and then shifting it generally differs from shifting it first and rotating about the original centre. Translations and rotations preserve the orientation of labelled noncollinear points; reflections reverse it. That statement concerns point correspondence, even when a symmetric shape's outline can be matched by more than one motion.
 
 ## Derivation
 
-1. Translating moves every point of the tile by the same vector, $(t_x, t_y)$, so the shape's size and orientation don't change, only its position.
-2. Rotating by $\theta$ about the origin turns $(x, y)$ into $(x\cos\theta - y\sin\theta,\, x\sin\theta + y\cos\theta)$ — the standard rotation formula, which keeps the origin itself fixed.
-3. Doing the rotation first and then adding the translation combines the two into one rule: $x' = x\cos\theta - y\sin\theta + t_x$ and $y' = x\sin\theta + y\cos\theta + t_y$.
+1. A translation adds the same two components to every point. Subtracting two translated coordinates cancels those added components, preserving their displacement.
+2. A rotation combines the original coordinates using sine and cosine. The identity sin² θ + cos² θ = 1 ensures that squared distances are preserved.
+3. Applying rotation first and translation second gives the displayed formula. If reflection is enabled, negate the original x-coordinate before those two steps.
 
 ## Real world
 
-### Wallpaper and fabric
-A repeating pattern is built from one motif copied by translations, rotations and reflections; mathematicians have proved there are exactly 17 fundamentally different ways to tile a flat wallpaper this way.
+### Arranging a pattern
 
-### Robotics and animation
-A robot arm or an animated character is moved and turned using exactly these rigid motions, applied one joint at a time, so each rigid part keeps its shape while the whole figure reconfigures.
+Repeated translations place copies of a motif at regular intervals. Reflections or rotations can change the arrangement while preserving each copy's size. These motions alone do not guarantee a gap-free tiling.
 
-### Manufacturing and quality control
-Checking that a stamped or 3D-printed part matches its design often means testing whether one shape can be translated, rotated or reflected onto the other with no stretching — a plain congruence check.
+### Moving rigid parts
 
-### Molecules and crystals
-A molecule's or crystal's symmetry — which rotations and reflections leave it looking unchanged — determines many of its physical and chemical properties, from how it bends light to how it reacts.
+A rigid part in a flat mechanical drawing can be repositioned using translation and rotation while retaining its dimensions. A reflected design may require a different physical part, depending on its shape and markings.

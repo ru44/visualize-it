@@ -1,68 +1,62 @@
 ---
 title: Buoyancy and Archimedes' principle
-summary: >-
-  This is why a steel ship floats but a steel coin sinks, and why you float
-  more easily in salty seawater than in a swimming pool.
+summary: 'Compare an object’s weight with the weight of fluid it displaces to predict floating, sinking or neutral buoyancy.'
 parameters:
-  rhoObj: object density ρ_obj
-  rhoFluid: fluid density ρ_fluid
-  V: object volume V
+  rhoObj: 'average object density'
+  rhoFluid: 'fluid density'
+  V: 'total object volume'
 variables:
-  - buoyant force
-  - submerged volume and total object volume
-  - object density and fluid density
+  - 'upward force equal to the displaced fluid’s weight'
+  - 'immersed volume and total object volume'
+  - 'average object density and surrounding fluid density'
 ---
 
 ## Try it
 
-1. Watch the block sitting in the tank of fluid.
-2. Drag "object density ρ_obj" up. Watch the block sink lower until it drops to the floor.
-3. Now raise "fluid density ρ_fluid" instead. The same block floats higher.
+1. Set object density to 600 kg/m³, fluid density to 1000 kg/m³ and volume to 10 L. The object floats with 60% submerged; weight and buoyancy are both about 58.9 N.
+2. Keep the fluid and volume fixed and raise object density to 1200 kg/m³. Fully submerged buoyancy is only 98.1 N, less than the weight 117.7 N, so the object sinks to the illustrated floor.
+3. Restore object density to 600 kg/m³ and raise fluid density to 1200 kg/m³. Half the volume is now submerged. Dragging vertically changes object density; it does not apply a separate pushing force.
 
 ## Real-life examples
 
-1. **An ice cube in a glass of water.** Ice (920 kg/m³) is only slightly less dense than water (1000 kg/m³), so it floats with most of its 20 L volume submerged.
-2. **A cork bobbing in water.** Cork (240 kg/m³) is far less dense than water, so a 5 L cork rides mostly above the surface.
-3. **A rock dropped in a pond.** At 2500 kg/m³, denser than the 1000 kg/m³ water, a 10 L rock sinks straight to the bottom.
+1. **An ice-like block.** A 20 L block of average density 920 kg/m³ in fluid of density 1000 kg/m³ floats with 92%, or 18.4 L, submerged. Its weight and buoyancy are about 180.5 N.
+2. **A cork-like block.** At object density 240 kg/m³, fluid density 1000 kg/m³ and volume 5 L, 24%, or 1.2 L, is submerged. Both forces are about 11.8 N.
+3. **A dense block.** At 2500 kg/m³ with volume 10 L in fluid of density 1000 kg/m³, weight is about 245.3 N and fully submerged buoyancy 98.1 N. It cannot float freely at the surface under this model.
 
 ## Test yourself
 
-1. Make the object float with exactly half its volume submerged.
-2. Make the object dense enough to sink completely to the bottom.
-3. Find a fluid density and volume that give a buoyant force of 150 N when the object is fully submerged.
+1. Make the object float with half its volume submerged.
+2. Make object density greater than fluid density so the object sinks.
+3. Choose fluid density and total object volume giving a fully submerged buoyancy near 150 N. This checks the maximum displaced volume, even if the current object floats only partly submerged.
 
 ## Intuition
 
-Picture a 20-litre block of ice, density 920 kg/m³, floating in a tank of water, density 1000 kg/m³. Drag the block up or down and watch the density readout change: pull it toward the bottom and "object density" rises, and once it passes the fluid's density the block sinks all the way to the floor instead of settling partway down.
+Fluid pressure is greater at greater depth. For an immersed object, the resulting pressure forces have an upward net effect: buoyancy. Its magnitude equals the weight of the fluid displaced by the immersed part. The object's own weight depends on its total mass, not just the part below the surface.
 
-Watch the two arrows on the block: the downward one is its weight, fixed by its own density and volume, and the upward one is the buoyant force, which grows only as more of the block is pushed under the surface. It always settles exactly where those two arrows balance. Now raise "fluid density ρ_fluid" toward something as thick as syrup: the same floating block rides noticeably higher, because less of it needs to go underwater to push aside an equal weight of the heavier fluid.
+A freely floating object settles at a submerged volume for which buoyancy equals its weight. A denser object may need more displacement than its entire volume can provide, so it sinks. At the illustrated floor, a support force must balance the remaining weight; the displayed weight and buoyancy arrows are not the full force diagram there. The model assumes fluid access beneath the object when calculating submerged buoyancy.
 
 ## Formal
 
-Archimedes' principle: the buoyant force on a submerged or floating object equals the weight of the fluid it displaces, $F_b = \rho_{fluid} V_{sub}\,g$.
+In a uniform fluid at rest, buoyancy is $F_b=\rho_fV_{\mathrm{sub}}g$. For an object of average density ρₒ and total volume V, its weight is $W=\rho_oVg$. Use cubic metres in these formulas; $1\ \mathrm{L}=0.001\ \mathrm{m^3}$.
 
-For a floating object at equilibrium, buoyancy exactly balances weight, which pins down the submerged fraction: $V_{sub}/V = \rho_{obj}/\rho_{fluid}$, independent of the object's shape.
+For free floating equilibrium with no other vertical forces, $V_{\mathrm{sub}}/V=\rho_o/\rho_f$. If $\rho_o<\rho_f$, the object can float partly submerged. If $\rho_o=\rho_f$, it is neutrally buoyant when fully immersed and need not sit at one particular depth. If $\rho_o>\rho_f$, buoyancy alone cannot support it.
 
 ## Advanced
 
-Because only the *average* density of the object matters, a steel ship floats even though steel itself is roughly eight times denser than water — the hull encloses enough air that the ship's average density, hull plus cargo plus air, stays below the water's. Submarines exploit the same principle in reverse, flooding or emptying ballast tanks to fine-tune their average density above, below, or exactly at the water's.
+The density ratio determines the submerged volume fraction, not necessarily the submerged height fraction for an irregular shape. It also does not determine rotational stability. A sealed hollow object can float because its average density includes the enclosed space; admitting fluid can change that average. The 3D tank's volume and water-level changes are visually scaled, so the numerical force and fraction readouts are the quantitative reference.
 
 ## Derivation
 
-1. Archimedes' principle states the buoyant force directly: the weight of the fluid displaced by the submerged volume.
-2. The object's own weight depends on its own density and its full volume, not just the submerged part.
-3. Setting those two forces equal at equilibrium and solving gives the submerged fraction as the simple ratio of the two densities.
+1. Use Archimedes' principle: the upward buoyancy equals the weight of displaced fluid.
+2. Calculate the object's weight from its average density and total volume.
+3. For a freely floating object, set buoyancy equal to weight and solve for the submerged volume fraction. This balance is possible only when that fraction is at most one.
 
 ## Real world
 
-### Ships and boat hulls
-A steel hull shaped to enclose a large volume of air has a low enough average density to float, even though solid steel would sink instantly.
+### Hollow floating objects
 
-### The Dead Sea
-Its water is so salty that $\rho_{fluid}$ is far above ordinary seawater, so swimmers float with much more of their body above the surface than usual.
+An object made from a dense material can float if its watertight outer volume is large enough relative to its total mass. Material density alone is not the object's average density.
 
-### Hot-air balloons
-Heating the air inside the balloon lowers its density below that of the surrounding cooler air, so the balloon and its basket are buoyed upward.
+### Comparing fluids
 
-### Icebergs
-Ice is only slightly less dense than seawater, so roughly ten percent of an iceberg's volume sits above the surface and the rest hides below.
+At the same object mass, a denser fluid requires less displaced volume to support the object. This changes how much of a floating object lies below the surface.

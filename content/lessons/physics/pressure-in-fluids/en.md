@@ -1,68 +1,62 @@
 ---
 title: Pressure in fluids
-summary: >-
-  This is why your ears hurt when you dive to the bottom of a pool, and why
-  dams are built much thicker at the base than at the top.
+summary: 'Calculate how pressure increases with depth in a stationary fluid, keeping surface pressure separate from the added pressure.'
 parameters:
-  rho: fluid density ρ
-  x: depth x
+  rho: 'ρ — constant fluid density'
+  x: 'x — depth below the surface'
 variables:
-  - depth below the surface
-  - pressure at that depth
-  - pressure at the surface (atmospheric, at $x = 0$)
-  - fluid density
+  - 'vertical depth below the fluid surface'
+  - 'total absolute pressure at that depth'
+  - 'surface pressure, fixed at 101325 Pa'
+  - 'constant fluid density in kg/m³'
 ---
 
 ## Try it
 
-1. Watch the curve start at the surface, x = 0.
-2. Drag the slider "depth x" deeper. Watch the pressure climb in a straight line.
-3. Now raise "fluid density ρ" toward something denser, like seawater. The line's slope gets steeper.
+1. Set density to 1000 kg/m³ and depth to 0 m. The graph reads 101.325 kPa, the surface pressure used in this model, rather than zero.
+2. Increase depth to 10 m. The fluid adds 98.1 kPa, giving total pressure 199.425 kPa.
+3. Keep depth at 10 m and increase density to 1200 kg/m³. The added pressure becomes 117.72 kPa and total pressure 219.045 kPa. Density changes the slope of the line, not its surface intercept.
 
 ## Real-life examples
 
-1. **Swimming pool, 3 m deep.** In fresh water (1000 kg/m³), the pressure at the bottom of a 3 m pool is already noticeably higher than at the surface.
-2. **Scuba diving in the sea at 10 m.** Seawater is slightly denser (1020 kg/m³) than fresh water, and at 10 m depth the pressure has risen by about one atmosphere.
-3. **Floating in the Dead Sea at 5 m.** The Dead Sea's water is far saltier and denser (1240 kg/m³), so pressure builds up faster with depth than in ordinary seawater.
+1. **A water-like fluid at 3 m.** At density 1000 kg/m³, the increase is 29.43 kPa and total pressure is 130.755 kPa.
+2. **A slightly denser fluid at 10 m.** At 1020 kg/m³, the increase is 100.062 kPa and total pressure is 201.387 kPa.
+3. **A denser fluid at 5 m.** At 1240 kg/m³, the increase is 60.822 kPa and total pressure is 162.147 kPa. These chosen densities illustrate the model; fluid composition and temperature affect actual values.
 
 ## Test yourself
 
-1. Make the total pressure reach 200,000 Pa (about twice atmospheric pressure).
-2. Find a depth and density where the pressure increase from the surface alone equals 50,000 Pa.
-3. Keeping the fluid as fresh water (ρ=1000 kg/m³), find the depth where the pressure reaches 150,000 Pa.
+1. Make total pressure approximately 200000 Pa, shown as 200 kPa on the graph.
+2. Make the pressure increase above the surface value approximately 50000 Pa, or 50 kPa.
+3. Keep density at 1000 kg/m³ and make total pressure within 3000 Pa of 150000 Pa.
 
 ## Intuition
 
-Picture diving to 3 metres in a swimming pool, fresh water with density 1000 kg/m³. Drag the slider "depth x" deeper and watch the curve climb in a dead straight line: no curving, no flattening, because each extra metre of water above you adds exactly the same weight on top of everything below it. At depth zero the curve starts at ordinary atmospheric pressure, not zero, because the air above the surface is already pressing down.
+Imagine a small stationary column of fluid. Pressure at its bottom must be greater than at its top to support the fluid's weight. Adding another metre of the same-density fluid adds the same weight per unit area, so pressure increases linearly with depth when density and gravity are constant.
 
-Now raise "fluid density ρ" from fresh water toward something denser, like seawater at 1020 kg/m³ or the salty Dead Sea at 1240 kg/m³, and watch the line's slope get steeper: the same depth now carries far more weight per square metre, so the pressure at any given depth jumps up.
+The surface is already under pressure. Here that pressure is fixed at 101325 Pa, and the liquid adds more as depth increases. The total is called absolute pressure; the increase relative to the surface is the pressure difference ρgx. Pressure acts in every direction at a point in a fluid at rest, so the side walls also experience pressure. It is not a force that acts only downward.
 
 ## Formal
 
-Hydrostatic pressure grows linearly with depth: $P = P_0 + \rho g x$, where $P_0$ is the pressure at the surface and $x$ is measured straight down from it.
+For a stationary fluid of constant density ρ and constant gravitational acceleration g, $P=P_0+\rho gx$. Here x is vertical depth below the surface and P₀ is surface pressure. This model uses $P_0=101325\ \mathrm{Pa}$ and $g=9.81\ \mathrm{m/s^2}$.
 
-The slope of that line is $\rho g$ — pressure per metre of depth — so doubling the fluid's density doubles how fast pressure builds with depth.
+The difference from surface pressure is $\Delta P=\rho gx$, while the slope is $dP/dx=\rho g$. One pascal is one newton per square metre; $1\ \mathrm{kPa}=1000\ \mathrm{Pa}$. The 2D graph and 3D probe display total pressure in kPa, whereas the challenges calculate in Pa.
 
 ## Advanced
 
-This formula assumes an incompressible fluid of uniform density, which is an excellent approximation for water or mercury over ordinary depths but breaks down for a gas like air, whose density itself falls with altitude — the true atmospheric pressure profile is exponential, not linear, because $\rho$ in the formula is no longer constant.
+If density or gravity varies significantly with depth, integrate dP/dx = ρ(x)g(x) instead of using one constant product. An exponential atmospheric profile follows under additional assumptions such as an isothermal ideal gas and constant gravity; it is not the general profile of every atmosphere. The display uses a fixed surface pressure and does not model flowing-fluid effects.
 
 ## Derivation
 
-1. A thin horizontal slab of fluid, thickness $dx$, adds its own weight per unit area, $\rho g\,dx$, to the pressure pushing down on everything beneath it.
-2. Adding up all those slabs from the surface down to depth $x$ gives the total extra pressure, $\rho g x$, on top of the surface pressure.
-3. Adding that to the surface pressure gives the pressure at any depth, $P = P_0 + \rho g x$.
+1. Balance forces on a thin horizontal fluid slab. The pressure increase across thickness dx must support its weight per area, ρg dx.
+2. Integrate from the surface to depth x with constant density and gravity.
+3. Add the resulting increase to the given surface pressure to obtain total pressure.
 
 ## Real world
 
-### Ears hurting when diving
-Water is roughly 800 times denser than air, so descending just a few metres in a pool already adds a noticeable fraction of an atmosphere, enough to feel in your eardrums.
+### Connected containers
 
-### Dams built thicker at the base
-Engineers make a dam far thicker near the bottom because the water pressure there, and the force it exerts on the wall, is much greater than near the surface.
+The same stationary fluid connected beneath the surface has equal pressure at equal depths when the surface conditions agree, even if the containers have different shapes.
 
-### The 10-metre rule for divers
-Water pressure rises by about one atmosphere for roughly every 10 metres of depth, a rule of thumb divers use to plan how their tanks and buoyancy will behave.
+### Forces on walls
 
-### Submarine hulls
-Submarine hulls are built to withstand steadily rising hydrostatic pressure as they dive, with a strict depth limit set by how much pressure the hull can take before failing.
+Pressure increases toward the bottom of a liquid-filled tank. To find the total force on a wall, integrate pressure over its area and account for pressure on the other side.

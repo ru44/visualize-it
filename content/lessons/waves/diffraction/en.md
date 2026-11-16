@@ -1,68 +1,61 @@
 ---
 title: Diffraction
-summary: >-
-  A wave passing through a gap spreads out on the far side, and how much it
-  spreads depends on the gap's size compared with the wavelength — which is
-  why you can hear someone around a corner but never see them.
+summary: 'Compare wavelength with slit width to understand spreading, and locate the first minimum when the single-slit formula permits one.'
 parameters:
-  a: gap width a
-  lambda: wavelength λ
+  a: 'a — gap width'
+  lambda: 'λ — wavelength'
 variables:
-  - the wavelength
-  - the gap's width
-  - the spreading half-angle
+  - 'distance between successive wavefronts'
+  - 'width of the opening'
+  - 'first-minimum angle when λ ≤ a'
 ---
 
 ## Try it
 
-1. Watch the wavefronts arrive at the gap and spread out into an arc on the far side.
-2. Shrink the gap slider a toward the wavelength slider λ. The spreading angle grows until the wave fans out almost everywhere behind the gap.
-3. Now widen a far past λ. The spreading angle shrinks to almost nothing, and the wave passes through as a narrow beam instead.
+1. Set gap width a = 1 m and wavelength λ = 0.7 m. The estimated first-minimum angle is about 44.4° from straight ahead.
+2. Widen a to 4 m while keeping λ fixed. The angle falls to about 10.1°. A wider opening gives a narrower central diffraction peak.
+3. Set a = 0.3 m and λ = 0.7 m. The wavelength now exceeds the gap width. The diagram shows broad spreading, but there is no first minimum at a real forward angle in this formula.
 
 ## Real-life examples
 
-1. **A voice through a doorway.** A typical speaking voice's wavelength is close to the width of an open doorway (a = 1 m, λ = 0.7 m), so it spreads out widely into the next room — which is why you can hear someone from around a corner.
-2. **Light through the same doorway.** On the same scaled picture, a wavelength far smaller than the gap (a = 4 m, λ = 0.1 m) barely spreads at all — real light's wavelength is about half a millionth of a metre, millions of times smaller than any doorway, so you never see around a corner the way you hear around one.
-3. **A narrow gap close to the wavelength.** When the gap and the wavelength are nearly equal (a = 0.3 m, λ = 0.3 m), the wave spreads out in almost every direction on the far side.
+1. **A wavelength comparable to a doorway.** With a = 1 m and λ = 0.7 m, the ratio is 0.7 and the first-minimum estimate is 44.4°. This illustrates broad spreading; a voice contains many wavelengths.
+2. **A small wavelength-to-gap ratio.** With a = 4 m and λ = 0.1 m, the ratio is 0.025 and the angle is about 1.43°. A 0.1 m wavelength is not visible light; the preset illustrates the ratio only.
+3. **Equal width and wavelength.** With a = λ = 0.3 m, the limiting first minimum is at 90°. There is no first minimum strictly inside the forward half-plane.
 
 ## Test yourself
 
-1. Make the gap exactly equal to the wavelength.
-2. Make the wavelength-to-gap ratio smaller than 0.05, so the wave barely spreads at all.
-3. Set a spreading half-angle of about 30°.
+1. Make gap width equal to wavelength.
+2. Make λ/a close to 0.05, within 0.02.
+3. Choose a and λ for a first-minimum angle of approximately 30°.
 
 ## Intuition
 
-Stand around the corner from a friend talking in the next room: you cannot see them, but you can hear them perfectly well. Both light and sound are waves passing through the same doorway, yet they behave completely differently once through it — and the reason is the size of the gap compared with the wave's own wavelength.
+A wave passing through an opening does not always keep travelling as a sharply bounded strip. Contributions from different parts of the opening overlap beyond it. They reinforce in some directions and cancel in others. This spreading and interference form a diffraction pattern.
 
-When a wave's wavelength is close to the size of the gap it squeezes through, it bends and spreads out widely on the far side, filling the space behind the gap almost like a fan. When the wavelength is far smaller than the gap, the wave barely bends at all and carries on mostly in a straight beam. Sound wavelengths (roughly half a metre to a few metres) are close to the size of an ordinary doorway, so sound spreads widely through it; light's wavelength is roughly half a millionth of a metre, far smaller than any doorway, so it barely spreads and casts a sharp shadow instead.
+The important comparison is wavelength divided by opening width. A small ratio gives a narrow central peak; a larger ratio gives broader spreading. The shaded wedge is a guide to the central region, not a boundary beyond which the wave vanishes. The outgoing arcs are schematic. Light diffracts too, but its wavelength is much smaller than an ordinary doorway, so diffraction there is much less obvious than for many sound wavelengths.
 
 ## Formal
 
-For a wave of wavelength $\lambda$ passing through a gap of width $a$, the first point where the spreading pattern drops to (near) zero sits at an angle $\theta$ from straight ahead given by $\sin\theta = \lambda/a$; most of the wave's energy spreads within roughly this half-angle of the straight-through direction.
+For a uniformly illuminated single slit in the far-field approximation, the first intensity minima satisfy $a\sin\theta=\lambda$. For $0<\lambda/a\le1$, the positive limiting angle is $\theta=\arcsin(\lambda/a)$. The central peak lies between the corresponding negative and positive angles.
 
-When $a \gg \lambda$, this angle shrinks toward zero and the wave passes through almost undeviated, casting a sharp-edged shadow; when $a$ is comparable to $\lambda$, the angle grows toward 90°, and the wave spreads through nearly the whole space on the far side of the gap.
+For small ratios, $\theta\approx\lambda/a$ in radians. At $\lambda=a$, the formula places the first minimum at $90^\circ$. For $\lambda>a$, it has no real first-minimum angle. The broad 90° drawing in that case is a display limit, not a calculated zero of intensity.
 
 ## Advanced
 
-This single-slit estimate comes from treating every point across the gap as a source of its own outward ripple (Huygens' principle) and adding them up on a distant screen; where those ripples arrive out of step they cancel, and the first such cancellation happens at $\sin\theta=\lambda/a$. The 3D scene sums these ripples directly and shows the full interference pattern this angle only approximates.
+For this ideal slit, $I(\theta)/I(0)=(\sin u/u)^2$, where $u=\pi a\sin\theta/\lambda$ and the value at u = 0 is defined by its limit. Secondary peaks exist outside the central peak. The 3D scene sums nine discrete sources on a coarse mesh, illustrating superposition rather than accurately solving a continuous slit at every setting. At short wavelengths it can show sampling artifacts.
 
 ## Derivation
 
-1. Treating every point across the gap as its own wave source and adding their contributions gives a first cancellation angle of $\theta = \arcsin(\lambda/a)$.
-2. When the gap is much wider than the wavelength, this angle shrinks toward zero, so the wave passes through nearly straight.
-3. When the gap is close to the wavelength in size, the angle grows toward a right angle, so the wave spreads through nearly the whole space beyond the gap.
+1. In the far field, contributions from paired parts of the slit cancel at the first minimum when their phase difference is half a cycle; the full-slit path difference is one wavelength.
+2. When gap width is much larger than wavelength, the first-minimum angle is small.
+3. As the ratio approaches one from below, the limiting angle approaches 90°. Beyond one, the first-minimum formula no longer has a real solution.
 
 ## Real world
 
-### Hearing around corners
-Sound's long wavelengths diffract strongly through doorways and around obstacles, letting you hear people and traffic you cannot see.
+### Sound around obstacles
 
-### Radio reception in valleys
-Long-wavelength radio signals diffract around hills and buildings that would completely block a shorter-wavelength signal, which is part of why AM radio reaches into places FM cannot.
+Diffraction helps sound reach regions outside a direct line of sight. Reflections and other propagation paths can also contribute.
 
-### Diffraction gratings
-Spreading light through a series of very narrow, closely spaced slits produces sharp diffraction patterns that spectrometers use to split light into its component wavelengths.
+### Optical resolution
 
-### Camera lens diffraction limits
-Closing a camera's aperture down too far makes it act like a narrow gap for light, diffracting the image and softening fine detail no amount of focusing can recover.
+A finite aperture produces diffraction that limits image detail. A circular lens aperture has a different pattern from the single slit modelled here.

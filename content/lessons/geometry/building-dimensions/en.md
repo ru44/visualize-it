@@ -1,70 +1,65 @@
 ---
 title: Building a new dimension by dragging
-summary: Drag a point to make a line, a line to make a square, a square to make a cube. Count how the corners double each time.
+summary: 'Build a segment, square and cube by extending a shape in a new perpendicular direction, and count the new vertices and edges.'
 parameters:
-  n: n — how many dimensions the shape has
-  sweep: sweep — how far the shape has been dragged in its newest direction (100 % means finished)
-  spin: spin — turns the shape so you can look at it from another side
+  n: 'n — dimension of the completed shape, from point (0) to cube (3)'
+  sweep: 'sweep — newest extension: 0% collapsed, 100% complete'
+  spin: 'spin — changes the projected view; also controlled by horizontal dragging'
 variables:
-  - the number of corners of the shape with n dimensions
-  - the number of edges of the shape with n dimensions
-  - the number of dimensions
+  - 'V_n: vertex count of the completed n-cube'
+  - 'E_n: edge count of the completed n-cube'
+  - 'n: number of independent dimensions'
 ---
 
 ## Try it
 
-1. Set n to 0, then 1, 2 and 3. Each time, read the corners and the edges under the picture. Which number doubles every time?
-2. Set n to 2 and move sweep from 0 to 100. Watch the line slide sideways and leave a square behind it. The blue lines are the new edges made by the drag.
-3. Set n to 3 and drag the picture left and right. Look at the small table at the right: the row for 2D shows the square you started from, and the row for 3D shows the cube.
+1. Keep sweep = 100 and set n to 0, 1, 2 and 3. Read vertex counts 1, 2, 4 and 8, and edge counts 0, 1, 4 and 12.
+2. Set n = 2 and move sweep from 0 to 100. A second copy of the segment moves away until the outline becomes a square. Halfway through, it is a rectangle.
+3. Set n = 3 and compare sweep = 50 with 100. The half-swept shape is a box with a shorter newest dimension; the completed shape is a cube. Drag horizontally to change its projected view.
 
 ## Real-life examples
 
-- **A pencil drag.** Press the tip on paper: a point. Drag it 10 cm and you have a line with 2 ends. n = 1 shows it.
-- **A carpet being rolled out.** Its front edge is a line. As you roll it half-way across the floor you have half a rectangle, and the carpet is finished only when the edge has moved all the way (n = 2, sweep = 50).
-- **A die.** It is a cube: 8 corners, 12 edges and 6 faces. You can make one by dragging a square upward by its own side length.
+1. **Tracing a segment.** At n = 1 and sweep = 100, moving an ideal point a fixed distance traces a segment with two endpoints.
+2. **Unrolling a rectangular sheet.** At n = 2 and sweep = 50, the moving edge has covered half the intended distance. The region has four corners but is not yet the completed square.
+3. **Extruding a square.** At n = 3 and sweep = 100, extending a square perpendicularly by its own side length forms a cube with eight vertices and twelve edges.
 
 ## Test yourself
 
-1. Guess first: how many corners will a cube have? Then set the sliders to a complete cube and check your guess.
-2. Before you touch n, guess which dimension gives a shape with exactly 4 corners. Then make the picture show it, finished.
-3. Make the cube, but stop its last drag exactly half-way (sweep near 50). What do you see at that moment?
+1. Predict the cube's vertex count, then set n = 3 and sweep = 100 to check it.
+2. Choose n and sweep to show a completed square with four vertices.
+3. Set n = 3 and sweep close to 50 to stop halfway through the newest extension.
 
 ## Intuition
 
-Put the tip of a pencil on a sheet of paper. It makes a point. You cannot move inside a point, so it has 0 dimensions, and it has one corner: itself. In the picture, set n to 0.
+Begin with one ideal point. Move it in one direction and keep all positions along the way: they form a line segment. Move that entire segment perpendicularly to itself and keep the swept region: it forms a rectangle, or a square when the new length equals the original length.
 
-Now drag the pencil 10 cm to the right. The point leaves a line behind it, 10 cm long. On a line you can only go forward or back, so a line has 1 dimension. It has 2 ends. Set n to 1 to see it.
+Next move the square perpendicular to its plane. Sweeping it through a distance equal to its side length forms a cube. The new direction must be independent of the old ones; sliding a square within its own plane does not create a solid.
 
-Drag the whole line 10 cm sideways. It leaves a square, 10 cm by 10 cm. On a square you can go forward and back, and left and right, so it has 2 dimensions. It has 4 corners and 4 sides. Set n to 2, and move the sweep slider from 0 to 100 to watch the line being dragged.
-
-Drag the whole square 10 cm upward and you get a cube: 8 corners, 12 edges and 6 faces. That is 3 dimensions. Set n to 3. Your screen is flat, so what you see is the cube's shadow, the way a cube's shadow on a wall is a flat drawing. Drag the picture left and right to turn it.
-
-Every drag does the same two things. It makes a copy of the whole shape, and it joins each corner to its own copy. So the corners double: 1, 2, 4, 8. The edges are two copies of the old edges plus one new edge for every old corner. For the cube that is 2 × 4 + 4 = 12. The table in the picture shows it with the numbers for n and for the dimension before it.
+To count vertices, keep the original ones and add a matching copy of each. To count edges, keep two copies of the old edges and add one connector for each old vertex. Thus a square produces 2 × 4 + 4 = 12 cube edges. The table reports counts for the completed shape selected by n, even at sweep = 0 when projected copies coincide.
 
 ## Formal
 
-Start from one point, so $V_0 = 1$. Each new dimension copies the shape and joins every corner to its copy, so $V_n = 2\,V_{n-1}$, and therefore $V_n = 2^n$.
+An n-cube is the higher-dimensional extension of a segment, square and cube. Start with $V_0=1$ vertex and $E_0=0$ edges. For each integer n at least 1, the construction gives $V_n=2V_{n-1}$ and hence $V_n=2^n$.
 
-The edges of the new shape are two copies of the old edges, plus one new edge for each old corner: $E_n = 2\,E_{n-1} + V_{n-1}$. For the cube, $E_3 = 2 \cdot 4 + 4 = 12$.
+The edge recurrence is $E_n=2E_{n-1}+V_{n-1}$. For a cube, $E_3=2\cdot4+4=12$. These count the vertices and edges of the complete nondegenerate shape, not distinct marks visible in a possibly overlapping projection.
 
 ## Advanced
 
-The recipe never mentions the number 3. You can repeat the drag as often as you like, and the counts $V_n$ and $E_n$ keep following the same two rules. Solving the second rule gives a closed form, $E_n = n\,2^{n-1}$, which the next lessons use.
+The construction extends mathematically beyond three dimensions by adding another independent coordinate. For n at least 1, its edge count has closed form E_n = n2^(n − 1): each of 2^n vertices meets n edges, and counting endpoints counts every edge twice. The construction establishes a mathematical object without asserting another physical direction in our room.
 
 ## Derivation
 
-1. A point has one corner: $V_0 = 1$.
-2. A drag makes one copy of every corner, so the corners double: $V_n = 2\,V_{n-1}$.
-3. Doubling $n$ times from 1 gives $V_n = 2^n$.
-4. The edges are two copies of the old edges plus one new edge per old corner: $E_n = 2\,E_{n-1} + V_{n-1}$.
+1. A single point supplies one initial vertex.
+2. The next construction has an original and a copy of every vertex, doubling their number.
+3. Repeating that doubling n times gives 2^n vertices.
+4. Two copies of the old edges, plus one connector per old vertex, give the edge recurrence.
 
 ## Real world
 
-### Extruding in 3D programs
-Programs for 3D modelling do this on purpose. You draw a flat shape, then "extrude" it: drag it upward to make a solid box.
+### Extrusion in modelling
 
-### Printing in layers
-A 3D printer draws a line with its nozzle, lines make a layer, and layers stacked on top of each other make the object. Each step adds one dimension.
+A modelling tool can extend a flat square along a perpendicular line to make a box. Equal extension and side lengths give a cube; other positive extension lengths give rectangular boxes.
 
-### Counting corners of boxes
-Anything shaped like a box has 8 corners and 12 edges. A designer building a box model can check it with these two numbers.
+### Counting a box frame
+
+A rectangular box has eight vertices and twelve edges. An edge drawing on paper may overlap some of them, so use the connectivity rather than the number of visibly separate strokes to count.

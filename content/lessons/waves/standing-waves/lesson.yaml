@@ -21,8 +21,8 @@ visualization:
       - 0
       - 6
     range:
-      - -3
-      - 3
+      - -4.2
+      - 4.2
     mode: plain
     animate:
       param: t

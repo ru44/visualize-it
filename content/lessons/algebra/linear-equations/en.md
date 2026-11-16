@@ -1,70 +1,70 @@
 ---
 title: 'Linear equations: where the line crosses zero'
-summary: >-
-  Find the one missing number that makes both sides of an equation balance —
-  the skill behind budgets, taxi fares, and knowing when two costs become equal.
+summary: 'Find the input that makes two amounts equal, and understand why its graph crosses zero.'
 parameters:
-  m: slope m
-  b: intercept b
-  k: target value k
-  x: x (drag until the curve hits zero)
+  m: 'rate m'
+  b: 'fixed amount b'
+  k: 'target amount k'
+  x: 'input x'
 variables:
-  - slope of the line
-  - y-intercept
-  - target value on the right-hand side
-  - the unknown — where the plotted line crosses zero
+  - 'rate of change per input unit'
+  - 'fixed amount before subtracting the target'
+  - 'target on the right side of the equation'
+  - 'unknown input; the graph reaches zero at a solution'
 ---
 
 ## Try it
 
-1. Look at the blue line and the orange point sitting on it. Drag the point left and right along "x".
-2. Watch the number beside it, $f(x)$, shrink as you drag. When it reaches exactly zero, the point sits on the horizontal axis — that is the solution.
-3. Now move the "intercept b" or "target k" slider instead. Notice how the whole line, and its crossing point, slides up or down with it.
+1. Set m to 1.5, b to 2 and k to 8. At x = 0 the plotted output is -6: the left side is 6 below the target.
+2. Set x to 4. The output is zero because 1.5 times 4 plus 2 equals 8.
+3. Keep m and b fixed and raise k to 9. The line moves down by 1. You now need a larger x to reach zero.
 
 ## Real-life examples
 
-1. **Buying notebooks on a budget.** Notebooks cost 1.50 dollars each (slope m = 1.5) and the store adds a 2-dollar delivery fee (intercept b = 2). With an 8-dollar budget (target k = 8), you can buy exactly 4 notebooks.
-2. **Taking a taxi.** The taxi charges 0.50 dollars per kilometre (m = 0.5) plus a 3-dollar flat pickup fee (b = 3). With 6 dollars in your pocket (k = 6), you can ride 6 kilometres.
-3. **Saving up from debt.** You save 2 dollars every week (m = 2) but start 3 dollars in debt (b = −3). Reaching 5 dollars in savings (k = 5) takes 4 weeks.
+1. **Buying notebooks.** At 1.50 per notebook plus a fixed fee of 2, a total of 8 buys 4 notebooks. Set x to 4 to verify the equality.
+2. **An illustrative fare.** At 0.50 per kilometre plus a starting fee of 3, a total of 6 corresponds to 6 kilometres.
+3. **Saving from a negative balance.** Start at -3 and add 2 each week. After 4 weeks, the balance is 5.
 
 ## Test yourself
 
-1. Find slider values for m, b and k so that x = −5 is the exact solution — the point should sit right on the axis there.
-2. Make every value of x solve the equation at once, so the whole line lies flat on the horizontal axis. (Think about what the slope must be.)
-3. Make the equation impossible to solve, so that no value of x ever balances it. (Think about a flat line that never touches zero.)
+1. Set x to -5 and choose m, b and k so the plotted output is approximately zero.
+2. Set m to zero and b equal to k, so every input solves the equation.
+3. Set m to zero and make the difference between b and k greater than 1 in magnitude, so no input solves it.
 
 ## Intuition
 
-Say you want to spend exactly 20 dollars on notebooks. Each one costs 3 dollars, and the store charges a fixed 2-dollar delivery fee no matter how many you order. How many notebooks can you buy? Move the orange point along the blue line and watch the number beside it, $f(x)$, shrink toward zero — that number is how far the two sides of the equation are from balancing. Where the point crosses the horizontal axis, the two sides balance exactly: the answer is 6 notebooks.
+Suppose notebooks cost 1.50 each and delivery costs 2 regardless of quantity. A total budget of 8 leaves 6 for the notebooks. Dividing 6 by 1.50 gives 4 notebooks. We found the unknown by undoing the fixed addition and then the multiplication.
 
-The slider labelled slope m is the price of one notebook: how much the line rises as $x$ grows by one. The slider labelled intercept b is the fixed delivery fee, and target k is the total amount you have to spend. Raise b or k and the whole blue line shifts up or down, sliding the crossing point sideways with it. Raise m instead and the line tilts: a steeper line reaches zero after a much shorter drag, because each extra notebook now costs more.
+The equation records that calculation using x for the number of notebooks. The plotted height is the left side minus the target, not the total cost itself. A negative height means the total is below the target, and a positive height means it is above. At zero, the two amounts are equal.
+
+Changing x tries another input. Changing m, b or k changes the problem. If m is zero, the input no longer affects the result. Then either the fixed amount already equals the target for every input, or no input can fix the mismatch.
 
 ## Formal
 
-For $m \ne 0$, $mx + b = k$ has the unique solution $x = (k - b)/m$.
+For $m\ne0$, the equation $mx+b=k$ has the unique solution $x=(k-b)/m$. Subtract b from both sides, then divide by m.
 
-The graph of $y = mx + b - k$ is a straight line with slope $m$ and $y$-intercept $b - k$; its unique zero is the solution.
+The plotted function is $f(x)=mx+b-k$. Its zeros are the solutions of the equation. At m = 0, there are infinitely many solutions if b equals k and no solutions otherwise.
 
 ## Advanced
 
-When $m = 0$ the "line" is horizontal: if $b = k$ every $x$ satisfies the equation (infinitely many solutions), and if $b \ne k$ no $x$ does. This is the case that distinguishes a genuinely first-degree equation from a degenerate one, and it recurs throughout linear algebra as the difference between a consistent and an inconsistent system.
+An algebraic solution need not be usable in an application. Notebook counts must be nonnegative whole numbers, while a mathematical linear equation allows real solutions. A solution outside the displayed interval can also exist even when the visible line does not cross zero.
 
 ## Derivation
 
-1. Start from the equation as given.
-2. Move everything to one side — this is exactly the plotted curve.
-3. Divide by $m$ (valid whenever $m \ne 0$).
+1. Write the equality between the calculated amount and the target.
+2. Subtract the target from both sides. The left side is now the function shown on the graph.
+3. Rearrange and divide by nonzero m. Treat m = 0 separately rather than dividing by zero.
 
 ## Real world
 
-### Break-even points
-Cost and revenue are both linear in units sold; the break-even point is where the two lines meet.
+### Comparing plans
 
-### Unit conversion
-Fahrenheit and Celsius are related by a linear equation, $F = \tfrac95 C + 32$.
+If two pricing plans use different fixed fees and rates, setting their total costs equal gives a linear equation under those assumptions.
 
-### Pricing plans
-Two phone plans with different base fees and per-minute rates cross at the usage level where they cost the same.
+### Converting units
 
-### Motion at constant speed
-Position versus time is linear; finding when two vehicles meet is solving a linear equation.
+A conversion that multiplies and then adds a constant can be reversed by subtracting and then dividing.
+
+### Motion
+
+For constant velocity, position changes linearly with time. Solving for a target position tells when it is reached, if the resulting time fits the situation.

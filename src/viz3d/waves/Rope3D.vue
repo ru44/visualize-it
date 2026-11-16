@@ -83,7 +83,8 @@ useThree(
       hand.position.set(0, yAt(0), 0)
       bead.position.set(partX, yAt(partX), 0)
       const v = f * lambda
-      const cx = (lambda / 4 + v * clock) % LEN
+      const crestSpan = Math.floor(LEN / lambda) * lambda
+      const cx = (lambda / 4 + v * clock) % crestSpan
       crest.position.set(cx, yAt(cx) + 0.05, 0)
 
       setLabel(t('viz3d.rope.speed', { v: fmt(v, 2) }), theme.fg)

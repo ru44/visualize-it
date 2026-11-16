@@ -26,7 +26,7 @@ const readouts = computed(() => [
   { label: t('buoy.weight'), value: fmt(weight.value, 1) + ' N', color: 'var(--neg)' },
   { label: t('buoy.buoyancy'), value: fmt(buoy.value, 1) + ' N', color: 'var(--accent)' },
   { label: t('buoy.submerged'), value: fmt(frac.value * 100, 0) + ' %' },
-  { label: t('buoy.state'), value: sinks.value ? t('buoy.sinks') : t('buoy.floats'), color: sinks.value ? 'var(--neg)' : 'var(--pos)' },
+  { label: t('buoy.state'), value: sinks.value ? t('buoy.sinks') : ro.value === rf.value ? t('buoy.neutral') : t('buoy.floats'), color: sinks.value ? 'var(--neg)' : 'var(--pos)' },
   { label: 'ρ_obj / ρ_fluid', value: fmt(ro.value / rf.value, 3), color: 'var(--accent-2)' },
 ])
 const svg = ref<SVGSVGElement>()

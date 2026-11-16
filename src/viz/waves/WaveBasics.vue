@@ -56,7 +56,9 @@ const partX = 4
 const partPy = computed(() => BASE - yAt(partX) * AMPPX)
 // crest tracker: a fixed point of constant phase (a crest), so it visibly rides along at speed v
 const crestPx = computed(() => {
-  const x = (lambda.value / 4 + v.value * clock.value) % LEN
+  // Wrap by whole wavelengths so the marker remains on a crest after each reset.
+  const span = Math.floor(LEN / lambda.value) * lambda.value
+  const x = (lambda.value / 4 + v.value * clock.value) % span
   return PX0 + x * PXPM
 })
 

@@ -1,7 +1,7 @@
 id: polar-coordinates
 subject: trigonometry
 difficulty: high-school
-equation: r = \sqrt{a^2 + b^2}, \quad \theta = \arctan\!\left(\dfrac{b}{a}\right)
+equation: r = \sqrt{a^2 + b^2}, \quad \theta = \operatorname{atan2}(b,a)
 concepts:
   - polar-coordinates
   - distance-and-bearing
@@ -41,7 +41,7 @@ variables:
 derivation:
   - a = r\cos\theta, \quad b = r\sin\theta
   - a^2+b^2 = r^2\cos^2\theta + r^2\sin^2\theta = r^2 \quad\Rightarrow\quad r=\sqrt{a^2+b^2}
-  - \dfrac{b}{a} = \dfrac{r\sin\theta}{r\cos\theta} = \tan\theta \quad\Rightarrow\quad \theta = \arctan\!\left(\dfrac{b}{a}\right)
+  - \theta = \operatorname{atan2}(b,a), \quad (a,b)\ne(0,0)
 charts: []
 primary: a
 presets:

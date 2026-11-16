@@ -1,70 +1,63 @@
 ---
 title: 'Sets and Venn diagrams'
-summary: >-
-  Counting two overlapping sets means subtracting what you double-counted,
-  the same fix behind counting search results, guest lists, or survey
-  answers that satisfy either of two conditions.
+summary: 'Learn how to combine two collections without counting their shared elements twice.'
 parameters:
-  N: N — largest number in the universe
-  p: p — A is every multiple of p
-  q: q — B is every multiple of q
-  op: op — which operation is highlighted
+  N: 'N — include the integers from 1 to N'
+  p: 'p — A contains multiples of this number'
+  q: 'q — B contains multiples of this number'
+  op: 'op — union (0), intersection (1), difference (2), complement of A (3)'
 variables:
-  - 'set A: the left circle, every multiple of p up to N'
-  - 'set B: the right circle, every multiple of q up to N'
-  - 'the universe U: every number from 1 to N, the big rectangle'
+  - 'A: multiples of p from 1 to N'
+  - 'B: multiples of q from 1 to N'
+  - 'U: all integers from 1 to N'
 ---
 
 ## Try it
 
-1. Set N to 20, p to 2 and q to 3, and tap "union" — every ticket divisible by 2 or 3 lights up.
-2. Tap "intersection" instead and watch the lit tickets shrink to just the ones divisible by both 2 and 3.
-3. Tap "difference" and then "complement" and compare which tickets stay lit each time.
+1. Set N = 20, p = 2, q = 3 and choose union (op = 0). The result contains 13 numbers.
+2. Choose intersection (op = 1). Only 6, 12 and 18 remain selected: each belongs to both sets.
+3. Choose difference (op = 2), then complement (op = 3). Difference selects members of A outside B; complement selects everything in the universe outside A.
 
 ## Real-life examples
 
-1. **Raffle tickets divisible by 2 or 3.** Out of 20 raffle tickets, the union with p = 2 and q = 3 lights up every ticket number divisible by 2 or by 3 (or both), the tickets eligible for a "lucky number" prize.
-2. **Tickets divisible by both 4 and 6.** Out of 30 tickets, the intersection with p = 4 and q = 6 lights up only the numbers divisible by both, the multiples of 12, a smaller and rarer prize category.
-3. **Tickets divisible by 5 but not 7.** Out of 40 tickets, the difference with p = 5 and q = 7 lights up numbers divisible by 5 that are not also divisible by 7, tickets that qualify for one prize but are excluded from a bonus draw.
+1. **Two rules for numbered cards.** Among cards 1–20, ten numbers are multiples of 2 and six are multiples of 3. Three satisfy both rules, so 10 + 6 − 3 = 13 satisfy at least one.
+2. **Cards satisfying both rules.** With N = 30, p = 4 and q = 6, the intersection contains 12 and 24. Each is divisible by both 4 and 6.
+3. **One rule with an exclusion.** With N = 40, p = 5 and q = 7, A has eight numbers. Remove 35 because it also belongs to B: seven remain in A minus B.
 
 ## Test yourself
 
-1. Find N, p and q so that the union A∪B contains exactly 15 numbers.
-2. Find N, p and q so that the overlap A∩B has more than 5 numbers, the amount you'd double-count by just adding |A| and |B|.
-3. Find N, p and q so small and mismatched that A and B never overlap at all.
+1. Choose N, p and q so that the union contains exactly 15 numbers.
+2. Choose N, p and q so that the intersection contains more than 5 numbers.
+3. Choose N, p and q so that the intersection is empty.
 
 ## Intuition
 
-Imagine 20 raffle tickets numbered 1 to 20, where set A is every ticket divisible by 2 and set B is every ticket divisible by 3. Tap the union button and every ticket that is a multiple of 2 or of 3 (or both) lights up. Tap intersection instead and only the tickets divisible by both light up, sitting in the lens where the two circles overlap.
+A set is a collection whose members we can identify. Here the rectangle contains the integers from 1 to N. The left circle groups multiples of p; the right groups multiples of q. A number in both sets appears in their overlap, once rather than twice.
 
-Set N to 20, p to 2 and q to 3 on the sliders: A has 10 tickets, B has 6, and the tickets divisible by both, the overlap A∩B, has 3. Adding 10 and 6 gives 16, but the picture lights up only 13 tickets for the union, because the 3 tickets divisible by both were about to be counted twice, once in each circle.
+For N = 20, p = 2 and q = 3, the two lists have 10 and 6 members. Adding their sizes counts 6, 12 and 18 twice. Subtract those three extra counts to get 13 distinct members. This combined set is the union. The three shared members form the intersection.
 
 ## Formal
 
-A set is a collection of elements with no repeats and no order; $x \in A$ means x belongs to A. For finite sets, $|A \cup B| = |A| + |B| - |A \cap B|$: add the two sizes, then subtract the overlap you counted twice.
+$x \in A$ means that x belongs to A. The union $A \cup B$ contains members of either set, including members of both. The intersection $A \cap B$ contains only shared members. Writing $|A|$ for the number of members of a finite set, we have $|A \cup B| = |A| + |B| - |A \cap B|$.
 
-Two useful special cases follow directly: if $A \cap B$ is empty the sets are disjoint and $|A \cup B| = |A| + |B|$; if $B \subseteq A$ then $A \cup B = A$ and $A \cap B = B$, so the formula still checks out.
+The difference $A \setminus B$ contains members of A that are not in B. The complement $A^c = U \setminus A$ contains members of the chosen universe U that are not in A. A complement therefore depends on which universe we choose.
 
 ## Advanced
 
-The same idea extends to three sets by inclusion–exclusion: $|A \cup B \cup C| = |A|+|B|+|C| - |A\cap B| - |A\cap C| - |B\cap C| + |A\cap B\cap C|$, adding back the triple overlap that got subtracted three times. This pattern generalises to any number of sets and underlies counting arguments across combinatorics and probability.
+If every member of B belongs to A, B is a subset of A. The union is then A and the intersection is B. If no member is shared, the sets are disjoint and their sizes can be added without subtracting an overlap. The drawn circles keep the same shape; use the numbered members to determine these relationships.
 
 ## Derivation
 
-1. Split the union into the three regions a Venn diagram shows: only A, only B, and the overlap.
-2. Adding $|A|$ and $|B|$ separately means every element of the overlap gets counted in both sums.
-3. Subtracting the overlap once removes exactly that duplicate, leaving each element counted a single time.
+1. Separate the union into members only in A, members only in B, and members in both.
+2. Adding the sizes of A and B counts each shared member twice, but every other member once.
+3. Subtract the size of the intersection. Each member of the union is now counted once.
 
 ## Real world
 
-### Database queries
-SQL's UNION, INTERSECT and EXCEPT operators combine query results exactly like the set operations here, and databases must avoid double-counting rows that satisfy two conditions at once.
+### Survey answers
 
-### Search filters and tags
-Filtering photos tagged "beach" or "sunset" is a union; filtering by "beach" and "sunset" together is an intersection of the two tag sets.
+If 12 students like drawing and 9 like music, we need to know how many like both before finding how many like at least one.
 
-### Spam and security rules
-A message is blocked if it matches any rule in a blocklist (a union of trigger sets) but allowed through if it also matches an exemption list (a difference).
+### Photo tags
 
-### Surveys and probability
-Asking how many people like coffee or tea needs the union formula, since some people who like both would otherwise be counted twice.
+Photos tagged beach or sunset form a union. Photos with both tags form an intersection. Beach photos without the sunset tag form a difference.

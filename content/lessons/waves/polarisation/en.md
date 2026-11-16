@@ -1,68 +1,61 @@
 ---
 title: Polarisation
-summary: >-
-  Light's electric field wiggles sideways as it travels, and a polarising
-  filter only lets through the sideways wiggle lined up with it — which is
-  why two filters at right angles block almost all the light between them.
+summary: 'Follow how two ideal polarising filters select electric-field directions, and keep track of which intensity each percentage refers to.'
 parameters:
-  theta: angle between filters θ
+  theta: 'θ — angle between transmission axes'
 variables:
-  - the unpolarised light's intensity before either filter
-  - the intensity after the first filter
-  - the intensity after the second filter
-  - the angle between the two filters' axes
+  - 'unpolarised input intensity before both filters'
+  - 'intensity after the first ideal filter'
+  - 'intensity after the second ideal filter'
+  - 'angle between the two transmission axes'
 ---
 
 ## Try it
 
-1. Watch the field arrows wiggle in every direction before the first filter, then settle into wiggling one way only after it.
-2. Drag the angle slider θ toward 90°. The output brightness fades toward zero as the second filter blocks more and more of the light.
-3. Bring θ back toward 0°. The two filters line up and nearly all the light that made it through the first filter now makes it through the second too.
+1. Set θ = 0°. The first ideal filter passes 50% of the original unpolarised intensity. The aligned second filter passes all of that remainder, so the final reading is still 50% of the original.
+2. Set θ = 45°. The second filter passes half of what reaches it. The final reading is therefore 25% of the original, not 50%.
+3. Set θ = 90°, then 180°. Crossed axes give zero transmission in the ideal model; a half-turn aligns the axes again and restores 50% of the original intensity.
 
 ## Real-life examples
 
-1. **Two filters lined up.** With the filters aligned (θ = 0°), almost all the light that passed the first filter also passes the second.
-2. **Two filters crossed.** At a right angle (θ = 90°), the classic "crossed polarisers" trick blocks almost all the light between them.
-3. **Polarised sunglasses against an LCD screen.** Tilted partway (θ = 45°), a phone or laptop screen — whose light is itself already polarised — visibly dims when viewed through polarised sunglasses at an angle.
+1. **Aligned filters.** At 0°, I₁/I₀ = 1/2 and I₂/I₀ = 1/2. The second ideal filter causes no further loss.
+2. **Crossed filters.** At 90°, I₂ = 0. Real filters may transmit a small residual amount, which this ideal calculation omits.
+3. **A 45° angle.** At 45°, I₂/I₁ = 1/2 but I₂/I₀ = 1/4. Always name the input you are comparing with.
 
 ## Test yourself
 
-1. Cross the two filters completely.
-2. Set the angle so exactly half the light reaching the second filter gets through.
-3. Get the two filters nearly aligned, within 20° of matching.
+1. Cross the filters by setting their axes 90° apart.
+2. Transmit half of the intensity arriving at the second filter.
+3. Bring the axes within less than 20° of alignment, near either 0° or 180°.
 
 ## Intuition
 
-Light's electric field wiggles sideways as it travels forward, like the up-and-down motion of a wave on a rope — except ordinary light wiggles in every sideways direction at once, mixed together. A polarising filter is like a picket fence for that wiggle: it only lets through the part of the wiggle lined up with its own slots, and blocks the rest, so light coming out the other side wiggles in just one direction.
+For a light wave travelling forward, the electric field lies in the plane perpendicular to travel. Linear polarisation means that the field oscillates along one fixed axis in that plane. Unpolarised light has no preferred transverse orientation when averaged over time. The many directions drawn before the filter illustrate this mixture, rather than a literal set of synchronized fields.
 
-Add a second filter behind the first, and only the part of that already-narrowed wiggle that still lines up with the second filter's slots gets through. Turn the second filter so its slots run the same way as the first, and almost everything that got through the first filter gets through the second too. Turn it to run exactly across the first, at a right angle, and essentially nothing lines up — the light is blocked.
+An ideal polariser transmits the field component along its transmission axis. A second filter selects the component along another axis. When the axes are perpendicular, that component is zero. When they agree, all the already-polarised light passes the second ideal filter. The drawn bars mark transmission axes; they are not a mechanical description of how a real polarising material works.
 
 ## Formal
 
-After unpolarised light passes a first filter, its intensity is halved, $I_1 = \tfrac{1}{2}I_0$, and it emerges polarised along that filter's axis. A second filter at angle $\theta$ to the first then passes a fraction $\cos^2\theta$ of that intensity, Malus's law: $I_2 = I_1\cos^2\theta$.
+For unpolarised input intensity $I_0$, an ideal first polariser gives $I_1=I_0/2$. The light reaching the second filter is linearly polarised. If its transmission axis is at angle θ to that polarisation, Malus's law gives $I_2=I_1\cos^2\theta$.
 
-Combining the two steps gives the full brightness after both filters as a function of the angle between them alone, $I_2 = \tfrac{1}{2}I_0\cos^2\theta$, which falls smoothly from full transmission at $\theta = 0°$ to zero at $\theta = 90°$.
+Therefore $I_2/I_0=\tfrac12\cos^2\theta$, while $I_2/I_1=\cos^2\theta$. The screen readouts use the original input as reference. At $\theta=45^\circ$, these ratios are $1/4$ and $1/2$, respectively. A 180° rotation leaves a transmission axis equivalent to its starting orientation.
 
 ## Advanced
 
-The sky itself is partly polarised by sunlight scattering off air molecules, strongest at 90° from the Sun; some animals, including bees, can sense this polarisation pattern directly and use it to navigate even when the Sun itself is hidden behind clouds.
+The field amplitude projects as $E_2=E_1\cos\theta$, and intensity is proportional to squared amplitude in the same medium; this explains the square in Malus's law. If the initial light is already polarised, the first filter does not generally halve its intensity. Real filters have absorption and imperfect extinction. Field lengths and screen shading in the illustration are schematic; use the numerical intensity ratios for comparisons.
 
 ## Derivation
 
-1. An unpolarised beam loses half its intensity passing through the first filter, emerging polarised along its axis.
-2. Malus's law gives the fraction of that polarised intensity a second filter at angle $\theta$ transmits, $\cos^2\theta$.
-3. Multiplying the two steps together gives the full two-filter transmission, $I_2 = \tfrac12 I_0\cos^2\theta$.
+1. Average over the orientations of unpolarised input: the ideal first filter transmits half the incident intensity.
+2. Project the linearly polarised field onto the second axis and square the amplitude ratio to obtain the intensity ratio.
+3. Multiply the two transmission fractions to express the final intensity relative to the original input.
 
 ## Real world
 
-### Polarised sunglasses
-Sunglasses use a vertical polarising filter to block strongly horizontally-polarised glare reflected off water and roads, which ordinary tinted glass cannot do.
+### Polarised glare
 
-### LCD screens
-LCD screens generate polarised light directly, which is why viewing one through a second polarising filter (or tilted sunglasses) can dim or blank it out depending on the angle.
+Reflected light can be partly polarised. A suitably oriented polarising filter can reduce that component selectively.
 
-### 3D cinema glasses
-Some 3D projection systems polarise the left-eye and right-eye images differently and use matching polarised lenses in the glasses so each eye sees only its own image.
+### Viewing an LCD through a filter
 
-### Photography filters
-Photographers use polarising filters to cut reflected glare off water and glass and to deepen a blue sky, both effects of blocking strongly polarised light selectively.
+Many LCD displays emit linearly polarised light. Rotating another polariser in front of them changes the transmitted brightness; that input need not obey the unpolarised first-step assumption used here.

@@ -1,68 +1,61 @@
 ---
 title: Splitting a vector into components
-summary: >-
-  A rope pulling at an angle is never fully useful — part of its pull drags
-  forward, part of it wastes itself lifting, and sine and cosine tell you
-  exactly how the pull splits.
+summary: 'Describe one vector by perpendicular horizontal and vertical components using sine and cosine.'
 parameters:
-  theta: θ — rope angle above the ground
+  theta: 'θ — direction above the positive horizontal axis'
 variables:
-  - the rope's total pull, its tension, fixed for each example
-  - the angle the rope makes with the ground
-  - the part of the pull dragging the load across the ground
-  - the part of the pull lifting the load upward
+  - 'F: vector magnitude; the diagram uses 1'
+  - 'θ: angle from the positive horizontal axis'
+  - 'Fₓ: horizontal component'
+  - 'Fᵧ: vertical component'
 ---
 
 ## Try it
 
-1. Watch the readouts sin θ and cos θ. Multiply each by a rope's actual tension and you get the up part and the across part of its pull.
-2. Drag θ up from a shallow angle. cos θ shrinks — less of the pull drags forward — while sin θ grows, lifting more and pulling less.
-3. Bring θ back down near 0°. Almost the whole pull now drags forward; almost none of it lifts.
+1. Set θ = 0°. Cosine is 1 and sine is 0, so the vector points entirely along the horizontal axis.
+2. Set θ = 45°. Both components of the unit vector are about 0.7071. Their ordinary sum exceeds 1, but their squares add to 1.
+3. Set θ = 90°. The horizontal component is zero and the vertical component is 1. In the 3D view, the vector and both components still lie in one plane.
 
 ## Real-life examples
 
-1. **A rope pulling a sledge at 15°, tension 60 N.** cos 15° ≈ 0.97 of it drags forward, about 58 N; only sin 15° ≈ 0.26, about 16 N, lifts the sledge slightly off the snow.
-2. **A kite string at 45°, tension 20 N.** The pull splits almost evenly: about 14 N forward and 14 N upward.
-3. **A ball kicked at 70°, speed 15 m/s.** Most of that speed, sin 70° ≈ 0.94, about 14 m/s, goes straight up; only cos 70° ≈ 0.34, about 5 m/s, carries it forward.
+1. **A 60 N force at 15°.** Its horizontal component is about 57.96 N and its upward component about 15.53 N. These describe one force; an upward component alone does not show whether an object lifts off a surface.
+2. **A 20 N force at 45°.** Each component is about 14.14 N. Equal components do not mean half the force magnitude in each direction.
+3. **A 15 m/s velocity at 70°.** The horizontal component is about 5.13 m/s and the upward component about 14.10 m/s. The same geometry applies to velocity as to force.
 
 ## Test yourself
 
-1. Find the angle where 87% of the pull goes across (cos θ ≈ 0.87).
-2. Find an angle where more than 90% of the pull goes upward.
-3. Find the angle that splits the pull exactly evenly between across and up.
+1. Make the horizontal component of the unit vector approximately 0.87.
+2. Make its vertical component greater than 0.9 while keeping its horizontal component positive.
+3. Make the two unit-vector components differ by less than 0.02.
 
 ## Intuition
 
-Picture the rope shrunk down to length 1: that shrunk rope is exactly the arrow on screen, and cos θ and sin θ are the fractions of the real pull that go across and up. A 60 N rope at 15° drags forward with 60 × cos 15° newtons and lifts with 60 × sin 15° newtons — the readouts do the fraction, you supply the real strength.
+A diagonal arrow can be described by how far its endpoint lies horizontally and vertically from its start. These two signed amounts are its components. The display uses an arrow of length 1: cosine gives the horizontal component and sine gives the vertical component. For a force of a different magnitude, multiply both readouts by that magnitude.
 
-Raise θ and you are trading one job for the other: more lift, less drag. That is exactly why someone hauling a sledge keeps the rope angle low — every degree it climbs steals a little forward pull and hands it to a lift that does nothing useful against flat ground.
+At 45°, a force of 20 N has components about 14.14 N and 14.14 N. Adding those numbers gives 28.28, but they act in perpendicular directions. Their vector sum has magnitude 20 N. Resolving a force changes its description, not the force itself; whether either component is useful depends on the situation.
 
 ## Formal
 
-A pull of magnitude F at angle θ above a reference line splits into $F_x = F\cos\theta$ along that line and $F_y = F\sin\theta$ perpendicular to it.
+For magnitude $F\geq0$ and angle θ measured from the positive horizontal axis, $F_x=F\cos\theta$ and $F_y=F\sin\theta$. This control covers 0° to 90°, where both components are nonnegative. The diagram shows the case F = 1; the examples supply other magnitudes.
 
-Because $\cos^2\theta+\sin^2\theta=1$, the two parts always recombine to the original size: $F_x^2+F_y^2=F^2$.
+Perpendicular components recombine through $F_x^2+F_y^2=F^2$, hence $F=\sqrt{F_x^2+F_y^2}$. Components carry the same units as the vector: newtons for force, metres per second for velocity. Outside the displayed quadrant, negative components indicate the opposite axis direction.
 
 ## Advanced
 
-The same split works for any vector, not just a force — velocity, displacement, an electric field — because it is really a projection onto two perpendicular reference directions; choosing different perpendicular directions gives different components for the exact same underlying vector.
+You can choose axes along and perpendicular to an inclined surface instead of horizontal and vertical. The component values change with the axes, but the vector and its magnitude remain the same. When a pulling force has an upward component, it may reduce the normal contact force and friction; it is not automatically wasted.
 
 ## Derivation
 
-1. The rope, its across part and its up part form a right triangle with hypotenuse F, so $\cos\theta = F_x/F$ and $\sin\theta = F_y/F$.
-2. Rearranging the first ratio gives the across part directly: $F_x = F\cos\theta$.
-3. Rearranging the second gives the up part: $F_y = F\sin\theta$.
+1. For a nonzero vector in the displayed quadrant, the vector and its perpendicular components form a right triangle with hypotenuse F. At the axis endpoints, use the limiting values.
+2. Multiply the cosine ratio by F to obtain the horizontal component.
+3. Multiply the sine ratio by F to obtain the vertical component. The component formulas also give zero components when F is zero, although its direction is then undefined.
 
 ## Real world
 
-### Hauling a sledge or a cart
-Whoever pulls keeps the rope as flat as they can, because a low angle sends nearly all their effort into forward motion instead of lift.
+### Combining forces
 
-### Sailing
-The wind's push on a sail splits into a part that drives the boat forward and a part that only pushes it sideways, which sailors fight with the keel.
+Resolve each force into components, add the horizontal components together and the vertical components together, then recombine to find the resultant.
 
-### Ramps and inclined planes
-Gravity pulling straight down splits, relative to a ramp's surface, into a part that presses into the ramp and a part that slides an object down it.
+### Projectile models
 
-### Launching a projectile
-A cannon or a thrown ball's initial speed splits into a horizontal part that decides how far it travels and a vertical part that decides how high and how long it flies.
+In an ideal model without air resistance, initial velocity components set horizontal speed and initial vertical speed. Horizontal range depends on both horizontal speed and the flight time, which also depends on vertical motion and landing height.

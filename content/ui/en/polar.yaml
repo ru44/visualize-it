@@ -1,7 +1,7 @@
-polar.hint: unpolarised light settles into one direction after filter 1, then filter 2 cuts it further
+polar.hint: 'the first ideal filter selects a polarisation; the second projects it onto another axis'
 polar.theta: angle between filters θ
-polar.i1: after filter 1
-polar.i2: after filter 2
+polar.i1: 'after filter 1 (% of input)'
+polar.i2: 'after filter 2 (% of input)'
 polar.unpolarised: unpolarised light
 polar.filter1: filter 1
 polar.filter2: filter 2

@@ -1,68 +1,61 @@
 ---
 title: Interference and beats
-summary: >-
-  Two musical notes that are almost — but not quite — the same pitch don't
-  sound steady together; they pulse louder and softer in a rhythm you can
-  hear, and this lesson shows why.
+summary: 'Add two oscillations and see how a small frequency difference produces a slowly changing amplitude.'
 parameters:
-  f1: frequency f1
-  f2: frequency f2
-  x: time t
+  f1: 'f1 — first frequency'
+  f2: 'f2 — second frequency'
+  x: 'x — observation time'
 variables:
-  - the two individual frequencies being combined
-  - the beat frequency — how often the combined amplitude swells
+  - 'frequencies of the two unit-amplitude oscillations'
+  - 'absolute frequency difference, the beat rate for nearby frequencies'
 ---
 
 ## Try it
 
-1. Watch the curve: it wiggles quickly while its overall height swells and shrinks slowly.
-2. Raise the slider f2 away from f1. The swelling speeds up.
-3. Bring f2 back close to f1. The swelling slows almost to a stop — the two notes now sound like one.
+1. Set f1 = 8 Hz and f2 = 9 Hz. The graph shows the summed displacement over four seconds, with an amplitude envelope that repeats every second.
+2. Set f2 = 8.2 Hz. The envelope repeats every 5 s, longer than the visible time window. These low frequencies make the graph readable; they are not ordinary guitar notes.
+3. Set both frequencies to 8 Hz. The equal-phase waves add to one sine with amplitude 2. Move x to inspect different times; x is time in this lesson.
 
 ## Real-life examples
 
-1. **Tuning a guitar.** Two strings almost in tune (f1 = 8, f2 = 8.2) swell and fade slowly — a guitarist listens for this and tightens the string until it stops.
-2. **Two out-of-tune piano notes.** A bigger mismatch (f1 = 6, f2 = 6.8) beats noticeably faster, which is why it sounds harsher and more obviously "off".
-3. **Mixing two radio signals.** Engineers combine a station's frequency with a reference frequency far away (f1 = 5, f2 = 11) to produce a fast beat that is easier to process electronically.
+1. **A small mismatch.** Frequencies 8 and 8.2 Hz differ by 0.2 Hz, giving a beat period of 5 s.
+2. **A larger mismatch.** Frequencies 6 and 6.8 Hz differ by 0.8 Hz, giving a beat period of 1.25 s.
+3. **Widely separated frequencies.** Frequencies 5 and 11 Hz differ by 6 Hz. The sum identity still holds, but the shape no longer has a clearly slow envelope around a much faster oscillation.
 
 ## Test yourself
 
-1. Make the two notes beat exactly once per second (a beat frequency of 1 Hz).
-2. Tune the two frequencies so close together that the beating nearly disappears (within 0.05 Hz).
-3. Make the beating fast: at least 5 beats per second.
+1. Choose frequencies whose difference is 1 Hz.
+2. Bring the frequencies within 0.05 Hz of each other; with these slider steps, set them equal.
+3. Make their difference at least 5 Hz.
 
 ## Intuition
 
-Pluck two guitar strings tuned almost, but not quite, to the same note — say 220 and 224 vibrations per second — and you do not hear one steady tone. Instead the sound swells louder, fades to almost silence, then swells again, four times every second. The graph on screen shows this same effect with slower, easier-to-see numbers: the wiggly blue curve is the sum of two waves at frequencies $f_1$ and $f_2$ (starting at 8 and 9, meaning 8 and 9 cycles per second). Watch the curve's height rise and fall inside a slow, breathing outline — that outline is the beat.
+Two oscillations sometimes pull in the same direction and sometimes in opposite directions. When their frequencies are close, their relative timing changes slowly: they reinforce, then partly cancel, then reinforce again. The amplitude grows and shrinks even though each individual wave keeps a constant amplitude.
 
-Drag the slider $f_2$ away from $f_1$ and that swelling speeds up; bring them close together and it slows down almost to a standstill. Set $f_1$ to 8 and $f_2$ to 9 and count: the loud-soft cycle happens once every second, matching the gap between them, 1. This gap, $|f_1-f_2|$, is called the beat frequency, and it does not care how high or low the two notes are — only how far apart they sit.
+The blue curve is the signed sum at one observation point, not a sound recording. Its envelope describes the largest magnitude of the rapid oscillations. For equal amplitudes and a small frequency difference, that envelope produces beats. For example, audible tones at 220 and 224 Hz would have a 4 Hz beat rate in this ideal model. The graph uses lower frequencies to show the same arithmetic clearly.
 
 ## Formal
 
-$\sin(2\pi f_1 x)+\sin(2\pi f_2 x) = 2\cos(2\pi\tfrac{f_1-f_2}{2}x)\sin(2\pi\tfrac{f_1+f_2}{2}x)$; a fast oscillation at the average frequency, amplitude-modulated by a slow cosine.
+Writing time as x to match the graph, $s(x)=\sin(2\pi f_1x)+\sin(2\pi f_2x)$. The sum identity gives $s(x)=2\cos[\pi(f_1-f_2)x]\sin[\pi(f_1+f_2)x]$. Each component has amplitude 1.
 
-The amplitude envelope, $|2\cos(2\pi\tfrac{f_1-f_2}{2}x)|$, repeats with frequency $|f_1-f_2|$ — twice per envelope period since it is an absolute value.
+The nonnegative amplitude envelope is $E(x)=2|\cos[\pi(f_1-f_2)x]|$. For unequal frequencies its period is $T_b=1/|f_1-f_2|$, so the beat frequency is $f_b=|f_1-f_2|$. Equal frequencies with the displayed equal phase give a constant envelope of 2.
 
 ## Advanced
 
-Because the ear responds to the envelope's amplitude modulation, not the underlying phase, the perceived beat rate is $|f_1-f_2|$ even though the cosine envelope itself has "frequency" $(f_1-f_2)/2$ — the factor of two comes from the envelope crossing zero (a beat) on both its positive and negative half-cycles.
+The cosine factor changes sign, but the amplitude envelope uses its absolute value. Both positive and negative cosine peaks therefore correspond to maximum amplitude; zero crossings correspond to minimum amplitude. Linear addition leaves only the two original frequencies in the spectrum. Producing a separate difference-frequency component requires a nonlinear operation such as multiplication or detection. In 3D, two schematic ripple sources include travel delays and distance-dependent amplitudes, so the surface is not the same time trace at every point.
 
 ## Derivation
 
-1. Sum-to-product trigonometric identity.
-2. Substitute the two wave phases.
-3. A slow envelope at the difference frequency times a fast carrier at the average frequency.
+1. Start with the identity that rewrites a sum of two sines as a sine times a cosine.
+2. Substitute the phase of each oscillation.
+3. The average frequency sets the sine factor, while the frequency difference sets the repeating amplitude envelope.
 
 ## Real world
 
-### Tuning instruments
-Musicians tune by listening for beats between two nearly matched notes and adjusting until the beating slows to zero.
+### Tuning by beats
 
-### Radio heterodyning
-Mixing two radio frequencies produces beat frequencies used to shift signals to a more convenient frequency for processing.
+Nearly matching tones can produce audible beats. Slower beats indicate a smaller frequency difference; equal frequency removes this source of beating.
 
-### Doppler radar
-Beat frequencies between transmitted and reflected signals reveal the speed of a moving target.
+### Electronic mixing
 
-### Acoustic dissonance
-Fast, harsh beating between close, out-of-tune frequencies is part of why certain intervals sound dissonant.
+A nonlinear mixer can generate sum and difference frequencies. This differs from simply adding the two signals as the main graph does.

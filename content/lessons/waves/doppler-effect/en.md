@@ -1,69 +1,63 @@
 ---
 title: The Doppler effect
-summary: >-
-  A siren sounds higher-pitched as it races toward you and lower-pitched as
-  it speeds away — the same shift that lets a radar gun read a car's speed.
+summary: 'A moving sound source changes the spacing of arriving wavefronts, so a stationary listener can hear a different frequency.'
 parameters:
-  f: siren frequency f
-  vs: source speed vs
+  f: 'f — emitted frequency'
+  vs: 'vs — source speed through the medium'
 variables:
-  - the siren's own frequency, un-shifted
-  - the speed of sound
-  - the source's speed
-  - the observer's speed
-  - the frequency you actually hear, approaching, receding, and in general
+  - 'frequency emitted by the source'
+  - 'sound speed in the medium, fixed at 343 m/s'
+  - 'source speed relative to the medium'
+  - 'observer speed relative to the medium; zero here'
+  - 'forward, rear and general received frequencies'
 ---
 
 ## Try it
 
-1. Watch the circles spread out from the moving siren. Ahead of it they crowd together; behind it they spread apart.
-2. Raise the source speed slider vs. The crowding ahead gets tighter, and the front readout frequency climbs higher.
-3. Compare the two readouts: the frequency ahead of the siren is always higher than its true pitch, and the frequency behind it is always lower — by amounts that grow as vs grows.
+1. Set f = 500 Hz and source speed vs = 0. Both listener readouts equal 500 Hz: no motion means no shift here.
+2. Increase vs to 20 m/s. The forward readout becomes about 531 Hz and the rear readout about 472 Hz.
+3. Keep vs fixed and double f to 1000 Hz. Both received frequencies double, but their ratios to f stay unchanged. The animated rings are illustrative and do not show each actual sound cycle.
 
 ## Real-life examples
 
-1. **An ambulance passing by.** At a typical driving speed (f = 500 Hz, vs = 20 m/s), the siren's pitch noticeably rises as it approaches and drops as it passes.
-2. **A fast car horn.** Near highway speed (f = 800 Hz, vs = 35 m/s), the pitch shift is sharper and easier to hear.
-3. **A slow train horn.** At walking-to-jogging speed (f = 300 Hz, vs = 5 m/s), the shift is small but still measurable in the readouts.
+1. **A moving tone.** At f = 500 Hz and vs = 20 m/s, a stationary listener directly ahead receives about 531 Hz; one directly behind receives about 472 Hz.
+2. **A faster source.** At f = 800 Hz and vs = 35 m/s, the values are about 891 Hz ahead and 726 Hz behind.
+3. **A slowly moving source.** At f = 300 Hz and vs = 5 m/s, the values are about 304 Hz ahead and 296 Hz behind. The shift is smaller.
 
 ## Test yourself
 
-1. Make the frequency heard ahead of the source 10% higher than its true pitch.
-2. Make the frequency heard behind the source 10% lower than its true pitch.
-3. Push the source to its top speed, 40 m/s.
+1. Make the forward frequency about 10% greater than the emitted frequency.
+2. Make the rear frequency about 10% less than the emitted frequency.
+3. Set the source to the maximum available speed, 40 m/s.
 
 ## Intuition
 
-Stand by the road as an ambulance drives past with its siren on: as it approaches, the pitch sounds higher than the siren really is; the instant it passes you, the pitch drops to sound lower than its true note. The siren itself never changes pitch — what changes is how often each new wave crest reaches your ear, because the ambulance is chasing its own sound waves forward and running away from the ones behind it.
+Suppose a source emits one crest and moves forward before emitting the next. The new crest starts closer to the previous crest in front, but farther from the previous crest behind. Each crest still travels at the sound speed relative to the air. The source changes their spacing, not that propagation speed.
 
-Ahead of a moving source, each wave crest is emitted a little closer to where the last one was, so crests arrive at a listener more often than the source's true frequency — a higher pitch. Behind the source, each crest is emitted a little farther from where the last one was, so crests arrive less often — a lower pitch. The faster the source moves, the more squeezed the crests ahead become and the more stretched out those behind become, which is exactly what the circles on screen show.
+A stationary listener directly ahead encounters the compressed crests more often and hears a higher frequency. A listener directly behind encounters the wider spacing and hears a lower frequency. At zero source speed the frequencies agree. The drawing slows and sparsely samples the wavefronts; changing the frequency control changes the numerical readouts without changing the illustrated emission interval.
 
 ## Formal
 
-For a source moving at speed $v_s$ through a medium where sound travels at speed $v$, a stationary listener ahead of it hears $f_1 = f\,v/(v - v_s)$, and one behind it hears $f_2 = f\,v/(v + v_s)$, both higher and lower respectively than the source's true frequency $f$.
+For sound speed $v=343\ \mathrm{m/s}$, emitted frequency f and source speed $0\le v_s<v$, the forward wavelength is $\lambda_{front}=(v-v_s)/f$. A stationary listener directly ahead receives $f_1=fv/(v-v_s)$. Directly behind, $f_2=fv/(v+v_s)$.
 
-The fully general formula also allows the listener to move, at speed $v_o$: $f_D = f\,(v \pm v_o)/(v \mp v_s)$, with the upper sign used when observer and source move toward each other and the lower sign when they move apart. In this lesson the listener stands still, so $v_o = 0$ and the formula reduces to the two cases above.
+For collinear source and observer motion relative to the medium, $f_D=f(v\pm v_o)/(v\mp v_s)$. Choose the numerator plus sign when the observer moves toward the source and the denominator minus sign when the source moves toward the observer; choose each sign independently. Here $v_o=0$. Oblique motion requires the corresponding directional components, rather than simply inserting total speeds.
 
 ## Advanced
 
-A radar speed gun uses the Doppler effect twice over: it sends out a radio wave of known frequency, which a moving car reflects back Doppler-shifted once by the car's own motion, and the gun itself receives that reflection Doppler-shifted a second time — the resulting frequency shift is therefore about twice what a single one-way shift would give, and it is this doubled shift that the gun's electronics convert directly into a speed reading.
+For source speeds much smaller than sound speed, the fractional shift is approximately the source's line-of-sight speed divided by sound speed. This lesson assumes still, uniform air and constant emitted frequency. Light also exhibits a Doppler shift, but its exact formula follows relativity rather than this sound-in-a-medium formula. Reflection measurements require accounting for both outward and return propagation.
 
 ## Derivation
 
-1. Ahead of the source, each successive wave crest starts closer to the listener, raising the frequency to $f_1 = f\,v/(v-v_s)$.
-2. Behind the source, each successive crest starts farther from the listener, lowering the frequency to $f_2 = f\,v/(v+v_s)$.
-3. Allowing the listener to move too gives the general formula, $f_D = f\,(v \pm v_o)/(v \mp v_s)$.
+1. The spacing ahead is reduced by the distance the source moves between emissions; divide sound speed by this spacing to find the forward received frequency.
+2. The spacing behind is increased by that distance, giving a lower received frequency.
+3. A moving observer changes how quickly it meets the fronts; include its speed in the numerator with the appropriate direction sign.
 
 ## Real world
 
-### Ambulance and emergency sirens
-The classic rising-then-falling pitch of a passing siren is the Doppler effect in its purest everyday form.
+### A passing sound source
 
-### Radar speed guns
-Police radar measures a reflected radio wave's Doppler shift off a moving car to read its speed directly.
+A steady tone can sound different as its source passes a stationary listener. For a listener beside the path, the line-of-sight motion varies through the pass, so the two axial readouts do not describe every instant.
 
-### Weather radar
-Doppler weather radar measures the shift in radio waves bounced off raindrops to read the wind speed inside a storm, spotting rotation that can signal a tornado.
+### Frequency-based motion measurements
 
-### Astronomy and redshift
-Light from a star or galaxy moving away from Earth is stretched to lower frequencies (redshifted), letting astronomers measure how fast it is receding using the same Doppler principle.
+Comparing emitted and received frequencies can reveal motion along the line of sight. The conversion depends on the wave and measurement geometry.

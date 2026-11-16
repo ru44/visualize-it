@@ -1,67 +1,61 @@
 ---
 title: Angles of elevation and depression
-summary: >-
-  Look up at a rooftop or down from a plane's cockpit, and the angle above or
-  below your own eye-level horizon turns a height and a distance into each other.
+summary: 'Use a viewing angle and a horizontal distance to calculate the height difference between two points.'
 parameters:
-  a: height a
-  b: distance b
+  a: 'a — height difference (m)'
+  b: 'b — horizontal distance (m)'
 variables:
-  - the height difference between observer and object
-  - the horizontal distance separating them
-  - the angle θ above (elevation) or below (depression) the horizontal
+  - 'a: vertical difference between observer and target'
+  - 'b: horizontal separation'
+  - 'θ: acute angle between horizontal and line of sight'
 ---
 
 ## Try it
 
-1. Drag the far vertex of leg «height a» up and down, and watch θ swing with it — this is the angle of elevation looking up from the ground.
-2. Now drag the vertex on leg «distance b» instead, moving the observer closer to or farther from the base.
-3. Set a and b so θ reads close to 3° — the shallow angle almost every airliner flies down to a runway.
+1. Set a = 30 m and b = 40 m. The angle opposite a is about 36.87°. Here a represents a height difference and b a horizontal distance, although the drawing rotates the triangle and places a horizontally on screen.
+2. Keep a = 30 and increase b to 80. The angle falls to about 20.56°: the same height difference looks smaller from farther away.
+3. Set a = 52 and b = 1000. Read an angle of about 2.98°. Use the controls and numerical values; the diagram rescales to fit.
 
 ## Real-life examples
 
-1. **Measuring a building from the street.** Standing 40 m from its base, a 36.9° angle of elevation to the roofline gives a building about 30 m tall, no climbing required.
-2. **An aircraft's landing approach.** Descending on the standard glide slope, a plane drops about 52 m for every 1000 m it covers — an angle of depression close to 3°.
-3. **Surveying a tower from a distance.** Standing 150 m from its base, a 33.7° angle of elevation to the top tells a surveyor the tower is about 100 m tall.
+1. **A roof above eye level.** A height difference of 30 m over a horizontal distance of 40 m gives about 36.87°. If the observer's eyes are 1.6 m above the building's ground level, the roof is 31.6 m above that level.
+2. **A shallow line of sight.** A rise of 52 m over 1000 m horizontally gives about 2.98°. This is a geometric example, not a flight instruction.
+3. **A distant tower top.** A difference of 100 m over 150 m horizontally gives about 33.69°. The 100 m is measured from the observer's eye level.
 
 ## Test yourself
 
-1. Set the angle to about 3°, the standard aircraft glide slope.
-2. Make the angle steeper than 45° — now the height is bigger than the distance.
-3. Keep the height above 80 m while flattening the angle under 20°.
+1. Make the angle approximately 3°, within 0.3°.
+2. Make the angle greater than 45°.
+3. Keep a greater than 80 m while making the angle less than 20°.
 
 ## Intuition
 
-Stand 40 m from a building and look up: your eyes trace a line from level ground straight up to the roofline, and the angle that line makes with the flat horizontal in front of you is the angle of elevation. Drag the far vertex of leg a and watch θ swing open — a taller building at the same distance always means looking up at a steeper angle.
+Look toward a roof and imagine a horizontal line through your eyes. The angle between that line and your upward line of sight is the angle of elevation. The triangle's vertical side is the difference between the roof and your eyes, not automatically the building's full height. With a difference of 30 m and a horizontal distance of 40 m, the ratio is 30/40 = 0.75.
 
-Depression is the same idea turned upside down: a pilot looking down at a runway, or a lifeguard looking down at a swimmer from a tower, measures the angle below their own horizontal line of sight instead of above it. Because the ground and the observer's sightline are parallel horizontal lines, the angle of elevation seen from below and the angle of depression seen from above are always the same angle, just measured from opposite ends of the same line.
+Now imagine looking back from the roof. Measure downward from a horizontal line through that higher point: this is the angle of depression. In a flat-ground model, the two horizontal reference lines are parallel, so the elevation and depression angles between the same two points are equal. Rotating the triangle on the page changes neither the lengths nor the angle.
 
 ## Formal
 
-The angle of elevation is the angle $\theta$ between the horizontal and a line of sight rising to an object above; the angle of depression is the same kind of angle measured downward to an object below.
+For positive height difference a and horizontal distance b, $\tan\theta=a/b$ and $\theta=\arctan(a/b)$. The displayed acute angle is opposite side a. Use consistent length units; the angle readout is in degrees.
 
-Once drawn as a right triangle with the height difference $a$ and horizontal distance $b$ as the two legs, $\theta$ is an ordinary right-triangle angle: $\tan\theta = a/b$.
+If b and θ are known, $a=b\tan\theta$. To find an object's height above a shared ground level, add the observer's eye height. A sloping distance is the hypotenuse and cannot replace b in this formula.
 
 ## Advanced
 
-In practice $a$ is the difference between the object's height and the observer's own eye level, not the object's full height above the ground — a detail simple textbook problems often round away, but one that matters whenever the observer is not standing at ground level, such as sighting from an upper-floor window.
+Equality of elevation and depression angles assumes parallel local horizontals. This flat model omits curvature and refraction over long distances. For the same measured angle, doubling b doubles a; errors in distance or angle therefore affect the inferred height.
 
 ## Derivation
 
-1. The observer's horizontal line of sight and the flat ground are two parallel horizontal lines.
-2. The actual line of sight, running between observer and object, cuts across both as a transversal, so the angle of elevation measured from the ground equals the angle of depression measured from the object, by alternate angles.
-3. Once the right triangle is drawn with legs $a$ and $b$, $\theta$ follows the ordinary right-triangle ratio: $\tan\theta = a/b$.
+1. Draw a horizontal reference line through each endpoint of the line of sight. In the flat model these lines are parallel.
+2. The line of sight crosses both parallels, giving equal alternate interior angles: elevation at one endpoint and depression at the other.
+3. In the right triangle, divide the opposite side a by the adjacent side b to obtain the tangent of the angle.
 
 ## Real world
 
-### Aviation
-Air traffic control and onboard instruments both track a landing aircraft's angle of depression, keeping it close to the standard 3° glide slope all the way to touchdown.
+### Measuring an inaccessible point
 
-### Search and rescue at sea
-A lookout on a tall ship or lighthouse estimates a swimmer's or boat's distance from the angle of depression down to it, combined with the lookout's known height.
+A measured elevation angle and horizontal distance can give a roof's height above the measuring instrument. Add the instrument's height to refer the result to ground level.
 
-### Architecture and construction
-Before renovating a building, architects measure its existing height from the ground using exactly this angle, without needing to send anyone onto the roof.
+### Looking down from a platform
 
-### Solar panel installation
-Installers tilt solar panels to match the sun's angle of elevation at local noon, since a panel facing the sun squarely captures far more light than a flat one.
+If a platform's height above a target is known, its depression angle gives the horizontal distance through $b=a/\tan\theta$.

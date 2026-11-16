@@ -1,9 +1,6 @@
 ---
 title: Powers of complex numbers
-summary: >-
-  Watch repeated multiplication spiral a point outward, inward, or around a
-  perfect circle — the pattern behind fractal art, sound-filter design, and
-  the fast Fourier transform.
+summary: 'Follow repeated complex multiplication by tracking the angle and distance at each power.'
 parameters:
   a: number, real part
   b: number, imaginary part
@@ -13,54 +10,54 @@ variables: []
 
 ## Try it
 
-1. Raise n and watch the trail of dots spiral, one dot per power.
-2. Drag the starting point outside the unit circle (the dashed ring) and watch the spiral fly outward.
-3. Drag it back inside the ring instead and watch the spiral tighten toward the center.
+1. Set a = 0 and b = 1. Increase n from 1 to 4. The powers are i, -1, -i and 1, completing a full turn.
+2. Set a = 1.1 and b = 0.3. The modulus exceeds 1, so increasing n moves the powers progressively farther from the origin.
+3. Set a = 0.5 and b = 0.2. The modulus is below 1, so the powers approach the origin. Read the coordinates when points become too close to distinguish.
 
 ## Real-life examples
 
-1. **A perfectly circular orbit.** A point exactly 1 unit from the center (a=0.6, b=0.8) traces a perfect circle as its angle repeats; after n=4 steps it has turned a quarter of the way around, neither growing nor shrinking.
-2. **A zooming fractal boundary.** A point just outside the unit circle (a=1.1, b=0.3) spirals outward as you raise the power — after n=8 steps it has already flown far from the center, the kind of escape test used to draw the Mandelbrot set.
-3. **A damped guitar string.** A point just inside the unit circle (a=0.5, b=0.2) spirals inward, losing a little distance every step — after n=10 steps it has shrunk close to the center, like a plucked string's vibration dying out while it keeps oscillating.
+1. **Unit modulus.** For z = 0.6 + 0.8i, every power stays on the unit circle. The angle is about 53.13 degrees per multiplication, so the fourth power is at about 212.52 degrees, not a quarter turn.
+2. **Increasing magnitude.** For z = 1.1 + 0.3i, the modulus is about 1.14. At n = 8 the result has modulus about 2.86.
+3. **Decreasing magnitude.** For z = 0.5 + 0.2i, the modulus is about 0.539. At n = 10 it is about 0.00205.
 
 ## Test yourself
 
-1. Place the point exactly on the unit circle, one unit from the center, so raising it to any power never grows or shrinks it.
-2. Set the power to its maximum and choose a starting point outside the unit circle so the result ends up more than 100 units from the center.
-3. Choose a starting point inside the unit circle and a high enough power that the result shrinks to less than 0.01 units from the center.
+1. Place z within 0.02 in modulus of the unit circle. An exactly unit modulus keeps every power on the circle.
+2. Set n to 12 and choose z so the result's modulus exceeds 100.
+3. Choose z and n so the result's modulus is less than 0.01.
 
 ## Intuition
 
-Picture a firework spark that turns the same angle every instant, drifting a little farther from the center each time — it traces a spiral flying outward. A spark that instead drifts a little closer in with every turn traces a spiral tightening toward the center. The trail of dots on screen shows exactly this: raise the starting point to higher and higher powers with the n slider, and each new dot is the last one turned by the same angle again and scaled by the same factor again.
+The power z cubed means multiply z by itself three times. Each multiplication adds the same angle and multiplies the distance from the origin by the same factor. The trail shows the successive results, beginning from 1.
 
-Drag the starting point exactly onto the unit circle — one unit from the center — and the spiral vanishes: every power just walks around that same circle, landing on evenly spaced dots instead of drifting in or out. Push the point outside the circle and every higher power flies farther away; pull it inside instead and every higher power creeps closer to the center, eventually vanishing.
+A modulus greater than 1 makes the distances grow. A modulus between zero and one makes them shrink towards zero, and a modulus of 1 keeps them unchanged. The points need not form a spiral: a positive real number changes only the distance, while i cycles through four points on the circle. Nonzero shrinking powers approach zero without becoming exactly zero at a finite step.
 
 ## Formal
 
-Writing $z$ in polar form as $z = r(\cos\theta + i\sin\theta)$, de Moivre's formula gives $z^n = r^n(\cos(n\theta) + i\sin(n\theta))$: raising to the $n$th power raises the modulus to the $n$th power and multiplies the argument by $n$.
+Write a nonzero number as $z=r(\cos\theta+i\sin\theta)$, with r positive. For an integer n, de Moivre's formula gives $z^n=r^n(\cos(n\theta)+i\sin(n\theta))$.
 
-So the long-run behaviour depends only on $r = |z|$: $r>1$ spirals outward without bound, $r<1$ spirals inward to zero, and $r=1$ stays forever on the unit circle.
+For the positive powers shown here, the modulus is $|z|^n$. It grows without bound when |z| exceeds 1, tends to zero when |z| is below 1, and stays 1 when |z| equals 1. Angles are understood modulo a full turn; displayed angles may wrap rather than increase continuously.
 
 ## Advanced
 
-The $n$ solutions of $z^n = 1$ are equally spaced around the unit circle at angles $2\pi k/n$ for $k=0,1,\dots,n-1$; they generate the finite group of $n$th roots of unity, the algebraic structure behind the fast Fourier transform.
+For a positive integer n, the n roots of unity are equally spaced around the unit circle. Repeated powers of a unit complex number return exactly to 1 only when its angle is a rational multiple of a full turn. Otherwise the powers do not repeat exactly, even though their step angle is constant.
 
 ## Derivation
 
-1. Write the number in polar form, modulus and angle.
-2. Raise the polar form to the $n$th power term by term.
-3. Combine using the fact that repeated rotation by $\theta$, $n$ times, is rotation by $n\theta$.
+1. Express z using its modulus and angle.
+2. Repeated multiplication raises the modulus to the nth power.
+3. Add the angle n times to obtain n times theta, then express the resulting point using cosine and sine.
 
 ## Real world
 
-### Fast Fourier transform
-The FFT algorithm multiplies signals by roots of unity to break a Fourier transform into much smaller pieces.
+### Repeated rotations
 
-### Fractals
-The Mandelbrot and Julia sets are built by repeatedly squaring a complex number and adding a constant, watching whether the result spirals to infinity.
+A fixed unit complex multiplier produces equal angular steps without changing length.
 
-### Digital filters
-A filter's frequency response is read off by evaluating a polynomial at points on the unit circle, exactly where powers of $z$ neither grow nor shrink.
+### Discrete oscillations
 
-### Cryptography
-Some fast multiplication and lattice-based cryptographic schemes use roots of unity to speed up polynomial arithmetic.
+A complex multiplier of modulus below 1 combines a repeated phase change with decay in a simplified discrete signal model.
+
+### Fourier calculations
+
+Roots of unity provide evenly spaced unit-circle points used in discrete Fourier transforms. Iterating powers alone is different from iterating a rule that also adds a constant.

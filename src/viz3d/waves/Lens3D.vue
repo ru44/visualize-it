@@ -89,7 +89,7 @@ useThree(
       object.setLength(Math.max(0.05, ho), Math.min(0.3, ho * 0.3 + 0.02), Math.min(0.18, ho * 0.2 + 0.01))
 
       const P0 = new THREE.Vector3(-doo, ho, 0)
-      const Pi = new THREE.Vector3(diClamped, finite ? hi : 0, 0)
+      const Pi = new THREE.Vector3(finite ? di : 50, finite ? hi : 0, 0)
       const chief = finite ? Pi.clone().normalize() : new THREE.Vector3(doo, -ho, 0).normalize()
 
       if (finite) {

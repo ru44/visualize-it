@@ -33,9 +33,9 @@ variables:
 - B
 - C
 derivation:
-- \text{OA = OB = OC = r, so triangle OAC and triangle OBC are both isosceles}
-- \text{the base angles of an isosceles triangle are equal, so } \angle OAC=\angle OCA \text{ and } \angle OBC=\angle OCB
-- \angle AOB = 2\,\angle ACB \text{ follows once the two triangles' angles at } O \text{ are added together}
+  - '\text{at pos = 0.5, draw OC; OA = OB = OC, so OAC and OBC are isosceles}'
+  - '\angle ACB=\gamma,\quad \angle ACO=\angle OCB=\gamma/2,\quad \angle AOC=\angle COB=180^\circ-\gamma'
+  - '\angle AOB=360^\circ-2(180^\circ-\gamma)=2\gamma\quad\text{(symmetric case)}'
 charts: []
 primary: arc
 presets:

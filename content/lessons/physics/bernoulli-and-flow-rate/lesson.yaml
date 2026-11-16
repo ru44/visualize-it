@@ -34,16 +34,19 @@ parameters:
     max: 5
     step: 0.1
     value: 2
+    unit: m/s
   A1:
     min: 2
     max: 10
     step: 0.5
     value: 6
+    unit: cm²
   x:
     min: 0.5
     max: 10
     step: 0.1
     value: 3
+    unit: cm²
 variables:
   - A_1, A_2
   - v_1, v_2

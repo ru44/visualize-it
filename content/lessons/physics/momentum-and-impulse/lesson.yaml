@@ -76,7 +76,7 @@ presets:
     a: 0.4
     b: 0.6
 challenges:
-  - check: Fmax*w
+  - check: 'b > a ? Fmax*w*sqrt(pi)/2*(erf((b-0.5)/w)-erf((a-0.5)/w)) : -1'
     target: 1.5
   - check: abs(Fmax-5)<0.3 and w>0.3
   - check: w<0.05 and Fmax<3
