@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import { fmt } from '../../engine/math'
+import { t as translate } from '../../i18n'
 import Readouts from '../../components/Readouts.vue'
 
 const props = defineProps<{ params: Record<string, number>; options: Record<string, any> }>()
@@ -80,11 +81,11 @@ function headPoints(x2: number, y2: number) {
 }
 
 const readouts = computed(() => [
-  { label: 'force F', value: fmt(F.value) + ' N', color: 'var(--accent-2)' },
-  { label: 'mass m', value: fmt(m.value) + ' kg' },
-  { label: 'acceleration a = F/m', value: fmt(a.value) + ' m/s²', color: 'var(--pos)' },
-  { label: 'velocity v', value: fmt(v.value) + ' m/s' },
-  { label: 'time t', value: fmt(t.value) + ' s' },
+  { label: translate('block.force'), value: fmt(F.value) + ' N', color: 'var(--accent-2)' },
+  { label: translate('block.mass'), value: fmt(m.value) + ' kg' },
+  { label: translate('block.acceleration'), value: fmt(a.value) + ' m/s²', color: 'var(--pos)' },
+  { label: translate('block.velocity'), value: fmt(v.value) + ' m/s' },
+  { label: translate('block.time'), value: fmt(t.value) + ' s' },
 ])
 
 const svg = ref<SVGSVGElement>()
