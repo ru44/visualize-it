@@ -1,69 +1,63 @@
 ---
 title: Binomial distribution
-summary: >-
-  See how likely each possible number of successes is when you repeat a
-  yes-or-no trial many times — like flipping coins or testing a batch of parts.
+summary: 'Find the probability of exactly k successes in a fixed number of independent trials with the same success chance.'
 parameters:
-  'n': n — number of trials
-  p: p — chance of success each time
-  k: k — number of successes
+  n: 'n — total trials'
+  p: 'p — success probability per trial'
+  k: 'k — selected success count'
 variables:
-  - the number of successes in n trials
-  - the number of ways to place k successes among n trials
-  - 'the mean: what you get on average'
-  - the spread around the mean
+  - 'number of successes in the n trials'
+  - 'number of choices for the k success positions'
+  - 'expected success count'
+  - 'standard deviation of the success count'
 ---
 
 ## Try it
 
-1. Watch the bars: each one is the chance of getting exactly that many successes out of «n — number of trials» trials.
-2. Drag «k — number of successes» along the bars and read the tall central bar's height: that is the most likely outcome.
-3. Raise «n — number of trials» toward 60. The jagged bars smooth into a symmetric bell — that shape is the normal distribution appearing on its own.
+1. Set n = 10, p = 0.5 and k = 5. The highlighted bar gives a probability of about 0.246: even the most likely count occurs less than a quarter of the time.
+2. Change only k to 3. The exact probability is about 0.117; the cumulative readout is about 0.172 because it includes counts 0, 1, 2 and 3.
+3. Keep n = 10 and change p to 0.2. The mean moves to 2 and the bars become asymmetric. Keep k between 0 and n; the highlighted count is capped at n.
 
 ## Real-life examples
 
-1. **Coin-toss count.** Flip a fair coin 10 times; the chance of landing exactly 5 heads is only about 1 in 4, even though 5 is the single most likely count.
-2. **Free-throw shooter.** A basketball player who makes 70% of her free throws takes 20 shots; the chart shows how likely she is to sink exactly 15 of them.
-3. **Factory defect check.** A batch of 50 parts each has a 2% chance of being faulty; the chart shows the chance the whole batch comes out with zero faulty parts.
+1. **Ten fair flips.** Exactly five successes has probability 252/1024 ≈ 0.246. The average count is five, but other counts together are much more likely.
+2. **Practice shots.** Model 20 shots as independent, each with a 0.7 success chance. The chance of exactly 15 successes is about 0.179. Actual shots need not satisfy these assumptions.
+3. **Marked parts.** For 50 independent items each marked with probability 0.02, the probability that none is marked is 0.98⁵⁰ ≈ 0.364. The expected count is one.
 
 ## Test yourself
 
-1. Set «n — number of trials» and «p — chance of success each time» so the average number of successes (n × p) is exactly 6.
-2. Find values of «k — number of successes» where that exact outcome has more than a 30% chance of happening.
-3. Make the spread of likely outcomes — its standard deviation — about 3 successes wide.
+1. Make the expected number of successes, n × p, equal 6.
+2. Choose n, p and a valid count k so the chance of exactly k successes exceeds 0.3.
+3. Make the standard deviation of the success count approximately 3.
 
 ## Intuition
 
-Toss 10 fair coins. Exactly 5 heads is the most likely single result, yet it happens only about a quarter of the time — the bars on screen show every possible count at once. Drag «k — number of successes» to 3 and read the bar's height: three heads has probability $\binom{10}{3}/2^{10} = 120/1024$, exactly what the readout shows.
+Consider three independent fair coin flips. Exactly two successes can occur in three orders: SSF, SFS or FSS. Each order has probability 1/8, so the total probability is 3/8. We multiply along one order, then add over all orders that produce the required count.
 
-Now drag «p — chance of success each time» down to 0.2: the hill of bars slides left and leans. Raise «n — number of trials» to 60 instead, and the hill turns into a smooth, symmetric bell — that bell is the normal distribution appearing on its own.
+The binomial distribution does this for every possible success count. Each bar represents a count, not a single order of results. Moving k selects a bar without changing the distribution. Changing n or p changes the distribution itself. The dashed vertical line marks the mean, which need not be an integer or a possible result of one experiment.
 
 ## Formal
 
-$X \sim \mathrm{Bin}(n,p)$: $P(X=k) = \binom{n}{k}p^k(1-p)^{n-k}$ for $k = 0,\dots,n$; $E[X] = np$, $\mathrm{Var}(X) = np(1-p)$.
+For n independent trials with constant success probability p, the count X has $P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}$ for integers $0\le k\le n$. The combination counts orders of successes, and the powers give the probability of each such order.
 
-The probabilities sum to 1 by the binomial theorem: $\sum_k \binom{n}{k}p^k(1-p)^{n-k} = (p + 1 - p)^n = 1$.
+The mean is $E[X]=np$ and the standard deviation is $\sigma=\sqrt{np(1-p)}$. The mean is a long-run average count; the standard deviation measures variation in counts. The cumulative probability $P(X\le k)$ adds the probabilities from 0 through k, including k.
 
 ## Advanced
 
-De Moivre–Laplace: for large $n$, $\mathrm{Bin}(n,p) \approx \mathcal N(np, np(1-p))$, the first central limit theorem (1733). When $n \to \infty$ with $np = \lambda$ fixed, the binomial tends instead to the Poisson distribution.
+A normal distribution can approximate binomial counts when both np and n(1−p) are sufficiently large, often with a continuity correction. A large n alone does not ensure a symmetric shape when p is near zero or one. When n grows while np stays fixed, a Poisson approximation may be more suitable. Neither approximation makes the counts continuous.
 
 ## Derivation
 
-1. Independent trials: multiply the probabilities along the sequence.
-2. Choose which $k$ of the $n$ positions hold the successes — a combination.
-3. Add up the equally likely sequences.
+1. Independence lets us multiply the probabilities for one particular sequence of successes and failures.
+2. Choose the k success positions among the n trials; there are C(n,k) choices.
+3. The sequences are disjoint and have the same probability, so multiply one sequence's probability by their count.
 
 ## Real world
 
-### Quality control
-If 2% of parts are faulty, the chance a box of 50 has no faulty part is 0.98⁵⁰ ≈ 36%.
+### A repeated random procedure
 
-### Medicine
-A drug that works for 70% of patients cures at least 8 of 10 with probability about 38%.
+Drawing a counter, replacing it and mixing before the next draw can model repeated trials with an unchanged probability. Drawing without replacement generally changes the chance and requires a different model.
 
-### Elections and surveys
-The number of “yes” answers in a sample of n voters is binomial — the basis of every margin of error.
+### Batch checks
 
-### Genetics
-The number of children in a family who inherit a recessive trait follows Bin(n, ¼).
+A binomial model can estimate how many items meet a criterion when the independence and equal-probability assumptions are reasonable. Shared production conditions can make faults cluster, violating independence.
