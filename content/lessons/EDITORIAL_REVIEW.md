@@ -1,6 +1,6 @@
 # Bilingual editorial review
 
-25 of 390 lessons reviewed. 365 remain.
+37 of 390 lessons reviewed. 353 remain.
 
 A checked lesson has had both language files rewritten or reviewed against its configuration and visualization source. Automated validation alone does not mark a lesson reviewed. Browser interaction and independent learner review remain separate checks.
 
@@ -44,20 +44,20 @@ Scope: every lesson, including summaries, parameter labels, examples, exercises,
 - [ ] [what-is-machine-learning](ai/what-is-machine-learning/en.md) · [Arabic](ai/what-is-machine-learning/ar.md)
 - [ ] [word-embeddings](ai/word-embeddings/en.md) · [Arabic](ai/word-embeddings/ar.md)
 
-## algebra (0/12)
+## algebra (12/12)
 
-- [ ] [absolute-value-inequalities](algebra/absolute-value-inequalities/en.md) · [Arabic](algebra/absolute-value-inequalities/ar.md)
-- [ ] [complex-numbers](algebra/complex-numbers/en.md) · [Arabic](algebra/complex-numbers/ar.md)
-- [ ] [determinant](algebra/determinant/en.md) · [Arabic](algebra/determinant/ar.md)
-- [ ] [eigenvectors](algebra/eigenvectors/en.md) · [Arabic](algebra/eigenvectors/ar.md)
-- [ ] [exponents-and-powers](algebra/exponents-and-powers/en.md) · [Arabic](algebra/exponents-and-powers/ar.md)
-- [ ] [linear-equations](algebra/linear-equations/en.md) · [Arabic](algebra/linear-equations/ar.md)
-- [ ] [logarithms](algebra/logarithms/en.md) · [Arabic](algebra/logarithms/ar.md)
-- [ ] [matrices-as-transformations](algebra/matrices-as-transformations/en.md) · [Arabic](algebra/matrices-as-transformations/ar.md)
-- [ ] [percent-and-compound-growth](algebra/percent-and-compound-growth/en.md) · [Arabic](algebra/percent-and-compound-growth/ar.md)
-- [ ] [powers-of-complex-numbers](algebra/powers-of-complex-numbers/en.md) · [Arabic](algebra/powers-of-complex-numbers/ar.md)
-- [ ] [quadratic-roots](algebra/quadratic-roots/en.md) · [Arabic](algebra/quadratic-roots/ar.md)
-- [ ] [vectors](algebra/vectors/en.md) · [Arabic](algebra/vectors/ar.md)
+- [x] [absolute-value-inequalities](algebra/absolute-value-inequalities/en.md) · [Arabic](algebra/absolute-value-inequalities/ar.md)
+- [x] [complex-numbers](algebra/complex-numbers/en.md) · [Arabic](algebra/complex-numbers/ar.md)
+- [x] [determinant](algebra/determinant/en.md) · [Arabic](algebra/determinant/ar.md)
+- [x] [eigenvectors](algebra/eigenvectors/en.md) · [Arabic](algebra/eigenvectors/ar.md)
+- [x] [exponents-and-powers](algebra/exponents-and-powers/en.md) · [Arabic](algebra/exponents-and-powers/ar.md)
+- [x] [linear-equations](algebra/linear-equations/en.md) · [Arabic](algebra/linear-equations/ar.md)
+- [x] [logarithms](algebra/logarithms/en.md) · [Arabic](algebra/logarithms/ar.md)
+- [x] [matrices-as-transformations](algebra/matrices-as-transformations/en.md) · [Arabic](algebra/matrices-as-transformations/ar.md)
+- [x] [percent-and-compound-growth](algebra/percent-and-compound-growth/en.md) · [Arabic](algebra/percent-and-compound-growth/ar.md)
+- [x] [powers-of-complex-numbers](algebra/powers-of-complex-numbers/en.md) · [Arabic](algebra/powers-of-complex-numbers/ar.md)
+- [x] [quadratic-roots](algebra/quadratic-roots/en.md) · [Arabic](algebra/quadratic-roots/ar.md)
+- [x] [vectors](algebra/vectors/en.md) · [Arabic](algebra/vectors/ar.md)
 
 ## biology (0/13)
 
