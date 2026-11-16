@@ -1,67 +1,60 @@
 ---
 title: The chain rule and product rule together
-summary: >-
-  A radio signal built from a fast wiggle riding on a slowly changing
-  strength needs two differentiation rules at once — this shows you both,
-  working together.
+summary: 'Differentiate a changing product whose sine factor also contains a changing input.'
 parameters:
-  k: k (inner frequency)
-  x: x (drag along the curve)
+  k: 'k — constant multiplier inside sine'
+  x: 'x — selected input'
 variables:
-  - frequency inside the sine — the "inner function" being composed
-  - point where the tangent and derivative are evaluated
+  - 'k: angle increase per unit x inside sine'
+  - 'x: point where the value and derivative are evaluated'
 ---
 
 ## Try it
 
-1. Drag the point «x» along the curve. The solid tangent line and the dashed derivative curve always agree at that spot.
-2. Raise «k» slowly. Both curves oscillate faster, but the derivative curve also swings higher and lower — not just faster.
-3. Drag «x» far from the centre with a high «k». The derivative curve grows much larger than the original curve ever does.
+1. Set k = 1 and x = 2. The function value is about 1.8186 and its slope about 0.0770. The dashed curve's height gives the slope of the solid curve, not its height.
+2. Move x while keeping k fixed. Where the dashed curve crosses zero, the solid curve has a horizontal tangent.
+3. Set k = 3 and move x away from zero. Some derivative values leave the vertical plotting window; the slope readout still reports them.
 
 ## Real-life examples
 
-1. **A slow-varying AM radio carrier.** With a gentle inner frequency (k = 0.4) and a point far from the centre (x = 5), the tangent shows how a slowly oscillating signal still tilts because of the growing envelope term.
-2. **A fast, buzzing tone near the start.** A high inner frequency (k = 2.8) makes the wave oscillate quickly, so even close to the centre (x = 0.5) the slope swings widely.
-3. **Backpropagation deep inside a network.** With k = 1.2 and x = -4, the same product-and-chain pattern is what a neural network computes, layer after layer, when it works out how a weight affects the final error.
+1. **Nearly horizontal tangent.** At k = 0.4 and x = 5, f ≈ 4.54649 but f′ ≈ 0.07700. A large function value can have a small slope.
+2. **Positive slope near the centre.** At k = 2.8 and x = 0.5, f ≈ 0.49272 and f′ ≈ 1.22340.
+3. **Negative value, positive slope.** At k = 1.2 and x = −4, f ≈ −3.98466 and f′ ≈ 0.57617. A curve can lie below zero while increasing.
 
 ## Test yourself
 
-1. Find a point away from the centre (|x| > 1) where the tangent is flat — the derivative reads 0.
-2. Make the derivative climb above 10.
-3. Make the derivative drop below -10.
+1. Choose |x| greater than 1 with |f′(x)| less than 0.15.
+2. Make f′(x) greater than 10.
+3. Make f′(x) less than −10.
 
 ## Intuition
 
-Picture an old radio dial: turning it changes how fast a signal wiggles up and down. On screen, knob «k» plays that role, and the point «x» marks one spot you are standing at on the wiggle. With «k» at 1 and «x» at 2, the solid curve is the signal itself, and the dashed curve beneath it is how steeply the signal rises or falls right at that spot — its slope, redrawn as its own curve.
+The function x sin(kx) multiplies two changing factors. If x changes a little, the factor x changes and the sine factor changes too. The product rule accounts for both contributions: change the first factor while holding the second at its current value, then add the contribution from changing the second.
 
-Raise «k» toward 3 and both curves wiggle faster, as you would expect. But watch the dashed curve's height too: it grows taller as well, not just faster. That extra growth is the fingerprint of two rules working together — one for the fast wiggle inside, one for the straight-line factor multiplying it — and together they make the slope swing more wildly than the signal itself ever does.
+The sine factor contains a second layer. Its input is kx, which changes k times as fast as x. The chain rule therefore multiplies cosine by k. Combining the two rules gives two terms in the slope. Differentiating only the sine or only the factor x would miss part of the change.
 
 ## Formal
 
-Product rule: $(uv)' = u'v + uv'$ with $u = \sin(kx)$, $v = x$.
+For differentiable u and v, $(uv)'=u'v+uv'$. Here $u=\sin(kx)$ and $v=x$, with k held constant when differentiating with respect to x. The sine input is in radians.
 
-Chain rule: $\dfrac{d}{dx}\sin(kx) = k\cos(kx)$, since the derivative of the outer sine is evaluated at the inner function, times the inner function's own derivative $k$.
+The chain rule gives $u'=k\cos(kx)$, while $v'=1$. Hence $f'(x)=kx\cos(kx)+\sin(kx)$. The dashed graph plots this derivative; the tangent to the original curve at the selected point has this slope.
 
 ## Advanced
 
-This derivative, $kx\cos(kx) + \sin(kx)$, is exactly the pattern that shows up differentiating $\int \sin(kt)\,dt$-type expressions or analysing amplitude-modulated signals $x(t)\sin(kt)$: the product rule splits the change into a part from the (slowly varying) envelope and a part from the (fast) oscillation, which is the starting point for the general Leibniz rule and for stationary-phase approximations.
+For an envelope A(x), differentiating A(x) sin(kx) gives A′(x) sin(kx) + kA(x) cos(kx). The terms describe change in the envelope and change in the oscillation. This is a derivative with respect to x; differentiating with respect to the parameter k while fixing x would give a different result.
 
 ## Derivation
 
-1. Apply the product rule to the two factors $\sin(kx)$ and $x$.
-2. Apply the chain rule to the composed inner function $kx$.
-3. Combine: $\frac{d}{dx}[x] = 1$, and substitute the chain-rule result.
+1. Apply the product rule to sin(kx) and x. Keep both terms.
+2. Differentiate the outer sine at its inner input kx, then multiply by the inner derivative k.
+3. Substitute that result and the derivative 1 of x into the product-rule expression.
 
 ## Real world
 
-### Amplitude-modulated radio
-A carrier wave multiplied by a slowly varying envelope needs exactly this product-and-chain differentiation to analyse.
+### A changing oscillation
 
-### Vibration with growing drive
-A driven oscillator whose forcing amplitude ramps up linearly while oscillating shows this same $x\sin(kx)$ shape.
+A signal model can multiply an oscillation by a varying amplitude. Its rate of change depends on both factors, even if one changes more slowly than the other.
 
-### Optimization in engineering
-Composite cost functions (a rate applied to a changing quantity) routinely require chaining derivatives through several layers.
+### Quantities with two changing factors
 
-### Machine learning backpropagation
-Gradients through neural network layers are chain rule applied repeatedly, often combined with products at each layer.
+If a rectangle's length and width vary with time, its area changes because both dimensions change. The product rule adds their first-order contributions.
