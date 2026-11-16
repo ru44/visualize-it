@@ -1,64 +1,67 @@
 ---
 title: Prime numbers
-summary: >-
-  Learn the trick that finds every prime number up to 100 just by crossing
-  out multiples, no dividing required.
+summary: Find numbers that divide only by themselves and one, using a grid of multiples.
 parameters:
-  N: the sieve size N
-  p: primes used p
+  N: largest number in the grid N
+  p: number of prime filters used p
 variables:
-  - the number being tested for primality
-  - the smaller of two factors
-  - the larger of two factors
+  - whole number being tested
+  - smaller factor, greater than 1
+  - larger factor, smaller than the number being tested
 ---
 
 ## Try it
 
-1. Set p to 0 and look at the plain grid of numbers up to N, nothing crossed out yet.
-2. Click the chip labelled 2. Watch every second number on the grid turn grey with a line through it — 4, 6, 8, and on.
-3. Click 3, then 5, then 7. Once all four chips glow orange, every number still shown in solid orange below N is a prime.
+1. Set N to 100 and p to 0. The grid has not yet eliminated multiples. The number 1 is excluded from the primes.
+2. Set p to 1. Multiples of 2 from 4 onwards are crossed out. The number 2 itself remains.
+3. Set p to 4. The filters for 2, 3, 5 and 7 have all been used. The 25 surviving numbers greater than 1 are prime.
 
 ## Real-life examples
 
-1. **A small sieve.** Up to 50, crossing out multiples of 2 and 3 already removes most of the non-primes.
-2. **The classic sieve.** Up to 100, crossing out multiples of 2, 3, 5 and 7 is enough to leave only the 25 primes below 100.
-3. **A bigger, lighter sieve.** Up to 120, crossing out only multiples of 2 still removes half of all the numbers.
+1. **An unfinished sieve up to 50.** With p = 2, the filters remove multiples of 2 and 3. Numbers such as 25 and 49 still remain, so the survivors are not all prime yet.
+2. **A completed sieve up to 100.** With p = 4, filtering by 2, 3, 5 and 7 leaves the 25 primes in this range.
+3. **Checking even numbers up to 120.** With p = 1, even numbers greater than 2 are crossed out. Odd composite numbers still need checking.
 
 ## Test yourself
 
-1. Use all four primes (2, 3, 5, 7) on a sieve of 100 or more.
-2. Shrink the sieve down to just 20 numbers.
-3. Turn every prime filter off (p = 0) and look at the untouched grid.
+1. Use all four filters and set N to at least 100.
+2. Set N to 20.
+3. Set p to 0 to remove the filters.
 
 ## Intuition
 
-Take the number 91 and ask whether it has a factor — that takes real work, one division at a time. On screen, click the chip labelled 2 instead, and every second number on the grid — 4, 6, 8, 10 — turns grey with a line through it in one go, no dividing needed.
+You can arrange 12 counters into 3 equal groups of 4, so 12 has factors other than 1 and itself. With 7 counters, no such whole-number grouping works. A whole number greater than 1 with only those two divisors is called prime.
 
-Click the 3 chip, then 5, then 7, and each one crosses out its own multiples the same way. Whatever is left glowing orange below the sieve size, $N$, has never been crossed out by anything — and a number with no smaller factor is exactly what "prime" means.
+The grid finds primes by eliminating numbers with known factors. Starting with 2, cross out 4, 6, 8 and the later multiples, but keep 2 itself. Then use 3 to cross out its larger multiples. Continue with the next primes.
+
+A number surviving an unfinished sieve is only a candidate. For example, 49 survives the filters for 2, 3 and 5, but the filter for 7 removes it. Within this grid's limit of 120, completing the filters through 7 leaves only primes.
 
 ## Formal
 
-A whole number $N$ greater than 1 is prime if it cannot be written as $N=a\times b$ with $1<a\le b<N$. If such $a$ and $b$ exist, $N$ is composite.
+A whole number N greater than 1 is composite if $N=a\times b$ for whole numbers satisfying $1<a\le b<N$. If no such factors exist, N is prime. The number 1 is neither prime nor composite.
 
-The sieve of Eratosthenes finds every prime up to a limit by crossing out multiples of 2, then 3, then 5, and so on: each crossed-out number has just been shown to equal some $a\times b$.
+To complete a sieve up to a limit N, use each prime no greater than $\sqrt{N}$. Any composite number in the range has at least one factor no greater than this bound.
 
 ## Advanced
 
-It is enough to sieve with primes up to $\sqrt{N}$, since any composite $N$ has a factor no larger than $\sqrt{N}$ — this is why checking up to 7 clears everything below $100$, as $7<\sqrt{100}=10<11$.
+When processing a prime p, you can begin crossing out at $p^2$. Smaller multiples of p have a smaller prime factor and were already removed. This avoids repeated work without changing the survivors.
 
 ## Derivation
 
-1. First cross out every multiple of 2 from 4 upward: $2\times2$, $2\times3$, $2\times4$, and so on.
-2. Then cross out every multiple of 3 from 9 upward: $3\times3$, $3\times4$, and so on — smaller multiples of 3 were already crossed out as multiples of 2.
-3. Repeating this for each surviving number, whatever is never crossed out up to $N$ is prime.
+1. Cross out multiples of 2 starting at 4. Keep 2 because a prime is not eliminated by its own filter.
+2. Next process 3. Start at 9 because 6 has already been removed by the filter for 2.
+3. Continue through the required primes. Only after completing these filters can the surviving numbers greater than 1 be declared prime.
 
 ## Real world
 
-### Cryptography
-Modern encryption relies on primes that are hundreds of digits long, far too large to sieve — factoring them back apart is what keeps the codes safe.
+### Equal groups
 
-### Cicada broods
-Some cicadas emerge only every 13 or 17 years — both prime numbers — which makes it harder for predators to time their own cycles to match.
+Prime numbers tell us when a collection cannot be split into equal whole-number groups except one group or groups of one.
 
-### Gears and cogs
-Engineers sometimes pick gear teeth counts that are coprime so that the same two teeth do not keep meeting, spreading out wear evenly.
+### Repeating cycles
+
+Two cycles whose lengths share no factor greater than 1 meet less frequently than cycles with a shared factor. Such lengths are called coprime; they need not both be prime.
+
+### Factoring
+
+Finding the prime factors of a number breaks it into multiplicative building blocks. For example, 12 is 2 times 2 times 3.
