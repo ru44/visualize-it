@@ -117,7 +117,12 @@ function pick(e: PointerEvent) {
           <line :x1="lx(di)" :y1="AX.y" :x2="lx(di)" :y2="ly(hi)" :stroke="virtual ? 'var(--pos)' : 'var(--neg)'" stroke-width="4" stroke-linecap="round" :stroke-dasharray="virtual ? '6 4' : ''" />
           <circle :cx="lx(di)" :cy="ly(hi)" r="5" :fill="virtual ? 'var(--pos)' : 'var(--neg)'" />
         </template>
-        <text v-else class="num" :x="AX.x + 40" y="60" font-size="13" fill="var(--muted)">{{ t('optics.none') }}</text>
+        <template v-else>
+          <line :x1="lx(-doo)" :y1="ly(ho)" :x2="lx(0)" :y2="ly(ho)" stroke="var(--fg)" stroke-width="1.5" />
+          <line :x1="lx(0)" :y1="ly(ho)" :x2="lx(28)" :y2="ly(ho - (ho / f) * 28)" stroke="var(--fg)" stroke-width="1.5" />
+          <line :x1="lx(-doo)" :y1="ly(ho)" :x2="lx(28)" :y2="ly(-(ho / doo) * 28)" stroke="var(--fg)" stroke-width="1.5" />
+          <text class="num" :x="AX.x + 40" y="60" font-size="13" fill="var(--muted)">{{ t('optics.none') }}</text>
+        </template>
       </template>
     </svg>
     <Readouts :items="readouts" />

@@ -1,71 +1,63 @@
 ---
 title: Thin lenses and image formation
-summary: >-
-  A magnifying glass held close to a page makes the letters look bigger and
-  upright, but held farther away it flips the whole view upside-down — where
-  the lens puts that image depends on just two numbers: its focal length and
-  how far away the object sits.
+summary: 'Use a converging lens to locate an image and decide whether it is real or virtual, upright or inverted.'
 parameters:
-  f: focal length f
-  doo: object distance d₀
-  ho: object height h₀
+  f: 'f — positive focal length'
+  doo: 'd₀ — object distance'
+  ho: 'h₀ — object height'
 variables:
-  - focal length f
-  - object distance and image distance
-  - object height and image height
-  - magnification m
+  - 'positive focal length of the converging lens'
+  - 'object distance and signed image distance'
+  - 'object height and signed image height'
+  - 'signed ratio of image height to object height'
 ---
 
 ## Try it
 
-1. Drag the red arrow (the object) far from the lens. Watch the three rays cross on the far side, drawing a small, upside-down image.
-2. Drag the object closer, past the mark labelled F. The rays now spread apart instead of crossing — a big, upright, dashed image appears instead.
-3. Raise the slider "focal length f". Watch where the crossing point (or the dashed image) moves.
+1. Set f = 6, d₀ = 15 and h₀ = 3. The image distance is 10 and magnification is −2/3: the image is real, inverted and 2 units tall.
+2. Move the object to d₀ = 3. Image distance becomes −6 and magnification becomes +2. Dashed backward extensions locate an upright virtual image.
+3. Set d₀ = f = 6. The emerging rays are parallel and no finite image distance exists. Near this setting an image may lie outside the diagram; check the readouts.
 
 ## Real-life examples
 
-1. **A camera photographing a distant tree.** With the tree far away (object distance d₀ = 25, focal length f = 6, height h₀ = 2) the lens forms a small, upside-down real image on the sensor — exactly what the shutter captures.
-2. **A magnifying glass over small text.** Held close to the page (d₀ = 3, f = 6, h₀ = 1) the object sits inside the focal length, so the lens produces a large, upright, virtual image the eye can focus on.
-3. **A projector lens showing a slide.** Placed just outside its focal length (d₀ = 12, f = 10, h₀ = 1.5), the lens throws a large, real, upside-down image onto the distant screen — which is why the slide is mounted upside-down inside the projector.
+1. **A smaller real image.** For f = 6, d₀ = 25 and h₀ = 2, dᵢ ≈ 7.89, m ≈ −0.316 and hᵢ ≈ −0.632. This is the kind of geometry used to form an image on a camera sensor.
+2. **A magnifier.** For f = 6, d₀ = 3 and h₀ = 1, dᵢ = −6 and m = +2. The virtual image is upright and 2 units tall.
+3. **A larger real image.** For f = 10, d₀ = 12 and h₀ = 1.5, dᵢ = 60, m = −5 and hᵢ = −7.5. The image is beyond the 2D window, as can happen in projector geometry.
 
 ## Test yourself
 
-1. Position the object so the image forms exactly 10 units behind the lens (image distance = 10).
-2. Move the object inside the focal length so the lens makes a virtual image, like a magnifying glass.
-3. Get a magnification of exactly −2: an image twice as tall as the object, and upside-down.
+1. Choose f and d₀ to place a real image 10 units beyond the lens.
+2. Place the object inside the focal distance to make a virtual image.
+3. Obtain m = −2: an inverted image with twice the object's height.
 
 ## Intuition
 
-Hold a magnifying glass a few centimetres above a page of text and the letters look bigger while staying right-side up — move the same glass a metre away instead, and it flips the whole scene upside-down. Both behaviours come from the same lens; only the object's distance changes, called $d_0$. On screen, the red arrow standing on the axis is the object: drag it closer to or farther from the lens. With it well outside the mark labelled $F$ (the focal point, 6 units from the lens by default), the three construction rays cross on the far side and trace a real, upside-down image; drag it far enough away and that image shrinks toward $F$.
+The object arrow sends rays toward the lens. A ray parallel to the axis bends toward the far focal point, while a ray through the ideal thin lens's centre continues straight. Where the outgoing rays meet, they form a real image. A screen placed there could receive it.
 
-Now drag the object inside $F$, closer to the lens than the focal length. The rays leaving the lens now spread apart instead of crossing, so they never form a real image — only their backward extensions meet, on the same side as the object, drawn here as a dashed, upright, enlarged arrow. That dashed arrow is a virtual image, exactly what the magnifying glass produced when held close to the page.
+When the object is closer than the focal length, the outgoing rays spread apart. Their backward extensions meet on the object's side of the lens, marking a virtual image. Light does not actually converge at that location, but the outgoing rays appear to come from it. Changing object height changes image height without changing image distance in this model.
 
 ## Formal
 
-The thin-lens equation relates the three distances: $\dfrac{1}{f} = \dfrac{1}{d_0} + \dfrac{1}{d_i}$, with $d_i$ coming out negative when the image is virtual.
+For this converging lens and real object, $f>0$ and $d_0>0$. The thin-lens equation is $1/f=1/d_0+1/d_i$, so $d_i=fd_0/(d_0-f)$ when $d_0\ne f$. Positive image distance lies beyond the lens; negative image distance lies on the object's side.
 
-Magnification compares heights: $m = h_i/h_0 = -d_i/d_0$, so a negative $m$ means an upside-down real image and a positive $m$ means an upright virtual one.
+Magnification is $m=h_i/h_0=-d_i/d_0$. Here negative m means an inverted real image, and positive m means an upright virtual image. At $d_0=f$, there is no finite image plane. Use the same length unit for all distances and heights.
 
 ## Advanced
 
-The same lens equation, with a sign convention, covers diverging as well as converging lenses ($f < 0$) and describes compound systems by treating each lens's image as the next lens's object. Real optical designs stack several such thin-lens elements to cancel aberrations that a single lens cannot avoid.
+The thin-lens equation is a paraxial approximation: rays are close to the axis and make small angles with it. The sliders explore its algebra even when the drawing has large ray angles. Real lenses have finite thickness and aberrations. The 3D view adds a ray fan, but screen extent is limited near the focal-distance singularity; numerical readouts remain the reference for image position.
 
 ## Derivation
 
-1. Similar triangles on either side of the lens relate the two heights to the two distances, with a minus sign for the image being upside-down.
-2. Combining that ratio with the geometry of the two construction rays through the lens's focal points gives the thin-lens equation.
-3. Rearranging the height ratio in terms of the distances gives the magnification formula directly.
+1. Similar triangles for the central ray relate signed image height to image distance and object height to object distance.
+2. Combine that relation with the ray parallel to the axis, which passes through the far focal point after refraction.
+3. Express the height ratio as magnification, retaining the sign that records orientation.
 
 ## Real world
 
 ### Cameras
-A camera lens focuses light from the scene onto the sensor exactly as this equation describes, and autofocus is just motorized adjustment of $d_i$.
 
-### The human eye
-The eye's lens changes its own focal length (accommodation) to keep images sharp on the retina as $d_0$ changes.
+A lens system forms an image on a sensor. Focusing changes the optical geometry; real autofocus systems may move internal lens groups rather than simply moving one ideal lens.
 
 ### Magnifying glasses
-Holding a magnifying glass closer to an object than its focal length produces the enlarged, upright virtual image seen when the object sits inside $F$.
 
-### Projectors
-A projector places its source image just outside the focal length so the lens casts a large, real, inverted image onto a distant screen.
+An object inside the focal distance gives an upright virtual image. The apparent angular enlargement seen by an eye also depends on viewing geometry.
