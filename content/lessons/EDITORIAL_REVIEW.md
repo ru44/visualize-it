@@ -1,6 +1,6 @@
 # Bilingual editorial review
 
-97 of 390 lessons reviewed. 293 remain.
+110 of 390 lessons reviewed. 280 remain.
 
 A checked lesson has had both language files rewritten or reviewed against its configuration and visualization source. Automated validation alone does not mark a lesson reviewed. Browser interaction and independent learner review remain separate checks.
 
@@ -416,21 +416,21 @@ Scope: every lesson, including summaries, parameter labels, examples, exercises,
 - [ ] [the-speed-of-light-is-constant](relativity/the-speed-of-light-is-constant/en.md) · [Arabic](relativity/the-speed-of-light-is-constant/ar.md)
 - [ ] [the-twin-paradox](relativity/the-twin-paradox/en.md) · [Arabic](relativity/the-twin-paradox/ar.md)
 
-## statistics (0/13)
+## statistics (13/13)
 
-- [ ] [bayes-theorem](statistics/bayes-theorem/en.md) · [Arabic](statistics/bayes-theorem/ar.md)
-- [ ] [binomial-distribution](statistics/binomial-distribution/en.md) · [Arabic](statistics/binomial-distribution/ar.md)
-- [ ] [combinations](statistics/combinations/en.md) · [Arabic](statistics/combinations/ar.md)
-- [ ] [confidence-intervals](statistics/confidence-intervals/en.md) · [Arabic](statistics/confidence-intervals/ar.md)
-- [ ] [expected-value](statistics/expected-value/en.md) · [Arabic](statistics/expected-value/ar.md)
-- [ ] [hypothesis-testing](statistics/hypothesis-testing/en.md) · [Arabic](statistics/hypothesis-testing/ar.md)
-- [ ] [law-of-large-numbers](statistics/law-of-large-numbers/en.md) · [Arabic](statistics/law-of-large-numbers/ar.md)
-- [ ] [mean-and-spread](statistics/mean-and-spread/en.md) · [Arabic](statistics/mean-and-spread/ar.md)
-- [ ] [normal-distribution](statistics/normal-distribution/en.md) · [Arabic](statistics/normal-distribution/ar.md)
-- [ ] [permutations](statistics/permutations/en.md) · [Arabic](statistics/permutations/ar.md)
-- [ ] [poisson-distribution](statistics/poisson-distribution/en.md) · [Arabic](statistics/poisson-distribution/ar.md)
-- [ ] [probability-basics](statistics/probability-basics/en.md) · [Arabic](statistics/probability-basics/ar.md)
-- [ ] [sampling-and-polls](statistics/sampling-and-polls/en.md) · [Arabic](statistics/sampling-and-polls/ar.md)
+- [x] [bayes-theorem](statistics/bayes-theorem/en.md) · [Arabic](statistics/bayes-theorem/ar.md)
+- [x] [binomial-distribution](statistics/binomial-distribution/en.md) · [Arabic](statistics/binomial-distribution/ar.md)
+- [x] [combinations](statistics/combinations/en.md) · [Arabic](statistics/combinations/ar.md)
+- [x] [confidence-intervals](statistics/confidence-intervals/en.md) · [Arabic](statistics/confidence-intervals/ar.md)
+- [x] [expected-value](statistics/expected-value/en.md) · [Arabic](statistics/expected-value/ar.md)
+- [x] [hypothesis-testing](statistics/hypothesis-testing/en.md) · [Arabic](statistics/hypothesis-testing/ar.md)
+- [x] [law-of-large-numbers](statistics/law-of-large-numbers/en.md) · [Arabic](statistics/law-of-large-numbers/ar.md)
+- [x] [mean-and-spread](statistics/mean-and-spread/en.md) · [Arabic](statistics/mean-and-spread/ar.md)
+- [x] [normal-distribution](statistics/normal-distribution/en.md) · [Arabic](statistics/normal-distribution/ar.md)
+- [x] [permutations](statistics/permutations/en.md) · [Arabic](statistics/permutations/ar.md)
+- [x] [poisson-distribution](statistics/poisson-distribution/en.md) · [Arabic](statistics/poisson-distribution/ar.md)
+- [x] [probability-basics](statistics/probability-basics/en.md) · [Arabic](statistics/probability-basics/ar.md)
+- [x] [sampling-and-polls](statistics/sampling-and-polls/en.md) · [Arabic](statistics/sampling-and-polls/ar.md)
 
 ## thermodynamics (0/11)
 
