@@ -37,6 +37,6 @@ Run `pnpm check` after editing. It validates structure, formulas and challenge s
 
 ## Reviewed examples and remaining work
 
-The following lessons have received a complete bilingual editorial pass under this guide: `place-value`, `negative-numbers`, `fractions-and-decimals`, `slope`, and `derivative`. They demonstrate the intended approach, not a claim that the catalog has been reviewed.
+See [the lesson-by-lesson review checklist](EDITORIAL_REVIEW.md) for coverage. The Numbers and Functions sections and the derivative lesson have received a complete bilingual editorial pass under this guide.
 
-The remaining lessons still need individual review of their summaries, controls, explanations, examples and challenges. Track progress by lesson, and do not treat a global phrase replacement or a successful build as an editorial review.
+The remaining lessons still need individual review of their summaries, controls, explanations, examples and challenges. Do not treat a global phrase replacement or a successful build as an editorial review.
