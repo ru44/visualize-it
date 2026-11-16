@@ -1,9 +1,6 @@
 ---
 title: Vectors
-summary: >-
-  See how two numbers alone pin down an arrow's exact length and direction —
-  the language behind velocity, force, and screen positions in every game
-  and map.
+summary: 'Describe a displacement with horizontal and vertical components, then calculate its length.'
 parameters:
   a: matrix row 1, column 1
   b: matrix row 1, column 2
@@ -18,54 +15,54 @@ variables:
 
 ## Try it
 
-1. Drag the orange arrow's tip and watch vx and vy change together.
-2. Watch the length readout below the grid update as you drag — that is the arrow's straight-line distance from the center.
-3. Push vx or vy negative and watch the arrow flip to point the other way along that axis.
+1. Set a = 1, b = 0, c = 0 and d = 1 so the matrix leaves the vector unchanged. Set vx = 3 and vy = 4.
+2. Read v = (3, 4) below the grid. Its length is 5 by the Pythagorean theorem; the readout shows components rather than a separate length value.
+3. Change vx to -3. The horizontal direction reverses, but the length remains 5. The dashed input arrow and solid transformed arrow overlap while the matrix is the identity.
 
 ## Real-life examples
 
-1. **A car driving due east.** No sideways drift, just vx=5 m/s east (vy=0): the vector's length is exactly 5, matching its speed.
-2. **An elevator rising straight up.** No horizontal motion, just vy=4 m/s upward (vx=0): the vector's length is exactly 4.
-3. **An airplane's ground track.** Heading east at 3 while wind pushes it north at 4 (vx=3, vy=4): the combined ground-track vector has length exactly 5, even though neither component alone is 5.
+1. **Moving east.** With vx = 5 and vy = 0, the vector points horizontally right and has length 5.
+2. **Moving upwards.** With vx = 0 and vy = 4, the vector points straight up and has length 4.
+3. **Combining perpendicular movements.** Components 3 east and 4 north give a displacement of length 5. If both components instead describe velocity in the same units, 5 is the resulting speed.
 
 ## Test yourself
 
-1. Make the vector's length exactly 5 using a vx and vy that are both nonzero.
-2. Make the vector point straight up, with no horizontal component, and a length of exactly 4.
-3. Make the vector point along the exact diagonal (equal vx and vy) with a length greater than 4.
+1. Make the input vector's length within 0.1 of 5, with both component magnitudes greater than 0.1.
+2. Make the input vector (0, 4), pointing straight up.
+3. Make vx and vy equal within 0.05, with vector length greater than 4. Both may be positive or both negative.
 
 ## Intuition
 
-A pilot flying due east at 3 units, while a crosswind pushes the plane north at 4 units, ends up moving along a single diagonal path — not east, not north, but somewhere between, and faster in a straight line than either push alone. The orange arrow on the grid is exactly that combined motion: drag its tip and two numbers change together, vx and vy, how far it reaches sideways and how far it reaches up. Those two numbers alone are enough to redraw the same arrow from scratch.
+Move three units right and four units up. The arrow from your starting point to your final point records the total displacement. Its two components are 3 and 4: one for each perpendicular direction.
 
-The arrow's straight-line length comes from the same idea as a ladder leaning against a wall: square each of the two numbers, add them, and take the square root — the Pythagorean theorem applied to the triangle the arrow forms with its own sideways and upward reach. Stretch vx or vy and the arrow's length grows to match; flip either one negative and the arrow points the opposite way along that same axis.
+The arrow is the diagonal of a right triangle with side lengths 3 and 4. Its length is the square root of 9 plus 16, which is 5. Negative components reverse a direction without making the length negative. Keep the matrix at the identity in this lesson to focus on the input vector; other matrix settings create a separate transformed vector.
 
 ## Formal
 
-A vector in the plane is the pair $\mathbf{v} = (v_x, v_y)$. Its length, or magnitude, is $|\mathbf{v}| = \sqrt{v_x^2 + v_y^2}$, the Pythagorean theorem applied to the triangle formed by the vector and its two components.
+A plane vector is written $\mathbf{v}=(v_x,v_y)$. Its Euclidean length is $|\mathbf{v}|=\sqrt{v_x^2+v_y^2}$. Both components must use compatible units for this interpretation.
 
-The matrix shown here is the identity, $a=d=1$ and $b=c=0$, so it leaves every vector exactly where it is: $M\mathbf{v} = \mathbf{v}$. Later lessons change $a,b,c,d$ to move the arrow somewhere new.
+The identity matrix has a = d = 1 and b = c = 0, giving $M\mathbf{v}=\mathbf{v}$. This is a selectable setting, not a restriction on the matrix controls. The exercises here test the input components regardless of the matrix setting.
 
 ## Advanced
 
-In $n$ dimensions a vector is simply a list of $n$ numbers, and the same magnitude formula generalises to $|\mathbf{v}| = \sqrt{v_1^2 + v_2^2 + \dots + v_n^2}$. Addition, scalar multiplication and the dot product all extend unchanged, which is why vectors describe everything from a two-dimensional velocity to a million-dimensional embedding.
+Add vectors by adding corresponding components. Multiply by a scalar by multiplying every component by that scalar. A negative scalar reverses a nonzero vector's direction. The zero vector has length zero and no defined direction.
 
 ## Derivation
 
-1. Write the vector as its two components.
-2. Square each component, exactly as in the Pythagorean theorem.
-3. The square root of that sum is the vector's length.
+1. Record the horizontal and vertical components.
+2. Square both components and add them to obtain the squared diagonal length.
+3. Take the nonnegative square root to obtain the length.
 
 ## Real world
 
-### Physics
-Velocity, force and acceleration are all vectors: a speed alone does not tell you where a car is heading, but a velocity vector does.
+### Motion
 
-### Computer graphics
-Every point, every direction a camera looks, and every surface normal in a 3D scene is stored as a vector.
+Velocity combines speed with direction. Two perpendicular velocity components determine the total velocity.
 
-### Navigation
-A pilot's ground track is the vector sum of the plane's heading and the wind: add the two arrows tip to tail to find where the plane actually goes.
+### Forces
 
-### Machine learning
-A word or an image is turned into a vector of numbers, and how close two vectors are measures how similar the two things are.
+Forces acting on an object add as vectors, so opposite components can cancel.
+
+### Graphics
+
+Coordinates and displacement vectors help locate objects and describe their movement. A position also depends on the chosen origin.
