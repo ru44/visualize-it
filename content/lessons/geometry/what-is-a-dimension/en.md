@@ -1,77 +1,67 @@
 ---
 title: What is a dimension?
-summary: A dimension is one direction you can move in. Count how many numbers it takes to say where something is, and you have counted its dimensions.
+summary: 'Count the independent coordinates needed to locate a point on a line, on a plane or in space.'
 parameters:
-  n: n — how many directions the thing can move in (1 is a track, 2 is a sea, 3 is the sky)
-  x: x — how far along the first direction (east, or kilometres along the track)
-  y: y — how far along the second direction (north); it does nothing when n is 1
-  z: z — how high up; it does nothing when n is 1 or 2
+  n: 'n — positional dimensions: track (1), map (2), space (3)'
+  x: 'x — coordinate along the first direction'
+  y: 'y — second coordinate; ignored when n = 1'
+  z: 'z — height; used only when n = 3'
 variables:
-  - the place where the thing is
-  - the first number of the address (how far east)
-  - the second number (how far north)
-  - the third number (how high)
-  - how many numbers the address needs, which is the number of dimensions
+  - 'P: point being located'
+  - 'x₁: first position coordinate'
+  - 'x₂: second position coordinate when available'
+  - 'x₃: height coordinate in three dimensions'
+  - 'n: number of independent positional coordinates'
 ---
 
 ## Try it
 
-1. Set n to 1 and drag the train. Only one number changes. Then set n to 2 and drag the ship: now there are two. Set n to 3 and the plane needs a third number, the height.
-2. Set n to 2 and drag the ship to (2, 8). Read the address in big letters and check the two numbers.
-3. Set n to 3. Drag the plane across the floor, then move the z slider. The dashed line is the plane's shadow point, and it shows that the height is a separate number.
+1. Set n = 1 and x = 3.5. The address has one coordinate. Change y and z: neither affects the train's position in this model.
+2. Set n = 2, x = 2 and y = 8. The ship's address is (2, 8). Change one coordinate at a time to see which direction it controls.
+3. Set n = 3, x = 4, y = 4 and z = 5. Change only z. The plane moves in height while its projected position on the floor stays (4, 4).
 
 ## Real-life examples
 
-- **A train on a track.** The driver only needs to say "kilometre 37". One number is enough, because the train can only go forwards or backwards. That is one dimension.
-- **A ship at sea.** One number is not enough: "12 km east" could be anywhere along a whole line. Say "12 km east and 5 km north" and the ship has one exact place. That is two dimensions.
-- **A plane in the sky.** East and north are not enough, because the plane could be low or high above that spot. Add the height, say 9 km, and you have three numbers.
+1. **Along a track.** At n = 1 and x = 3.5, one distance from the chosen starting point locates the train on this straight track.
+2. **On a flat map.** At n = 2, x = 6 and y = 3 locate the ship six units in the first direction and three in the second.
+3. **Above the map.** At n = 3, the address (6, 3, 9) adds a height of 9 to the same ground position. Another height would give a different point in space.
 
 ## Test yourself
 
-1. Put the ship at (2, 8). What do you set n to, and why?
-2. Fly the plane at height 5, straight above the point (4, 4).
-3. Show something that needs only one number, at 7.
+1. Choose the two-dimensional mode and place the ship at (2, 8).
+2. Choose the three-dimensional mode and place the plane at (4, 4, 5).
+3. Choose the one-dimensional mode and place the train at coordinate 7.
 
 ## Intuition
 
-A train runs on a track from one town to the next. If you ask the driver "where are you?", one number is enough: "kilometre 37". The train cannot go left or right, only forwards or backwards. One free direction means one number, and we call that one dimension. In the picture, set n to 1 and drag the train along the track. The y and z sliders do nothing, because a train cannot leave its track.
+On a straight track, one coordinate tells us how far a point lies from a chosen origin. Moving forward or backward changes that same coordinate; those are two senses along one direction, not two dimensions. The train is a three-dimensional object, but we are modelling only its position along the track.
 
-Now take a ship at sea. "I am 12 km east of the harbour" is not enough, because the ship could be anywhere along that line. You also need "and 5 km north". Two numbers give one exact place, since the sea has two free directions: east-west and north-south. Set n to 2. A ship has a place on the map, and dashed lines run from it to the two axes. Drag the ship and watch both numbers change.
+On a flat map, one coordinate is no longer enough. Many points share the same horizontal position. Add a vertical map coordinate and the pair identifies one point. The two coordinates can vary independently, giving a two-dimensional model.
 
-A plane needs three numbers. East and north tell you which spot of the ground it is above. Then you add the height: 9 km. Set n to 3 and drag the plane over the floor of the box. The dashed line to the floor is its shadow point, which has the same east and north but no height. So the number of dimensions is the number of numbers you need to say exactly where something is.
-
-What about meeting a friend? "At the corner of the market, on the third floor" is three numbers, and your friend still does not know when to come. You must also say "at 5 o'clock". Time is a fourth number. You cannot walk back and forth in time as you can in a street, but it is still one more number you need. And a dot with no room to move at all, like a full stop on a page, needs no numbers. That is zero dimensions.
+In space, add height. Two aircraft could be above the same map position at different heights, so we need a third coordinate to distinguish their locations. The dashed segment in the diagram connects the plane to its projection on the floor; this is a geometric projection, not a claim about where sunlight casts its shadow.
 
 ## Formal
 
-A point $P$ in $n$ dimensions is written as a list of $n$ numbers, its coordinates: $P = (x_1, x_2, \dots, x_n)$. Each number measures the distance along one direction, and the directions are independent: changing one does not change any other.
+In n-dimensional Cartesian space, a point has coordinates $P=(x_1,x_2,\dots,x_n)$ relative to a chosen origin and independent axes. Each coordinate can vary without forcing a change in the others. For the line, plane and space examples, n is respectively 1, 2 and 3.
 
-On a line ($n = 1$) the point is $P = (x_1)$. On a plane ($n = 2$) it is $P = (x_1, x_2)$. In space ($n = 3$) it is $P = (x_1, x_2, x_3)$. A single point with no free direction has $n = 0$ and an empty list.
+A space consisting of a single point has dimension $n=0$: there is no positional freedom within it. More generally, constraints can reduce dimension. A point constrained to a circle in a plane needs one local position parameter even though we may describe it using two Cartesian coordinates.
 
 ## Advanced
 
-The number of independent numbers needed to fix a position is called the degrees of freedom of a system. A robot arm with six joints has six, even though it works in a 3D room. A mathematician can also ask for a space with $n = 4$ or $n = 11$ without drawing it, because the list of numbers is all that is needed. The next lessons use exactly that idea.
+Degrees of freedom count independent parameters needed to describe a configuration. An ideal mechanism with six independently variable joint angles can have six configuration coordinates while occupying ordinary three-dimensional space. Recording time adds a coordinate for when an event occurs; it does not create another spatial direction in which the object can move.
 
 ## Derivation
 
-1. On a line there is one free direction, so one number fixes the point: $n = 1\text{: } P = (x_1)$.
-2. On a plane we add a second direction, so two numbers are needed: $n = 2\text{: } P = (x_1, x_2)$.
-3. In space we add a third direction, the height, so three numbers are needed: $n = 3\text{: } P = (x_1, x_2, x_3)$.
+1. On a line, one coordinate specifies the position relative to an origin and direction.
+2. On a plane, add a second independent coordinate to distinguish points sharing the first.
+3. In space, add a third independent coordinate to distinguish points above or below the same planar position.
 
 ## Real world
 
-### A street address
+### Pixel locations
 
-A house is found with two numbers: the street and the number on the door. It works like a point on a map.
+A pixel in a rectangular image is indexed by its column and row. These describe a two-dimensional grid; colour is separate information about the pixel.
 
-### GPS
+### Places and events
 
-Your phone finds you with latitude, longitude and height above the sea. Three numbers, so three dimensions.
-
-### A pixel on a screen
-
-Every dot on a screen is named by two numbers: its column and its row. That is why a screen is a two-dimensional picture.
-
-### An appointment
-
-A meeting needs a place and a time. The place is two or three numbers and the time is one more, so the whole appointment is a point with four numbers.
+A point in a room needs three spatial coordinates in this model. To specify an event at that point, also give a time. The spatial position and event description answer different questions.
