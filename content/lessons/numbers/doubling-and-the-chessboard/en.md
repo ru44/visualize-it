@@ -1,62 +1,65 @@
 ---
 title: Doubling and the chessboard
-summary: >-
-  Find out why doubling a single grain of rice sixty-four times would bury
-  the whole world in rice.
+summary: Follow repeated doubling and distinguish the amount on one square from the total so far.
 parameters:
-  k: the square number k
+  k: square number k
 variables:
-  - the number of grains on that square
-  - the square number, counted from 1 to 64
+  - number of grains on the selected square
+  - square number, starting at 1
 ---
 
 ## Try it
 
-1. Click or drag to square 8 on the board. Watch the orange highlight, and read the label showing 128 grains — still a small handful you can picture.
-2. Move to square 20. The number on the right already reads over half a million grains, more than every earlier square combined.
-3. Push to square 64, the last dark corner of the board. Read the weight shown on the right — heavier than anything you could lift.
+1. Set k to 1, then 2, then 3. The selected squares hold 1, 2 and 4 grains. Compare those values with the running totals 1, 3 and 7.
+2. Select square 8. It holds 128 grains, while all eight squares together hold 255.
+3. Select square 64. Read the separate values for that square and the total. The displayed mass estimates the total, not just the final square.
 
 ## Real-life examples
 
-1. **End of the first row.** By square 8, the pile is 128 grains — still just a small handful.
-2. **Halfway across the board.** By square 32, the pile has grown past two billion grains — more rice than one field could grow.
-3. **The last square.** By square 64, the pile holds about $1.8\times10^{19}$ grains — many times more rice than the whole world has ever harvested.
+1. **Eight squares.** Square 8 holds 128 grains after seven doublings. The total is 255 grains.
+2. **Thirty-two squares.** Square 32 holds 2,147,483,648 grains. This is the result of 31 doublings from the first grain.
+3. **The full board.** Square 64 holds about 9.22 billion billion grains. The total on all 64 squares is about 18.45 billion billion.
 
 ## Test yourself
 
-1. Move to square 16, the end of the second row.
-2. Find the square where the grain count first passes one million.
-3. Push k to 60 or beyond, near the end of the board.
+1. Select square 16.
+2. Find the first square holding more than one million grains.
+3. Select any square from 60 through 64.
 
 ## Intuition
 
-Put one grain of rice on the first square of a chessboard, then two on the second, four on the third — each square holds exactly double the grains of the one before. On screen, drag the slider labelled k and watch the orange highlight creep across the board: through the whole first row, the pile is still just a small handful you could hold in one hand.
+Put one grain on the first square, two on the next, and four on the third. Each new square gets twice as many grains as the previous square. The increase is not a fixed number of grains: it grows with the pile already there.
 
-Give the grains on a square a name, $g$, so it's easy to talk about. Give the square's own position a name too, $k$, counted from 1 to 64. By square 20, $g$ has already shot past half a million, though the slider has barely crossed a third of the board. By square 64, the far corner lights up, and the weight reading on the right shows more rice than the entire world grows in a year.
+By square 8, there are 128 grains on that square. One more doubling adds another 128 to make 256 on square 9. Much later, doubling a billion adds another billion. Repeating the same operation can therefore produce increasingly large changes.
+
+Keep the selected square separate from the running total. On square 3 there are 4 grains, but the first three squares together hold 1 + 2 + 4 = 7. The diagram reports both quantities because they answer different questions.
 
 ## Formal
 
-The chessboard has 64 squares. The number of grains on square $k$ is $g=2^{k-1}$: square 1 holds $2^{0}=1$ grain, square 2 holds $2^{1}=2$, and so on.
+If k counts squares starting at 1, the number on square k is $g_k=2^{k-1}$. The exponent is k minus 1 because the first square has not yet been doubled.
 
-Each square holds exactly twice the grains of the one before it, since $g_{k} = 2\,g_{k-1}$. Unrolling that rule from square 1 gives the closed formula $g_{k}=2^{k-1}$.
+The total through square k is $S_k=2^k-1$. It is one grain less than the amount that would go on the next square.
 
 ## Advanced
 
-The total across all 64 squares is $\sum_{k=1}^{64} 2^{k-1} = 2^{64}-1$, one grain short of double the last square alone — a general fact about doubling: the sum of everything so far is always just under the size of the next step.
+To see the sum rule, double the sum 1 + 2 + 4 + … + 2 to the power k minus 1. Subtract the original sum: all intermediate terms cancel, leaving $2S_k-S_k=2^k-1$. The displayed mass uses an assumed grain mass, so it is an estimate even though the grain count is exact.
 
 ## Derivation
 
-1. The first square holds a single grain: $g_{1}=1$.
-2. Every later square holds twice the grains of the one before: $g_{k} = 2\,g_{k-1}$.
-3. Repeating that doubling from square 1 gives a direct formula: $g_{k} = 2^{k-1}$.
+1. Put one grain on the first square to set the starting value.
+2. Multiply the previous square's count by two to find the next count.
+3. Reaching square k requires k minus 1 doublings, giving the direct formula.
 
 ## Real world
 
-### Viral spread
-An infection that doubles its case count every few days follows the exact same curve as the chessboard — slow at first, explosive later.
+### Repeated copying
 
-### Bacteria in a dish
-A single bacterium dividing every twenty minutes fills a petri dish by the same runaway doubling, not by adding cells one at a time.
+If every copy produces one additional copy each round, the number doubles per round. The rule assumes all copies participate successfully.
 
-### Compound interest
-Money that doubles on a fixed schedule grows the same way — which is why a modest interest rate, left alone for decades, can multiply savings enormously.
+### Cell division
+
+A simplified model in which every cell divides into two after each interval follows this pattern. Actual growth can slow when resources become limited.
+
+### Data size
+
+Doubling a file size repeatedly can exceed available storage quickly. Ten doublings multiply the size by 1024.
