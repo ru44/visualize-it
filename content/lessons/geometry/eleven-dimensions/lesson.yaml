@@ -2,7 +2,7 @@ id: eleven-dimensions
 subject: geometry
 difficulty: high-school
 added: '2026-11-14'
-equation: \theta = \frac{2r}{D}
+equation: \theta \approx \frac{2r}{D}
 concepts:
   - extra-dimensions
   - m-theory
@@ -47,8 +47,8 @@ variables:
   - D
 derivation:
   - '\text{width of the hose: } 2r'
-  - \theta = \frac{2r}{D}
-  - '\text{it looks like a line when } \theta < 0.0003'
+  - \theta \approx \frac{2r}{D}
+  - '\text{unresolved width in this model when } \theta < 0.0003'
 charts: []
 primary: D
 presets:
