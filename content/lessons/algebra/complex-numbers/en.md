@@ -1,8 +1,6 @@
 ---
 title: 'Complex numbers: multiplying as a spin'
-summary: >-
-  See why multiplying two numbers that each carry a direction spins and
-  resizes a point — the trick behind radio signals, radar, and game graphics.
+summary: 'Represent a complex number as a point and see how multiplication rotates and scales it.'
 parameters:
   a: first number, real part
   b: first number, imaginary part
@@ -13,54 +11,54 @@ variables: []
 
 ## Try it
 
-1. Drag the first point (steps a and b) anywhere on the plane and watch its label update.
-2. Set the second point to "c = 0, d = 1" — pure $i$ — and watch the first point spin exactly 90° around the center.
-3. Now drag "d" past 1. The point keeps spinning and also moves farther from the center, because a bigger second number scales as well as rotates.
+1. Set a = 3 and b = 4, giving z = 3 + 4i. Its point is three units right and four up.
+2. Set c = 0 and d = 1, giving w = i. The product is -4 + 3i: a quarter turn counterclockwise, with the same distance from the origin.
+3. Keep c at 0 and set d to 2. The product is -8 + 6i. The rotation is still a quarter turn, but the length has doubled; increasing d here does not keep increasing the angle.
 
 ## Real-life examples
 
-1. **AC circuit phase shift.** An electrical signal at 3+4i volts (a=3, b=4) passes through a pure inductor, which multiplies it by i (c=0, d=1): the signal's phase shifts 90° while its strength stays the same.
-2. **Rotating a game sprite.** A spaceship sits 2 steps right and 1 step up (a=2, b=1) on screen. Multiplying its position by about 0.7+0.7i (c=0.7, d=0.7) spins it 45° without changing its size.
-3. **Radar echo gain.** A radar blip 1 step out (a=1, b=0) is amplified and phase-shifted by a return signal of 2+2i (c=2, d=2), landing it farther out and rotated 45°.
+1. **Quarter-turn multiplication.** Multiplying 3 + 4i by i gives -4 + 3i. This isolates rotation without a change in magnitude.
+2. **Approximate 45-degree rotation.** Multiplying 2 + i by 0.7 + 0.7i gives 0.7 + 2.1i. The angle increases by 45 degrees and the magnitude is multiplied by about 0.990, so it shrinks slightly.
+3. **Rotation and enlargement.** Multiplying 1 by 2 + 2i gives 2 + 2i. The angle is 45 degrees and the magnitude is the square root of 8.
 
 ## Test yourself
 
-1. Choose a, b, c and d so the product lands exactly on the vertical (imaginary) axis, with no real part at all.
-2. Make the product's distance from the center exactly 10, however you split it between the two points.
-3. Find a second number exactly 1 unit from the center — it will only rotate points, never resize them.
+1. Make the product's real part zero so it lies on the imaginary axis, possibly at the origin.
+2. Make the product's distance from the origin approximately 10.
+3. Make the second number's magnitude approximately 1 to obtain a pure rotation for nonzero inputs.
 
 ## Intuition
 
-Imagine a treasure marked 3 steps east and 4 steps north of an old tree. That spot is a single point on the plane you see here — the orange dot — and it doubles as the number $z = a+bi$, where $a=3$ counts steps east and $b=4$ counts steps north. The letter $i$ does not measure a distance; it means "turn 90° first," so $bi$ steps go in that turned direction instead of sideways.
+A complex number combines a real part and an imaginary part. Write 3 + 4i as a point three units right and four units up. The new unit i obeys the rule that its square is -1. It is a number with a multiplication rule, not a physical distance.
 
-Now set the second point to $c=0, d=1$ — the number $i$ itself — and watch the orange dot spin: multiplying by it turns the dot 90° around the center without moving it closer or farther away. Any other second point both spins the dot by its own angle and stretches or shrinks it by its own distance from the center — multiplication is a spin plus a resize, nothing more.
+Multiply 3 + 4i by i. Distributing gives 3i + 4i squared, which becomes -4 + 3i. The coordinates have changed from (3, 4) to (-4, 3), a quarter-turn rotation. Multiplication by a general nonzero complex number combines a rotation with scaling.
 
 ## Formal
 
-The distance from the origin, $|z| = \sqrt{a^2+b^2}$, is called the modulus, and the angle from the positive real axis, $\theta = \operatorname{atan2}(b,a)$, is the argument. Together they locate $z$ exactly as well as $a$ and $b$ do.
+For $z=a+bi$ and $w=c+di$, the product is $zw=(ac-bd)+(ad+bc)i$, using $i^2=-1$.
 
-Multiplying two complex numbers, $zw$, multiplies their moduli and adds their arguments: geometrically, rotate $z$ by $w$'s angle and scale it by $w$'s distance from the origin.
+The modulus is $|z|=\sqrt{a^2+b^2}$. For nonzero z, its argument is its angle from the positive real axis, measured modulo a full turn. Multiplication multiplies moduli and adds arguments. Zero has modulus zero but no defined argument.
 
 ## Advanced
 
-Every polynomial with real or complex coefficients has all of its roots as complex numbers, the fundamental theorem of algebra; this is why complex numbers, not just real ones, are the natural home for algebra. Euler's formula $e^{i\theta} = \cos\theta + i\sin\theta$ makes the rotation behaviour of multiplication transparent.
+Euler's formula is $e^{i\theta}=\cos\theta+i\sin\theta$. It expresses a unit complex number as a rotation factor. The fundamental theorem of algebra states that every nonconstant complex polynomial has a complex root, and factors completely over the complex numbers with multiplicities counted.
 
 ## Derivation
 
-1. Write each number in terms of its real and imaginary parts.
-2. Multiply the two binomials term by term.
-3. Replace $i^2$ with $-1$ and collect the real and imaginary parts.
+1. Write both numbers as their real part plus i times their imaginary part.
+2. Multiply term by term using the distributive law.
+3. Replace i squared by -1, then collect the real and imaginary terms.
 
 ## Real world
 
-### Electrical engineering
-Alternating current and voltage are tracked as complex numbers (phasors), so resistance, capacitance and inductance combine by ordinary complex multiplication.
+### Plane rotations
 
-### Signal processing
-The Fourier transform, which finds the frequencies hiding in a sound or image, is built entirely out of complex exponentials.
+Multiplying coordinate pairs represented as complex numbers rotates them about the origin. A unit-modulus multiplier preserves lengths.
 
-### Control systems
-An engineer checks whether a feedback system is stable by looking at where certain complex numbers land relative to the unit circle.
+### Signals
 
-### Quantum mechanics
-The state of a quantum system is described by complex numbers whose squared moduli give measurable probabilities.
+Complex representations can keep track of a sinusoid's amplitude and phase together.
+
+### Algebra
+
+Complex numbers allow equations such as x squared plus 1 equals zero to have solutions beyond the real line.
