@@ -1,6 +1,6 @@
 # Bilingual editorial review
 
-81 of 390 lessons reviewed. 309 remain.
+97 of 390 lessons reviewed. 293 remain.
 
 A checked lesson has had both language files rewritten or reviewed against its configuration and visualization source. Automated validation alone does not mark a lesson reviewed. Browser interaction and independent learner review remain separate checks.
 
@@ -75,25 +75,25 @@ Scope: every lesson, including summaries, parameter labels, examples, exercises,
 - [ ] [predator-prey](biology/predator-prey/en.md) · [Arabic](biology/predator-prey/ar.md)
 - [ ] [sir-epidemic](biology/sir-epidemic/en.md) · [Arabic](biology/sir-epidemic/ar.md)
 
-## calculus (1/17)
+## calculus (17/17)
 
-- [ ] [area-under-curve](calculus/area-under-curve/en.md) · [Arabic](calculus/area-under-curve/ar.md)
-- [ ] [chain-and-product-rule](calculus/chain-and-product-rule/en.md) · [Arabic](calculus/chain-and-product-rule/ar.md)
-- [ ] [continuity](calculus/continuity/en.md) · [Arabic](calculus/continuity/ar.md)
+- [x] [area-under-curve](calculus/area-under-curve/en.md) · [Arabic](calculus/area-under-curve/ar.md)
+- [x] [chain-and-product-rule](calculus/chain-and-product-rule/en.md) · [Arabic](calculus/chain-and-product-rule/ar.md)
+- [x] [continuity](calculus/continuity/en.md) · [Arabic](calculus/continuity/ar.md)
 - [x] [derivative](calculus/derivative/en.md) · [Arabic](calculus/derivative/ar.md)
-- [ ] [differential-equations-intro](calculus/differential-equations-intro/en.md) · [Arabic](calculus/differential-equations-intro/ar.md)
-- [ ] [exponential-growth](calculus/exponential-growth/en.md) · [Arabic](calculus/exponential-growth/ar.md)
-- [ ] [fundamental-theorem](calculus/fundamental-theorem/en.md) · [Arabic](calculus/fundamental-theorem/ar.md)
-- [ ] [gradient](calculus/gradient/en.md) · [Arabic](calculus/gradient/ar.md)
-- [ ] [improper-integrals](calculus/improper-integrals/en.md) · [Arabic](calculus/improper-integrals/ar.md)
-- [ ] [integral](calculus/integral/en.md) · [Arabic](calculus/integral/ar.md)
-- [ ] [limit](calculus/limit/en.md) · [Arabic](calculus/limit/ar.md)
-- [ ] [limits-at-infinity](calculus/limits-at-infinity/en.md) · [Arabic](calculus/limits-at-infinity/ar.md)
-- [ ] [logistic-growth](calculus/logistic-growth/en.md) · [Arabic](calculus/logistic-growth/ar.md)
-- [ ] [one-sided-and-infinite-limits](calculus/one-sided-and-infinite-limits/en.md) · [Arabic](calculus/one-sided-and-infinite-limits/ar.md)
-- [ ] [partial-derivatives-saddle](calculus/partial-derivatives-saddle/en.md) · [Arabic](calculus/partial-derivatives-saddle/ar.md)
-- [ ] [sum-of-all-numbers](calculus/sum-of-all-numbers/en.md) · [Arabic](calculus/sum-of-all-numbers/ar.md)
-- [ ] [taylor-series](calculus/taylor-series/en.md) · [Arabic](calculus/taylor-series/ar.md)
+- [x] [differential-equations-intro](calculus/differential-equations-intro/en.md) · [Arabic](calculus/differential-equations-intro/ar.md)
+- [x] [exponential-growth](calculus/exponential-growth/en.md) · [Arabic](calculus/exponential-growth/ar.md)
+- [x] [fundamental-theorem](calculus/fundamental-theorem/en.md) · [Arabic](calculus/fundamental-theorem/ar.md)
+- [x] [gradient](calculus/gradient/en.md) · [Arabic](calculus/gradient/ar.md)
+- [x] [improper-integrals](calculus/improper-integrals/en.md) · [Arabic](calculus/improper-integrals/ar.md)
+- [x] [integral](calculus/integral/en.md) · [Arabic](calculus/integral/ar.md)
+- [x] [limit](calculus/limit/en.md) · [Arabic](calculus/limit/ar.md)
+- [x] [limits-at-infinity](calculus/limits-at-infinity/en.md) · [Arabic](calculus/limits-at-infinity/ar.md)
+- [x] [logistic-growth](calculus/logistic-growth/en.md) · [Arabic](calculus/logistic-growth/ar.md)
+- [x] [one-sided-and-infinite-limits](calculus/one-sided-and-infinite-limits/en.md) · [Arabic](calculus/one-sided-and-infinite-limits/ar.md)
+- [x] [partial-derivatives-saddle](calculus/partial-derivatives-saddle/en.md) · [Arabic](calculus/partial-derivatives-saddle/ar.md)
+- [x] [sum-of-all-numbers](calculus/sum-of-all-numbers/en.md) · [Arabic](calculus/sum-of-all-numbers/ar.md)
+- [x] [taylor-series](calculus/taylor-series/en.md) · [Arabic](calculus/taylor-series/ar.md)
 
 ## chemistry (0/13)
 
