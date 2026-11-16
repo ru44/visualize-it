@@ -1,70 +1,62 @@
 ---
 title: 'Five dimensions and beyond, up to eleven'
-summary: The same drag works again and again. At 11 dimensions a cube has 2,048 corners, and counting tells you what no picture can.
+summary: 'Count the vertices, edges and higher-dimensional faces of a hypercube without relying on a crowded projection.'
 parameters:
-  n: n — how many dimensions the cube has
-  spin: spin — turns the shadow so you can see it from another side
+  n: 'n — number of hypercube dimensions, from 4 to 11'
+  spin: 'spin — changes the projected view'
 variables:
-  - the number of pieces of dimension k inside the cube (corners when k is 0, edges when 1, square faces when 2, cubes when 3)
-  - the number of dimensions of the whole cube
-  - the number of dimensions of the piece you are counting
+  - 'F_k: count of k-dimensional faces, including vertices and the whole cube'
+  - 'n: dimension of the hypercube'
+  - 'k: dimension of the faces being counted'
 ---
 
 ## Try it
 
-1. Move n from 4 up to 11 and watch the corners. Each step doubles them. Where does the picture stop being something you can read?
-2. Set n to 11 and drag the picture left and right. The shadow is a dense web, and that is honest: a flat screen cannot show 11 directions.
-3. Pick any n and check the table at the right. Corners: twice the row above. Edges: twice the old edges, plus one for every old corner.
+1. Set n = 5, then 6. The vertices double from 32 to 64. Edges increase from 80 to 192: twice the old 80 plus 32 joining edges.
+2. Set n = 8. Compare the square-face and cubic-face counts: both are 1792, although these faces have different dimensions.
+3. Set n = 11 and vary spin. The projection changes, but the counts stay at 2048 vertices and 11264 edges. Use the table when projected edges overlap.
 
 ## Real-life examples
 
-- **Five yes or no questions.** A quiz with 5 yes/no questions can be answered in 32 ways. Each answer sheet is one corner of the 5D cube (n = 5).
-- **One byte.** A byte is 8 switches, each on or off, so it has 256 values. Each value is one corner of the 8D cube (n = 8).
-- **Eleven switches.** A panel with 11 on/off switches has 2,048 settings and the cube has 11,264 edges: from each setting you can flip any one of the 11 switches (n = 11).
+1. **Five binary answers.** Five independent yes/no answers give 32 possible answer lists, represented by the vertices of a 5-cube.
+2. **Eight-bit values.** Eight bits give 256 possible bit strings, represented by an 8-cube's vertices. One-bit changes are its edges.
+3. **Eleven switches.** Eleven independent on/off switches have 2048 configurations. Each has eleven one-switch neighbours, giving 11264 undirected connections after double counts are removed.
 
 ## Test yourself
 
-1. Before you move the slider, guess which dimension gives exactly 256 corners. (Hint: a 4D cube has 16, and each step doubles.) Then set n and check.
-2. Guess how many corners a 6D cube has. Then make a cube with more than 10,000 edges: which n is the smallest that works?
-3. Find the dimension in which the cube has exactly 80 edges.
-4. Find the dimension in which the cube has exactly as many square faces as cubes inside it.
+1. Find the dimension giving 256 vertices.
+2. Find the smallest available n giving more than 10000 edges.
+3. Find the dimension giving 80 edges.
+4. Find the dimension where the square-face count equals the cubic-face count.
 
 ## Intuition
 
-The drag from the last lessons works again and again. Drag a cube in a fourth direction and you get a tesseract. Drag that in a fifth direction. Every time, the shape is copied and every corner is joined to its copy. Five dimensions: 32 corners. Eight: 256. Eleven: 2,048 corners and 11,264 edges.
+Every additional hypercube coordinate has two choices at a vertex. Adding one coordinate therefore doubles the possible vertex lists. That is why the sequence continues from 16 in four dimensions to 32 in five and 2048 in eleven, even when we cannot picture all the independent directions.
 
-Set n to 11. The picture turns into a dense web. That is honest. A flat screen cannot show eleven directions, so the shadow gets messy, and the counting carries the meaning. The table at the right counts it for you.
-
-One formula gives every count: the pieces of dimension $k$ inside an $n$-dimensional cube. Corners are the pieces with $k = 0$, edges with $k = 1$, square faces with $k = 2$ and cubes with $k = 3$. Move n and read the readouts under the picture: they are the same formula each time.
-
-Why would anyone want a shape with 11 dimensions? Because a list of 11 numbers describes one thing. A photo of a face described by 11 measurements, a recipe with 11 ingredients, a weather station with 11 readings: each one is a single point in an 11-dimensional space. And "how similar are two faces" becomes "how close are two points". The lesson on distance in any dimension shows how to measure that. The reasons physicists give for 11 are in the lesson on eleven dimensions.
+To describe a face, let some coordinates vary and fix the rest at endpoints. An edge has one free coordinate; a square face has two; a cubic face has three. These are designated faces of the hypercube, not all possible smaller squares or cubes that could be drawn inside it.
 
 ## Formal
 
-The pieces of dimension $k$ in an $n$-cube are found by two choices. First pick the $k$ directions the piece spreads in: there are $\binom{n}{k}$ ways. Then every one of the other $n-k$ coordinates is stuck at $+1$ or $-1$: $2^{\,n-k}$ ways. So $F_k = \binom{n}{k}\,2^{\,n-k}$.
+For integers with $0\le k\le n$, choose the k free coordinate directions in $\binom nk$ ways. Each of the remaining n − k coordinates is fixed at −1 or +1, giving $2^{n-k}$ choices. Thus the number of k-dimensional faces is $F_k=\binom nk2^{n-k}$. We include vertices as 0-faces and the whole n-cube as one n-face.
 
-Corners: $F_0 = 2^n$. Edges: $F_1 = n\,2^{\,n-1}$. For $n = 11$ that is $2048$ corners and $11264$ edges.
+In particular, $F_0=2^n$ and $F_1=n2^{n-1}$. For n = 11 these give 2048 vertices and 11264 edges. A projection can make different vertices or edges overlap on screen without changing either count.
 
 ## Advanced
 
-The numbers obey an identity: the pieces of all dimensions together are $3^n$. Choose for each coordinate $+1$, $-1$ or "free", which is three choices, and every piece is one such choice. Also, the alternating sum of the counts, corners minus edges plus faces and so on, is 1 for every cube, if the whole cube counts as one piece. It is a cube version of Euler's formula.
+Allow each coordinate three statuses: fixed at −1, fixed at +1, or free. This counts all nonempty faces of all dimensions, including the whole cube, giving 3^n. Their alternating sum by dimension is 1. The square-face and cubic-face counts agree at n = 8 because their ratio F3/F2 is (n − 2)/6.
 
 ## Derivation
 
-1. The piece spreads in $k$ directions. Choose which ones: $\binom{n}{k}$ ways.
-2. The other $n-k$ coordinates are each $+1$ or $-1$, two choices each: $2^{\,n-k}$.
-3. Multiply the two counts: $F_k = \binom{n}{k}\,2^{\,n-k}$.
+1. Choose which k coordinates are allowed to vary. Their choice determines the directions within the face.
+2. Fix every other coordinate at one of its two endpoints. These choices place the face within the hypercube.
+3. Multiply the counts because each choice of free directions permits every endpoint assignment of the remaining coordinates.
 
 ## Real world
 
-### Faces as points
-Programs that recognise faces turn each photo into a list of measurements. Two photos of the same person end up close together as points, even in a space with hundreds of dimensions.
+### Binary configurations
 
-### Recipes and readings
-A recipe with 11 ingredients, or a weather station with 11 readings, is one point in 11 dimensions. Nothing needs to be drawn to compare two of them.
+A hypercube graph describes independent binary settings and changes of one setting at a time. Its geometry organizes the state space without suggesting that the switches occupy extra physical dimensions.
 
-### Bits and switches
-A computer word of 8 bits is a corner of an 8D cube. Changing one bit moves you along one edge, to a neighbour.
+### Data coordinates
 
-### Why a web
-A flat picture of an 11D cube is crowded because 2,048 corners and 11,264 edges are squeezed onto a screen. The counts are the useful part.
+Eleven recorded measurements can describe a point in an eleven-coordinate data space. Constraints or relationships may reduce its intrinsic dimension, and comparing distances requires sensible units and scaling. Such data need not lie at hypercube vertices.
