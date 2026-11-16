@@ -4,7 +4,7 @@ speedsound.air: air
 speedsound.water: water
 speedsound.steel: steel
 speedsound.speed: speed of sound
-speedsound.distance: storm distance
-speedsound.flash: lightning flash
-speedsound.count: 'you counted {t} s'
-speedsound.away: 'storm ≈ {d} km away'
+speedsound.distance: 'distance travelled'
+speedsound.flash: 'pulse source'
+speedsound.count: 'elapsed time: {t} s'
+speedsound.away: 'distance ≈ {d} km'
