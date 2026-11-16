@@ -1,6 +1,6 @@
 # Bilingual editorial review
 
-125 of 390 lessons reviewed. 265 remain.
+140 of 390 lessons reviewed. 250 remain.
 
 A checked lesson has had both language files rewritten or reviewed against its configuration and visualization source. Automated validation alone does not mark a lesson reviewed. Browser interaction and independent learner review remain separate checks.
 
@@ -462,20 +462,20 @@ Scope: every lesson, including summaries, parameter labels, examples, exercises,
 - [x] [unit-circle](trigonometry/unit-circle/en.md) · [Arabic](trigonometry/unit-circle/ar.md)
 - [x] [vector-components](trigonometry/vector-components/en.md) · [Arabic](trigonometry/vector-components/ar.md)
 
-## waves (0/15)
+## waves (15/15)
 
-- [ ] [damped-oscillation-resonance](waves/damped-oscillation-resonance/en.md) · [Arabic](waves/damped-oscillation-resonance/ar.md)
-- [ ] [diffraction](waves/diffraction/en.md) · [Arabic](waves/diffraction/ar.md)
-- [ ] [doppler-effect](waves/doppler-effect/en.md) · [Arabic](waves/doppler-effect/ar.md)
-- [ ] [interference-and-beats](waves/interference-and-beats/en.md) · [Arabic](waves/interference-and-beats/ar.md)
-- [ ] [polarisation](waves/polarisation/en.md) · [Arabic](waves/polarisation/ar.md)
-- [ ] [reflection-and-echoes](waves/reflection-and-echoes/en.md) · [Arabic](waves/reflection-and-echoes/ar.md)
-- [ ] [refraction-snells-law](waves/refraction-snells-law/en.md) · [Arabic](waves/refraction-snells-law/ar.md)
-- [ ] [sine-wave](waves/sine-wave/en.md) · [Arabic](waves/sine-wave/ar.md)
-- [ ] [sound-intensity-and-decibels](waves/sound-intensity-and-decibels/en.md) · [Arabic](waves/sound-intensity-and-decibels/ar.md)
-- [ ] [speed-of-sound](waves/speed-of-sound/en.md) · [Arabic](waves/speed-of-sound/ar.md)
-- [ ] [standing-waves](waves/standing-waves/en.md) · [Arabic](waves/standing-waves/ar.md)
-- [ ] [thin-lenses](waves/thin-lenses/en.md) · [Arabic](waves/thin-lenses/ar.md)
-- [ ] [total-internal-reflection](waves/total-internal-reflection/en.md) · [Arabic](waves/total-internal-reflection/ar.md)
-- [ ] [transverse-and-longitudinal](waves/transverse-and-longitudinal/en.md) · [Arabic](waves/transverse-and-longitudinal/ar.md)
-- [ ] [wave-basics](waves/wave-basics/en.md) · [Arabic](waves/wave-basics/ar.md)
+- [x] [damped-oscillation-resonance](waves/damped-oscillation-resonance/en.md) · [Arabic](waves/damped-oscillation-resonance/ar.md)
+- [x] [diffraction](waves/diffraction/en.md) · [Arabic](waves/diffraction/ar.md)
+- [x] [doppler-effect](waves/doppler-effect/en.md) · [Arabic](waves/doppler-effect/ar.md)
+- [x] [interference-and-beats](waves/interference-and-beats/en.md) · [Arabic](waves/interference-and-beats/ar.md)
+- [x] [polarisation](waves/polarisation/en.md) · [Arabic](waves/polarisation/ar.md)
+- [x] [reflection-and-echoes](waves/reflection-and-echoes/en.md) · [Arabic](waves/reflection-and-echoes/ar.md)
+- [x] [refraction-snells-law](waves/refraction-snells-law/en.md) · [Arabic](waves/refraction-snells-law/ar.md)
+- [x] [sine-wave](waves/sine-wave/en.md) · [Arabic](waves/sine-wave/ar.md)
+- [x] [sound-intensity-and-decibels](waves/sound-intensity-and-decibels/en.md) · [Arabic](waves/sound-intensity-and-decibels/ar.md)
+- [x] [speed-of-sound](waves/speed-of-sound/en.md) · [Arabic](waves/speed-of-sound/ar.md)
+- [x] [standing-waves](waves/standing-waves/en.md) · [Arabic](waves/standing-waves/ar.md)
+- [x] [thin-lenses](waves/thin-lenses/en.md) · [Arabic](waves/thin-lenses/ar.md)
+- [x] [total-internal-reflection](waves/total-internal-reflection/en.md) · [Arabic](waves/total-internal-reflection/ar.md)
+- [x] [transverse-and-longitudinal](waves/transverse-and-longitudinal/en.md) · [Arabic](waves/transverse-and-longitudinal/ar.md)
+- [x] [wave-basics](waves/wave-basics/en.md) · [Arabic](waves/wave-basics/ar.md)
