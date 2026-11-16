@@ -1,72 +1,65 @@
 ---
 title: Coordinate geometry
-summary: >-
-  Two dots on a city map are enough to read off the straight-line distance
-  between them, the meeting point exactly halfway, and the equation of the
-  road that joins them.
+summary: 'Use two points’ coordinates to calculate their distance, midpoint and the slope of the line through them.'
 parameters:
-  x1: point 1, x
-  y1: point 1, y
-  x2: point 2, x
-  y2: point 2, y
+  x1: 'x1 — first point’s horizontal coordinate'
+  y1: 'y1 — first point’s vertical coordinate'
+  x2: 'x2 — second point’s horizontal coordinate'
+  y2: 'y2 — second point’s vertical coordinate'
 variables:
-  - the first point's x-coordinate
-  - the first point's y-coordinate
-  - the second point's x-coordinate
-  - the second point's y-coordinate
-  - the straight-line distance between the two points
+  - 'x₁: horizontal position of the first point'
+  - 'y₁: vertical position of the first point'
+  - 'x₂: horizontal position of the second point'
+  - 'y₂: vertical position of the second point'
+  - 'd: straight-line distance; one grid unit represents 1 km'
 ---
 
 ## Try it
 
-1. Drag the orange point. The distance, midpoint and slope readouts update live as it moves.
-2. Drag the blue point straight up, keeping its x fixed. Watch the slope grow and the dashed line get steeper.
-3. Line the two points up so they share the same y-coordinate. The slope drops to exactly 0 — a flat, due-east road.
+1. Set (x1, y1) = (1, 1) and (x2, y2) = (5, 4). Read distance 5 km, midpoint (3, 2.5) and slope 0.75.
+2. Keep x2 = 5 and change y2 to 8. The horizontal change is still 4, while the vertical change becomes 7, so the slope is 7/4 = 1.75.
+3. Set y1 = y2 = 8 with x1 = 1 and x2 = 5. The line is horizontal, with slope 0. Then set x2 = x1 and y2 = 4 to compare a vertical line, whose slope is undefined.
 
 ## Real-life examples
 
-1. **Home to school.** Home sits at (1, 1) and school at (5, 4) on a 1 km grid: a straight-line distance of exactly 5 km, and the school bus's road follows the dashed line between them.
-2. **A road running due east.** Two stops at (2, 8) and (9, 8) share the same y, so the road between them is flat: slope 0, and the equation is simply y = 8.
-3. **A steep hillside path.** From (0, 0) to (6, 8), the path climbs 8 km for every 6 km east — ten kilometres of straight-line distance in total.
+1. **Two locations on a flat map.** Points (1, 1) and (5, 4) differ by 4 km horizontally and 3 km vertically on this grid. Their straight-line distance is 5 km; a road route may be longer.
+2. **An east–west segment.** Points (2, 8) and (9, 8) are 7 km apart. Their midpoint is (5.5, 8), and their line is y = 8.
+3. **A larger diagonal.** Points (0, 0) and (6, 8) are 10 km apart. Their midpoint is (3, 4), and the slope is 8/6 = 4/3. Here vertical on the map need not mean elevation.
 
 ## Test yourself
 
-1. Place the two points exactly 5 km apart.
-2. Make the midpoint land on (4, 4).
-3. Make the line's slope exactly 2.
+1. Place the points 5 km apart in straight-line distance.
+2. Place the midpoint at (4, 4).
+3. Keep x1 and x2 different and make the slope equal 2.
 
 ## Intuition
 
-Picture two towns marked on a grid map, each square worth one kilometre. Drag the orange point around and you'll see the straight dashed line connecting it to the blue point tilt and stretch, while the "distance" readout tells you exactly how far apart they are as the crow flies — not along any road, just the straight line between the dots.
+A coordinate pair records horizontal position first and vertical position second. From (1, 1) to (5, 4), the changes are 4 horizontally and 3 vertically. These form the perpendicular legs of a right triangle, whose hypotenuse is the straight segment between the points. Its length is 5 by the Pythagorean theorem.
 
-The green dot marks the midpoint, sitting exactly halfway between the two towns on that straight line — average their x-coordinates and separately average their y-coordinates, and that's where it lands. The dashed line itself is a whole road, not just the segment between the two towns: it keeps going in both directions, and its steepness is the slope, how many kilometres it climbs for every kilometre it goes east.
+To locate the midpoint, average the horizontal coordinates and then the vertical coordinates. To find slope, divide vertical change by horizontal change. The solid segment joins the points, while the dashed line extends through them. Use distinct points when studying that line: one location alone does not determine a unique line.
 
 ## Formal
 
-The distance between two points $(x_1, y_1)$ and $(x_2, y_2)$ is $d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$, and their midpoint is $\left(\dfrac{x_1+x_2}{2}, \dfrac{y_1+y_2}{2}\right)$.
+For points $(x_1,y_1)$ and $(x_2,y_2)$ in perpendicular Cartesian coordinates with the same unit on both axes, the distance is $d=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$. The midpoint is $((x_1+x_2)/2,(y_1+y_2)/2)$.
 
-The line through them has slope $m = \dfrac{y_2-y_1}{x_2-x_1}$ (undefined when $x_1 = x_2$, a vertical line), and its equation can be written $y - y_1 = m(x - x_1)$.
+If $x_1\ne x_2$, the slope is $m=(y_2-y_1)/(x_2-x_1)$ and the line is $y-y_1=m(x-x_1)$. Distinct points with the same x-coordinate instead determine the vertical line $x=x_1$, with undefined slope. Coincident points have distance zero but do not determine a unique line.
 
 ## Advanced
 
-The same distance formula extends to three dimensions by adding a $(z_2-z_1)^2$ term under the root, and to any number of dimensions in data science, where "distance" between two rows of numbers (not points on a map) is exactly this formula applied to many coordinates at once.
+In three perpendicular coordinates, add the square of the z-coordinate difference under the square root. For data with unrelated units, such as height and temperature, choosing a distance formula also requires deciding how to scale each coordinate. Latitude and longitude are angles on a curved surface, so they cannot be substituted as ordinary kilometre coordinates without a suitable conversion or model.
 
 ## Derivation
 
-1. The horizontal gap between the two points is x₂ − x₁ and the vertical gap is y₂ − y₁ — the two legs of a right triangle.
-2. By the Pythagorean theorem the straight-line distance is the hypotenuse of that triangle: d² = (x₂ − x₁)² + (y₂ − y₁)².
-3. Taking the square root of both sides gives the distance itself.
+1. Form horizontal and vertical displacements from the coordinate differences. Their absolute values are the legs of a right triangle when both are nonzero.
+2. Squaring removes the signs, and the Pythagorean theorem gives the square of the straight-line distance as the sum of the squared differences.
+3. Take the nonnegative square root to obtain distance. The formula still works if one or both differences are zero.
 
 ## Real world
 
-### Delivery routing
-A delivery app estimates the straight-line distance between two addresses instantly with this formula, before it ever calculates the actual road route, just to rank which stop is closer.
+### Placing an object halfway
 
-### GPS and mapping
-Every "distance to destination" a phone shows is built on this formula applied to latitude and longitude, adjusted for the Earth's curve over longer distances.
+On a flat drawing or game map, averaging endpoint coordinates places a marker halfway along their connecting segment. It does not find the midpoint of a winding route.
 
-### Video games
-A game decides whether two characters are close enough to collide by computing exactly this distance between their coordinates, many times every second.
+### Checking proximity
 
-### Emergency dispatch
-Dispatchers picking the nearest ambulance to a call estimate straight-line distance first, using the midpoint and distance formulas, before refining with actual road times.
+For circular objects on a flat game board, compare the distance between centres with the sum of their radii to determine whether they touch or overlap.
