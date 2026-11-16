@@ -1,69 +1,68 @@
 ---
 title: Exponential and logarithmic functions
-summary: >-
-  One curve doubles or halves every equal step and shoots off the screen;
-  its mirror image climbs so slowly it barely moves — the same pair of
-  shapes behind decibels and earthquake magnitude.
+summary: Use an exponential to calculate repeated multiplication, and a logarithm to recover the exponent.
 parameters:
-  x: point x
-  sel: curve — 0 exponential, 1 logarithm
-  b: b — base
+  x: input x
+  sel: function (0 exponential, 1 logarithm)
+  b: base b (logarithms require b other than 1)
 variables:
-  - the base — above 1 it grows (doubling-type), between 0 and 1 it decays (halving-type)
-  - the input being dragged along the curve
-  - the output — read directly off the exponential curve, or supplied to the logarithm curve
+  - positive base; logarithms also require it to differ from 1
+  - exponent in the exponential rule
+  - positive result of exponentiation, used as the logarithm's input
 ---
 
 ## Try it
 
-1. Curve is set to exponential with base b=2. Drag x to the right. Watch the output double, then double again — every extra step of 1 on x doubles the height.
-2. Drop the base below 1 instead, say to 0.5. The curve flips from climbing to sliding downward, homing in on zero but never quite touching it.
-3. Switch the curve to logarithm. Drag x across the same stretch: the curve now climbs, but far more slowly, barely rising even as x itself keeps growing steadily.
+1. Set sel to 0 and b to 2. Compare inputs near 1, 2 and 3. The outputs are near 2, 4 and 8; each increase of 1 doubles the output.
+2. Keep sel at 0 and set b to 0.5. Increasing x by 1 now halves the output.
+3. Set sel to 1 and b to 2. An input near 4 gives an output near 2: the logarithm asks what power of 2 gives 4. Use b = 2 for this comparison, not 0.5 or 1.
 
 ## Real-life examples
 
-1. **Doubling — a shared video.** Set to exponential with base 2 (sel=0, b=2): after x=3 rounds of sharing, the output has doubled three times over — 8-fold growth from wherever it started.
-2. **Halving — a bouncing ball.** Set to exponential with base 0.5 (sel=0, b=0.5): after x=2 bounces, the ball's height has halved twice — a quarter of where it started, shrinking toward the ground with every bounce.
-3. **The log's slow climb.** Set to logarithm with base 10 (sel=1, b=10): even after x=5, the curve has barely climbed past half a unit — the same slow-growing shape used for the decibel and earthquake-magnitude scales.
+1. **Three doublings.** With sel = 0, b = 2 and x = 3, the output is 8. A starting quantity multiplied by this factor becomes eight times as large.
+2. **Two halvings.** With sel = 0, b = 0.5 and x = 2, the output is 0.25. One quarter of the starting amount remains.
+3. **Recovering an exponent.** With sel = 1, b = 10 and x = 5, the output is about 0.699. Ten raised to that power is approximately 5.
 
 ## Test yourself
 
-1. Switch to the exponential curve, set the base above 1.9 — close to doubling — and push x past 3.5.
-2. Switch to the exponential curve, set the base under 0.6 — a fast halving — and push x past 3.
-3. Switch to the logarithm curve, set the base above 9 — close to the decibel scale's base 10 — and push x past 4.
+1. Select the exponential, set b above 1.9, and choose x above 3.5.
+2. Select the exponential, set b below 0.6, and choose x above 3.
+3. Select the logarithm, set b above 9, and choose x above 4.
 
 ## Intuition
 
-Picture a video that gets reshared: each round, everyone who has it shares it with the same number of new people again. With base 2 that means every round doubles the total — after x=3 rounds the audience is 8 times its start, and dragging the point to x=3 on the exponential curve shows exactly that jump. Push x further and the curve doesn't just keep climbing, it climbs faster and faster, because each new round doubles a number that is already bigger than the last.
+Start with one item and double the count each round. After one round there are 2, after two there are 4, and after three there are 8. The exponential rule takes the number of rounds as its input and gives the multiplication factor.
 
-Drop the base below 1 and the same curve flips from a climb into a slide: a bouncing ball loses a fixed fraction of its height on every bounce, so its height after x bounces keeps shrinking toward the ground without ever quite touching it — the flat line the curve hugs but never crosses. Switch to the logarithm curve instead and the roles swap: now the curve climbs, but painfully slowly, because it is asking the reverse question, how many doublings did it take to reach this output, and doublings pile up value far faster than they pile up count.
+Now reverse the question. How many doublings take 1 to 8? The answer is 3. A logarithm calculates that exponent. It can also give a non-integer answer: the exponent needed to reach a value between 4 and 8 lies between 2 and 3.
+
+Changing the base changes the multiplier. A base above 1 produces growth, while a base between 0 and 1 produces decay as the exponent increases. The logarithm reverses either rule, but its input must be positive. Base 1 is a special case: its exponential always gives 1, so it has no inverse logarithm.
 
 ## Formal
 
-The exponential function $y = b^x$ takes any real $x$ and always returns a positive output. When $b > 1$ it grows, and when $0 < b < 1$ it decays instead, shrinking toward $0$ but never quite reaching it.
+For $b>0$, the exponential $y=b^x$ accepts every real x and returns a positive y. For b greater than 1 it increases, and for b between 0 and 1 it decreases. At b = 1 it is constant.
 
-Its mirror, $x = \log_b y$, undoes exactly what the exponential does: feed it the output and it hands back the input. Because the input to $b^x$ must stay positive to be reversed, the logarithm itself only accepts $y > 0$, and its graph creeps upward extremely slowly, hugging a vertical line at $y=0$ that it can never cross.
+For $b>0$ and $b\ne1$, the equivalent logarithmic statement is $x=\log_b y$, with y positive. When plotting the logarithm using the usual input label x, its rule is log base b of x and its vertical asymptote is x = 0. It increases for b greater than 1 and decreases for b between 0 and 1.
 
 ## Advanced
 
-Reflecting the graph of any invertible function across the line $y=x$ turns it into its inverse's graph, exactly the mirror-image relationship between $b^x$ and $\log_b x$ seen here. That compressing power is why decibel and earthquake-magnitude scales exist at all: sound intensity can span a factor of a trillion between a whisper and a jet engine, and a logarithmic scale turns that trillion-fold range into a manageable run of numbers from about 0 to 140.
+The two inverse graphs reflect across the line y = x. The display switches between them rather than overlaying them, and shows only positive input positions. Its viewport does not restrict the exponential's full mathematical domain. Equal multiplicative changes in a logarithm's input produce equal additive changes in its output.
 
 ## Derivation
 
-1. Start from the exponential statement itself: $b^x = y$, the base raised to the input equals the output.
-2. Apply $\log_b$ to both sides — a valid step because $\log_b$ is a genuine function, so equal inputs still give equal outputs: $\log_b(b^x) = \log_b y$.
-3. The left side simplifies because $\log_b$ and raising $b$ to a power undo each other exactly, leaving $x = \log_b y$ — the same fact, now written as a logarithm.
+1. Begin with the statement that b raised to x equals y, assuming a positive base other than 1.
+2. Apply the logarithm with that same base to both positive sides.
+3. The logarithm recovers the exponent x. The resulting equation expresses the same relationship in reverse.
 
 ## Real world
 
-### Sound and decibels
-Sound intensity ranges over a factor of roughly a trillion from a whisper to a jet engine; the decibel scale is a logarithm that squeezes that entire range into about 0 to 140.
+### Repeated scaling
 
-### Earthquake magnitude
-Each whole step up a Richter-style magnitude scale means roughly 32 times more energy released, a logarithmic scale hiding a huge exponential jump.
+A quantity multiplied by the same factor each step follows an exponential pattern. This model assumes the factor stays constant.
 
-### Radioactive decay and half-life
-A radioactive sample loses a fixed fraction of what remains in every equal stretch of time, the same halving shape as the decay curve here.
+### Comparing large ratios
 
-### Compound interest and viral growth
-Money left to compound, or a trend that gets reshared at a steady rate, both grow by the same multiplying factor every equal step of time.
+A logarithmic display makes equal ratios occupy equal intervals, allowing very different magnitudes to fit on one scale.
+
+### Finding a step count
+
+If a stored quantity doubles each round, a base-2 logarithm determines how many rounds are needed to reach a given multiple of its starting value.
