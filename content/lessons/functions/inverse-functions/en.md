@@ -1,66 +1,68 @@
 ---
 title: Inverse functions
-summary: >-
-  Undo a rule and get your original input back — the same trick that turns
-  Celsius into Fahrenheit and, run backward, turns Fahrenheit right back
-  into Celsius.
+summary: Undo a rule by reversing its steps and recover the original input.
 parameters:
-  m: m — slope
-  b: b — intercept
+  m: multiplier m
+  b: added constant b
   x: input x
 variables:
-  - the rate at which the rule scales its input
-  - the fixed amount the rule adds
-  - the input point, shown on the blue line f and mirrored onto the orange line f⁻¹
+  - nonzero multiplier in the forward rule
+  - constant added after multiplication
+  - input to the forward rule; its output becomes an input to the inverse
 ---
 
 ## Try it
 
-1. Drag the blue point along «f». Its mirror image appears on the orange line «f⁻¹», the same distance from the dashed diagonal but on the other side.
-2. Read the bottom number: f⁻¹(f(x)) always comes back to x, no matter where you drag — that is what "undo" means.
-3. Raise «m» or «b». Both lines move, and both points slide to stay mirrored across the dashed y = x diagonal.
+1. Set m to 2, b to 3 and x to 4. The forward rule gives 11. The inverse subtracts 3 and divides by 2, returning 4.
+2. Compare the marked points (4, 11) and (11, 4). Their coordinates are swapped, so they lie on opposite sides of the diagonal y = x.
+3. Set m to 1 and b to 0. The rule and its inverse both leave every input unchanged, and their lines coincide with the diagonal.
 
 ## Real-life examples
 
-1. **Celsius to Fahrenheit and back.** At m=1.8, b=32, a temperature of x=20°C converts to 68°F; running the inverse on 68 gives back exactly 20.
-2. **Miles to kilometres and back.** At m=1.609, b=0, a distance of x=10 miles converts to 16.09 km; the inverse turns 16.09 back into exactly 10.
-3. **Halving a recipe and doubling it back.** At m=0.5, b=0, a recipe of x=10 cups scales down to 5 cups; the inverse doubles 5 back into exactly 10.
+1. **Temperature conversion.** Multiplying 20 by 1.8 and adding 32 converts 20°C to 68°F. Subtracting 32 from 68 and dividing by 1.8 recovers 20°C.
+2. **A length conversion approximation.** With m = 1.609, b = 0 and x = 10, the result is 16.09. The inverse returns 10 using the same approximate conversion factor.
+3. **Halving and restoring a quantity.** With m = 0.5, b = 0 and x = 10, the result is 5. The inverse divides by 0.5, which doubles 5 back to 10.
 
 ## Test yourself
 
-1. Find m, b and x so f(x) comes out to exactly 300.
-2. Make f its own inverse: find m and b so f(x) = x for every input.
-3. Find m, b and x so the inverse function sends x to exactly −10.
+1. Choose settings that make the forward output about 300. Use the numerical readout if the point is outside the visible window.
+2. Set m to 1 and b to 0 so every input is unchanged.
+3. Choose settings so (x minus b) divided by m is about -10. This challenge evaluates the inverse at x, whereas the displayed round-trip readout evaluates the inverse at f(x).
 
 ## Intuition
 
-A thermometer converts Celsius to Fahrenheit with one fixed rule: multiply by 1.8, then add 32. Drag the blue point along the blue line «f» here and watch its mirror, the orange point, appear on the orange line «f⁻¹» — always on the opposite side of the dashed diagonal, the same distance away. That mirroring is not a coincidence: the inverse function is built by swapping every input with its output, and swapping a point's coordinates is exactly what reflecting it across y = x does.
+A rule says “multiply by 2, then add 3.” Starting with 4 gives 11. To recover the original input, undo the last step first: subtract 3 to get 8, then divide by 2 to get 4. This reversing rule is the inverse function.
 
-Read the bottom number under the picture: f⁻¹(f(x)) is always x again, wherever you drag the point. Apply the rule, then undo it, and you land back where you started — that is the entire meaning of an inverse function, and this lesson's whole picture is built to make that round trip visible.
+The forward rule pairs input 4 with output 11. Its inverse pairs input 11 with output 4. Swapping these coordinates reflects the point across the diagonal y = x. The two graphs show the same pairs with their roles reversed.
+
+An inverse function must give one answer for each input it receives. If two original inputs share an output, the inverse cannot choose between them without another restriction. A nonzero linear multiplier avoids this problem, which is why this lesson keeps m away from zero.
 
 ## Formal
 
-A function $f$ has an inverse $f^{-1}$ exactly when it is one-to-one: $f^{-1}(f(x)) = x$ for every $x$ in the domain. For $f(x) = mx + b$ with $m \neq 0$, solving $y = mx + b$ for $x$ gives $f^{-1}(x) = \dfrac{x-b}{m}$.
+For $f(x)=mx+b$ with $m\ne0$, the inverse is $f^{-1}(y)=(y-b)/m$. The notation with superscript -1 means the inverse function, not the reciprocal of f.
 
-The graph of $f^{-1}$ is always the reflection of the graph of $f$ across the line $y = x$, because every point $(x, y)$ on $f$ becomes the point $(y, x)$ on $f^{-1}$.
+The inverse accepts outputs of f as its inputs and satisfies $f^{-1}(f(x))=x$. A function has an inverse on its range when it is one-to-one. If an inverse is required on a specified codomain, f must also reach every value in that codomain.
 
 ## Advanced
 
-Not every function has an inverse over its whole domain: a function must be one-to-one (injective) for $f^{-1}$ to exist as a function, which is why $f(x) = x^2$ needs its domain restricted, say to $x \ge 0$, before $f^{-1}(x) = \sqrt{x}$ makes sense.
+Squaring sends both 2 and -2 to 4, so it has no inverse function on all real inputs. Restricting the original domain to nonnegative numbers gives the square-root inverse. The choice of domain is part of specifying an invertible function.
 
 ## Derivation
 
-1. Start from $y = f(x) = mx + b$, the rule that turns an input into an output.
-2. Subtract $b$ from both sides so only the $mx$ term remains: $y - b = mx$.
-3. Divide by $m$: $x$ is now written in terms of $y$ — swap the letters and this is the inverse function.
+1. Write the forward rule: multiply the input by m and add b to obtain y.
+2. Subtract b from both sides to undo the addition.
+3. Divide by the nonzero m to recover the original input. This gives the inverse rule.
 
 ## Real world
 
 ### Unit conversions
-Celsius↔Fahrenheit, miles↔kilometres and pounds↔kilograms are all pairs of inverse linear functions.
 
-### Encoding and decoding
-A cipher or a file compressor applies a function; decoding it applies the inverse, recovering the original exactly.
+A reversible conversion can be undone by reversing its arithmetic steps. Use the same constants in both directions.
 
-### Solving equations
-Finding x from an equation like mx + b = k is nothing more than applying the inverse function to both sides.
+### Solving a linear equation
+
+To solve mx + b = k with m nonzero, subtract b from k and divide by m.
+
+### Recovering data
+
+Lossless encoding can be reversed to recover the original data. Lossy compression discards information and generally has no exact inverse.
