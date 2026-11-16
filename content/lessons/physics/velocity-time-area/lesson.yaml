@@ -73,7 +73,7 @@ presets:
     a: 0
     b: 4
 challenges:
-  - check: v0*(b-a)+0.5*acc*(b^2-a^2)
+  - check: 'b > a ? v0*(b-a)+0.5*acc*(b^2-a^2) : -1'
     target: 20
-  - check: abs(v0*(b-a)+0.5*acc*(b^2-a^2))<0.5 and abs(v0)>1
-  - check: v0>0 and acc<0 and (v0+acc*b)<0 and a<0.5
+  - check: b>a and abs(v0*(b-a)+0.5*acc*(b^2-a^2))<0.5 and abs(v0)>1
+  - check: b>a and (v0+acc*a)>0 and acc<0 and (v0+acc*b)<0 and a<0.5
