@@ -1,82 +1,66 @@
 ---
 title: What would a 4D ball look like passing through our room?
-summary: >-
-  Flat creatures on a sheet of paper only see the slice of a ball that touches their sheet. We would see a 4D ball
-  the same way.
+summary: 'Use a right triangle to find the size of a cross-section, from a disk cut by a line to a mathematical four-dimensional ball.'
 parameters:
-  n: n — the dimension of the ball (2 is a flat disc, 3 an ordinary ball, 4 a 4D ball)
-  h: h — how far the ball's centre is from the slice, in cm
-  R: R — the radius of the ball, in cm
+  n: 'n — ball dimension: disk (2), ordinary ball (3), four-dimensional ball (4)'
+  h: 'h — signed centre offset from the cutting hyperplane, in cm'
+  R: 'R — radius of the full ball, in cm'
 variables:
-  - the radius of the slice, the part of the ball that touches the sheet
-  - the radius of the whole ball
-  - how far the ball's centre is from the sheet
+  - 'r: slice radius; half the segment length when n = 2'
+  - 'R: radius of the full ball'
+  - 'h: signed offset; |h| is the perpendicular distance'
 charts: []
 ---
 
 ## Try it
 
-1. Keep n at 3 and drag the ball up and down in the left picture. In the right picture, the slice appears from nothing, grows to a full circle when the sheet cuts through the middle, shrinks and vanishes. The row of small snapshots shows the same story, with the current moment marked.
-2. Set n to 4, then to 2. The slice always has one dimension less than the ball: a 4D ball leaves a 3D ball, a flat disc leaves only a line segment.
-3. Pick the first preset (h = 4, R = 5). Find the triangle with sides R, h and r in the left picture. Then make R bigger and watch the slice grow while h stays the same.
+1. Set n = 3, R = 5 and h = 4. The slice is a disk of radius 3 cm because 5² − 4² = 9.
+2. Keep R = 5 and move h through 5, 0 and −5. The slice grows to radius 5 at the centre, then shrinks. At either endpoint the mathematical intersection is only a point, which the display treats as zero-sized.
+3. Set n = 2, then 4 with h = 0. The slice changes from a line segment to a three-dimensional ball. The side-view diagram illustrates the radius calculation; it is not a complete view of a four-dimensional object.
 
 ## Real-life examples
 
-- **The classic 3-4-5.** A ball of radius 5 cm, cut 4 cm from its centre, leaves a slice of radius exactly 3 cm. The numbers 3, 4 and 5 are the sides of a right triangle, so the slice radius is exact, with no rounding.
-- **A 4D ball at its widest.** When the middle of the ball is exactly in our room (h = 0), the slice is as big as it will ever get: a ball of radius 5 cm. Before that it was only a speck, and afterwards it shrinks to a speck again.
-- **A disc barely touching a line.** A flat disc of radius 5 cm, with its centre 4.9 cm from a line, only just reaches it. The creatures on that line see a segment less than 2 cm long, and it is about to vanish.
+1. **An offset cut.** With n = 3, R = 5 cm and h = 4 cm, the disk slice has radius 3 cm and diameter 6 cm.
+2. **A central four-dimensional slice.** With n = 4, R = 5 cm and h = 0, the mathematical cross-section is a three-dimensional ball of radius 5 cm.
+3. **Near the edge of a disk.** With n = 2, R = 5 cm and h = 4.9 cm, the slice is a segment about 1.99 cm long. Its half-length is √0.99 cm.
 
 ## Test yourself
 
-1. Make the slice radius exactly 3 cm from a ball of radius 5 cm.
-2. Make the 4D ball vanish from our room.
-3. Find the widest possible slice of a ball with a radius of 8 cm. How far from the centre must the sheet be?
-4. Make the slice exactly half as wide as the ball.
+1. Keep R = 5 and make the slice radius approximately 3 cm.
+2. Choose n = 4 and make |h| at least R, so there is no positive-radius slice. Use |h| greater than R if you want no intersection at all.
+3. Set R = 8 and place the cutting plane through the centre to get the widest slice.
+4. Make the slice radius approximately half the original radius.
 
 ## Intuition
 
-Imagine a flat creature that lives on a sheet of paper. It can walk left, right, forward and back, but it has never heard of "up". In 1884 Edwin Abbott wrote a book about such creatures and called it "Flatland". Now push a ball down through the paper. What do the creatures see? Nothing at first. Then a dot appears from nowhere, grows into a small circle, then a big one, then shrinks and vanishes. They never see the whole ball. They only see the slice where the ball meets their sheet.
+Cut an ideal solid ball with a flat plane. Near the edge, the cross-section is a small disk. Through the centre, it is a disk as wide as the ball. Continuing past the centre makes the cross-section smaller again. A slice includes only points where the plane meets the ball; a projection would show the whole ball mapped onto the plane.
 
-In the left picture the horizontal line is the sheet and the circle is the ball seen from the side. Drag the ball up and down. On the right you see what the creatures see. The row of small snapshots underneath is the whole trip, one picture after another. A ball above the sheet is "not here yet". A ball below it is "already gone".
+For radius 5 and a plane 4 units from the centre, draw a perpendicular from the centre to the plane. Then draw a radius to the edge of the slice. These segments and the slice radius form a right triangle with hypotenuse 5 and one leg 4. The remaining leg is 3.
 
-A doctor's CT scan does the same on purpose. The machine takes pictures of thin flat slices of your body, one after another, like slices of bread. The doctor looks through the stack and builds the whole body in their head. A slice is always one dimension flatter than the thing it cuts.
-
-Try the numbers. Take a ball of radius 5 cm and put the sheet 4 cm from its centre. The slice is a circle of radius 3 cm, because 3, 4 and 5 make a right triangle: the radius of the ball is the long side, the distance to the sheet is one short side, and the slice radius is the other. Move the sheet to the middle and the slice is as big as the ball.
-
-Now one step up. Our room is the "sheet", and a 4D ball passes through it. We would see a small ball appear from nowhere in mid-air. It would swell to full size, then shrink and vanish. We could never see the 4D ball whole, only one 3D slice at a time. Set n to 4 to watch exactly that. We cannot draw a 4D ball, so the picture shows what we would see.
+The same calculation works in more dimensions. A line through a disk gives a segment, a plane through a three-dimensional ball gives a disk, and a three-dimensional hyperplane through a four-dimensional ball gives a three-dimensional ball. The last case is a mathematical model, not an observed object entering a room.
 
 ## Formal
 
-Take a ball of radius $R$ and cut it with a flat sheet at distance $h$ from its centre. The centre of the ball, the point of the sheet closest to it and any point on the edge of the slice form a right triangle. Its longest side is $R$ and its other two sides are $h$ and the slice radius $r$, so $R^2 = r^2 + h^2$ and $r = \sqrt{R^2 - h^2}$.
+For a ball of radius R and a hyperplane at perpendicular distance $|h|$ from its centre, an intersecting slice has radius $r=\sqrt{R^2-h^2}$. The sign of h records which side of the plane the centre occupies; it does not affect the radius. The formula requires $|h|\le R$.
 
-This works in any dimension. A ball of $n$ dimensions cut by a flat sheet leaves a ball of $n-1$ dimensions with this radius: a disc leaves a segment of length $2r$, a 3D ball leaves a disc, and a 4D ball leaves a 3D ball. If $|h| \ge R$ the sheet misses the ball (or only touches it at one point) and there is nothing to see.
+When $|h|<R$, an n-dimensional ball has an (n − 1)-dimensional ball as its slice. When $|h|=R$, the intersection is a single point. When $|h|>R$, the intersection is empty. These boundary cases are different even though the display gives both zero slice radius.
 
 ## Advanced
 
-Stacking slices rebuilds the whole shape, and this is how volumes are computed. Adding up the volumes of all the slices of a 4D ball, each a 3D ball of radius $\sqrt{R^2 - h^2}$ with volume $\frac{4}{3}\pi r^3$, gives the 4D volume $\frac{\pi^2}{2}R^4$. The same recipe gives each dimension's ball from the one below it.
-
-Slicing is also the honest way to look at a 4D object we cannot picture: it is a movie of 3D slices, and the fourth direction plays the role of time. A ball is the simplest case, since every slice is another ball. For a 4D cube or other shapes, the slices change shape as the sheet moves, which is a good way to study them.
+Integrating the measures of parallel slices reconstructs the measure of the whole ball. For a four-dimensional ball, integrate the three-dimensional slice volumes (4π/3)(R² − h²)^(3/2) from −R to R to obtain π²R⁴/2. Scanning slices over time is a way to visualize the fourth spatial coordinate; it does not identify that coordinate with physical time.
 
 ## Derivation
 
-1. The ball's centre, the nearest point of the sheet and a point on the edge of the slice make a right triangle with long side $R$ and short sides $r$ and $h$: $R^2 = r^2 + h^2$.
-2. Move $h^2$ to the other side: $r^2 = R^2 - h^2$.
-3. Take the square root. The radius is never negative, so only the positive root is used: $r = \sqrt{R^2 - h^2}$.
+1. The radius R, the perpendicular distance |h| and the slice radius r form a right triangle, so R² = r² + h².
+2. Subtract h² to get r² = R² − h². A real intersection requires the right-hand side to be nonnegative.
+3. Take the nonnegative square root because r is a radius. Equality gives r = 0 and a point of contact.
 
 ## Real world
 
-### CT and MRI scans
+### Cutting a ball-shaped object
 
-The machine photographs thin flat slices of a body, and a computer stacks them into a 3D picture. This is how doctors look inside you without cutting you open.
+Parallel cuts through an ideal spherical object produce disks of different sizes. Their sizes depend on distance from the centre, even though the object's radius is fixed.
 
-### Tree rings
+### Layered models
 
-A cut log shows rings, a flat slice through the trunk. Counting the rings tells you how old the tree was when it was cut.
-
-### Contour lines on a hiking map
-
-Each line joins all the points of a mountain at one height. The lines are slices of the mountain at fixed heights, seen from above.
-
-### 3D printers
-
-A 3D printer builds an object one thin slice at a time, laying down one flat layer and then the next on top of it.
+A solid can be described by a sequence of thin cross-sections. Layer-by-layer fabrication uses that geometric idea, while the finite layer thickness limits how closely the layers reproduce a smooth shape.
