@@ -1,71 +1,70 @@
 ---
 title: Rational functions and asymptotes
-summary: >-
-  Divide by a number that's racing toward zero and the answer rockets off
-  the screen — the same runaway behind a machine's cost per unit near its
-  breaking point, or a drug's level fading toward nothing.
+summary: Explore values near a zero denominator and distinguish an asymptote from a removable hole.
 parameters:
-  x: point x
-  a: a — far-away height
-  b: b — numerator shift
-  p: p — break point
+  x: input x
+  a: limiting height a
+  b: numerator constant b
+  p: excluded input p
 variables:
-  - how high the curve settles as x runs far in either direction — the horizontal asymptote
-  - shifts the curve's exact path without moving either asymptote
-  - where the curve breaks apart — the one input the curve can never use — the vertical asymptote
-  - the input being dragged along the curve
+  - limiting value as x becomes large in either direction
+  - numerator constant; together with a and p determines whether cancellation occurs
+  - excluded input; a vertical asymptote only when the numerator does not cancel
+  - chosen input position
 ---
 
 ## Try it
 
-1. Drag the point x slowly toward the slider value of «p — break point». Watch its height shoot off the top or bottom of the graph as x gets close: you're dividing by a number racing toward zero.
-2. Drag x far to the right instead, off toward the edge of the graph. The curve flattens and creeps toward one height, set by «a — far-away height», without ever quite touching it.
-3. Move «b — numerator shift» up or down. The curve's exact path bends differently, but neither the break point p nor the flat height a change at all.
+1. Set a to 2, b to 1 and p to 2. Move x near 2 without making it equal to 2. The output grows large in magnitude; use the readout when it leaves the graph window.
+2. Compare x = 4 and x = 8 with the same parameters. The values 4.5 and about 2.83 are approaching the limiting height 2.
+3. Set b to -4, keeping a = 2 and p = 2. Every allowed input now gives 2, but x = 2 is still excluded. This is a hole, not a vertical blow-up; the plot may not mark the hole visibly.
 
 ## Real-life examples
 
-1. **A machine nearing its limit.** Cost per unit follows f(x) = (2x+1)/(x-2) (a=2, b=1, p=2): near a production rate of 2 units the machine grinds to a halt and cost per unit rockets upward; far from that limit, cost settles near 2 dollars per unit.
-2. **A drug fading from the blood.** Concentration follows f(x) = 6/(x+2) (a=0, b=6, p=-2): as time x passes, the level drops toward zero, the flat line it keeps approaching but never quite reaches.
-3. **Typing speed nearing a limit.** Words-per-minute follows f(x) = (x+2)/(x+3) (a=1, b=2, p=-3): with more practice days x, speed creeps toward a personal best, and the model's break point sits safely before day zero.
+1. **A function with two branches.** At a = 2, b = 1 and p = 2, the rule is 2 plus 5 divided by x minus 2. At x = -1 the output is one third.
+2. **A decreasing ratio.** At a = 0, b = 6 and p = -2, the rule is 6 divided by x plus 2. Starting at x = 0 gives 3, and increasing x decreases the output towards zero.
+3. **Approaching one.** At a = 1, b = 2 and p = -3, the rule is 1 minus 1 divided by x plus 3. For nonnegative x it rises towards 1 from below.
 
 ## Test yourself
 
-1. Push the point close enough to the break point that the output's size passes 50.
-2. Flatten the far-away height to exactly zero — the drug-fading case — while keeping a genuine curve (b greater than 1).
-3. Move the break point to exactly x = -3.
+1. Choose an allowed input, with x different from p, so the output's absolute value exceeds 50.
+2. Set a to 0 and b above 1, giving a horizontal asymptote at zero.
+3. Set p to -3. Keep b + ap nonzero if you want a vertical asymptote there rather than a hole.
 
 ## Intuition
 
-A factory's cost per unit climbs as production nears a machine's limit: run it at a rate far below the limit and cost per unit sits near a steady 2 dollars. Push production closer and closer to that limit, though, and cost per unit rockets — the machine is straining harder and harder for each extra unit, and the curve on screen shoots off the top of the graph to show it. Drag the point x toward the slider «p — break point» and watch this happen directly: the closer x gets, the taller the spike, because you're dividing by a number sliding toward zero.
+Dividing 5 by 1 gives 5. Dividing it by 0.1 gives 50, and by 0.01 gives 500. A fixed nonzero numerator divided by a denominator approaching zero produces increasingly large magnitudes. The sign depends on which side of zero the denominator is on.
 
-Now drag x the other way, far off toward the right edge of the graph. Instead of spiking, the curve settles down and flattens, creeping toward the height set by «a — far-away height» without ever quite touching it — the same shape a drug's blood level traces as it fades toward zero over time, always getting closer but never fully gone. Move «b — numerator shift» and the curve's exact path changes, but neither of those two limits, the break point or the flat height, moves at all.
+The rule here can be written as a constant a plus a fraction. Near x = p, that fraction can become very large, producing a vertical asymptote. Far from p, its denominator becomes large in magnitude, so the fraction tends to zero and the output approaches a.
+
+There is an exception worth trying. If the fraction's numerator is also zero and cancels completely, the output stays at a for every allowed input. The original denominator still excludes x = p, leaving a missing point instead of an asymptote. A zero denominator alone does not guarantee a blow-up.
 
 ## Formal
 
-A rational function is one expression divided by another: here $f(x) = \dfrac{ax+b}{x-p}$. It is defined everywhere except $x = p$, since dividing by $0$ is not allowed — that missing point is the vertical asymptote, the one input the curve can never use.
+For $f(x)=(ax+b)/(x-p)$, the domain excludes x = p. Rewriting gives $f(x)=a+(b+ap)/(x-p)$. If b + ap is nonzero, x = p is a vertical asymptote; otherwise the function equals a everywhere in its domain and has a removable hole at p.
 
-As $x$ runs far to the left or far to the right, the fraction's extra part shrinks toward $0$ and $f(x)$ settles toward $a$ — the horizontal asymptote, a height the curve keeps approaching but never quite touches.
+As x tends to either positive or negative infinity, $f(x)\to a$. This limiting height is the horizontal asymptote. In general, a graph can cross a horizontal asymptote; the word describes its behaviour far away, not an uncrossable boundary.
 
 ## Advanced
 
-For a general ratio of polynomials $P(x)/Q(x)$, the horizontal asymptote compares their degrees: if $\deg P < \deg Q$ it is $y=0$; if the degrees are equal it is the ratio of the leading coefficients (exactly $a$ in the family above); if $\deg P > \deg Q$ there is no horizontal asymptote, sometimes a slanted one instead. Vertical asymptotes sit at the real roots of $Q$ that are not also roots of $P$ — a shared root instead leaves a single missing point, a hole, with no blow-up.
+For a ratio of polynomials, cancel common factors when studying behaviour near excluded inputs, while keeping track of the original exclusions. A shared root gives a hole only if cancellation removes every denominator factor at that root. Any remaining denominator zero can still produce a vertical asymptote.
 
 ## Derivation
 
-1. Split the fraction into a whole part and a leftover piece: $\dfrac{ax+b}{x-p} = a + \dfrac{b+ap}{x-p}$, which is just $a$ plus a smaller fraction.
-2. As $x$ gets close to $p$, that leftover fraction's denominator shrinks toward $0$, so its size grows without bound: $\left|\dfrac{b+ap}{x-p}\right| \to \infty$.
-3. As $x$ grows very large in either direction, that same leftover fraction shrinks toward $0$ instead, leaving $f(x) \to a$.
+1. Write the numerator as a times x minus p, plus the remainder b + ap. Dividing gives the constant part and the leftover fraction.
+2. Assume b + ap is nonzero. As x approaches p, the leftover denominator approaches zero and the magnitude grows without bound.
+3. As x becomes large, the leftover fraction tends to zero, so the output tends to a.
 
 ## Real world
 
-### Pharmacokinetics
-A drug's concentration in the blood fades toward a background level over time, the same settling shape as a horizontal asymptote.
+### Average cost
 
-### Traffic near capacity
-Average delay per car rises sharply as traffic volume nears a road's capacity, blowing up much like cost near a machine's limit.
+A fixed setup cost divided among x items adds a term proportional to 1/x to the per-item cost. With positive x, it shrinks as more items share the setup cost.
 
-### Average cost per unit
-Spreading a fixed setup cost over more units makes the average cost per unit fall toward the pure per-unit cost, a horizontal asymptote in disguise.
+### Fixed-distance travel
 
-### Antenna signal strength
-Signal strength swings wildly right at a receiver's dead zone but settles to a steady baseline far from it.
+Time for a fixed distance equals distance divided by speed. As positive speed approaches zero, the time grows without bound in this idealized model.
+
+### Checking formulas
+
+Before interpreting a zero denominator as a physical limit, examine cancellation, the usable domain and the assumptions behind the formula.
