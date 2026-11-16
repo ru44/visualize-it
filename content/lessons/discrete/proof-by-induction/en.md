@@ -1,11 +1,8 @@
 ---
 title: 'Proof by induction'
-summary: >-
-  Induction proves a statement true for every one of infinitely many numbers
-  from just two checks — a base case and a step that topples the next domino
-  in an endless row.
+summary: 'Prove a statement for every positive integer by establishing a starting case and a rule that carries it to the next case.'
 parameters:
-  x: n — how many terms are added
+  x: 'n — number of terms, controlled by x'
 charts:
   - title: The sum formula against a comparison curve
     xLabel: n — number of terms
@@ -14,61 +11,57 @@ charts:
       - 'sum formula: n(n+1)/2'
       - 'comparison: n²/2'
 variables:
-  - n — how many terms you are adding up
-  - i — the term currently being summed
-  - k — the general step used in the inductive argument
+  - 'n: number of terms in the sum'
+  - 'i: index running through the terms'
+  - 'k: arbitrary integer used in the inductive step'
 ---
 
 ## Try it
 
-1. Drag x to 10: ten dominoes topple, and the staircase below stacks rows 1 through 10 into 55 squares — with its pale twin completing a 10×11 rectangle.
-2. Watch the two labels beside the rectangle: the counted sum and n(n+1)/2 always agree, because two staircases are exactly one rectangle.
-3. Push x all the way to 20, then back to 0 — with no push on the first domino, nothing falls, which is why a proof needs its base case.
+1. Set x = 10. The staircase contains 55 squares. Its pale copy completes a rectangle with 10 × 11 = 110 squares.
+2. Set x = 11. The new column adds 11 squares, so the sum rises from 55 to 66. Check that the formula gives 11 × 12 ÷ 2 = 66.
+3. Set x = 0, then x = 1. The first fallen domino represents establishing a starting case. Moving the slider illustrates the argument; it does not prove the step for every integer.
 
 ## Real-life examples
 
-1. **Stacking a triangular can display.** A grocery stacks cans in a triangle 10 rows tall, 1 can in row 1 up to 10 cans in row 10, for 55 cans in total.
-2. **Saving a growing amount each day.** Saving 1 dollar on day 1, 2 dollars on day 2, and so on for 14 days adds up to 105 dollars saved.
-3. **Building a 20-step staircase of blocks.** A staircase built from cubes, one more cube per step for 20 steps, uses 210 cubes in total.
+1. **Ten rows of cans.** Rows containing 1 through 10 cans use 10 × 11 ÷ 2 = 55 cans.
+2. **Increasing daily savings.** Saving 1 unit on day 1, 2 on day 2, and so on for 14 days gives 14 × 15 ÷ 2 = 105 units.
+3. **Twenty columns of blocks.** Columns of heights 1 through 20 use 20 × 21 ÷ 2 = 210 blocks.
 
 ## Test yourself
 
-1. Find the number of terms that makes the running sum equal exactly 66.
-2. Find x where the exact sum is exactly 5 more than the comparison curve n²/2.
-3. Find x where the running sum has already passed 150 but the comparison curve n²/2 has not.
+1. Find x for which the sum is exactly 66.
+2. Find x for which the sum exceeds the comparison value x²/2 by exactly 5.
+3. Find x for which the sum is at least 150 while x²/2 is still below 150.
 
 ## Intuition
 
-Stack cans in a triangle 10 rows tall, 1 can in row 1 up to 10 cans in row 10, and counting them all by hand gives 55 cans. Drag the slider x to 10 and the staircase on screen stacks those same rows into 55 squares, showing the running sum $1 + 2 + \cdots + n$ as one picture instead of a pile of separate additions.
+Adding the integers from 1 to 10 gives 55. The staircase suggests a shortcut: two copies fit into a rectangle of width 10 and height 11, so one copy contains half of 110 squares. The same arrangement suggests the formula $1 + 2 + \cdots + n = n(n+1)/2$.
 
-The chart also draws a second curve, $n^2/2$, close to the first one but not identical. At x = 10 the exact sum sits at 55 while the comparison curve sits at 50, a gap of 5 that comes from the leftover x/2 term hiding inside the exact formula. Watch the two curves separate slightly for small x and nearly meet for large x, an early look at how one formula can approximate another.
+Induction gives another proof. First check that the formula works for 1. Then show that whenever it works up to some integer k, adding the next number makes it work up to k + 1. The second part must work for any k, not just for one chosen example. The base case starts the argument, and the step lets us reach every later integer.
 
 ## Formal
 
-Induction proves a statement $P(n)$ for every natural number n using two pieces: a base case showing $P(1)$ holds, and an inductive step showing that if $P(k)$ holds then $P(k+1)$ must hold too.
+Let $P(n)$ be a claim about a positive integer n. To prove it for all such integers, establish the base case $P(1)$ and prove $P(k) \Rightarrow P(k+1)$ for every integer k at least 1. The assumption in this conditional proof is the induction hypothesis.
 
-Once both pieces are in place, the chain is unbreakable: $P(1)$ is true, so $P(2)$ follows, so $P(3)$ follows, and so on for every n — exactly like one falling domino guaranteeing the next falls, forever down the line.
+For the sum formula, assume $1+\cdots+k = k(k+1)/2$. Adding k + 1 gives $k(k+1)/2+(k+1)=(k+1)(k+2)/2$, which is precisely the formula with k replaced by k + 1. Together with the base case, this proves the claim.
 
 ## Advanced
 
-Strong induction strengthens the inductive step to assume $P(1), P(2), \dots, P(k)$ all hold rather than just $P(k)$, which is useful for statements — like every integer above 1 having a prime factorisation — where the step naturally splits into smaller pieces rather than shrinking by exactly one. Both forms rest on the same well-ordering fact about the natural numbers: any nonempty set of them has a smallest element.
+Induction can start at another integer if the claim has a different domain. Strong induction allows the step to use all earlier cases from the base through k. The comparison curve here is n²/2: its absolute difference from the sum is n/2, which grows. Its relative error, measured against the exact sum, is 1/(n + 1), which shrinks.
 
 ## Derivation
 
-1. Check the formula for the smallest case by hand: with a single term, the sum is just 1, and the formula agrees.
-2. Assume the formula already works for some value k — this assumption is the one domino you are allowed to lean on.
-3. Add the next term, k+1, onto both sides of the assumption and simplify; the result is exactly the formula for k+1, so the next domino falls too.
+1. At n = 1, the sum is 1 and the formula gives 1 × 2 ÷ 2 = 1. This establishes the base case.
+2. Assume the sum through k is k(k + 1)/2. We use this assumption to prove the next case, not as a claim that all cases are already known.
+3. Add k + 1 and factor out (k + 1). The result is (k + 1)(k + 2)/2, completing the inductive step.
 
 ## Real world
 
-### Counting handshakes
-At a party of n people where everyone shakes hands once, induction proves the total number of handshakes always matches $n(n-1)/2$.
+### Counting repeated work
 
-### Loop and algorithm costs
-Analysing how many operations a loop performs as it runs n times often uses induction to prove a running-total formula like this one.
+If a process performs 1 operation on its first pass, 2 on its second, and so on, this formula counts the total after n passes. Induction verifies that the count remains correct after each additional pass.
 
-### Stacking and tiling puzzles
-Many puzzles about covering a board or stacking blocks are solved by proving a small base pattern and showing it extends one step at a time.
+### Building a pattern
 
-### Compound interest schedules
-Showing a savings formula holds after each new deposit, given that it held the step before, is the same domino-chain reasoning as induction.
+A pattern that extends one row at a time often suggests an inductive proof: verify the first row, then explain why adding the next preserves the claimed property.
