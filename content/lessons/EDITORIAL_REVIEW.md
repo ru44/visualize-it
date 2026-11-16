@@ -1,6 +1,6 @@
 # Bilingual editorial review
 
-37 of 390 lessons reviewed. 353 remain.
+49 of 390 lessons reviewed. 341 remain.
 
 A checked lesson has had both language files rewritten or reviewed against its configuration and visualization source. Automated validation alone does not mark a lesson reviewed. Browser interaction and independent learner review remain separate checks.
 
@@ -179,20 +179,20 @@ Scope: every lesson, including summaries, parameter labels, examples, exercises,
 - [ ] [sampling-big-data](data/sampling-big-data/en.md) · [Arabic](data/sampling-big-data/ar.md)
 - [ ] [tables-and-filtering](data/tables-and-filtering/en.md) · [Arabic](data/tables-and-filtering/ar.md)
 
-## discrete (0/12)
+## discrete (12/12)
 
-- [ ] [graph-colouring](discrete/graph-colouring/en.md) · [Arabic](discrete/graph-colouring/ar.md)
-- [ ] [graphs-and-euler-paths](discrete/graphs-and-euler-paths/en.md) · [Arabic](discrete/graphs-and-euler-paths/ar.md)
-- [ ] [implication-and-equivalence](discrete/implication-and-equivalence/en.md) · [Arabic](discrete/implication-and-equivalence/ar.md)
-- [ ] [modular-patterns-and-clocks](discrete/modular-patterns-and-clocks/en.md) · [Arabic](discrete/modular-patterns-and-clocks/ar.md)
-- [ ] [pigeonhole-and-counting](discrete/pigeonhole-and-counting/en.md) · [Arabic](discrete/pigeonhole-and-counting/ar.md)
-- [ ] [proof-by-induction](discrete/proof-by-induction/en.md) · [Arabic](discrete/proof-by-induction/ar.md)
-- [ ] [propositional-logic](discrete/propositional-logic/en.md) · [Arabic](discrete/propositional-logic/ar.md)
-- [ ] [quantifiers](discrete/quantifiers/en.md) · [Arabic](discrete/quantifiers/ar.md)
-- [ ] [relations-and-functions](discrete/relations-and-functions/en.md) · [Arabic](discrete/relations-and-functions/ar.md)
-- [ ] [sequences-and-recurrences](discrete/sequences-and-recurrences/en.md) · [Arabic](discrete/sequences-and-recurrences/ar.md)
-- [ ] [sets-and-venn-diagrams](discrete/sets-and-venn-diagrams/en.md) · [Arabic](discrete/sets-and-venn-diagrams/ar.md)
-- [ ] [trees-and-spanning-trees](discrete/trees-and-spanning-trees/en.md) · [Arabic](discrete/trees-and-spanning-trees/ar.md)
+- [x] [graph-colouring](discrete/graph-colouring/en.md) · [Arabic](discrete/graph-colouring/ar.md)
+- [x] [graphs-and-euler-paths](discrete/graphs-and-euler-paths/en.md) · [Arabic](discrete/graphs-and-euler-paths/ar.md)
+- [x] [implication-and-equivalence](discrete/implication-and-equivalence/en.md) · [Arabic](discrete/implication-and-equivalence/ar.md)
+- [x] [modular-patterns-and-clocks](discrete/modular-patterns-and-clocks/en.md) · [Arabic](discrete/modular-patterns-and-clocks/ar.md)
+- [x] [pigeonhole-and-counting](discrete/pigeonhole-and-counting/en.md) · [Arabic](discrete/pigeonhole-and-counting/ar.md)
+- [x] [proof-by-induction](discrete/proof-by-induction/en.md) · [Arabic](discrete/proof-by-induction/ar.md)
+- [x] [propositional-logic](discrete/propositional-logic/en.md) · [Arabic](discrete/propositional-logic/ar.md)
+- [x] [quantifiers](discrete/quantifiers/en.md) · [Arabic](discrete/quantifiers/ar.md)
+- [x] [relations-and-functions](discrete/relations-and-functions/en.md) · [Arabic](discrete/relations-and-functions/ar.md)
+- [x] [sequences-and-recurrences](discrete/sequences-and-recurrences/en.md) · [Arabic](discrete/sequences-and-recurrences/ar.md)
+- [x] [sets-and-venn-diagrams](discrete/sets-and-venn-diagrams/en.md) · [Arabic](discrete/sets-and-venn-diagrams/ar.md)
+- [x] [trees-and-spanning-trees](discrete/trees-and-spanning-trees/en.md) · [Arabic](discrete/trees-and-spanning-trees/ar.md)
 
 ## earth-space (0/19)
 
