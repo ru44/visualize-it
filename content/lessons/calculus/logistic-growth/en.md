@@ -1,70 +1,63 @@
 ---
 title: Logistic growth and carrying capacity
-summary: >-
-  A new app that spreads quickly at first cannot keep doubling its users
-  forever — this idea predicts the S-shaped curve of growth that slows as it
-  nears the size of the whole market.
+summary: 'Explore proportional growth that slows near a stable capacity, and check when an S-shaped curve actually occurs.'
 parameters:
-  K: carrying capacity K
-  y0: starting amount y₀
-  k: growth rate k
-  x: time t
+  K: 'K — model capacity'
+  y0: 'y₀ — initial amount'
+  k: 'k — positive growth-rate constant'
+  x: 't — selected time'
 variables:
-  - carrying capacity — the ceiling the curve approaches
-  - starting amount at $t=0$
-  - intrinsic growth rate
+  - 'K: stable equilibrium amount in this model'
+  - 'y₀: positive amount at time zero'
+  - 'k: intrinsic proportional growth rate, in inverse time'
 ---
 
 ## Try it
 
-1. Drag the point through the early part of the curve, where y is small. The tangent grows steeply, almost like plain exponential growth.
-2. Keep dragging toward «carrying capacity K». The tangent flattens out even though y is at its largest.
-3. Compare the steepest point of the curve to K: it sits almost exactly halfway up, at K/2.
+1. Set K = 8, y₀ = 0.5 and k = 0.6. Move t from 0 toward 4.5. The amount increases and the tangent becomes steeper as y approaches K/2 = 4.
+2. Continue to t = 8, then 15. The amount approaches 8 while its rate of increase decreases.
+3. Set K = 2 and y₀ = 3. The model now decreases toward K from above. Starting above capacity does not produce the rising S-shaped curve.
 
 ## Real-life examples
 
-1. **An early-stage population, still in the exponential phase.** With K = 8, y0 = 0.5, k = 0.6 and x = 2, growth still looks almost unchecked.
-2. **Mid-growth, near the inflection point.** With the same K, y0 and k but x = 8, the population is climbing through its fastest-growing stretch, near K/2.
-3. **A slow-adoption product nearing market saturation.** With K = 5, y0 = 2, k = 0.3 and x = 18, adoption has almost filled the whole market.
+1. **Early growth.** With K = 8, y₀ = 0.5, k = 0.6 and t = 2, y ≈ 1.450. The factor 1 − y/K is about 0.819, already reducing the proportional growth rate.
+2. **After the fastest growth.** With the same parameters at t = 8, y ≈ 7.121. The fastest growth occurred near t = 4.513, when y = 4; this preset is already slowing near capacity.
+3. **Near capacity.** With K = 5, y₀ = 2, k = 0.3 and t = 18, y ≈ 4.966, about 99.3% of K.
 
 ## Test yourself
 
-1. Reach the inflection point, where growth is fastest: make y equal K/2.
-2. Push the population above 95% of its carrying capacity K.
-3. Keep the population below 10% of K even after x has reached 5 or more.
+1. Make |y − K/2| less than 0.1.
+2. Make y greater than 0.95K. For an approach from below, start with y₀ less than K.
+3. Keep y less than 0.1K at a selected time t of at least 5.
 
 ## Intuition
 
-Picture a new app with 50,000 people who might ever use it — call that ceiling «carrying capacity K». Drag the point through the early part of the curve, where the number of users is still small compared to that ceiling: the tangent grows steeply, almost like the app is doubling its users again and again with nothing slowing it down.
+Exponential growth uses a rate proportional to the current amount. The logistic model multiplies that rate by the remaining fraction 1 − y/K. When y is small compared with K, this factor is close to 1. At half capacity it is 0.5, and near capacity it is close to zero.
 
-Keep dragging toward «carrying capacity K»: the tangent flattens out even though the user count is at its largest, because the app is running out of new people to reach — everyone left to sign up is a shrinking slice of the population, and growth throttles itself even though nothing external changed.
+Two effects compete: a larger amount can generate more growth, but less capacity remains. For an amount between zero and K, growth is fastest at K/2. If the starting amount is below that halfway point, the forward-time curve first steepens and then flattens. If it starts above halfway, it slows from the start. K is an assumed model parameter, not a measured universal ceiling.
 
 ## Formal
 
-The governing ODE is $\dot y = ky(1-y/K)$: growth proportional to $y$ (like exponential growth) but damped by a factor that vanishes as $y \to K$.
+With constants k > 0, K > 0 and y₀ > 0, the model is $dy/dt=ky(1-y/K)$, with $y(0)=y_0$. Its solution is $y(t)=K/[1+((K-y_0)/y_0)e^{-kt}]$ for t ≥ 0. The graph's x coordinate represents time t.
 
-The solution is the logistic function $y(t) = K/\big(1+\big(\tfrac{K-y_0}{y_0}\big)e^{-kt}\big)$, symmetric S-shape with inflection at $y=K/2$.
+For $0<y_0<K$, the amount increases toward K; for $y_0>K$, it decreases toward K. If $y_0=K$, it stays constant. The growth-rate expression has maximum $kK/4$ at $y=K/2$, but a trajectory starting above K/2 does not pass through that amount at positive time.
 
 ## Advanced
 
-The inflection point, where growth rate itself is maximal, occurs exactly at $y=K/2$: differentiating $\dot y = ky(1-y/K)$ with respect to $y$ and setting it to zero gives $y=K/2$, independent of $k$ or $y_0$ — the steepest part of every logistic curve, whatever its parameters, is always at the halfway point to capacity.
+For 0 < y₀ < K, the inflection time is ln((K − y₀)/y₀)/k. It is positive only when y₀ < K/2. The zero solution is also an equilibrium, although the slider excludes it. Real processes may have changing capacities or delayed responses; the fixed logistic equation does not account for those effects.
 
 ## Derivation
 
-1. Separate variables in the logistic ODE.
-2. Partial fractions split the left side into two elementary integrals.
-3. Integrate, exponentiate, and fix the constant using $y(0)=y_0$.
+1. Away from the equilibrium values zero and K, separate the variables by dividing by y(1 − y/K).
+2. Split the fraction into two terms and integrate to obtain ln|y| − ln|1 − y/K| = kt + C.
+3. Rearrange and use the initial amount to determine the constant. The resulting formula also gives the constant solution when y₀ = K, checked directly in the equation.
 
 ## Real world
 
-### Population ecology
-Animal populations grow exponentially while resources are abundant, then level off near the environment's carrying capacity.
+### A limited-capacity growth model
 
-### Epidemics
-The S-curve of total infections in a simple epidemic model flattens as the pool of susceptible people is used up.
+When a quantity grows in proportion both to its current size and to the fraction of capacity remaining, the logistic equation describes that assumption. Compare observations with the model before using it to predict a plateau.
 
-### Product adoption
-New technology adoption often follows a logistic S-curve: slow start, rapid middle growth, saturating market.
+### Separating amount and rate
 
-### Tumor growth models
-Some tumor growth is modeled logistically, with $K$ representing a resource- or space-limited maximum size.
+A large amount can coexist with a small growth rate near capacity. Plotting the amount and examining its tangent helps distinguish how much is present from how fast it changes.
