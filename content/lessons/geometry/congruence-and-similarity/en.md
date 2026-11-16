@@ -1,67 +1,63 @@
 ---
 title: Congruence and similarity
-summary: >-
-  Two shapes are similar if they're the same shape at different sizes, and
-  congruent if they're also the same size — a rule that lets a 1.2 m stick
-  measure a tree without anyone climbing it.
+summary: 'Compare corresponding lengths to distinguish a scaled copy from a copy with the same size and shape.'
 parameters:
-  sun: sun angle
-  hStick: stick height
-  hTree: tree height
+  sun: 'sun — sunlight angle above level ground, in degrees'
+  hStick: 'hStick — reference stick height in metres'
+  hTree: 'hTree — tree height in metres'
 variables:
-  - the stick's height
-  - the length of the stick's shadow
-  - the tree's height
-  - the length of the tree's shadow
+  - 'h₁: stick height'
+  - 's₁: stick shadow length'
+  - 'h₂: tree height'
+  - 's₂: tree shadow length'
 ---
 
 ## Try it
 
-1. Drag the tip of the small orange triangle to change the stick's height. Its shadow (the base of the triangle) stretches or shrinks to match.
-2. Drag the tip of the big blue triangle to change the tree's height, and watch its shadow do the same thing, always in step with the stick's.
-3. Raise "hTree" until it matches "hStick" exactly. The two triangles become congruent — not just the same shape, but the same size too.
+1. Set sun = 40, hStick = 1.2 and hTree = 6. The tree is five times as tall, and its shadow is five times as long.
+2. Keep both heights fixed and set sun = 60. Both shadows shorten. Their ratio remains 5 even though each height-to-shadow ratio changes.
+3. Set hStick = 1.5 and hTree = 1.5. The two triangles now have the same size and shape, so they are congruent.
 
 ## Real-life examples
 
-1. **A 1.2 m stick at midday.** With the sun 40° above the horizon, the stick casts a 1.4 m shadow, and a 6 m tree nearby casts a shadow of exactly the same ratio.
-2. **Late afternoon, a tall tree.** With the sun low at 60°, a short 1 m stick and a 10 m tree still share the same height-to-shadow ratio, however long the shadows stretch.
-3. **Two equal flagpoles.** A 1.5 m stick next to a 1.5 m post: same height, same shadow, same angle — the two triangles are congruent, not merely similar.
+1. **A fivefold enlargement.** At sun = 40°, a 1.2 m stick casts a shadow about 1.43 m long. A 6 m tree casts one about 7.15 m long: both height and shadow are multiplied by 5.
+2. **A higher sun angle.** At sun = 60°, a 1 m stick casts a shadow about 0.58 m long, and a 10 m tree casts one about 5.77 m long. The scale factor between the triangles is 10.
+3. **Equal heights.** At sun = 25°, two objects of height 1.5 m both cast shadows about 3.22 m long. Their triangles are congruent even though height divided by shadow is not 1.
 
 ## Test yourself
 
-1. Make the stick's triangle and the tree's triangle congruent.
+1. Make the two heights equal, or less than 0.05 m apart for the checker, to match the triangles' sizes.
 2. Make the tree's shadow longer than 15 m.
-3. Set the sun's angle so that height divided by shadow equals exactly 2.
+3. Adjust sun so that height divided by shadow is as close to 2 as the angle control allows.
 
 ## Intuition
 
-Two triangles are similar when one is a scaled copy of the other — same angles, same shape, just bigger or smaller. The stick and the tree here are both right triangles standing on the same flat ground, lit by the same sun, so the angle the sunlight makes with the ground is identical for both. That one shared angle, plus the right angle where each object meets the ground, is enough to guarantee the two triangles have the same shape, no matter how different the stick and the tree are in size.
+Similar shapes have matching angles and proportional corresponding lengths. Here a vertical object, its shadow on level ground, and a sunlight ray form a right triangle. We assume parallel sunlight rays for both objects. The triangles share the sunlight angle and the right angle, so they have the same shape.
 
-Congruent is a stricter word: two shapes are congruent only when they are similar *and* the same size — you could pick one up and lay it exactly on top of the other. Drag "hTree" up until it equals "hStick" and you'll see the readout switch from "similar" to "congruent", because now the tree's triangle isn't just shaped like the stick's, it matches it exactly.
+If the tree is five times as tall as the stick, its triangle is a fivefold enlargement, so its shadow is five times as long too. Congruent shapes also have the same size: their scale factor is 1. That compares one triangle with the other. It does not mean that a triangle's own height and shadow must be equal.
 
 ## Formal
 
-Two triangles are similar when their corresponding angles are equal, which forces their corresponding sides to share one common ratio: $\dfrac{h_1}{s_1} = \dfrac{h_2}{s_2}$, where $h$ is a height and $s$ its shadow.
+For these similar triangles, let $h_1,s_1$ be the stick's height and shadow, and $h_2,s_2$ the tree's. Their scale factor is $k=h_2/h_1=s_2/s_1$. Equivalently, $h_1/s_1=h_2/s_2$, so $h_2=h_1s_2/s_1$. All lengths are positive.
 
-They are congruent when, in addition, that ratio equals 1 — every corresponding side has exactly the same length, not just the same proportion.
+The triangles are congruent when $k=1$, meaning corresponding sides are equal. The internal ratio $h_1/s_1$ instead depends on the sun angle. It equals the tangent of that angle and need not be 1 for congruence.
 
 ## Advanced
 
-This "AA" similarity test (two equal angles force similarity) is one of several: SSS similarity checks that all three side ratios match, and SAS similarity checks one equal angle sandwiched between two sides in the same ratio. Congruence has its own parallel list — SSS, SAS, ASA — each a minimal set of measurements that pins a triangle down completely.
+For triangles, two equal corresponding angles establish similarity (AA). Other tests use three proportional side lengths (SSS), or two proportional sides with the included angle equal (SAS). Congruence tests instead use equal side lengths and suitable equal angles. In the display, the congruence label allows a small numerical tolerance; exact congruence requires equal lengths.
 
 ## Derivation
 
-1. The sun's rays are parallel, so they meet the stick and the tree at the same angle above the ground.
-2. Both triangles also have a right angle where the object meets the ground, so the two triangles are similar: the same shape, with corresponding sides in one fixed ratio.
-3. Writing that ratio as height over shadow for each object and cross-multiplying finds the tree's height from two measured shadows.
+1. Parallel sunlight rays make equal angles with the same level ground.
+2. Each vertical object also meets the ground at a right angle. Two matching angles make the triangles similar.
+3. Corresponding heights and shadows share a scale factor. Rearranging their ratios gives tree height = stick height × tree shadow ÷ stick shadow.
 
 ## Real world
 
-### Ancient surveying
-Thales of Miletus is said to have measured the height of the Great Pyramid this way — comparing its shadow to the shadow of a stick of known height, without ever climbing it.
+### Estimating an inaccessible height
 
-### Photography and maps
-A camera lens projects a similar (scaled-down) copy of the scene onto the sensor, and a paper map is a similar copy of the land it shows, both relying on every corresponding angle staying the same.
+Measure a vertical reference object's height and both shadows on the same level ground at the same time. Similarity gives the unknown height when the parallel-ray model is suitable.
 
-### Manufacturing
-A machinist checking a part against a technical drawing tests for congruence, not just similarity — the part must match the drawing's measurements exactly, not merely have the same proportions.
+### Scale drawings
+
+A flat object's uniformly scaled drawing preserves angles and multiplies all lengths by one factor. A factor of 2 doubles lengths and quadruples areas; a factor of 1 gives a congruent copy.
