@@ -1,69 +1,62 @@
 ---
 title: 'Modular patterns: tables, clocks and divisibility tricks'
-summary: >-
-  Lay the counting numbers out in rows of a fixed width and same-remainder
-  numbers line up in tidy columns — the pattern behind calendars,
-  hundred-squares, and quick tests for whether a number divides by 3, 9 or 11.
+summary: 'Read division as complete groups plus a remainder, and see why equal remainders line up in the same column.'
 parameters:
-  cols: width — how many numbers per row, the modulus
-  highlight: number — which number to inspect (tap a cell)
+  cols: 'm — row width, or divisor'
+  highlight: 'n — selected number from 0 to 47; tap a cell'
 variables:
-  - the number being placed in the table
-  - the quotient — how many complete rows come before it
-  - the width of each row — the modulus
-  - the remainder — how far into its row the number sits
+  - 'n: number being divided'
+  - 'q: quotient, or complete groups of m'
+  - 'm: positive divisor and row width'
+  - 'r: remainder, from 0 to m − 1'
 ---
 
 ## Try it
 
-1. Tap the number 23 (or any cell) and read off its remainder and quotient in the readouts below.
-2. Drag "width" from 7 up to 10 and watch every number slide into a new column — same numbers, completely different stripe pattern.
-3. Set "width" back to 7 and tap a few numbers in the very first column: 0, 7, 14, 21 — all multiples of 7, all sharing remainder 0.
+1. Set cols = 7 and highlight = 23. The readouts give quotient 3 and remainder 2: 23 = 3 × 7 + 2.
+2. Keep 23 selected and set cols = 10. Now 23 = 2 × 10 + 3, so the remainder becomes 3.
+3. Set cols = 7 and select 0, 7, 14 and 21 in turn. Each has remainder 0 and lies in the first column.
 
 ## Real-life examples
 
-1. **A calendar page.** With width 7, like the seven columns of a printed calendar, the number 23 sits two places into its row: the 24th day of a month lands on the same weekday as the 3rd and the 17th.
-2. **A hundred-square.** With width 10, the digits of a number read straight off its row and column: 36 sits in row 3, column 6, and its digits, 3 and 6, add up to 9 — a quick test for whether 9 divides it evenly.
-3. **An eleven-wide table.** With width 11, the number 33 lands exactly on the end of its row, remainder 0: its two digits are equal, 3 and 3, which is always true for two-digit multiples of 11.
+1. **Weekly cycles.** With width 7 and number 23, there are three complete weeks and two extra days. A date 23 days after a starting date falls two weekdays later than that starting weekday.
+2. **Tens and units.** With width 10, number 36 has quotient 3 and remainder 6: three tens and six units. Its digit sum is 9, so it is divisible by 9.
+3. **Groups of eleven.** With width 11, number 33 is 3 × 11 with no remainder. It sits at the start of a row, in column 0.
 
 ## Test yourself
 
-1. Set the width to 7 and pick a highlighted number that lands in the very first column, remainder 0.
-2. Pick any highlighted number under 60 whose digits add up to a multiple of 9.
-3. Pick a highlighted number of 11 or more that is exactly divisible by 11 — its two digits will be equal.
+1. Set cols = 7 and select a number in the remainder-0 column.
+2. Select a number in the displayed range 0–47 whose digit sum is divisible by 9.
+3. Select a multiple of 11 that is at least 11.
 
 ## Intuition
 
-Lay the whole numbers 0, 1, 2, 3, … out in rows, a fixed number wide, and something falls into place immediately: numbers directly below each other always differ by exactly that row width, so they all leave the same remainder when divided by it. Drag "width" and watch every number in the grid slide sideways into a new column, because the remainder each number leaves depends entirely on how wide the rows are.
+Arrange 0 through 47 in rows of seven. The first row is 0 through 6; the next begins at 7. Number 23 comes after three full rows, with two positions left over. We number rows and columns from zero, so it is in row 3, column 2.
 
-Tap any number to see its own row and column highlighted: the row tells you the quotient, how many complete rows of that width came before it, and the column tells you the remainder, how far short of finishing one more row it fell. Multiples of the row width always land in the very first column, remainder 0, which is exactly why they stand out, shown here in bold.
+Numbers in the same column differ by whole rows. For example, 2, 9, 16 and 23 all leave remainder 2 after division by 7. Changing the row width changes the remainders. A zero remainder means the number is exactly divisible by the width.
 
 ## Formal
 
-The division algorithm says that for any whole number $n$ and any positive width $m$, there exist unique whole numbers $q$ and $r$ with $n = q\cdot m + r$ and $0 \le r < m$. Arranging the numbers in rows of length $m$ is exactly this statement made visible: $q$ counts the completed rows and $r$ is the position within the current one.
+For a nonnegative integer $n$ and a positive integer $m$, there are unique integers $q$ and $r$ satisfying $n=qm+r$ and $0\le r<m$. Here q is the quotient and r is the remainder. The diagram uses m as its row width.
 
-Two numbers with the same remainder $r$ are called congruent modulo $m$, and they always occupy the same column of the table. That single fact underlies several classic shortcuts: a number is divisible by 3 exactly when its digit sum is, and the same holds for 9, because both 10 and its powers leave remainder 1 modulo 3 and modulo 9, so each digit contributes its own value to the remainder no matter its place.
+Two integers are congruent modulo m when their difference is divisible by m. For the displayed nonnegative integers, this means they have the same remainder and occupy the same column. We write $a\equiv b\pmod m$.
 
 ## Advanced
 
-Divisibility by 11 uses a related but different trick, because 10 leaves remainder $-1$, not $1$, modulo 11: alternately adding and subtracting a number's digits from right to left gives a total with the same remainder mod 11 as the original number. For a two-digit number that alternating sum is simply the difference of its two digits, which is why every two-digit multiple of 11, from 11 and 22 up to 99, has matching digits.
+In decimal notation, 10 and every power of 10 are congruent to 1 modulo 9 and modulo 3. Thus a number and its digit sum have the same remainder for either divisor. Modulo 11, 10 is congruent to −1, so alternating addition and subtraction of digits gives the divisibility test. The standard nonnegative remainder of 10 divided by 11 is still 10; −1 is a congruent value, not that standard remainder.
 
 ## Derivation
 
-1. Line up the whole numbers 0, 1, 2, … in rows of length $m$: each full row uses up exactly $m$ consecutive numbers before starting the next one.
-2. Writing $n = q\cdot m + r$ splits $n$ into $q$, the count of complete rows already used, and $r$, the leftover position within the row still in progress.
-3. Since $0 \le r < m$ always holds, every number sharing the same $r$ falls in the very same column, so a table's columns are exactly the remainder classes modulo $m$.
+1. Each row contains m positions. Moving down one full row adds m to the number.
+2. A number in row q and column r is therefore qm + r, with both indices starting at zero.
+3. Columns run from 0 to m − 1. Numbers in a fixed column share r, so they have the same remainder.
 
 ## Real world
 
-### Printed calendars
-A month's calendar grid is seven columns wide because a week has seven days; the day of the week for any date is just that date's remainder when divided by 7.
+### Weekdays
 
-### Hundred-squares in primary classrooms
-The classic ten-wide "hundred square" used to teach place value is a modular table in disguise: its columns are the ones-digits, the remainder classes modulo 10.
+To find a weekday after a number of days, start from a known weekday and use the remainder modulo 7. A calendar date's remainder alone does not identify its weekday without that starting reference.
 
-### Checking long account and card numbers
-Bank account and card numbers carry a built-in check digit computed with a divisibility rule, so a single mistyped digit almost always makes the remainder come out wrong and the error gets caught immediately.
+### Repeating turns
 
-### Barcodes and ISBNs
-Barcodes and book ISBNs both include a check digit built from a weighted remainder calculation, letting a scanner instantly detect a misread digit before the wrong product or book is looked up.
+If five players take turns, turn numbers separated by 5 belong to the same player. The remainder tracks a position in the cycle; first choose whether turn numbering starts at 0 or 1.
