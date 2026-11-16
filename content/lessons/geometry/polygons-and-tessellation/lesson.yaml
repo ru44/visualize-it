@@ -25,9 +25,9 @@ variables:
 - S
 - a
 derivation:
-- \text{draw every diagonal from one vertex, splitting the } n\text{-gon into } (n-2) \text{ triangles}
-- \text{each triangle's angles add to } 180^\circ \text{, and together the triangles cover every interior angle of the polygon exactly once}
-- S = (n-2)\cdot 180^\circ \text{, and sharing that equally among the } n \text{ equal angles of a regular polygon gives } a = \dfrac{S}{n}
+  - '\text{a convex }n\text{-gon splits into }n-2\text{ triangles using diagonals from one vertex}'
+  - '\text{the triangles partition the interior angles, each contributing }180^\circ'
+  - 'S=(n-2)180^\circ,\quad a=S/n\text{ for a regular polygon}'
 charts: []
 primary: n
 presets:
