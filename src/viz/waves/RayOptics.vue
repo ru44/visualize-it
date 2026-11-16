@@ -88,7 +88,7 @@ function pick(e: PointerEvent) {
         <text class="num" x="16" :y="P.y - 12" font-size="13" fill="var(--fg)">n₁ = {{ fmt(n1, 2) }}</text>
         <text class="num" x="16" :y="P.y + 22" font-size="13" fill="var(--fg)">n₂ = {{ fmt(n2, 2) }}</text>
         <line :x1="incStart.x" :y1="incStart.y" :x2="P.x" :y2="P.y" stroke="var(--accent-2)" stroke-width="3" />
-        <line :x1="P.x" :y1="P.y" :x2="reflEnd.x" :y2="reflEnd.y" stroke="var(--accent-2)" stroke-width="1.5" :stroke-opacity="tir ? 1 : 0.35 + refl" />
+        <line v-if="refl > 1e-12" :x1="P.x" :y1="P.y" :x2="reflEnd.x" :y2="reflEnd.y" stroke="var(--accent-2)" stroke-width="1.5" :stroke-opacity="tir ? 1 : 0.35 + refl" />
         <line v-if="refrEnd" :x1="P.x" :y1="P.y" :x2="refrEnd.x" :y2="refrEnd.y" stroke="var(--accent-2)" stroke-width="3" :stroke-opacity="1 - refl * 0.7" />
         <path :d="`M${P.x},${P.y - 60} A60,60 0 0 0 ${P.x - 60 * Math.sin(th1)},${P.y - 60 * Math.cos(th1)}`" fill="none" stroke="var(--fg)" />
         <text class="num" :x="P.x - 40" :y="P.y - 70" font-size="12" fill="var(--fg)">θ₁</text>
