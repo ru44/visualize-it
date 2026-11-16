@@ -1,69 +1,72 @@
 ---
 title: Transformations of graphs
-summary: >-
-  Shift, stretch and flip any curve with four simple moves — the same four
-  tricks behind volume knobs, mirrored images, and shifted time zones.
+summary: Learn how changing a function's input or output shifts, stretches or reflects its graph.
 parameters:
-  x: point x
-  k: k — vertical stretch/flip
-  h: h — horizontal shift
-  s: s — horizontal stretch/flip
-  d: d — vertical shift
+  x: input x
+  k: output multiplier k
+  h: horizontal shift h
+  s: input multiplier s
+  d: vertical shift d
 variables:
-  - the input you drag along the curve
-  - how much the curve is stretched vertically — taller peaks and deeper troughs; negative flips it upside down
-  - how far the curve is shifted sideways — positive moves it to the right
-  - how much the curve is squeezed sideways — larger values repeat the wave faster; negative flips it left-right
-  - how far the whole curve is shifted up or down
+  - input position
+  - output multiplier; its absolute value sets amplitude, and its sign reflects vertically
+  - horizontal shift of the transformed pattern
+  - input multiplier; larger absolute values compress the pattern horizontally
+  - value added to every output
 ---
 
 ## Try it
 
-1. Drag «d» up. The whole curve lifts: every point moves up by the same amount, and nothing else changes.
-2. Now drag «h». The curve slides sideways without changing shape — what happened at one point in x now happens later.
-3. Push «k» negative. The curve flips upside down: every peak becomes a trough and every trough becomes a peak.
+1. Set k = 1, h = 0, s = 1 and d = 0. Then increase d to 2. Every height increases by 2.
+2. Keep those settings and increase h to 2. The wave moves two units right. Its amplitude and period stay the same.
+3. Set k to -2 and d to 0. The wave reflects vertically and its amplitude becomes 2. Then set s to 2 to halve the period.
 
 ## Real-life examples
 
-1. **A city's daily temperature.** The plain wave (k=1, h=0, s=1, d=0) swings evenly above and below its average, with no lift and no delay.
-2. **A hotter city, same rhythm.** Doubling the swing and lifting the average (k=2, d=3) makes every temperature both more extreme and warmer overall, while the timing of hot and cold stays exactly the same.
-3. **The opposite hemisphere, a slower cycle.** Flipping the wave (k=-1) swaps winter and summer, shifting it (h=2) delays the whole cycle, and stretching it sideways (s=0.5) makes each season last twice as long.
+1. **The original wave.** With k = 1, h = 0, s = 1 and d = 0, the rule is sine x, ranging from -1 to 1.
+2. **A larger, raised signal.** With k = 2 and d = 3, keeping h = 0 and s = 1, the output ranges from 1 to 5. Its period is unchanged.
+3. **Several changes together.** With k = -1, h = 2, s = 0.5 and d = -1, the wave is reflected, shifted right by 2 and down by 1, and has twice the original period.
 
 ## Test yourself
 
-1. Shift the curve up until its lowest point just touches the horizontal axis.
-2. Flip the curve upside down and stretch it so its peak reaches twice as high as the original.
-3. Squeeze the curve sideways until it completes a full wave twice as fast as the original.
+1. Set d equal to the absolute value of k, keeping k and s nonzero, so the minimum is zero.
+2. Set k to -2. This reflects and doubles the output relative to its middle value; d still controls the actual peak height.
+3. Make the absolute value of s equal to 2, keeping k nonzero, to halve the original period.
 
 ## Intuition
 
-A city's temperature rises and falls every day in a repeating wave. Start with the plain wave on screen: it swings the same amount above and below zero, over and over. Drag «d» and you lift the whole wave up — every single point rises by the same amount, because you added a fixed number to every output. That is what adding a constant outside the rule always does: move the whole picture up or down, without changing its shape at all.
+Begin with a sine wave whose heights range from -1 to 1. Adding 2 to every output moves the range to 1 through 3. Nothing changes about when its peaks occur. A change made after the function is evaluated changes its output heights.
 
-Now drag «h» instead. The wave slides left or right without stretching or flipping, because you are changing what goes in before the rule runs, so the whole output timeline shifts to match. Push «k» negative and the curve flips top to bottom: every high point becomes a low point. Push «s» past 1 and the wave squeezes sideways, repeating faster, because you are stretching the input itself before the rule ever sees it.
+Changing the input works differently. To move the wave two units right, evaluate the original function at x minus 2. What used to happen at input zero now happens at input two. To make the pattern repeat twice as often, multiply that shifted input by 2.
+
+The k control scales the output before adding the vertical shift d. A negative k reflects the wave about its middle line. The s control scales the input: larger absolute values squeeze the graph horizontally, and smaller nonzero absolute values stretch it. Zero values collapse this sine-wave example to a constant, rather than giving an ordinary stretch.
 
 ## Formal
 
-For a base function $f$ and constants $k, h, s, d$, the family $g(x) = k \cdot f\big(s(x-h)\big) + d$ covers every shift, stretch and flip of $f$: $d$ shifts vertically, $h$ shifts horizontally, $k$ scales the output and flips it if negative, and $s$ scales the input and flips it left-right if negative.
+For a base function f, the transformed rule is $g(x)=k f(s(x-h))+d$. With nonzero s, a point at input u of the original graph moves to horizontal position h plus u divided by s. Its new height is k times the old height plus d.
 
-Adding a constant outside $f$ moves every output; adding one inside, to $x$, moves every input instead, which is why $f(x)+d$ and $f(x+h)$ shift the graph along seemingly opposite directions on the horizontal axis.
+Here f is sine. With k and s nonzero, the amplitude is $|k|$, the middle value is d, and the period is $2\pi/|s|$. The range runs from d minus the absolute value of k to d plus it. If k or s is zero, the output is the constant d.
 
 ## Advanced
 
-These four transformations generate the full group of affine changes of variable on the graph of $f$; composing several of them in different orders can give different results whenever a horizontal and a vertical operation are mixed, since scaling the input by $s$ before shifting is not the same map as shifting first and then scaling.
+Order matters for operations on the same coordinate: doubling an output and then adding 3 differs from adding 3 and then doubling. A purely horizontal transformation and a purely vertical transformation can be applied in either order. These transformations do not include every possible plane transformation, such as an arbitrary rotation.
 
 ## Derivation
 
-1. Change what goes in first: replace $x$ with $s(x-h)$ inside $f$, which shifts by $h$ and rescales by $s$.
-2. Multiply the whole result by $k$, which stretches the output and flips it if $k$ is negative.
-3. Add $d$ to what is left, which shifts the whole curve up or down.
+1. Replace the original input by s times x minus h. This controls horizontal position, scale and reflection.
+2. Multiply the resulting output by k to scale it vertically and reflect it if k is negative.
+3. Add d to shift every output vertically by the same amount.
 
 ## Real world
 
-### Audio and sound engineering
-Pitch and volume controls stretch a sound wave horizontally (pitch) and vertically (volume) without changing its underlying shape.
+### Signals
 
-### Seasonal and tidal cycles
-Temperature, daylight hours and tides all repeat with a shape that can be shifted by time zone, stretched by latitude, and flipped between hemispheres.
+Multiplying signal values changes their amplitude. Adding a constant changes their baseline.
 
-### Image and video editing
-Brightness, contrast and mirroring tools apply exactly these same four transformations to the numbers making up a picture.
+### Timing
+
+Replacing time by time minus a delay shifts a recorded pattern later without changing its shape.
+
+### Comparing graphs
+
+Aligning middle values and adjusting scales can help compare patterns measured in different units. Keep those transformations explicit when interpreting the result.
