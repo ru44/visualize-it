@@ -1,66 +1,60 @@
 ---
 title: 'Circle: circumference and area'
-summary: >-
-  Every point on a circle sits the same distance from its centre — that one
-  distance alone fixes how far around it is and how much area it encloses.
+summary: 'Use the radius to calculate a circle’s boundary length and the area inside it.'
 parameters:
-  r: r — radius
+  r: 'r — radius, from centre to boundary'
 variables:
-  - the radius — drag the handle on the rim to change it
-  - 'the circumference, the distance once around the circle'
-  - the area enclosed by the circle
+  - 'r: radius; drag the boundary handle or use the slider'
+  - 'C: circumference, the boundary length'
+  - 'A: area of the enclosed disk'
 ---
 
 ## Try it
 
-1. Drag the handle on the rim to make the circle bigger and smaller.
-2. Look at the straight line under the circle: it is the rim unrolled. About 6.28 radius-lengths fit along it, always.
-3. Read «ratio C/d» under the picture. It never changes: that fixed number is π.
+1. Set r = 1. Read circumference about 6.28 and area about 3.14. These measure different things and use different units.
+2. Set r = 2. The circumference doubles to about 12.57, while the area quadruples to about 12.57. Their numerical agreement here does not make length and area interchangeable.
+3. Compare C/d at different radii. It remains about 3.141593. The picture automatically rescales, so follow the numerical values rather than the circle's screen size.
 
 ## Real-life examples
 
-1. **Backyard trampoline.** A trampoline with a 1.8 m radius has a jumping surface of about 10 square metres.
-2. **Manhole cover.** A manhole cover with a 0.5 m radius has a rim just over 3 metres around.
-3. **Small satellite dish.** A satellite dish with a 3 m radius collects signal over an area of roughly 28 square metres.
+1. **A circular mat.** A mat with radius 1.8 m covers about 10.18 m², using area = π × 1.8².
+2. **A circular cover.** A cover with radius 0.5 m has a boundary about 3.14 m long and area about 0.79 m².
+3. **A circular garden bed.** A bed with radius 3 m covers about 28.27 m² and needs about 18.85 m of edging around its boundary.
 
 ## Test yourself
 
-1. Size the circle so its area is about 12 square metres.
-2. Make a circle bigger than 3 m in radius whose circumference tops 25 m.
-3. Keep the radius under 1 m yet the area below 2 square metres.
+1. Choose a radius giving an area of about 12.
+2. Make r greater than 3 and the circumference greater than 25.
+3. Keep r below 1 and the area below 2.
 
 ## Intuition
 
-Drag the handle on the rim: the radius line stretches, and the circle grows or shrinks around it. Below, that same rim gets cut and laid out flat as a straight segment — watch how its length always lines up with about $6.28$ copies of the radius, tick by tick. That number, $2\pi$, is not a coincidence of this one circle; it is the same for every circle you could draw.
+The radius is the distance from the centre to the boundary. A diameter crosses the centre from one side to the other, so it is twice the radius. The circumference is the length of one trip around the boundary. The segment under the circle represents that boundary laid straight; its tick spacing represents one radius.
 
-Because $C$ scales with $r$, the ratio $C/r$ never changes as you drag — it is always $2\pi$. That is really the definition of $\pi$: the fixed proportion between how far around a circle is and how big it is across.
+The circumference is a little more than six radii, or a little more than three diameters. The fixed ratio of circumference to diameter is π, approximately 3.14159. The area measures how much flat surface lies inside the circle. Doubling the radius doubles all lengths but multiplies the area by four.
 
 ## Formal
 
-A circle of radius $r$ centred at a point $O$ is the set of points at distance exactly $r$ from $O$; its circumference is $C = 2\pi r$.
+For positive radius r, a circle consists of points at distance r from its centre. Its diameter is $d=2r$, and its circumference is $C=\pi d=2\pi r$. Lengths such as r, d and C use the same unit.
 
-The disk it encloses has area $A = \pi r^2$, and for every circle the ratio $C/d$ of circumference to diameter equals the constant $\pi$.
+The enclosed disk has area $A=\pi r^2$. If r is measured in metres, C is measured in metres and A in square metres. Scaling r by a positive factor k scales C by k and A by $k^2$.
 
 ## Advanced
 
-Area and circumference are linked by calculus: $\frac{d}{dr}\pi r^2 = 2\pi r$. Growing the radius by $dr$ adds a thin ring of length $2\pi r$ — and integrating those rings, $\int_0^r 2\pi s\,ds$, rebuilds the area.
+Increasing the radius by a small amount h adds an annulus with exact area 2πrh + πh². When h is small compared with r, the second term is small and the added area is approximately circumference × thickness. This explains why the derivative of area with respect to radius equals circumference.
 
 ## Derivation
 
-1. Slice the disk into $n$ thin wedges from the centre. Each wedge is nearly a triangle of height $r$ and base $C/n$, a sliver of the circumference.
-2. Lay the wedges side by side, alternating direction so they interlock. As $n\to\infty$ the zig-zag edge straightens into a rectangle of height $r$ and width $C/2$ — half the unrolled circumference.
-3. Multiply the rectangle's two sides and substitute $C = 2\pi r$: the disk's area falls out as $\pi r^2$.
+1. Cut the disk into many narrow sectors. Each is approximately a triangle with height r and base a small arc of the circumference.
+2. Arrange them alternately pointing up and down. As the sectors become narrower, the arrangement approaches a rectangle of height r and width C/2.
+3. Its area is rC/2. Substituting C = 2πr gives πr². Taking the limit of increasingly narrow sectors makes the result exact.
 
 ## Real world
 
-### Wheels and gears
-A wheel's circumference tells you how far it travels in one full turn, which is how odometers and gear ratios are calculated.
+### Edging and covering
 
-### Pipes and cable
-A pipe's cross-sectional area, $\pi r^2$, determines how much water or cable can pass through it.
+To border a round bed, use circumference to calculate edging length. To cover its surface, use area. The same radius answers both questions, but with different formulas and units.
 
-### Orbits
-To a good approximation a planet or satellite traces a circle, so $C = 2\pi r$ gives the distance it covers each revolution.
+### Rolling a wheel
 
-### Pizza economics
-Area grows with $r^2$ while price often scales closer to $r$, which is why one large pizza usually beats two small ones.
+An ideal wheel rolling without slipping travels one circumference per full rotation. Doubling its radius doubles that distance per rotation.
