@@ -1,6 +1,6 @@
 # Bilingual editorial review
 
-49 of 390 lessons reviewed. 341 remain.
+61 of 390 lessons reviewed. 329 remain.
 
 A checked lesson has had both language files rewritten or reviewed against its configuration and visualization source. Automated validation alone does not mark a lesson reviewed. Browser interaction and independent learner review remain separate checks.
 
@@ -293,26 +293,26 @@ Scope: every lesson, including summaries, parameter labels, examples, exercises,
 - [x] [slope](functions/slope/en.md) · [Arabic](functions/slope/ar.md)
 - [x] [transformations-of-graphs](functions/transformations-of-graphs/en.md) · [Arabic](functions/transformations-of-graphs/ar.md)
 
-## geometry (0/19)
+## geometry (12/19)
 
-- [ ] [angles-and-parallel-lines](geometry/angles-and-parallel-lines/en.md) · [Arabic](geometry/angles-and-parallel-lines/ar.md)
-- [ ] [area-and-perimeter](geometry/area-and-perimeter/en.md) · [Arabic](geometry/area-and-perimeter/ar.md)
+- [x] [angles-and-parallel-lines](geometry/angles-and-parallel-lines/en.md) · [Arabic](geometry/angles-and-parallel-lines/ar.md)
+- [x] [area-and-perimeter](geometry/area-and-perimeter/en.md) · [Arabic](geometry/area-and-perimeter/ar.md)
 - [ ] [building-dimensions](geometry/building-dimensions/en.md) · [Arabic](geometry/building-dimensions/ar.md)
-- [ ] [circle](geometry/circle/en.md) · [Arabic](geometry/circle/ar.md)
-- [ ] [circle-theorems](geometry/circle-theorems/en.md) · [Arabic](geometry/circle-theorems/ar.md)
-- [ ] [congruence-and-similarity](geometry/congruence-and-similarity/en.md) · [Arabic](geometry/congruence-and-similarity/ar.md)
-- [ ] [coordinate-geometry](geometry/coordinate-geometry/en.md) · [Arabic](geometry/coordinate-geometry/ar.md)
+- [x] [circle](geometry/circle/en.md) · [Arabic](geometry/circle/ar.md)
+- [x] [circle-theorems](geometry/circle-theorems/en.md) · [Arabic](geometry/circle-theorems/ar.md)
+- [x] [congruence-and-similarity](geometry/congruence-and-similarity/en.md) · [Arabic](geometry/congruence-and-similarity/ar.md)
+- [x] [coordinate-geometry](geometry/coordinate-geometry/en.md) · [Arabic](geometry/coordinate-geometry/ar.md)
 - [ ] [distance-in-any-dimension](geometry/distance-in-any-dimension/en.md) · [Arabic](geometry/distance-in-any-dimension/ar.md)
 - [ ] [eleven-dimensions](geometry/eleven-dimensions/en.md) · [Arabic](geometry/eleven-dimensions/ar.md)
 - [ ] [higher-dimensions](geometry/higher-dimensions/en.md) · [Arabic](geometry/higher-dimensions/ar.md)
-- [ ] [nets-and-solids](geometry/nets-and-solids/en.md) · [Arabic](geometry/nets-and-solids/ar.md)
-- [ ] [polygons-and-tessellation](geometry/polygons-and-tessellation/en.md) · [Arabic](geometry/polygons-and-tessellation/ar.md)
-- [ ] [pythagorean-theorem](geometry/pythagorean-theorem/en.md) · [Arabic](geometry/pythagorean-theorem/ar.md)
+- [x] [nets-and-solids](geometry/nets-and-solids/en.md) · [Arabic](geometry/nets-and-solids/ar.md)
+- [x] [polygons-and-tessellation](geometry/polygons-and-tessellation/en.md) · [Arabic](geometry/polygons-and-tessellation/ar.md)
+- [x] [pythagorean-theorem](geometry/pythagorean-theorem/en.md) · [Arabic](geometry/pythagorean-theorem/ar.md)
 - [ ] [slicing-higher-dimensions](geometry/slicing-higher-dimensions/en.md) · [Arabic](geometry/slicing-higher-dimensions/ar.md)
-- [ ] [surface-area-and-volume](geometry/surface-area-and-volume/en.md) · [Arabic](geometry/surface-area-and-volume/ar.md)
+- [x] [surface-area-and-volume](geometry/surface-area-and-volume/en.md) · [Arabic](geometry/surface-area-and-volume/ar.md)
 - [ ] [tesseract](geometry/tesseract/en.md) · [Arabic](geometry/tesseract/ar.md)
-- [ ] [transformations-and-symmetry](geometry/transformations-and-symmetry/en.md) · [Arabic](geometry/transformations-and-symmetry/ar.md)
-- [ ] [triangle-angles-and-sides](geometry/triangle-angles-and-sides/en.md) · [Arabic](geometry/triangle-angles-and-sides/ar.md)
+- [x] [transformations-and-symmetry](geometry/transformations-and-symmetry/en.md) · [Arabic](geometry/transformations-and-symmetry/ar.md)
+- [x] [triangle-angles-and-sides](geometry/triangle-angles-and-sides/en.md) · [Arabic](geometry/triangle-angles-and-sides/ar.md)
 - [ ] [what-is-a-dimension](geometry/what-is-a-dimension/en.md) · [Arabic](geometry/what-is-a-dimension/ar.md)
 
 ## networking (0/15)
