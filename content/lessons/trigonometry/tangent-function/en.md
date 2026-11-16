@@ -1,65 +1,59 @@
 ---
 title: The tangent function and its asymptotes
-summary: >-
-  Tangent is a ratio that suddenly shoots off toward infinity wherever cosine
-  hits zero, then the same pattern repeats over and over.
+summary: 'Understand tangent as a slope, and see why it is undefined at some angles.'
 parameters:
-  x: x
+  x: 'x — angle in radians'
 variables:
-  - angle in radians
-  - $\sin x / \cos x$
+  - 'x: angle in radians'
+  - 'tan x: sine divided by cosine'
 ---
 
 ## Try it
 
-1. Watch the curve: it climbs steeply as the point approaches a vertical dashed line.
-2. Drag the point «x» slowly toward 1.57 — that's π/2. The curve rockets upward, then reappears far below.
-3. Keep dragging. The whole zig-zag pattern repeats every 3.14 units — that's π.
+1. Set x = 0, then x = 0.79 radians. The tangent changes from 0 to approximately 1: the second angle is close to 45°.
+2. Compare x = 1.50, 1.56 and 1.58. Near π/2 the values become very large in magnitude and change sign across the excluded angle. Use the numerical readout when the point is outside the plot.
+3. Compare x = 0.50 with x = 3.64. Their tangents are nearly equal because the angles differ by approximately π radians.
 
 ## Real-life examples
 
-1. **Wheelchair ramp.** A gentle ramp angled at 0.1 radians, about 6°, has a slope — its tangent — of just 0.1: a rise of 1 for every 10 you travel.
-2. **Steep roof pitch.** A roof pitched at 1 radian, about 57°, has a tangent near 1.56 — steep enough that walking on it is dangerous.
-3. **Near-vertical camera tilt.** A security camera tilted to 1.5 radians, close to the vertical limit at π/2, has a tangent above 14 — a tiny change in angle now swings its view wildly.
+1. **A shallow slope.** At 0.1 radians, the tangent is about 0.1003. A horizontal run of 10 units corresponds to a rise of about 1.003 units.
+2. **A steeper line.** At 1 radian, the tangent is about 1.557. Each horizontal unit corresponds to about 1.557 vertical units.
+3. **Almost vertical.** At 1.5 radians, the tangent is about 14.10. A short horizontal run can correspond to a large rise; at exactly π/2, a vertical line has no defined rise-over-run slope.
 
 ## Test yourself
 
-1. Find an angle where the tangent equals 1 — a 45-degree slope.
-2. Get close to the vertical dashed line, between 1.4 and 1.57, and push the tangent above 20.
-3. On the negative side, between −1.57 and −1, push the tangent below −10.
+1. Find an angle whose tangent is approximately 1.
+2. Choose x strictly between 1.4 and 1.57 radians with tangent greater than 20.
+3. Choose x strictly between −1.57 and −1 radians with tangent less than −10.
 
 ## Intuition
 
-Drag the point slowly toward $x = \pi/2 \approx 1.57$: the curve rockets upward, because $\cos x$ is heading to zero in the denominator while $\sin x$ stays near one. Just past that point the curve reappears from far below — same formula, opposite sign of $\cos x$.
+For a sloping line, divide the vertical change by the horizontal change to find its slope. On the unit circle these changes are sine and cosine, so $\tan x=\sin x/\cos x$. At 45° they are equal and the ratio is 1. A negative ratio describes a line that falls as you move to the right.
 
-Keep dragging and the whole pattern repeats every $\pi$ units, half the period of sine or cosine alone, because tangent only cares about the ratio, which returns to itself twice as often as sine and cosine individually do.
+As the angle approaches $\pi/2$ from below, the horizontal coordinate approaches zero while the vertical coordinate stays near 1. Dividing by a smaller positive number makes the result larger. Just beyond that angle the horizontal coordinate is negative, so the ratio is large and negative. There is no tangent value at the intervening angle; the branches do not connect through infinity.
 
 ## Formal
 
-$\tan x$ is undefined wherever $\cos x = 0$, i.e. at $x = \pi/2 + n\pi$ for integer $n$; these are vertical asymptotes.
+Angles x are in radians. The domain excludes $x=\pi/2+n\pi$ for every integer n, because $\cos x=0$ there. These excluded angles are vertical asymptotes: nearby values grow without bound in magnitude.
 
-Period $\pi$: $\tan(x + \pi) = \tan x$ for all $x$ in the domain.
+The period is $\pi$: $\tan(x+\pi)=\tan x$ wherever the function is defined. A half-turn reverses both sine and cosine, leaving their ratio unchanged.
 
 ## Advanced
 
-Near each asymptote $\tan x$ has opposite one-sided limits — $+\infty$ approaching $\pi/2$ from the left, $-\infty$ from the right — so the function has an essential discontinuity there rather than a removable one; this is why "the limit at $\pi/2$" does not exist even though both one-sided limits are infinite.
+At π/2, the left-hand limit is positive infinity and the right-hand limit is negative infinity. There is no two-sided limit, and assigning a value at the missing angle would not make the function continuous. The graph shows only a finite vertical window, so steep branches leave the visible area before reaching an asymptote.
 
 ## Derivation
 
-1. Definition as a ratio of sine and cosine.
-2. The denominator vanishes at these points, producing vertical asymptotes.
-3. Both sine and cosine flip sign after $\pi$, so their ratio does not — period $\pi$.
+1. Divide the vertical coordinate on the unit circle by the horizontal coordinate to obtain tangent.
+2. Exclude angles where the denominator is zero. Sine is nonzero at those angles, so nearby ratios grow without bound.
+3. Adding a half-turn changes the sign of numerator and denominator together; their ratio stays the same.
 
 ## Real world
 
-### Slopes and angles
-The tangent of an incline angle is literally its slope — rise over run.
+### Finding a height difference
 
-### Surveying and navigation
-Heights and distances are recovered from measured angles via the tangent function.
+With horizontal distance d and elevation angle θ, the height difference is d tan θ. The distance must be horizontal, not measured along the sloping line of sight.
 
-### Optics
-The tangent of the angle of incidence appears in lens and prism calculations.
+### Field of view
 
-### Camera field of view
-A camera's horizontal coverage at distance $d$ is $2d\tan(\theta/2)$ for field-of-view angle $\theta$.
+For a symmetric view of a plane perpendicular to the viewing direction at distance d, the width is $2d\tan(\theta/2)$, where θ is the full field-of-view angle between 0° and 180°.
