@@ -1,67 +1,61 @@
 ---
 title: 'Combinations: when order does not matter'
-summary: >-
-  Count how many different teams, hands, or lottery picks you can form from a
-  set of items, when only who's in the group matters, not the order.
+summary: 'Count groups whose members matter but whose order does not, such as choosing two students for a team.'
 parameters:
-  'n': n — items available
-  k: k — how many to pick
+  n: 'n — different items available'
+  k: 'k — items in each group'
 variables:
-  - how many different items you can choose from
-  - the size of the group you pick
-  - 'read “n choose k”: the number of possible groups'
+  - 'number of distinct available items'
+  - 'number selected without repetition'
+  - 'n choose k: number of groups with k members'
 ---
 
 ## Try it
 
-1. Watch the groups listed below the tokens as you drag «k — how many to pick».
-2. Notice (1,2) and (2,1) appear only once in that list: order does not matter for a group.
-3. Compare picking 2 items to picking the other 3: the number of groups is the same either way.
+1. Set n = 5 and k = 2. The diagram counts 10 groups. Tokens 1 and 2 form the same group whichever token you name first.
+2. Keep n = 5 and change k to 3. There are still 10 groups: every pair left out determines one group of three.
+3. Try k = 0, then k = 5. Each gives one choice: the empty group or the whole set. Keep k at or below n; the diagram caps it at n.
 
 ## Real-life examples
 
-1. **Pizza toppings.** Choosing 3 toppings from a menu of 8 gives 56 different pizzas, however you rank the toppings you chose.
-2. **Study group.** Picking a 4-person study group from 9 classmates can be done 126 different ways.
-3. **Double scoop.** Choosing 2 flavours from 6 at an ice cream shop — chocolate then vanilla is the same order as vanilla then chocolate — gives 15 possible scoops.
+1. **Pizza toppings.** Choosing three different toppings from eight gives 56 selections. Each topping is either included or left out.
+2. **Study group.** Choosing four students from nine gives 126 groups, provided there are no separate roles within the group.
+3. **Two flavours.** Choosing two different ice-cream flavours from six gives 15 pairs. This count excludes choosing the same flavour twice.
 
 ## Test yourself
 
-1. Find «n — items available» and «k — how many to pick» that give exactly 10 possible groups.
-2. Pick a k no larger than half of n, and make the number of groups exceed 50.
-3. Set «n — items available» to 10 and find the «k — how many to pick» that gives the largest possible number of groups (at least 250).
+1. Make the number of groups exactly 10.
+2. Choose no more than half the available items and make the number of groups exceed 50.
+3. Set n = 10 and find k giving at least 250 groups.
 
 ## Intuition
 
-Now a group of (1,2) and a group of (2,1) are the same thing — a team of two, not a ranking. Compare with the permutations lesson: with «n — items available» at 5 and «k — how many to pick» at 2 there were 20 ordered pairs, but only 10 groups, because every group of 2 had been counted twice, once per ordering.
+Choose two students from five for a team. Counting a first and second choice gives 5 × 4 = 20 selections. But each team appears twice: once with each student chosen first. Divide by 2 to get 10 different teams. This kind of selection is called a combination.
 
-That is the whole idea: count the ordered arrangements, then divide by the $k!$ ways each group can be shuffled. Notice the symmetry too — choosing 2 of 5 to take is the same as choosing 3 of 5 to leave behind, so $C(5,2) = C(5,3)$.
+For a group of three, each group appears in six orders. More generally, divide the ordered count by $k!$, the number of orders of a group of k distinct items. Choosing whom to leave out also identifies the group: $C(5,2)=C(5,3)$. The screen shows at most 60 groups, while the total counts every group.
 
 ## Formal
 
-$\dbinom{n}{k} = \dfrac{P(n,k)}{k!} = \dfrac{n!}{k!\,(n-k)!}$; the symmetry $\dbinom{n}{k} = \dbinom{n}{n-k}$ follows at once.
+For n distinct items and an integer k satisfying $0\le k\le n$, the number of groups without repetition is $\binom{n}{k}=\frac{n!}{k!(n-k)!}$. Read the symbol as “n choose k.” A group contains each selected item once and has no assigned order.
 
-Pascal’s rule $\dbinom{n}{k} = \dbinom{n-1}{k-1} + \dbinom{n-1}{k}$: either the last item is in the group or it is not.
+Because choosing the included items also chooses the excluded ones, $\binom{n}{k}=\binom{n}{n-k}$. With $0!=1$, both choosing nothing and choosing everything give one group: $\binom{n}{0}=\binom{n}{n}=1$.
 
 ## Advanced
 
-The binomial theorem $(a+b)^n = \sum_k \binom{n}{k} a^k b^{n-k}$ names these numbers: they count how many of the $2^n$ expansion terms have exactly $k$ factors of $a$. Summing the row gives $\sum_k \binom{n}{k} = 2^n$, the number of subsets of an $n$-set.
+Pascal’s rule separates groups according to one particular item: groups that contain it choose their other k−1 members from n−1 items; groups that omit it choose all k members from those n−1. Adding these two counts gives C(n,k). This is why adjacent entries in Pascal’s triangle add to the entry below them.
 
 ## Derivation
 
-1. Start with ordered selections.
-2. Every group can be written in $k!$ orders, and each order was counted separately.
-3. Divide to count each group exactly once.
+1. First count selections in which order matters, with no repeated item.
+2. Each group has $k!$ possible orders, so the ordered count includes every group that many times.
+3. Divide by that repetition factor to count each group once.
 
 ## Real world
 
-### Lotteries
-Choosing 6 numbers from 49: C(49,6) = 13 983 816 tickets, so one ticket wins the jackpot with probability 1 in 14 million.
+### A committee
 
-### Poker hands
-There are C(52,5) = 2 598 960 five-card hands; counting the hands of each type gives their probabilities.
+A three-person committee chosen from twelve people has 220 possible memberships. Giving its members different offices would introduce another counting step.
 
-### Teams and committees
-Picking a 3-person committee from 12 colleagues: C(12,3) = 220 possible committees.
+### Sampling
 
-### Genetics and sampling
-How many ways a sample of 10 can be drawn from a population of 1000 decides how precise a survey can be.
+Selecting five different cards from a 52-card deck gives 2598960 possible hands. If every hand is equally likely, the probability of a specified event is the number of hands meeting it divided by this total.
