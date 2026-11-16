@@ -1,70 +1,69 @@
 ---
 title: Polynomial shape
-summary: >-
-  One number, the degree, sets a hard limit on how many hills and dips a
-  curve can have and which way its ends point — before you plot a single
-  point.
+summary: Use a polynomial's degree and leading coefficient to predict its ends and limit its number of turns.
 parameters:
-  x: point x
-  n: n — degree
-  a: a — leading coefficient
+  x: input x
+  n: selected degree n
+  a: leading coefficient a
 variables:
-  - the degree — the highest power in the polynomial, a hard limit on how many turns the curve can have
-  - the leading coefficient — its sign decides which way the curve's far ends point
-  - the input being dragged along the curve
-  - the output, the curve's height at that input
+  - highest power with nonzero coefficient; the selected degree when a is nonzero
+  - coefficient of the highest power
+  - input position
+  - output height
 ---
 
 ## Try it
 
-1. Move the slider «n — degree» from 2 up to 5. Watch the curve grow more turns each step: one at n=2, up to four at n=5.
-2. Flip the sign of «a — leading coefficient» from positive to negative. The two ends of the curve swap which way they point.
-3. Drag the point along the curve and watch it cross the horizontal axis. Each crossing is a root.
+1. Keep a at 1 and change n from 2 through 5. These selected examples show one, two, three and four turning points. Other polynomials of the same degrees may show fewer.
+2. Set n to 4 and compare a = 1 with a = -1. The graph reflects vertically, changing the direction of both ends.
+3. Set n to 5 and x near 1. The output is near zero. At a = 0 the whole graph becomes zero, so the selected n no longer describes its degree.
 
 ## Real-life examples
 
-1. **A single hill.** A car's fuel efficiency against speed rises to one peak then falls (n=2, a=1): one turning point, the simplest curved shape there is.
-2. **A wiggle with two turns.** A day's temperature can climb, dip in some shade at noon, then climb again before falling at dusk (n=3, a=-1, so the far right end dives down): two turning points instead of one.
-3. **A bumpy ridge.** A hiking trail's elevation along a ridge climbs, dips, climbs, dips, and climbs again (n=5, a=1): four turning points, the most this curve family can show, and x=1 lands exactly on one of its five crossings of zero.
+1. **A quadratic valley.** With n = 2 and a = 1, the rule is x squared minus 4. It has a minimum of -4 at x = 0 and roots at -2 and 2.
+2. **A cubic with two turns.** With n = 3 and a = -1, the rule is negative x cubed plus 3x. Its left end rises and its right end falls.
+3. **A fifth-degree example.** With n = 5 and a = 1, the roots are -2, -1, 0, 1 and 2. The graph turns four times between those five roots.
 
 ## Test yourself
 
-1. Set the degree to 4 with a positive leading coefficient, so both ends of the curve point upward.
-2. Set the degree to 3 with a negative leading coefficient, so the curve's right end dives downward instead of rising.
-3. Set the degree to its highest option and land the point exactly on x = 1, one of the curve's roots.
+1. Set n to 4 and a above 0.3.
+2. Set n to 3 and a below -0.3.
+3. Set n to 5 and put x within 0.05 of 1. Keep a nonzero to inspect the intended fifth-degree example.
 
 ## Intuition
 
-A hiking trail along a ridge can climb, dip into a saddle, climb again, dip again — every dip or peak along the way is a turn. The slider «n — degree» sets a hard limit on how many turns a curve like this can have: at n=2 there is room for exactly one turn, the familiar single peak or dip of a parabola; push n up to 5 and the curve can wiggle through as many as four turns, climbing and dipping across the picture like that bumpy ridge.
+The graph can change from rising to falling at a peak, or from falling to rising at a valley. Each such change is a turning point. The degree places an upper limit on how many turns a polynomial can have; it does not fix their exact number.
 
-Drag the point along the curve and watch where it crosses the flat horizontal line — each crossing is a root, a place where the curve's height is exactly zero. Flip the sign of «a — leading coefficient» and look at the far left and right edges of the curve instead of the middle: with an even degree both edges swing the same way, while with an odd degree one edge climbs and the other dives, no matter how many wiggles happen in between.
+In a quadratic, the highest power is x squared, so the degree is 2 and there is one turning point. A cubic has degree 3 and can have at most two turns. Some cubics keep increasing throughout and have no turning points at all.
+
+The leading term determines what happens far to the left and right. With even degree, both ends go the same way. With odd degree, they go opposite ways. Changing the sign of the leading coefficient reverses those directions. A root is any input with output zero, whether the graph crosses the axis or only touches it.
 
 ## Formal
 
-A polynomial is any sum of whole-number powers of $x$: $f(x) = a_n x^n + \dots + a_1 x + a_0$. Its degree is the highest power $n$ that appears with a nonzero coefficient, and this single number controls the curve's whole shape.
+A nonzero polynomial has the form $f(x)=a_nx^n+\dots+a_1x+a_0$, with a nonzero leading coefficient. Its degree is n, and it has at most n distinct real roots and at most n minus 1 turning points for n at least 1.
 
-Far from the middle of the graph, only the leading term $a x^n$ matters. If $n$ is even, both ends of the curve point the same way — up when $a > 0$, down when $a < 0$. If $n$ is odd, the ends point opposite ways, one up and one down.
+The leading term controls end behaviour. For positive leading coefficient, the right end rises; the left end rises for even degree and falls for odd degree. A negative leading coefficient reverses both. Setting all coefficients to zero gives the zero polynomial, whose degree is not the selected positive n.
 
 ## Advanced
 
-The number of turning points equals the number of times the slope changes sign, and the slope of a degree-$n$ polynomial is itself a polynomial of degree $n-1$ — a fact from calculus that bounds the turns at exactly $n-1$, though a real curve can turn fewer times if some of those slope-zero points repeat or never materialise. Odd-degree polynomials are guaranteed at least one real root, since their two ends point in opposite directions and a continuous curve going from below zero to above zero must cross zero somewhere; even-degree polynomials carry no such guarantee.
+A turning point requires a zero derivative, but a zero derivative need not be a turn. The derivative of a degree-n polynomial has degree n minus 1 and therefore at most n minus 1 real zeros. This gives the bound. Counting gaps between roots alone does not prove an upper bound on all turns.
 
 ## Derivation
 
-1. A degree-$n$ polynomial can cross zero — have a root — at most $n$ times, since it factors into at most $n$ linear pieces.
-2. Between any two consecutive roots the curve must leave zero, go one way, and come back, so it turns around at least once in every gap between roots.
-3. With at most $n$ roots there are at most $n-1$ gaps between them, so the curve has at most $n-1$ turning points in total.
+1. Differentiating a degree-n polynomial with n at least 1 gives a polynomial of degree n minus 1.
+2. That nonzero derivative has at most n minus 1 real zeros.
+3. Every turning point requires one of those zeros, so there can be at most n minus 1 turning points. Some derivative zeros may not produce turns.
 
 ## Real world
 
-### Roller coasters
-A coaster's hill-and-dip layout is a curve with several turning points, each one a crest or a trough riders feel in their stomach.
+### Fitting a curve
 
-### Hiking trails and terrain
-Elevation along a ridge trail climbs and dips repeatedly; the more turns the profile has, the bumpier the walk.
+A chosen degree limits how much a polynomial fit can bend. A higher degree does not by itself make predictions more reliable.
 
-### Stock price swings
-A short stretch of a price chart can often be matched to a low-degree polynomial with a handful of local peaks and dips.
+### Designing a profile
 
-### Folding a box from a flat sheet
-The volume of a box folded up from a flat sheet, as a function of the fold size, is a polynomial whose single peak tells you the most efficient fold.
+Polynomial segments can describe smooth rises and dips. Their coefficients determine the locations and heights of those features.
+
+### Finding an optimum
+
+A polynomial model of area or volume can have turning points that are candidates for an optimum. The usable domain and its endpoints must also be considered.
