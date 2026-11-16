@@ -52,7 +52,7 @@ variables:
   - x
 derivation:
   - f(x) = \frac{ax+b}{x-p} = a + \frac{b+ap}{x-p}
-  - x \to p \;\Rightarrow\; \left|\frac{b+ap}{x-p}\right| \to \infty
+  - b+ap \ne 0,\ x \to p \;\Rightarrow\; \left|\frac{b+ap}{x-p}\right| \to \infty
   - x \to \infty \;\Rightarrow\; \frac{b+ap}{x-p} \to 0 \;\Rightarrow\; f(x) \to a
 charts: []
 primary: p

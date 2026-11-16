@@ -1,61 +1,64 @@
 ---
 title: How big is a million?
-summary: >-
-  Find out how many days it would actually take to count to a million, one
-  number a second.
+summary: Compare a million and a billion by calculating how long each would take to count.
 parameters:
-  e: the exponent e
+  e: exponent e
 variables:
-  - 'the exponent: how many zeros follow the 1 in the number of dots shown'
+  - exponent; the number is 1 followed by e zeros
 ---
 
 ## Try it
 
-1. Drag «exponent e» up from 0. Watch the blue grid on the left fill in far faster than the slider moves.
-2. Set e to 6. On the right, read how many days it says it would take to count every dot out loud, one per second.
-3. Push e to 9. Watch the counting time jump from days to decades.
+1. Set e to 4. The grid is full and represents 10,000 dots.
+2. Set e to 6. The grid stays full. Read the number of full grids needed for a million and the counting time beside it.
+3. Set e to 9. Compare the new counting time with the time for a million. The number has become a thousand times as large.
 
 ## Real-life examples
 
-1. **A packed stadium section.** About $10^{4}$ seats, ten thousand — a number you could still count by walking the rows.
-2. **A big sack of rice.** About $10^{6}$ grains, a million — no one counts these by hand.
-3. **A stack of banknotes.** About $10^{9}$ single bills, a billion — piled up, they would tower over a building.
+1. **Ten thousand tickets.** At e = 4, the number is 10,000. Counting one each second would take about 2.8 hours.
+2. **A million items.** At e = 6, counting one each second would take about 11.6 days without breaks.
+3. **A billion sheets.** At e = 9, counting takes about 31.7 years. The displayed stack height assumes each sheet is 0.1 millimetre thick.
 
 ## Test yourself
 
-1. Set e so the picture shows exactly a million dots.
-2. Push e up to nine — a billion dots.
-3. Get e to 10 or higher — ten billion dots.
+1. Set the number to one million.
+2. Set the number to one billion.
+3. Make the number at least ten billion.
 
 ## Intuition
 
-Try counting to a hundred out loud — that takes under a minute, and you can picture every single number as you say it. Now look at the blue grid on screen: at e = 6 it is completely full, one blue square standing for each of a million dots, far more than any eye can count one by one.
+Counting one item every second takes 100 seconds for 100 items. For a million items it takes a million seconds. To turn that into days, divide by the 86,400 seconds in a day. The result is about 11.6 days, with no time allowed for sleeping or eating.
 
-The exponent e is just how many zeros follow the 1 in that count. Push e up by one notch, and the counting time shown on the right does not creep up gently — it jumps by a factor of ten, turning about 12 days of nonstop counting (one million) into about 4 months (ten million).
+A billion is a thousand million. At the same pace, counting it takes a thousand times as long: about 31.7 years. The number names sound similar, but the time comparison shows how different the amounts are.
+
+The picture cannot display every dot in a million. One full grid represents 10,000 dots, so a million would need 100 full grids. Read the grid-count label when the number exceeds the picture's capacity.
 
 ## Formal
 
-The number of dots shown is $10^{e}$. Counting them one per second takes $10^{e}$ seconds, which is $\dfrac{10^{e}}{86400}$ days, since a day holds $86400$ seconds.
+The selected count is $10^e$. At one item per second, the counting time in days is $10^e/86400$. This assumes a constant pace and no breaks.
 
-For $e=6$ that is about $11.6$ days; for $e=9$ it is about $31.7$ years. Each extra step of $e$ multiplies the counting time by ten, exactly as it multiplies the number of dots.
+Increasing e by 1 multiplies both the count and the time by ten. Increasing it by 3 multiplies them by a thousand.
 
 ## Advanced
 
-Human intuition for quantity is roughly logarithmic, not linear — we naturally compare things by ratio rather than by difference. That is precisely why a linear slider paired with an exponent $e$ feels right: equal slider steps should feel like equal jumps in "how big", and $10^{e}$ delivers that.
+A ratio compares large quantities without listing all their digits. The ratio of a billion to a million is $10^9/10^6=10^3$. On a logarithmic scale, that thousandfold increase occupies three exponent steps.
 
 ## Derivation
 
-1. Counting one dot per second, showing $10^{e}$ dots takes $10^{e}$ seconds.
-2. A day is $86400$ seconds, so that many seconds is $\dfrac{10^{e}}{86400}$ days.
-3. Working it out: a million dots take about $11.6$ days, and a billion dots take about $31.7$ years.
+1. At one item per second, the number of seconds equals the number of items.
+2. Divide by 86,400 to convert seconds to days.
+3. A million seconds is about 11.6 days. A billion seconds is about 31.7 years, using 365.25 days per year.
 
 ## Real world
 
-### National budgets
-Government budgets are usually quoted in millions or billions — the words hide just how far apart those two numbers really are.
+### Budgets
 
-### Star counts
-A galaxy holds on the order of $10^{11}$ stars — a hundred billion, a hundred times further than the top of this slider.
+A budget of one billion currency units is a thousand times a budget of one million. Comparing the ratio avoids treating the names as nearly interchangeable.
 
-### Grains of sand
-A handful of sand already has more grains than most people ever count in a lifetime, easily past a million.
+### Processing records
+
+At a fixed rate of one record per second, processing a billion records has the same time requirement as this counting example. A faster rate reduces the time proportionally.
+
+### Stacking paper
+
+Multiplying sheet count by sheet thickness gives a stack-height estimate. The result depends on the assumed thickness and ignores compression.

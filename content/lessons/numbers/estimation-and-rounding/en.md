@@ -1,68 +1,68 @@
 ---
 title: Estimation and rounding
-summary: >-
-  Estimate how many hairs are on a head by multiplying two rough numbers
-  together, then round the answer honestly to show how sure you really are.
+summary: Estimate a total from a small sample, then round it to a precision the inputs can support.
 parameters:
-  A: scalp area A (cm²)
-  rho: hair density ρ (hairs per cm²)
-  s: significant figures kept s
+  A: estimated scalp area A (cm²)
+  rho: estimated density ρ (hairs per cm²)
+  s: significant figures s
 variables:
-  - the area covered by hair, in square centimetres
-  - the density of hair, in hairs per square centimetre
-  - the estimated number of hairs
+  - estimated area covered by hair, in square centimetres
+  - estimated average number of hairs per square centimetre
+  - estimated total number of hairs
 ---
 
 ## Try it
 
-1. Set A to 500 and rho to 200: the grid fills to show the multiplication, and the big number reads 100,000 — a full, round estimate.
-2. Raise s from 1 to 4: watch the same number get printed with more and more digits kept sharp, and the rest fading — those later digits were never really known.
-3. Push A to 700 and rho to 300: the estimate jumps past 200,000, showing how sensitive a Fermi estimate is to the rough numbers you started with.
+1. Set A to 500 and rho to 200. Multiplying gives an estimate of 100,000 hairs. The dotted patch illustrates area and density; its dots are not a full hair count.
+2. Set A to 350 and rho to 300. The product is 105,000. Compare s = 1 with s = 3: the reported values are 100,000 and 105,000.
+3. Keep rho fixed and increase A. The estimate rises because the same average density now covers more area.
 
 ## Real-life examples
 
-1. **An average adult head.** A = 500, rho = 200, s = 1: about 500 cm² of scalp times 200 hairs per cm² gives roughly 100,000 hairs — a number worth trusting to one significant figure only.
-2. **A larger head, coarser hair.** A = 600, rho = 150, s = 2: about 600 cm² times 150 hairs per cm² gives roughly 90,000 hairs, reported to two significant figures.
-3. **A smaller head, very fine hair.** A = 350, rho = 300, s = 1: about 350 cm² times 300 hairs per cm² gives roughly 100,000 hairs again — a different head, a similar answer.
+1. **A first estimate.** An assumed area of 500 cm² and density of 200 hairs per cm² give 100,000 hairs. With s = 1, report about one hundred thousand.
+2. **Different assumptions.** An area of 600 cm² and density of 150 give 90,000. The setting s = 2 keeps two significant figures; it does not prove that the inputs are that precise.
+3. **A rounded product.** An area of 350 cm² and density of 300 give 105,000. To one significant figure, this rounds to 100,000.
 
 ## Test yourself
 
-1. Set the area and density so the estimate lands close to 100,000 hairs.
-2. Set the rounding to keep only 1 significant figure.
-3. Find an area and density whose estimate passes 150,000.
+1. Choose A and rho so their product is within 8000 of 100,000.
+2. Set s to 1.
+3. Make the unrounded estimate greater than 150,000.
 
 ## Intuition
 
-You cannot count every hair on a head, but you can estimate: guess the area of scalp it covers, guess how many hairs grow per square centimetre, and multiply. On screen, dragging A stretches the grid representing scalp area, and dragging rho packs more or fewer dots into each square centimetre of it — the big readout is simply those two rough numbers multiplied together.
+Instead of counting every hair, estimate how many grow in one square centimetre and how much area is covered. If there are about 200 hairs per square centimetre over about 500 square centimetres, multiply 200 by 500. The estimated total is 100,000.
 
-Because both A and rho were guesses, the product is a guess too — a good one, but not exact to the last digit. Reporting "100,000" tells the truth about that: 1 significant figure, one meaningful digit. Reporting "103,742" would be dishonest, pretending to a precision the estimate never had. Drag s up and watch extra digits appear and then fade to grey — those greyed digits are exactly the ones a Fermi estimate cannot actually promise you.
+The multiplication is exact for the numbers entered, but those numbers came from estimates. Showing more digits in the answer does not improve the original measurements. The s control chooses how many significant figures to report, starting from the first nonzero digit.
+
+For example, 105,000 rounded to one significant figure becomes 100,000. To three significant figures it remains 105,000. Choose the precision using what you know about the inputs, not how many digits the screen can display.
 
 ## Formal
 
-A Fermi estimate multiplies rough quantities to get an order-of-magnitude answer: here $N \approx A\times\rho$, area times density.
+The estimated total is $N\approx A\times\rho$, where A is area and rho is average density. The area units cancel the per-area units of the density, leaving a count.
 
-Rounding to $s$ significant figures keeps only the first $s$ meaningful digits and replaces the rest with zeros (adjusting the power of ten as needed), so the reported precision matches how well the inputs were actually known.
+To round to s significant figures, start counting at the first nonzero digit. Keep s digits and inspect the next digit: if it is 5 or greater, round up; otherwise keep the retained digits unchanged. For the whole-number counts here, replace the remaining places with zeros.
 
 ## Advanced
 
-When two independent estimates each carry roughly a factor of 2 uncertainty, their product can carry closer to a factor of 4, since the errors compound multiplicatively rather than adding — which is exactly why a serious Fermi estimate is stated as an order of magnitude, not a precise count, however clean the arithmetic looks.
+Uncertainty in both inputs affects the product. If each input could be half to twice its estimate, the product could be one quarter to four times its estimate. This is a range of possible values, not a claim about how likely each value is. More careful uncertainty estimates require information about the measurements and their dependence.
 
 ## Derivation
 
-1. Multiply the rough area by the rough density: 500 times 200.
-2. That multiplication gives 100,000.
-3. Written to one significant figure, that is $1\times10^{5}$.
+1. Multiply the estimated area, 500 cm², by the estimated density, 200 hairs per cm².
+2. The product is 100,000 hairs; it remains an estimate because the inputs are estimates.
+3. Scientific notation makes the one-significant-figure report explicit: $1\times10^5$.
 
 ## Real world
 
-### Job interviews
-"How many piano tuners are in Chicago?" is a classic Fermi-estimate question — nobody expects an exact count, only a sound chain of rough multiplications.
+### Counting a crowd
 
-### Engineering budgets
-Early cost estimates for a bridge or a building multiply rough quantities (length, material per metre, cost per tonne) the same way, refined later as real numbers arrive.
+Estimate the occupied area and the average people per square metre. Different densities across the area can make one average misleading.
 
-### Science reporting
-A measurement reported as "about 7 million" instead of a fake-precise "7,032,481" is respecting significant figures — not claiming to know digits that were never measured.
+### Materials
 
-### Grains of sand, leaves on a tree
-Both are classic Fermi estimates: multiply a rough count per small patch by the number of patches, and round the answer to as many digits as you can actually justify.
+Area times material needed per square metre gives an initial quantity estimate. Allow separately for waste and measurement uncertainty.
+
+### Reporting measurements
+
+A rounded result should reflect the quality of the measurements. The number of displayed digits alone does not establish accuracy.

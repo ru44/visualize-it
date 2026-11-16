@@ -1,69 +1,68 @@
 ---
 title: Domain and range
-summary: >-
-  Know before you even calculate whether a formula makes sense for the
-  numbers you have — a square root needs a non-negative input, and you can
-  never divide by zero.
+summary: Distinguish the inputs a rule allows from the outputs it can produce.
 parameters:
-  x: point x
-  a: a — smallest allowed input
-  b: b — the forbidden input
+  x: input x
+  a: square-root boundary a
+  b: excluded denominator input b
 variables:
-  - the input you drag along the curve
-  - the smallest input allowed — nothing is plotted before it, because the square root needs it
-  - the one input that is never allowed — dividing by it is impossible
+  - chosen input
+  - lower boundary imposed by the square root
+  - input making the denominator zero; excluded if it otherwise lies in the domain
 ---
 
 ## Try it
 
-1. Drag «x» from the left edge to the right. Below «a», the curve simply is not there — the square root of a negative number has no answer.
-2. Now watch what happens as «x» creeps up toward «b». The curve shoots off the top or bottom of the screen and is missing at exactly that one point.
-3. Move «a» and «b» themselves with their sliders. The forbidden stretch at the start and the single forbidden point in the middle both move with them.
+1. Set a to 2 and b to 8. Compare x = 1 and x = 6. The first has no real output; the second gives -1.
+2. Keep a and b fixed and set x to 8. The denominator is zero, so the function has no value there.
+3. Set x to 2. The output is 0, because the numerator is zero while the denominator is not. Zero in a numerator is allowed.
 
 ## Real-life examples
 
-1. **Draining a pool.** The pool can only be measured from day a=2 onward (a negative day makes no sense); on day x=6, with a sensor glitch fixed at day b=8, the reading is sqrt(6-2)/(6-8) = -1.
-2. **Splitting a bill among friends.** Dividing a cost among x friends breaks down completely at x=b=0 friends — there is no such split, no matter how the rest of the formula looks.
-3. **A cable's minimum reach.** The cable can only be measured from a=4 metres up the pole; at exactly x=4, right at that minimum, the reading is 0 — the very edge of what is allowed, with the pole's anchor at b=8 always skipped.
+1. **An allowed input.** With a = 2, b = 8 and x = 6, the square root is 2 and the denominator is -2. Their quotient is -1.
+2. **A zero denominator.** With a = -2, b = 0 and x = 0, the square root exists, but the denominator is zero. The input is excluded.
+3. **A boundary that is allowed.** With a = 4, b = 8 and x = 4, the numerator is zero and the denominator is -4. The output is 0.
 
 ## Test yourself
 
-1. Find a, b and x so the curve simply is not there — put x below a.
-2. Find a and b so the point can land exactly on the one forbidden input.
-3. Find a, b and x so the curve's value is exactly 1.
+1. Choose x below a so the square root has no real value.
+2. Set x equal to b so the denominator is zero.
+3. Choose an allowed input and parameters that give an output within 0.05 of 1.
 
 ## Intuition
 
-Picture a tub that only starts draining once it holds at least 2 litres — fill it with less and the draining formula makes no sense, so nothing is plotted before x=2. Drag the point along the blue curve: to the left of x=2 there is nothing to drag onto at all. That whole stretch of input is simply not allowed. This is the domain: the set of inputs the rule is willing to accept.
+Consider a rule that takes a square root and then divides. Before calculating, we need two checks. Is the quantity inside the square root nonnegative? Is the denominator nonzero? An input is allowed only if it passes both checks. The collection of allowed inputs is the domain.
 
-Now watch what happens as the point creeps toward x=8. The curve shoots up or down and vanishes completely right at that one input, because the rule divides by (x-8), and dividing by zero has no answer anywhere. Change the slider «b» and this single forbidden point follows it. Every function has some set of inputs it can actually use — the domain — and some set of values it can actually produce — the range — and this picture makes both visible at once.
+Here, with a = 2 and b = 8, the square root uses x minus 2, so x must be at least 2. The division uses x minus 8, so x cannot be 8. Thus 2 and 6 are allowed, but 1 and 8 are not. These restrictions come from the rule itself, not from a story about a sensor or a pool.
+
+The range answers a different question: which outputs can the rule produce? On a graph, inputs are horizontal positions and outputs are heights. The graph helps us investigate the range, but a limited window cannot show every possible input or output. A point outside the screen is not necessarily outside the domain.
 
 ## Formal
 
-For a function $f$, the domain is the set of inputs $x$ for which $f(x)$ is defined, and the range is the set of values $f(x)$ actually takes. Here $f(x) = \dfrac{\sqrt{x-a}}{x-b}$ needs $x - a \ge 0$ for the square root and $x - b \neq 0$ for the division, so the domain is $x \in [a, \infty)$ with the single point $x = b$ removed.
+For $f(x)=\sqrt{x-a}/(x-b)$ over the real numbers, the domain is $\{x\in\mathbb{R}:x\ge a,\ x\ne b\}$. If b is below a, it is already outside the allowed interval; there is no additional hole within that interval.
 
-The range is whatever set of heights the curve actually reaches on the vertical axis, read directly off the picture rather than assumed from the formula alone.
+The range is the set of all actual function values at allowed inputs. For the default a = 2 and b = 8, it is all real numbers: the left branch gives zero and every negative value, while the right branch gives every positive value. This conclusion uses the full branches, not just their visible portions.
 
 ## Advanced
 
-For a general function, domain and range must be checked wherever the defining expression contains a root of even order, a denominator, a logarithm, or an inverse trigonometric function; combining several such restrictions, as here, intersects each one's allowed set, and finding the true range can require calculus rather than simple inspection.
+The range depends on the parameters. If a equals b, the function reduces to the reciprocal of a square root for x greater than a, so its range is positive real numbers. If b is below a, the range starts at zero and has a finite positive maximum. Restrictions must be reconsidered after parameters change.
 
 ## Derivation
 
-1. The square root needs a non-negative number inside it, so x − a must be at least 0, which means x ≥ a.
-2. Division needs a non-zero denominator, so x − b cannot be 0, which means x ≠ b.
-3. Putting both together: the domain is every x from a upward, except the single point x = b.
+1. A real square root requires x minus a to be nonnegative, giving x at least a.
+2. Division requires x minus b to be nonzero, excluding x equal to b.
+3. Keep only inputs satisfying both conditions. The square-root boundary is included unless it also makes the denominator zero.
 
 ## Real world
 
-### Speedometers and sensors
-A sensor that reports the square root of a reading only accepts non-negative readings; anything below its zero point is simply not shown.
+### Sharing a cost
 
-### Rental and billing formulas
-A per-person cost that divides by the number of people breaks down at zero people, so billing software explicitly blocks that input.
+A cost divided by the number of people is undefined at zero people. In practice the number of people must also be a positive whole number.
 
-### Engineering tolerances
-Design formulas often only make sense above some minimum size or below some maximum load; values outside that domain are meaningless before any calculation even starts.
+### A square's side length
 
-### Ticket price tables
-A ticket-price or tax table only has entries for certain inputs, such as specific ages or income brackets; a lookup outside that table has no defined price, exactly like a value outside a function's domain.
+Taking the square root of an area gives a side length. In this setting both the area input and the length output are nonnegative.
+
+### Using a model
+
+A formula may give a numerical answer outside the conditions under which a model was established. Its practical domain can be smaller than its mathematical domain.

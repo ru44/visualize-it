@@ -47,9 +47,9 @@ variables:
   - x
   - f(x)
 derivation:
-  - \text{a degree-}n\text{ polynomial crosses zero at most } n \text{ times}
-  - \text{between two consecutive crossings the curve must turn back at least once}
-  - \text{so the curve has at most } n-1 \text{ turns}
+  - '\deg f = n \ge 1 \;\Rightarrow\; \deg f\prime = n-1'
+  - 'f\prime(x)=0 \text{ has at most } n-1 \text{ real solutions}'
+  - '\text{turning points require } f\prime(x)=0 \;\Rightarrow\; \text{at most } n-1 \text{ turns}'
 charts: []
 primary: n
 presets:

@@ -1,62 +1,65 @@
 ---
 title: Scientific notation
-summary: >-
-  Write huge numbers like the world's population without running out of
-  space for all the zeros.
+summary: Write large and small numbers using a number between one and ten and a power of ten.
 parameters:
-  e: the exponent e
+  e: exponent e
 variables:
-  - the leading digit, always between 1 and 10
-  - 'the exponent: how many places the decimal point shifts'
+  - coefficient; a number at least 1 and less than 10 for positive values
+  - exponent; the power of ten that sets the scale
 ---
 
 ## Try it
 
-1. Drag the orange dot along the ruler labelled «exponent e». Watch the icon in the middle jump from a school to a stadium to a crowd of people.
-2. Set e to 9 and read the full written-out number on screen — then say "ten to the ninth" instead and notice how much faster that is.
-3. Push e to 100. The icon becomes a plain number symbol — past a googol there is no landmark left to compare it to.
+1. Set e to 3. The diagram shows 1000, or one times ten to the third power. This diagram changes the exponent while keeping the coefficient at 1.
+2. Set e to 6, then 9. Each increase of 3 makes the number a thousand times larger.
+3. Set e to 100. Instead of writing every digit, the display describes a 1 followed by 100 zeros.
 
 ## Real-life examples
 
-1. **Sweets sold at a school fair.** About $3\times10^{3}$, three thousand, matches the school icon on the ruler — small enough to write in full.
-2. **Seats filling a stadium.** About $1\times10^{6}$, a million, matches the stadium icon — starting to be easier to say than to write.
-3. **Everyone in a big country.** About $8\times10^{9}$, eight billion, matches the crowd icon — writing every digit would be absurd.
+1. **One thousand items.** At e = 3, the display represents 1000. Three thousand would use the same exponent with coefficient 3.
+2. **One million items.** At e = 6, the display represents 1,000,000. The icon is a visual marker, not a claim about a stadium's capacity.
+3. **One billion items.** At e = 9, the display represents 1,000,000,000. Eight billion would use coefficient 8, which this diagram does not adjust.
 
 ## Test yourself
 
-1. Set e to 23, the exponent in Avogadro's number.
-2. Push e above 50.
-3. Reach the top of the scale: e = 100.
+1. Set e to 23.
+2. Choose an exponent greater than 50.
+3. Set e to 100.
 
 ## Intuition
 
-A school fair might sell three thousand sweets, and a packed stadium might seat a million people. Write both numbers out in full, and the stadium number already needs three more zeros. On the ruler, drag the orange dot from the school icon to the stadium icon: the picture jumps by a thousand, while the dot itself has barely moved.
+The number 3000 is 3 times 1000. Since 1000 is ten cubed, we can write $3\times10^3$. The 3 tells us how many thousands; the power of ten tells us the size of each group.
 
-Scientific notation captures that jump with two pieces. The first piece is a small leading digit: $a$ always sits between 1 and 10. The second piece is the exponent that counts the zeros: $e$ tracks how many places the decimal point shifts. Two numbers can share the same leading digit and still be far apart if their exponents differ — every extra step of $e$ makes the gap ten times bigger.
+Scientific notation uses a coefficient between 1 and 10 and an integer exponent. The coefficient need not be a single digit: 3400 becomes 3.4 times ten cubed. For 0.0034, we instead use 3.4 times ten to the power -3. The negative exponent means divide by 1000.
+
+The ruler explores only the power-of-ten part, with coefficient 1. Its icons are rough reference points. Read the numerical value to find the selected amount; the pictures do not supply a different coefficient.
 
 ## Formal
 
-Scientific notation writes a number as $a\times10^{e}$, where $1\le a<10$ and $e$ is a whole number. The digit $a$ carries the precise value; the exponent $e$ carries the scale.
+For a positive number, scientific notation has the form $a\times10^e$, with $1\le a<10$ and an integer e. Moving the decimal point e places to the right gives the value when e is positive; a negative e moves it left.
 
-Multiplying two numbers in this form is easy: multiply the leading digits and add the exponents, then re-normalise if the product of the digits reaches 10.
+For a negative number, put a minus sign before its positive scientific notation. Zero is written as 0 because it has no nonzero leading digit to normalize.
 
 ## Advanced
 
-Floating-point numbers in a computer use exactly this idea: a sign, a "mantissa" playing the role of $a$, and an exponent playing the role of $e$, both stored in a fixed number of bits — which is why computers, too, run out of precision far from zero.
+To multiply two values in scientific notation, multiply their coefficients and add their exponents. If the resulting coefficient is at least 10, divide it by ten and increase the exponent by 1. Computers use a related representation, usually with powers of two and a finite number of significant digits.
 
 ## Derivation
 
-1. The world's population, written in full, is $\text{8,000,000,000}$ people — the same number as $8\times10^{9}$.
-2. The leading digit $a$ is always kept between 1 and 10, so the number is never written as, say, $80\times10^{8}$.
-3. The exponent $10^{e}$ does the heavy lifting: it counts the zeros, or equivalently, says how many places the decimal point shifts.
+1. Eight billion is eight groups of one billion, so it equals eight times ten to the ninth power. This is an example number, not a live population count.
+2. Keep the coefficient at least 1 and less than 10. Use 8 rather than 80, adjusting the exponent to preserve the value.
+3. The power of ten sets the decimal-point shift. It counts trailing zeros directly only for whole powers of ten with coefficient 1.
 
 ## Real world
 
-### Chemistry
-Avogadro's number, about $6.02\times10^{23}$, counts particles in a mole — writing it in full would take 24 digits.
+### Small measurements
 
-### Astronomy
-Distances to stars are given in scientific notation because writing them in metres would need dozens of digits.
+A length of 0.000002 metres can be written as two times ten to the power -6 metres. The notation keeps the scale visible.
 
-### Computing
-Very small and very large numbers in programming languages are often printed in scientific notation, like 6.02e23, once they grow past a certain size.
+### Comparing quantities
+
+Numbers with the same coefficient and exponents differing by 3 differ by a factor of 1000.
+
+### Calculator displays
+
+A display such as 3.4e6 means 3.4 times ten to the sixth power. The letter e in that display introduces the exponent.

@@ -1,67 +1,67 @@
 ---
 title: Binary and other bases
-summary: >-
-  Count the same amount in twos, in sixteens, and in sixties — the base a
-  clock has always used — and see why every base works the same way.
+summary: Write the same quantity in different number systems by changing the value of each place.
 parameters:
-  N: the number N, written in base 10
-  b: the base b to count in
+  N: number N in decimal
+  b: base b
 variables:
-  - 'a digit, at place k, always less than the base'
-  - 'the place value at position k — b raised to the power k'
-  - the number being written, in base 10
+  - digit value in position k; from zero to one less than the base
+  - value of position k, counting from zero on the right
+  - total value, written in decimal
 ---
 
 ## Try it
 
-1. Set b to 2: the digit boxes fill with 0s and 1s, and 130 turns into a row of eight binary digits.
-2. Set b to 16 instead: the same 130 now needs only two digit boxes, reading 8 and 2, the hexadecimal 82.
-3. Set b to 60: the same 130 splits into two boxes reading 2 and 10 — exactly the "2 minutes, 10 seconds" a clock or stopwatch would show.
+1. Set N to 130 and b to 2. The display reads 10000010. The two nonzero places contribute 128 and 2.
+2. Keep N at 130 and set b to 16. The display reads 82: eight sixteens and two ones.
+3. Set b to 60. The places hold values 2 and 10. The digit symbol A represents ten here; the time display reads 02:10.
 
 ## Real-life examples
 
-1. **Binary, base 2.** N = 130, b = 2: only digits 0 and 1 are allowed, so 130 needs eight digit boxes — 10000010.
-2. **Hexadecimal, base 16.** N = 130, b = 16: digits run 0 to 15 (shown as 0–9 then A–F), so 130 fits in two boxes — 82.
-3. **Base 60, the base a clock uses.** N = 130, b = 60: digits run 0 to 59, so 130 seconds becomes two boxes — 2 and 10, read as 2 minutes 10 seconds.
+1. **Binary.** With N = 130 and b = 2, the value is written 10000010. Only 0 and 1 are needed as digits.
+2. **Hexadecimal.** With N = 130 and b = 16, it is written 82. Letters A through F represent digit values ten through fifteen.
+3. **Minutes and seconds.** With N = 130 and b = 60, there are two groups of sixty and ten left over. If the units are seconds, that is two minutes and ten seconds.
 
 ## Test yourself
 
-1. Push N to its largest value, 3599 — one second short of a full hour in base 60.
-2. Switch the base to 60 and watch the digit boxes turn into a clock reading.
-3. Switch the base to 16 and find the number that reads 130 in base 10.
+1. Set N to 3599.
+2. Set b to 60.
+3. Set b to 16 and N to 130.
 
 ## Intuition
 
-Counting in base 10 means each place is worth ten times the place to its right — ones, tens, hundreds. Counting in another base b works exactly the same way, just with a different multiplier: each place is worth b times the place to its right, and no single digit is ever allowed to reach b itself, so it rolls over to the next place instead. Drag b down to 2 and every digit box can only ever show 0 or 1, because base 2 has only two digits — the same 130 that fit in three digits at base 10 now spreads across eight boxes.
+In decimal, 130 means one hundred, three tens and zero ones. Each place is worth ten times the place on its right. The base tells us that multiplier. Changing the base changes the way we write the quantity, not the quantity itself.
 
-Drag b up to 60 and each digit box can show any value from 0 to 59, because base 60 has sixty digits — and this is not an invented example: it is exactly how a clock has counted for thousands of years. 130 seconds becomes two "digits": 2 and 10, read off as 2 minutes and 10 seconds, because a minute is one place-value step in base 60, precisely as a ten is one step in base 10.
+In base 2, the places are worth 1, 2, 4, 8 and so on, reading from right to left. Each digit is either 0 or 1. To write 130, use one 128 and one 2, with zeros in the other places. That gives 10000010.
+
+In base 16, the places begin with ones and sixteens. Eight sixteens make 128; two more make 130, so the representation is 82. Always check the base before reading the digits: 82 in hexadecimal is not eighty-two in decimal.
 
 ## Formal
 
-In base $b$, a number is written as digits $d_k$, each satisfying $0\le d_k<b$, with place value $b^{k}$ at position $k$ counted from the right, starting at $k=0$.
+In base $b$, position k has value $b^k$, starting with k = 0 on the right. Each digit $d_k$ satisfies $0\le d_k<b$. Multiply each digit by its place value and add the results.
 
-Converting a base-10 number to base $b$ means repeatedly dividing by $b$ and reading the remainders from last to first — the same long-division process regardless of which base is the target.
+To convert a nonnegative whole number into a new base, divide repeatedly by the base and record the remainders. Read them from the last remainder to the first. For 130 in base 16, the first division gives quotient 8 and remainder 2; the next gives quotient 0 and remainder 8.
 
 ## Advanced
 
-Bases that are powers of one another convert especially easily: base 16 groups binary digits four at a time ($16=2^{4}$) with no rounding, which is why hexadecimal is a compact shorthand for binary; base 60, by contrast, shares no such simple power relationship with base 10, which is exactly why converting seconds to minutes and hours needs its own repeated-division step rather than a shortcut.
+One hexadecimal digit corresponds to four binary digits because $16=2^4$. This allows conversion in groups of four bits. Minutes and seconds also illustrate grouping by a base, but ordinary time notation mixes conventions: seconds and minutes use groups of sixty, while hours in a day use groups of twenty-four.
 
 ## Derivation
 
-1. 130 splits into one chunk of 16 taken eight times, plus a remainder of 2 taken once.
-2. Written with explicit powers of 16, that is 8 times 16 to the power 1, plus 2 times 16 to the power 0.
-3. So 130 in base 10 is written 82 in base 16.
+1. Divide 130 into eight groups of 16 with 2 left over.
+2. Write the place values as powers of 16. The rightmost place is worth one, and the next is worth sixteen.
+3. Write the digits 8 and 2 in those places. The subscripts distinguish decimal from hexadecimal.
 
 ## Real world
 
-### Computers
-Every value a computer stores is ultimately base 2, with base 16 used as a compact, human-readable shorthand for long strings of binary digits.
+### Computer data
 
-### Clocks and calendars
-Hours, minutes and seconds are base 60 — a place-value system invented in ancient Mesopotamia that still runs every clock and stopwatch today.
+Binary digits represent two states. Hexadecimal gives people a shorter way to write a long binary value.
 
-### Angles and navigation
-Degrees are split into 60 minutes and each minute into 60 seconds of arc, the same base-60 system used for time, applied to direction instead.
+### Time intervals
 
-### Sports timing
-A stopwatch reading like 2:10.45 mixes base 60 (minutes and seconds) with base 10 (the hundredths) in the very same number.
+130 seconds is two minutes and ten seconds because each minute contains sixty seconds. A stopwatch may then use decimal fractions for parts of a second.
+
+### Digital colors
+
+A hexadecimal color value uses two digits for each of its red, green and blue channels. The letters are digit symbols, not separate quantities.

@@ -1,68 +1,71 @@
 ---
 title: Function graph
-summary: >-
-  See how changing a rule reshapes its entire picture — the first step to
-  reading any graph, chart, or formula you will ever meet.
+summary: Read a graph as a rule that turns each input into one output.
 parameters:
   x: input x
-  a: a — curvature
-  b: b — tilt
-  c: c — vertical shift
+  a: coefficient a of x squared
+  b: coefficient b of x
+  c: constant c
 variables:
-  - the input you choose
-  - the output the rule produces
-  - 'how sharply the curve bends, and whether it opens up or down'
-  - shifts the turning point sideways
-  - where the curve crosses the vertical axis
+  - input; the horizontal coordinate
+  - output; the height of the graph at that input
+  - coefficient of the squared term; controls opening direction and steepness
+  - coefficient of the linear term; affects the slope and turning-point location
+  - constant term; the output when x is zero
 ---
 
 ## Try it
 
-1. Drag the point left and right. Its height is the answer the rule gives for that x.
-2. Move the slider «a». Watch the whole curve bend more or less.
-3. Set «a» to 0. The curve turns into a straight line: no bending left.
+1. Set a to 1 and b and c to 0. Compare x = 2 and x = 3: the outputs are 4 and 9. The point's height records the result.
+2. Keep a and b fixed and raise c to 2. Every output increases by 2, so the whole graph moves up.
+3. Set a to 0, b to 1 and c to 0. The rule now gives the input unchanged, and its graph is a straight line.
 
 ## Real-life examples
 
-1. **A square garden's area.** A garden shaped like a square with side length x=3 metres (a=1, b=0, c=0) has an area of exactly 9 square metres — the output is the side length squared.
-2. **A ball's flight height.** A ball thrown so its height follows h = -x² + 4x (a=-1, b=4, c=0) reaches its highest point, 4 metres, at x=2 seconds.
-3. **Peak revenue from pricing.** A product's revenue follows R = -0.5x² + 4x (a=-0.5, b=4, c=0): pricing it at x=4 earns the peak revenue of 8.
+1. **A square garden.** With a = 1, b = 0 and c = 0, an input of 3 gives 9. If x is side length in metres, the output is area in square metres. Only nonnegative inputs describe side lengths.
+2. **A model with a maximum.** With a = -1, b = 4 and c = 0, the output reaches 4 at x = 2. This is a mathematical example of a quantity that rises and then falls.
+3. **An illustrative revenue rule.** With a = -0.5, b = 4 and c = 0, the output is 8 at x = 4. Interpreting this as revenue requires a suitable price-and-demand model; the formula alone does not establish one.
 
 ## Test yourself
 
-1. Find a, b, c (keeping the curve genuinely curved, a not zero) and an x so the output is exactly 16.
-2. Choose a negative a and a b so the curve's peak sits exactly at x = 2.
-3. Make the curve cross zero both at x=0 and at x=4, while still curving (a not zero).
+1. Make the output within 0.3 of 16, with the absolute value of a greater than 0.3. The output may be above the visible graph window; use the readout.
+2. Choose a below -0.05 and make the maximum's horizontal position within 0.1 of x = 2.
+3. Make the outputs at x = 0 and x = 4 approximately zero, with the absolute value of a greater than 0.05.
 
 ## Intuition
 
-A square garden with side length x has area x² square metres: make the side 2 metres and the area is 4; make it 3 and the area jumps to 9. The point on this graph does exactly that calculation for you — drag it left and right along the horizontal axis, and its height shows the output for whatever x you land on. The curve is simply the trail of every possible answer, for every possible input, drawn all at once.
+A square with side length 2 metres has area 4 square metres. A side length of 3 gives area 9. This is a rule: choose a side length, square it, and obtain an area. We call such a rule a function when each allowed input has exactly one output.
 
-Now change a, b or c using the sliders below the graph. You are not just moving a drawing — you are changing the rule itself, and the whole curve redraws to match. Set a to 0 and the curve stops bending altogether, collapsing into a straight line, because the squared term that caused the curve has vanished.
+On the graph, the horizontal coordinate is the input x. The vertical coordinate is the output f(x). A point at (3, 9) records that input 3 gives output 9. The graph collects these input-output pairs so we can see the pattern across many inputs.
+
+The sliders a, b and c change the rule itself. Moving x chooses a different input for the current rule. Changing c adds the same amount to every output; changing a or b changes how the output varies with x. The screen shows only part of the graph, so a missing point may simply lie outside the visible window.
 
 ## Formal
 
-A function $f: \mathbb{R} \to \mathbb{R}$ assigns exactly one output to each input. Its graph is the set $\{(x, f(x))\}$.
+A function assigns exactly one output to each input in its domain. Its graph consists of points $(x,f(x))$. Here the rule is $f(x)=ax^2+bx+c$.
 
-For a quadratic, the vertex sits at $x = -\tfrac{b}{2a}$ and the sign of $a$ decides whether it is a minimum or a maximum.
+When a is nonzero, this is a quadratic function. Its turning point has horizontal coordinate $x=-b/(2a)$. Positive a gives a minimum, and negative a gives a maximum. When a is zero, the rule is linear or constant and the turning-point formula does not apply.
 
 ## Advanced
 
-The three parameters are coordinates on the space of quadratics; completing the square shows every parabola is an affine image of $y = x^2$, which is why they all share one shape up to scaling.
+Completing the square rewrites a quadratic around its turning point. This exposes the horizontal and vertical shifts and the coefficient controlling its opening. A physical application may restrict the domain even when the polynomial can be evaluated for every real input.
 
 ## Derivation
 
-1. Start from the general quadratic.
-2. Complete the square: the same rule, rewritten as a shifted copy of $ax^2$.
-3. The squared term is smallest when it is zero — that is the turning point you see on the graph.
+1. Start with the quadratic rule and assume a is nonzero for the following steps.
+2. Complete the square by adding and subtracting the required constant. This changes the form without changing the function's values.
+3. The squared expression is zero at the turning point. Solve for x to locate it.
 
 ## Real world
 
-### Thrown objects
-Height against time for a ball in flight is a downward-opening parabola.
+### Area
 
-### Pricing
-Revenue against price is often quadratic: too cheap or too expensive both lose money.
+For a square, the input can be side length and the output area. The units differ because squaring metres gives square metres.
 
-### Satellite dishes
-A parabolic cross-section reflects every incoming ray to a single focus.
+### Measurements over time
+
+A graph can pair each measurement time with a reading. Its meaning depends on the axis labels and units.
+
+### Mathematical models
+
+A formula can model a measured relationship, but its domain and assumptions must be checked against the situation.
