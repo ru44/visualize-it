@@ -1,69 +1,62 @@
 ---
 title: Area and perimeter
-summary: >-
-  The same length of fence encloses far more land as a square than as a thin
-  rectangle, and even more as a circle — perimeter fixes a budget, and shape
-  decides what you get for it.
+summary: 'Compare shapes with the same boundary length to see why equal perimeters need not enclose equal areas.'
 parameters:
-  P: fence length P
-  f: rectangle shape f
+  P: 'P — common perimeter in metres'
+  f: 'f — width as a fraction of half the perimeter; 0.5 gives a square'
 variables:
-  - the area enclosed
-  - the total perimeter (the fence length), shared by all three shapes
-  - the rectangle's width
-  - the rectangle's height
+  - 'A: enclosed area, measured in square metres'
+  - 'P: common boundary length of the three shapes'
+  - 'w: rectangle width, equal to fP/2'
+  - 'h: rectangle height, equal to (1 − f)P/2'
 ---
 
 ## Try it
 
-1. Drag the little handle on the rectangle's right edge. Its width and height trade off, but its perimeter never changes — only its area does.
-2. Pull the rectangle thin and long. Its area readout drops well below the square's, even though both used exactly the same fence.
-3. Bring the rectangle back to a square (width equals height). Now compare the square's area to the circle's: the circle, with the same fence, always wins.
+1. Set P = 24 and f = 0.5. The rectangle is a 6 m by 6 m square with area 36 m².
+2. Keep P = 24 and set f = 0.15. The sides become 1.8 m and 10.2 m. The perimeter stays 24 m, but the area falls to 18.36 m².
+3. Compare the fixed square and circle. At P = 24, the circle encloses about 45.84 m². Changing f changes only the rectangle's dimensions; changing P changes all three shapes.
 
 ## Real-life examples
 
-1. **A long, thin plot.** 24 m of fence stretched into a 1.8 m by 10.2 m strip encloses about 18 m² — barely half of what a square would give.
-2. **The same 24 m, squared off.** A 6 m by 6 m square encloses 36 m², the most any rectangle can manage with that fence.
-3. **32 m, mostly one direction.** An 11.2 m by 4.8 m rectangle uses more fence overall but still falls short of the square drawn with the same length.
+1. **A narrow plot.** With P = 24 m and f = 0.15, the plot measures 1.8 m by 10.2 m and covers 18.36 m².
+2. **A square plot.** The same 24 m boundary with f = 0.5 encloses a 6 m by 6 m square, covering 36 m².
+3. **A larger boundary.** With P = 32 m and f = 0.7, the rectangle is 11.2 m by 4.8 m and covers 53.76 m². The square with that same perimeter covers 64 m².
 
 ## Test yourself
 
-1. Bring the rectangle back to a square.
-2. Make the rectangle's area less than half the square's area.
-3. Make the circle's radius bigger than 4 m.
+1. Set f close to 0.5 so that the rectangle is nearly square.
+2. Make the rectangle's area less than half the square's area while keeping their common perimeter.
+3. Increase P until the circle's radius exceeds 4 m. Use radius = P/(2π).
 
 ## Intuition
 
-Imagine you're given a fixed length of fence and asked to enclose as much land as possible. Drag the rectangle's edge and you'll see the shape trade width for height while the fence length (the perimeter) stays exactly the same — but the area readout keeps changing, rising as the two sides get closer to equal and falling as one stretches out thin. A very long, narrow strip wastes most of its fence on two long sides that face each other uselessly close together.
+Perimeter measures the distance around a boundary, while area measures the surface inside it. A 6 m by 6 m square has perimeter 24 m and area 36 m². A 2 m by 10 m rectangle also has perimeter 24 m, but area only 20 m². Equal fence lengths do not imply equal enclosed areas.
 
-The best rectangle for a given amount of fence is always the square, because that's the one point where width and height are perfectly balanced. But the square still isn't the best shape overall — swap the corners for a smooth curve and the same length of fence, bent into a circle, encloses even more. Corners are where a shape "wastes" fence pinching inward; a circle has none.
+With the perimeter fixed, increasing a rectangle's width forces its height to decrease by the same amount. The area is greatest when the two are equal. The circle with that perimeter encloses still more area. This is a separate mathematical result; comparing a few pictures alone does not prove it for every possible shape.
 
 ## Formal
 
-For a rectangle of perimeter $P$ and width $w$, the area is $A = w\left(\dfrac{P}{2} - w\right)$, which is maximised at $w = \dfrac{P}{4}$ — the square — giving $A = \left(\dfrac{P}{4}\right)^2$.
+A rectangle with width w, height h and perimeter P satisfies $P=2(w+h)$, so $h=P/2-w$ and $A=w(P/2-w)$. Completing the square gives $A=P^2/16-(w-P/4)^2$. The subtracted square is nonnegative, so the maximum occurs at $w=h=P/4$.
 
-Among every closed shape with perimeter $P$, none encloses more area than the circle: $A \le \dfrac{P^2}{4\pi}$, with equality only when the shape is a circle.
+For a simple closed plane curve of length P enclosing area A, the isoperimetric inequality is $A\le P^2/(4\pi)$, with equality for a circle. Its radius is $r=P/(2\pi)$. The statement assumes an ordinary enclosed region and a boundary with finite length.
 
 ## Advanced
 
-This is the isoperimetric inequality, and it holds in any dimension: among all solids with a given surface area, the sphere encloses the most volume, which is why soap bubbles are round — surface tension pulls the film toward the shape that costs the least surface for the volume of air it traps.
+The formula proves the square is best among rectangles. Proving the circle is best among all eligible plane regions takes a separate argument. Smoothness or the absence of corners alone does not guarantee maximum area: a long thin ellipse is smooth too. In three dimensions, the related result compares enclosed volume with surface area.
 
 ## Derivation
 
-1. For a rectangle of perimeter P and width w, the height is P/2 minus w, so its area is w times that height.
-2. That area is a downward-curving parabola in w, and it peaks exactly halfway, at w = P/4 — a square.
-3. Comparing every possible shape rather than just rectangles, the same fence length P always encloses at most P² ⁄ (4π) of area, and only a circle actually reaches that limit.
+1. Fixing P fixes w + h at P/2. Substitute h = P/2 − w into A = wh.
+2. Rewrite the area as P²/16 minus the square of w − P/4. It is largest when that square is zero, making the rectangle a square.
+3. For the circle, substitute r = P/(2π) into πr² to get P²/(4π). The isoperimetric theorem establishes that no other eligible shape exceeds it; the rectangle calculation alone does not prove that theorem.
 
 ## Real world
 
-### Farming
-Farmers fencing a paddock with a fixed roll of wire get the most grazing land by fencing a square rather than a long strip, without spending a metre more of wire.
+### Fencing a rectangular plot
 
-### Packaging
-A circular pipe uses less material than a square duct of the same cross-sectional area, which is one reason plumbing and ductwork favour round shapes over sharp-cornered ones.
+If the entire boundary needs fencing and there are no other restrictions, a square gives the most area among rectangles of fixed perimeter. A required side length or a boundary already supplied by a wall changes the problem.
 
-### Urban planning
-Round or square plazas pack more usable space per metre of surrounding wall or railing than long thin ones, which is why many public squares are, in fact, roughly square.
+### Scaling a design
 
-### Biology
-Cell membranes and soap films both minimise surface for the volume they enclose, which is the three-dimensional cousin of a circle beating every rectangle in the plane.
+Doubling every length doubles perimeter and quadruples area. A design with twice as much boundary can therefore enclose four times the area when its shape is preserved.
