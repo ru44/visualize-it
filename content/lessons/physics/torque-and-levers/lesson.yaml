@@ -50,7 +50,7 @@ variables:
   - F_2
 derivation:
   - \tau_1 = F_1 d_1, \qquad \tau_2 = F_2 d_2
-  - "\\tau_1 = \\tau_2 \\quad \\text{(equilibrium: no net rotation)}"
+  - "\\tau_1 = \\tau_2 \\quad \\text{(zero net torque about the pivot)}"
   - F_2 = \frac{F_1 d_1}{d_2}
 charts: []
 primary: x

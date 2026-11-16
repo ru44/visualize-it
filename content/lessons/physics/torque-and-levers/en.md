@@ -1,68 +1,62 @@
 ---
 title: Torque balance and the lever
-summary: >-
-  This is why a long crowbar needs so much less effort than a short one to
-  lift the same heavy load.
+summary: 'Balance turning effects about a pivot and see why a longer perpendicular lever arm needs less force.'
 parameters:
-  F1: known force F1
-  d1: its distance from pivot d1
-  x: 'lever arm for F2, d2'
+  F1: 'F₁ — known force'
+  d1: 'd₁ — its perpendicular arm'
+  x: 'd₂ — balancing force’s perpendicular arm'
 variables:
-  - a known force and its distance from the pivot
-  - distance of the balancing force from the pivot (the horizontal axis)
-  - force needed at distance $d_2$ to balance the lever
+  - 'known force and its perpendicular arm about the pivot'
+  - 'perpendicular arm of the balancing force'
+  - 'force needed to give an equal, opposite torque'
 ---
 
 ## Try it
 
-1. Watch the lever balanced with a force F1 at a fixed distance d1 from the pivot.
-2. Drag the slider "lever arm for F2, d2" further from the pivot. Watch the balancing force F2 drop.
-3. Now drag it close to the pivot instead. The balancing force needed shoots up.
+1. Set F₁ = 20 N, d₁ = 2 m and d₂ = 4 m. The first torque has magnitude 40 N·m, balanced by F₂ = 10 N on the other side.
+2. Keep F₁ and d₁ fixed and double d₂ to 8 m. The balancing force halves to 5 N; the required balancing torque stays 40 N·m.
+3. Reduce d₂ to 1 m. The required force rises to 40 N. In 3D the counterweight adjusts after a brief visual tilt; the 2D curve always gives the balanced value, not the transient force.
 
 ## Real-life examples
 
-1. **Prying a rock with a crowbar.** A 40 N push at the far end (0.5 m from the pivot) needs only 4 N of resistance-matching force at a 5 m arm — leverage that turns a modest push into a much larger effect near the rock.
-2. **Balancing a seesaw.** A 30 N side sitting 1.5 m from the pivot balances a 15 N side sitting twice as far out, at 3 m.
-3. **Lifting with a wheelbarrow.** A 45 N load resting just 0.5 m from the wheel (the pivot) needs only 15 N of lifting force at the handles, 1.5 m away.
+1. **A long effort arm.** A 40 N load with arm 0.5 m produces 20 N·m. An opposing effort with arm 5 m needs only 4 N in the ideal balance model.
+2. **Two sides of a lever.** A 30 N force at 1.5 m balances a 15 N force at 3 m. Both torque magnitudes are 45 N·m.
+3. **A three-to-one arm ratio.** A 45 N load at 0.5 m balances a 15 N effort at 1.5 m. The longer effort arm reduces force while increasing the distance that the effort point moves for a given small rotation.
 
 ## Test yourself
 
-1. Make the balancing force F₂ exactly 10 N.
-2. With F1 = 40 N, find a distance d1 from the pivot and a lever arm where only 8 N is needed to balance it.
-3. Find a combination of forces and distances where the balancing force F₂ drops below 2 N.
+1. Make the required balancing force approximately 10 N.
+2. Keep F₁ at 40 N and choose the arms so F₂ is within 0.3 N of 8 N.
+3. Make the required balancing force less than 2 N.
 
 ## Intuition
 
-Picture prying a rock with a crowbar: pushing with 40 N at 0.5 m from the pivot. Drag the slider "lever arm for F2, d2" outward, away from the pivot: the required balancing force drops sharply, because moving the same force further from the pivot buys a much bigger turning effect, so less force is needed to match the push on the other side.
+A force's turning effect depends on where and how it acts. A 10 N force with a perpendicular arm of 4 m produces the same torque magnitude as 20 N with an arm of 2 m. If the two torques act in opposite directions, they can balance about the pivot.
 
-Push it toward the pivot instead and the curve shoots upward: balancing a force close to the pivot with almost no lever arm of your own takes enormous force — the practical reason a long crowbar needs so much less effort than a short one to move the same load.
+The graph asks how much balancing force is needed as its arm changes. Keeping the first torque fixed means the product F₂d₂ must stay fixed, so a longer arm needs a smaller force. It does not create energy: in an ideal moving lever, the point with the longer arm travels farther for the same rotation. The fixed pivot also supplies a support force, which must be included when balancing forces on the whole lever.
 
 ## Formal
 
-Equilibrium requires equal and opposite torques: $F_1 d_1 = F_2 d_2$, so $F_2 = F_1 d_1 / d_2$.
+Torque magnitude is $\tau=Fd_\perp$, where d⊥ is the perpendicular distance from the pivot to the force's line of action. For forces perpendicular to their position arms, this equals the arm length. Opposite torques balance when $F_1d_1=F_2d_2$.
 
-This is a hyperbola in $d_2$: $F_2$ and $d_2$ are inversely proportional for fixed $F_1 d_1$.
+For $d_2>0$, the required force is $F_2=F_1d_1/d_2$. The formula assumes a fixed pivot and includes no extra torque from the lever's own weight or friction. Zero net torque means zero angular acceleration in this fixed-axis model, not necessarily zero angular velocity; a stationary balanced lever also starts at rest.
 
 ## Advanced
 
-This is the special case of torque $\boldsymbol\tau = \mathbf r \times \mathbf F$ for forces perpendicular to the lever arm, where the magnitude is simply $rF$; a mechanical advantage of $d_1/d_2$ trades force for distance moved (the lever's effort end travels further), so no energy is gained — work in equals work out, a first illustration of the conservation principle behind every simple machine.
+For a force making angle θ with its position vector, torque magnitude is rF sin θ. The component directed through the pivot contributes no torque. If F₁ is the load and F₂ is the effort here, the ideal force advantage F₁/F₂ is d₂/d₁. This is the reciprocal of the effort-to-load force ratio, so define the ratio before using the term “mechanical advantage.”
 
 ## Derivation
 
-1. Torque is force times distance from the pivot.
-2. A balanced lever has equal and opposite torques.
-3. Solve for the balancing force.
+1. Find each torque magnitude by multiplying force by its perpendicular arm.
+2. For rotational balance, the clockwise and counterclockwise torque magnitudes must be equal.
+3. Divide by the positive arm d₂ to find the required balancing force F₂.
 
 ## Real world
 
-### Crowbars and wrenches
-A longer handle multiplies the turning force you can apply for the same effort.
+### A handle
 
-### Seesaws
-Two people of different weight balance by sitting at different distances from the pivot.
+Applying a force farther from a fixed pivot increases its turning effect when the perpendicular component is unchanged. Pushing directly toward the pivot gives no torque about it.
 
-### Wheelbarrows
-The load, wheel and handle positions set a mechanical advantage via exactly this torque balance.
+### Balancing loads
 
-### Bridge and crane design
-Counterweights are placed at calculated distances to balance the torque of a load being lifted.
+Loads of different weights can balance at different perpendicular distances. The support carries the combined load even though the torques cancel.
