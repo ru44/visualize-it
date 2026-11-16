@@ -1,67 +1,61 @@
 ---
 title: Friction on an inclined plane
-summary: >-
-  This is why a rubber-soled shoe grips a steep roof but slides on wet tile,
-  and how engineers pick safe ramp angles for wheelchairs and warehouses.
+summary: 'Resolve gravity along a slope and distinguish sliding friction from the static friction that can hold an object at rest.'
 parameters:
-  mu: coefficient of friction μ
-  x: incline angle θ
+  mu: 'μ — friction coefficient used in the model'
+  x: 'θ — incline angle above horizontal'
 variables:
-  - angle of the incline from horizontal
-  - coefficient of friction between object and surface
-  - 'net acceleration down the slope (negative means friction wins, it stays put)'
+  - 'incline angle above the horizontal'
+  - 'kinetic coefficient in the graph; also used as static limit in 3D'
+  - 'signed downhill acceleration for a block already sliding downhill'
 ---
 
 ## Try it
 
-1. Watch the curve at a shallow incline angle — it sits below zero, meaning the block stays put.
-2. Drag the slider "incline angle θ" up. Watch the curve rise toward zero, then cross it.
-3. Now raise "coefficient of friction μ". The crossing point, where sliding begins, moves to a steeper angle.
+1. Set μ = 0.4 and θ = 30°. For a block already sliding down the incline, the formula gives about 1.51 m/s² down the slope.
+2. Keep μ = 0.4 and reduce θ to 10°. The formula is about −2.16 m/s²: a down-sliding block would slow. It does not mean a stationary block accelerates uphill.
+3. Find the zero near θ = 21.8°. The 3D illustration also uses μ as a static-friction limit and holds the block below this threshold. That equal-coefficient assumption is a simplification.
 
 ## Real-life examples
 
-1. **A waxed ski on packed snow.** With μ≈0.06 and a gentle 20° slope, the tiny friction barely slows the skier — they accelerate down almost as if the slope were frictionless.
-2. **A wooden crate on a wooden ramp.** With μ=0.4 on a 30° ramp, friction nearly matches gravity's pull, so the crate creeps down slowly instead of sliding fast.
-3. **A rubber shoe on wet tile.** With μ=0.9 the shoe still slides on a steep 70° slope — its grip can't keep up with such a steep pitch.
+1. **Small friction coefficient.** At μ = 0.06 and θ = 20°, the down-sliding acceleration is about 2.80 m/s², which is positive, not a stationary case.
+2. **Intermediate friction.** At μ = 0.4 and θ = 30°, the acceleration is about 1.51 m/s². A positive acceleration means increasing downhill speed, not necessarily slow motion.
+3. **Steep incline.** At μ = 0.9 and θ = 70°, the acceleration is about 6.20 m/s². These coefficients are model inputs, not measured values guaranteed for named materials or wet surfaces.
 
 ## Test yourself
 
-1. With friction μ = 0.5, find the incline angle where the block is exactly on the verge of sliding (acceleration = 0).
-2. Make the block accelerate down the slope at exactly 3 m/s².
-3. Set the incline to 45° and find the friction coefficient where the block just barely stays still.
+1. Set μ = 0.5 and find an angle giving a sliding-formula acceleration within 0.3 m/s² of zero.
+2. Make the calculated downhill acceleration approximately 3 m/s².
+3. Set θ = 45° and find μ giving a calculated acceleration within 0.3 m/s² of zero.
 
 ## Intuition
 
-Picture a wooden crate on a 20° ramp with a slippery, waxed surface, friction coefficient μ = 0.06: at this shallow angle the curve on screen sits below zero, meaning gravity's pull along the slope is weaker than friction can resist, so the crate stays put. Drag the slider "incline angle θ" up and watch the curve climb toward zero.
+Gravity pulls vertically, but the surface constrains the block's motion along the slope. The component pulling downhill is mg sin θ. The normal force perpendicular to the slope is mg cos θ in this model. When the block is sliding downhill, kinetic friction points uphill, reducing the net downhill force.
 
-The point where the curve crosses zero is the critical angle: past it, the curve turns positive and the crate accelerates down the slope. Now raise "coefficient of friction μ" instead, say to 0.9, and watch that crossing point shift to a much steeper angle — a rougher surface buys you a steeper ramp before anything starts sliding.
+A stationary block is different. Static friction adjusts to oppose the downhill pull, up to a maximum; it is not always equal to that maximum. Thus a negative value of the plotted sliding formula cannot be interpreted as uphill acceleration from rest. The 2D graph describes a down-sliding block; the 3D illustration adds a rest condition using the same μ for static and kinetic friction.
 
 ## Formal
 
-Along the incline, $ma = mg\sin\theta - \mu mg\cos\theta$, giving $a(\theta) = g(\sin\theta - \mu\cos\theta)$, independent of mass.
+For a block sliding downhill on a fixed incline, with no other applied forces, $N=mg\cos\theta$ and $f_k=\mu_kN$. Taking downhill as positive gives $a=g(\sin\theta-\mu_k\cos\theta)$. The control labelled μ supplies μₖ for this calculation, and $g=9.81\ \mathrm{m/s^2}$.
 
-The critical (sliding) angle satisfies $a=0$: $\tan\theta_c = \mu$ — a direct, mass-independent measurement of the friction coefficient.
+For a block initially at rest, static friction can hold it when $mg\sin\theta\le\mu_smg\cos\theta$, or $\tan\theta\le\mu_s$ below 90°. Static and kinetic coefficients need not be equal. The zero of the sliding formula satisfies $\tan\theta=\mu_k$ and is not generally the angle at which a resting block starts to slide.
 
 ## Advanced
 
-This root-finding structure is identical to the linear-equation and quadratic-root lessons: the physically meaningful boundary (here, the onset of sliding) is precisely where a governing expression crosses zero, and the derivative of $a(\theta)$ with respect to $\theta$ tells you how sensitively the sliding onset shifts if $\mu$ or the incline changes — useful for engineering safety margins on ramps and roofs.
+Once a down-sliding block stops, the kinetic-friction expression must be reconsidered. If it remains at rest, use static friction; if it moves uphill, kinetic friction reverses direction. Mass cancels from the simple acceleration formula because both gravity and friction are proportional to mass. Extra forces or a friction law that changes with conditions can invalidate this cancellation or the constant-coefficient approximation.
 
 ## Derivation
 
-1. Forces along the incline: gravity component down the slope minus friction.
-2. Friction opposes motion, proportional to the normal force $N = mg\cos\theta$.
-3. Apply Newton's second law; mass cancels.
+1. Choose downhill as positive and add the gravity component and opposing friction force along that direction.
+2. For downhill sliding, the magnitude of kinetic friction is μ times the normal force. With no acceleration perpendicular to the surface, N = mg cos θ.
+3. Apply Fnet = ma and cancel the positive mass to obtain the sliding acceleration.
 
 ## Real world
 
-### Wheelchair ramps and roofing codes
-Building codes set maximum slope angles based on friction coefficients of the intended surface material.
+### Sliding experiments
 
-### Vehicle hill-holding
-Parking brakes must overcome exactly this friction-versus-gravity balance on a slope.
+Measure motion along a fixed incline and compare with the model. Distinguish the angle at which a resting block starts moving from its acceleration after it has started.
 
-### Conveyor and chute design
-Industrial chutes are angled just past the critical sliding angle so material flows rather than jams.
+### Friction measurements
 
-### Rock and snow slides
-Natural slopes near their critical friction angle are prone to sudden slides when moisture reduces $\mu$.
+The coefficient depends on the pair of surfaces and their condition. A value from this illustration alone is not a design specification for ramps or footwear.
