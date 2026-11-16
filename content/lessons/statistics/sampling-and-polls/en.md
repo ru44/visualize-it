@@ -1,68 +1,61 @@
 ---
-title: 'Polls: asking a thousand to know millions'
-summary: >-
-  A fair poll of a thousand people genuinely pins down a country of millions
-  to within about three points — and a leaning poll of a million people stays
-  wrong forever, which is why how you ask beats how many you ask.
+title: 'Sampling, margins and bias'
+summary: 'Separate sampling variability, which falls with sample size, from a systematic bias that more responses alone do not remove.'
 parameters:
-  p: p — the country's true support
-  n: n — people actually polled
-  bias: bias — how far the polling method leans
+  p: 'true support in the population'
+  n: 'n — sample size'
+  bias: 'upward bias in percentage points'
 variables:
-  - the margin of error, the honest half-width of the poll's interval
-  - the true share being estimated
+  - 'approximate margin for sampling variation, before bias'
+  - 'true support proportion; convert percent to a fraction in the formula'
 ---
 
 ## Try it
 
-1. Keep the defaults and look at the field: 540 of the country's millions, with the n ringed people as the actual sample — the published interval sits around the truth.
-2. Shrink n to 200: the interval balloons to about ±7 points, too wide to call any close race.
-3. Now set bias to 5 with n at 5000: the interval is beautifully tight and confidently wrong — the truth sits outside it, and more people would not help.
+1. Set true support to 52%, n = 1000 and bias = 0. The margin is about 3.10 percentage points. Compare the displayed estimate and its interval with the true-support marker.
+2. Keep support and bias fixed and reduce n to 200. The margin rises to about 6.92 points. The dots are an illustration of a population, not a literal display of n respondents.
+3. Set n = 5000 and bias = 5. The margin falls to about 1.38 points, but the estimate is shifted upward by 5 points plus a small illustrated fluctuation. The narrow interval misses the truth.
 
 ## Real-life examples
 
-- **A standard national poll.** A thousand respondents at 52% support: margin about ±3.1 — enough to say "ahead", not enough to call a 51–49 race.
-- **The cheap quick poll.** Two hundred respondents: ±6.9 points of honest fog, which is why small polls disagree so loudly.
-- **The 1936 catastrophe.** A huge sample with a leaning method: the Literary Digest polled over two million people by car and telephone registries — wealthy households, in 1936 — and still called the wrong president.
+1. **1000 respondents.** At true support 52% with zero bias, the model's margin is about 3.10 points. A displayed estimate near 52% need not establish that support exceeds 50%.
+2. **200 respondents.** With the same support and zero bias, the margin is about 6.92 points. Less data means more sampling uncertainty under the same assumptions.
+3. **A large biased sample.** With n = 5000 and a fixed upward bias of 5 points, the margin is only about 1.38 points. Increasing n reduces random variation but leaves the fixed bias.
 
 ## Test yourself
 
-1. Get an honest margin of 1.5 points or better — it takes nearly the whole 5,000.
-2. Set n to exactly 200 and see the margin reach about 7 points.
-3. Recreate the Literary Digest: a leaning method (bias at least 4.5) with a huge sample (n at least 4500) — tight, confident, wrong.
+1. Make the margin at most 1.5 percentage points and keep bias below 0.25 points.
+2. Set n = 200 and choose support giving a margin of at least 6.9 percentage points.
+3. Set bias to at least 4.5 percentage points and n to at least 4500.
 
 ## Intuition
 
-A spoonful tells you how the whole pot of soup tastes — if the pot is stirred. That is the entire miracle of polling: a thousand people, chosen genuinely at random, pin down a country of millions, because the spoon's randomness guarantees it resembles the pot. The field on screen is the pot, the ringed dots are the spoonful, and the published interval below is what the poll can honestly claim.
+Different random samples from the same population usually give different support estimates. This variation comes from whom the sample happens to include. Larger independent samples reduce it. A systematic bias is different: a sampling or measurement method may consistently favour one result. Repeating the same biased method more times need not move its average toward the truth.
 
-Two different enemies attack that claim. Honest noise — the luck of who happened to be spooned — shrinks with $\sqrt{n}$, so quadrupling the sample only halves the fog, and past a thousand or so, extra respondents buy almost nothing. Bias is the unstirred pot: if the method itself leans — calling only landlines, polling only one neighbourhood — the whole interval shifts sideways by that lean, and no sample size on Earth shrinks it. A tight interval around the wrong place is the most dangerous object in statistics.
+The display separates these effects by adding an adjustable upward bias to a small fixed fluctuation around the true proportion. It is an illustration, not a full repeated-sampling simulation: at zero bias its constructed interval always contains the truth. An actual nominal 95% procedure can miss even without bias. The dots and highlighted subset are schematic, not the data used to compute the estimate.
 
 ## Formal
 
-For a true share $p$ estimated from $n$ random respondents, the sample share scatters with standard error $\sqrt{\dfrac{p(1-p)}{n}}$, and the conventional 95% margin of error is $E = 1.96\sqrt{\dfrac{p(1-p)}{n}}$ — about $\pm 3$ points at $n = 1000$, and widest when $p = 0.5$.
+For n independent yes-or-no observations with true proportion p, the sample proportion has standard error $\sqrt{p(1-p)/n}$. Under a suitable normal approximation, the margin is $E=1.96\sqrt{p(1-p)/n}$. The formula uses p as a fraction: enter 52% on the control, but calculate with 0.52.
 
-Bias enters additively and does not average out: a method leaning by $b$ reports around $p + b$ however large $n$ grows, so the published interval of a biased poll converges confidently on the wrong number. Randomness of selection, not size, is what the formula silently assumes.
+Multiplying E by 100 gives percentage points. At fixed p, replacing n by 4n halves E. The margin is largest at $p=0.5$. This teaching model adds a fixed bias b to the estimate's centre, giving $p+b$; increasing n does not remove that shift.
 
 ## Advanced
 
-Real pollsters fight bias more than noise: they weight respondents to match the population's age, region and education, chase the people who do not answer (non-response bias is today's Literary Digest), and publish "house effects" so aggregators can correct each firm's habitual lean. Aggregating many polls shrinks honest noise beautifully but does nothing for a lean shared by the whole industry — which is how entire election forecasts can miss in the same direction at once.
+In real surveys the true p is unknown, so interval methods must estimate uncertainty from the data or use a conservative value such as 0.5. Survey weights, clustered sampling, nonresponse and a large sampling fraction can change the uncertainty calculation. A margin describing sampling variation does not automatically include all these errors, and a pre-election support estimate is not itself a forecast of the final result.
 
 ## Derivation
 
-1. Each random respondent is a draw that supports with probability $p$, so the sample share scatters with standard error $\sqrt{\dfrac{p(1-p)}{n}}$.
-2. Reaching $1.96$ standard errors each side gives the 95% margin $E = 1.96\sqrt{\dfrac{p(1-p)}{n}}$.
-3. The $\sqrt{n}$ in the denominator is the law of diminishing returns: four times the respondents, half the margin — while a lean of $b$ points shifts the centre and never shrinks.
+1. Under independent sampling, the variance of a yes-or-no proportion is p(1−p)/n. Its square root is the standard error.
+2. At n = 1000 and p = 0.5, multiplying the standard error by 1.96 gives approximately 0.031, or 3.1 percentage points.
+3. The square root in the denominator means four times the sample size halves the margin. A fixed additive bias remains unchanged.
 
 ## Real world
 
-### Election forecasting
-National polls of roughly a thousand people carry ±3-point margins — races inside that band are genuinely undecidable by polling.
+### Customer surveys
 
-### Audience ratings
-TV and streaming ratings come from panels of a few thousand homes, speaking for hundreds of millions of viewers through this same spoonful logic.
+A survey answered only by highly satisfied customers can overstate satisfaction. More responses from that same selective group do not necessarily make it representative.
 
-### Medical surveys
-Health agencies estimate national rates of smoking or vaccination from samples, weighting hard to repair the bias of who picks up the phone.
+### Comparing sample sizes
 
-### Quality sampling
-Factories test a random handful from each batch; the formula says how large the handful must be before a claimed defect rate means anything.
+Choose a sample size for a required precision under a specified sampling design. There is no universal point beyond which extra observations are useless; reducing a small margin further can still matter.
