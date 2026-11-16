@@ -1,70 +1,63 @@
 ---
 title: 'Impulse: the area under a force-time pulse'
-summary: >-
-  This is why airbags and crumple zones save lives — they can't reduce how
-  hard a crash pushes overall, but they can stretch that push over more
-  time, cutting the peak force on your body.
+summary: 'Calculate a change in momentum from the area under a net-force graph, and compare short and long force pulses.'
 parameters:
-  Fmax: peak force Fmax
-  w: pulse width w
-  a: a (start time)
-  b: b (end time)
+  Fmax: 'Fmax — peak net force'
+  w: 'w — pulse-width parameter'
+  a: 'a — start time'
+  b: 'b — end time'
 variables:
-  - 'force applied during the collision, peaking at $F_{\max}$'
-  - how spread out in time the force pulse is
-  - 'impulse — the shaded area, equal to the change in momentum $\Delta p$'
+  - 'net force as a function of time'
+  - 'width parameter; force falls to peak/e at this offset'
+  - 'impulse over the selected interval, equal to momentum change'
 ---
 
 ## Try it
 
-1. Watch the shaded pulse under the force-time curve at its default width.
-2. Drag "pulse width w" narrower and "peak force Fmax" higher, keeping the shaded area about the same.
-3. Now do the opposite: widen "pulse width w" and lower "peak force Fmax". The area, and the impulse, stays about the same.
+1. Set Fmax = 6 N, w = 0.08 s, a = 0 s and b = 1 s. The shaded impulse is about 0.851 N·s.
+2. Keep the bounds fixed, halve Fmax to 3 N and double w to 0.16 s. The impulse remains close to 0.851 N·s, while the pulse is lower and broader.
+3. Reduce the interval to a = 0.4 s and b = 0.6 s. Only the middle of the broader pulse is counted, so the impulse decreases. Keep a < b for a forward time interval.
 
 ## Real-life examples
 
-1. **A boxer's punch.** A sharp punch reaches a high peak force (9 N in this simplified model) over a very short pulse (w=0.03 s) — a short, hard hit.
-2. **Catching a ball with a padded glove.** Cushioning spreads the same catch over a much longer time (w=0.3 s) with a gentler peak force of just 2 N.
-3. **A hard, unpadded collision.** Without any cushioning, the peak force spikes to the maximum (10 N) over an extremely brief pulse (w=0.02 s) — the sharpest, most damaging kind of impact.
+1. **Narrow pulse.** Fmax = 9 N and w = 0.03 s over 0.3–0.7 s give about 0.479 N·s. Almost the whole pulse lies inside this interval.
+2. **Broad pulse.** Fmax = 2 N and w = 0.3 s over 0.1–0.9 s give about 1.000 N·s. The peak is lower than in the first example, but the impulse is larger.
+3. **Very brief pulse.** Fmax = 10 N and w = 0.02 s over 0.4–0.6 s give about 0.354 N·s. These are illustrative force histories; peak force alone does not determine the impulse or the effect on a particular object.
 
 ## Test yourself
 
-1. Find a peak force and pulse width whose product Fmax·w equals 1.5 — a rough measure of the impulse delivered.
-2. Keep the peak force near 5 N but widen the pulse to longer than 0.3 s, turning a sharp hit into a gentle push.
-3. Make the pulse both very short (under 0.05 s) and very weak (under 3 N) — a light, quick tap.
+1. Choose a < b and adjust the controls for an impulse near 1.5 N·s over the selected interval.
+2. Keep peak force near 5 N and choose w greater than 0.3 s. This broadens the pulse; it does not preserve impulse automatically.
+3. Make w less than 0.05 s and peak force less than 3 N.
 
 ## Intuition
 
-Picture a boxer's punch: a high peak force squeezed into a very short pulse, about 30 milliseconds. Drag "pulse width w" narrower and raise "peak force Fmax" to make the shaded pulse tall and thin: a short, sharp force spike, just like the punch.
+A 2 N net force acting for 3 s gives the same impulse as a 6 N net force acting for 1 s: both force-time rectangles have area 6 N·s. For a changing force, we add the small contributions over time instead. The resulting area is called impulse, and it equals the change in momentum.
 
-Now widen "pulse width w" and lower "peak force Fmax" to keep the shaded area roughly the same, like catching a ball with a padded glove instead of bare hands. Both deliver the same impulse, the same change in momentum, even though the peak force is wildly different — which is exactly what an airbag exploits: it cannot change how much momentum a crash must remove, but it can spread that same area under the curve over a longer time, pushing the peak force down.
+The pulse here has a smooth peak at 0.5 s. Increasing its width while holding its height fixed increases impulse. To keep impulse about the same, a wider pulse needs a lower peak, and the chosen interval must include the relevant parts. The 3D animation illustrates a push; use the 2D integral for numerical comparisons rather than inferring impulse from the animated distance travelled.
 
 ## Formal
 
-$J = \int_a^b F(t)\,dt = \Delta p = m\Delta v$ — Newton's second law integrated over time.
+For a constant-mass object, the impulse of the net force is $J=\int_a^b F(t)\,dt=\Delta p=m[v(b)-v(a)]$. Impulse has units N·s, equivalent to kg·m/s. If F is only one of several forces, its impulse is only one contribution to the total momentum change.
 
-For a fixed impulse $J$, stretching the duration $\Delta t$ over which it acts lowers the average (and typically the peak) force, since $J \approx \bar F \,\Delta t$.
+For $b>a$, average net force satisfies the exact relation $J=\bar F(b-a)$. The modeled pulse is $F(t)=F_{\max}\exp[-((t-0.5)/w)^2]$, where w controls width and is not a sharp start-to-end duration. At a time w from the peak, the force is $F_{\max}/e$.
 
 ## Advanced
 
-This is the same area-preserving trade-off seen in signal processing (a narrow, tall pulse and a wide, short one can have equal integral, i.e. equal "DC" content) — in the limit of $w \to 0$ with the area held fixed, the force pulse approaches a Dirac delta function, an idealised instantaneous impulse used throughout mechanics and control theory.
+The pulse integrated over all time has area Fmax·w·√π. A finite interval captures only part of that area, so Fmax·w alone is not the impulse. For a fixed momentum change, increasing duration reduces the average net force; it does not by itself determine the peak, which also depends on the force profile. In several dimensions, momentum and impulse are vectors.
 
 ## Derivation
 
-1. Newton's second law, instant by instant.
-2. Change variables from time to velocity.
-3. Impulse equals the resulting change in momentum.
+1. For constant mass, the net force equals m times the rate of change of velocity.
+2. Integrate over the chosen time interval. The velocity derivative converts the integral into the difference of endpoint velocities.
+3. Multiplying that velocity difference by the constant mass gives the change in momentum.
 
 ## Real world
 
-### Airbags and crumple zones
-Both extend the collision time to reduce peak force for the same necessary change in momentum.
+### Comparing contact forces
 
-### Padded flooring and mats
-Gymnastics and martial arts mats extend landing time to reduce impact force on joints.
+Two contacts can produce the same momentum change with different force histories. Compare the area over the whole contact, not just the largest force.
 
-### Rocket thrust
-Total impulse delivered by a rocket engine (area under its thrust-time curve) determines the resulting change in the rocket's momentum.
+### Force measurements
 
-### Follow-through in sports
-Extending contact time in a golf or tennis swing changes the force profile while delivering the same or greater impulse.
+A force sensor recording a pulse can be used to estimate impulse numerically. The recording window and sampling rate must capture the pulse adequately.
