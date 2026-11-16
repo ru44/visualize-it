@@ -58,7 +58,5 @@ challenges:
   - check: theta1 - asin(n2/n1)*180/pi
     target: 2
     tol: 0.5
-  - check: n1 - n2
-    target: 0
-    tol: 0.02
+  - check: n1 == n2
   - check: n1>n2 and abs(theta1 - asin(n2/n1)*180/pi) < 0.5

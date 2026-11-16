@@ -1,69 +1,61 @@
 ---
 title: Total internal reflection
-summary: >-
-  Shine a flashlight upward from underwater at a steep enough angle and none
-  of the light escapes into the air above — it all bounces back down, which
-  is also how optical fibres carry the internet across oceans without
-  leaking light.
+summary: 'Find the critical angle and the two conditions needed to keep light reflecting inside a higher-index medium.'
 parameters:
-  theta1: angle of incidence θ₁
-  n1: refractive index of medium 1 (denser)
-  n2: refractive index of medium 2 (less dense)
+  theta1: 'θ₁ — incidence angle from the normal'
+  n1: 'n₁ — index on the incident side'
+  n2: 'n₂ — index on the other side'
 variables:
-  - refractive indices of the first and second medium
-  - critical angle θ_c
+  - 'refractive indices of the incident and second media'
+  - 'critical angle, defined for n₁ > n₂'
 ---
 
 ## Try it
 
-1. With the defaults loaded, look for a bent ray crossing the boundary. There isn't one — only the reflected ray, shown at full brightness.
-2. Drag θ1 down. Watch the refracted ray reappear once you cross the critical angle.
-3. Push n2 up toward n1 instead. The critical-angle readout grows until, at n1 = n2, every angle lets light through.
+1. Set n1 = 1.5, n2 = 1 and θ₁ = 50°. The critical angle is about 41.8°, so the model shows total internal reflection.
+2. Lower θ₁ to 40°. A transmitted ray appears. The angle must exceed the critical angle for total internal reflection.
+3. Set n1 = n2 = 1.5. The critical-angle readout disappears: there is no lower-index boundary to produce this effect.
 
 ## Real-life examples
 
-1. **Light inside an optical-fibre core.** A glass core (n1 = 1.5) surrounded by slightly less dense glass cladding (n2 = 1.4) hits the wall at 80°: the light reflects perfectly and keeps travelling down the fibre.
-2. **A diamond's sparkle.** Light inside a diamond (n1 = 2.42) hits its underside at 30°, well past the critical angle for diamond-to-air (n2 = 1): it bounces back up instead of leaking out, which is why a cut diamond sparkles so brightly.
-3. **A swimmer looking up at a shallow angle.** Light trying to leave water (n1 = 1.33) for air (n2 = 1) at 60° from straight up passes the water-to-air critical angle of about 48.8°, so it reflects back down instead of escaping — which is why the sky disappears outside a narrow circle overhead.
+1. **Core and cladding.** Indices 1.5 and 1.4 give a critical angle of about 69.0°. Incidence at 80° satisfies the condition for total internal reflection.
+2. **Diamond to air.** Representative indices 2.42 and 1 give a critical angle of about 24.4°. Incidence at 30° exceeds it.
+3. **Water to air.** Indices 1.33 and 1 give about 48.8°. Incidence at 60° exceeds it. These angles are measured from the normal, not from the surface.
 
 ## Test yourself
 
-1. For whatever n1 > n2 you choose, set θ1 to exactly 2° above the critical angle.
-2. Make total internal reflection impossible: bring n2 up to match n1 (within 0.02).
-3. For any n1 greater than n2, find θ1 within 0.5° of the exact critical angle.
+1. Choose n1 > n2 and set θ₁ within 0.5° of two degrees above the critical angle.
+2. Set n1 and n2 equal, removing the index difference.
+3. With n1 > n2, place θ₁ within 0.5° of the critical angle itself.
 
 ## Intuition
 
-Dive underwater and look straight up: the whole sky looks squeezed into one bright circle above you, and outside that circle the surface looks like a mirror, reflecting the pool floor back at you. That mirror-like edge is what this lesson is about. On screen, $n_1$ is set above $n_2$ by default — light starts in the denser material — and the incoming ray is already past the point where a bent ray could exist: there is no refracted ray crossing the boundary at all, only the reflected one, drawn at full brightness.
+When light goes from a higher-index medium to a lower-index one, its transmitted ray bends away from the normal. Increasing the incident angle turns that ray farther toward the surface. At the critical angle, its limiting direction is along the surface. Beyond that angle, no travelling transmitted ray can carry energy away into the second ideal medium.
 
-Drag $\theta_1$ down and watch the refracted ray reappear once you cross a threshold called the critical angle: at first it skims almost along the boundary, then bends closer to the vertical line as you lower the angle further. Push $n_2$ up toward $n_1$ instead and the critical-angle readout grows, until at $n_1 = n_2$ every angle lets light through and total internal reflection becomes impossible — this only happens, in fact, when light tries to leave a denser material for a less dense one.
+Two conditions matter together: the light must approach from the higher-index side, and the incidence angle must exceed the critical angle. A large angle alone is not enough. The 3D fibre illustrates repeated guidance using this condition. Its bent path is schematic; it does not calculate the local incidence angle at every real fibre bend.
 
 ## Formal
 
-Snell's law, $n_1\sin\theta_1 = n_2\sin\theta_2$, only has a real solution for $\theta_2$ when $n_1\sin\theta_1 \le n_2$; past that point $\sin\theta_2$ would need to exceed 1, which is impossible, so nothing refracts.
+For $n_1>n_2$, set $\theta_2=90^\circ$ in Snell's law. This gives $\theta_c=\arcsin(n_2/n_1)$. Above the threshold, $n_1\sin\theta_1>n_2$, so there is no real transmitted ray angle.
 
-The boundary case defines the critical angle: $\theta_c = \arcsin(n_2/n_1)$, and it only exists when $n_1 > n_2$ — light must start in the denser medium.
+In the ideal lossless model, $\theta_1>\theta_c$ gives power reflectance $R=1$. If $n_1\le n_2$, total internal reflection of this kind cannot occur. Equality at the critical angle is the limiting case, with a grazing transmitted direction; distinguish it from angles strictly above the threshold.
 
 ## Advanced
 
-Total internal reflection is genuinely total: unlike reflection at an ordinary boundary, which always loses some light to transmission, past $\theta_c$ the reflectance is exactly 1 for both polarizations, with no absorption in an ideal lossless medium. This is what makes it useful for guiding light over long distances with almost no loss, rather than merely redirecting it.
+An evanescent field extends a short distance into the lower-index medium even during total internal reflection. Thus “no transmitted ray” does not mean “no field outside.” Another nearby medium can couple energy from that field. Real fibres also have attenuation from absorption, scattering and bends; ideal boundary reflectance is not a promise of lossless transmission over any distance.
 
 ## Derivation
 
-1. Snell's law relates the two angles at any boundary between the two media.
-2. At the critical angle the refracted ray would have to skim exactly along the boundary, an angle of 90°, which pins down $\theta_c$ in terms of the indices.
-3. Solving for the angle gives the critical angle directly from the ratio of the two refractive indices.
+1. Start with Snell's law for a ray approaching from the higher-index side.
+2. At the limiting angle, the transmitted direction is 90° from the normal.
+3. Divide by the incident index and take the inverse sine to obtain the critical angle.
 
 ## Real world
 
 ### Optical fibres
-Light bounces down a glass fibre by total internal reflection off the walls, losing almost none of its intensity over kilometres — the basis of the internet's backbone.
 
-### Diamonds
-A diamond's high refractive index gives it an unusually small critical angle, so light entering the top reflects internally many times before escaping, producing its signature sparkle.
+A core with a higher index than its cladding can guide light. Wave modes and losses are needed for a fuller description than the bouncing-ray picture.
 
-### Endoscopes and medical imaging
-Bundles of optical fibres carry images out of the body by the same total internal reflection that carries telecom signals.
+### Prisms
 
-### Fibre-optic decorative lighting
-Light injected at one end of a plastic fibre emerges only where the fibre is scratched or cut, since an intact surface keeps reflecting it internally.
+A suitable prism can redirect light by total internal reflection at an internal surface. The incidence angle and surrounding medium determine whether the condition holds.
