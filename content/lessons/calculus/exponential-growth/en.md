@@ -1,69 +1,62 @@
 ---
 title: Exponential growth and decay
-summary: >-
-  Money that earns interest on its own interest grows faster and faster the
-  longer it sits — this is the rule behind that snowball effect, for growth
-  or decay alike.
+summary: 'Explore a quantity whose instantaneous rate of change is proportional to its current amount.'
 parameters:
-  k: rate constant k
-  y0: starting amount y₀
-  x: time t
+  k: 'k — instantaneous proportional rate'
+  y0: 'y₀ — amount at time zero'
+  x: 't — selected time'
 variables:
-  - the amount present at time t
-  - fractional change per unit time
-  - the amount at t = 0
+  - 'y: amount at time t'
+  - 'k: instantaneous rate divided by current amount'
+  - 'y₀: initial positive amount'
 ---
 
 ## Try it
 
-1. Drag the point along the curve. Compare the slope readout with the height readout: the slope is always «rate constant k» times the height.
-2. Make «rate constant k» negative. The curve now falls instead of rises.
-3. Drag «starting amount y₀» up and down. The whole curve scales with it, but the doubling or halving time stays the same.
+1. Set y₀ = 1, k = 0.25 and t = 4. The amount is about 2.7183 and the slope about 0.6796. Dividing slope by amount gives 0.25.
+2. Set k = −0.3 and y₀ = 8. Move t from 0 to 5: the amount decreases to about 1.785, while the negative slope becomes smaller in magnitude.
+3. Set k = 0. The amount stays at y₀ for every time. With a nonzero k, changing y₀ rescales the curve without changing its doubling or halving time.
 
 ## Real-life examples
 
-1. **Compound interest over a decade.** Starting with y₀ = 1 and a modest rate k = 0.05, ten years (x = 10) of compounding noticeably grows the amount.
-2. **Radioactive decay of a sample.** Starting with y₀ = 8 and a decay rate k = -0.3, after 5 time units (x = 5) most of the sample is already gone.
-3. **Early epidemic spread.** Starting from y₀ = 0.5 with a fast growth rate k = 0.4, by x = 8 the numbers have grown dramatically — this is why early outbreaks look explosive.
+1. **Slow continuous growth.** With y₀ = 1 and k = 0.05, the amount at t = 10 is about 1.649. The multiplier over one time unit is $e^{0.05}$, about 1.05127, rather than exactly 1.05.
+2. **Continuous decay.** With y₀ = 8 and k = −0.3, the amount at t = 5 is about 1.785, about 22.3% of the starting amount.
+3. **Faster growth.** With y₀ = 0.5 and k = 0.4, the amount at t = 8 is about 12.266. It exceeds the plot's upper bound of 12; use the numerical readout.
 
 ## Test yourself
 
-1. Make the amount reach about 5.
-2. Make the amount decay to below 0.1.
-3. Find a rate and time where the amount has exactly doubled from its start.
+1. Make the amount within 0.3 of 5.
+2. Make the amount less than 0.1.
+3. Make the multiplier from the starting amount within 0.1 of 2.
 
 ## Intuition
 
-Picture a savings account holding 100 dollars today — that starting balance is the slider «starting amount y₀». Each year the account earns a percentage of whatever is already in it, set by «rate constant k»: at 100 dollars you might earn 5 dollars, but once the balance has grown to 200 dollars, the same percentage now earns 10 dollars a year. Drag the point along the curve and compare the two readouts: the slope, how fast the balance is climbing right now, is always «rate constant k» times the current height.
+Suppose a quantity grows at an instantaneous rate equal to one quarter of its current amount per time unit. When the amount is 2, the rate is 0.5; when it is 4, the rate is 1. Growth accelerates because the rate is based on the amount already present. The constant k controls this proportionality, while y₀ is the amount at time zero.
 
-Now make «rate constant k» negative, like a radioactive sample instead of a bank account. The same rule now says the more atoms remain, the faster they decay, so the curve falls quickly at first and then more and more slowly, approaching zero but never quite touching it.
+A negative k makes the amount decrease. As less remains, the decrease per time unit becomes smaller in magnitude. In the continuous model the positive amount approaches zero without reaching it at any finite time. The graph shows an ideal proportional-rate rule; a real process follows it only while the assumed constant rate remains appropriate.
 
 ## Formal
 
-$y' = ky$ with $y(0) = y_0$ has the unique solution $y = y_0 e^{kt}$.
+For constant k, the initial-value problem $dy/dt=ky$ with $y(0)=y_0$ has solution $y(t)=y_0e^{kt}$. Here y₀ is positive. The rate constant has units of inverse time, so kt is dimensionless. The graph's horizontal coordinate x represents time t.
 
-Doubling time (or half-life) is $\ln 2 / |k|$ — independent of the current amount.
+For $k>0$, the doubling time is $T_2=\ln2/k$. For $k<0$, the half-life is $T_{1/2}=\ln2/(-k)$. These times do not depend on y₀. When k = 0, the positive amount is constant and has no finite doubling or halving time.
 
 ## Advanced
 
-Uniqueness: if $y$ solves the equation then $\frac{d}{dt}\left(y e^{-kt}\right) = 0$, so $y e^{-kt}$ is constant. This integrating-factor trick generalises to every linear first-order ODE.
+Over a finite interval Δt, the multiplier is $e^{k\Delta t}$ and the fractional change is $e^{k\Delta t}$ − 1. The approximation kΔt is useful only when its magnitude is small. Multiplying a solution by $e^{-kt}$ gives a constant, which also shows why the initial condition selects a unique solution.
 
 ## Derivation
 
-1. Separate the variables: everything with $y$ on one side.
-2. Integrate both sides.
-3. Exponentiate; the constant is fixed by the starting amount.
+1. Since y is positive here, divide by y and separate the amount and time variables.
+2. Integrate both sides: the integral of 1/y is ln y and the integral of constant k is kt.
+3. Exponentiate, then apply the time-zero condition to identify the positive factor $e^C$ as y₀.
 
 ## Real world
 
-### Compound interest
-Money earning a percentage of itself grows exponentially.
+### A constant proportional-loss model
 
-### Radioactive decay
-Each nucleus has a fixed chance of decaying per second, so the sample shrinks with a constant half-life.
+If a process removes material at a rate proportional to the amount remaining, a negative k gives the model's time course. A fixed amount removed each time unit would instead produce a linear model.
 
-### Epidemics and populations
-Early spread is exponential because every case creates new cases.
+### Comparing growth records
 
-### Cooling
-A hot drink approaches room temperature exponentially (Newton’s law of cooling).
+When a positive quantity follows this model, plotting its natural logarithm against time gives a straight line with slope k. A curved log plot suggests that a constant k may not fit the entire record.
