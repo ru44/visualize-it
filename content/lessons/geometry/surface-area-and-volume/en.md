@@ -1,67 +1,60 @@
 ---
 title: Surface area and volume
-summary: >-
-  Double an object's size and its skin only grows fourfold while its insides
-  grow eightfold — which is why a mouse chills fast and an elephant barely
-  notices the cold.
+summary: 'Compare the square growth of surface area with the cube growth of volume as an object is enlarged.'
 parameters:
-  s: s — size
+  s: 's — cube edge length in metres'
 variables:
-  - the total surface area of the cube
-  - the volume enclosed by the cube
-  - the length of one edge
+  - 'A: cube surface area in square metres'
+  - 'V: cube volume in cubic metres'
+  - 's: cube edge length'
 ---
 
 ## Try it
 
-1. Drag «s — size» from small to large and watch the cube grow. Read «surface area» and «volume» below it as you go.
-2. Watch the ratio «area ÷ volume»: it keeps shrinking as the cube grows, even though both numbers above it are getting bigger.
-3. Compare the sphere and cylinder readouts at the same «s»: their area-to-volume ratios shrink the same way, because this is a fact about size, not about the particular shape.
+1. Set s = 1. The cube has surface area 6 m² and volume 1 m³. These quantities are not equal and have different units.
+2. Set s = 2. Area becomes 24 m², four times as much; volume becomes 8 m³, eight times as much.
+3. Compare area divided by volume: it falls from 6 to 3 per metre. The sphere and cylinder ratios also halve when s doubles, although their sizes are defined differently.
 
 ## Real-life examples
 
-1. **Mouse.** At s = 0.3 m the surface area is tiny but still large next to the volume it has to warm — small animals lose heat fast and must eat constantly to replace it.
-2. **A person-sized crate.** At s = 1 m, area and volume are numerically equal — the crossover size where the two effects balance.
-3. **Elephant.** At s = 3 m, the volume has grown far more than the surface, so an elephant sheds heat slowly and can overheat in the sun without huge ears to add extra surface.
+1. **A small cube.** At s = 0.3 m, the cube has area 0.54 m², volume 0.027 m³ and area-to-volume ratio 20 per metre.
+2. **A one-metre cube.** At s = 1 m, six one-square-metre faces enclose one cubic metre. The area-to-volume ratio is 6 per metre.
+3. **A three-metre cube.** At s = 3 m, the area is 54 m² and volume 27 m³. The ratio is 2 per metre, one third of the one-metre cube's ratio.
 
 ## Test yourself
 
-1. Set the size to exactly 1 m, the crossover point where area equals volume.
-2. Make the surface area exactly 24 square metres.
-3. Make the volume exactly 27 cubic metres.
+1. Set the cube's edge length to 1 m.
+2. Make the surface area 24 m².
+3. Make the volume 27 m³.
 
 ## Intuition
 
-Drag «s — size» and watch the cube swell. Its six faces are the parts that touch the outside air, water or sun — that total is the surface area. Everything inside the cube's skin, every bit of material or body tissue it contains, is the volume.
+Surface area measures the six faces covering the cube; volume measures the space it encloses. A cube with one-metre edges has six square metres of surface but only one cubic metre of volume. The units already tell us that these measure different things.
 
-Both grow as you drag the slider up, but not at the same rate: the faces are flat sheets, so their area grows with the square of the size, while the solid fills a block, so its volume grows with the cube of the size. Push «s» from 1 up to 2 and check the readouts: the area only becomes 4 times bigger, but the volume becomes 8 times bigger — the same doubling, very different growth.
+Doubling an edge doubles both dimensions of every face, making each face four times as large. Inside, two copies fit along each of three directions, so eight original cubes fit in the enlarged cube. Volume therefore increases faster than surface area under uniform enlargement. The dashed reference cube keeps edge length 1 m while the solid cube changes.
 
 ## Formal
 
-For a cube of edge $s$, the surface area is $A = 6s^2$ (six faces, each $s^2$) and the volume is $V = s^3$, so their ratio is $\dfrac{A}{V} = \dfrac{6}{s}$.
+For a cube of positive edge length $s$, surface area is $A=6s^2$ and volume is $V=s^3$. Their ratio is $A/V=6/s$. If s is in metres, this ratio has unit inverse metres, not a unit-free value.
 
-The same pattern holds for any fixed shape scaled up uniformly: area always scales with the square of the size while volume scales with the cube, so the surface-to-volume ratio always falls as $1/s$ — this is the square-cube law.
+Uniform scaling by a positive factor k multiplies every area by $k^2$ and every volume by $k^3$. It therefore multiplies the surface-area-to-volume ratio by $1/k$. This is the square–cube law; it requires the shape's proportions to remain fixed.
 
 ## Advanced
 
-For a sphere of radius $s$, $A = 4\pi s^2$ and $V = \tfrac{4}{3}\pi s^3$, giving ratio $3/s$; for a cylinder of radius $s$ and height $2s$, $A = 6\pi s^2$ and $V = 2\pi s^3$, giving ratio $3/s$ too — the constant in front of $1/s$ depends on the shape, but the $1/s$ decay does not. This is one reason cells stay microscopic: past a certain size a cell's surface can no longer supply its volume fast enough by diffusion alone.
+The sphere readout uses radius s, giving ratio 3/s. The cylinder uses radius s and height 2s, including both end caps, and also gives 3/s. These shapes do not have equal volumes at the same s. Their ratios share the inverse-size pattern, but comparing shape efficiency at equal volume is a different question.
 
 ## Derivation
 
-1. A cube of side $s$ has 6 identical square faces. Each one has area $s^2$, so the total surface area is $A = 6s^2$.
-2. Stack up the cube's volume as $s$ layers, each layer an $s \times s$ sheet one unit thick: that gives $V = s \cdot s \cdot s = s^3$.
-3. Dividing the two formulas gives $\dfrac{A}{V} = \dfrac{6s^2}{s^3} = \dfrac{6}{s}$ — a ratio that gets smaller and smaller as $s$ grows, even though $A$ and $V$ are both increasing.
+1. Each cube face is a square of side s and area s². Six faces give total area 6s².
+2. Volume is base area times height: s² multiplied by s gives s³. This formula also applies to noninteger lengths.
+3. Divide 6s² by s³ to obtain 6/s. Increasing s increases both area and volume, while reducing their ratio.
 
 ## Real world
 
-### Animal heat loss
-Small animals have a large surface area for their volume and lose body heat quickly, so mice and shrews eat almost constantly; large animals like elephants and whales have the opposite problem and need ways to shed excess heat.
+### Wrapping and filling
 
-### Cells and diffusion
-A living cell absorbs food and oxygen only through its surface, so once it grows past a certain size its volume outgrows what that surface can supply — which is why cells divide instead of simply growing bigger.
+Doubling every dimension of a cubical box requires four times the surface material at the same thickness, but creates eight times the internal capacity in an ideal thin-wall model.
 
-### Packaging and heat loss in buildings
-A single large building loses proportionally less heat through its walls than the same volume split into many small houses, which is one reason apartment blocks are cheaper to heat per person.
+### Dividing a block
 
-### Ice cubes and melting
-Crushed ice melts far faster than a single large ice cube of the same total volume, because breaking it up multiplies the surface area exposed to the warm drink.
+Cut a cube into eight equal smaller cubes. Their combined volume is unchanged, but their total exposed surface area is twice the original if all new faces are separated and exposed.
