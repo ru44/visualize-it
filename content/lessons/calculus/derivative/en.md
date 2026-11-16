@@ -1,66 +1,69 @@
 ---
 title: Derivative
-summary: >-
-  A car's speedometer needs to know how fast you're going right now, not your
-  average for the whole trip — that instant reading is what a derivative
-  gives you.
+summary: Find the slope at one point on a curve, even when the slope changes along it.
 parameters:
-  x: point x
+  x: position x on the curve
 variables:
-  - the curve (solid)
-  - its slope at each x (dashed)
+  - the function value; the height of the solid curve at x
+  - the derivative; the slope of the solid curve at x, shown by the dashed graph
 ---
 
 ## Try it
 
-1. Drag the point to the very bottom of the curve. The orange line lies flat and the slope reads 0.
-2. Drag it to the right. The line tilts up and the slope number grows.
-3. Drag it to the left of the bottom. The slope turns negative: the curve is going downhill there.
+1. Move the point to x = 0. The straight line through it is horizontal, and the slope is 0.
+2. Move to x = 3. The straight line rises from left to right, and its slope is 6.
+3. Move to x = -3. The straight line falls from left to right, and its slope is -6.
 
 ## Real-life examples
 
-1. **Standing at the bottom of a valley.** At the curve's lowest point (x = 0) the tangent is flat: slope 0, no climbing needed in either direction.
-2. **Partway up a steep climb.** At x = 3 the tangent tilts sharply upward: slope 6, a steep uphill stretch.
-3. **Descending the other side.** At x = -3 the tangent tilts down: slope -6, a steep downhill.
+1. **The bottom of a curved path.** At x = 0, the tangent is horizontal. The slope at this point is zero, even though the path rises on both sides.
+2. **An uphill section.** At x = 3, the tangent has slope 6. For a small horizontal step to the right, the rise is approximately six times that step.
+3. **A downhill section.** At x = -3, the tangent has slope -6. For a small horizontal step to the right, the height decreases by approximately six times that step.
 
 ## Test yourself
 
-1. Find the point where the slope is exactly 0.
-2. Find the point where the slope is exactly 6.
-3. Find the point where the slope is exactly -8.
+1. Find a point where the slope is 0.
+2. Find a point where the slope is 6.
+3. Find a point where the slope is -8.
 
 ## Intuition
 
-Imagine hiking up a hill whose path is drawn as the curve on screen. At the very bottom of the path (position 0) the ground is flat — no climbing at all. A bit further along (position 3) the path climbs steeply, gaining about 6 metres of height for every metre you walk forward. The path's steepness is different at every point, so there is no single number for "the slope" of the whole hill.
+A straight ramp has the same slope all the way along. A curved path can be nearly flat in one place and steep in another. To describe it, we need a slope at each point. This is what the derivative gives us.
 
-Drag the point along the curve. The small dot on the dashed line beneath it copies down the orange tangent line's slope at exactly that spot — the steepness right there, nowhere else. Collect that reading at every point and you get a brand-new curve, called the derivative: negative while the path is heading downhill, zero exactly at the flat bottom, positive while it is climbing.
+The solid curve shows the function. Move the point and watch the straight line through it turn. This line is the tangent: it follows the curve's direction at that point. Its slope is the derivative there. A positive value means the curve rises as you move right; a negative value means it falls.
+
+The dashed graph records these slopes. At x = 3, its height is 6 because the solid curve's slope there is 6. This describes a local rate of change. It does not mean that moving a whole unit along the curve increases its height by exactly 6, because the slope changes as you move.
 
 ## Formal
 
-$f'(x) = \lim_{h \to 0} \dfrac{f(x+h) - f(x)}{h}$, provided the limit exists.
+Choose two nearby points, separated horizontally by h. Their vertical change divided by h gives the slope between them. The derivative is the value this ratio approaches as h approaches zero: $f'(x) = \lim_{h \to 0} \dfrac{f(x+h) - f(x)}{h}$, provided the limit exists. We approach zero without dividing by zero.
 
-The tangent at $x_0$ is the best linear approximation: $f(x) \approx f(x_0) + f'(x_0)(x - x_0)$.
+Near a chosen position $x_0$, the tangent gives a linear approximation: $f(x) \approx f(x_0) + f'(x_0)(x - x_0)$. Start with the height at the chosen point, then add the slope times the small horizontal change.
 
 ## Advanced
 
-Differentiability at $x_0$ means $f(x_0 + h) = f(x_0) + f'(x_0)h + o(h)$: the error of the tangent shrinks faster than $h$ itself. Differentiable implies continuous, but not conversely — $|x|$ at 0 has two one-sided slopes and no tangent.
+Differentiability at $x_0$ means $f(x_0 + h) = f(x_0) + f'(x_0)h + o(h)$. The notation o(h) means that the approximation error divided by h tends to zero. A differentiable function is continuous, but a continuous function need not be differentiable. For example, $|x|$ has slopes -1 and 1 on opposite sides of zero, so it has no derivative there.
 
 ## Derivation
 
-1. Slope of the secant through $x$ and $x + h$.
-2. Expand and cancel $h$ (allowed, because $h \ne 0$).
-3. Let the second point slide into the first. The secant becomes the tangent.
+1. Take two points at $x$ and $x + h$. For the square function, subtract their heights and divide by their horizontal separation h.
+2. Expand the square and cancel the common terms. Then divide by $h$, which is allowed because $h \ne 0$. The result is 2x + h.
+3. Let h approach zero. The slope between the points approaches 2x, so this is the derivative of the square function.
 
 ## Real world
 
-### Velocity and acceleration
-Velocity is the derivative of position; acceleration is the derivative of velocity.
+### Motion
 
-### Optimization
-Maxima and minima sit where the derivative is zero — the tangent is flat.
+If a function gives position over time, its derivative gives velocity at a particular moment. The derivative of velocity gives acceleration.
 
-### Economics
-Marginal cost is the derivative of total cost: the price of making one more unit.
+### Finding high and low points
 
-### Machine learning
-Gradient descent trains models by repeatedly stepping against the derivative of the error.
+At an interior maximum or minimum where a function is differentiable, its derivative is zero. A zero derivative alone does not guarantee a maximum or minimum; the graph may flatten briefly and keep rising.
+
+### Production costs
+
+The derivative of total cost with respect to quantity estimates the cost of producing a little more. It approximates the cost of one extra unit when the rate changes little over that unit.
+
+### Training a model
+
+Derivatives tell a learning algorithm how a small change in a parameter affects its error. The algorithm uses that information to choose an adjustment that aims to reduce the error.

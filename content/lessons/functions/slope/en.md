@@ -1,67 +1,69 @@
 ---
 title: Slope
-summary: >-
-  Learn to read how fast something changes — the single number that tells
-  you a car's speed, a ramp's steepness, or a price per item, no matter
-  which two points you compare.
+summary: Calculate how much a line rises or falls for each step to the right.
 parameters:
-  m: m — slope
-  b: b — intercept
+  m: slope m
+  b: height at x = 0 (b)
   x: first point x₁
-  h: run Δx
+  h: horizontal gap Δx (h)
 variables:
-  - the run — horizontal distance between the two points
-  - the rise — vertical distance between them
-  - rise divided by run
+  - horizontal change from the first point to the second
+  - vertical change; positive upwards and negative downwards
+  - slope; vertical change divided by horizontal change
 ---
 
 ## Try it
 
-1. Drag the slider «first point x₁» slowly to the right. The two points move along the line together.
-2. Look at the number «slope Δy/Δx» under the picture. It does not change, no matter where the points are.
-3. Now move the slider «m — slope» up. The line gets steeper and the number grows. Slope simply means: how steep.
+1. Set m to 1, b to 0, x to 0 and h to 2. Between the marked points, the line moves 2 units right and 2 units up. Its slope is 1.
+2. Increase h to 4. Both changes are now 4, so their ratio is still 1. Moving the points further apart has not changed the slope.
+3. Keep h at 4 and change m to -1. The line now falls 4 units as you move right. A downward change gives a negative slope.
 
 ## Real-life examples
 
-1. **A car's steady speed.** Driving at m=1.5 km per minute (b=0), checking the trip from minute x=-2 over a 4-minute stretch (h=4): the rise-over-run ratio always reads 1.5, matching the car's speed exactly.
-2. **A wheelchair ramp's grade.** A gentle ramp rises m=0.05 units for every unit it runs — a 5% grade — checked over the full 6-unit length of the ramp (h=6): the ratio still reads 0.05, however much of the ramp you measure.
-3. **Price per item.** Buying items costs m=2.5 per item plus a fixed 1-unit service fee (b=1); comparing a purchase of x=1 item to one 3 items later (h=3): the slope still reads 2.5, the price of one more item, no matter which two purchases you compare.
+1. **A car moving steadily.** Let x measure minutes relative to a chosen moment, and y measure position in kilometres. From x = -2 to x = 2, a car travelling at 1.5 km per minute moves 6 km. Negative time here means before the chosen moment.
+2. **Measuring a ramp.** A ramp rises 0.3 metres over a horizontal distance of 6 metres. Dividing 0.3 by 6 gives a slope of 0.05, also written as 5%.
+3. **Buying notebooks.** Each notebook costs 2.50, with a fixed delivery fee of 1. Buying 4 instead of 1 costs an extra 7.50. Divide that increase by the 3 extra notebooks to get 2.50 per notebook.
 
 ## Test yourself
 
-1. Find a slope (m) and a run (h) whose rise multiplies out to exactly 5.
-2. Find m and b so the line passes through the point where x=3 and y=7.
-3. Make the line drop by more than 10 units over some run — a negative slope steep enough, and a run long enough.
+1. Adjust m and h so the vertical change between the two points is 5.
+2. Set x to 3, then choose m and b so the first point has height 7.
+3. Choose a negative m and a large enough h so the line falls by more than 10 units between the points.
 
 ## Intuition
 
-A car driving at a steady speed covers 1.5 kilometres every minute: after 4 minutes it has gone 6 kilometres, after 8 minutes, 12. Pick any two moments on the blue line here and walk from one point to the other exactly the way you would read that car's trip: first sideways (the run, how much time passed), then up (the rise, how much distance was covered). Slope is that rise for every unit of run.
+Suppose a ramp rises 1 metre over a horizontal distance of 5 metres. Divide the rise by the horizontal distance: 1 divided by 5 is 0.2. This is the ramp's slope. It tells us the rise for each metre travelled horizontally, not along the ramp's surface.
 
-Drag the points to a completely different stretch of the line, or change the run with the h slider. The little triangle changes size every time, yet the ratio of its two sides never changes — read it off under the picture and it stays locked to the number set by the m slider. That constancy, rise always growing in exact step with run, is exactly what makes a straight line straight.
+In the graph, the dashed horizontal and vertical segments show these two changes between the marked points. Divide the vertical change by the horizontal change to find the slope m. For a straight line, choosing different points gives the same slope.
+
+Read the line from left to right. A rising line has positive slope; a falling line has negative slope. A horizontal line has slope zero. The b control moves the line up or down without changing its slope.
 
 ## Formal
 
-For $y = mx + b$ and any $x_1 \ne x_2$: $\dfrac{y_2 - y_1}{x_2 - x_1} = \dfrac{m(x_2 - x_1)}{x_2 - x_1} = m$.
+In the equation $y = mx + b$, m is the slope and b is the height where x is zero. Choose two points with $x_1 \ne x_2$, so their horizontal change is not zero.
 
-All rise–run triangles on a line are similar, so their ratio is an invariant of the line.
+Their slope is $\dfrac{y_2 - y_1}{x_2 - x_1} = \dfrac{m(x_2 - x_1)}{x_2 - x_1} = m$. The numerator is the vertical change; the denominator is the horizontal change. A vertical line has zero horizontal change, so this division cannot give it a slope.
 
 ## Advanced
 
-Constant difference quotient characterises affine maps: $f$ is affine iff $\frac{f(x_2)-f(x_1)}{x_2-x_1}$ is independent of the points. The derivative extends this by asking only for the limit as the points merge.
+A function with a constant difference quotient is affine, meaning it has the form of a straight line with a possible vertical offset. For a curved graph, the slope between two points can change when you choose different points. The derivative describes the limiting slope as the second point approaches the first, when that limit exists.
 
 ## Derivation
 
-1. Evaluate the line at two inputs.
-2. Subtract: the intercept $b$ cancels.
-3. Divide by the run. The result does not depend on which points you picked.
+1. Use the line's equation to write the height at each of the two points.
+2. Subtract the first height from the second. The same offset $b$ appears in both, so it cancels.
+3. Divide by the nonzero horizontal change. The result is m, regardless of which two points you chose.
 
 ## Real world
 
 ### Speed
-On a distance–time graph, slope is speed: metres gained per second elapsed.
 
-### Roads and ramps
-A 6% grade means 6 m of rise per 100 m of run.
+On a graph of distance travelled against time, a slope of 2 metres per second means the distance increases by 2 metres each second.
 
-### Unit prices
-Cost against quantity is a line whose slope is the price per item.
+### Roads
+
+A road grade of 6% means a rise of 6 metres for every 100 metres of horizontal distance.
+
+### Shopping
+
+When each extra item costs the same amount, the slope of total cost against item count is the price per item. A fixed delivery fee changes the starting cost, not the slope.

@@ -76,7 +76,7 @@ Every symbol that appears in `equation` or `derivation` must be explained: eithe
 
 Rules the checker enforces: the number of `variables` explanations, `## Derivation` notes and chart labels must match `lesson.yaml`; every `$…$` segment in a translation must be identical to the English one (translate the words, never the maths); no LaTeX outside `$…$`.
 
-Arabic text follows `content/lessons/STYLE.ar.md`.
+Write for a student meeting the concept for the first time. Follow [the English teaching guide](content/lessons/STYLE.en.md) and [the Arabic writing guide](content/lessons/STYLE.ar.md). Review each language as an explanation in its own right, and check every example against the lesson configuration and visualization. Passing the content validator does not establish teaching quality.
 
 ### Real-life examples and challenges
 

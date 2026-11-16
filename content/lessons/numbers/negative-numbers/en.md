@@ -1,67 +1,67 @@
 ---
 title: Negative numbers
-summary: >-
-  Watch a temperature fall below zero on a thermometer and a number line
-  together, and see why −7 is colder than 0, and colder still than −3.
+summary: Use temperature changes to understand numbers below zero and how to add them.
 parameters:
   T1: starting temperature T1 (°C)
-  dT: change in temperature ΔT (°C)
+  dT: temperature change ΔT (°C)
 variables:
-  - the starting temperature, before the change
-  - the change in temperature — positive for warmer, negative for colder
-  - the final temperature, after the change
+  - temperature before the change
+  - temperature change; positive for a rise, negative for a fall
+  - temperature after the change
 ---
 
 ## Try it
 
-1. Set T1 to 5 and dT to -12: the thermometer marker falls past zero, and the number line arrow points left, landing on -7.
-2. Keep dT at -12 but raise T1 to 20: the same drop of 12 degrees now lands well above zero, at 8.
-3. Set T1 to 0 and drag dT down to -25: watch the marker sink far below the freezing line, to -25, a genuinely cold reading.
+1. Set T1 to 5 and dT to -12. The final temperature is -7. Follow the arrow from 5 to -7 on the number line.
+2. Keep dT at -12 and set T1 to 20. The temperature still falls by 12 degrees, but now it ends at 8.
+3. Set T1 to -3 and dT to 10. The temperature rises through zero and reaches 7.
 
 ## Real-life examples
 
-1. **An overnight frost.** T1 = 5, dT = -12: a 5-degree morning cools by 12 degrees overnight, ending at -7, below freezing.
-2. **A warm front arrives.** T1 = -3, dT = 10: a -3-degree morning warms by 10 degrees, ending at 7, above freezing.
-3. **A cold snap.** T1 = 0, dT = -25: a freezing-point day is hit by a cold front 25 degrees strong, ending at -25.
+1. **A cold night.** The temperature starts at 5°C and falls by 12 degrees. It ends at -7°C.
+2. **A warmer morning.** The temperature starts at -3°C and rises by 10 degrees. It ends at 7°C.
+3. **A large temperature drop.** Starting at 0°C, a fall of 25 degrees takes the temperature to -25°C.
 
 ## Test yourself
 
-1. Find a starting temperature and change that land exactly on 0, the freezing line.
-2. Find a combination that ends below -20 degrees.
-3. Find a combination that ends above 30 degrees.
+1. Choose a starting temperature and a change that give a final temperature of 0°C.
+2. Make the final temperature lower than -20°C.
+3. Make the final temperature higher than 30°C.
 
 ## Intuition
 
-A thermometer is a number line standing on end: zero marks freezing, numbers above it are warmer, numbers below it are colder — and colder means further below zero, not smaller in some other sense. On screen, drag T1 to set where the reading starts, then drag dT to add a change: a positive dT slides the marker up the number line, a negative one slides it down, straight through zero if the change is large enough.
+At 5°C, a drop of 5 degrees takes the temperature to zero. If it falls another 7 degrees, we call the temperature -7°C, or seven degrees below zero. The minus sign tells us which side of zero the temperature is on.
 
-Adding a negative number is exactly this leftward slide. Starting at 5 and adding -12 is not some special rule to memorise — it is the same "move right for positive, move left for negative" arrow you would use for any addition, just crossing zero along the way. Land at -7, and the number line shows plainly that -7 sits further left than 0, which is further left than -3: -7 is the coldest of the three, even though 7 by itself looks like the "biggest" digit.
+On the number line, values increase to the right and decrease to the left. To add -12 to 5, move 12 units left: 5 units take you to zero and the remaining 7 take you to -7. Adding a negative number has the same effect as subtracting its distance from zero.
+
+Compare -7 and -3 on the line. The number -7 is further left, so it is smaller. That is why -7°C is colder than -3°C. The digit 7 is larger than 3, but the minus signs change how we compare these numbers.
 
 ## Formal
 
-Adding a signed change $\Delta T$ to a starting value $T_1$ gives $T_2 = T_1 + \Delta T$, where a negative $\Delta T$ moves $T_2$ to the left of $T_1$ on the number line by that many units.
+We use $\Delta T$ for the temperature change and $T_1$ for the starting temperature. The final temperature is $T_2 = T_1 + \Delta T$. A positive change raises the temperature; a negative change lowers it.
 
-For any two numbers on the line, the one further to the left is the smaller one: $-7 < -3 < 0 < 7$, regardless of how many digits each number has.
+Numbers on a number line increase from left to right. For example, $-7 < -3 < 0 < 7$. The symbol < means “is less than”.
 
 ## Advanced
 
-Distance from zero (magnitude) and position relative to zero (sign) are two separate pieces of information carried by a single signed number; comparing two negative numbers by size means comparing their magnitudes and then reversing the order, which is exactly why -7 is less than -3 even though 7 is greater than 3.
+A number's absolute value is its distance from zero, without its sign. Both -7 and 7 have absolute value 7. Among negative numbers, the one with the greater absolute value is smaller because it lies further left.
 
 ## Derivation
 
-1. Start at 5 and add a change of -12.
-2. Adding -12 is the same as subtracting 12.
-3. 5 minus 12 leaves -7.
+1. Start at 5°C. A fall of 12 degrees is a change of -12.
+2. Adding -12 gives the same result as subtracting 12.
+3. Subtract 5 to reach zero, then subtract the remaining 7. The result is -7°C.
 
 ## Real world
 
-### Weather reports
-Overnight lows and wind-chill readings are routinely negative — a forecast of -7°C means 7 degrees below the freezing line, not "minus" in some abstract sense.
+### Temperature
 
-### Bank balances and debt
-A balance of -50 dollars means you owe 50 dollars — the same number line, with 0 as "owing nothing" and negative values as debt rather than savings.
+A reading of -7°C means seven degrees below 0°C. It does not mean that there is no heat.
 
-### Elevation
-Death Valley sits at about -86 metres, below sea level (0); a mountain at 2,000 metres and a valley at -86 metres are compared on the very same signed number line.
+### Money owed
 
-### Sports and games
-A golf score of -4 (four under par) beats a score of +2, because lower is better in golf — the same number line, read in the direction that matches the game.
+If you record money you have as positive and money you owe as negative, a debt of 50 is recorded as -50. Repaying 20 changes that balance to -30.
+
+### Height relative to a reference
+
+If sea level is our zero, a point 10 metres below it has height -10 metres. A negative height describes a position below the chosen reference.

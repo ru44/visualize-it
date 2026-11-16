@@ -51,13 +51,13 @@ charts: []
 
 ## Intuition
 
-First paragraph. Refer to what the learner sees and drags. Inline maths goes between dollars: $f(x) = x^2$.
+Start with one concrete question or worked example. Explain the idea before its name or symbols. Follow content/lessons/STYLE.en.md; for Arabic, also read STYLE.ar.md.
 
-Second paragraph.
+Connect the example to the actual diagram. Explain what changes, what stays fixed, and why. Define symbols before using them; inline maths goes between dollars: $f(x) = x^2$.
 
 ## Formal
 
-The precise statement, with $\\LaTeX$ between dollars.
+State the rule and its conditions. Define each symbol and explain the equation in words. Put mathematical notation between dollars.
 
 ## Advanced
 
@@ -65,12 +65,12 @@ One paragraph for university level and above (optional).
 
 ## Derivation
 
-1. Note for step 1, matching derivation[0] in lesson.yaml.
+1. Explain why step 1 follows, matching derivation[0] in lesson.yaml.
 
 ## Real world
 
 ### Where it is used
-One or two sentences.
+Give a specific use and explain how this concept helps. Check values and units.
 `,
 )
 console.log('created ' + dir + '\nnext: fill lesson.yaml and en.md, then `npm run check`')

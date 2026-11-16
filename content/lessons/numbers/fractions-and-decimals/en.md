@@ -1,66 +1,66 @@
 ---
 title: Fractions and decimals
-summary: >-
-  See the same amount three ways — as a fraction of a pizza, a point on a
-  ruler, and a decimal number — and watch them move together.
+summary: Learn why three quarters and 0.75 describe the same amount.
 parameters:
-  n: top number n (how many slices you take)
-  d: bottom number d (how many slices the pizza is cut into)
+  n: numerator n (number of parts taken)
+  d: denominator d (equal parts in one whole)
 variables:
-  - the numerator — how many equal parts you have
-  - the denominator — how many equal parts make one whole
+  - numerator; the number of equal parts taken
+  - denominator; the number of equal parts in one whole
 ---
 
 ## Try it
 
-1. Set n to 1 and d to 2: the pizza shows one shaded slice out of two, and the ruler marker sits exactly halfway between 0 and 1.
-2. Raise d to 8 while keeping n at 1: the slices get thinner, the shaded wedge shrinks, and the decimal readout drops from 0.5 toward 0.125.
-3. Push n past d, to n = 7 and d = 4: a full pizza lights up on the left, a second pizza starts filling, and the ruler marker walks past the mark labelled 1.
+1. Set n to 1 and d to 2. Half the circle is shaded, and the number-line marker reads 0.5.
+2. Keep n at 1 and increase d to 8. Each part is now smaller. One eighth is 0.125.
+3. Set n to 7 and d to 4. The small filled circle represents one whole; the large circle shows the remaining three quarters. The marker reads 1.75.
 
 ## Real-life examples
 
-1. **Sharing a pizza between two.** n = 1, d = 2: cut a pizza into 2 slices and take 1 — half a pizza, 0.5 of the whole.
-2. **A pizza cut for four.** n = 3, d = 4: cut into 4 slices and take 3 — three-quarters of the pizza, 0.75 of the whole.
-3. **A pizza cut for eight.** n = 7, d = 8: cut into 8 thin slices and take 7 — nearly the whole pizza, 0.875 of it.
+1. **Half a pizza.** Cut a pizza into 2 equal slices and take 1. You have half, or 0.5 of a pizza.
+2. **Three quarters of a pizza.** Cut it into 4 equal slices and take 3. You have three quarters, or 0.75 of a pizza.
+3. **Seven eighths of a pizza.** Cut it into 8 equal slices and take 7. You have 0.875 of a pizza, with one slice left.
 
 ## Test yourself
 
-1. Find a slice count that lands the ruler marker exactly on 0.5, the halfway mark.
-2. Set the pizza to show 7 shaded slices out of 8 cuts.
-3. Take more slices than the pizza was cut into, so the fraction reaches a whole pizza or more.
+1. Choose n and d so the fraction equals 0.5.
+2. Show 7 shaded parts out of 8 equal parts.
+3. Choose n and d so the amount is at least one whole.
 
 ## Intuition
 
-Cut a pizza into d equal slices and take n of them — that is what the fraction $\frac{n}{d}$ means, nothing more mysterious than a count of slices out of a count of cuts. On screen, drag n and watch that many slices turn orange; drag d and watch the knife lines multiply, cutting each slice thinner without changing the size of the pizza.
+Cut a pizza into 4 equal slices and take 3. We call that three quarters. In the fraction $\frac{n}{d}$, the bottom number d tells us how many equal parts make a whole. The top number n tells us how many of those parts we take. Here, n is 3 and d is 4.
 
-The same amount also has a spot on a ruler: mark 0 at one end, 1 a fixed distance away, and split that distance into d equal ticks. Taking n of those ticks lands you at exactly the same fraction of the way along — the marker on the ruler and the shaded pizza always agree, because they are the same division done two different ways. Read the marker's position as a plain number, like 0.75, and you have the third way: the decimal.
+A decimal is another way to write the amount. Divide 3 by 4 to get 0.75. This means 75 hundredths of a whole, the same amount as three quarters. On the number line, the marker sits three quarters of the way from 0 to 1.
+
+The parts must be equal. Increasing d while keeping n fixed makes each part smaller, so you take less. Increasing n while keeping d fixed means taking more parts of the same size. A fraction can also be greater than one: seven quarters make one whole and three quarters more.
 
 ## Formal
 
-A fraction $\frac{n}{d}$ means the whole divided into $d$ equal parts, of which $n$ are taken; its value equals the division $n\div d$ carried out as a decimal.
+A fraction $\frac{n}{d}$ represents n parts when each whole is split into d equal parts. Its value is $n\div d$. The denominator must not be zero.
 
-Two fractions with different n and d can represent the same point on the ruler — $\frac{1}{2}$ and $\frac{4}{8}$ mark the identical spot — because scaling n and d by the same factor does not move the marker.
+Equivalent fractions have the same value. For example, $\frac{1}{2} = \frac{4}{8}$. Multiplying the numerator and denominator by the same nonzero number changes the way we count the parts, but not the amount.
 
 ## Advanced
 
-Every fraction's decimal either stops after finitely many digits (when d's only prime factors are 2 and 5, as with $\frac{3}{4}=0.75$) or repeats forever in a fixed block (as with $\frac{1}{3}=0.333\ldots$), a fact that follows from how long division with a fixed divisor can only ever produce finitely many distinct remainders before one repeats.
+First reduce a fraction to lowest terms. Its decimal terminates if the denominator has no prime factors other than 2 and 5, as in $\frac{3}{4}=0.75$. Otherwise, the decimal repeats, as in $\frac{1}{3}=0.333\ldots$. A screen may round a repeating decimal; the fraction still gives its exact value.
 
 ## Derivation
 
-1. The fraction $\frac{3}{4}$ is the division 3 shared among 4.
-2. Carrying out that division as a decimal gives 0.75.
-3. 0.75 is also 75 out of 100 equal parts — the same amount, cut a different way.
+1. To find the decimal value of $\frac{3}{4}$, divide 3 by 4.
+2. The division gives 0.75.
+3. The decimal 0.75 means 75 hundredths. It is the same amount as three quarters.
 
 ## Real world
 
 ### Recipes
-A recipe calling for $\frac{3}{4}$ cup of flour and a scale reading 0.75 cups are asking for the exact same amount.
+
+A measuring jug marked 0.75 cups gives the same amount as three quarters of a cup.
 
 ### Money
-A quarter is $\frac{1}{4}$ of a dollar and also 0.25 dollars — coins are fractions of a whole dollar written as decimals.
 
-### Measuring length
-A ruler marked in tenths lets you read a length as either a fraction of a metre or straight off as a decimal, like 0.3 m for $\frac{3}{10}$ m.
+Half a unit of currency is 0.50; a quarter is 0.25. The decimal records parts of the whole unit.
 
-### Sports statistics
-A batting average like .750 for 3 hits in 4 at-bats is exactly this fraction, $\frac{3}{4}$, written as a decimal.
+### Length
+
+A length of 0.3 metres is three tenths of a metre. It is also 30 centimetres.
