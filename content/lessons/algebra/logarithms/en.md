@@ -1,15 +1,12 @@
 ---
 title: Logarithms as the inverse of powers
-summary: >-
-  Find out how many times you would need to multiply by a fixed factor to
-  reach a number — the scale behind pH, earthquake magnitude, and digital
-  bits.
+summary: 'Find the exponent needed to turn a chosen base into a given positive number.'
 parameters:
-  b: base b
-  x: x
+  b: 'base b (greater than 1 here)'
+  x: 'positive input x'
 variables:
-  - the base of the logarithm (and of the paired exponential)
-  - 'the input to the logarithm, must be positive'
+  - 'base used for both the logarithm and the paired exponential'
+  - 'positive number whose exponent we want to find'
 charts:
   - title: 'The other half of the pair: b^x'
     xLabel: x
@@ -20,54 +17,56 @@ charts:
 
 ## Try it
 
-1. Drag x and watch the curve's height — that height is the log of x.
-2. Raise the "base b" slider and watch the curve flatten, needing a much bigger x to reach the same height.
-3. Compare with the dashed curve below, $b^x$ — notice the two curves mirror each other.
+1. Set b to 2 and x to 8. The graph's height is 3 because 2 cubed equals 8.
+2. Keep b at 2 and set x to 0.5. The output is -1 because 2 to the power -1 is one half.
+3. Set x to 1 and change b. The output remains zero. The additional chart shows the paired exponential; the two plots use different windows, so compare their values rather than their apparent shapes.
 
 ## Real-life examples
 
-1. **Bacteria doubling.** A colony doubles every hour (base b=2). After growing 8-fold (x=8), the curve reads exactly 3 — three doubling hours have passed.
-2. **A rumor tripling.** A rumor's audience triples every day (base b=3). Once it reaches 9 times its start size (x=9), the curve reads 2 — two days have passed.
-3. **Compound savings.** Savings grow by a factor of 1.5 each year (base b=1.5). Reaching 10 times the original amount (x=10) takes just under 6 years.
+1. **Three doublings.** At b = 2 and x = 8, the result is 3. An eightfold increase takes three doubling steps.
+2. **Two triplings.** At b = 3 and x = 9, the result is 2. Multiplying by three twice gives nine.
+3. **Repeated multiplication by 1.5.** At b = 1.5 and x = 10, the result is about 5.68. A continuous growth model reaches a tenfold factor at that time; with whole discrete steps, it first exceeds ten after six steps.
 
 ## Test yourself
 
-1. Find a base other than 2 where the curve still reads exactly 3 somewhere — more than one answer works.
-2. Make the curve read exactly -1.
-3. Set the base to 3, then find the x where the curve reads exactly 2 — the point where two triplings land.
+1. Choose a base more than 0.1 away from 2 and set x within 0.1 of its cube.
+2. Choose settings that give a logarithm within 0.02 of -1.
+3. Set b to 3 and find an input giving an output approximately 2.
 
 ## Intuition
 
-A bacteria colony doubles in size every hour. After 3 hours it has grown 8-fold — 2 doubled three times is 8. The curve on this screen answers the reverse question: given that the colony is now 8 times bigger, drag x to 8 and read the height of the curve — it lands on 3, the number of doubling hours that must have passed. Compare it with the dashed curve below, $b^x$: the two curves are mirror images of each other, because one undoes exactly what the other does.
+Two cubed equals eight. The power calculation starts with the base and exponent and finds the result. A logarithm reverses the question: knowing the base is 2 and the result is 8, what was the exponent? It was 3.
 
-Raise the base b and the curve flattens: reaching the same height now needs a far bigger x, because a bigger base reaches any given multiple faster — tripling gets you further per step than doubling does. Whatever the base, the curve always crosses zero at x = 1, since raising any base to the power 0 always gives 1.
+A negative answer is possible even though the input must be positive. A result of one half requires exponent -1 for base 2. An input of 1 always requires exponent zero. Values between these examples can require fractional exponents.
+
+The base slider here stays above 1. For a fixed input greater than 1, increasing the base reduces the required exponent: larger multiplication steps reach the same target in fewer steps. For inputs between zero and one, consider the negative exponent explicitly rather than assuming every output decreases.
 
 ## Formal
 
-$y = \log_b x$ is defined for $x > 0$ as the unique $y$ with $b^y = x$ ($b > 0$, $b \ne 1$); it is the inverse function of $b^x$.
+The statement $y=\log_b x$ means $b^y=x$, where x is positive, b is positive and b differs from 1. The logarithm returns the unique exponent y.
 
-$\log_b(xy) = \log_b x + \log_b y$ and $\log_b(x^p) = p\log_b x$.
+For positive x and z, $\log_b(xz)=\log_b x+\log_b z$. For real p and positive x, $\log_b(x^p)=p\log_b x$. These laws come from multiplying powers and raising powers to another power.
 
 ## Advanced
 
-Because $\log_b x = \ln x / \ln b$, every logarithm is a rescaling of the natural log; this is why calculators need only implement one logarithm and derive the rest, and why $d(\log_b x)/dx = 1/(x\ln b)$ carries an extra factor compared to the natural log.
+The change-of-base identity is $\log_b x=\ln x/\ln b$. It lets a calculator evaluate another base using natural logarithms. Base 1 is excluded because its natural logarithm is zero, and because every power of 1 has the same value.
 
 ## Derivation
 
-1. Definition: $y$ is the exponent that turns $b$ into $x$.
-2. Exponent addition corresponds to multiplying the outputs.
-3. Taking logs turns multiplication into addition.
+1. Name the exponent y that makes b raised to y equal x.
+2. Add two such exponents. The power rule shows that the corresponding outputs multiply.
+3. Applying the logarithm converts that product back into the sum of the two exponents.
 
 ## Real world
 
-### pH and the Richter scale
-Both are base-10 logarithms of a quantity that spans many orders of magnitude, compressed into a manageable range.
+### Growth steps
 
-### Decibels
-Sound intensity is perceived roughly logarithmically, so loudness is measured in a log scale.
+A logarithm can solve for the number of repeated multiplication steps needed to reach a target ratio.
 
-### Information theory
-The number of bits needed to encode $N$ equally likely messages is $\log_2 N$.
+### Information
 
-### Solving for time in growth models
-Doubling time or half-life comes from taking a logarithm of an exponential equation.
+For N equally likely alternatives, log base 2 of N measures the information in bits. A fixed-length binary code needs a whole number of bits, rounded up if necessary.
+
+### Comparing scales
+
+Logarithmic axes represent equal ratios by equal distances. Always check the base and the meaning of the plotted quantity.
