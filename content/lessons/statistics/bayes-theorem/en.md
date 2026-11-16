@@ -1,72 +1,62 @@
 ---
 title: Conditional probability and Bayes’ theorem
-summary: >-
-  A test that is 99% accurate still misleads you more often than you'd guess —
-  see why a positive result rarely means what it seems.
+summary: 'Find the share of positive results that are true positives by counting both true and false positives.'
 parameters:
-  prior: how common the condition is
-  sens: sensitivity — positives among the ill
-  spec: specificity — negatives among the healthy
+  prior: 'prevalence — proportion with the condition'
+  sens: 'sensitivity — positive results among those with the condition'
+  spec: 'specificity — negative results among those without it'
 variables:
-  - the prior — how likely the condition was before any test
-  - >-
-    the sensitivity — how often the test is positive when the condition is
-    present
-  - >-
-    the posterior — what you actually want: the chance of the condition given a
-    positive test
+  - 'prior probability that the condition is present'
+  - 'sensitivity: positive-result probability given the condition'
+  - 'posterior: condition probability given a positive result'
 ---
 
 ## Try it
 
-1. Watch the grid: it splits 1000 people into those with the condition (left) and without it (right), and into a positive test (top) or negative (bottom).
-2. Drag the «how common the condition is» slider down toward 1%. Watch the false positives among the healthy swamp the true positives among the sick.
-3. Now drag it up toward 20%. The same test means something very different: most positive results are now real.
+1. Set prevalence to 1%, sensitivity to 99% and specificity to 95%. Per 1000 people, the model expects 9.9 true positives and 49.5 false positives. The display rounds these counts, but uses unrounded values for the 16.67% posterior.
+2. Keep the test settings and raise prevalence to 20%. More positives now come from people with the condition, and the posterior rises to about 83.19%.
+3. Return prevalence to 1% and raise specificity to 99.5%. Reducing false positives raises the posterior to about 66.67%, even though sensitivity stays unchanged.
 
 ## Real-life examples
 
-1. **Mammography screening.** Only about 1 in 100 women screened actually has breast cancer; the test catches 99% of real cases but also wrongly flags 5% of healthy women, so most positive results turn out to be false alarms.
-2. **Flu season rapid test.** When 1 in 5 patients at a busy clinic really has the flu, a test that is right 90% of the time on the sick and 85% of the time on the healthy gives positive results that are usually genuine.
-3. **Workplace drug test.** Only about 1 in 20 employees actually uses the tested drug; even a test that is 98% accurate produces enough false alarms among the other 19 that a single positive result gets checked again.
+1. **A hypothetical rare condition.** At prevalence 1%, sensitivity 99% and specificity 95%, about one-sixth of positive results are true positives. These are teaching values, not performance figures for a named medical test.
+2. **A more common condition.** With prevalence 20%, sensitivity 90% and specificity 85%, the expected counts per 1000 are 180 true positives and 120 false positives. The posterior is 60%.
+3. **Fewer false alarms.** At prevalence 5%, sensitivity 98% and specificity 98%, there are 49 expected true positives and 19 false positives per 1000. The posterior is about 72.06%.
 
 ## Test yourself
 
-1. Adjust the sliders until a positive result means exactly a 50% chance of truly having the condition.
-2. Keep «how common the condition is» at 2% or below, but push your confidence after a positive test above 95%.
-3. Set «how common the condition is» to 20% or higher, but make the test unreliable enough that a positive result still leaves you 40% confident or less.
+1. Adjust the controls until the probability of the condition given a positive result is about 50%.
+2. Keep prevalence at most 2% and make that posterior probability at least 95%.
+3. Keep prevalence at least 20% and make the posterior at most 40%.
 
 ## Intuition
 
-Picture 1000 people tested for a condition. With the starting numbers, 10 of them truly have it, and the test catches almost all of them — about 10 true positives. But among the 990 healthy people, 5% of them, about 50, also test positive by mistake. So out of roughly 60 positive results, only 10 are real: a positive test means about a 1-in-6 chance of actually being ill, not 99%.
+A test can detect most people with a condition yet produce many false positives when the condition is rare. Out of 1000 people with the default settings, only 10 have the condition, and nearly all test positive. The other 990 form a much larger group, so a 5% false-positive rate produces about 50 additional positives. To interpret a positive result, compare the true positives with all positives, not with all people who have the condition.
 
-Drag the «how common the condition is» slider up and watch your true confidence climb along with it: the test itself has not changed, only how common the condition was to begin with. This is why screening whole healthy populations for rare diseases produces so many false alarms, and why doctors often order a second, independent test before treating anyone.
+This changes the question from “How often is the test positive when the condition is present?” to “Among positive results, how often is the condition present?” The first is sensitivity; the second is the posterior probability. The rectangles divide the population by condition and result. Very narrow regions have a minimum display width, and counts are rounded, so use the probability readout rather than measuring pixel areas or dividing rounded counts.
 
 ## Formal
 
-$P(A \mid B) = \dfrac{P(A \cap B)}{P(B)}$ and $P(B) = P(B \mid A)P(A) + P(B \mid A^c)P(A^c)$ (total probability). Substituting gives Bayes’ theorem.
+Let A mean the condition is present and B mean the result is positive. Provided $P(B)>0$, Bayes' theorem gives $P(A\mid B)=\frac{P(B\mid A)P(A)}{P(B)}$. The vertical bar means “given”; reversing what follows it changes the question.
 
-In odds form: posterior odds = prior odds × likelihood ratio, with LR = sensitivity / (1 − specificity).
+The positive-result probability is $P(B)=P(B\mid A)P(A)+P(B\mid A^c)P(A^c)$. The two terms are true positives and false positives. Sensitivity is $P(B\mid A)$, specificity is $P(B^c\mid A^c)$, and the false-positive rate is one minus specificity. Prevalence supplies $P(A)$ for this population model.
 
 ## Advanced
 
-Bayesian inference treats parameters as random: $p(\theta \mid \text{data}) \propto p(\text{data} \mid \theta)\,p(\theta)$. Conjugate priors (Beta for a Bernoulli $p$, Gamma for a Poisson rate) make the update closed-form; in general it is done numerically by MCMC. The base-rate fallacy is the human failure to weight the prior.
+With a nonzero false-positive rate, posterior odds equal prior odds times sensitivity divided by that false-positive rate. Updating repeatedly requires a likelihood that accounts for dependence between observations; two tests on the same person are not automatically independent. The population used for the prior and the conditions under which test performance was measured both matter.
 
 ## Derivation
 
-1. The same overlap counted two ways — the top-left block of the grid.
-2. All positives: true positives plus false positives.
-3. Divide: the share of positives that are genuine.
+1. Express the same overlap, A and B together, using either conditional probability multiplied by its conditioning event's probability.
+2. Divide all positive results into two disjoint groups: those with the condition and those without it.
+3. Divide the true-positive probability by the total positive probability to obtain the fraction of positives that have the condition.
 
 ## Real world
 
-### Medical screening
-Mammography, PSA and prenatal tests all suffer from low base rates; results are interpreted with Bayes.
+### Automated alerts
 
-### Spam filters
-The probability an email is spam given its words is updated word by word — “naive Bayes”.
+A detector may flag both real faults and normal operation. When real faults are rare, even a small false-alarm rate can account for many of the alerts.
 
-### Courts and forensics
-A DNA match probability of 1 in a million is not a 1-in-a-million chance of innocence when millions of people were searched: the prosecutor’s fallacy.
+### Classifying messages
 
-### Self-driving cars
-Sensor readings update the car’s belief about where obstacles are, frame by frame, with exactly this rule.
+A message classifier combines information about message categories with evidence from the message. Bayes' rule describes the update; the quality of the result depends on whether the probabilities in the model fit the situation.
