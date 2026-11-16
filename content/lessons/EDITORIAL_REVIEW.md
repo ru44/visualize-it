@@ -1,6 +1,6 @@
 # Bilingual editorial review
 
-68 of 390 lessons reviewed. 322 remain.
+81 of 390 lessons reviewed. 309 remain.
 
 A checked lesson has had both language files rewritten or reviewed against its configuration and visualization source. Automated validation alone does not mark a lesson reviewed. Browser interaction and independent learner review remain separate checks.
 
@@ -446,21 +446,21 @@ Scope: every lesson, including summaries, parameter labels, examples, exercises,
 - [ ] [thermal-conductivity-and-insulation](thermodynamics/thermal-conductivity-and-insulation/en.md) · [Arabic](thermodynamics/thermal-conductivity-and-insulation/ar.md)
 - [ ] [thermal-expansion](thermodynamics/thermal-expansion/en.md) · [Arabic](thermodynamics/thermal-expansion/ar.md)
 
-## trigonometry (0/13)
+## trigonometry (13/13)
 
-- [ ] [angles-of-elevation-and-depression](trigonometry/angles-of-elevation-and-depression/en.md) · [Arabic](trigonometry/angles-of-elevation-and-depression/ar.md)
-- [ ] [cosine-rule](trigonometry/cosine-rule/en.md) · [Arabic](trigonometry/cosine-rule/ar.md)
-- [ ] [degrees-and-radians](trigonometry/degrees-and-radians/en.md) · [Arabic](trigonometry/degrees-and-radians/ar.md)
-- [ ] [inverse-trig-functions](trigonometry/inverse-trig-functions/en.md) · [Arabic](trigonometry/inverse-trig-functions/ar.md)
-- [ ] [polar-coordinates](trigonometry/polar-coordinates/en.md) · [Arabic](trigonometry/polar-coordinates/ar.md)
-- [ ] [sine-function-parameters](trigonometry/sine-function-parameters/en.md) · [Arabic](trigonometry/sine-function-parameters/ar.md)
-- [ ] [sine-rule](trigonometry/sine-rule/en.md) · [Arabic](trigonometry/sine-rule/ar.md)
-- [ ] [solving-right-triangles](trigonometry/solving-right-triangles/en.md) · [Arabic](trigonometry/solving-right-triangles/ar.md)
-- [ ] [tangent-function](trigonometry/tangent-function/en.md) · [Arabic](trigonometry/tangent-function/ar.md)
-- [ ] [trig-equations](trigonometry/trig-equations/en.md) · [Arabic](trigonometry/trig-equations/ar.md)
-- [ ] [trig-identities](trigonometry/trig-identities/en.md) · [Arabic](trigonometry/trig-identities/ar.md)
-- [ ] [unit-circle](trigonometry/unit-circle/en.md) · [Arabic](trigonometry/unit-circle/ar.md)
-- [ ] [vector-components](trigonometry/vector-components/en.md) · [Arabic](trigonometry/vector-components/ar.md)
+- [x] [angles-of-elevation-and-depression](trigonometry/angles-of-elevation-and-depression/en.md) · [Arabic](trigonometry/angles-of-elevation-and-depression/ar.md)
+- [x] [cosine-rule](trigonometry/cosine-rule/en.md) · [Arabic](trigonometry/cosine-rule/ar.md)
+- [x] [degrees-and-radians](trigonometry/degrees-and-radians/en.md) · [Arabic](trigonometry/degrees-and-radians/ar.md)
+- [x] [inverse-trig-functions](trigonometry/inverse-trig-functions/en.md) · [Arabic](trigonometry/inverse-trig-functions/ar.md)
+- [x] [polar-coordinates](trigonometry/polar-coordinates/en.md) · [Arabic](trigonometry/polar-coordinates/ar.md)
+- [x] [sine-function-parameters](trigonometry/sine-function-parameters/en.md) · [Arabic](trigonometry/sine-function-parameters/ar.md)
+- [x] [sine-rule](trigonometry/sine-rule/en.md) · [Arabic](trigonometry/sine-rule/ar.md)
+- [x] [solving-right-triangles](trigonometry/solving-right-triangles/en.md) · [Arabic](trigonometry/solving-right-triangles/ar.md)
+- [x] [tangent-function](trigonometry/tangent-function/en.md) · [Arabic](trigonometry/tangent-function/ar.md)
+- [x] [trig-equations](trigonometry/trig-equations/en.md) · [Arabic](trigonometry/trig-equations/ar.md)
+- [x] [trig-identities](trigonometry/trig-identities/en.md) · [Arabic](trigonometry/trig-identities/ar.md)
+- [x] [unit-circle](trigonometry/unit-circle/en.md) · [Arabic](trigonometry/unit-circle/ar.md)
+- [x] [vector-components](trigonometry/vector-components/en.md) · [Arabic](trigonometry/vector-components/ar.md)
 
 ## waves (0/15)
 
