@@ -73,7 +73,7 @@ useThree(
       bArrow.setLength(bLen, 0.3, 0.18)
 
       tag.position.set(0, TANK_H + 0.4, 0)
-      paint(tag, sinks ? t('viz3d.buoyancy.sinks') : t('viz3d.buoyancy.floats'), sinks ? theme.neg : theme.pos)
+      paint(tag, sinks ? t('viz3d.buoyancy.sinks') : rhoObj === rhoFluid ? t('viz3d.buoyancy.neutral') : t('viz3d.buoyancy.floats'), sinks ? theme.neg : theme.pos)
     }
   },
   { camera: [5.5, 4.3, 7.5], target: [0, 1.3, 0] },

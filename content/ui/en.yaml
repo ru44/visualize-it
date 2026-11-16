@@ -391,6 +391,7 @@ buoy.hint: drag up or down to change the object’s density
 buoy.weight: weight
 buoy.buoyancy: buoyant force
 buoy.submerged: submerged
+buoy.neutral: neutrally buoyant
 buoy.state: result
 buoy.sinks: sinks
 buoy.floats: floats

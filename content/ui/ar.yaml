@@ -391,6 +391,7 @@ buoy.hint: اسحب لأعلى أو لأسفل لتغيير كثافة الجس�
 buoy.weight: الوزن
 buoy.buoyancy: قوة الطفو
 buoy.submerged: الجزء المغمور
+buoy.neutral: متعادل الطفو
 buoy.state: النتيجة
 buoy.sinks: يغوص
 buoy.floats: يطفو
