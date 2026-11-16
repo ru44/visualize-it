@@ -220,7 +220,7 @@ coin.successes: successes
 coin.proportion: proportion so far
 coin.gap: distance from p
 coin.again: ↻ again
-coin.band: 'shaded: where 95% of runs stay'
+coin.band: 'shaded: approximate 95% range at each fixed trial count'
 bayes.hint: Everyone in a population of 1000. Drag to change how common the condition is.
 bayes.tp: ill, test positive
 bayes.fp: healthy, test positive
