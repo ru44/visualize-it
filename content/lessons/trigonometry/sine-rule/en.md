@@ -1,71 +1,65 @@
 ---
 title: Sine rule
-summary: >-
-  In any triangle, not just a right triangle, a bigger side always sits opposite
-  a bigger angle, in a ratio that is exactly the same at all three corners.
+summary: 'Pair each side with its opposite angle to use one shared ratio throughout a triangle.'
 parameters:
-  a: side a — opposite angle A
-  b: side b — opposite angle B
-  c: side c — opposite angle C
+  a: 'a — length opposite A (m)'
+  b: 'b — length opposite B (m)'
+  c: 'c — length opposite C (m)'
 variables:
-  - side a, opposite angle A
-  - side b, opposite angle B
-  - side c, opposite angle C
-  - angle A, worked out from the three sides
-  - angle B, worked out from the three sides
-  - angle C, worked out from the three sides
+  - 'a: side opposite A'
+  - 'b: side opposite B'
+  - 'c: side opposite C'
+  - 'A: angle opposite a'
+  - 'B: angle opposite b'
+  - 'C: angle opposite c'
 ---
 
 ## Try it
 
-1. Look at the three readouts a/sin A, b/sin B and c/sin C for the starting 5 m, 6 m, 7 m triangle: all three land on the same number.
-2. Drag slider c up or down. All three ratios change together, yet stay equal to one another the whole time.
-3. Pull sliders a and b close together, so the two sides are nearly equal, and watch angles A and B become nearly equal too.
+1. Set a = 5, b = 6 and c = 7 m. Compare a/sin A, b/sin B and c/sin C: all are about 7.144 m.
+2. Change c to 8 while keeping a and b fixed. The three ratios remain equal to each other, although their shared value changes.
+3. Set a = b = 4 and c = 7. Angles A and B are equal. Keep the sum of the two shorter sides greater than the longest side to retain a triangle.
 
 ## Real-life examples
 
-1. **A triangular field measured by tape.** Sides of 5 m, 6 m and 7 m: the sine rule turns those three lengths into every angle of the field.
-2. **A tall, narrow roof truss.** Sides of 4 m, 4 m and 7 m: the two equal sides sit opposite two equal, small angles, while the odd side out gets the wide apex angle.
-3. **Two legs of a sailing course.** Legs of 6, 8 and 9 nautical miles: a navigator uses the same ratio to work out the heading change at each turn.
+1. **Three different sides.** Lengths 5, 6 and 7 m give angles about 44.4°, 57.1° and 78.5°. Dividing each length by the sine of its opposite angle gives the same value.
+2. **An isosceles triangle.** Lengths 4, 4 and 7 m give A = B ≈ 29.0° and C ≈ 122.1°. With c as the base, this is a wide, low triangle.
+3. **Another scale and shape.** Lengths 6, 8 and 9 m give a shared ratio of about 9.182 m. All lengths here use metres, as on the controls.
 
 ## Test yourself
 
-1. Push the shared ratio a/sin A up to about 10.
-2. Make sides a and b agree to within 0.3 m while stretching c past 8 m.
-3. Make side a the longest of the three sides.
+1. Make the shared ratio approximately 10 m.
+2. Choose a valid triangle with |a − b| less than 0.3 m and c greater than 8 m.
+3. Make a longer than both b and c in a valid triangle.
 
 ## Intuition
 
-A 5 m, 6 m, 7 m triangular field has three different angles, one at each corner, and three different side lengths facing them. Drag any slider and watch the three ratio readouts: no matter how the triangle changes shape, a side divided by the sine of its own opposite angle always comes out the same number as the other two sides treated the same way.
+Match the letters before calculating: side a is across from angle A, not beside it. For a triangle with sides 5, 6 and 7, divide each side by the sine of its own opposite angle. The three answers agree even though the side lengths and angles differ.
 
-That is the whole rule in one picture: the longer a side is, the bigger the angle sitting across from it — but not in a simple straight-line way, in a way that keeps this one ratio locked. Drag c up on its own and both the side and its opposite angle C grow together, exactly enough to keep a/sin A, b/sin B and c/sin C all equal.
+This equality holds within each triangle; the shared value can change when you reshape it. If you already know one side and its opposite angle, you know the shared ratio. Another known angle then lets you calculate its opposite side. With only three side lengths, use the cosine rule to obtain an angle first; the display does this calculation for you.
 
 ## Formal
 
-For a triangle with sides $a$, $b$, $c$ opposite angles $A$, $B$, $C$: $\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C}$.
+For any nondegenerate triangle with opposite pairs (a, A), (b, B) and (c, C), $a/\sin A=b/\sin B=c/\sin C$. All three angles are between 0° and 180°, so their sines are positive. A right angle is not required.
 
-Unlike $\sin\theta = \text{opposite}/\text{hypotenuse}$, this relation needs no right angle at all — it holds for every triangle, however obtuse or narrow.
+For example, from a, A and B, calculate $b=a\sin B/\sin A$. The angles must satisfy $A+B<180^\circ$, leaving a positive third angle. The shared ratio has the same length unit as the sides; it equals twice the circumradius.
 
 ## Advanced
 
-Given two sides and an angle that is *not* between them (SSA), solving $\sin B = \dfrac{b\sin A}{a}$ for $B$ can have two valid solutions, since $\sin B$ is positive for both an acute and an obtuse angle — the "ambiguous case," where the same measurements describe two genuinely different triangles. The sliders here fix all three sides directly, which always pins down one triangle exactly, so this particular picture cannot show the ambiguity; it shows up only in that different SSA setup.
+Two sides and an angle opposite one of them can give zero, one or two triangles. After calculating sin B, test both B and 180° − B when distinct, keeping only angles that leave a positive third angle. The sliders here specify three sides, so valid settings determine one triangle up to reflection and movement.
 
 ## Derivation
 
-1. Drop the altitude from the vertex at $C$ down to side $c$: it splits the triangle into two right triangles, and the same altitude equals $h = b\sin A = a\sin B$ measured from either one.
-2. Dividing both expressions for $h$ by $\sin A \sin B$ gives $\dfrac{a}{\sin A} = \dfrac{b}{\sin B}$.
-3. Dropping a second altitude, this time from $A$, brings in the third side the same way, giving $\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C}$.
+1. Draw a perpendicular from C to the line containing side c. Its length can be expressed as b sin A or a sin B. The foot may lie outside the side for an obtuse triangle; the sine of supplementary angles is equal.
+2. Divide the height equality by sin A sin B, which is nonzero for a valid triangle, to obtain the first pair of equal ratios.
+3. Repeat using an altitude from another vertex to include the third side-angle pair.
 
 ## Real world
 
-### Triangulation without a total station
-A surveyor who can measure one side and two angles of a triangle — far easier than measuring every side directly — uses the sine rule to fill in the rest.
+### Measuring across an obstacle
 
-### Sailing and dead reckoning
-A navigator who knows the length and heading of one leg of a course, and the angle turned at each waypoint, uses the sine rule to work out the other legs.
+From two accessible points with a known separation, measure the angles to a third point. The third angle follows from the angle sum, and the sine rule gives the two inaccessible distances.
 
-### Astronomy
-Early astronomers measured a star's parallax from two points on Earth's orbit, then used the sine rule on the resulting long, thin triangle to compute distances light-years across.
+### Resizing a triangular design
 
-### Radio and phone tower positioning
-A phone's rough location can be estimated from the angles at which its signal reaches two towers of known separation, using the same sine rule triangle.
+Multiplying all sides by the same factor keeps the angles unchanged and multiplies the shared sine-rule ratio by that factor.
