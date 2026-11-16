@@ -1,67 +1,60 @@
 ---
 title: 'Graphs and Euler paths'
-summary: >-
-  Count how many roads meet at each hub, and you can tell whether a single
-  route could use every road exactly once, without trying every possible
-  order.
+summary: 'Count the connections at each vertex to decide whether a connected network can be traversed using every edge exactly once.'
 parameters:
-  start: start — node the search begins from
-  step: step — how far the search has progressed
+  start: 'start — starting vertex: A = 0 through J = 9'
+  step: 'step — progress through the search, from 0 to 1'
 variables:
-  - v — a single vertex (node) of the graph
-  - 'degree: how many edges touch a vertex'
+  - 'v: a vertex of the graph'
+  - 'degree: number of edges meeting a vertex'
 ---
 
 ## Try it
 
-1. Tap hub A to set it as the start, then watch hub A's neighbours turn green one by one as the search finds them.
-2. Drag the step slider slowly from 0 to 1 and watch the numbers above each hub fill in — each one is that hub's distance from the start, in minutes.
-3. Count the lines touching hub G: that count is its degree, and it sets how many directions the search could branch from there.
+1. Set start = 0 (A) and step = 0. Increase step toward 1 to inspect a breadth-first search. This animation explores vertices; it does not construct an Euler route.
+2. Count the edges meeting A and B: A has 2, B has 3. Ignore the numbers on the edges when counting connections.
+3. Count all ten degrees. B, D, E and H have odd degree, so this connected graph has no route using every edge exactly once.
 
 ## Real-life examples
 
-1. **Dispatching from the main depot.** A courier company starts every morning route at hub A, the depot, and plays the whole search (step = 1) to see the order trucks would reach all ten hubs.
-2. **Starting from a satellite warehouse.** The same company opens a second warehouse at hub F, and starting the search there instead reaches a different set of hubs first, in a different order.
-3. **A half-finished shift.** A dispatcher checks hub C's route halfway through the morning (step = 0.5) to see which hubs have already been reached and which are still waiting.
+1. **Exploring from depot A.** With start = 0 and step = 1, the search has visited all ten hubs. Its discovery connections do not form a trip covering every road once.
+2. **Exploring from depot F.** With start = 5 and step = 1, the visit order changes. The degrees do not change, so the Euler-route conclusion stays the same.
+3. **Pausing the search.** With start = 2 and step = 0.5, inspect the partially explored graph. Halfway through the animation does not mean half the road distance has been travelled.
 
 ## Test yourself
 
-1. Find a hub where an odd number of roads meet (there are four such hubs in this map).
-2. Find a hub where four roads meet, the highest degree in this map.
-3. Pause the search exactly halfway through its run.
+1. Select a vertex with odd degree.
+2. Select a vertex with degree 4, the largest degree in this graph.
+3. Set the search progress to 0.5.
 
 ## Intuition
 
-Picture ten delivery hubs, labelled A to J, joined by roads that take between 2 and 7 minutes to drive, the number printed on each line. Tap hub A to make it the starting point, then drag the step slider from 0 to 1 to watch the search spread outward one layer at a time. The hubs directly joined to A turn green first, then the ones one road further away. Hub C touches four lines, so it has more ways to branch than hub A, which touches only two roads.
+Represent junctions by vertices and roads by edges. The degree of a vertex is the number of edges meeting it. A has two connections, to B and F. B has three, to A, C and G. The weights printed on the roads are separate information; they do not affect degree.
 
-Four of these hubs have an odd number of roads meeting them: B, D, E and H. Mathematicians call that count the degree of a vertex, written $\deg(v)$, and a single walk that crosses every road exactly once, an Euler path, can only exist when 0 or 2 hubs have an odd degree. This map has four odd hubs, so no route can cover every road just once — you would have to retrace at least one.
+Imagine a route that uses every road once. Whenever it passes through an intermediate junction, it uses one edge to enter and another to leave. Those edges pair up. Only the starting and ending vertices can have an unpaired edge. This graph has four odd-degree vertices, B, D, E and H, so it cannot have such a route.
 
 ## Formal
 
-A graph consists of vertices (the nodes) and edges (the connections between pairs of them); a path is a sequence of edges that visits vertices one after another without repeating an edge. The degree of a vertex, $\deg(v)$, is simply how many edges touch it.
+An undirected graph consists of vertices and edges joining them. The degree $\deg(v)$ counts edges incident to v, counting a loop twice if loops are allowed. A trail may revisit vertices but does not repeat edges. An Euler trail, often called an Euler path, uses every edge exactly once.
 
-An Euler path — a walk that uses every edge of the graph exactly once — exists if and only if the graph has zero or two vertices of odd degree; with zero, the walk can start and end anywhere, and with two, it must start at one odd vertex and end at the other.
+For a finite undirected graph with at least one edge, an Euler trail exists exactly when all vertices incident to edges lie in one connected component and there are zero or two odd-degree vertices. With zero, the trail closes and may start at any vertex incident to an edge. With two, those vertices must be its endpoints.
 
 ## Advanced
 
-The Königsberg bridge problem asked whether a walker could cross all seven bridges exactly once; Euler showed it was impossible because all four landmasses had odd degree, far more than the two allowed. A tree is a special graph with no cycles at all, exactly $n-1$ edges for n vertices, and exactly one path between any two vertices — the strict minimum of connections needed to keep a graph connected.
+The pairing argument explains why the degree condition is necessary. To show sufficiency, one can build trails and splice closed trails into them until every edge is used. Connectivity is essential: two separate cycles have only even degrees, yet no single trail can cover both. The breadth-first search shown here minimizes edge count to reachable vertices; its displayed accumulated weights need not be minimum-weight distances.
 
 ## Derivation
 
-1. Any time an Euler path passes through a vertex without stopping there, it enters along one edge and leaves along another, using up exactly two of that vertex's edges.
-2. Since every visit to a non-endpoint vertex uses edges two at a time, that vertex's total degree must come out even, with nothing left over.
-3. Only the walk's two endpoints can break that pattern, since they use just one edge each at the very start or the very end, so at most two vertices are allowed to have odd degree.
+1. At an intermediate visit, arrival and departure use two distinct edges because an Euler trail cannot reuse an edge.
+2. At every vertex other than two distinct endpoints, these uses pair up, making the degree even.
+3. An open trail leaves one unpaired use at each endpoint. A closed trail leaves none. Thus an Euler trail has two odd-degree vertices or zero; connectivity is also required.
 
 ## Real world
 
-### Road and delivery networks
-A route that covers every street in a neighbourhood exactly once, like some snowplough or mail routes, only exists cleanly when the street graph obeys the odd-degree rule.
+### Covering every street
 
-### Social networks
-Each person is a vertex and each friendship an edge; a person's degree is simply their number of direct friends, and the whole graph reveals clusters and central connectors.
+For an undirected street network, the rule tells us whether a route can cover each street exactly once. If not, a route covering all streets must repeat some edges or use multiple trips.
 
-### Circuit boards and wiring
-Router and printed-circuit-board tools use graph structure to plan traces, and tree-shaped wiring (no cycles) is often preferred to guarantee a unique path between any two points.
+### Drawing without retracing
 
-### The internet and computer networks
-Routers are vertices and physical or logical links are edges; the same degree and connectivity ideas decide reachability and how traffic can route around a failed link.
+Treat intersections and endpoints in a line drawing as vertices. The same test determines whether the drawing can be traced in one stroke without retracing a line, provided its edges form one connected part.
