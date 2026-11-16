@@ -1,71 +1,64 @@
 ---
 title: Wave basics
-summary: >-
-  A rope shaken up and down sends a rippling pattern down its length, and four
-  numbers — how far apart the ripples are, how fast you shake, how big they
-  swing, and how fast the ripple itself travels — describe every wave there is.
+summary: 'Distinguish a wave’s travelling pattern from the motion of one point, and connect wavelength, frequency and speed.'
 parameters:
-  f: frequency f
-  lambda: wavelength λ
-  A: amplitude A
+  f: 'f — cycles per second'
+  lambda: 'λ — wavelength'
+  A: 'A — displacement amplitude'
 variables:
-  - how often you shake the rope each second
-  - the distance between one crest and the next
-  - how fast the ripple itself travels down the rope
-  - the time for one full shake, up and back down
+  - 'number of complete cycles per second at a fixed point'
+  - 'distance between successive crests at one instant'
+  - 'speed of the travelling pattern'
+  - 'time for one full cycle'
 charts: []
 ---
 
 ## Try it
 
-1. Watch the blue rope ripple to the right. Read the speed readout at the bottom.
-2. Raise the frequency slider f. You shake faster, and the whole pattern races down the rope quicker.
-3. Now raise the wavelength slider λ instead, keeping f the same. The ripples spread further apart, and the speed climbs again — both sliders push the speed, just by different means.
+1. Set f = 0.5 Hz, λ = 2 m and A = 0.4 m. The pattern travels at 1 m/s, and one point completes an up-and-down cycle every 2 s.
+2. Watch the fixed-position marker move vertically while the crest marker moves to the right. They represent particle motion and pattern motion, respectively.
+3. Keep f and λ fixed and increase A. The wave becomes taller but its speed stays 1 m/s. Now increase f to 1 Hz while keeping λ = 2 m; the selected wave speed becomes 2 m/s.
 
 ## Real-life examples
 
-1. **A slow, wide shake.** Shake a long rope slowly with wide swings (f = 0.5 Hz, λ = 3 m). The ripple crawls along at a leisurely pace.
-2. **A quick, tight shake.** Flick your wrist fast over a short reach (f = 1.2 Hz, λ = 1.2 m). The ripple now runs noticeably faster.
-3. **A very fast, small shake.** Vibrate your hand rapidly with barely any swing (f = 2 Hz, λ = 0.6 m). The ripple speeds down the rope even though each individual swing is tiny.
+1. **Long wavelength, low frequency.** At f = 0.5 Hz, λ = 3 m and A = 0.6 m, speed is 1.5 m/s and period is 2 s.
+2. **Shorter wavelength, higher frequency.** At f = 1.2 Hz, λ = 1.2 m and A = 0.3 m, speed is 1.44 m/s. Despite the higher frequency, the pattern is slightly slower than in the first example.
+3. **Frequent small oscillations.** At f = 2 Hz, λ = 0.6 m and A = 0.2 m, speed is 1.2 m/s and period is 0.5 s. A higher frequency alone does not determine speed when wavelength also changes.
 
 ## Test yourself
 
-1. Make the wave travel at exactly 1 m/s.
-2. Make the wave travel at exactly 3.6 m/s.
-3. Keep the swing small (A under 0.2 m) while still sending the wave faster than 2 m/s.
+1. Make the pattern travel at approximately 1 m/s.
+2. Make it travel at approximately 3.6 m/s.
+3. Keep amplitude below 0.2 m while making the pattern travel faster than 2 m/s.
 
 ## Intuition
 
-Tie one end of a jump rope to a doorknob and shake the other end up and down, steadily, again and again. A pattern of humps travels away from your hand toward the door, even though your hand only ever moves up and down — it never moves toward the door at all. That traveling pattern is a wave, and the picture on screen is exactly this: the blue rope is shaken at the left edge, and the ripple runs off to the right.
+Watch one marked point on the rope: it moves up and down around the middle line. A crest, however, moves along the rope. The wave is this travelling pattern; the marked piece of rope does not have to travel along with it. In the ideal transverse motion shown here, its horizontal position stays fixed.
 
-Two numbers describe the shape you see at any instant. The wavelength λ is the distance from one crest to the next — drag the λ slider and watch that spacing stretch or squeeze. The amplitude A is how far each point swings up or down from the middle — it changes how tall the humps are but not how far apart they sit. A third number, the frequency f, is how many times per second your hand completes a full shake; raise it and the whole rippling pattern visibly speeds up, without changing the shape of any single hump.
+Wavelength is the distance between successive crests at one instant. Amplitude is the largest displacement from the middle, not the full crest-to-trough height. Frequency counts complete cycles at one fixed position per second, while period is the time for one cycle. In one period the pattern advances one wavelength. The controls let us choose frequency and wavelength independently, so they also choose the model's wave speed.
 
 ## Formal
 
-A travelling wave on a rope is $y(x,t) = A\sin\!\big(2\pi(x/\lambda - ft)\big)$: at a fixed instant it is a sine curve in space with spacing $\lambda$; at a fixed point it oscillates in time with period $T$, completing $f$ cycles every second.
+For a periodic travelling pattern with wavelength λ and positive period T, $v=\lambda/T$. Frequency satisfies $f=1/T$, so $v=f\lambda$. If wavelength is in metres and frequency in hertz, speed is in metres per second; one hertz means one cycle per second.
 
-The wave's speed is how far one crest advances per second. Since a crest moves one full wavelength $\lambda$ in one period $T$, the speed is $v = \lambda/T$, and because $T = 1/f$, this is $v = f\lambda$ — the single formula behind every wave in this subject, sound and light included.
+The displayed sinusoidal wave is $y(x,t)=A\sin[2\pi(x/\lambda-ft)]$. Here x is position along the rope and y is displacement across it. Its crest-to-trough displacement is $2A$. The formula describes a single periodic component; it does not mean that every wave has a sinusoidal shape.
 
 ## Advanced
 
-Amplitude $A$ does not appear in $v = f\lambda$ at all: a gentle shake and a violent one, at the same frequency and wavelength, send the ripple down the rope at the same speed. Amplitude instead controls how much energy the wave carries — a taller ripple takes more effort to make and delivers more of a jolt when it arrives, even though it gets there at the same time as a smaller one.
+For small transverse waves on a stretched string, the medium's tension and mass per unit length set the speed. On one unchanged ideal string, increasing frequency therefore reduces wavelength rather than freely increasing speed. This illustration instead lets both vary to explore the relation. In dispersive media, different frequencies can have different phase speeds, and the speed of an envelope need not equal a crest's speed.
 
 ## Derivation
 
-1. Speed is distance over time; a wave advances one wavelength every period, so $v = \lambda/T$.
-2. The period is the time for one cycle, the reciprocal of how many cycles happen per second: $T = 1/f$.
-3. Substituting gives the wave speed directly from what you can set on the rope: $v = f\lambda$.
+1. Follow a crest: in one period it moves one wavelength, so speed is wavelength divided by period.
+2. Frequency and period are reciprocals because they count cycles per second and seconds per cycle.
+3. Substitute the reciprocal period to obtain speed as frequency multiplied by wavelength.
 
 ## Real world
 
-### Musical instruments
-A guitar string's speed depends on its tension and thickness; once fixed, $v = f\lambda$ ties the string's length to every note it can ring at.
+### A stretched string
 
-### Seismic waves
-Earthquake waves travel through rock at speeds set by the rock's stiffness; knowing $v$ lets seismologists work out how far away a quake struck from how long its waves took to arrive.
+Tension and mass per unit length affect travelling-wave speed. Once that speed is fixed, frequency and wavelength are linked.
 
-### Radio and Wi-Fi
-Radio waves all travel at the speed of light, so $v = f\lambda$ fixes their wavelength the moment a station picks its broadcast frequency.
+### Light and radio
 
-### Ocean waves
-A surfer reads the gap between swells (the wavelength) and how often they arrive (the frequency) to judge how fast a wave is moving toward the beach.
+For a single periodic electromagnetic wave, frequency, wavelength and phase speed obey the same relation. Use the speed in the actual medium; the vacuum speed is not automatically the speed through every material.
