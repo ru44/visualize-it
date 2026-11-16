@@ -1,70 +1,69 @@
 ---
 title: Quadratic roots and the discriminant
-summary: >-
-  Know instantly, before solving anything, whether a thrown ball ever reaches
-  a target height, a business ever breaks even, or a design goal is simply
-  out of reach.
+summary: 'Find where a quadratic equals zero and tell whether it has two, one or no real roots.'
 parameters:
-  a: a (curvature)
-  b: b
-  c: c
-  x: x (drag along the curve)
+  a: 'quadratic coefficient a'
+  b: 'linear coefficient b'
+  c: 'constant c'
+  x: 'selected input x'
 variables:
-  - coefficients of the quadratic
-  - the discriminant — decides the number of real roots
-  - point being dragged along the parabola
+  - 'coefficients of the squared, linear and constant terms'
+  - 'discriminant; determines the number of real roots when a is nonzero'
+  - 'selected input on the graph'
 ---
 
 ## Try it
 
-1. Drag the point across the curve and watch it cross the horizontal axis — each crossing is a root.
-2. Shrink c toward 0, or raise the curve with b, and watch the two crossings slide together.
-3. Push the curve up further still and watch it lift off the axis completely — no more crossings at all.
+1. Set a to 1, b to 0 and c to -4. The graph meets the horizontal axis at x = -2 and x = 2.
+2. Keep a and b fixed and raise c to 0. The two roots meet at the vertex, x = 0.
+3. Raise c to 4. The lowest output is now 4, so the graph never reaches zero. Changing c shifts vertically; changing b does not simply lift the curve.
 
 ## Real-life examples
 
-1. **A ball's two landing times.** A ball's height over time follows h = -t² + 4t (a=-1, b=4, c=0): it starts on the ground at t=0 and lands again at t=4 seconds.
-2. **A cost that never breaks even.** A production cost model x² + 5 (a=1, b=0, c=5) never touches zero at any output level — the business can never break even, no matter how much it makes.
-3. **A satellite dish that just touches the ground.** A dish shaped like (x-3)² (a=1, b=-6, c=9) touches the ground at exactly one point, x=3, and nowhere else.
+1. **An illustrative height curve.** With a = -1, b = 4 and c = 0, the output is zero at x = 0 and x = 4. These could represent the start and end of an idealized arc on a suitably scaled time axis.
+2. **A strictly positive output.** With a = 1, b = 0 and c = 5, every real input gives at least 5. There is no real root. A positive cost alone says nothing about profit without a revenue model.
+3. **One repeated root.** With a = 1, b = -6 and c = 9, the rule is the square of x minus 3. It touches zero only at x = 3.
 
 ## Test yourself
 
-1. Find a, b and c, keeping the curve genuinely curved (a not zero), so that plugging x = 5 into the expression gives exactly zero.
-2. Make the discriminant exactly zero, so the curve just touches the axis at a single point.
-3. Make the parabola open downward with no real roots at all, so it never touches the axis.
+1. Make the output at x = 5 within 0.3 of zero, with the absolute value of a greater than 0.3.
+2. Make the discriminant zero. Keep a nonzero to obtain the intended quadratic with a repeated root.
+3. Choose a below -0.05 and a discriminant below -0.5, giving a downward-opening parabola with no real roots.
 
 ## Intuition
 
-Throw a ball straight up and its height over time traces a curve that starts at zero, rises, then falls back to zero again — that return to the ground is a second root of the same equation as the launch. Drag the point across the blue curve here: wherever it crosses the horizontal axis is a root, a time when the height is exactly zero. With the starting numbers you should see two such crossings.
+A root is an input that makes the output zero. For x squared minus 4, both 2 and -2 work because each squares to 4. On the graph, these inputs are the points where the curve meets the horizontal axis.
 
-Now shrink c toward 0, or raise the curve with b, and watch the two crossings slide toward each other. Push the curve up until it just kisses the axis at its very peak — one repeated root, the knife-edge case where the ball just barely grazes the ground and no more. Push it further still and the curve never comes back down to zero at all: the ball, in this equation, never lands — no real roots, only complex ones.
+Now add 4 to every output. The rule becomes x squared, and only zero gives zero. Add another 4 and the rule becomes x squared plus 4, which cannot reach zero for a real input. This sequence shows two real roots, one repeated root, and no real roots.
+
+The discriminant lets us distinguish these cases from the coefficients. It is the quantity inside the square root in the quadratic formula. A positive value gives two square-root choices, zero makes them coincide, and a negative value has no real square root.
 
 ## Formal
 
-The roots are $x = \dfrac{-b \pm \sqrt{\Delta}}{2a}$ with $\Delta = b^2 - 4ac$.
+For a nonzero a, the roots of $ax^2+bx+c=0$ are $x=(-b\pm\sqrt{\Delta})/(2a)$, where $\Delta=b^2-4ac$.
 
-$\Delta > 0$ gives two distinct real roots, $\Delta = 0$ gives one repeated root (the vertex touches the axis), and $\Delta < 0$ gives no real roots.
+A positive discriminant gives two distinct real roots. Zero gives one repeated real root at the vertex. A negative discriminant gives no real roots. If a is zero, use the remaining linear or constant equation instead of this formula.
 
 ## Advanced
 
-When $\Delta < 0$ the two roots are complex conjugates $\dfrac{-b \pm i\sqrt{-\Delta}}{2a}$; they still satisfy the same factorisation $a(x-r_1)(x-r_2)$, just off the real axis, which is why the parabola can miss the $x$-axis and yet the equation still "has" two roots.
+When the discriminant is negative, allowing complex numbers gives a conjugate pair of roots. The real graph still does not meet the horizontal axis. A root may also be outside the graph window or outside the usable domain of an application.
 
 ## Derivation
 
-1. Divide through by $a$.
-2. Complete the square on the left.
-3. Take the square root of both sides and solve for $x$.
+1. Assume a is nonzero, divide both sides by a, and move the constant to the right.
+2. Add the same completing-square term to both sides. The left becomes a square and the right contains the discriminant.
+3. Take both square-root choices and isolate x. The resulting formula is valid over the reals when the discriminant is nonnegative.
 
 ## Real world
 
-### Projectile landing time
-Height versus time under gravity is quadratic; the discriminant tells you whether a thrown ball ever reaches a given height.
+### Reaching a target
 
-### Break-even with fixed and variable costs
-Profit that includes a quadratic revenue term (price affects quantity sold) needs the quadratic formula to find zero-profit points.
+Subtract a target height from an idealized quadratic height model. Roots identify when the model reaches that target, subject to its physical time interval.
 
-### Optics and antenna design
-Focal properties of parabolic mirrors and dishes come from the same quadratic geometry.
+### Zero profit
 
-### Engineering tolerances
-A design constraint with no real solution ($\Delta < 0$) tells engineers a target is simply unreachable with the current parameters.
+If a profit model is quadratic, its real roots are candidate break-even quantities. Check which quantities are feasible.
+
+### Geometric intersections
+
+Intersecting a line with a quadratic curve can lead to a quadratic equation. The discriminant indicates two intersections, tangency, or no real intersection.
