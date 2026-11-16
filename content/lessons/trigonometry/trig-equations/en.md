@@ -1,67 +1,61 @@
 ---
 title: Trig equations — many angles, one sine
-summary: >-
-  Sine repeats itself, so almost every height on the wave belongs to more
-  than one angle at once — this lesson is about finding the others.
+summary: 'Find different angles with the same sine using symmetry and full turns.'
 parameters:
-  x: x — first angle
-  h: h — gap to the second angle
+  x: 'x — first angle in radians'
+  h: 'h — signed gap in radians'
 variables:
-  - the first angle, in radians
-  - how far past x the second angle sits
-  - how many full turns around the circle
+  - 'x: first angle'
+  - 'h: second angle minus first angle'
+  - 'k: integer number of full turns in the solution formulas'
 ---
 
 ## Try it
 
-1. Watch the two dots on the curve. The dashed rectangle shows the gap between them, both sideways (h) and up-down (the two heights).
-2. Drag «h — gap to the second angle» until the dashed rectangle goes flat: both dots now sit at the same height, so both angles have the same sine.
-3. Drag «x — first angle» instead, keeping the rectangle flat. The gap h that keeps it flat changes with x — there is a different partner angle for almost every starting angle.
+1. Set x = 0.5 and h = 2.14. The points at x and x + h have nearly equal heights. The dashed vertical step and the rise readout are close to zero.
+2. Change x to 1 and adjust h to 1.14. Equal heights now require a different gap because the points lie on opposite sides of the same peak.
+3. Set h = 6.28 and change x. This gap is close to 2π, so the heights stay nearly equal throughout the cycle. Choose settings with both points inside the plotting window.
 
 ## Real-life examples
 
-1. **A Ferris wheel seat.** Rising through x = 0.5 rad past the bottom, a seat reaches the same height again at x + h = 2.64 rad on its way toward the top.
-2. **The tide at a harbour.** The water reaches a given depth once while rising, at x = 1.0 rad into the cycle, and again while falling, at x + h = 2.14 rad.
-3. **A swing below its rest point.** Past x = 4.0 rad in its cycle the swing is below where it started; it returns to that exact same low height at x + h = 5.42 rad.
+1. **Either side of a peak.** At x = 0.5 and x + h = 2.64, both sine values are about 0.48. The exact second angle would be π − 0.5.
+2. **Closer to the peak.** At x = 1 and x + h = 2.14, both values are about 0.84. The gap is shorter than in the first example.
+3. **Either side of a trough.** At x = 4 and x + h = 5.42, both values are about −0.76. The exact second angle is 3π − 4.
 
 ## Test yourself
 
-1. Find a gap h, not zero, that keeps both angles at the same height.
-2. Push h to a full turn around the circle and check the heights still match.
-3. Find two angles with the same height while that height is negative.
+1. Make the absolute difference between the sine values less than 0.02 with |h| greater than 0.5.
+2. Choose h within 0.3 of 2π and make the absolute height difference less than 0.02. A setting of 6.28 approximates one full turn.
+3. Make sin x less than −0.3, the absolute height difference less than 0.02, and |h| greater than 0.3.
 
 ## Intuition
 
-The curve you see is sine unrolled onto a line, but it never stops repeating, and it is also symmetric within each hump. Both facts mean a single height on the wave almost always belongs to two dots at once — sometimes because you have gone one full turn further around the circle, sometimes because you have landed on the mirror-image angle within the same turn. Dragging h until the dashed rectangle goes flat is you finding that second dot by hand.
+A horizontal line through a sine wave often meets it twice in one cycle: once on the rising section and once on the falling section. The two marked points here have angles x and x + h. When they have equal heights, the vertical difference is zero and the secant line through distinct points is horizontal.
 
-Watch what happens to h as you slide x along: it is not constant. The full-turn partner always sits a fixed 2π away, but the mirror-image partner's distance shrinks as x approaches the top of the hump and grows again on the way down, because mirror symmetry is measured from the peak, not from a fixed gap.
+There are two ways to find a partner. Reflect an angle across a peak or trough, or add full turns. For x = 0.5, reflection gives π − 0.5, whereas adding one turn gives 0.5 + 2π. Changing x changes the reflection gap, but a full-turn gap stays 2π. A negative h places the second point before the first.
 
 ## Formal
 
-The equation $\sin(x+h) = \sin x$ has two families of solutions: $x + h = x + 2\pi k$, a full turn away, and $x + h = \pi - x + 2\pi k$, the mirror image of x reflected around $\pi/2$.
+For real angles in radians, $\sin(x+h)=\sin x$ exactly when $h=2\pi k$ or $h=\pi-2x+2\pi k$, where k is any integer. The two families can overlap at peaks and troughs.
 
-Both families exist for every real x, so a sine equation set equal to a target height always has infinitely many solutions, spaced 2π apart within each family.
+More generally, $\sin u=s$ has real solutions only for $-1\leq s\leq1$. Values strictly between the extremes occur twice per cycle, while each extreme occurs once. Full turns produce infinitely many solutions on the unrestricted real line, but a specified interval contains only those solutions that lie inside it.
 
 ## Advanced
 
-The same two-family structure carries over to $\cos$ (mirrored around $0$ instead of $\pi/2$) and, after dividing sine's equation by cosine's, collapses to a single family of period $\pi$ for $\tan$, since tangent's mirror solution and its own graph coincide.
+The value h = 0 always satisfies the equation, but the secant slope is then 0/0 and is undefined. The exercises exclude this coincidence. The corresponding rules are cos u = cos v when u = ±v + 2πk, and tan u = tan v when u = v + πk at defined inputs. These follow from their own symmetries and periods, not from dividing two unrelated equations.
 
 ## Derivation
 
-1. Two angles give the same sine exactly when the difference between their heights is zero.
-2. One way to close that gap is a full turn: $h = 2\pi k$ for any whole number k.
-3. The other way is landing on sine's mirror angle: $h = \pi - 2x + 2\pi k$.
+1. Move one sine value to the other side: equal heights mean a zero difference.
+2. Reflection gives x + h = π − x + 2πk. Subtract x to find the reflection family of gaps.
+3. Periodicity gives x + h = x + 2πk. Subtract x to find the full-turn family.
 
 ## Real world
 
-### Tides and daylight
-Any quantity that rises and falls smoothly, from tide height to hours of daylight, revisits the same value twice each cycle — once rising, once falling — which is exactly this equation.
+### Repeating motion
 
-### AC electricity
-A household current reaches any given voltage twice every cycle; circuit timing depends on knowing both instants, not just one.
+In a sinusoidal displacement model, the same interior position occurs once in each direction during a cycle. Equal positions do not imply equal velocities.
 
-### Sound and music
-Two different phases of the same musical tone can sound identical in amplitude at the moment you sample them, which is why phase alone, not amplitude, distinguishes many sound effects.
+### Reading one sample
 
-### Orbits and seasons
-A planet's distance from its star, or a location's day length across the year, returns to the same value at two symmetric points in its yearly cycle.
+A single sine value generally does not identify an angle uniquely. Additional information, such as whether the signal is rising or falling and which cycle it is in, can distinguish possible angles.
