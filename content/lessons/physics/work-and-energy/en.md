@@ -1,68 +1,62 @@
 ---
 title: Work as the area under a force curve
-summary: >-
-  This is why drawing a stiff bow takes far more effort than a soft one,
-  and where that effort goes: stored energy ready to launch the arrow.
+summary: 'Calculate the work needed to stretch an ideal spring by measuring the area under its applied-force curve.'
 parameters:
-  k: spring constant k
-  a: a (start displacement)
-  b: b (end displacement)
+  k: 'k — spring stiffness'
+  a: 'a — starting extension'
+  b: 'b — final extension'
 variables:
-  - 'spring restoring force, proportional to stretch (Hooke''s law)'
-  - spring stiffness
-  - work done stretching from $a$ to $b$ — the shaded area
+  - 'applied force needed for slow stretching, opposite to the spring force'
+  - 'spring stiffness in newtons per metre'
+  - 'applied work from extension a to b'
 ---
 
 ## Try it
 
-1. Watch the shaded triangle under the rising force line, from a to b.
-2. Drag "b (end displacement)" outward from a = 0. Watch the triangle grow both wider and taller.
-3. Now raise "spring constant k". The same stretch needs a taller triangle, so more work.
+1. Set k = 1.5 N/m, a = 0 m and b = 5 m. The applied force rises from zero to 7.5 N, and the triangular area is 18.75 J.
+2. Keep k and a fixed and reduce b to 2.5 m. Halving the extension halves both triangle dimensions, so the work becomes 4.6875 J, one-quarter as much.
+3. Set a = 2 m and b = 5 m. The shaded region is now a trapezoid, giving 15.75 J of additional work. It excludes the energy already stored at extension 2 m.
 
 ## Real-life examples
 
-1. **Stretching a rubber band.** A soft 0.3 N/m band stretched 6 m (imagine a giant demo band) takes about 5.4 J of work — gentle resistance throughout.
-2. **A trampoline spring.** A moderately stiff 1.5 N/m spring stretched 5 m takes nearly 19 J, resisting more strongly the further it's pulled.
-3. **Drawing an archery bow.** A stiff 3.5 N/m "bow spring" pulled back 4 m takes 28 J of work, stored ready to launch the arrow.
+1. **A soft model spring.** With k = 0.3 N/m, stretching from 0 to 6 m requires 5.4 J in the ideal linear model.
+2. **An intermediate stiffness.** With k = 1.5 N/m, stretching from 0 to 5 m requires 18.75 J.
+3. **A stiffer model spring.** With k = 3.5 N/m, stretching from 0 to 4 m requires 28 J. These large extensions illustrate the formula; they are not specifications for real bows, rubber bands or suspension springs.
 
 ## Test yourself
 
-1. Make the work done exactly 20 J (starting from a = 0).
-2. Starting from a = 0, find a spring constant and stretch distance where the work done is exactly 24 J.
-3. Get the work above 25 J while keeping the total stretch under 5 m.
+1. Make the work from a to b approximately 20 J; a need not be zero.
+2. Choose a within 0.3 m of zero and work within 2 J of 24 J.
+3. Keep the final extension b below 5 m and make the work greater than 25 J.
 
 ## Intuition
 
-Picture drawing a stiff bow-like spring, constant 3.5 N/m, back 4 metres: that takes 28 joules of work, stored ready to launch an arrow. Drag "b (end displacement)" outward from a = 0: the force line rises steadily and the shaded triangle grows, not just wider but taller too, so the area, and hence the work, grows faster than the displacement itself.
+An ideal spring resists more strongly as it is stretched farther. To stretch it slowly, we apply a force matching that resistance. If the extension doubles, the final force doubles too. Work depends on the force over the whole motion, so we cannot multiply the final force by the full extension: that would overcount the smaller forces used earlier.
 
-Now raise "spring constant k" to stiffen the spring: the same stretch needs a taller triangle of force, so the work to reach any given displacement increases in direct proportion to k — a stiffer spring stores more energy for the same stretch.
+For a stretch from zero, the force graph is a straight line and the work is a triangular area. Its average force is half the final force. For a stretch starting at a nonzero extension, the work is the area between the two bounds. The 3D view illustrates stretching and the energy change; the displayed energy amount is not an additional force or an independent source of energy.
 
 ## Formal
 
-$W = \int_0^x kx'\,dx' = \tfrac12 kx^2$ — the area of a triangle with base $x$ and height $kx$.
+For an ideal Hooke's-law spring with extension x, the spring's force is $F_{\mathrm{spring}}=-kx$. The graph instead shows the opposing applied force $F_{\mathrm{applied}}=kx$ for slow stretching with negligible change in kinetic energy. The positive constant k has units N/m.
 
-This work is stored as elastic potential energy: $U(x) = \tfrac12 kx^2$.
+Taking elastic potential energy as zero at the unstretched length, $U(x)=\tfrac12kx^2$. Applied work from extension a to b is $W_{\mathrm{applied}}=\int_a^b kx\,dx=\tfrac12k(b^2-a^2)=\Delta U$. The spring does the opposite work. One joule is one newton metre.
 
 ## Advanced
 
-Because $F=kx$ is linear, the work-displacement relationship is quadratic; for a general nonlinear restoring force $F(x)$, the stored energy is still $U(x)=\int_0^x F(x')dx'$, but the shape of $U$ mirrors whatever nonlinearity $F$ has — a hardening spring ($F$ growing faster than linear) stores energy that rises faster than quadratically.
+For a conservative spring force, Fspring = −dU/dx. A nonlinear spring can still have potential energy, but its force-area relationship need not be triangular or quadratic. Friction and internal losses mean not all applied work is recovered on release. With b < a, the signed applied work is negative in a controlled return; use a ≤ b to study stretching in the displayed animation.
 
 ## Derivation
 
-1. Hooke's law: restoring force proportional to stretch.
-2. Work is the accumulated force over the displacement.
-3. Evaluate the integral — the familiar spring potential energy.
+1. For slow extension, the applied force kx balances the spring's restoring force in the opposite direction.
+2. Add the small work contributions F dx from zero extension to the final extension.
+3. Integrating kx gives half k times extension squared, the increase in elastic potential energy for this ideal spring.
 
 ## Real world
 
-### Archery and catapults
-Drawing a bow or catapult stores elastic energy exactly as $\tfrac12 kx^2$, released as kinetic energy on firing.
+### Spring mechanisms
 
-### Vehicle suspensions
-Springs and shock absorbers store and dissipate energy according to this same work-area relationship.
+A measured force-extension curve can be integrated to estimate work. A linear approximation may apply only over a limited range of extensions.
 
-### Mattresses and trampolines
-Elastic materials compress under load, storing energy proportional to the square of the compression.
+### Springs and dampers
 
-### Molecular bonds
-Near equilibrium, chemical bond potential energy is often approximated as this same quadratic (harmonic) form.
+A spring stores recoverable elastic energy in an ideal model. A damper dissipates mechanical energy; the two components do not perform the same role.
