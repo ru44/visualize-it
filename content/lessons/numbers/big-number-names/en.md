@@ -1,59 +1,62 @@
 ---
 title: Big number names
-summary: >-
-  Try the slider and see that a billion is not slightly bigger than a
-  million — it's a thousand times bigger.
+summary: Learn the difference between a million, a billion and a trillion by counting groups of a thousand.
 parameters:
-  e: the exponent e
+  e: exponent e
 ---
 
 ## Try it
 
-1. Drag the orange dot to e = 6. The icon in the middle turns into a stadium and the label reads "million".
-2. Keep dragging to e = 9. The icon changes to a crowd of people and the label now reads "billion" — a whole new word for what feels like a small step on the ruler.
-3. Push all the way to e = 100. The icon becomes a plain number symbol, because past a googol there is no name left to show.
+1. Set e to 6. The value is one million, a 1 followed by six zeros.
+2. Set e to 9, then 12. These values are one billion and one trillion. Each step of three in the exponent multiplies the amount by 1000.
+3. Set e to 100. The value is a googol, a 1 followed by 100 zeros. The display uses a description instead of printing all the digits.
 
 ## Real-life examples
 
-1. **A lottery jackpot.** A prize of one million, $10^{6}$, is life-changing money for most people.
-2. **A national debt.** Government debts are often quoted in billions, $10^{9}$ — a thousand times a million.
-3. **A googol.** $10^{100}$ has no everyday use at all — it is simply bigger than the number of atoms in the observable universe.
+1. **One million items.** With e = 6, the count is 1,000,000. It can be grouped into 1000 groups of 1000.
+2. **One billion items.** With e = 9, the count is 1,000,000,000. It takes 1000 groups of a million to make a billion.
+3. **A googol.** With e = 100, the number is defined by its 100 zeros. It is useful for exploring powers even without a physical collection to count.
 
 ## Test yourself
 
-1. Set e to 6 — a million.
-2. Set e to 9 — a billion.
-3. Reach a googol: e = 100.
+1. Select one million by setting e to 6.
+2. Select one billion by setting e to 9.
+3. Select a googol by setting e to 100.
 
 ## Intuition
 
-Say "a million dollars" and then "a billion dollars" out loud — the two words sound like cousins, one syllable apart. Drag the orange dot on the ruler from e = 6 to e = 9, though, and the icon jumps from a single stadium of people to a crowd a thousand stadiums deep.
+Imagine 1000 boxes, each holding 1000 counters. Together they hold a million counters. Now imagine 1000 groups of that entire collection: you have a billion. The change from million to billion is a multiplication by 1000, not a small addition.
 
-Every extra name — thousand, million, billion, trillion — adds exactly three more zeros to the last one. Past trillion, keep dragging the dot anyway: the icon stops changing its name, because ordinary language runs out of names long before the ruler runs out of room, all the way out to the googol at the very end.
+The ruler records how many zeros follow the 1. A million needs six, a billion nine, and a trillion twelve. The icons help locate reference points; a stadium icon does not mean an actual stadium holds a million people.
+
+We can keep writing powers beyond these familiar names. A googol is ten to the hundredth power. It is still a finite number, and larger numbers have names too. The end of this slider is not the end of numbers or their names.
 
 ## Formal
 
-In the short scale used by modern English, $10^{6}=\text{million}$, $10^{9}=\text{billion}$ and $10^{12}=\text{trillion}$ — each new name adds three more zeros to the last.
+This lesson uses the short-scale meanings $10^6=\text{million}$, $10^9=\text{billion}$ and $10^{12}=\text{trillion}$. Each is a thousand times the previous one.
 
-A googol is $10^{100}=\text{googol}$, a name coined in 1920 for a number with no practical use except to mark just how far "big" can go.
+A googol is defined as $10^{100}$. Unlike the steps from million to billion to trillion, it is a separate named power far beyond that sequence's first few terms.
 
 ## Advanced
 
-Naming conventions are not universal: many languages, including formal Arabic, use a "long scale" where مليار ($10^{9}$) sits between مليون ($10^{6}$) and تريليون/بليون ($10^{12}$), so a careful translation always checks the exponent, never just the word.
+Number names can depend on language and convention. To avoid ambiguity, compare the exponent or written value. In this lesson, English billion corresponds to Arabic مليار; both mean a thousand million.
 
 ## Derivation
 
-1. Six zeros after the 1 earns the name million: $10^{6}=\text{million}$.
-2. Three more zeros, nine in total, earns the name billion: $10^{9}=\text{billion}$.
-3. A hundred zeros earns a name coined just for the occasion: $10^{100}=\text{googol}$.
+1. A 1 followed by six zeros is one million.
+2. Multiplying by 1000 adds three zeros, giving one billion.
+3. A 1 followed by 100 zeros is called a googol.
 
 ## Real world
 
-### Company valuations
-Tech companies are sometimes called "unicorns" once their valuation passes a billion dollars, $10^{9}$.
+### Reading budgets
 
-### Internet giants
-The search engine Google took its name from "googol", a nod to wanting to organise an almost unimaginable amount of information.
+Before comparing two amounts, check whether they are stated in millions or billions. A value of 2 billion is larger than 900 million.
 
-### Astronomy
-The number of atoms in the observable universe is estimated at around $10^{80}$ — huge, but still smaller than a googol.
+### Data counts
+
+A trillion records is a thousand billion records. A system sized for billions may need much more capacity to handle trillions.
+
+### Converting labels
+
+Writing an amount as a power of ten helps when translating reports that use different naming conventions.
