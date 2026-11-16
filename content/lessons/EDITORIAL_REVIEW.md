@@ -1,6 +1,6 @@
 # Bilingual editorial review
 
-110 of 390 lessons reviewed. 280 remain.
+125 of 390 lessons reviewed. 265 remain.
 
 A checked lesson has had both language files rewritten or reviewed against its configuration and visualization source. Automated validation alone does not mark a lesson reviewed. Browser interaction and independent learner review remain separate checks.
 
@@ -367,23 +367,23 @@ Scope: every lesson, including summaries, parameter labels, examples, exercises,
 - [x] [prime-numbers](numbers/prime-numbers/en.md) · [Arabic](numbers/prime-numbers/ar.md)
 - [x] [scientific-notation](numbers/scientific-notation/en.md) · [Arabic](numbers/scientific-notation/ar.md)
 
-## physics (0/15)
+## physics (15/15)
 
-- [ ] [bernoulli-and-flow-rate](physics/bernoulli-and-flow-rate/en.md) · [Arabic](physics/bernoulli-and-flow-rate/ar.md)
-- [ ] [buoyancy-archimedes](physics/buoyancy-archimedes/en.md) · [Arabic](physics/buoyancy-archimedes/ar.md)
-- [ ] [circular-motion](physics/circular-motion/en.md) · [Arabic](physics/circular-motion/ar.md)
-- [ ] [friction-inclined-plane](physics/friction-inclined-plane/en.md) · [Arabic](physics/friction-inclined-plane/ar.md)
-- [ ] [kinematics-constant-acceleration](physics/kinematics-constant-acceleration/en.md) · [Arabic](physics/kinematics-constant-acceleration/ar.md)
-- [ ] [kinetic-and-potential-energy](physics/kinetic-and-potential-energy/en.md) · [Arabic](physics/kinetic-and-potential-energy/ar.md)
-- [ ] [momentum-and-impulse](physics/momentum-and-impulse/en.md) · [Arabic](physics/momentum-and-impulse/ar.md)
-- [ ] [newtons-second-law](physics/newtons-second-law/en.md) · [Arabic](physics/newtons-second-law/ar.md)
-- [ ] [pressure-in-fluids](physics/pressure-in-fluids/en.md) · [Arabic](physics/pressure-in-fluids/ar.md)
-- [ ] [projectile-motion](physics/projectile-motion/en.md) · [Arabic](physics/projectile-motion/ar.md)
-- [ ] [simple-harmonic-motion](physics/simple-harmonic-motion/en.md) · [Arabic](physics/simple-harmonic-motion/ar.md)
-- [ ] [torque-and-levers](physics/torque-and-levers/en.md) · [Arabic](physics/torque-and-levers/ar.md)
-- [ ] [universal-gravitation](physics/universal-gravitation/en.md) · [Arabic](physics/universal-gravitation/ar.md)
-- [ ] [velocity-time-area](physics/velocity-time-area/en.md) · [Arabic](physics/velocity-time-area/ar.md)
-- [ ] [work-and-energy](physics/work-and-energy/en.md) · [Arabic](physics/work-and-energy/ar.md)
+- [x] [bernoulli-and-flow-rate](physics/bernoulli-and-flow-rate/en.md) · [Arabic](physics/bernoulli-and-flow-rate/ar.md)
+- [x] [buoyancy-archimedes](physics/buoyancy-archimedes/en.md) · [Arabic](physics/buoyancy-archimedes/ar.md)
+- [x] [circular-motion](physics/circular-motion/en.md) · [Arabic](physics/circular-motion/ar.md)
+- [x] [friction-inclined-plane](physics/friction-inclined-plane/en.md) · [Arabic](physics/friction-inclined-plane/ar.md)
+- [x] [kinematics-constant-acceleration](physics/kinematics-constant-acceleration/en.md) · [Arabic](physics/kinematics-constant-acceleration/ar.md)
+- [x] [kinetic-and-potential-energy](physics/kinetic-and-potential-energy/en.md) · [Arabic](physics/kinetic-and-potential-energy/ar.md)
+- [x] [momentum-and-impulse](physics/momentum-and-impulse/en.md) · [Arabic](physics/momentum-and-impulse/ar.md)
+- [x] [newtons-second-law](physics/newtons-second-law/en.md) · [Arabic](physics/newtons-second-law/ar.md)
+- [x] [pressure-in-fluids](physics/pressure-in-fluids/en.md) · [Arabic](physics/pressure-in-fluids/ar.md)
+- [x] [projectile-motion](physics/projectile-motion/en.md) · [Arabic](physics/projectile-motion/ar.md)
+- [x] [simple-harmonic-motion](physics/simple-harmonic-motion/en.md) · [Arabic](physics/simple-harmonic-motion/ar.md)
+- [x] [torque-and-levers](physics/torque-and-levers/en.md) · [Arabic](physics/torque-and-levers/ar.md)
+- [x] [universal-gravitation](physics/universal-gravitation/en.md) · [Arabic](physics/universal-gravitation/ar.md)
+- [x] [velocity-time-area](physics/velocity-time-area/en.md) · [Arabic](physics/velocity-time-area/ar.md)
+- [x] [work-and-energy](physics/work-and-energy/en.md) · [Arabic](physics/work-and-energy/ar.md)
 
 ## quantum (0/13)
 
