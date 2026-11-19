@@ -48,9 +48,9 @@ variables:
   - \sigma
   - T
 derivation:
-  - '\text{Conduction (Fourier''s law): heat creeps through a solid at a rate proportional to } k, A, \Delta T \text{ and inversely to thickness } d.'
-  - '\text{Convection (Newton''s law of cooling): a moving fluid carries heat at a rate proportional to } h, A \text{ and } \Delta T, \text{ with } h \text{ absorbing the flow details.}'
-  - '\text{Radiation (Stefan-Boltzmann law): every warm surface radiates power proportional to its area and the fourth power of its absolute temperature } T.'
+  - \dot Q_{cond} = kA\frac{\Delta T}{d}
+  - \dot Q_{conv} = hA\Delta T
+  - P_{emit} = \varepsilon\sigma AT^4
 charts: []
 primary: dT
 presets:

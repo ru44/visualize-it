@@ -1,8 +1,8 @@
-heat.hint: Raise ΔT and watch all three panels intensify — then try k and T on their own.
+heat.hint: 'ΔT changes conduction and convection; T changes emitted radiation.'
 heat.condTitle: Conduction
 heat.convTitle: Convection
 heat.radTitle: Radiation
 heat.cond: conduction rate
 heat.conv: convection rate
-heat.rad: radiated power
+heat.rad: 'emitted radiative power'
 heat.rising: warm air rises

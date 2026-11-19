@@ -102,7 +102,7 @@ useThree(
       inst.instanceMatrix.needsUpdate = true
       if (inst.instanceColor) inst.instanceColor.needsUpdate = true
       paint(tsTag, `${Math.round(Tsurf)} K`, theme.accent2)
-      paint(vTag, `≈ ${speed.toFixed(2)} m/s`, theme.fg)
+      paint(vTag, `ΔT = ${Math.round(dTemp)} °C`, theme.fg)
     }
   },
   { camera: [8, 5, 9], target: [W / 2, 1.4, 0] },
