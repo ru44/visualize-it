@@ -23,15 +23,15 @@ charts: []
 
 ## Try it
 
-1. Raise «current I». The dots in the wire move faster: more current means more charge sliding past every second.
-2. Raise «time t». The «Q = It» readout climbs — charge just keeps piling up the longer the current flows.
-3. Shrink «wire cross-section A» right down. The drift speed readout barely changes the dots on screen, but the real number underneath it jumps, because the same current now has to squeeze through far fewer electrons.
+1. Set «current I» to 2 A and «time t» to 60 s. The «Q = It» readout shows 120 C. Raise the current to 4 A: the dots move faster and the readout doubles to 240 C.
+2. Return to 2 A and raise «time t» from 60 s to 120 s. The readout doubles again, to 240 C: the longer the current flows, the more charge has passed.
+3. With 2 A, set «wire cross-section A» to 1.5 mm². The drift-speed readout shows about 0.098 mm/s. Shrink A to 0.5 mm²: it triples to about 0.294 mm/s, because a thinner wire holds fewer free electrons and each one must move faster. The dots on screen do not change; their speed follows the current only.
 
 ## Real-life examples
 
 1. **Phone charging cable.** A thin USB cable carries about 0.5 A; left plugged in for a minute, 30 C of charge has flowed into the battery.
-2. **Kettle's mains lead.** A kettle draws roughly 8 A through a much thicker cable; in just 5 seconds, 40 C already flows — the same charge the phone cable took a full minute to deliver.
-3. **LED strip.** A metre of LED strip sips about 0.2 A through a thin wire; over half a minute that is only 6 C, which is why its wire can stay so thin.
+2. **Kettle's mains lead.** A kettle draws roughly 8 A through a much thicker cable; in just 5 seconds, 40 C already flows — more than the phone cable delivered in a full minute.
+3. **LED strip.** A metre of LED strip sips about 0.2 A through a thin wire; over half a minute that is only 6 C. The current is small, which is why its wire can stay so thin.
 
 ## Test yourself
 
@@ -43,7 +43,7 @@ charts: []
 
 Picture the wire as a hose already completely full of water: when you turn the tap, water comes out the far end almost instantly, not because any single drop raced down the hose, but because every drop in the whole line nudges the next one forward at once. A copper wire is like that hose already packed with free electrons — about $8.5 \times 10^{28}$ of them in every cubic metre. Raise «current I» on screen and the dots move faster, standing in for a bigger charge flow, but the electrons themselves are never sprinting.
 
-Work out the actual speed and it is startling: for an everyday current through an ordinary wire, the drift velocity is a small fraction of a millimetre per second — slower than a snail, and thousands of times slower than the electrical "push" that reaches a lightbulb the instant you flick a switch. Shrinking «wire cross-section A» packs the same current through fewer electrons, so each one has to drift faster to keep up — try it and watch the drift-speed readout jump while the visible dots barely change.
+Work out the actual speed and it is startling: for an everyday current through an ordinary wire, the drift velocity is a small fraction of a millimetre per second — slower than a snail, and billions of times slower than the electrical "push" that reaches a lightbulb the instant you flick a switch. Shrinking «wire cross-section A» packs the same current through fewer electrons, so each one has to drift faster to keep up — try it and watch the drift-speed readout jump while the visible dots barely change.
 
 ## Formal
 
@@ -64,13 +64,17 @@ The signal that turns on a distant bulb travels near the speed of light, because
 ## Real world
 
 ### Wire gauges
-Cables are rated by cross-sectional area precisely because a thinner wire forces the same current through fewer electrons, raising resistive heating — which is why a phone charger's cable is thin but a cooker's supply cable is thick.
+
+Cables are rated by cross-sectional area because a thinner wire has more resistance, so the same current heats it more — which is why a phone charger's cable is thin but a cooker's supply cable is thick.
 
 ### Circuit breakers
+
 A breaker trips when current, not charge, gets too high, because current is what determines how fast heat builds up in the wires behind the wall.
 
 ### Electroplating
+
 Electroplating shops track total charge, $Q = It$, to control exactly how much metal gets deposited, since the mass plated is proportional to the charge that has flowed.
 
 ### Battery capacity
+
 A battery rated "3000 mAh" is really rating total charge it can deliver — 3 amps for one hour, or 1 amp for three, before it runs flat.

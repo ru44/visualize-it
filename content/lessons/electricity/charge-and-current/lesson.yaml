@@ -3,13 +3,13 @@ subject: electricity
 difficulty: beginner
 equation: I = \frac{Q}{t}
 concepts:
-- charge
-- current
-- drift-velocity
+  - charge
+  - current
+  - drift-velocity
 prerequisites: []
 related:
-- ohms-law
-- voltage-and-energy
+  - ohms-law
+  - voltage-and-energy
 visualization:
   type: charge-and-current
   options: {}
@@ -37,18 +37,18 @@ parameters:
     value: 60
     unit: s
 variables:
-- I
-- Q
-- t
-- n
-- A
-- e
-- L
-- v_d
+  - I
+  - Q
+  - t
+  - n
+  - A
+  - e
+  - L
+  - v_d
 derivation:
-- I = \frac{Q}{t}
-- Q = nAeL \;\Rightarrow\; I = nAe\frac{L}{t}
-- \frac{L}{t} = v_d \;\Rightarrow\; v_d = \frac{I}{nAe}
+  - I = \frac{Q}{t}
+  - Q = nAeL \;\Rightarrow\; I = nAe\frac{L}{t}
+  - \frac{L}{t} = v_d \;\Rightarrow\; v_d = \frac{I}{nAe}
 presets:
   - I: 0.5
     A: 0.2
