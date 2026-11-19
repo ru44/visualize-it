@@ -38,7 +38,7 @@ variables:
   - L_0
   - \Delta T
 derivation:
-  - '\text{Each dimension of a solid grows almost linearly with temperature over modest ranges: } \alpha \text{ is that fractional growth per degree.}'
+  - \alpha \approx \frac{\Delta L/L_0}{\Delta T}
   - \frac{\Delta L}{L_0} = \alpha \Delta T
   - \Delta L = \alpha L_0 \Delta T
 charts: []

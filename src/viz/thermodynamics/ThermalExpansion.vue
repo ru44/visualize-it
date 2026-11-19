@@ -45,7 +45,7 @@ const readouts = computed(() => [
       <rect x="40" :y="railY - 8" :width="220 - gap / 2 - 40" height="16" fill="var(--accent-2)" />
       <rect :x="220 + gap / 2" :y="railY - 8" :width="400 - (220 + gap / 2)" height="16" fill="var(--accent-2)" />
       <rect :x="220 - gap / 2" :y="railY - 14" :width="gap" height="28" fill="var(--sunken)" stroke="var(--fg)" stroke-width="1" />
-      <text class="num" x="220" y="180" text-anchor="middle" font-size="12" fill="var(--muted)">{{ t('texp.gap') }}: {{ fmt(gap, 0) }} px</text>
+      <text class="num" x="220" y="180" text-anchor="middle" font-size="12" fill="var(--muted)">{{ t('texp.gap') }}</text>
       <text class="num" x="220" y="200" text-anchor="middle" font-size="12" fill="var(--muted)">ΔL = {{ fmt(dLmm, 2) }} mm ({{ t('texp.of') }} L₀ = {{ fmt(L0, 0) }} m)</text>
 
       <!-- Bimetallic strip thermostat -->
@@ -55,7 +55,7 @@ const readouts = computed(() => [
         <rect x="600" y="114" width="140" height="6" fill="var(--accent)" />
         <rect x="600" y="120" width="140" height="6" fill="var(--accent-2)" />
       </g>
-      <text class="num" x="600" y="300" text-anchor="middle" font-size="12" fill="var(--muted)">{{ t('texp.bend') }}: {{ fmt(Math.abs(bendAngle), 0) }}°</text>
+      <text class="num" x="600" y="300" text-anchor="middle" font-size="12" fill="var(--muted)">{{ t('texp.bend') }}</text>
       <text class="num" x="510" y="118" font-size="11" fill="var(--accent)">{{ t('texp.steel') }}</text>
       <text class="num" x="510" y="140" font-size="11" fill="var(--accent-2)">{{ t('texp.brass') }}</text>
     </svg>

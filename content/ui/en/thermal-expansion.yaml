@@ -1,8 +1,8 @@
 texp.hint: Drag ΔT — watch the rail gap close and the thermostat strip bend together.
 texp.railTitle: Railway expansion gap
 texp.thermoTitle: Bimetallic thermostat strip
-texp.gap: gap width
+texp.gap: 'schematic gap; length change shown below'
 texp.of: of
-texp.bend: bend angle
+texp.bend: 'illustrative bending; fixed layer properties'
 texp.steel: steel
 texp.brass: brass
