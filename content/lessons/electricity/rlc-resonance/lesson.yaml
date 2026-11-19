@@ -44,7 +44,7 @@ parameters:
     min: 10
     max: 400
     step: 1
-    value: 159
+    value: 100
     unit: Hz
 variables:
   - L
