@@ -28,14 +28,14 @@ parameters:
     value: 295
     unit: K
 variables:
-  - coefficient of performance, cooling mode
-  - coefficient of performance, heating mode
-  - absolute temperature of the cold reservoir
-  - absolute temperature of the hot reservoir
+  - COP_{cool}
+  - COP_{heat}
+  - T_c
+  - T_h
 derivation:
-  - \text{A reversible (Carnot) refrigerator moves heat } Q_c \text{ from the cold side using work } W\text{, with } Q_c/W = T_c/(T_h-T_c).
-  - \text{The same cycle run as a heat pump delivers } Q_h = Q_c+W \text{ to the hot side, with } Q_h/W = T_h/(T_h-T_c).
-  - \text{A plain resistive heater turns all its work directly into heat, so its "COP" is exactly 1 — always worse than a heat pump.}
+  - COP_{cool} = \frac{Q_c}{W} = \frac{Q_c}{Q_h - Q_c}
+  - "\\frac{Q_c}{T_c} = \\frac{Q_h}{T_h} \\;\\Rightarrow\\; COP_{cool} = \\frac{T_c}{T_h - T_c}"
+  - COP_{heat} = \frac{Q_h}{W} = \frac{T_h}{T_h - T_c} = COP_{cool} + 1
 charts: []
 primary: Th
 presets:
