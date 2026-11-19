@@ -37,6 +37,6 @@ Run `pnpm check` after editing. It validates structure, formulas and challenge s
 
 ## Reviewed examples and remaining work
 
-See [the lesson-by-lesson review checklist](EDITORIAL_REVIEW.md) for coverage. The Numbers, Functions, Algebra, Discrete, Geometry, Trigonometry, Calculus, Statistics, Physics, Waves and Thermodynamics sections have received a complete bilingual editorial pass under this guide.
+See [the lesson-by-lesson review checklist](EDITORIAL_REVIEW.md) for coverage. The Numbers, Functions, Algebra, Discrete, Geometry, Trigonometry, Calculus, Statistics, Physics, Waves, Thermodynamics and Electricity sections have received a complete bilingual editorial pass under this guide.
 
 The remaining lessons still need individual review of their summaries, controls, explanations, examples and challenges. Do not treat a global phrase replacement or a successful build as an editorial review.

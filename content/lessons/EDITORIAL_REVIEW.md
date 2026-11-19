@@ -1,6 +1,6 @@
 # Bilingual editorial review
 
-151 of 390 lessons reviewed. 239 remain.
+165 of 390 lessons reviewed. 225 remain.
 
 A checked lesson has had both language files rewritten or reviewed against its configuration and visualization source. Automated validation alone does not mark a lesson reviewed. Browser interaction and independent learner review remain separate checks.
 
@@ -231,22 +231,22 @@ Scope: every lesson, including summaries, parameter labels, examples, exercises,
 - [ ] [supply-and-demand](economics/supply-and-demand/en.md) · [Arabic](economics/supply-and-demand/ar.md)
 - [ ] [taxes-and-brackets](economics/taxes-and-brackets/en.md) · [Arabic](economics/taxes-and-brackets/ar.md)
 
-## electricity (0/14)
+## electricity (14/14)
 
-- [ ] [ac-power](electricity/ac-power/en.md) · [Arabic](electricity/ac-power/ar.md)
-- [ ] [batteries-and-internal-resistance](electricity/batteries-and-internal-resistance/en.md) · [Arabic](electricity/batteries-and-internal-resistance/ar.md)
-- [ ] [capacitors](electricity/capacitors/en.md) · [Arabic](electricity/capacitors/ar.md)
-- [ ] [charge-and-current](electricity/charge-and-current/en.md) · [Arabic](electricity/charge-and-current/ar.md)
-- [ ] [electric-power-and-energy-bills](electricity/electric-power-and-energy-bills/en.md) · [Arabic](electricity/electric-power-and-energy-bills/ar.md)
-- [ ] [electrical-safety](electricity/electrical-safety/en.md) · [Arabic](electricity/electrical-safety/ar.md)
-- [ ] [kirchhoffs-laws](electricity/kirchhoffs-laws/en.md) · [Arabic](electricity/kirchhoffs-laws/ar.md)
-- [ ] [ohms-law](electricity/ohms-law/en.md) · [Arabic](electricity/ohms-law/ar.md)
-- [ ] [rc-circuit](electricity/rc-circuit/en.md) · [Arabic](electricity/rc-circuit/ar.md)
-- [ ] [resistance-and-resistivity](electricity/resistance-and-resistivity/en.md) · [Arabic](electricity/resistance-and-resistivity/ar.md)
-- [ ] [rlc-resonance](electricity/rlc-resonance/en.md) · [Arabic](electricity/rlc-resonance/ar.md)
-- [ ] [series-parallel](electricity/series-parallel/en.md) · [Arabic](electricity/series-parallel/ar.md)
-- [ ] [smith-chart](electricity/smith-chart/en.md) · [Arabic](electricity/smith-chart/ar.md)
-- [ ] [voltage-and-energy](electricity/voltage-and-energy/en.md) · [Arabic](electricity/voltage-and-energy/ar.md)
+- [x] [ac-power](electricity/ac-power/en.md) · [Arabic](electricity/ac-power/ar.md)
+- [x] [batteries-and-internal-resistance](electricity/batteries-and-internal-resistance/en.md) · [Arabic](electricity/batteries-and-internal-resistance/ar.md)
+- [x] [capacitors](electricity/capacitors/en.md) · [Arabic](electricity/capacitors/ar.md)
+- [x] [charge-and-current](electricity/charge-and-current/en.md) · [Arabic](electricity/charge-and-current/ar.md)
+- [x] [electric-power-and-energy-bills](electricity/electric-power-and-energy-bills/en.md) · [Arabic](electricity/electric-power-and-energy-bills/ar.md)
+- [x] [electrical-safety](electricity/electrical-safety/en.md) · [Arabic](electricity/electrical-safety/ar.md)
+- [x] [kirchhoffs-laws](electricity/kirchhoffs-laws/en.md) · [Arabic](electricity/kirchhoffs-laws/ar.md)
+- [x] [ohms-law](electricity/ohms-law/en.md) · [Arabic](electricity/ohms-law/ar.md)
+- [x] [rc-circuit](electricity/rc-circuit/en.md) · [Arabic](electricity/rc-circuit/ar.md)
+- [x] [resistance-and-resistivity](electricity/resistance-and-resistivity/en.md) · [Arabic](electricity/resistance-and-resistivity/ar.md)
+- [x] [rlc-resonance](electricity/rlc-resonance/en.md) · [Arabic](electricity/rlc-resonance/ar.md)
+- [x] [series-parallel](electricity/series-parallel/en.md) · [Arabic](electricity/series-parallel/ar.md)
+- [x] [smith-chart](electricity/smith-chart/en.md) · [Arabic](electricity/smith-chart/ar.md)
+- [x] [voltage-and-energy](electricity/voltage-and-energy/en.md) · [Arabic](electricity/voltage-and-energy/ar.md)
 
 ## electromagnetism (0/12)
 
