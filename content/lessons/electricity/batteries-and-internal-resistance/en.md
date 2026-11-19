@@ -21,8 +21,8 @@ charts: []
 
 ## Try it
 
-1. Raise «internal resistance r». «V» (terminal voltage) drops below «EMF ε», even though the EMF itself never changed.
-2. Raise «load resistance R» instead. «V» climbs back up closer to «EMF ε», because less current now flows through the same internal resistance.
+1. Set «EMF ε» to 12.6 V and «load resistance R» to 0.5 Ω, then raise «internal resistance r» from 0.02 Ω to 0.1 Ω. «V» (terminal voltage) drops from 12.1 V to 10.5 V, even though the EMF itself never changed.
+2. Keep r at 0.1 Ω and raise «load resistance R» from 0.5 Ω to 5 Ω. «V» climbs back to about 12.35 V, because less current now flows through the same internal resistance.
 3. Compare the warm-battery preset with the cold-battery one: the terminal voltage sags far more once «internal resistance r» rises.
 
 ## Real-life examples
@@ -41,7 +41,7 @@ charts: []
 
 Every real battery is really a perfect EMF source with a small resistor built in right next to it, invisible from the outside, called its internal resistance. As soon as current actually flows, some of the battery's push gets "used up" just driving that current through its own internal resistance, before the rest ever reaches the terminals — so the voltage a meter reads outside, «V», is always a little less than the full «EMF ε» once current is flowing, even though the EMF itself never changes.
 
-The effect is tiny for a fresh, warm car battery, whose internal resistance is only around 0.02 Ω. Cold weather thickens the battery's internal chemistry and raises that resistance several-fold, so exactly when a car most needs a big, brief current to crank the starter motor, the terminal voltage sags hardest — which is why a marginal battery that works fine all summer can suddenly struggle to start the car on the first freezing morning.
+The effect is tiny for a fresh, warm car battery, whose internal resistance is only around 0.02 Ω. Cold weather slows the chemical reactions inside the battery and raises that resistance several-fold, so exactly when a car most needs a big, brief current to crank the starter motor, the terminal voltage sags hardest — which is why a marginal battery that works fine all summer can suddenly struggle to start the car on the first freezing morning.
 
 ## Formal
 
@@ -62,13 +62,17 @@ A battery's internal resistance is not fixed: it rises as the battery discharges
 ## Real world
 
 ### Car starter motors
+
 A starter motor briefly draws well over 100 A, which is exactly the situation where internal resistance matters most, since even a small $r$ causes a large $Ir$ voltage sag under such a heavy current.
 
 ### Battery testers
+
 A battery tester deliberately applies a known load and measures how far the voltage sags, because that sag directly reveals the internal resistance — a fast, practical way to judge a battery's health without opening it up.
 
 ### Rechargeable battery packs
+
 Laptop and phone battery packs are rated with an internal resistance low enough that they can supply a phone's peak current demand without the voltage sagging enough to reset the device.
 
 ### Solar cells
+
 A single solar cell has a meaningful internal resistance too, which is why its usable output voltage sags as more current is drawn from it under bright sun, exactly like a battery under load.
