@@ -1,8 +1,8 @@
-heat.hint: 'تغيّر ΔT التوصيل والحمل، وتغيّر T قدرة الإشعاع الصادر.'
+heat.hint: 'ΔT يغيّر التوصيل والحمل، وT تغيّر الإشعاع.'
 heat.condTitle: التوصيل
 heat.convTitle: الحمل
 heat.radTitle: الإشعاع
 heat.cond: معدل التوصيل
 heat.conv: معدل الحمل
-heat.rad: 'قدرة الإشعاع الصادر'
+heat.rad: 'قدرة الإشعاع الذي يصدره السطح'
 heat.rising: الهواء الساخن يرتفع
