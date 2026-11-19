@@ -1,73 +1,64 @@
 ---
 title: The gas laws, one at a time
-summary: >-
-  A bike pump gets stiff to push as the air inside squeezes into a
-  smaller space, and a helium balloon left in a car overnight in winter
-  comes out noticeably saggy by morning — Boyle, Charles and Gay-Lussac
-  each found one slice of the same rule connecting a gas's pressure,
-  volume and temperature.
+summary: 'Change one gas variable while holding the others fixed, and connect pressure, volume, amount and kelvin temperature.'
 parameters:
-  V: volume V
-  T: absolute temperature T
-  n: amount of gas n
+  V: 'V — volume in litres'
+  T: 'T — absolute temperature'
+  n: 'n — amount of gas'
 variables:
-  - pressure
-  - volume
-  - amount of gas, in moles
-  - universal gas constant, 8.314 J/(mol·K)
-  - absolute temperature
+  - 'absolute pressure, displayed in kPa'
+  - 'volume, controlled in litres'
+  - 'amount of gas in moles'
+  - 'gas constant, 8.314 kPa·L/(mol·K)'
+  - 'absolute temperature in kelvin'
 ---
 
 ## Try it
 
-1. Hold the slider "temperature T" fixed and drag "volume V" down. Watch the pressure readout climb as the gas is squeezed — Boyle's law.
-2. Hold "volume V" fixed and drag "temperature T" up. Watch pressure climb too, without anything moving — Gay-Lussac's law.
-3. Drag "temperature T" and "volume V" up together, adjusting until the pressure readout stops changing. That constant-pressure path is Charles's law.
+1. Set n = 1 mol, T = 300 K and V = 10 L. Pressure is about 249 kPa. Halve V to 5 L while keeping n and T fixed: pressure doubles.
+2. Restore V = 10 L and raise T from 300 to 400 K. Pressure rises from about 249 to 333 kPa, in the same ratio as absolute temperature.
+3. To keep pressure constant, compare n = 1, T = 250 K, V = 10 L with n = 1, T = 300 K, V = 12 L. Both give about 208 kPa because T/V is unchanged.
 
 ## Real-life examples
 
-1. **A bike pump.** Squeezing 1 mol of room-temperature air from 10 L down to 3 L makes the pump noticeably harder to push, because at constant temperature, pressure rises as volume shrinks — Boyle's law.
-2. **A helium balloon left in a cold car.** Half a mole of gas cooling from 293 K to 250 K in a fixed-ish balloon shrinks toward 8 L, since colder gas takes up less room at roughly the same pressure — Charles's law.
-3. **A sealed can near a fire.** A rigid, sealed 10 L container of gas heating from room temperature to 380 K sees its internal pressure rise sharply even though the volume cannot change at all — Gay-Lussac's law, and exactly why aerosol cans warn against heat.
+1. **A compressed model gas.** At n = 1 mol, T = 293 K and V = 3 L, pressure is about 812 kPa. Keeping temperature fixed during compression requires energy exchange; a fast pump stroke need not do that.
+2. **A colder state.** At n = 0.5 mol, T = 250 K and V = 8 L, pressure is about 130 kPa. This is one state, not by itself evidence of a constant-pressure cooling process.
+3. **A hotter fixed-volume state.** At n = 1 mol, T = 380 K and V = 10 L, pressure is about 316 kPa. Compare it with 244 kPa at 293 K for the same n and V.
 
 ## Test yourself
 
-1. Get the pressure to about 300 kPa.
-2. Demonstrate Boyle's law: keep the temperature near 293 K and compress the volume below 5 L.
-3. Demonstrate Charles's law: cool the gas below 230 K and shrink the volume below 10 L.
+1. Find a state with pressure near 300 kPa.
+2. Keep T within 15 K of 293 K and set V below 5 L.
+3. Set T below 230 K and V below 10 L. This check specifies a cold, small-volume state; it does not check constant pressure along a path.
 
 ## Intuition
 
-Squeeze the same amount of gas into a smaller space at the same temperature and its molecules hit the walls more often, so the pressure rises — that is Boyle's law, and it is why a bike pump gets stiffer to push the further down its stroke you go. On screen, hold "temperature T" fixed and drag "volume V" down, and watch the pressure readout climb the same way.
+Gas pressure comes from momentum transferred to the walls. With the same amount and temperature, reducing the space raises the pressure. With the same amount and volume, increasing temperature raises it too. Keeping track of what stays fixed is essential: otherwise a second change can offset the first.
 
-Now hold "volume V" fixed instead and raise "temperature T": the pressure still climbs, because hotter molecules slam into the fixed walls harder and more often — Gay-Lussac's law, the reason a sealed can must never be thrown in a fire. Finally, raise both "temperature T" and "volume V" together while watching the pressure readout hold steady: that is Charles's law, a gas expanding to make room for its own extra heat while pressure stays fixed at, say, ordinary atmospheric pressure. All three are really one law, PV = nRT, sliced along a different fixed variable each time.
+The controls choose an equilibrium state, rather than calculating how quickly a piston reaches it. Volume can change independently of temperature, and n changes the amount of gas. The pressure bar saturates at its display limit; the numerical readout still gives the calculated value. The animated 3D box illustrates molecular motion and is not a detailed simulation of compression heating.
 
 ## Formal
 
-The ideal gas law $PV = nRT$ links pressure, volume, amount of gas and absolute temperature through a single constant $R$.
+The ideal-gas equation is $PV=nRT$. Here P is absolute pressure, n is amount in moles and T is temperature in kelvin. With V in litres, use $R=8.314\ \mathrm{kPa\cdot L/(mol\cdot K)}$ to obtain P in kilopascals. This is the same numerical R as in joules because $1\ \mathrm{kPa\cdot L}=1\ \mathrm J$.
 
-Boyle's law ($P \propto 1/V$ at constant $n, T$), Charles's law ($V \propto T$ at constant $n, P$), and Gay-Lussac's law ($P \propto T$ at constant $n, V$) are each just $PV = nRT$ with one variable held fixed.
+For fixed n: constant T gives $P\propto1/V$; constant V gives $P\propto T$; constant P gives $V\propto T$. Between two states of the same amount of ideal gas, $P_1V_1/T_1=P_2V_2/T_2$. These temperature ratios require kelvin, not Celsius.
 
 ## Advanced
 
-Because all three laws come from the same equation, they must be mutually consistent: combining Boyle's and Gay-Lussac's laws for a fixed amount of gas moving between any two states gives $P_1V_1/T_1 = P_2V_2/T_2$, the combined gas law used to solve real problems where pressure, volume and temperature all change together.
+An ideal gas neglects finite molecular volume and intermolecular forces apart from collisions. Real gases depart from the model, particularly near condensation and at high density. The pressure here is absolute; a gauge relative to atmospheric pressure would show the difference between this pressure and the surrounding atmospheric pressure.
 
 ## Derivation
 
-1. The ideal gas law PV = nRT applies to a fixed amount of gas.
-2. Holding temperature fixed and rearranging gives P ∝ 1/V, Boyle's law.
-3. Holding volume fixed instead gives P ∝ T, Gay-Lussac's law; holding pressure fixed gives V ∝ T, Charles's law.
+1. Start with the ideal-gas equation and specify which variables remain fixed.
+2. At fixed amount and temperature, pressure is inversely proportional to volume.
+3. At fixed amount and volume, pressure is proportional to temperature; at fixed amount and pressure, volume is proportional to temperature.
 
 ## Real world
 
-### Aerosol cans
-Warning labels tell you never to heat or puncture an aerosol can because Gay-Lussac's law means a fixed, sealed volume of gas can build dangerous pressure as it warms.
+### A gas in a rigid vessel
 
-### Scuba diving
-A diver's lungs follow Boyle's law in reverse on the way up: gas that was compressed by water pressure at depth expands as pressure drops near the surface, which is why divers are trained to exhale continuously while ascending.
+For a fixed amount that remains gaseous, temperature changes alter pressure. The ideal-gas law provides an approximation for its equilibrium states.
 
-### Weather balloons
-A balloon released at ground level expands enormously as it rises into thinner, lower-pressure air, following Boyle's law until it eventually bursts at high altitude.
+### A flexible gas container
 
-### Car tyres
-Tyre pressure recommendations assume a "cold" tyre because driving heats the trapped air, and Gay-Lussac's law means that heated air raises the pressure reading even though no air was added.
+If external conditions keep pressure nearly constant, volume changes approximately in proportion to kelvin temperature for a fixed amount of ideal gas.
