@@ -111,7 +111,8 @@ function setupIdealGas(scene: THREE.Scene, theme: Theme) {
     setW(Wd)
     const count = Math.min(MAX, Math.round(n * 40))
     inst.count = count
-    bounce(pts, count, [0, Wd, 0, H, -D / 2, D / 2], 2.2 * Math.sqrt(T / 300), dt, inst, m4)
+    const massScale = props.options?.molarMass ? Math.sqrt(0.029 / Math.max(0.001, opt('M', 0.029))) : 1
+    bounce(pts, count, [0, Wd, 0, H, -D / 2, D / 2], 2.2 * Math.sqrt(T / 300) * massScale, dt, inst, m4)
   }
 }
 

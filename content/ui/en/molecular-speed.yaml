@@ -1,7 +1,7 @@
-kin.hint: Drag the temperature slider — watch the molecules and the thermometer together.
-kin.vrms: typical molecule speed
-kin.ke: average kinetic energy per molecule
+kin.hint: 'Compare temperature, average translational energy and root-mean-square speed.'
+kin.vrms: 'root-mean-square speed'
+kin.ke: 'mean translational kinetic energy per particle'
 kin.absZero: absolute zero
-kin.ice: ice melts
+kin.ice: 'ice melts at 1 atm'
 kin.room: room temp
-kin.boil: water boils
+kin.boil: 'water boils at 1 atm'
