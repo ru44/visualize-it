@@ -17,9 +17,9 @@ charts: []
 
 ## Try it
 
-1. Drop «body resistance Rb» toward wet skin's roughly 1000 Ω. «Ib» rockets upward for the very same touch voltage.
-2. Raise «body resistance Rb» toward dry skin's roughly 100,000 Ω instead. The same voltage now barely produces a current at all.
-3. Watch «Ib» cross 30 mA: that is the exact current an RCD is designed to detect and cut off within milliseconds.
+1. Start at 230 V with «body resistance Rb» at dry skin's roughly 100,000 Ω: «Ib» reads 2.3 mA. Drop Rb toward wet skin's roughly 1000 Ω. «Ib» rockets up to 230 mA for the very same touch voltage.
+2. Keep Rb at 1000 Ω and lower «touch voltage V» to 12 V. The current falls to 12 mA: with wet skin, even a low voltage is not harmless.
+3. Return to 230 V and raise Rb slowly from 1000 Ω. «Ib» drops below 30 mA near 7500 Ω. Above 30 mA the RCD indicator trips: that is the current an RCD is designed to detect and cut off in a fraction of a second.
 
 ## Real-life examples
 
@@ -58,13 +58,17 @@ A standard fuse or circuit breaker is sized to protect the building's wiring fro
 ## Real world
 
 ### RCDs (residual-current devices)
+
 An RCD monitors the tiny difference between live and neutral current continuously and disconnects the circuit the instant that difference exceeds about 30 mA, protecting a person even when a fuse or breaker would never notice.
 
 ### Earthing (grounding)
+
 Earthing gives a fault current a deliberate, very low-resistance path back to source, so that a fault draws enough current to blow a fuse or trip a breaker immediately, rather than waiting for a person's body to become that path instead.
 
 ### Bathroom wiring rules
+
 Bathrooms require extra-low-voltage circuits, extra earthing and RCD protection precisely because wet skin's low resistance turns an otherwise survivable shock into a dangerous one.
 
 ### PPE and insulated tools
+
 Insulated gloves and tool handles work by adding a deliberately huge resistance in series with the body, so that even a substantial touch voltage produces only a negligible, safe current.
