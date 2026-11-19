@@ -3,14 +3,14 @@ subject: electricity
 difficulty: beginner
 equation: V = \frac{E}{Q}
 concepts:
-- voltage
-- energy
-- charge
+  - voltage
+  - energy
+  - charge
 prerequisites:
-- charge-and-current
+  - charge-and-current
 related:
-- ohms-law
-- batteries-and-internal-resistance
+  - ohms-law
+  - batteries-and-internal-resistance
 visualization:
   type: voltage-and-energy
   options: {}
@@ -29,15 +29,15 @@ parameters:
     value: 10
     unit: C
 variables:
-- V
-- E
-- Q
-- I
-- t
+  - V
+  - E
+  - Q
+  - I
+  - t
 derivation:
-- V = \frac{E}{Q}
-- E = QV
-- Q = It \;\Rightarrow\; E = VIt
+  - V = \frac{E}{Q}
+  - E = QV
+  - Q = It \;\Rightarrow\; E = VIt
 presets:
   - V: 9
     Q: 10
@@ -47,7 +47,7 @@ presets:
     Q: 5
 challenges:
   - check: V*Q
-    target: 90
+    target: 120
   - check: V
     target: 3.7
   - check: V*Q > 200 and Q < 15
