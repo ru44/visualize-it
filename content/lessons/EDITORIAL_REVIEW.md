@@ -1,6 +1,6 @@
 # Bilingual editorial review
 
-140 of 390 lessons reviewed. 250 remain.
+151 of 390 lessons reviewed. 239 remain.
 
 A checked lesson has had both language files rewritten or reviewed against its configuration and visualization source. Automated validation alone does not mark a lesson reviewed. Browser interaction and independent learner review remain separate checks.
 
@@ -432,19 +432,19 @@ Scope: every lesson, including summaries, parameter labels, examples, exercises,
 - [x] [probability-basics](statistics/probability-basics/en.md) · [Arabic](statistics/probability-basics/ar.md)
 - [x] [sampling-and-polls](statistics/sampling-and-polls/en.md) · [Arabic](statistics/sampling-and-polls/ar.md)
 
-## thermodynamics (0/11)
+## thermodynamics (11/11)
 
-- [ ] [entropy-and-heat-engines](thermodynamics/entropy-and-heat-engines/en.md) · [Arabic](thermodynamics/entropy-and-heat-engines/ar.md)
-- [ ] [first-law-thermodynamics](thermodynamics/first-law-thermodynamics/en.md) · [Arabic](thermodynamics/first-law-thermodynamics/ar.md)
-- [ ] [gas-laws](thermodynamics/gas-laws/en.md) · [Arabic](thermodynamics/gas-laws/ar.md)
-- [ ] [heat-transfer-conduction-convection-radiation](thermodynamics/heat-transfer-conduction-convection-radiation/en.md) · [Arabic](thermodynamics/heat-transfer-conduction-convection-radiation/ar.md)
-- [ ] [phase-changes-and-latent-heat](thermodynamics/phase-changes-and-latent-heat/en.md) · [Arabic](thermodynamics/phase-changes-and-latent-heat/ar.md)
-- [ ] [refrigerators-and-heat-pumps](thermodynamics/refrigerators-and-heat-pumps/en.md) · [Arabic](thermodynamics/refrigerators-and-heat-pumps/ar.md)
-- [ ] [specific-heat](thermodynamics/specific-heat/en.md) · [Arabic](thermodynamics/specific-heat/ar.md)
-- [ ] [temperature-and-kinetic-energy](thermodynamics/temperature-and-kinetic-energy/en.md) · [Arabic](thermodynamics/temperature-and-kinetic-energy/ar.md)
-- [ ] [the-second-law](thermodynamics/the-second-law/en.md) · [Arabic](thermodynamics/the-second-law/ar.md)
-- [ ] [thermal-conductivity-and-insulation](thermodynamics/thermal-conductivity-and-insulation/en.md) · [Arabic](thermodynamics/thermal-conductivity-and-insulation/ar.md)
-- [ ] [thermal-expansion](thermodynamics/thermal-expansion/en.md) · [Arabic](thermodynamics/thermal-expansion/ar.md)
+- [x] [entropy-and-heat-engines](thermodynamics/entropy-and-heat-engines/en.md) · [Arabic](thermodynamics/entropy-and-heat-engines/ar.md)
+- [x] [first-law-thermodynamics](thermodynamics/first-law-thermodynamics/en.md) · [Arabic](thermodynamics/first-law-thermodynamics/ar.md)
+- [x] [gas-laws](thermodynamics/gas-laws/en.md) · [Arabic](thermodynamics/gas-laws/ar.md)
+- [x] [heat-transfer-conduction-convection-radiation](thermodynamics/heat-transfer-conduction-convection-radiation/en.md) · [Arabic](thermodynamics/heat-transfer-conduction-convection-radiation/ar.md)
+- [x] [phase-changes-and-latent-heat](thermodynamics/phase-changes-and-latent-heat/en.md) · [Arabic](thermodynamics/phase-changes-and-latent-heat/ar.md)
+- [x] [refrigerators-and-heat-pumps](thermodynamics/refrigerators-and-heat-pumps/en.md) · [Arabic](thermodynamics/refrigerators-and-heat-pumps/ar.md)
+- [x] [specific-heat](thermodynamics/specific-heat/en.md) · [Arabic](thermodynamics/specific-heat/ar.md)
+- [x] [temperature-and-kinetic-energy](thermodynamics/temperature-and-kinetic-energy/en.md) · [Arabic](thermodynamics/temperature-and-kinetic-energy/ar.md)
+- [x] [the-second-law](thermodynamics/the-second-law/en.md) · [Arabic](thermodynamics/the-second-law/ar.md)
+- [x] [thermal-conductivity-and-insulation](thermodynamics/thermal-conductivity-and-insulation/en.md) · [Arabic](thermodynamics/thermal-conductivity-and-insulation/ar.md)
+- [x] [thermal-expansion](thermodynamics/thermal-expansion/en.md) · [Arabic](thermodynamics/thermal-expansion/ar.md)
 
 ## trigonometry (13/13)
 
