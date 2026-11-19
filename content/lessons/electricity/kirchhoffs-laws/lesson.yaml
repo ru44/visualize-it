@@ -3,14 +3,14 @@ subject: electricity
 difficulty: university
 equation: I_1 = I_2 + I_3
 concepts:
-- kirchhoffs-current-law
-- kirchhoffs-voltage-law
-- circuit-analysis
+  - kirchhoffs-current-law
+  - kirchhoffs-voltage-law
+  - circuit-analysis
 prerequisites:
-- ohms-law
-- series-parallel
+  - ohms-law
+  - series-parallel
 related:
-- resistance-and-resistivity
+  - resistance-and-resistivity
 visualization:
   type: kirchhoffs-laws
   options: {}
@@ -41,17 +41,17 @@ parameters:
     value: 60
     unit: Ω
 variables:
-- V
-- R_1
-- R_2
-- R_3
-- I_1
-- I_2
-- I_3
+  - V
+  - R_1
+  - R_2
+  - R_3
+  - I_1
+  - I_2
+  - I_3
 derivation:
-- I_1 = I_2 + I_3
-- V = I_1R_1 + I_2R_2
-- I_2R_2 = I_3R_3
+  - I_1 = I_2 + I_3
+  - V = I_1R_1 + I_2R_2
+  - I_2R_2 = I_3R_3
 presets:
   - V: 12
     R1: 10

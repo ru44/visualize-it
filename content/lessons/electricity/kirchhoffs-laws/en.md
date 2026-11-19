@@ -23,13 +23,13 @@ charts: []
 
 ## Try it
 
-1. Watch «I1», «I2» and «I3» in the readouts: I2 + I3 always equals I1, exactly — that is Kirchhoff's junction rule.
-2. Raise «branch resistor R2». I2 falls, but I3 and the junction rule still hold: I2 + I3 still equals I1.
+1. Start with V = 12 V, R1 = 10 Ω, R2 = 30 Ω and R3 = 60 Ω. The readouts show I1 = 0.4 A, I2 = 0.267 A and I3 = 0.133 A. I2 + I3 equals I1 exactly — that is Kirchhoff's junction rule.
+2. Raise «branch resistor R2» from 30 Ω to 60 Ω. I1 falls to 0.3 A and now splits evenly, 0.15 A in each branch. I2 + I3 still equals I1.
 3. Make «branch resistor R3» much bigger than «branch resistor R2». Almost all the current now takes the easier R2 path.
 
 ## Real-life examples
 
-1. **Household 12 V circuit.** With R1 = 10 Ω, R2 = 30 Ω and R3 = 60 Ω, a total of 0.4 A leaves the battery and splits into 0.267 A and 0.133 A.
+1. **Two unequal branches.** With R1 = 10 Ω, R2 = 30 Ω and R3 = 60 Ω, a total of 0.4 A leaves the battery and splits into 0.267 A and 0.133 A.
 2. **Two identical branches.** With R2 = R3 = 20 Ω, the 0.6 A total current splits perfectly evenly, 0.3 A down each branch.
 3. **One branch much easier than the other.** With R2 = 10 Ω and R3 = 90 Ω, nearly all of the 0.545 A total — 0.491 A — takes the easier R2 path.
 
@@ -64,13 +64,17 @@ These two laws are really statements of conservation: the current law is conserv
 ## Real world
 
 ### House wiring
-A home's ring main and lighting circuits form exactly this kind of network, with the fuse box's main feed splitting into many branch circuits that all obey the same two laws, however complicated the wiring gets.
+
+A home's socket and lighting circuits form exactly this kind of network, with the main feed at the fuse box splitting into many branch circuits that all obey the same two laws, however complicated the wiring gets.
 
 ### Circuit simulation software
+
 Software that designs electronics solves Kirchhoff's equations for every junction and loop in a circuit — sometimes thousands of them — to predict exactly what a chip will do before anyone builds it.
 
 ### Battery balancing
+
 Battery packs with cells wired in parallel rely on the current law: if one cell's resistance changes, current automatically redistributes across the others so the currents in still sum to the current out.
 
 ### Sensor networks
+
 Resistive sensor grids, like touchscreens, are read out using exactly these laws, working backwards from measured currents at the edges to figure out where a touch is applying an extra resistance.
