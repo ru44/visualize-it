@@ -67,13 +67,17 @@ Phillip Smith drew the chart in 1939 at Bell Labs, when every impedance calculat
 ## Real world
 
 ### Tuning a ham radio antenna
+
 An antenna analyser shows a dot on a Smith chart. The operator trims the wire or turns a tuner until the dot sits in the centre, and the transmitter's power goes out instead of coming back.
 
 ### The antenna inside your phone
+
 A phone antenna is a strip of metal a few centimetres long, far from 50 Ω on its own. A matching network of two or three tiny coils and capacitors, designed on this chart, moves its point to the centre for every band the phone uses.
 
 ### Protecting a transmitter
+
 A 1 kW broadcast transmitter with a VSWR of 3 gets 250 W of its own power back as heat. Transmitters watch the VSWR and shut down above about 2, which is why a broken antenna cable is noticed within seconds.
 
 ### Ghosts on old TV screens
+
 On analogue TV a mismatched cable sent part of the picture back and forth along the cable, arriving a little late: a faint second copy of the image, shifted to the right. The TV world settled on 75 Ω cable to keep those echoes small.
