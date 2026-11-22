@@ -7,7 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="keyword" content="sorting, sorting algorithms, algorithms, visualization">
-  <meta name="og:image" content="https://github.com/visualize-it/visualize-it.github.io/raw/main/images_webp/sorting_algos.webp">
+  <meta name="og:image"
+    content="https://github.com/visualize-it/visualize-it.github.io/raw/main/images_webp/sorting_algos.webp">
 
   <!-- Materialize -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
@@ -140,14 +141,15 @@
     </li>
     <br>
     <li>
-      <b>Cocktail Shaker sort:</b> A variation of selection sort that scans for the maximum element while going forward,
+      <b>Cocktail Shaker sort:</b> A two-way variation of bubble sort that moves the maximum element while going forward,
       and the minimum element while going backwards. It is useful for electromechanical machines that use a physical
       data reader to scan and sort through values sorted in a tape.
     </li>
     <br>
     <li>
       <b>Heap sort:</b> A slightly complex sorting algorithm that uses a data structure called heaps. First algorithm on
-      this list to have a time complexity of O(n log n), although it comes with a space complexity of O(n), and the only
+      this list to have a time complexity of O(n log n), although it comes with an additional space complexity of O(1),
+      and the only
       algorithm on this list to require explicit space. It is extremely good at keeping frequently updated lists sorted
       dynamically, an advantage conferred by the data structure that it is built on. For information on the heap data
       structure, please refer <a href="https://www.geeksforgeeks.org/heap-data-structure/"
@@ -155,11 +157,11 @@
     </li>
     <br>
     <li>
-      <b>Quick sort:</b> As the name implies, it has the fastest time complexity of O(n log n) despite not requiring any
-      explicit memory. It randomly choses an element as a pivot, and transports all elements lower than the pivot to the
-      left, and the elements greater than the pivot to the right of the pivot. The same operation is repeated on the
-      portion of the list to the left and right of the pivot, recursively. Despite it's charasmatic name, it is
-      difficult to implement, and certain choices of pivots can be disastrous on it's runtime.
+      <b>Quick sort:</b> As the name implies, it has the fastest average time complexity of O(n log n) despite not
+      requiring any explicit memory. It randomly choses an element as a pivot, and transports all elements lower than
+      the pivot to the left, and the elements greater than the pivot to the right of the pivot. The same operation is
+      repeated on the portion of the list to the left and right of the pivot, recursively. Despite it's charasmatic
+      name, it is difficult to implement, and certain choices of pivots can be disastrous on it's runtime.
     </li>
     <br>
     <li>
