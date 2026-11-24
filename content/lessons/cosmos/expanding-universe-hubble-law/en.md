@@ -6,26 +6,26 @@ parameters:
   ol: dark energy ΩΛ
   tView: point in cosmic time
 variables:
-- 'recession speed: how fast a galaxy appears to move away'
-- the Hubble constant, roughly 70 km/s per megaparsec today
-- the proper distance to the galaxy right now
+  - 'recession speed: how fast a galaxy appears to move away'
+  - the Hubble constant, roughly 70 km/s per megaparsec today
+  - the proper distance to the galaxy right now
 ---
 
 ## Try it
 
-1. Drag «point in cosmic time» from left to right. Watch the galaxy dots spread farther apart as the timeline advances.
-2. Read the a(t) curve below. Its height is the universe's scale factor — how much bigger everything is compared to today.
-3. Check the readout: it tells you whether the expansion is speeding up or slowing down at that moment.
+1. Keep Ωm at 0.3 and ΩΛ at 0.7. Drag «point in cosmic time» from 0.1 to 0.6. The galaxy dots spread farther apart, and the size in the readout grows from 0.33 to 1.41.
+2. Read the a(t) curve on the right. Its height is the universe's scale factor — how big everything is compared to today, where today counts as 1.
+3. Check the readout: it tells you whether the expansion is speeding up or slowing down at that moment. At 0.2 it is slowing down; at 0.6 it is speeding up.
 
 ## Real-life examples
 
-1. **Matter-only toy universe, today.** With Ωm at 1 and ΩΛ at 0, gravity from ordinary matter is the only thing acting, and it slows the expansion down over time.
+1. **Matter-only toy universe.** With Ωm at 1 and ΩΛ at 0, gravity from ordinary matter is the only thing acting, and it slows the expansion down over time.
 2. **An empty, coasting universe.** With both Ωm and ΩΛ at 0, there is nothing to speed up or slow down the expansion — galaxies just drift apart at a constant rate.
 3. **A universe like ours.** About 30% matter and 70% dark energy: gravity slowed the expansion at first, then dark energy took over and it started speeding up again.
 
 ## Test yourself
 
-1. Set the timeline to today, at the far right.
+1. Drag the timeline all the way to the right, to 1: the far future, 31.7 billion years after the Big Bang.
 2. Model a universe with no dark energy at all.
 3. Model a universe with no matter in it at all.
 
@@ -54,10 +54,13 @@ Edwin Hubble measured this relation in 1929 using just a few dozen galaxies and 
 ## Real world
 
 ### Measuring redshift
+
 Astronomers infer a galaxy's recession speed from how much its light has stretched toward the red end of the spectrum, a direct fingerprint of the expansion.
 
 ### Building the cosmic distance ladder
+
 Hubble's law, calibrated against nearer distance measurements, lets astronomers estimate distances to galaxies far too far away to measure any other way.
 
 ### Naming the Hubble Space Telescope
+
 The telescope launched in 1990 was named after Edwin Hubble for this discovery, and has since refined the constant that bears his name.
