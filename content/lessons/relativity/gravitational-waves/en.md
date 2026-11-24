@@ -10,9 +10,9 @@ parameters:
 
 ## Try it
 
-1. Watch the blue wave. Near x = 0 it oscillates slowly and quietly; drag x toward 1 and both its speed and its height grow.
-2. Raise f0. The wave starts out oscillating faster right from the beginning, like a higher starting note.
-3. Push x close to 1, the moment of merger. The wave's swings become tall and rapid — the "chirp" astronomers listen for.
+1. Look at the blue wave from left to right. Near x = 0 its wiggles are wide and low; toward x = 1 they get both tighter and taller. Drag x from 0.5 to 0.9 to slide the orange dot along the wave into that crowded part.
+2. Raise f0 from 4 to 8. Twice as many wiggles now fit in the same picture: the wave starts out oscillating faster right from the beginning, like a higher starting note.
+3. Push x to 0.95, just before the merger. The dot now sits where the wave's swings are tall and rapid — the "chirp" astronomers listen for.
 
 ## Real-life examples
 
@@ -24,11 +24,11 @@ parameters:
 
 1. Push x close to the merger, to 0.95.
 2. Set the starting frequency f0 to its maximum, 10.
-3. Make the wave's envelope, its height, climb above 1.5.
+3. Move x to where the wave's envelope, the height of its swings, is above 1.5 — anywhere past about x = 0.86.
 
 ## Intuition
 
-Watch the blue wave as you drag x from 0 toward 1. Near the start it wiggles slowly and stays close to the middle line; the closer x gets to 1, the faster it wiggles and the taller its swings become, like a violin string being squeezed tighter and tighter.
+Follow the blue wave with the orange dot as you drag x from 0 toward 1. Near the start it wiggles slowly and stays close to the middle line; the closer x gets to 1, the faster it wiggles and the taller its swings become, like a violin string being squeezed tighter and tighter.
 
 That rising pitch and rising loudness together are called a chirp, and they happen because two orbiting masses lose energy as gravitational waves, spiralling closer and closer together, which speeds up their orbit and strengthens the waves they send out, right up until the instant they merge.
 
@@ -51,13 +51,17 @@ Both $f$ and $h$ formally diverge, $f, h \to \infty$ as $t \to t_c$, but this po
 ## Real world
 
 ### LIGO, 2015
+
 The Laser Interferometer Gravitational-Wave Observatory made the first direct detection of gravitational waves, a chirp from two black holes merging over a billion years ago, confirming a hundred-year-old prediction of Einstein's.
 
 ### Arms four kilometres long
+
 LIGO's detectors bounce laser light down two 4 km tunnels; a passing gravitational wave stretches one arm and squeezes the other by a distance smaller than a proton, yet the instrument can still measure it.
 
 ### Listening, not looking
+
 Unlike a telescope, a gravitational-wave detector "listens": the signal can be converted directly into sound, and scientists can literally hear the chirp of two black holes spiralling together.
 
 ### Multi-messenger astronomy
+
 When two neutron stars merged in 2017, LIGO detected the gravitational-wave chirp while telescopes around the world caught the light from the same event, letting astronomers study one cosmic event through two completely different signals at once.
