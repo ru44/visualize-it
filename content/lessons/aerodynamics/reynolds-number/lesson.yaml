@@ -3,14 +3,14 @@ subject: aerodynamics
 difficulty: advanced
 equation: \mathrm{Re} = \dfrac{\rho v L}{\mu}
 concepts:
-- reynolds-number
-- viscosity
-- laminar-flow
-- turbulence
+  - reynolds-number
+  - viscosity
+  - laminar-flow
+  - turbulence
 prerequisites: []
 related:
-- boundary-layer
-- drag-equation
+  - boundary-layer
+  - drag-equation
 visualization:
   type: reynolds-number
   options: {}
@@ -29,26 +29,26 @@ parameters:
     value: 3
     unit: m/s
 variables:
-- \mathrm{Re}
-- \rho
-- v
-- L
-- \mu
+  - \mathrm{Re}
+  - \rho
+  - v
+  - L
+  - \mu
 derivation:
-- \mathrm{Re} \approx \dfrac{\rho v^2 L^2}{\mu v L}
-- \dfrac{\rho v^2 L^2}{\mu v L} = \dfrac{\rho v L}{\mu}
-- \mathrm{Re} = \dfrac{\rho v L}{\mu}
+  - \mathrm{Re} \approx \dfrac{\rho v^2 L^2}{\mu v L}
+  - \dfrac{\rho v^2 L^2}{\mu v L} = \dfrac{\rho v L}{\mu}
+  - \mathrm{Re} = \dfrac{\rho v L}{\mu}
 charts: []
 presets:
-- L: 0.01
-  v: 3
-- L: 0.22
-  v: 8
-- L: 8
-  v: 250
+  - L: 0.01
+    v: 3
+  - L: 0.22
+    v: 8
+  - L: 8
+    v: 250
 challenges:
-- check: '1.225*v*L/1.81e-5'
-  target: 2000
-  tol: 200
-- check: '1.225*v*L/1.81e-5 > 1e7'
-- check: '1.225*v*L/1.81e-5 < 1'
+  - check: '1.225*v*L/1.81e-5'
+    target: 20000
+    tol: 2000
+  - check: '1.225*v*L/1.81e-5 > 1e7'
+  - check: '1.225*v*L/1.81e-5 < 1'

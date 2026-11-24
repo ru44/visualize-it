@@ -17,19 +17,19 @@ variables:
 
 ## Try it
 
-1. Start where the sliders begin: a bee's wing, about 1 cm, flapping at roughly 3 m/s.
-2. Watch the wake behind the shape: at this size and speed it stays smooth, barely disturbed.
-3. Drag «length scale L» and «speed v» up toward a jet's wing, tens of metres at hundreds of metres per second, and watch the same wake erupt into a chaotic, swirling mess.
+1. Start where the sliders begin: a bee's wing, «length scale L» = 0.01 m, flapping at «speed v» = 3 m/s. The readout shows Re = 2.03e+3.
+2. Watch the wake behind the shape: at this size and speed it stays smooth, barely disturbed, and the regime readout says laminar.
+3. Drag «length scale L» up to about 8 m and «speed v» to 250 m/s, a jet's wing. Re climbs to about 1.35e+8, the regime reads turbulent, and the same wake erupts into a chaotic, swirling mess.
 
 ## Real-life examples
 
 1. **A bee's wing.** About 1 cm across, beating at roughly 3 m/s, gives a Reynolds number near 2,000 — air feels noticeably syrupy at this scale, which is part of why insects flap rather than glide.
-2. **A thrown ball.** A 22 cm ball moving at 8 m/s gives a Reynolds number around 119,000 — big enough that the wake is fully turbulent and "normal-feeling" air resistance applies.
+2. **A thrown ball.** A 22 cm ball moving at 8 m/s gives a Reynolds number around 119,000 — big enough that the wake breaks up into swirls (the picture calls this middle range transitional) and "normal-feeling" air resistance applies.
 3. **A jumbo jet's wing.** An 8 m wing chord at 250 m/s gives a Reynolds number of roughly 135 million — a hundred thousand times higher than the bee's, air might as well have almost no stickiness at all.
 
 ## Test yourself
 
-1. Get the Reynolds number to about 2,000 — bee territory.
+1. Get the Reynolds number to about 20,000 — small-bird territory.
 2. Push the Reynolds number above 10 million — jet territory, where the flow is thoroughly turbulent.
 3. Pull the Reynolds number below 1 — creeping flow, where viscosity totally dominates, the world a swimming bacterium lives in.
 
@@ -58,13 +58,17 @@ Formally, $\mathrm{Re}$ falls out of writing the Navier–Stokes equations in di
 ## Real world
 
 ### Wind-tunnel scale models
+
 Engineers testing a scale model must either speed up the tunnel's flow or use a denser gas to keep $\mathrm{Re}$ matched to the full-size aircraft, or the model's airflow simply won't behave the same way.
 
 ### Why insects don't have "mini airliner" wings
+
 At an insect's Reynolds number, smooth streamlined shapes offer little advantage over flapping, cambered ones — the physics that rewards a sleek jet wing barely applies at that scale.
 
 ### Swimming microorganisms
+
 A bacterium swims at a Reynolds number around 0.0001: viscosity so dominates that it cannot coast even a fraction of a millimetre after stopping its flagellum, unlike a swimming fish.
 
 ### Pipe flow and plumbing
+
 Engineers designing pipework use the same Reynolds number, with pipe diameter as $L$, to predict whether water will flow smoothly or turbulently — turbulent flow wastes far more pumping energy to friction.
