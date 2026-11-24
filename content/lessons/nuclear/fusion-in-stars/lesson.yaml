@@ -22,7 +22,7 @@ parameters:
   temperature:
     min: 10
     max: 3200
-    step: 10
+    step: 5
     value: 15
     unit: MK
   stage:
@@ -51,4 +51,4 @@ presets:
 challenges:
   - check: temperature >= 100 and temperature < 600
   - check: temperature >= 2700
-  - check: temperature < 100 and stage == 2
+  - check: temperature >= 1500 and temperature < 2700

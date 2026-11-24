@@ -15,8 +15,8 @@ charts: []
 ## Try it
 
 1. Watch the top row: at 15 million kelvin, the Sun's actual core temperature, the reaction ladder shows the proton-proton chain, the way the Sun turns hydrogen into helium.
-2. Press play and watch "reaction step" cycle through all three steps of that chain, one row lit up at a time.
-3. Drag "core temperature" past 100 million kelvin. The ladder switches to helium fusing into carbon, and the blue dot on the bottom chart jumps further along the curve.
+2. The picture plays by itself: watch "reaction step" cycle through all three steps of that chain, one row lit up at a time, while "energy this step" reads +0.42, then +5.49, then +12.86 MeV.
+3. Drag "core temperature" up to 150 million kelvin. The ladder switches to helium fusing into carbon, and the blue dot on the bottom chart jumps further along the curve: "binding energy" rises from 7.07 to 7.68 MeV/A.
 
 ## Real-life examples
 
@@ -28,7 +28,7 @@ charts: []
 
 1. Set the core hot enough to fuse helium into carbon, but no hotter than carbon burning needs.
 2. Push the temperature high enough that the star finally starts forming iron.
-3. Cool the core back to the Sun's temperature and step through the whole proton-proton chain.
+3. Find the stage in between: hot enough to fuse oxygen into silicon, but not yet hot enough to make iron.
 
 ## Intuition
 
@@ -55,13 +55,17 @@ Each fusion stage needs a higher core temperature than the last because the prod
 ## Real world
 
 ### The Sun and every star like it
+
 Stars spend almost all of their lives fusing hydrogen, because it is fusion's easiest, longest-lasting fuel.
 
 ### Red giants
+
 When a star runs low on hydrogen its core contracts and heats up, igniting helium fusion and swelling the star's outer layers into a red giant.
 
 ### Supernovae
+
 Once a massive star's core turns to iron, fusion can no longer hold it up against its own gravity, and the core collapses in under a second, triggering a supernova.
 
 ### Nucleosynthesis
-Every element heavier than iron in the universe, including the iodine used in medicine, was forged in the extreme heat of a supernova or colliding neutron stars, not ordinary stellar fusion.
+
+The elements heavier than iron, including the iodine used in medicine, were not made by ordinary stellar fusion: they were built up by nuclei capturing neutrons, in old giant stars, supernovae and colliding neutron stars.
