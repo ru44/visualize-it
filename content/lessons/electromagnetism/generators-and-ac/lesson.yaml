@@ -40,7 +40,7 @@ parameters:
     min: 60
     max: 3600
     step: 30
-    value: 3000
+    value: 1500
     unit: rpm
   t:
     min: 0
@@ -59,21 +59,21 @@ derivation:
 charts: []
 primary: rpm
 presets:
-- N: 200
-  B: 0.3
-  A: 0.002
-  rpm: 300
-- N: 150
-  B: 0.4
-  A: 0.01
-  rpm: 600
-- N: 250
-  B: 0.6
-  A: 0.08
-  rpm: 3000
+  - N: 200
+    B: 0.3
+    A: 0.002
+    rpm: 300
+  - N: 150
+    B: 0.4
+    A: 0.01
+    rpm: 600
+  - N: 250
+    B: 0.6
+    A: 0.08
+    rpm: 3000
 challenges:
-- check: 'N*B*A*2*pi*(rpm/60)'
-  target: 4
-  tol: 0.5
-- check: 'abs(rpm/60 - 50) < 1'
-- check: 'A <= 0.01 and B <= 0.4 and N*B*A*2*pi*(rpm/60) > 50'
+  - check: 'N*B*A*2*pi*(rpm/60)'
+    target: 4
+    tol: 0.5
+  - check: 'abs(rpm/60 - 50) < 1'
+  - check: 'A <= 0.01 and B <= 0.4 and N*B*A*2*pi*(rpm/60) > 50'
