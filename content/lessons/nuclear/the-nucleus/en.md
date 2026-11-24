@@ -8,16 +8,16 @@ parameters:
   Z: protons Z
   N: neutrons N
 variables:
-  - the nuclear radius, in femtometres (1 fm is 10⁻¹⁵ m, about a trillionth the width of a hair)
+  - the nuclear radius, in femtometres (1 fm is 10⁻¹⁵ m, about a hundred-billionth the width of a hair)
   - the mass number, the total count of protons and neutrons, Z + N
 charts: []
 ---
 
 ## Try it
 
-1. Start at carbon-12: six blue protons and six grey neutrons packed into a tiny ball, labelled C-12 and marked a known stable isotope.
-2. Raise "neutrons N" to 8 while "protons Z" stays at 6. The label changes to C-14 and the stable badge turns off — you've built the isotope used to date old bones.
-3. Now drag "protons Z" up to 20. The ball grows and the radius R climbs too, because every extra nucleon adds volume, not just extra width.
+1. Start at carbon-12: six blue protons and six grey neutrons packed into a tiny ball, labelled C-12 and marked a known stable isotope. "radius R" reads 2.75 fm.
+2. Raise "neutrons N" to 8 while "protons Z" stays at 6. The label changes to C-14, R reads 2.89 fm and the status turns to "not a known stable isotope" — you've built the isotope used to date old bones.
+3. Now drag "protons Z" up to 20. The ball grows and the radius R climbs from 2.89 fm to 3.64 fm, because every extra nucleon adds volume, not just extra width.
 
 ## Real-life examples
 
@@ -56,13 +56,17 @@ Whether a given (Z, N) pair is stable comes down to a balance: the short-range s
 ## Real world
 
 ### Medical imaging
+
 Technetium-99m, with 43 protons, is made fresh in hospitals and decays with a half-life of just 6.0 hours, so it lights up a scan and then clears the body quickly.
 
 ### Nuclear fuel
+
 Uranium-235 and uranium-238 are chemically identical, but only the rarer U-235 splits easily enough to fuel a reactor; the far more common U-238 is nearly inert as a fuel, with a half-life of 4.47 billion years — close to the age of the Earth.
 
 ### Radiocarbon dating
+
 Every living thing keeps trading carbon with the air, including a tiny steady fraction of carbon-14. Once it dies, that C-14 decays away with a half-life of 5,730 years, so archaeologists count what's left to date old bones and wood.
 
 ### Treating thyroid disease
+
 Iodine-131, with a half-life of 8.02 days, collects in the thyroid gland and is used both to image it and, at higher doses, to treat an overactive thyroid.
