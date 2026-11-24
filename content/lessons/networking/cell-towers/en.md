@@ -18,9 +18,9 @@ variables:
 
 ## Try it
 
-1. Drag d from 0.2 towards 6: your phone walks down the road from tower A to tower B. The blue curve falls and the orange one rises.
-2. Stop at 3 km, the middle. Both towers are equally strong, yet the phone stays on tower A. Keep walking until it crosses the dashed handover line.
-3. Raise H and the handover line moves further past the middle. Raise n (a denser city) and both curves sink faster, so your bars drop lower before the switch.
+1. Drag d from 0.2 up to 5.8: your phone walks down the road from tower A to tower B. The blue curve falls and the orange one rises.
+2. Stop at 3 km, the middle. Both towers are equally strong, yet the phone stays on tower A. Keep walking: at 3.4 km it crosses the dashed handover line and the readout switches to tower B.
+3. Raise H to 6 and the handover line moves further past the middle, to about 3.7 km. Go back to 3 km and raise n from 3 to 4 (a denser city): both curves sink faster, and the signal from tower A drops from −89.3 to −94.1 dBm.
 
 ## Real-life examples
 
@@ -61,13 +61,17 @@ A tower usually carries three panels, each covering a 120° sector, so one mast 
 ## Real world
 
 ### Calls that survive a motorway
+
 At 100 km/h you cross each cell of a town in about a minute. Handover moves your call from tower to tower in a few tens of milliseconds, so you never hear the switch.
 
 ### Bars that vanish in a lift
+
 A metal lift or a basement adds tens of decibels of loss on top of the distance. If the phone hears no tower stronger than about −115 dBm, it shows "No service".
 
 ### Small cells in cities
+
 Downtown, signals fade fast and thousands of people share each cell, so carriers add small cells on lamp posts and rooftops a few hundred metres apart.
 
 ### Stadiums and festivals
+
 When 50,000 people gather in one field, carriers bring cell towers on trucks and park them beside it for the day, so each tower serves fewer phones.
