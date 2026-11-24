@@ -10,15 +10,15 @@ variables:
 
 ## Try it
 
-1. Drag the slider labeled e all the way to 0. The bar now shows a single byte, about one letter of text.
-2. Move the slider to about 6. Watch the label above the bar jump from byte to kilobyte to megabyte as it grows.
-3. Push the slider past 20. The bar now stands for more data than every computer you have ever owned put together.
+1. Drag the slider labeled e all the way to 0. The "written out" readout shows 1 B, a single byte, and the closest example is one letter.
+2. Move the slider slowly up to 6. The readout passes 1 KB at e = 3 and reaches 1 MB at e = 6, and the closest example becomes a phone photo.
+3. Push the slider to 21. The readout shows 1 ZB, far more data than every computer you have ever owned put together.
 
 ## Real-life examples
 
 1. **A single letter.** One typed character costs about one byte to store, so e sits at 0.
 2. **A phone photo.** A typical phone photo is a few megabytes, so e sits around 6.6, about 4,000,000 bytes.
-3. **All the world's data in a year.** Every video, message and sensor reading humanity records in a year adds up to roughly a 1 followed by 21 zeros in bytes, so e climbs close to 22.
+3. **All the world's data in a year.** Every video, message and sensor reading humanity records in a year adds up to well over a 1 followed by 21 zeros in bytes, so e climbs to the top of the slider, close to 22.
 
 ## Test yourself
 
@@ -28,9 +28,9 @@ variables:
 
 ## Intuition
 
-Type a single letter and your computer stores about one byte. Type a whole novel and it stores a few million bytes. Drag the slider labeled e and watch the bar grow: e counts how many tens are multiplied together, so the number of bytes N works out to $10^e$ bytes in total. Raise e by just 1 and N grows tenfold, which is why the bar shoots up so fast once e passes 10.
+Type a single letter and your computer stores about one byte. Type a whole novel and it stores a few million bytes. Drag the slider labeled e and watch the number of bytes grow: e counts how many tens are multiplied together, so the number of bytes N works out to $10^e$ bytes in total. Raise e by just 1 and N grows tenfold, which is why the number becomes huge so fast once e passes 10.
 
-Every time e climbs by 3, the bar crosses into a new named size: byte, kilobyte, megabyte, gigabyte, terabyte, and on. Cloud services such as BigQuery even charge you by how many of these bytes a query scans, so the higher the bar climbs, the more a single query can cost.
+Every time e climbs by 3, the size gets a new name: byte, kilobyte, megabyte, gigabyte, terabyte, and on. Cloud services such as BigQuery even charge you by how many of these bytes a query scans, so the bigger the number, the more a single query can cost.
 
 ## Formal
 
@@ -51,13 +51,17 @@ Computers often measure memory in powers of two, 1024 bytes to a kibibyte, while
 ## Real world
 
 ### Photos and video
+
 Phone photos run a few megabytes each and video is far larger, which is why a phone or laptop can run out of storage so quickly.
 
 ### Genomics
+
 Sequencing one human genome produces on the order of a hundred gigabytes of raw data, and hospitals now keep this for thousands of patients.
 
 ### Cloud storage and BigQuery
+
 Services such as Google's BigQuery store your tables in the cloud and bill you partly by how many bytes your queries scan, so the size of your data in bytes has a real cost attached to it.
 
 ### Streaming libraries
+
 A large streaming catalogue of movies and shows can reach into the petabytes, e around 15, spread across thousands of machines.
