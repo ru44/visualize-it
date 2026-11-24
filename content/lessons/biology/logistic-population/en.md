@@ -19,9 +19,9 @@ variables:
 
 ## Try it
 
-1. Watch the curve start low and climb almost like unchecked exponential growth.
-2. Raise K, the carrying capacity. The population now has more room and grows to a higher final level.
-3. Raise r, the growth rate, instead. The climb gets steeper, but it still levels off at the same K.
+1. At the start (r = 0.3, K = 1000, P0 = 50), watch the curve start low, climb almost like unchecked exponential growth, then flatten at 1000.
+2. Raise K, the carrying capacity, to 2000. The population now has more room and grows to a final level of 2000.
+3. Put K back at 1000 and raise r, the growth rate, to 0.6 instead. The climb gets steeper — the population passes 500 near t = 5 instead of t = 10 — but it still levels off at 1000.
 
 ## Real-life examples
 
@@ -32,7 +32,7 @@ variables:
 ## Test yourself
 
 1. Set the starting population at exactly half the carrying capacity — the fastest-growing point on the curve.
-2. Give the population room to grow twentyfold: make K at least 20 times P0.
+2. Give the population room to grow fortyfold: make K at least 40 times P0.
 3. Make the population recover quickly by setting r above 0.5 while starting from fewer than 30 individuals.
 
 ## Intuition
@@ -60,13 +60,17 @@ For $P$ slightly below $K$, writing $P = K - \epsilon$ gives $\dot\epsilon \appr
 ## Real world
 
 ### Yeast in a flask
+
 Classic lab populations of yeast or bacteria follow this curve almost exactly once nutrients start to run out.
 
 ### Wildlife management
+
 Deer or fish populations are managed by estimating K for a habitat and keeping harvests from pushing numbers above it.
 
 ### Island colonisation
+
 A species introduced to an island grows fast at first, then its numbers level off near the island’s carrying capacity.
 
 ### Human population
+
 Some demographers model regional population growth as logistic, with K set by resources, land and technology.
