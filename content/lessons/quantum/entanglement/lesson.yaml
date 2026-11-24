@@ -21,13 +21,13 @@ parameters:
     max: 180
     step: 5
     value: 0
-    unit: "°"
+    unit: '°'
   b:
     min: 0
     max: 180
     step: 5
     value: 90
-    unit: "°"
+    unit: '°'
   shots:
     min: 1
     max: 500
@@ -58,6 +58,6 @@ challenges:
     target: 1
     tol: 0.02
   - check: cos((a-b)*pi/180/2)^2
-    target: 0.5
+    target: 0.75
     tol: 0.03
   - check: abs(a-b) >= 170
