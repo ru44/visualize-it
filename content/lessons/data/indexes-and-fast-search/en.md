@@ -12,9 +12,9 @@ variables:
 
 ## Try it
 
-1. Set e to 3, so there are 1,000 items, and target to a small number. Watch the one-by-one searcher and the binary searcher race to it.
-2. Raise e toward 9. The one-by-one searcher now needs far more steps, while the binary searcher barely slows down.
-3. Change target to different values. Notice the binary searcher always finds it in roughly the same handful of steps, no matter where it hides.
+1. Set e to 3, so there are 1,000 items. The readouts show checking one by one needs 1 000 steps (1.0 ms), while halving each time needs only 10 steps (10 µs).
+2. Raise e to 9. Checking one by one now needs 1 000 000 000 steps (1000.0 s), while halving each time needs only 30 steps (30 µs).
+3. Now look at the row of 64 boxes and change target, or tap a box. With target at 41 the picture says found in 5 steps; with target at 0 it says 6 steps. Wherever the box hides, it never takes more than 7.
 
 ## Real-life examples
 
@@ -30,7 +30,7 @@ variables:
 
 ## Intuition
 
-Picture searching for one name in a phone book of a million names by reading every single entry from the start: on a bad day that is nearly a million checks. Raise the slider e and watch the one-by-one searcher crawl through the list one item at a time, while the binary searcher instead jumps to the middle, decides whether the target is to its left or right, and throws away half the list in a single step. Repeating that halving gives the number of steps binary search needs, $b = \log_2 N$, where N is how many items there are.
+Picture searching for one name in a phone book of a million names by reading every single entry from the start: on a bad day that is nearly a million checks. Raise the slider e and watch the number of steps for checking one by one explode, while the binary searcher instead jumps to the middle, decides whether the target is to its left or right, and throws away half the list in a single step. Repeating that halving gives the number of steps binary search needs, $b = \log_2 N$, where N is how many items there are.
 
 That difference is enormous: a million items takes about 20 steps for binary search but up to a million checks one by one. This is exactly what a database index does behind the scenes, so a lookup that would take forever on an unsorted table finishes almost instantly once it is indexed.
 
@@ -53,13 +53,17 @@ Real databases rarely use plain binary search directly; they use B-trees or simi
 ## Real world
 
 ### Phone and contact apps
+
 Typing a few letters into a contacts app narrows a million entries down to one almost instantly thanks to an index.
 
 ### Database indexes
+
 Adding an index to a column lets a database find matching rows in a handful of steps instead of scanning the whole table.
 
 ### Dictionaries and library catalogues
+
 Looking up a word in a paper dictionary is binary search by hand: open near the middle, then narrow left or right.
 
 ### BigQuery clustering and partitioning
+
 BigQuery lets you cluster a table by a column so queries can skip straight to the relevant rows instead of scanning everything.
