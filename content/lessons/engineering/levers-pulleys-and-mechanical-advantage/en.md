@@ -13,14 +13,14 @@ variables:
   - d_eff — the distance from the fulcrum (pivot) to where you push
   - F_load — the weight of the load being lifted
   - d_load — the distance from the fulcrum to the load
-  - "M — the mechanical advantage: how many times the lever multiplies your force"
+  - 'M — the mechanical advantage: how many times the lever multiplies your force'
 ---
 
 ## Try it
 
-1. Drag $d_{eff}$ (how far your hand is from the fulcrum) outward. Watch $F_{eff}$, the force you need, fall — and $M$ climb.
-2. Now drag $d_{load}$ closer to the fulcrum instead. The same thing happens: $M$ rises, and lifting gets easier.
-3. Drag $h$ (how high the load must rise) up. The force $F_{eff}$ never changes, but the distance your hand must travel grows by the same factor $M$ — the machine never gives you something for nothing.
+1. Start with an 800 N load, $d_{load}$ = 0.3 m and $d_{eff}$ = 1.5 m: the mechanical advantage $M$ reads 5× and the effort force $F_{eff}$ 160 N. Drag $d_{eff}$ (how far your hand is from the fulcrum) out to 3 m. $M$ climbs to 10× and $F_{eff}$, the force you need, falls to 80 N.
+2. Set $d_{eff}$ back to 1.5 m and drag $d_{load}$ closer to the fulcrum instead, from 0.3 m to 0.15 m. The same thing happens: $M$ rises to 10×, and the effort force falls to 80 N.
+3. Set $d_{load}$ back to 0.3 m and raise $h$ (how high the load must rise) from 10 cm to 20 cm. The force $F_{eff}$ stays at 160 N, but the distance your hand must travel grows from 50 cm to 100 cm — always $M$ times $h$. The machine never gives you something for nothing.
 
 ## Real-life examples
 
@@ -59,13 +59,17 @@ Real levers and pulleys lose a little of this advantage to friction at the pivot
 ## Real world
 
 ### Crowbars and pry bars
+
 A short distance from the fulcrum to a stuck object and a long handle to push gives enormous mechanical advantage for prying up rocks, nails or car corners.
 
 ### Wheelbarrows
+
 The wheel acts as the fulcrum, so the load sits close to it while your hands push from far away, letting one person lift a load that would be far too heavy to carry.
 
 ### Block-and-tackle pulleys
+
 A block and tackle with four rope segments supporting the load gives a mechanical advantage of 4, the same trade as a lever: pulling 4 metres of rope lifts an engine block just 1 metre, with a quarter of its weight in force.
 
 ### Seesaws and scissors
+
 A seesaw balances two people at equal $F \cdot d$ on each side; scissors and pliers use a short jaw and a long handle so a light hand-squeeze becomes a strong cutting or gripping force.
