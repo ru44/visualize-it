@@ -13,9 +13,9 @@ charts: []
 
 ## Try it
 
-1. Tap across a row (a period). Watch the element change while the shell count stays fixed.
-2. Tap down a column (a group) instead. Watch a whole new shell appear while the valence count stays the same.
-3. Compare sodium and potassium, both in group 1. Notice how alike their chemistry is despite sodium being one shell smaller.
+1. Tap sodium (Z = 11), then each element to its right as far as argon (Z = 18). The «electrons per shell» readout goes from 2 · 8 · 1 to 2 · 8 · 8: always three shells, one more outer electron each step.
+2. Now tap down group 1: hydrogen (Z = 1), lithium (Z = 3), sodium (Z = 11). The readout shows 1, then 2 · 1, then 2 · 8 · 1: a whole new shell each time, still one outer electron.
+3. Compare fluorine (Z = 9) and chlorine (Z = 17), both in group 17. They read 2 · 7 and 2 · 8 · 7: both are one electron short of a full outer shell, so their chemistry is alike even though fluorine is one shell smaller.
 
 ## Real-life examples
 
@@ -43,7 +43,7 @@ Elements are grouped into families that share this valence structure: the alkali
 
 ## Advanced
 
-Across a period, atomic size shrinks even though electrons are being added, because the nuclear charge Z grows at the same time and pulls the (roughly constant) inner shielding electrons in more tightly; down a group, size grows because each new shell sits further from the nucleus. These two trends — one across, one down — are the skeleton on which every other periodic trend (ionisation energy, electronegativity) is built, and the next lesson looks at them directly.
+Across a period, atomic size shrinks even though electrons are being added, because the nuclear charge Z grows at the same time and pulls the outer electrons in more tightly, while the shielding from the inner electrons stays roughly constant; down a group, size grows because each new shell sits further from the nucleus. These two trends — one across, one down — are the skeleton on which every other periodic trend (ionisation energy, electronegativity) is built, and the next lesson looks at them directly.
 
 ## Derivation
 
@@ -54,13 +54,17 @@ Across a period, atomic size shrinks even though electrons are being added, beca
 ## Real world
 
 ### Predicting reactions before you run them
+
 Chemists predict how a new element or compound will behave just from its position in the table, long before testing it in a lab.
 
 ### Reading the table like a map
+
 Metals cluster on the left and bottom-left, nonmetals on the top right, with a diagonal staircase of metalloids between them — a first clue to conductivity and bonding.
 
 ### Why sodium and potassium react alike
+
 Both sit in group 1: one loosely held valence electron makes both soft, shiny metals that react violently with water.
 
 ### Discovering new elements
+
 Mendeleev's table had gaps; the trends were so reliable that he predicted the properties of undiscovered elements before they were found.
