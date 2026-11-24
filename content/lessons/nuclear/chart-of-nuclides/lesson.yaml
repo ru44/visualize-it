@@ -23,12 +23,12 @@ parameters:
     min: 1
     max: 30
     step: 1
-    value: 26
+    value: 6
   N:
     min: 0
     max: 45
     step: 1
-    value: 30
+    value: 6
 variables:
   - B
   - A
