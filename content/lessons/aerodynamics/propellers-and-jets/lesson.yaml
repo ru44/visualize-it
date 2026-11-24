@@ -3,13 +3,13 @@ subject: aerodynamics
 difficulty: high-school
 equation: T = \dot m\, \Delta v
 concepts:
-- thrust
-- momentum
-- propulsive-efficiency
+  - thrust
+  - momentum
+  - propulsive-efficiency
 prerequisites: []
 related:
-- drag-equation
-- helicopters-and-rotors
+  - drag-equation
+  - helicopters-and-rotors
 visualization:
   type: propellers-and-jets
   options: {}
@@ -31,28 +31,28 @@ parameters:
     min: 5
     max: 420
     step: 1
-    value: 60
+    value: 120
     unit: m/s
 variables:
-- T
-- \dot m
-- \Delta v
+  - T
+  - \dot m
+  - \Delta v
 derivation:
-- \dot m = \rho A v
-- T = \dot m\, \Delta v
-- \eta = \dfrac{2v}{2v + \Delta v}
+  - \dot m = \rho A v
+  - T = \dot m\, \Delta v
+  - \eta = \dfrac{2v}{2v + \Delta v}
 charts: []
 presets:
-- A: 8
-  v: 230
-  dv: 60
-- A: 0.3
-  v: 230
-  dv: 400
-- A: 4
-  v: 70
-  dv: 25
+  - A: 8
+    v: 230
+    dv: 60
+  - A: 0.3
+    v: 230
+    dv: 400
+  - A: 4
+    v: 70
+    dv: 25
 challenges:
-- check: 'dv<100 and abs(A*1.225*(v+dv/2)*dv - 150000) < 20000'
-- check: '2*v/(2*v+dv) > 0.85'
-- check: '2*v/(2*v+dv) < 0.55 and A*1.225*(v+dv/2)*dv > 40000'
+  - check: 'dv<100 and abs(A*1.225*(v+dv/2)*dv - 150000) < 20000'
+  - check: '2*v/(2*v+dv) > 0.85'
+  - check: '2*v/(2*v+dv) < 0.55 and A*1.225*(v+dv/2)*dv > 40000'

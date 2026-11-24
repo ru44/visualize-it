@@ -17,9 +17,9 @@ variables:
 
 ## Try it
 
-1. Picture a big turbofan's intake, 8 m² of fan disc, flying at 230 m/s, adding just 60 m/s to the air.
-2. Read the thrust and the propulsive efficiency — both should look impressive.
-3. Shrink «disc area A» right down to 0.3 m² and crank «speed added Δv» up to 400 m/s instead. Watch efficiency fall hard even though the engine is now working much harder per kilogram of air.
+1. Keep «disc area A» at 8 m² and «aircraft speed v» at 230 m/s, and lower «speed added Δv» to 60 m/s: a big turbofan adding just a little speed to a lot of air.
+2. Read the thrust and the propulsive efficiency: T = 152880 N at 88.5%.
+3. Shrink «disc area A» right down to 0.3 m² and crank «speed added Δv» up to 400 m/s instead. Thrust drops to 63210 N and efficiency falls hard, to 53.5%, even though the engine is now working much harder per kilogram of air.
 
 ## Real-life examples
 
@@ -58,13 +58,17 @@ Real engines don't hit this ideal efficiency: extra losses come from the fan and
 ## Real world
 
 ### High-bypass turbofans
+
 Most of the air a modern airliner engine moves never enters the engine's hot core at all — it is pushed straight through the giant fan around the outside, exactly the "big, slow, gentle" strategy this lesson describes.
 
 ### Helicopter and drone rotors
+
 The same trade-off explains why a helicopter's huge, slow rotor disc is so much more efficient at hovering than a small, screaming ducted fan would be for the same thrust.
 
 ### Why fighter jets sacrifice efficiency for speed
+
 A fighter's narrow, high-speed exhaust is a deliberate low-efficiency choice, trading fuel economy for the compact size and huge thrust-to-weight ratio a big slow fan could never match.
 
 ### Sailing ship propellers versus paddlewheels
+
 Even without an engine, the same idea appears in ship propulsion history: a wide, slow-turning propeller pushes more water gently and wastes less energy than a small, fast one churning the same thrust.
