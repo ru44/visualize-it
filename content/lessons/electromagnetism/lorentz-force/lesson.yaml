@@ -56,23 +56,23 @@ derivation:
 charts: []
 primary: B
 presets:
-- q: -1
-  v: 6
-  B: 1
-  E: 0
-- q: 1
-  v: 8
-  B: 1.5
-  E: 0
-- q: 2
-  v: 3
-  B: 1
-  E: 3
+  - q: -1
+    v: 6
+    B: 1
+    E: 0
+  - q: 1
+    v: 8
+    B: 1.5
+    E: 0
+  - q: 2
+    v: 3
+    B: 1
+    E: 3
 challenges:
-- check: 'abs(q*v*B*1.602e-14)'
-  target: 5e-13
-  tol: 1e-13
-- check: 'B != 0 and abs(v - E/B) < 0.2'
-- check: 'abs(q*v*B*1.602e-14)'
-  target: 1e-14
-  tol: 3e-15
+  - check: 'abs(q*v*B*1.602e-14)'
+    target: 5e-13
+    tol: 1e-13
+  - check: 'B != 0 and abs(v - E/B) < 0.2'
+  - check: 'abs(q*v*B*1.602e-14)'
+    target: 1e-14
+    tol: 3e-15
