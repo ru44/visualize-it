@@ -53,6 +53,6 @@ presets:
     m: 5000
 challenges:
   - check: p*e
-    target: 9000
+    target: 6000
   - check: e > 40 and p*e > 12000
   - check: m/e < 100 and e > 45
