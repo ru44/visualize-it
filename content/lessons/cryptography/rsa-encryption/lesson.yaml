@@ -3,16 +3,16 @@ subject: cryptography
 difficulty: university
 equation: c = m^{e} \bmod n
 concepts:
-- rsa
-- public-key-cryptography
-- factoring
-- modular-arithmetic
+  - rsa
+  - public-key-cryptography
+  - factoring
+  - modular-arithmetic
 prerequisites:
-- diffie-hellman
-- exponential-vs-polynomial
+  - diffie-hellman
+  - exponential-vs-polynomial
 related:
-- one-way-functions
-- digital-signatures
+  - one-way-functions
+  - digital-signatures
 visualization:
   type: rsa-lock
   options: {}
@@ -31,13 +31,13 @@ parameters:
     min: 2
     max: 20
     step: 1
-    value: 7
+    value: 9
 variables:
-- \bmod
+  - \bmod
 derivation:
-- \text{choose } p=5,\ q=11,\ n=pq=55,\ \varphi(n)=(p-1)(q-1)=40
-- \text{pick } e=3; \text{ solve } ed \equiv 1 \bmod \varphi(n) \Rightarrow d=27 \text{ since } 3\times27=81=2\times40+1
-- c = m^{e} \bmod n = 7^{3} \bmod 55 = 13, \qquad c^{d} \bmod n = 13^{27} \bmod 55 = 7
+  - \text{choose } p=5,\ q=11,\ n=pq=55,\ \varphi(n)=(p-1)(q-1)=40
+  - \text{pick } e=3; \text{ solve } ed \equiv 1 \bmod \varphi(n) \Rightarrow d=27 \text{ since } 3\times27=81=2\times40+1
+  - c = m^{e} \bmod n = 7^{3} \bmod 55 = 13, \qquad c^{d} \bmod n = 13^{27} \bmod 55 = 7
 charts: []
 primary: m
 presets:
