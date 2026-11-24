@@ -26,9 +26,9 @@ charts:
 
 ## Try it
 
-1. Drag the time point «t» along the curve. Watch [A] fall and [B] rise, both flattening out — but not to zero.
-2. Raise «forward rate constant kf». The plateau shifts lower: equilibrium now favours B more.
-3. Raise «reverse rate constant kr» instead. The plateau shifts higher: equilibrium now favours A more.
+1. Drag «time t» from 0 to 20. The readout f(x), which is [A], falls from 1 and flattens out at about 0.25 — not zero. On the chart below, [B] rises and flattens at about 0.75.
+2. Leave «time t» at 20 and raise «forward rate constant kƒ» from 0.3 to 0.9. The plateau drops to f(x) = 0.1: equilibrium now favours B more.
+3. Put kƒ back to 0.3 and raise «reverse rate constant kᵣ» from 0.1 to 0.3 instead. The plateau rises to f(x) = 0.5: equilibrium now favours A more.
 
 ## Real-life examples
 
@@ -38,15 +38,15 @@ charts:
 
 ## Test yourself
 
-1. Set the rate constants so equilibrium favours B three times as strongly as A (K = 3).
+1. Set the rate constants so equilibrium favours B four times as strongly as A (K = 4).
 2. Let the reaction run to equilibrium with exactly 0.3 mol/L of A remaining.
 3. Make equilibrium favour the reactant so strongly that more than 80% of A is still left.
 
 ## Intuition
 
-Picture a bottle of soda you just opened: dissolved CO2 keeps turning into bubbles, while some bubbles keep re-dissolving, until the fizzing settles into a steady hiss instead of stopping. On the chart, the curve for [A] starts high and falls, and the curve for [B] starts at zero and climbs. Drag the point marked «t» (time) along them and watch both flatten out, but never reach zero or the very top.
+Picture a bottle of soda you just opened: dissolved CO2 keeps turning into bubbles, while some bubbles keep re-dissolving, until the fizzing settles into a steady hiss instead of stopping. On the chart, the curve for [A] starts high and falls, and the curve for [B] starts at zero and climbs. Drag the point «time t» along them and watch both flatten out, but never reach zero or the very top.
 
-They flatten because the reaction never actually stops: A is still turning into B, and B is still turning back into A, just at matched rates. Raise the slider «forward rate constant kf» and the flat part of both lines shifts — B ends up winning a bigger share. That's the whole idea behind Le Chatelier's principle: push on the rates, and the resting point moves, even though the back-and-forth itself never stops.
+They flatten because the reaction never actually stops: A is still turning into B, and B is still turning back into A, just at matched rates. Raise the slider «forward rate constant kƒ» and the flat part of both lines shifts — B ends up winning a bigger share. That's the whole idea behind Le Chatelier's principle: push on the rates, and the resting point moves, even though the back-and-forth itself never stops.
 
 ## Formal
 
@@ -67,13 +67,17 @@ Le Chatelier’s principle is a consequence, not a separate law: perturbing $[\m
 ## Real world
 
 ### Haber process
+
 Ammonia synthesis is a genuine equilibrium; engineers choose pressure and temperature to push it toward more product without stopping the reverse reaction entirely.
 
 ### Blood oxygen transport
+
 Haemoglobin binding oxygen is a reversible equilibrium — release in tissues and uptake in the lungs both rely on the balance shifting with local concentration.
 
 ### Carbonated drinks
+
 $\mathrm{CO_2}$ dissolved in a sealed bottle is in equilibrium with gaseous $\mathrm{CO_2}$ above it; opening the bottle shifts that balance and it fizzes.
 
 ### Solubility equilibria
+
 A saturated salt solution with undissolved crystals at the bottom is at dynamic equilibrium — dissolving and recrystallising continue at equal rates.
