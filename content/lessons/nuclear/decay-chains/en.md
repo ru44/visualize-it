@@ -14,15 +14,15 @@ charts: []
 
 ## Try it
 
-1. Watch the staircase of dots step down from the parent (top left) to the stable isotope (bottom right).
-2. Drag "half-lives elapsed" forward. The parent dot fades as its share of the original atoms drops, and the stable end brightens as it fills up.
+1. Watch the staircase of dots step down from the parent (top right) to the stable isotope (bottom left). At 1 half-life, "parent remaining" reads 50.0% U-238.
+2. Drag "half-lives elapsed" forward to 3. The parent dot fades as its share of the original atoms drops to 12.5%, and the stable end brightens as it fills up to 87.5% Pb-206.
 3. Switch "decay chain" between the three series. Each one starts at a different heavy isotope and ends at a different stable lead isotope, but every one of them passes through a radon isotope on the way.
 
 ## Real-life examples
 
 1. **A zircon crystal the moment it forms.** Trace uranium-238 gets locked into the crystal with essentially no lead yet — the clock starts at zero.
 2. **The same crystal 4.47 billion years later.** One half-life of uranium-238 has passed: almost exactly half of the original uranium has stepped all the way down to lead-206.
-3. **An ancient thorium-bearing mineral.** After three half-lives of thorium-232 (about 42 billion years), only about an eighth of the original thorium is left; the rest is now stable lead-208.
+3. **A thorium-bearing mineral in the far future.** After three half-lives of thorium-232 (about 42 billion years), only about an eighth of the original thorium is left; the rest is now stable lead-208.
 
 ## Test yourself
 
@@ -44,24 +44,28 @@ That balance ties every middle member's share of the original atoms to the paren
 
 ## Advanced
 
-Secular equilibrium is an approximation that holds once enough time has passed for a middle member to build up to its steady share, which for every isotope in these three chains takes far less time than the chain's own parent needs to decay even slightly — the longest-lived middle member of the uranium-238 chain, thorium-230, reaches equilibrium in well under a million years, a sliver of uranium-238's 4.47-billion-year half-life. The full, exact solution without this approximation is the Bateman equations, a chain of coupled differential equations solved isotope by isotope down the series.
+Secular equilibrium is an approximation that holds once enough time has passed for a middle member to build up to its steady share, which for every isotope in these three chains takes far less time than the chain's own parent needs to decay even slightly — the longest-lived middle member of the uranium-238 chain, uranium-234, reaches equilibrium within about two million years, a sliver of uranium-238's 4.47-billion-year half-life. The full, exact solution without this approximation is the Bateman equations, a chain of coupled differential equations solved isotope by isotope down the series.
 
 ## Derivation
 
 1. Once established, a middle isotope's own population stops changing much: as many atoms of it appear as decay away.
-2. That balance means the same fraction decays away every half-life for every member, so dividing each one's population by its own half-life gives the same number all along the chain.
+2. That balance means every member loses the same number of atoms each second, so dividing each one's population by its own half-life gives the same number all along the chain.
 3. Rearranging turns that shared number into a direct comparison: a middle isotope's share of the parent's population equals the ratio of their half-lives.
 
 ## Real world
 
 ### Uranium-lead dating
+
 Geologists date rocks by measuring how far the uranium-238 or uranium-235 they contain has stepped down its chain toward stable lead, the same "half-lives elapsed" slider used here.
 
 ### Radon in homes
+
 Radon-222, radon-220 and radon-219 are the one gaseous step in each of these three chains; unlike every solid isotope around it, radon can seep out of uranium- or thorium-bearing soil and rock and collect in basements, which is why many countries require home radon testing.
 
 ### Nuclear waste storage
+
 Spent reactor fuel contains isotopes partway down chains like these; storage plans account for the fact that a "safe" decay product can itself decay into something less safe further down the same chain.
 
-### Smoke detectors and other applications
+### Short-lived members put to use
+
 Some of the shorter-lived members of these chains, like polonium-210, have been used and studied precisely because a chain guarantees they are always being freshly produced from a longer-lived parent nearby.
