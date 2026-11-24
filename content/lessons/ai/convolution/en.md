@@ -15,15 +15,15 @@ variables:
 
 ## Try it
 
-1. With the vertical-edge kernel, drag pos through the whole scan: the output stays dark over flat regions and flares green/red exactly where brightness changes left-to-right — the face's vertical borders.
-2. Switch to the horizontal-edge kernel and scan again: the same image now answers a different question, lighting up the brows of the eyes and the top of the smile instead.
-3. Pick blur and stop mid-scan: every answer is just the neighbourhood average — small positive numbers everywhere, edges smoothed away.
+1. With kernel at 0 (vertical edges), drag pos from 0 to 100 through the whole scan. At pos 0 the multiply-and-sum readout shows 2, at pos 10 it shows 3 on the left border, and at pos 100 it shows -2: the output stays dark over flat regions and flares green/red exactly where brightness changes left-to-right — the face's vertical borders.
+2. Switch kernel to 1 (horizontal edges) and scan again. At pos 5 the readout shows 3 on the top border: the same image now answers a different question, lighting up the brows of the eyes and the top of the smile instead.
+3. Set kernel to 2 (blur) and stop at pos 50: the readout shows 0.44. Every answer is just the neighbourhood average — small positive numbers between 0 and 0.56 everywhere, edges smoothed away.
 
 ## Real-life examples
 
 - **A full edge scan.** 100 stops of the vertical stencil turn the face into a map of its left and right borders — the raw material every vision network starts from.
 - **The blur pass.** The same machinery with gentler weights is exactly how photo apps soften skin: convolution is image processing's oldest tool, learned anew by networks.
-- **A frozen mid-scan.** Pause anywhere and the arithmetic is nine multiplications and one sum — the whole mystery of machine vision, one patch at a time.
+- **A frozen mid-scan.** Pause the blur stencil at pos 50 and it reads 0.44: four bright pixels out of nine. The arithmetic is nine multiplications and one sum — the whole mystery of machine vision, one patch at a time.
 
 ## Test yourself
 
@@ -33,9 +33,9 @@ variables:
 
 ## Intuition
 
-How would you teach a machine to find a cat's ear *anywhere* in a photo? The brute-force answer — learn a separate detector for every possible position — is absurd. Convolution's answer is one of the great ideas in engineering: learn the detector *once*, as a tiny stencil of weights, and slide it everywhere. At each stop the stencil multiplies its nine numbers with the nine pixels beneath and sums them into a single verdict: "is my pattern here?" The trail of verdicts is a new, smaller image — a feature map — that glows wherever the feature lives.
+How would you teach a machine to find a cat's ear _anywhere_ in a photo? The brute-force answer — learn a separate detector for every possible position — is absurd. Convolution's answer is one of the great ideas in engineering: learn the detector _once_, as a tiny stencil of weights, and slide it everywhere. At each stop the stencil multiplies its nine numbers with the nine pixels beneath and sums them into a single verdict: "is my pattern here?" The trail of verdicts is a new, smaller image — a feature map — that glows wherever the feature lives.
 
-The three stencils on this page ask toy questions — vertical change, horizontal change, local average — but nothing about the machinery changes when the questions get grand. A vision network is just stacks of this: the first layer's stencils find edges, the next layer slides stencils over the *edge maps* and finds corners and curves, the next finds eyes and wheels, until somewhere near the top a stencil effectively asks "cat ear here?". Nobody designed those stencils; training nudged the nine numbers until the questions became useful. What you choose on this page by name, a network chooses by gradient descent.
+The three stencils on this page ask toy questions — vertical change, horizontal change, local average — but nothing about the machinery changes when the questions get grand. A vision network is just stacks of this: the first layer's stencils find edges, the next layer slides stencils over the _edge maps_ and finds corners and curves, the next finds eyes and wheels, until somewhere near the top a stencil effectively asks "cat ear here?". Nobody designed those stencils; training nudged the nine numbers until the questions became useful. What you choose on this page by name, a network chooses by gradient descent.
 
 ## Formal
 
@@ -45,7 +45,7 @@ That reuse — weight sharing — is the point. A dense layer connecting two suc
 
 ## Advanced
 
-Real layers run dozens of kernels in parallel (dozens of questions, dozens of maps) over many channels, interleaved with nonlinearities and downsampling, so receptive fields grow until the deepest units see the whole image. Trained first-layer kernels converge on edge and colour detectors strikingly like those measured in mammalian visual cortex — the same problem forcing the same solution. And the idea outgrew vision: convolutions over time read audio, convolutions over board positions power game-playing networks; wherever a pattern can appear *anywhere*, sliding one learned question across it beats learning the answer at every address — even transformers, which replaced convolution at vision's frontier, kept its core trick of processing every patch with shared weights.
+Real layers run dozens of kernels in parallel (dozens of questions, dozens of maps) over many channels, interleaved with nonlinearities and downsampling, so receptive fields grow until the deepest units see the whole image. Trained first-layer kernels converge on edge and colour detectors strikingly like those measured in mammalian visual cortex — the same problem forcing the same solution. And the idea outgrew vision: convolutions over time read audio, convolutions over board positions power game-playing networks; wherever a pattern can appear _anywhere_, sliding one learned question across it beats learning the answer at every address — even transformers, which replaced convolution at vision's frontier, kept its core trick of processing every patch with shared weights.
 
 ## Derivation
 
@@ -56,13 +56,17 @@ Real layers run dozens of kernels in parallel (dozens of questions, dozens of ma
 ## Real world
 
 ### Photo filters
+
 Blur, sharpen, emboss in every photo editor are fixed convolutions — networks simply learned better stencils than engineers wrote.
 
 ### Medical imaging
+
 Tumour-spotting networks slide learned stencils over scans; their first layers find edges and textures, their last ones find pathology.
 
 ### Self-driving perception
+
 Lane lines, pedestrians and signs are found by convolutional stacks running on camera frames dozens of times per second.
 
 ### Barcode and face unlock
+
 From the supermarket scanner to the phone that recognises you, the pipeline opens the same way: small windows, shared weights, feature maps.
