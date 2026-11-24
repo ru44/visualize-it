@@ -2,7 +2,8 @@
 title: How much energy hides in a gram of mass
 summary: >-
   A tiny amount of mass, fully converted, releases an enormous amount of
-  energy — enough from one gram to power a small town for a day.
+  energy — enough from one gram to power a city of a million people for a
+  day.
 parameters:
   x: mass converted x (g)
 ---
@@ -10,7 +11,7 @@ parameters:
 ## Try it
 
 1. Watch the blue line rise as you raise x, the mass converted, in grams. The orange dot shows the energy released, in millions of kilowatt-hours.
-2. Set x to 1 gram. The dot lands at 25: one gram of mass, fully converted, releases 25 million kWh, more than a small city uses in a day.
+2. Set x to 1 gram. The dot lands at 25: one gram of mass, fully converted, releases 25 million kWh, about what a city of a million people uses in a day.
 3. Push x to 10 grams. The dot climbs to 250 million kWh, a huge amount of energy from a mass you could hold on a spoon.
 
 ## Real-life examples
@@ -50,13 +51,17 @@ Almost no everyday process converts mass to energy directly; chemical reactions 
 ## Real world
 
 ### The Sun
-Every second, the Sun converts about 4 million tonnes of its own mass into the energy that reaches Earth as sunlight, a conversion this graph's line would need to stretch far beyond its slider to show.
+
+Every second, the Sun converts about 4 million tonnes of its own mass into the energy it shines out as sunlight, a conversion this graph's line would need to stretch far beyond its slider to show.
 
 ### Nuclear power plants
+
 A nuclear reactor generates enormous amounts of electricity from a relatively small amount of fuel, because splitting uranium nuclei converts a measurable sliver of their mass directly into energy.
 
 ### Particle physics
+
 When particles and their antiparticles meet, their entire mass converts to energy in one burst, the cleanest real-world example of $E = mc^2$ in action.
 
 ### Why chemical fuels can't compete
-Burning a gram of gasoline releases only about 0.00005 million kWh, roughly half a million times less than converting that same gram's mass directly, because chemical reactions barely touch the mass at all.
+
+Burning a gram of gasoline releases only about 0.013 kWh, roughly two billion times less than converting that same gram's mass directly, because chemical reactions barely touch the mass at all.
