@@ -22,9 +22,9 @@ charts:
 
 ## Try it
 
-1. Drag «mass m». Watch the number of moles rise in a straight line as you add more.
-2. Raise «molar mass M» instead. The same mass on the scale now corresponds to fewer moles.
-3. Watch the chart: molecules climb in a straight line with mass, but the line's steepness depends on M.
+1. Set «molar mass M» to 18 (water) and «mass m» to 18. The readout f(x), the number of moles, shows 1. Drag m to 36 and then 90: f(x) shows 2 and then 5, rising in a straight line.
+2. Keep m at 90 and raise «molar mass M» to 180 instead. The same mass on the scale is now only f(x) = 0.5 moles.
+3. Watch the chart: molecules climb in a straight line with mass. Put M back to 18 and the line becomes ten times steeper.
 
 ## Real-life examples
 
@@ -63,13 +63,17 @@ The mole is one of the seven SI base units, and since 2019 it is defined by fixi
 ## Real world
 
 ### Weighing out a reaction
+
 A chemist who needs exactly 2 moles of a reactant weighs out $2 \times M$ grams on a balance — no counting molecules required.
 
 ### Reading a nutrition or drug label
+
 Doses and concentrations of medicines are often specified in moles or millimoles per litre precisely because it counts molecules, not just mass, which is what matters for how they react in the body.
 
 ### Why gas volumes compare so cleanly
+
 At the same temperature and pressure, equal numbers of moles of any gas occupy the same volume, a fact that only makes sense once you think in moles rather than grams.
 
 ### Balancing chemical equations
+
 The whole-number ratios in a balanced equation are ratios of moles, not grams, which is why molar mass is the bridge between a recipe written in atoms and one you can actually measure out.
