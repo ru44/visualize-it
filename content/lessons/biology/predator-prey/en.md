@@ -22,15 +22,15 @@ variables:
 
 ## Try it
 
-1. Watch prey rise first, while predators are still scarce.
-2. Watch predators rise next as food (prey) becomes abundant — then watch prey crash.
-3. Watch predators starve and decline as prey grows scarce, letting prey recover — and the cycle repeats.
+1. The start has 40 prey and 9 predators. Watch prey rise first, to about 96 near t = 1.8, while predators are still scarce.
+2. Watch predators rise next as food (prey) becomes abundant, to about 44 near t = 2.9 — then watch prey crash to about 16.
+3. Watch predators starve and decline to about 9 as prey grows scarce, letting prey recover — and the cycle repeats about every 6.7 time units.
 
 ## Real-life examples
 
 - **Lynx and snowshoe hare.** A slow, classic cycle (birth rate a = 0.6, predation rate b = 0.02) starting from 40 hares and 9 lynx, matching the decade-long boom-and-bust seen in real fur-trading records.
 - **A fast-cycling pest and its predator.** High rates all round (a = 1.5, b = 0.15) starting from 30 pests and 10 predators produce a much quicker boom-and-bust cycle.
-- **Wolves and a large deer herd.** A slow predator decline (d = 0.2) starting from 50 deer and 15 wolves stretches the cycle into a long, gentle swing.
+- **Wolves and a large deer herd.** A slow predator decline (d = 0.2) starting from 50 deer and 15 wolves stretches the cycle into a long, slow swing.
 
 ## Test yourself
 
@@ -63,13 +63,17 @@ Because Lotka–Volterra cycles are only neutrally stable (conserved, not attrac
 ## Real world
 
 ### Lynx and snowshoe hare
+
 Hudson’s Bay Company fur-trading records (1845–1935) show an almost decade-long lynx–hare cycle matching this model closely.
 
 ### Fisheries
+
 Vito Volterra devised the model to explain why predatory fish catches rose in the Adriatic when fishing paused during World War I.
 
 ### Pest control
+
 Introducing a natural predator to control a pest can itself oscillate for years before settling down.
 
 ### Immune response
+
 A similar cycle appears between a pathogen population and the immune cells that hunt it.
