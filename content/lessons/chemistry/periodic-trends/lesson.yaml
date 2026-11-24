@@ -1,7 +1,7 @@
 id: periodic-trends
 subject: chemistry
 difficulty: high-school
-equation: "Z_{eff} = Z - S"
+equation: 'Z_{eff} = Z - S'
 concepts:
   - effective-nuclear-charge
   - ionisation-energy
@@ -27,7 +27,7 @@ variables:
   - Z_{eff}
   - S
 derivation:
-  - "Z_{eff} = Z - S"
+  - 'Z_{eff} = Z - S'
   - "\\text{across a period: } Z \\uparrow,\\ S \\approx \\text{constant} \\Rightarrow Z_{eff} \\uparrow"
   - "\\text{down a group: an added shell outweighs the rise in } Z_{eff} \\Rightarrow \\text{radius} \\uparrow"
 charts: []

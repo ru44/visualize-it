@@ -15,9 +15,9 @@ charts: []
 
 ## Try it
 
-1. Tap across period 3, from sodium to chlorine. Watch the atom shrink as nuclear charge climbs and shielding stays put.
-2. Tap down a group instead, say from fluorine to chlorine to bromine. Watch the atom grow as a new shell is added.
-3. Compare the two directions: ionisation energy and electronegativity rise across a period and fall down a group.
+1. Tap sodium (Z = 11), then move right to chlorine (Z = 17). The «electrons per shell» readout goes from 2 · 8 · 1 to 2 · 8 · 7: the same three shells, but six more protons pulling, so the atom shrinks.
+2. Tap down group 17 instead: fluorine (Z = 9), chlorine (Z = 17), bromine (Z = 35). The readout shows 2 · 7, then 2 · 8 · 7, then 2 · 8 · 18 · 7: a new shell is added each time, so the atom grows.
+3. Now tap fluorine (Z = 9) near the top right, then caesium (Z = 55) at the bottom left. Ionisation energy and electronegativity rise across a period and fall down a group, so these two sit at opposite extremes.
 
 ## Real-life examples
 
@@ -56,13 +56,17 @@ These trends are not perfectly smooth: small irregularities appear where a half-
 ## Real world
 
 ### Why fluorine is such a fierce oxidiser
+
 Fluorine's extreme electronegativity means it pulls electrons out of almost any other atom, making it one of the most reactive elements known.
 
 ### Caesium in atomic clocks
+
 Caesium's very low ionisation energy — easy to strip an electron from — is part of why it is easy to probe and manipulate, and its transition frequency defines the second.
 
 ### Predicting bond polarity
+
 Knowing where two elements sit on the electronegativity trend tells a chemist, before running any experiment, which atom in a bond will carry the partial negative charge.
 
 ### Doping semiconductors
+
 Chip manufacturers choose dopant atoms partly by atomic radius, so the added atom fits into the host crystal's lattice without excessive strain.
