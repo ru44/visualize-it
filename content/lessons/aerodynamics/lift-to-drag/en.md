@@ -25,9 +25,9 @@ charts:
 
 ## Try it
 
-1. Picture a fighter jet's short, stubby wing (aspect ratio 4) flying at a 5° angle of attack.
-2. Drag the point «angle of attack α» along the curve. It climbs, peaks, then falls again.
-3. Now raise «aspect ratio AR» toward 25, like a glider's long, slender wing. The whole curve lifts, and its peak grows.
+1. Set «aspect ratio AR» to 4 and «angle of attack α» to 5°: a fighter jet's short, stubby wing. The readout shows f(x) = 10.1976, a glide ratio of about 10.
+2. Drag the point «angle of attack α» along the curve, from −1° up to 14°. The curve climbs, peaks at about 11.5 near 2.25°, then falls again.
+3. Put «angle of attack α» back at 5° and raise «aspect ratio AR» to 25, like a glider's long, slender wing. The whole curve lifts: f(x) reads 26.6609, and the peak grows to about 28.9 near 8.5°.
 
 ## Real-life examples
 
@@ -66,13 +66,17 @@ Induced drag is the unavoidable energy cost of shedding trailing vortices that c
 ## Real world
 
 ### Sailplanes
+
 Competition gliders reach $L/D$ above 60 with aspect ratios near 30, letting them travel 60 km for every kilometre of altitude lost.
 
 ### Albatrosses
+
 One of the highest aspect ratios in nature lets albatrosses glide enormous distances over the ocean between wingbeats.
 
 ### Engine-out procedures
+
 Airliner pilots are trained to fly the best-glide speed — the AoA that maximises $L/D$ — to reach the furthest possible landing site after total engine failure.
 
 ### Winglets
+
 Winglets raise the effective aspect ratio without adding physical span, cutting induced drag and saving fuel on long cruises.
