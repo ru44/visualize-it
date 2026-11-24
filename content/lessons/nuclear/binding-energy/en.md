@@ -16,9 +16,9 @@ charts: []
 
 ## Try it
 
-1. Drag slider "mass number A" up from a light nucleus. Watch the marked dot climb the curve fast at first, each extra nucleon adding almost the full binding energy a deep interior nucleon gets.
-2. Keep dragging until the dot sits at the very top, around A = 56 to 62 — iron and nickel, the most tightly bound nuclei that exist.
-3. Keep going into heavy territory, past A = 150, all the way to uranium at A = 235. Watch the curve slope back down on the right.
+1. Drag slider "mass number A" up from 12 to 20. The readout "per nucleon" climbs from 7.2 to 8.01 MeV: the marked dot climbs the curve fast at first, each extra nucleon adding almost the full binding energy a deep interior nucleon gets.
+2. Keep dragging until the dot sits at the very top, at A = 60, where "per nucleon" reads 8.84 MeV — the neighbourhood of iron and nickel, the most tightly bound nuclei that exist.
+3. Keep going into heavy territory, past A = 150, all the way to A = 235, the mass number of uranium-235. "per nucleon" falls to about 7.6 MeV as the curve slopes back down on the right.
 
 ## Real-life examples
 
@@ -30,7 +30,7 @@ charts: []
 
 1. Find the mass number where binding energy per nucleon peaks — somewhere around iron and nickel.
 2. Move to a heavy nucleus, above mass number 150, where splitting it apart would release energy.
-3. Move to a light nucleus, below mass number 20, where fusing it with another would release energy.
+3. Move to a light nucleus, below mass number 10, where fusing it with another would release energy.
 
 ## Intuition
 
@@ -57,13 +57,17 @@ Real nuclei wobble above and below this smooth curve because of two effects the 
 ## Real world
 
 ### Iron and nickel in dying stars
+
 A massive star fuses lighter elements into heavier ones for as long as each step still climbs the curve. Once its core is mostly iron and nickel, sitting at the very peak, no further fusion step releases energy, and the star's core collapses.
 
 ### Nuclear reactors splitting uranium
+
 A reactor splits uranium-235 nuclei into two mid-sized fragments that sit higher on the curve, releasing about 200 MeV per split — enough from one kilogram of uranium to match burning roughly two thousand tonnes of coal.
 
 ### Hydrogen fusion in the Sun
+
 The Sun fuses hydrogen (A = 1) into helium (A = 4), climbing the steepest part of the curve, which is why fusing the lightest elements releases so much energy for each nucleon involved.
 
 ### Where elements heavier than iron come from
+
 Since fusion stops paying off past the peak, elements heavier than iron — including gold and uranium — are forged instead in the violent, energy-rich conditions of supernovae and colliding neutron stars.
