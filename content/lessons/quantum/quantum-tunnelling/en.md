@@ -18,9 +18,9 @@ charts: []
 
 ## Try it
 
-1. Watch the wave on screen shrink as it crosses the shaded barrier in the middle, then reappear smaller but still present on the far side.
-2. Drag «barrier width w» narrower. More wave survives the crossing, and the readout on the far side climbs.
-3. Drag «barrier height V» higher instead. The surviving wave shrinks fast, even for the same narrow width.
+1. Watch the wave on screen shrink as it crosses the shaded barrier in the middle, then reappear smaller but still present on the far side. With V = 2 and w = 0.1, «gets through» reads 9.1 %.
+2. Drag «barrier width w» down to 0.05. More wave survives the crossing, and «gets through» climbs to 30.1 %.
+3. Now drag «barrier height ÷ energy V» up to 4. The surviving wave shrinks again, to 12.5 %, even for the same narrow width.
 
 ## Real-life examples
 
@@ -31,14 +31,14 @@ charts: []
 ## Test yourself
 
 1. Make the barrier very thin, with «barrier width w» at 0.05 or below.
-2. Make the barrier both tall and thin at once: «barrier height V» at 3 or above while «barrier width w» stays at 0.1 or below.
-3. Lower the barrier close to the particle's own energy, with «barrier height V» at 0.6 or below.
+2. Make the barrier both tall and thin at once: «barrier height ÷ energy V» at 3 or above while «barrier width w» stays at 0.1 or below.
+3. Lower the barrier below the particle's own energy, with «barrier height ÷ energy V» at 0.6 or below. Nothing blocks the particle now, so «gets through» reads 100 %.
 
 ## Intuition
 
 Roll a ball at a hill too tall for its speed to climb, and classically it always rolls back down; it can never appear on the other side. An electron's wave, though, does not stop dead at the foot of a barrier: it shrinks sharply while crossing it, but a little of it always leaks out the far side, small yet never exactly zero.
 
-Drag «barrier width w» narrower on screen and watch the far-side wave grow, since there is less barrier for it to shrink across. Drag «barrier height V» higher instead and watch it shrink far faster than width alone would predict, because the barrier's height enters the formula inside a square root, and then again inside an exponential.
+Drag «barrier width w» narrower on screen and watch the far-side wave grow, since there is less barrier for it to shrink across. Drag «barrier height ÷ energy V» higher instead and watch it shrink too, though more gently than widening the barrier does, because the barrier's height enters the formula under a square root before it reaches the exponential.
 
 ## Formal
 
@@ -59,10 +59,13 @@ Because $T$ falls off exponentially with both $\kappa$ and $w$, tunnelling is ex
 ## Real world
 
 ### Flash memory and SSDs
+
 Every bit in a flash drive is stored by trapping or removing electrons that reached their cell by tunnelling through a thin oxide layer.
 
 ### Nuclear fusion in stars
+
 Protons in the Sun's core fuse at a rate that depends critically on tunnelling through their mutual electric repulsion, without which stars could not shine as they do.
 
 ### Radioactive alpha decay
-An alpha particle trapped inside a heavy nucleus escapes by tunnelling through the nuclear force holding it in, and the decay rate of an element is set almost entirely by how thick that barrier is.
+
+An alpha particle trapped inside a heavy nucleus escapes by tunnelling through the energy barrier that holds it in, and the decay rate of an element is set almost entirely by how thick that barrier is.
