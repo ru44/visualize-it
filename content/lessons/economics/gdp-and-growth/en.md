@@ -20,9 +20,9 @@ charts: []
 
 ## Try it
 
-1. Set «years elapsed t» to 0. Output equals «today's GDP p» exactly — no growth has had time to compound yet.
-2. Raise «annual growth rate g» from a slow 1.5% toward a fast 9%. The rule-of-70 doubling estimate drops sharply — growing six times faster means doubling in a fraction of the time, not just six times less time saved.
-3. Push «years elapsed t» out past the doubling estimate. Output crosses roughly double «today's GDP p», confirming the estimate was on track.
+1. Set «years elapsed t» to 0. Output Y reads 500, exactly «today's GDP p» — no growth has had time to compound yet.
+2. Set «annual growth rate g» to a slow 1.5: the rule-of-70 doubling estimate d reads 46.7 years. Now set it to a fast 9: d drops to 7.8 years — growing six times faster means doubling in one sixth of the time.
+3. Keep g at 9 and set «years elapsed t» to 9, just past the doubling estimate. Output Y reads 1086, a little more than double «today's GDP p», confirming the estimate was on track.
 
 ## Real-life examples
 
@@ -61,13 +61,17 @@ The rule of 70 is not exact, but it stays close across realistic growth rates: a
 ## Real world
 
 ### Growth miracles
+
 Several fast-growing economies in the late 20th century sustained «annual growth rate g» near 9–10% for decades, doubling their output roughly every 7 to 8 years — a pace that turned modest economies into major ones within a single working lifetime.
 
 ### The rule of 72
+
 Some use 72 instead of 70, since 72 divides evenly by more small numbers (2, 3, 4, 6, 8, 9, 12) — a minor convenience trade for a slightly less accurate estimate at very low «annual growth rate g».
 
 ### Population doubling
+
 The exact same $d \approx 70/g$ shortcut applies to any steady percentage growth, including population — a country growing at 2% a year doubles its population in about the same 35 years that a 2% GDP growth rate would take to double output.
 
 ### Output per person
+
 Total «output» doubling is not the same as living standards doubling: if population is also growing, GDP per person grows more slowly than total GDP, so the rule-of-70 estimate here answers "how long until the whole economy is twice as big," not "how long until each person is twice as well off."
