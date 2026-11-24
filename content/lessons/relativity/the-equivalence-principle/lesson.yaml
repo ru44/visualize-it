@@ -46,8 +46,8 @@ presets:
     u: 1
 challenges:
   - check: a
-    target: 9.81
-    tol: 0.05
+    target: 3.7
+    tol: 0.1
   - check: a
     target: 1.62
     tol: 0.1
