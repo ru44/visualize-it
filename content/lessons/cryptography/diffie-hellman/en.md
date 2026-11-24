@@ -15,13 +15,13 @@ variables:
 ## Try it
 
 1. Set g to 5 and a to 6: Alice mixes the public paint with her private pigment and lands on the public colour A = 8, which crosses the channel for everyone to see.
-2. Slide b back and forth and watch Bob's side: whatever he picks, the two boxes at the bottom always settle on the exact same colour — a secret that was never sent.
-3. Now wiggle a with everything else fixed: the bottom colour changes on both sides at once, yet nothing new ever crosses the middle except the two public mixes.
+2. Set b to 9 and watch Bob's side: his public colour is B = 11, and the two boxes at the bottom settle on the exact same colour, 9 — a secret that was never sent. Try other values of b: the two boxes always match.
+3. Now set a to 3 with everything else fixed: the bottom colour changes to 20 on both sides at once, yet nothing new ever crosses the middle except the two public mixes.
 
 ## Real-life examples
 
 - **The worked exchange.** With g = 5, Alice's secret 6 and Bob's secret 9: Alice sends 8, Bob sends 11, and both privately mix their way to the same shared secret, 9.
-- **Different secrets, same trick.** Change the secrets to a = 3 and b = 7: the public numbers change completely, but the two bottom boxes still match perfectly.
+- **Different secrets, same trick.** Change the secrets to a = 3 and b = 7: the public numbers change to 10 and 17, but the two bottom boxes still match perfectly, both at 14.
 - **A weak base.** Set g to 2 with a = 11 and the public colour collapses to 1 — real systems choose g and p carefully precisely so that nothing this predictable can happen.
 
 ## Test yourself
@@ -55,13 +55,17 @@ An eavesdropper who records $g=5$, $p=23$, $A=8$ and $B=11$ still cannot get the
 ## Real world
 
 ### HTTPS and TLS
+
 Every time a browser shows a secure padlock icon, it likely just ran a version of this exchange to agree on a session key with the server.
 
 ### VPNs
+
 Virtual private networks establish an encrypted tunnel by first agreeing on a shared secret this same way, without ever transmitting it directly.
 
 ### Signal and encrypted messaging
+
 Apps that promise end-to-end encryption use a descendant of this protocol to agree on keys for every conversation, and often for every message.
 
 ### Perfect forward secrecy
+
 Because fresh secret exponents can be thrown away after use, recording today's traffic does not let anyone decrypt it even if a device is later compromised.
