@@ -1,7 +1,7 @@
 ---
 title: 'Wi-Fi: how far a whisper of radio reaches'
 summary: >-
-  Your router shouts with a fifth of a watt, and every metre and every wall
+  Your router shouts with a tenth of a watt, and every metre and every wall
   takes its cut — the signal bars on your phone are just an accountant's
   report of what survived the trip.
 parameters:
@@ -15,9 +15,9 @@ variables:
 
 ## Try it
 
-1. Drag the phone away from the router: the rings fade, the distance term 20·log₁₀(d) grows, and the bars drop one by one.
-2. Keep d = 5 and raise w instead: each wall takes a flat L-decibel bite — two brick walls can cost more than twenty metres of open air.
-3. Find the dead zone: push the phone past the last wall until the budget line at the top goes below −80 and the bars empty out.
+1. Drag the phone from 5 m out to 30 m: the rings fade, the distance term 20·log₁₀(d) grows from 14.0 to 29.5 dB, P_r falls from −39.0 to −54.5 dBm, and the bars drop from 4 to 3.
+2. Go back to d = 5 and raise w from 1 to 4 instead: P_r steps down −39, −44, −49, −54 dBm. Each wall takes a flat L-decibel bite — two brick walls can cost more than twenty metres of open air.
+3. Find the dead zone: set w = 4 and L = 10, then drag the phone out past 10 m. P_r goes below −80 dBm and the bars empty out.
 
 ## Real-life examples
 
@@ -27,7 +27,7 @@ variables:
 
 ## Test yourself
 
-1. Keep a strong signal: −50 dBm or better.
+1. Get a very strong signal: −30 dBm or better.
 2. Build a dead zone: drive the signal below −75 dBm.
 3. Punch through 3 walls and still hold −65 dBm — thin walls are the trick.
 
@@ -56,13 +56,17 @@ Real Wi-Fi juggles two bands: 2.4 GHz travels farther and squeezes through walls
 ## Real world
 
 ### Where to put the router
+
 Central, high and in the open: every wall skipped refunds whole bars, which no expensive router can buy back.
 
 ### Mesh and extenders
+
 Several short, strong hops replace one long, starved one — the budget is paid in small instalments.
 
 ### Why the microwave kills the video call
+
 Microwave ovens leak at 2.45 GHz, right inside Wi-Fi's 2.4 GHz band, raising the noise floor your signal must stay above.
 
 ### 5 GHz vs 2.4 GHz
+
 The faster band loses more per wall, so phones quietly fall back to 2.4 GHz at the edge of the house.
