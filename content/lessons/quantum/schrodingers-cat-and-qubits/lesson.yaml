@@ -19,8 +19,8 @@ parameters:
     min: 0
     max: 180
     step: 1
-    value: 90
-    unit: "°"
+    value: 120
+    unit: '°'
   shots:
     min: 1
     max: 1000

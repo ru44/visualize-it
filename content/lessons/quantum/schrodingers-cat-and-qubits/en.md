@@ -14,21 +14,21 @@ charts: []
 
 ## Try it
 
-1. Set «qubit angle θ» to 0°. Every single measurement below comes back the same outcome, again and again.
-2. Set «qubit angle θ» to 90°. Now the measurements split roughly half and half, however many «number of measurements» you run.
-3. Raise «number of measurements» toward 1000 and watch the split settle down to a steady, predictable ratio.
+1. Set «qubit angle θ» to 0° and press «open 100 boxes». P(|0⟩) reads 100 %, and «results so far» shows 100 : 0 — the same outcome again and again.
+2. Set «qubit angle θ» to 90°. P(|0⟩) reads 50 %. Open 100 boxes again: now the results split roughly half and half.
+3. Raise «number of measurements» to 1000 and press «open 1000 boxes». «share of |0⟩» settles close to a steady 50 %.
 
 ## Real-life examples
 
 1. **A fair coin-flip qubit.** At θ = 90° the outcomes land close to 50/50, like an honest coin toss.
-2. **A heavily loaded qubit, almost always 0.** At θ = 30° outcome 0 dominates, though outcome 1 still shows up sometimes.
-3. **Many repeated measurements to see the statistics settle.** Running 1000 measurements at once shows the ratio far more clearly than running just a few.
+2. **A heavily loaded qubit, almost always 0.** At θ = 30° outcome 0 comes up 93.3 % of the time, though outcome 1 still shows up sometimes.
+3. **Many repeated measurements to see the statistics settle.** At θ = 60° the chance of outcome 0 is 75 %; running 1000 measurements at once shows that ratio far more clearly than running just a few.
 
 ## Test yourself
 
 1. Land the qubit exactly on a 50/50 split.
 2. Push the chance of outcome 0 above 90%.
-3. Run at least 500 measurements in one go.
+3. Set «number of measurements» to at least 500, to run them in one go.
 
 ## Intuition
 
@@ -55,10 +55,13 @@ Real quantum computers store information in physical qubits — trapped ions, su
 ## Real world
 
 ### Quantum computing
+
 Companies building quantum computers use superposition across many qubits to attack certain problems, like breaking down large numbers, far faster than any ordinary computer.
 
 ### Quantum cryptography
+
 Quantum key distribution uses the fact that measuring a qubit disturbs it, so any eavesdropper trying to intercept a secret key leaves a detectable trace.
 
 ### Random number generation
+
 Because a qubit's outcome is genuinely unpredictable until measured, quantum devices can generate truly random numbers, unlike ordinary computers, which only ever fake randomness.
