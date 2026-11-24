@@ -3,16 +3,16 @@ subject: cosmos
 difficulty: high-school
 equation: v = \sqrt{GM(r)/r}
 concepts:
-- dark matter
-- galaxy rotation
-- orbital velocity
+  - dark matter
+  - galaxy rotation
+  - orbital velocity
 prerequisites:
-- universal-gravitation
-- kepler-orbits
+  - universal-gravitation
+  - kepler-orbits
 related:
-- gravitational-lensing
-- dark-energy
-- black-holes
+  - gravitational-lensing
+  - dark-energy
+  - black-holes
 visualization:
   type: rotation-curve
   options: {}
@@ -33,24 +33,24 @@ parameters:
     value: 15
     unit: kpc
 variables:
-- v
-- G
-- M(r)
-- r
+  - v
+  - G
+  - M(r)
+  - r
 derivation:
-- \frac{GM(r)m}{r^2} = \frac{mv^2}{r}
-- v = \sqrt{\frac{GM(r)}{r}}
-- M(r) \propto r
+  - \frac{GM(r)m}{r^2} = \frac{mv^2}{r}
+  - v = \sqrt{\frac{GM(r)}{r}}
+  - M(r) \propto r
 presets:
-- halo: 2
-  r: 8
-- halo: 5
-  r: 20
-- halo: 8
-  r: 25
+  - halo: 2
+    r: 8
+  - halo: 5
+    r: 20
+  - halo: 8
+    r: 25
 challenges:
-- check: abs(halo - 5) < 0.6
-- check: r
-  target: 25
-  tol: 1
-- check: halo < 0.5
+  - check: abs(halo - 5) < 0.6
+  - check: r
+    target: 25
+    tol: 1
+  - check: halo < 0.5 and r > 29
