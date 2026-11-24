@@ -17,19 +17,19 @@ charts: []
 
 ## Try it
 
-1. Watch the screen fill with bright and dark stripes as particles arrive one by one through the two slits.
-2. Drag «slit separation d» wider. The stripes squeeze closer together.
-3. Turn on the «which-path detector». The stripes vanish, and only two plain blobs remain — one behind each slit.
+1. Watch the screen fill with bright and dark stripes as particles arrive one by one through the two slits. With d = 3 and λ = 2, «stripe spacing» reads 0.267.
+2. Drag «slit separation d» from 3 up to 6. The stripes squeeze closer together and «stripe spacing» halves to 0.133.
+3. Set «which-path detector» to 1. The stripes vanish, «stripe spacing» shows —, and only two plain blobs remain, one behind each slit.
 
 ## Real-life examples
 
-1. **A laser aimed at two narrow slits.** With the slits close together, wide, well-spaced stripes cover the screen.
-2. **Longer-wavelength light through close slits.** Redder light with slits pulled in tight spreads the stripes out even further.
+1. **A laser aimed at two narrow slits.** With d = 3 and λ = 2, evenly spaced stripes cover the screen, 0.267 apart.
+2. **Longer-wavelength light through close slits.** Redder light (λ = 4) with the slits pulled in to d = 1.5 spreads the stripes out to 1.067 apart, four times wider.
 3. **A detector watching which slit each particle takes.** The moment you know the path, the stripes disappear completely.
 
 ## Test yourself
 
-1. Make the stripes twice as wide as the default setting.
+1. Double the stripe spacing from the default 0.267 to about 0.533.
 2. Switch on the detector and watch interference disappear.
 3. Squeeze the stripe spacing tighter than 0.15, with the detector switched off.
 
@@ -51,17 +51,20 @@ Richard Feynman called this "the only mystery" of quantum mechanics: the interfe
 
 ## Derivation
 
-1. Wider light waves make the stripe spacing wider.
+1. Longer light waves make the stripe spacing wider.
 2. Moving the two slits apart squeezes the stripes closer together.
 3. Combining both effects gives the stripe spacing used by this simulation, with a constant fixed by the screen's geometry.
 
 ## Real world
 
 ### Electron microscopes
+
 Electron interference, the same effect behind these stripes, limits how sharply an electron microscope can focus its beam.
 
 ### Gravitational-wave detectors
+
 LIGO splits a laser beam down two paths kilometres long and recombines them, reading a passing gravitational wave from the shift in their interference stripes.
 
 ### Neutron and molecule interferometry
+
 Physicists have sent whole molecules of hundreds of atoms through slits and still seen interference stripes, showing the effect is not just for electrons and photons.
