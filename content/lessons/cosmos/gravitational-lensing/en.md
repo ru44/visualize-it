@@ -5,17 +5,17 @@ parameters:
   M: lens mass M
   offset: source position
 variables:
-- 'the Einstein radius: how big the ring of bent light appears, in arcseconds'
-- the lens mass, in the units the picture uses
-- the angle a light ray bends as it passes the lens
-- the closest distance the ray passes from the lens's center
+  - 'the Einstein radius: how big the ring of bent light appears, measured in half the height of the picture'
+  - the lens mass, in the units the picture uses
+  - the angle a light ray bends as it passes the lens
+  - the closest distance the ray passes from the lens's center
 ---
 
 ## Try it
 
-1. Drag «source position» toward 0. The smeared images of the background galaxy pull together into a ring.
-2. Raise «lens mass M». The ring grows, since a heavier lens bends light through a wider angle.
-3. Move «source position» away from 0 again. The ring breaks into separate arcs on either side of the lens.
+1. Drag «source position» to 0. The smeared images of the background galaxy pull together into a ring, and the readout says «a full ring» with an Einstein radius of 0.240.
+2. Raise «lens mass M» from 4 to 9. The ring grows and the Einstein radius rises to 0.360, since a heavier lens bends light through a wider angle.
+3. Move «source position» to 0.1. The ring breaks into separate arcs on either side of the lens, and the readout changes to «bright arcs».
 
 ## Real-life examples
 
@@ -54,13 +54,17 @@ The full lens equation also depends on the distances between observer, lens, and
 ## Real world
 
 ### The Bullet Cluster
+
 Two galaxy clusters collided, and lensing maps show most of the mass sitting apart from the glowing hot gas — strong direct evidence that dark matter exists and barely interacts with itself.
 
 ### Weighing galaxy clusters
+
 Astronomers map dark matter in clusters by measuring exactly how much they distort the galaxies behind them.
 
 ### Hunting for exoplanets
+
 A star's gravity can briefly brighten a background star as it passes in front, a trick called microlensing that has revealed planets too faint to see directly.
 
 ### Testing Einstein in 1919
+
 Arthur Eddington's eclipse expedition measured starlight bending around the Sun, giving general relativity its first strong observational proof.
