@@ -12,13 +12,13 @@ variables:
 ## Try it
 
 1. Look at the two grids of small squares, 256 of them each: one is the fingerprint of "hello world", the other belongs to a copy with a single letter changed.
-2. Drag «pos» to choose which letter of "hello world" gets changed, from the first letter to the last.
-3. Watch the squares outlined in red. Roughly half of all 256 squares flip color, no matter which single letter you changed.
+2. Set «pos» to 0. The first letter changes, so the copy reads "iello world", and the "bits changed" readout shows 126 / 256.
+3. Set «pos» to 10. Now the copy reads "hello worle" and 140 of the 256 squares are outlined in red. Roughly half of all the squares flip, no matter which single letter you changed.
 
 ## Real-life examples
 
 1. **Checking a downloaded file.** Changing the very first letter, «pos» = 0, mimics a single corrupted byte at the start of a download — the whole fingerprint still comes out unrecognizable.
-2. **Verifying a text message.** «pos» = 5 changes a letter in the middle of the text, the way a word altered mid-message would.
+2. **Verifying a text message.** «pos» = 5 changes the space in the middle of the text into an underscore, the way a small edit mid-message would.
 3. **A software update package.** «pos» = 10 changes only the very last letter, showing that even a change at the far end scrambles the fingerprint just as completely.
 
 ## Test yourself
@@ -52,13 +52,17 @@ SHA-256 belongs to the SHA-2 family, standardized by the U.S. National Institute
 ## Real world
 
 ### File integrity checks
+
 Software downloads publish a SHA-256 fingerprint alongside the file so anyone can confirm nothing was corrupted or tampered with in transit.
 
 ### Git commit identifiers
+
 Every commit in a Git repository is named by the hash of its contents, so changing even one character of code produces an entirely different commit id.
 
 ### Bitcoin mining
+
 Bitcoin miners race to find an input whose SHA-256 hash happens to start with many zero bits, a search with no shortcut faster than trying huge numbers of candidates.
 
 ### Digital forensics
+
 Investigators hash evidence files the moment they collect them, so any later change to the file — even one bit — is instantly detectable.
