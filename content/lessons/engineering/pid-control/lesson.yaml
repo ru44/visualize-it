@@ -22,8 +22,8 @@ visualization:
       - (Kp*(r - x) + Ki*I - x)/tau
       - r - x
     initial:
-      - "0"
-      - "0"
+      - '0'
+      - '0'
     tMax: 30
     labels:
       - temperature x
@@ -76,10 +76,10 @@ presets:
     Ki: 0.5
     r: 1.5
     tau: 0.5
-  - Kp: 8
-    Ki: 1.5
+  - Kp: 1
+    Ki: 2
     r: 1
-    tau: 0.5
+    tau: 3
 challenges:
   - check: Ki<0.03 and abs(Kp/(1+Kp)-0.8)<0.02
   - check: (1+Kp)/(2*sqrt(Ki*tau))
