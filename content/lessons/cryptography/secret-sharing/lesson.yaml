@@ -3,14 +3,14 @@ subject: cryptography
 difficulty: high-school
 equation: f(x) = s + a_1 x + \dots + a_{k-1}\,x^{k-1}
 concepts:
-- secret-sharing
-- threshold
-- polynomial-interpolation
-- information-theoretic-security
+  - secret-sharing
+  - threshold
+  - polynomial-interpolation
+  - information-theoretic-security
 prerequisites: []
 related:
-- xor-and-one-time-pad
-- digital-signatures
+  - xor-and-one-time-pad
+  - digital-signatures
 visualization:
   type: secret-sharing
   options: {}
@@ -29,15 +29,15 @@ parameters:
     min: 0
     max: 5
     step: 1
-    value: 2
+    value: 1
 variables:
-- s
-- k
-- a_1, \dots, a_{k-1}
+  - s
+  - k
+  - a_1, \dots, a_{k-1}
 derivation:
-- \text{hide the secret as } f(0) = s \text{ and pick } k-1 \text{ random coefficients}
-- \text{share } j \text{ is the point } (j,\ f(j))
-- k \text{ points fix the curve exactly; } k-1 \text{ points fit every possible secret}
+  - \text{hide the secret as } f(0) = s \text{ and pick } k-1 \text{ random coefficients}
+  - \text{share } j \text{ is the point } (j,\ f(j))
+  - k \text{ points fix the curve exactly; } k-1 \text{ points fit every possible secret}
 charts: []
 primary: shown
 presets:

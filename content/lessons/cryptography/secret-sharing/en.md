@@ -17,8 +17,8 @@ variables:
 ## Try it
 
 1. With the threshold at 3, reveal 2 shares and look at the ghost curves: nine different curves pass through both revealed points, one for every possible secret — the two shares have said nothing.
-2. Reveal a third share and watch every ghost but one vanish: the curve snaps into place and the secret is read off the axis.
-3. Raise the threshold to 4 with the same shares revealed and the ghosts return — a higher threshold means more holders must cooperate.
+2. Reveal a third share and watch every ghost but one vanish: the curve snaps into place and the secret readout changes from "?" to 5.
+3. Raise the threshold to 4 with the same 3 shares revealed and the ghosts return — a higher threshold means more holders must cooperate.
 
 ## Real-life examples
 
@@ -57,13 +57,17 @@ Shamir published this scheme in 1979, and it carries a property nothing computat
 ## Real world
 
 ### Crypto wallet custody
+
 Exchanges split the master key of cold-storage wallets with threshold schemes, so no single employee — and no single burglary — can move the funds.
 
 ### Root key ceremonies
+
 The keys that sign the internet's DNS root are split among trusted community members across continents; a quorum must physically assemble to use them.
 
 ### Missile-launch style two-person rules
+
 Any "two keys, two people" control is a threshold scheme in hardware; Shamir turned the idea into mathematics with any n and any k.
 
 ### Threshold signatures
+
 Modern protocols let k of n servers jointly produce one signature without reconstructing the private key anywhere — secret sharing grown into a signing machine.
