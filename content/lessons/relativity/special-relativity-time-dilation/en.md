@@ -11,7 +11,7 @@ parameters:
 ## Try it
 
 1. Leave v/c at 0.5 and watch the two clocks: both photons fly at the same speed, but the ship's photon must chase its sliding mirrors along a diagonal, and its tick counter already falls behind yours.
-2. Drag the ship (or the slider x) up to 0.9: the diagonal stretches, gamma passes 2.3, and the ship's clock visibly ticks less than half as often as yours.
+2. Drag the ship (or the slider x) up to 0.9: the diagonal stretches, gamma reaches about 2.29, and the ship's clock visibly ticks less than half as often as yours.
 3. Push x all the way to 0.99 and look at the triangle below: the diagonal is now seven times the mirror gap — the geometry alone forces the ship's clock to tick once for your seven.
 
 ## Real-life examples
@@ -51,13 +51,17 @@ As $v \to c$, $\gamma \to \infty$, which is one reason nothing with mass can eve
 ## Real world
 
 ### Muons from cosmic rays
+
 Muons created in the upper atmosphere decay in millionths of a second, far too fast to reach the ground at everyday speeds — but at 0.98c, time dilation stretches their lifetime enough that huge numbers of them reach detectors at sea level.
 
 ### GPS satellites
+
 Though their orbital speed is a tiny fraction of light speed, GPS satellites move fast enough that engineers must include special-relativistic time dilation, alongside the opposite gravitational effect, in every position calculation.
 
 ### Particle accelerators
+
 Beams at facilities like CERN reach speeds where gamma exceeds a thousand, letting physicists watch unstable particles survive thousands of times longer than they would at rest.
 
 ### Why astronauts age very slightly slower
+
 Astronauts on the International Space Station move fast enough that, after months in orbit, they return a few milliseconds younger than people who stayed on Earth — a real, measured example of this effect.
