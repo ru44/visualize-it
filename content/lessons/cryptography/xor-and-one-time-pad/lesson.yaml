@@ -3,16 +3,16 @@ subject: cryptography
 difficulty: beginner
 equation: C = M \oplus K
 concepts:
-- xor
-- one-time-pad
-- perfect-secrecy
-- stream-cipher
+  - xor
+  - one-time-pad
+  - perfect-secrecy
+  - stream-cipher
 prerequisites:
-- caesar-cipher
-- binary-numbers
+  - caesar-cipher
+  - binary-numbers
 related:
-- vigenere-cipher
-- block-ciphers-and-aes
+  - vigenere-cipher
+  - block-ciphers-and-aes
 visualization:
   type: xor-cipher
   options:
@@ -22,23 +22,23 @@ parameters:
     min: 0
     max: 999
     step: 1
-    value: 42
+    value: 256
 variables:
-- M
-- K
-- C
+  - M
+  - K
+  - C
 derivation:
-- C = M \oplus K
-- C \oplus K = M
-- \text{if } K \text{ is random and used once, every message is an equally likely explanation of } C
+  - C = M \oplus K
+  - C \oplus K = M
+  - \text{if } K \text{ is random and used once, every message is an equally likely explanation of } C
 charts: []
 primary: key
 presets:
-- key: 42
-- key: 512
-- key: 900
+  - key: 42
+  - key: 512
+  - key: 900
 challenges:
-- check: key
-  target: 42
-- check: key >= 900
-- check: key < 10
+  - check: key
+    target: 42
+  - check: key >= 900
+  - check: key < 10
