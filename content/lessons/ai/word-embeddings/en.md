@@ -13,13 +13,13 @@ variables:
 
 ## Try it
 
-1. Find king and man on the map and trace the arrow that goes from man to king.
+1. Find king and man on the map and trace with your finger the arrow that goes from man to king: straight to the right, with no change in height.
 2. Now start at woman and trace that same arrow, the same direction and length. See where it lands.
-3. Check which word sits closest to where the arrow landed — it should be queen, and notice how similar words already cluster near each other even before you draw any arrows.
+3. Check which word sits closest to where the arrow landed — the dashed ring marks the spot and the readout names the nearest word: queen, with similarity 1. Notice how similar words already cluster near each other even before you draw any arrows.
 
 ## Intuition
 
-Imagine every word placed somewhere on a huge map, using just two coordinates here so the whole thing fits on screen. Instead of storing each word as a meaningless code, an embedding stores it as a point on that map, placed so that words used in similar ways end up near each other: king sits near queen, cat sits near dog, far from either. The position of every point was learned from how the words actually get used across huge amounts of text, not placed there by hand.
+Imagine every word placed somewhere on a huge map, using just two coordinates here so the whole thing fits on screen. Instead of storing each word as a meaningless code, an embedding stores it as a point on that map, placed so that words used in similar ways end up near each other: prince sits near king, apple sits near banana, far from either. The position of every point was learned from how the words actually get used across huge amounts of text, not placed there by hand.
 
 Once words are points, arithmetic on the points starts to line up with meaning. The arrow from man to king points roughly the same way and the same distance as the arrow from woman to queen, because both arrows capture the same shift: moving from a general word to its royal counterpart. Add that same shift onto woman and you land near queen, without either word ever being told what "royal" means.
 
@@ -42,13 +42,17 @@ Real embeddings live in hundreds of dimensions rather than the two shown here, l
 ## Real world
 
 ### Search engines
+
 Search ranks results by how close a query's embedding sits to each page's embedding, not just matching exact words.
 
 ### Recommendation systems
+
 Products, songs or articles get embedded as points too, so "similar item" means "nearby point".
 
 ### Chat assistants
+
 Understanding that "car" and "automobile" mean nearly the same thing relies on their embeddings sitting close together.
 
 ### Machine translation
+
 Translating between languages is easier once words from both languages are placed in a shared embedding space.
