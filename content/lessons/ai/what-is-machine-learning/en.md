@@ -16,27 +16,27 @@ variables:
 
 ## Try it
 
-1. Look at the orange line when steps is 0 — it is flat and ignores the blue dots completely.
-2. Press play and watch steps climb. The orange line rotates and slides until it threads through the dots, chasing the teal dashed line.
-3. Push lr up high, reset steps to 0, and press play again. Notice the line overshoot and wobble instead of settling smoothly.
+1. Look at the orange line when steps is 0 — it is flat and ignores the blue dots completely. The loss readout shows 280.73.
+2. Press play and watch steps climb to 200. The orange line rotates and slides until it threads through the dots, chasing the teal dashed line. The readouts end near m = 1.003 and c = 0.936, and the loss has dropped to 0.348.
+3. Set lr to 0.045 (steps jumps back to 0) and press play again. Each step now overshoots further than the one before: the line swings wider and wider until it leaves the picture, and the loss grows instead of shrinking.
 
 ## Real-life examples
 
 1. **Before any training.** The line is flat and ignores every dot — this is what a brand-new model looks like before it has ever seen an example.
 2. **After a full training run.** After 150 steps of nudging, the line's slope and starting point have settled into a shape that threads through the scattered points.
-3. **Trained too fast.** With the learning rate pushed almost to its highest setting, the line races toward the points and overshoots, wobbling instead of settling.
+3. **Trained too fast.** With the learning rate pushed almost to its highest setting, the line races toward the points and overshoots further on every step. After 20 steps it has swung right out of the picture.
 
 ## Test yourself
 
 1. Train for the full 200 steps.
 2. Slow training down until the learning rate drops below 0.003.
-3. Push the learning rate above 0.045 and let it run past step 10 — watch it overshoot.
+3. Push the learning rate above 0.045 and let it run past step 10 — watch it overshoot further each step.
 
 ## Intuition
 
-Picture ten friends' heights sketched as blue dots on a page, with one straight orange line trying to pass close to all of them. At step 0 the line is flat, ignoring every dot; drag the slider labelled "steps" up and the orange line starts swinging and sliding on its own, chasing the teal dashed line — the best possible fit — a little closer with every step. Its steepness has a name: it is $m$, and you can watch it change as the line rotates. Where it starts has a name too: it is $c$, and you can watch it shift as the line slides up or down.
+Picture eight friends' heights sketched as blue dots on a page, with one straight orange line trying to pass close to all of them. At step 0 the line is flat, ignoring every dot; drag the slider labelled "steps" up and the orange line starts swinging and sliding on its own, chasing the teal dashed line — the best possible fit — a little closer with every step. Its steepness has a name: it is $m$, and you can watch it change as the line rotates. Where it starts has a name too: it is $c$, and you can watch it shift as the line slides up or down.
 
-The single number that measures how wrong the line still is also has a name: $L$, the loss. Training simply means shrinking $L$, one small nudge at a time, and a giant model behind a chat assistant does the exact same shrinking — just on a formula holding billions of numbers instead of two, checked against far more data than ten dots.
+The single number that measures how wrong the line still is also has a name: $L$, the loss. Training simply means shrinking $L$, one small nudge at a time, and a giant model behind a chat assistant does the exact same shrinking — just on a formula holding billions of numbers instead of two, checked against far more data than eight dots.
 
 ## Formal
 
@@ -57,13 +57,17 @@ Fitting a line to a handful of points is a toy problem chosen because it can be 
 ## Real world
 
 ### Recommendations
+
 Streaming services fit a model that predicts how much you will like each title, then adjust it as you watch and rate more.
 
 ### Spam filters
+
 Email systems learn to separate spam from real mail by fitting a model to millions of examples that were already labelled by users.
 
 ### Machine translation
+
 Translation systems fit a huge model that turns a sentence in one language into a sentence in another, trained on paired examples.
 
 ### Medical imaging
+
 Diagnostic tools fit a model to scans that doctors have already labelled, then flag new scans that look similar to the labelled disease cases.
