@@ -1,7 +1,7 @@
 id: titration-curve
 subject: chemistry
 difficulty: university
-equation: "C_a V_a = C_b V_{eq}"
+equation: 'C_a V_a = C_b V_{eq}'
 concepts:
   - titration
   - equivalence-point
@@ -16,7 +16,7 @@ related:
 visualization:
   type: function-plot
   options:
-    expr: "x < Ca*Va/Cb ? -log10((Ca*Va - Cb*x)/(Va + x)) : (x > Ca*Va/Cb ? 14 + log10((Cb*x - Ca*Va)/(Va + x)) : 7)"
+    expr: 'x < Ca*Va/Cb ? -log10((Ca*Va - Cb*x)/(Va + x)) : (x > Ca*Va/Cb ? 14 + log10((Cb*x - Ca*Va)/(Va + x)) : 7)'
     domain:
       - 0
       - 60
@@ -55,8 +55,8 @@ variables:
   - C_b
   - V_{eq}
 derivation:
-  - "n_a = C_a V_a"
-  - "n_b = C_b x"
+  - 'n_a = C_a V_a'
+  - 'n_b = C_b x'
   - "n_a = n_b \\Rightarrow V_{eq} = \\dfrac{C_a V_a}{C_b}"
 primary: x
 presets:
