@@ -3,17 +3,17 @@ subject: aerodynamics
 difficulty: university
 equation: L = \tfrac12 \rho v^2 S\, C_L
 concepts:
-- lift
-- angle-of-attack
-- pressure
-- circulation
+  - lift
+  - angle-of-attack
+  - pressure
+  - circulation
 prerequisites:
-- newtons-second-law
-- function-graph
+  - newtons-second-law
+  - function-graph
 related:
-- stall-and-angle-of-attack
-- lift-to-drag
-- bernoulli
+  - stall-and-angle-of-attack
+  - lift-to-drag
+  - bernoulli
 visualization:
   type: airfoil
   options: {}
@@ -31,38 +31,38 @@ parameters:
     value: 50
     unit: m/s
 variables:
-- L
-- \rho
-- v
-- S
-- C_L
+  - L
+  - \rho
+  - v
+  - S
+  - C_L
 derivation:
-- \dot{p}_{\text{air}} = \dot m\, \Delta v_y
-- L = \dot{p}_{\text{air}} = \rho v S \cdot v\sin\alpha \;\propto\; \rho v^2 S \sin\alpha
-- L = \tfrac12 \rho v^2 S\, C_L(\alpha)
+  - \dot{p}_{\text{air}} = \dot m\, \Delta v_y
+  - L = \dot{p}_{\text{air}} = \rho v S \cdot v\sin\alpha \;\propto\; \rho v^2 S \sin\alpha
+  - L = \tfrac12 \rho v^2 S\, C_L(\alpha)
 charts:
-- domain:
-  - -5
-  - 20
-  marker: alpha
-  series:
-  - 'x < 15 ? 0.11*(x+2) : 1.87 - 0.19*(x-15)'
+  - domain:
+      - -5
+      - 20
+    marker: alpha
+    series:
+      - 'x < 15 ? 0.11*(x+2) : 1.87 - 0.19*(x-15)'
 visualization3d:
   type: airfoil
   options:
     models:
-    - airplane
+      - airplane
 primary: alpha
 presets:
-- alpha: 5
-  v: 50
-- alpha: 12
-  v: 30
-- alpha: 17
-  v: 40
+  - alpha: 5
+    v: 50
+  - alpha: 12
+    v: 30
+  - alpha: 17
+    v: 40
 challenges:
-- check: '0.5*1.225*v^2*16*(alpha<15 ? 0.11*(alpha+2) : 1.87-0.19*(alpha-15))'
-  target: 20000
-  tol: 2000
-- check: 'alpha > 15 and (alpha<15 ? 0.11*(alpha+2) : 1.87-0.19*(alpha-15)) > 1.5'
-- check: 'alpha <= 15 and 0.5*1.225*v^2*16*(alpha<15 ? 0.11*(alpha+2) : 1.87-0.19*(alpha-15)) >= 30000'
+  - check: '0.5*1.225*v^2*16*(alpha<15 ? 0.11*(alpha+2) : 1.87-0.19*(alpha-15))'
+    target: 25000
+    tol: 2500
+  - check: 'alpha > 15 and (alpha<15 ? 0.11*(alpha+2) : 1.87-0.19*(alpha-15)) > 1.5'
+  - check: 'alpha <= 15 and 0.5*1.225*v^2*16*(alpha<15 ? 0.11*(alpha+2) : 1.87-0.19*(alpha-15)) >= 30000'
