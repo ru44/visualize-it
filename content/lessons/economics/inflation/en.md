@@ -20,15 +20,15 @@ charts:
 
 ## Try it
 
-1. Watch the note. It shows how much a fixed 100 can still buy after $x$ years of rising prices — the loaves below count it out.
-2. Drag $p$ (inflation rate) up. The note shrinks much faster — even a couple of extra percent erodes savings a lot over decades.
-3. Now drag $x$ (years elapsed) forward. The same inflation rate keeps eating away at your money's value the longer it continues.
+1. Watch the note. It shows how much a fixed 100 can still buy after $x$ years of rising prices — the loaves below count it out. With $p$ = 3 and $x$ = 20, "buying power of 100" reads 55.4 and the price index reads 181.
+2. Set $p$ (inflation rate) to 8. The note shrinks much faster: buying power drops to 21.5 and the price index climbs to 466 — a few extra percent erodes savings a lot over decades.
+3. Now put $p$ back to 3 and set $x$ (years elapsed) to 40. Buying power reads 30.7: the same inflation rate keeps eating away at your money's value the longer it continues.
 
 ## Real-life examples
 
 1. **A developed economy's inflation target.** At a steady 2% a year for 20 years, a retiree's fixed pension quietly loses about a third of its buying power, even though the number on the check never changes.
-2. **A fast-growing emerging economy.** At 8% a year, a family saving for a car over 10 years watches prices creep up noticeably every year, eating into how much their savings can eventually buy.
-3. **A currency crisis.** At 20% a year, a household's savings lose real value fast: after just 5 years, the same pile of cash buys distinctly less than half of what it used to.
+2. **A fast-growing emerging economy.** At 8% a year, a family saving for a car over 10 years watches prices climb every year: after 10 years each 100 saved buys only what about 46 used to.
+3. **A currency crisis.** At 20% a year, a household's savings lose real value fast: after just 5 years, each 100 of cash buys only what about 40 used to, less than half.
 
 ## Test yourself
 
@@ -38,7 +38,7 @@ charts:
 
 ## Intuition
 
-Suppose a loaf of bread costs 2 today, and prices climb by $p$, the inflation rate, set to 8% a year on the slider. The shrinking note on screen shows $V$: how much your original 100 currency units can still buy after $x$ years. Drag $x$ forward and the note shrinks along the same compound path that growth climbs, only in reverse — the same rate that used to buy a whole loaf buys a smaller slice of it every year that passes.
+Suppose a loaf of bread costs 2 today, and prices climb by $p$, the inflation rate, set to 8% a year on the slider. The shrinking note on screen shows $V$: how much your original 100 currency units can still buy after $x$ years. Drag $x$ forward and the note shrinks along the same compound path that growth climbs, only in reverse — the same coins that used to buy a whole loaf buy a smaller slice of it every year that passes.
 
 Now raise $p$ instead: even a rate that sounds modest, kept up for decades, shrinks the note much faster, because small yearly increases keep stacking on top of each other. The basket's price tag shows the mirror image: the cost of the same goods, marching upward as $p$ compounds — money's power to buy things falls exactly as fast as the price tag on those things rises.
 
@@ -72,17 +72,21 @@ it cannot otherwise finance.
 ## Real world
 
 ### Grocery bills
+
 At 3% inflation, a basket costing 100 today costs about 180 in 20 years,
 even with no change in what is bought.
 
 ### Savings under a mattress
+
 Cash held without earning interest loses purchasing power every year
 prices rise, visible directly in this lesson's shrinking note.
 
 ### Wage negotiations
+
 Workers negotiate for raises above inflation to see a real increase in
 what their pay can buy, not just a nominal one.
 
 ### Hyperinflation episodes
+
 Weimar Germany and more recently Venezuela and Zimbabwe saw prices double
-in days rather than decades, making cash nearly worthless within weeks.
+in days or weeks rather than decades, making cash nearly worthless within weeks.
