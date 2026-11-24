@@ -25,15 +25,15 @@ variables:
 
 ## Try it
 
-1. Leave the weights at their defaults and drag x and y across the picture. Watch the decision map's boundary and notice where the output flips from one colour to the other.
-2. Change w31 alone and watch one of the three hidden units' lines rotate in the decision map — each hidden unit contributes one bent edge to the overall boundary.
-3. Push v1, v2 and v3 up or down and watch the three edges combine into a different final shape entirely. Training a real network is exactly this: automatically tuning all these numbers.
+1. Leave the weights at their defaults. At x = 0.5, y = 0.5 the output reads 0.682, class A. Set x = -0.5 and y = -0.5: the point crosses the boundary in the decision map, the output drops to 0.318 and the class flips to B.
+2. Go back to x = 0.5, y = 0.5 and change w31 alone, from -1 to 3. The third hidden value h₃ jumps from 0 to 0.96, the output rises to 0.849, and the boundary in the decision map is no longer one straight line — each hidden unit contributes one bent edge to the overall boundary.
+3. Put w31 back at -1, then set v1, v2 and v3 all to -1. The two colours of the map swap sides and the output falls to 0.318, class B. Training a real network is exactly this: automatically tuning all these numbers.
 
 ## Real-life examples
 
-1. **Starting shape.** With every weight at its default, the three hidden units all lean the same general way, giving the boundary its starting curve.
-2. **Reshaping one edge.** Pushing w31 and w32 down to -3 swings the third hidden unit's line hard, bending just that one edge of the boundary.
-3. **Inverting the decision.** Flipping v1, v2 and v3 all negative flips which side of the boundary counts as the positive class.
+1. **Starting shape.** With every weight at its default, the second and third hidden units cancel each other out, so the boundary starts as one straight diagonal line. At the point (0.5, 0.5) the output is 0.682, class A.
+2. **Reshaping one edge.** Pushing w31 and w32 down to -3 swings the third hidden unit's line hard, bending just that one edge of the boundary. The output at (0.5, 0.5) drops to 0.442, class B.
+3. **Inverting the decision.** Flipping v1, v2 and v3 all negative flips which side of the boundary counts as the positive class: the output at (0.5, 0.5) goes from 0.682 to 0.318.
 
 ## Test yourself
 
@@ -51,7 +51,7 @@ The output layer then combines the three bent lines into one boundary. Each hidd
 
 Each hidden unit computes $h_i = \phi(w_{i1}x + w_{i2}y)$ for $i=1,2,3$, its own linear combination of the two inputs passed through a non-linear activation. The output combines them as $\hat y = \sum_{i=1}^{3} v_i h_i + b$, a weighted sum of the hidden activations plus a bias.
 
-This is a two-layer network: one hidden layer of three units, one output unit. Every weight, twelve numbers in total here, is a knob that reshapes the final decision boundary; a real training procedure adjusts every one of them by gradient descent on a loss, exactly as in the earlier lessons, just with more numbers to adjust at once.
+This is a two-layer network: one hidden layer of three units, one output unit. Every weight, ten numbers in total here counting the bias, is a knob that reshapes the final decision boundary; a real training procedure adjusts every one of them by gradient descent on a loss, exactly as in the earlier lessons, just with more numbers to adjust at once.
 
 ## Advanced
 
@@ -66,13 +66,17 @@ With enough hidden units, a network like this one can approximate essentially an
 ## Real world
 
 ### Image recognition
+
 Early layers in a vision network act like these hidden units, each detecting one simple pattern like an edge or a corner.
 
 ### Voice assistants
+
 Speech recognition networks stack many such layers to turn a sound wave into recognized words.
 
 ### Chat assistants
+
 The networks behind chat assistants are the same idea scaled up to billions of weights across many stacked layers.
 
 ### Fraud detection
+
 Banks combine many weighted signals about a transaction through a network like this one to flag likely fraud.
