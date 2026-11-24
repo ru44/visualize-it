@@ -12,9 +12,9 @@ variables:
 
 ## Try it
 
-1. Set N to 20 and watch the row of flips. The running average line jumps around a lot with so few flips.
-2. Raise N toward 1000. The running average settles down and stays close to p.
-3. Raise speed to run through flips quickly, then change p and watch the average settle near the new value instead.
+1. Set N to 20 and watch the row of flips. The running average line jumps around a lot with so few flips, and the "distance from p" readout often ends near 0.1.
+2. Raise N to 1000. The running average settles down and stays close to p: by the end, "distance from p" is usually below 0.03.
+3. Raise speed to 200 to run through flips quickly, then set p to 0.8. The flips start again and the average settles near 0.8 instead.
 
 ## Real-life examples
 
@@ -53,13 +53,17 @@ Formally, the sample proportion converges to the true p by the law of large numb
 ## Real world
 
 ### Opinion polls
+
 A pollster estimates the support for a candidate among millions of voters by calling only a few thousand of them.
 
 ### A/B testing
+
 A website compares two versions of a page by showing each to a sample of visitors rather than waiting for every visitor ever.
 
 ### BigQuery TABLESAMPLE
+
 Analysts run a query on a random sample of a huge table with TABLESAMPLE to get a fast, cheap estimate before running the full query.
 
 ### Quality control
+
 A factory tests a sample of items off the line instead of every single one, and estimates the overall defect rate from that sample.
