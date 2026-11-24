@@ -24,9 +24,9 @@ charts:
 
 ## Try it
 
-1. Drag the piston to the left to squeeze the gas. The particles hit the walls more often and the pressure gauge rises.
-2. Raise «temperature T». The particles fly faster and the pressure rises again, even with the same space.
-3. Raise «amount n». More particles, more hits, more pressure. That is the whole law.
+1. Drag the piston to the left until «volume V» reads 12.5 L, half of where it started. The particles hit the walls more often and P doubles, from about 100 kPa to about 200 kPa.
+2. Put V back to 25 and raise «temperature T» from 300 to 600. The particles fly faster and P reads about 200 kPa again, even with the same space.
+3. Put T back to 300 and raise «amount n» from 1 to 2. More particles, more hits, and P is about 200 kPa once more. That is the whole law.
 
 ## Real-life examples
 
@@ -65,13 +65,17 @@ Kinetic theory derives it: $PV = \tfrac13 N m \langle v^2 \rangle$ together with
 ## Real world
 
 ### Engines
+
 A car engine compresses an air-fuel mixture (shrinking $V$ raises $P$ and $T$) before ignition, then lets the hot combustion gas expand to push the piston.
 
 ### Refrigeration
+
 Fridges and air conditioners cycle a refrigerant through compression and expansion, using the $PV = nRT$ relationship to move heat from cold to warm.
 
 ### Tyres and gas tanks
+
 A tyre's pressure rises on a hot day purely because $T$ went up while $n$ and $V$ stayed almost fixed — exactly the slider you can move here.
 
 ### The atmosphere
+
 Air pressure falls with altitude because there is less gas above pressing down; weather systems form as pockets of air at different $T$ and $P$ mix.
