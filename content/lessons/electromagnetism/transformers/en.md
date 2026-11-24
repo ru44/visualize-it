@@ -18,9 +18,9 @@ variables:
 
 ## Try it
 
-1. The picture shows two coils wound on a shared iron core — count the loops: the primary (left) has «turns on the primary N_p», the secondary (right) has «turns on the secondary N_s» — plus a small power line below showing how much of the sent power turns to waste heat.
-2. Drag «turns on the secondary N_s» up past «turns on the primary N_p». The output voltage climbs above the input: more turns on the secondary means a step-up transformer.
-3. Now drag «voltage into the primary V_p» up, keeping the same power. Watch the line-loss bar shrink fast: sending the same power at a higher voltage needs far less current, and it's current — not voltage — that heats the line.
+1. The picture shows two coils wound on a shared iron core — the primary (left) follows «turns on the primary coil N_p», the secondary (right) follows «turns on the secondary coil N_s», each drawn as just a few loops — plus a small power line below showing how much of the sent power turns to waste heat. At the start the readouts show 1000 : 50 and V_s = 550 V.
+2. Drag «turns on the secondary coil N_s» from 50 up to 2000, past «turns on the primary coil N_p» at 1000. The output voltage climbs from 550 V to 22000 V, twice the 11000 V input: more turns on the secondary means a step-up transformer.
+3. Now drag «voltage into the primary V_p» from 11000 V up to 110000 V, keeping the same power. The loss readout falls from about 41322 W (4.13%) to about 413 W, and the line-loss bar shrinks fast: sending the same power at a higher voltage needs far less current, and it's current — not voltage — that heats the line.
 
 ## Real-life examples
 
@@ -38,13 +38,13 @@ variables:
 
 Wrap two separate coils of wire around the same iron ring and feed AC into one of them (the primary): the changing current makes a changing magnetic flux in the iron, and that same flux threads through the second coil (the secondary) too, since they share the same core. By Faraday's law, a changing flux induces a voltage in any coil it passes through — so the secondary gets its own voltage, induced with no wires touching the primary at all.
 
-Because both coils sit in the *same* changing flux, each turn of wire, on either coil, picks up exactly the same tiny voltage. Wind the secondary with more turns than the primary and you stack up more of those tiny voltages, so a bigger voltage comes out than went in — a step-up transformer. Fewer turns gives less voltage out — step-down. The catch (and it's a fair one): power in equals power out in an ideal transformer, so whatever voltage you gain, you lose in current, and whatever voltage you lose, you gain in current.
+Because both coils sit in the _same_ changing flux, each turn of wire, on either coil, picks up exactly the same tiny voltage. Wind the secondary with more turns than the primary and you stack up more of those tiny voltages, so a bigger voltage comes out than went in — a step-up transformer. Fewer turns gives less voltage out — step-down. The catch (and it's a fair one): power in equals power out in an ideal transformer, so whatever voltage you gain, you lose in current, and whatever voltage you lose, you gain in current.
 
 ## Formal
 
 For an ideal transformer, the voltage ratio equals the turns ratio: $\frac{V_s}{V_p}=\frac{N_s}{N_p}$, so $V_s = V_p\frac{N_s}{N_p}$. To send a fixed power $P$ down a line at voltage $V_p$, the current must be $I = \dfrac{P}{V_p}$ — and any real wire has some resistance $R$, dissipating $P_{loss}=I^2R=\left(\dfrac{P}{V_p}\right)^2R$ as heat.
 
-Because $P_{loss}$ falls with the *square* of the voltage, doubling the transmission voltage cuts the loss to a quarter, and the 35-times jump from 11,000 V to 400,000 V (roughly the ratio in the second and third real-life examples) cuts the loss by roughly 35² ≈ 1,225 times.
+Because $P_{loss}$ falls with the _square_ of the voltage, doubling the transmission voltage cuts the loss to a quarter, and the 36-times jump from 11,000 V to 400,000 V (roughly the ratio in the second and third real-life examples) cuts the loss by roughly 36² ≈ 1,300 times.
 
 ## Advanced
 
@@ -59,13 +59,17 @@ Real transformers aren't perfectly ideal: the iron core itself loses a little en
 ## Real world
 
 ### The power grid
+
 Generators produce power at thousands of volts, step-up transformers push it to hundreds of thousands of volts for the long haul, and step-down transformers near your home bring it back to 230 (or 120) V.
 
 ### Phone and laptop chargers
+
 Modern chargers use small, high-frequency switching transformers rather than the simple kind here, but the same turns-ratio idea is still at their core, just shrunk down and sped up.
 
 ### Doorbells and toy trains
+
 Low-voltage transformers step 230 V mains down to a safe 6–24 V for doorbells, garden lighting, and model railways.
 
 ### Microphones and audio equipment
+
 Small transformers are also used just to match voltage and current levels between different pieces of audio equipment, with no power gain at all.
