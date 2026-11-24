@@ -7,8 +7,8 @@ eclipses.type: الكسوف
 eclipses.total: كلي
 eclipses.annular: حلقي
 eclipses.partial: جزئي
-eclipses.none: لا كسوف — الظل يخطئ الأرض
+eclipses.none: لا كسوف — الظل لا يصيب الأرض
 eclipses.umbra: الظل المظلم
 eclipses.penumbra: شبه الظل
-eclipses.antumbra: شبه الظل الأمامي
+eclipses.antumbra: امتداد الظل
 eclipses.node: العقدة
