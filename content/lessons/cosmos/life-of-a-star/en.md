@@ -12,9 +12,9 @@ variables:
 
 ## Try it
 
-1. Set «star's mass» to 1 (the Sun) and drag «age» past 1.1. Watch the star swell into a red giant, then shrink to a small white dwarf.
-2. Push «star's mass» above 20 and drag «age» to the far right. The star flashes as a supernova and leaves a black hole behind.
-3. Drop «star's mass» below 0.5 and drag «age» all the way across. A red dwarf barely changes — it would take trillions of years to get this far.
+1. Set «star's mass» to 1 (the Sun) and drag «age» slowly from 1 to 1.15. At 1.1 the star has swollen into a red giant 150 times the Sun's radius; at 1.15 it has shrunk to a small white dwarf of 0.011 R☉.
+2. Push «star's mass» above 20 and drag «age» slowly to the far right. Near 1.13 the star flashes as a supernova, and at 1.15 it has left a black hole behind.
+3. Drop «star's mass» to 0.2 and drag «age» all the way across. The red dwarf does not change and the stage stays «main sequence» — its lifetime reads 559.02 billion years.
 
 ## Real-life examples
 
@@ -24,9 +24,9 @@ variables:
 
 ## Test yourself
 
-1. Build a star massive enough that it will leave a black hole behind.
-2. Build a red dwarf that will keep shining long after the universe's stars have all gone dark.
-3. Fast-forward a massive star to the moment its core collapses into a neutron star.
+1. Build a star massive enough (above 20 M☉) that it will leave a black hole behind.
+2. Build a red dwarf (below 0.5 M☉) that will keep shining long after the universe's stars have all gone dark.
+3. Fast-forward a massive star (8 to 20 M☉) until the stage reads «neutron star», at an age above 1.12.
 
 ## Intuition
 
@@ -53,13 +53,17 @@ The mass thresholds that split a star's fate are approximate but well establishe
 ## Real world
 
 ### Supernova 1987A
+
 In February 1987, astronomers watched a blue supergiant about 20 times the Sun's mass explode in a nearby galaxy — the nearest supernova seen in centuries, and the first time neutrinos from a collapsing core were detected on Earth.
 
 ### Dating star clusters
+
 Astronomers estimate a star cluster's age by finding which stars have already left the main sequence: the heaviest surviving main-sequence star sets a maximum age, since anything heavier would already be gone.
 
 ### Where heavy elements come from
+
 Supernovae forge and scatter elements heavier than iron — including much of the gold, silver, and uranium on Earth — so a massive star's violent death seeds the next generation of planets.
 
 ### White dwarfs as cosmic clocks
+
 Because white dwarfs cool at a known, steady rate, measuring how cool one has become tells astronomers how long ago its parent star died.
