@@ -15,13 +15,13 @@ variables:
 
 ## Try it
 
-1. Set degree to 1 with noise around 0.5. The curve is too simple to follow the bumps in the data: both readouts, training error and new-point error, stay high — underfitting.
-2. Raise degree to 10 or 12. The curve now snakes through almost every training point, and training error nearly vanishes — but watch new-point error, it often gets worse, not better.
-3. Try degree 3 instead and compare the two readouts. Training error is a little higher than at degree 12, but new-point error is usually the lowest of all three settings.
+1. Set degree to 1 with noise at 0.5. The curve is too simple to follow the bumps in the data: both readouts stay high, training error at 1.66 and new-point error at 1.723 — underfitting.
+2. Raise degree to 12. The curve now snakes through almost every training point, and training error nearly vanishes at 0.001 — but watch new-point error: it explodes to 1297.219.
+3. Try degree 3 instead and compare the two readouts. Training error is 1.028, higher than at degree 12, but new-point error is only 1.931 instead of 1297.219.
 
 ## Real-life examples
 
-1. **Too simple to bend.** At degree 1, only a straight line is allowed — it cannot follow a single bump in the data, no matter how the one available weight is set.
+1. **Too simple to bend.** At degree 1, only a straight line is allowed — it cannot follow a single bump in the data, no matter how its two weights are set.
 2. **Bent enough to memorize.** At degree 12, the curve has enough bends to snake exactly through every one of the training points.
 3. **A reasonable balance.** At degree 3, the curve bends enough to follow the trend without chasing every wiggle of noise.
 
@@ -29,7 +29,7 @@ variables:
 
 1. Set degree to 1 or lower and see the clear underfitting.
 2. Push degree to 10 or above and see the clear overfitting.
-3. Combine heavy noise, above 0.7, with a high degree, 10 or more, and watch new-point error blow up.
+3. Combine heavy noise, above 0.7, with a high degree, 10 or more, and watch new-point error blow up into the hundreds or thousands.
 
 ## Intuition
 
@@ -56,13 +56,17 @@ The gap between $L_{tr}$ and $L_{new}$ is a rough measure of how much a model ha
 ## Real world
 
 ### Medical diagnosis
+
 A model that memorizes quirks of its training patients instead of the real disease signal can fail badly on the next patient who walks in.
 
 ### Stock and financial prediction
+
 Models fit too closely to historical price noise often perform worse than a simple trend once real, new market days arrive.
 
 ### Spam filtering
+
 A filter overfit to the exact wording of old spam misses new spam that uses slightly different phrasing.
 
 ### Image recognition
+
 A vision model that memorizes its exact training photos instead of general shapes fails on new photos taken in a different setting.
