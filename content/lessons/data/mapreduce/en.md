@@ -11,9 +11,9 @@ variables:
 
 ## Try it
 
-1. Set step to 0. Watch the four documents get split, one to each machine.
-2. Move step to 1, then 2. Each machine counts words in its own document, then the partial counts shuffle together by word.
-3. Push step to 3. The shuffled counts reduce into one final total for every word across all four documents.
+1. Set step to 0. The four documents are split, one to each machine. The readouts show machines = 4, words = 12 and different words = 6.
+2. Move step to 1, then 2. At 1, each machine writes a "word, 1" tag for every word in its own document. At 2, the tags are shuffled together by word, for example "the: 1 + 1 + 1".
+3. Push step to 3. Each group of tags is added into one final total for its word across all four documents: the 3, cat 2, sat 2, dog 2, ran 2, a 1.
 
 ## Real-life examples
 
@@ -52,13 +52,17 @@ The shuffle stage, which regroups partial results by key before the final reduce
 ## Real world
 
 ### Word count and search indexes
+
 Google introduced MapReduce to build its search index, counting words across billions of web pages spread over many machines.
 
 ### Hadoop and Spark
+
 Open-source tools such as Hadoop and Spark took the same split, map, shuffle, reduce idea and made it available to anyone with a cluster of machines.
 
 ### BigQuery's execution engine
+
 BigQuery answers a single SQL query by splitting the underlying data across thousands of machines behind the scenes, in the same spirit as MapReduce.
 
 ### Log analysis at scale
+
 A company with billions of log lines a day uses this pattern to count errors or events per hour without any single machine reading them all.

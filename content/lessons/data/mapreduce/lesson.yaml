@@ -3,16 +3,16 @@ subject: data
 difficulty: beginner
 equation: T = \text{reduce}(\text{map}(\text{split}(D, k)))
 concepts:
-- MapReduce
-- distributed computing
-- split
-- shuffle
-- reduce
+  - MapReduce
+  - distributed computing
+  - split
+  - shuffle
+  - reduce
 prerequisites:
-- algorithms-and-complexity
+  - algorithms-and-complexity
 related:
-- parallel-computing
-- column-storage-and-bigquery
+  - parallel-computing
+  - column-storage-and-bigquery
 visualization:
   type: map-reduce
   options: {}
@@ -24,20 +24,20 @@ parameters:
     step: 1
     value: 0
 variables:
-- D
-- k
-- T
+  - D
+  - k
+  - T
 derivation:
-- \text{split}(D, k) \to k \text{ independent chunks}
-- '\text{map: each of the } k \text{ machines processes its own chunk}'
-- '\text{reduce: combine the } k \text{ partial results into } T'
+  - \text{split}(D, k) \to k \text{ independent chunks}
+  - '\text{map: each of the } k \text{ machines processes its own chunk}'
+  - '\text{reduce: combine the } k \text{ partial results into } T'
 presets:
-- step: 0
-- step: 1
-- step: 3
+  - step: 0
+  - step: 1
+  - step: 3
 challenges:
-- check: step
-  target: 1
-- check: step
-  target: 3
-- check: step >= 2
+  - check: step
+    target: 1
+  - check: step
+    target: 3
+  - check: step >= 2
