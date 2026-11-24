@@ -15,9 +15,9 @@ variables:
 
 ## Try it
 
-1. Set n to 8 bars and step to 0, then press play slowly — watch the bars split into two groups of 4, then four groups of 2, before any comparing happens.
-2. Keep watching as step climbs past halfway — two small sorted groups merge into one bigger sorted group, always taking whichever front bar is smaller.
-3. Drag n up to 40 bars and press play again — the number of splitting levels barely grows, even with five times as many bars as before.
+1. Set n to 8 bars and let it play (or drag «step» slowly). The picture does not draw the splitting; it starts from the smallest groups: bars 1 and 2 are put in order, then bars 3 and 4, then those two pairs merge into one sorted group of 4.
+2. Keep watching until step is near the end — the two sorted groups of 4 merge into one sorted group of 8, always taking whichever front bar is smaller. It ends with 16 comparisons.
+3. Drag n up to 40 bars and let it run — the number of splitting levels only grows from 3 to 6, even with five times as many bars as before, and it finishes after 170 comparisons where bubble sort needs 780.
 
 ## Real-life examples
 
@@ -33,7 +33,7 @@ variables:
 
 ## Intuition
 
-Picture a messy stack of 8 playing cards you want in order: split it into two piles of 4, then split each of those into pairs, until every pile is a single card that is trivially "in order" all by itself. Press play here and watch the bars do exactly that — splitting into halves, then quarters, then single bars — before a single comparison happens; the splitting phase only decides the groups, it does no sorting at all.
+Picture a messy stack of 8 playing cards you want in order: split it into two piles of 4, then split each of those into pairs, until every pile is a single card that is trivially "in order" all by itself. The picture here skips drawing the splits and starts from single bars, because the splitting phase only decides the groups, it does no sorting at all: press play and watch neighbouring bars become sorted pairs, pairs become fours, and fours become eights.
 
 The real sorting happens on the way back up: each merge step slides two already-sorted piles side by side and always takes whichever front card is smaller, so the combined pile comes out sorted with no shuffling needed later. Every level of merging touches every single bar exactly once, and doubling the number of bars only adds one more level — which is why merge sort never has a slow day, no matter how scrambled the bars started.
 
@@ -56,13 +56,17 @@ The recurrence $T(n) = 2T(n/2) + O(n)$ is the textbook case of the Master theore
 ## Real world
 
 ### External sorting
+
 Sorting a file too large for memory (a huge log or database table) merges sorted chunks from disk — the classic use of merge sort.
 
 ### Stable sorts in UI tables
+
 Sorting a spreadsheet by one column while preserving the previous order of ties needs a stable sort like merge sort.
 
 ### Linked-list sorting
+
 Because it never needs random access, merge sort is the natural way to sort a linked list in n log n time.
 
 ### Parallel and distributed sorting
+
 Splitting the input and sorting pieces independently before merging is exactly how large-scale sort (e.g. MapReduce) is parallelised.
