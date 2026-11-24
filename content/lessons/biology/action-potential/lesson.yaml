@@ -21,8 +21,8 @@ visualization:
       - v - v^3/3 - w + I
       - (v + a - b*w)/tau
     initial:
-      - "-1.2"
-      - "-0.6"
+      - '-1.2'
+      - '-0.6'
     tMax: 200
     labels:
       - membrane voltage v
@@ -67,19 +67,19 @@ derivation:
 charts: []
 primary: I
 presets:
-- I: 0
-  a: 0.7
-  b: 0.8
-  tau: 12.5
-- I: 0.2
-  a: 0.7
-  b: 0.8
-  tau: 12.5
-- I: 1.2
-  a: 0.7
-  b: 0.8
-  tau: 8
+  - I: 0
+    a: 0.7
+    b: 0.8
+    tau: 12.5
+  - I: 0.1
+    a: 0.7
+    b: 0.8
+    tau: 12.5
+  - I: 1.2
+    a: 0.7
+    b: 0.8
+    tau: 8
 challenges:
-- check: I > 1.0
-- check: abs(a - b) < 0.02
-- check: tau > 19 and I < 0.2
+  - check: I > 1.0 and I < 1.45
+  - check: abs(a - b) < 0.02
+  - check: tau > 19 and I < 0.12
