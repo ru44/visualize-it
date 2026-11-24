@@ -16,9 +16,9 @@ charts: []
 
 ## Try it
 
-1. Watch the grid of atoms. Each one starts lit; drag "time" forward and, one by one, at unpredictable moments, they flip dark — decayed.
-2. Watch the curve beside the grid. However jagged the actual count looks, it tracks the smooth curve N₀·(1/2)^k drawn behind it.
-3. Raise "how many atoms" into the hundreds. The random flips still happen one at a time, but the counted total now hugs the smooth curve far more tightly.
+1. Watch the grid of atoms. Each one starts lit; time runs forward by itself and, one by one, at unpredictable moments, they flip dark — decayed. Press pause and set "time" to 1: "atoms left" reads 50 / 100.
+2. Watch the curve beside the grid. Set "time" to 2 and then 3: 23 and then 14 atoms are left, where the formula expects 25 and 12.5. However jagged the actual count looks, it tracks the smooth curve N₀·(1/2)^k drawn behind it.
+3. Lower "how many atoms" to 10 and set "time" to 1: only 3 of 10 are left, not the expected 5. Now raise it to 300 and set "time" to 3: 37 of 300 are left against an expected 37.5. The random flips still happen one at a time, but a big crowd hugs the smooth curve far more tightly.
 
 ## Real-life examples
 
@@ -30,7 +30,7 @@ charts: []
 
 1. Run "time" forward to exactly 1 half-life.
 2. Run "time" forward until fewer than 5% of the atoms remain.
-3. Set the half-life to carbon-14's, then run "time" forward to exactly 2 half-lives.
+3. Set the half-life to carbon-14's, about 5730 years (the slider gets closest when the "half-life" readout shows 5462.7 yr), then run "time" forward to exactly 2 half-lives.
 
 ## Intuition
 
@@ -57,13 +57,17 @@ The same law is often written as continuous exponential decay, $N = N_0 e^{-\lam
 ## Real world
 
 ### Iodine-131 in medicine
+
 Doctors use iodine-131's short, 8-day half-life deliberately: it stays active long enough to image or treat the thyroid, then decays away to negligible levels within weeks, limiting a patient's long-term exposure.
 
 ### Carbon-14 dating
-Archaeologists measure the fraction of carbon-14 left in bone, wood, or charcoal to date organic material out to roughly ten half-lives, about 50,000 years.
+
+Archaeologists measure the fraction of carbon-14 left in bone, wood, or charcoal to date organic material out to roughly nine half-lives, about 50,000 years.
 
 ### Uranium-238 and the age of the Earth
+
 Uranium-238's 4.47-billion-year half-life is close to Earth's own age, which is exactly why the ratio of uranium to its decay product, lead, in ancient rocks is one of the main ways geologists have dated the planet.
 
 ### Background radiation
+
 A person absorbs an estimated average of about 2.4 millisieverts of radiation a year from natural sources; roughly half of that comes from the random, atom-by-atom decay of naturally radioactive isotopes such as potassium-40 and radon gas in soil, air, and food — the same process this lesson simulates, just with vastly more atoms.
