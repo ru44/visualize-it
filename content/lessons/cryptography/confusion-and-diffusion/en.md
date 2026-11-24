@@ -14,8 +14,8 @@ variables:
 
 ## Try it
 
-1. With rounds at 1, flip bit 0 and compare the three rows: the key-only cipher changes exactly 1 bit, the S-box row changes a few neighbouring bits, and the substitute-and-shuffle row already spreads further.
-2. Raise rounds to 4 and watch the bottom meter: the changed-bit count climbs to around 8 of 16 — half the block, the point where the two outputs look unrelated.
+1. Set rounds to 1 and flip to 0, and compare the three rows: the key-only cipher changes exactly 1 bit, the S-box row changes 3 neighbouring bits, and the substitute-and-shuffle row also changes only 3, though the shuffle has already moved them apart.
+2. Raise rounds one step at a time to 4 and watch the bottom meter: the changed-bit count reads 3, 10, 10, then 7 of 16 — around half the block, the point where the two outputs look unrelated.
 3. Slide the key around: the top rows shift predictably, but the bottom cipher's output churns completely — the key's fingerprints are everywhere and nowhere.
 
 ## Real-life examples
@@ -26,9 +26,9 @@ variables:
 
 ## Test yourself
 
-1. Push rounds up to 4 and check the bottom row crosses the halfway marker.
-2. Move the flipped bit to position 15, the far end of the block, and confirm the avalanche still reaches everywhere.
-3. Drop back to a single round and find the row that fails the halfway test.
+1. Push rounds up to 4 and check the bottom row comes close to the halfway marker.
+2. Move the flipped bit to position 15, the far end of the block, and read the bottom row: with key 58 and 4 rounds only 4 bits change, an unlucky case in this tiny toy; change the key to 200 and it is 7.
+3. Drop back to a single round and see that all three rows now stay far below the halfway marker.
 
 ## Intuition
 
@@ -55,13 +55,17 @@ In AES the two roles have names: SubBytes is the confusion (a nonlinear S-box on
 ## Real world
 
 ### AES round structure
+
 SubBytes, ShiftRows, MixColumns, AddRoundKey — confusion, diffusion, diffusion, key mixing — repeated 10 to 14 times on every 128-bit block your phone encrypts.
 
 ### Avalanche testing
+
 Cipher designers run exactly this experiment at scale: flip each input bit across millions of random keys and verify every output bit flips half the time.
 
 ### Differential cryptanalysis
+
 The attack that bends this picture backwards — feeding chosen pairs of inputs and tracking how differences propagate — forced modern ciphers to prove their avalanche margins round by round.
 
 ### Why one round is never enough
+
 DES ran 16 rounds, AES runs at least 10: reduced-round versions of both fall quickly, because diffusion a round short leaves measurable islands of calm.
