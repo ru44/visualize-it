@@ -3,15 +3,15 @@ subject: networking
 difficulty: beginner
 equation: k = \left\lceil \frac{1000\,S}{P} \right\rceil
 concepts:
-- packets
-- routing
-- redundancy
-- reassembly
+  - packets
+  - routing
+  - redundancy
+  - reassembly
 prerequisites:
-- latency-and-bandwidth
+  - latency-and-bandwidth
 related:
-- tcp
-- routers
+  - tcp
+  - routers
 visualization:
   type: packet-switch
 parameters:
@@ -33,26 +33,26 @@ parameters:
     step: 1
     value: 0
 variables:
-- k
-- S
-- P
+  - k
+  - S
+  - P
 derivation:
-- \text{a message of } S \text{ KB is } 1000\,S \text{ bytes}
-- \text{each packet carries at most } P \text{ bytes}
-- k = \left\lceil \frac{1000\,S}{P} \right\rceil \text{ packets, each finding its own route}
+  - \text{a message of } S \text{ KB is } 1000\,S \text{ bytes}
+  - \text{each packet carries at most } P \text{ bytes}
+  - k = \left\lceil \frac{1000\,S}{P} \right\rceil \text{ packets, each finding its own route}
 charts: []
 primary: cut
 presets:
-- S: 12
-  P: 1500
-  cut: 0
-- S: 12
-  P: 200
-  cut: 0
-- S: 12
-  P: 1500
-  cut: 1
+  - S: 12
+    P: 1500
+    cut: 0
+  - S: 12
+    P: 200
+    cut: 0
+  - S: 12
+    P: 1500
+    cut: 1
 challenges:
-- check: ceil(1000*S/P) == 8
-- check: cut == 1
-- check: P <= 300 and ceil(1000*S/P) >= 40
+  - check: ceil(1000*S/P) == 10
+  - check: cut == 1
+  - check: P <= 300 and ceil(1000*S/P) >= 40
