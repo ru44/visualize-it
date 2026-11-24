@@ -16,9 +16,9 @@ variables:
 
 ## Try it
 
-1. Picture an 8,000 kg regional jet climbing out at 100 m/s, throttle at 80%.
-2. Read the climb angle γ and the rate-of-climb readout: it should be climbing steeply.
-3. Pull «throttle» down toward 30%. Watch the nose-down flight path angle grow and the aircraft start to sink instead of climb — the same four arrows, a different winner.
+1. Start with «throttle» at 80% and «airspeed v» at 100 m/s: an 8,000 kg regional jet climbing out. The readouts show T = 48000 N and D = 36750 N.
+2. Read the climb angle γ and the rate-of-climb readout: γ = 8.3° and about 2825 ft/min, a steep climb.
+3. Pull «throttle» down to 30%. Thrust falls to 18000 N, γ becomes −13.8° and the rate of climb reads about −4708 ft/min: the aircraft sinks instead of climbing — the same four arrows, a different winner.
 
 ## Real-life examples
 
@@ -57,13 +57,17 @@ Rearranging the along-path balance gives $\gamma \approx (T-D)/W$ for small angl
 ## Real world
 
 ### Takeoff performance charts
+
 Pilots calculate a required climb gradient after engine failure straight from this balance: how much spare thrust is left once one engine is gone decides whether the aircraft can clear obstacles.
 
 ### Glider tow planes
+
 A tow plane hauling a glider aloft needs enough spare thrust to lift both aircraft's combined weight component along a climbing flight path — heavier gliders mean shallower tow climbs.
 
 ### Fuel-efficient cruise
+
 Airlines fly close to the speed where $D$ is smallest for the aircraft's weight, since that is where the smallest thrust — and the least fuel — is needed to hold $T = D$ in level flight.
 
 ### Engine-out descent planning
+
 When an engine fails, the remaining thrust often cannot match drag at all, forcing $\gamma < 0$: pilots plan a controlled descent, choosing the speed that gives the shallowest possible sink rate.
