@@ -1,6 +1,6 @@
 ---
 title: Everyday radiation dose
-summary: A banana, a flight and a CT scan all give you a real, measurable dose of radiation — the numbers just span an enormous range, from a ten-thousandth of a millisievert to several thousand times that.
+summary: A banana, a flight and a CT scan all give you a real, measurable dose of radiation — the numbers just span an enormous range, from a ten-thousandth of a millisievert to tens of thousands of times that.
 parameters:
   source: everyday source
   time: repeats
@@ -16,8 +16,8 @@ charts: []
 ## Try it
 
 1. Look at the five bars: a banana, a dental X-ray, a flight, a chest CT and a year of background, all on the same ruler, marked in millisieverts.
-2. Pick "everyday source" and set "repeats" to 1. Your highlighted bar should land exactly on that source's single-exposure mark.
-3. Raise "repeats". Watch your bar grow past the fixed reference bars, and see whether it reaches the dashed line at 100 mSv, the level where a real, measurable rise in cancer risk first shows up in large population studies.
+2. Set "everyday source" to position 2, a long flight, and keep "repeats" at 1. Your highlighted bar lands exactly on that source's single-exposure mark, and "your cumulative dose" reads 40 µSv.
+3. Raise "repeats" to 50: the total reads 2.00 mSv, 0.83 years of background. Now switch to position 3, a chest CT scan, with 10 repeats: 70.0 mSv, or 29.17 years of background. Your bar has grown past the fixed reference bars but still stops short of the dashed line at 100 mSv, the level where a real, measurable rise in cancer risk first shows up in large population studies.
 
 ## Real-life examples
 
@@ -56,13 +56,17 @@ The 100 mSv mark is not a hard safety cutoff; it is roughly the lowest dose at w
 ## Real world
 
 ### Medical imaging
+
 Doctors weigh a scan's dose against the value of the diagnosis it provides, and modern equipment is deliberately designed to use the lowest dose that still gives a readable image.
 
 ### Air travel and flight crew
+
 Frequent flyers and flight crew receive more cosmic radiation than people at ground level, which is one reason airline crew dose is tracked and limited like other occupational radiation exposure.
 
 ### Nuclear industry workers
+
 Radiation workers wear dosimeters that log cumulative exposure over months and years, with regulatory limits set well under the 100 mSv range to keep a wide safety margin.
 
 ### Natural background variation
+
 Background radiation itself varies by location, from about 2 mSv a year in many places to over 10 mSv a year in some high-radon or high-altitude regions, without any established difference in measured health outcomes at those levels.
