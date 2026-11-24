@@ -19,9 +19,9 @@ variables:
 
 ## Try it
 
-1. Keep p = 5, q = 11, m = 7 and tamper = 0 and follow the journey: the contract squashes to the fingerprint 50, Alice's private key d = 27 presses the seal 30 onto it, and Bob's check opens the seal back to 50 — green, the contract is hers and untouched.
+1. Keep p = 5, q = 11 and tamper = 0, set m = 7, and follow the journey: the contract squashes to the fingerprint 50, Alice's private key d = 27 presses the seal 30 onto it, and Bob's check opens the seal back to 50 — green, the contract is hers and untouched.
 2. Now slide tamper to 1: the contract arrives as 8 with fingerprint 10, but the seal still opens to 50 — the mismatch flips the verdict red, and the forgery is caught.
-3. Put tamper back to 0 and slide m instead: every contract gets a different seal from the same ring, and the check stays green — Alice can re-sign anything, the forger never can.
+3. Put tamper back to 0 and set m to 10 instead: the fingerprint becomes 46 and the seal 51. Every contract gets a different seal from the same ring, and the check stays green — Alice can re-sign anything, the forger never can.
 
 ## Real-life examples
 
@@ -53,20 +53,24 @@ Signing the fingerprint instead of the full contract keeps signing fast even for
 
 ## Derivation
 
-1. Squash the contract into its short fingerprint with the public rule; the default contract $7$ becomes $50$.
+1. Squash the contract into its short fingerprint with the public rule; the contract $7$ becomes $50$.
 2. Press the seal: raise the fingerprint to the private exponent and reduce modulo $n$, giving $50^{27} \bmod 55 = 30$.
 3. Anyone can open the seal with the public exponent, $30^{3} \bmod 55 = 50$, and land back on the fingerprint — compare it with the fingerprint of what arrived, and the contract is proven untouched.
 
 ## Real world
 
 ### Software update verification
+
 Operating systems refuse to install an update unless its digital signature checks out, blocking tampered or fake updates before they run.
 
 ### Legally binding electronic signatures
+
 Many countries recognize digital signatures on contracts as legally equivalent to a handwritten signature, backed by exactly this math.
 
 ### Cryptocurrency transactions
+
 Every cryptocurrency transaction is signed by the sender's private key, letting anyone on the network verify it came from the right account without ever seeing that key.
 
 ### Website and code-signing certificates
+
 Certificate authorities digitally sign the certificates that let browsers confirm a website, or a piece of downloaded software, is who it claims to be.
