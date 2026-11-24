@@ -20,12 +20,12 @@ parameters:
     min: 0
     max: 0.99
     step: 0.001
-    value: 0.8
+    value: 0.5
   v:
     min: 0
     max: 0.99
     step: 0.001
-    value: 0.8
+    value: 0.5
 variables: []
 derivation:
   - w_{\text{naive}} = u + v \quad \text{(what everyday, slow-speed addition would predict)}
