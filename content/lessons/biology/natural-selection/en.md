@@ -17,9 +17,9 @@ variables:
 
 ## Try it
 
-1. Start p0 near 0.05 — a rare new mutation — and watch the curve barely move.
-2. Raise s well above zero. The curve climbs faster, but keeps its same S shape.
-3. Make s negative instead. The curve now falls toward zero: the allele is being weeded out.
+1. Start with s = 0.1 and p0 = 0.05 — a rare new mutation. The curve barely moves at first, takes until about t = 29 to reach 0.5, then levels off near 1.
+2. Raise s to 0.3. The curve climbs faster — it reaches 0.5 near t = 10 — but keeps its same S shape.
+3. Make s negative instead, at −0.1. The curve now falls from 0.05 toward zero: the allele is being weeded out.
 
 ## Real-life examples
 
@@ -58,13 +58,17 @@ Real selection also depends on dominance: a recessive beneficial allele (only he
 ## Real world
 
 ### Peppered moths
+
 Dark moths spread rapidly in polluted 19th-century England (s>0 against bird predation on soot-darkened trees), then receded once air quality improved.
 
 ### Antibiotic resistance
+
 A resistance allele with even a small s spreads through a bacterial population within days under constant antibiotic exposure.
 
 ### Pesticide resistance
+
 Insect populations exposed to a pesticide show textbook S-curve rises in the resistant allele’s frequency over successive generations.
 
 ### Lactase persistence
+
 The allele letting adults digest milk spread through pastoral populations over thousands of years as dairying spread.
