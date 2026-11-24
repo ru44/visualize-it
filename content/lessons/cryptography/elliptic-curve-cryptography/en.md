@@ -13,15 +13,15 @@ variables:
 
 ## Try it
 
-1. Look at the S-shaped curve. Drag «px» and «qx» to slide the points labeled P and Q anywhere along it.
-2. Watch the dashed line drawn through P and Q, and the point where it crosses the curve a third time, reflected below the axis to become the point labeled P + Q.
-3. Drag «a» and «b» and watch the whole curve change shape, sometimes pinching into a sharp point where the addition rule breaks down.
+1. Look at the smooth curve. Drag «px» and «qx» to slide the points labeled P and Q along its upper half.
+2. Set «px» to -1 and «qx» to 1. The dashed line through P and Q is flat; it crosses the curve a third time at (0, 1), and that point reflected below the axis is P + Q: the readout shows (0, -1).
+3. Set «a» to 0 and «b» to 0. The curve pinches into a sharp point and a warning appears: there the addition rule breaks down.
 
 ## Real-life examples
 
 1. **A shallow curve like those used in real systems, simplified.** With «a» = -1, «b» = 1, «px» = -1 and «qx» = 0.5, this is the shape most of this page uses.
 2. **A steeper curve, with points spread far apart.** «a» = 1, «b» = 3, «px» = 0 and «qx» = 1 stretch the curve and separate the two points.
-3. **A curve stretched near its bending limit.** «a» = -3, «b» = 5, «px» = 1 and «qx» = 2 push the shape close to where the addition rule would stop working.
+3. **A curve that is still safe.** «a» = -3, «b» = 5, «px» = 1 and «qx» = 2 give one smooth curve; lower «b» to 2 with the same «a» and the curve crosses itself, the place where the addition rule would stop working.
 
 ## Test yourself
 
@@ -54,13 +54,17 @@ Repeating this addition rule $k$ times, $P + P + \dots + P = kP$, is fast to com
 ## Real world
 
 ### Bitcoin and other cryptocurrencies
+
 Bitcoin signs every transaction using elliptic-curve keys on a specific curve called secp256k1.
 
 ### Secure messaging apps
+
 Signal and many other end-to-end encrypted messengers use elliptic-curve Diffie-Hellman to agree on a shared key for every conversation.
 
 ### HTTPS connections
+
 Most modern secure websites negotiate their connection key using an elliptic-curve version of Diffie-Hellman, prized for being both fast and compact.
 
 ### Smart cards and passports
+
 Chip-based ID cards and passports have limited computing power, so they favor elliptic-curve keys, which give strong security without much processing.
