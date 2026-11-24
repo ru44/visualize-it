@@ -18,9 +18,9 @@ variables:
 
 ## Try it
 
-1. Picture an airliner on approach at 70 m/s, wings at AR = 9 and 8° angle of attack, no winglets fitted.
-2. Watch the swirling vortex spilling off each wingtip, and read the induced drag it costs.
-3. Flip «winglets» on: the same lift, but visibly smaller vortices and a smaller induced-drag number.
+1. Start with the values on screen: «aspect ratio AR» 9, «angle of attack α» 8°, «winglets» off (0). This is an airliner on approach at 70 m/s.
+2. Watch the swirling vortex spilling off each wingtip, and read the induced drag it costs: C_{D,i} = 0.0338, about 1623 N.
+3. Flip «winglets» on (1): the same lift, but visibly smaller vortices, and C_{D,i} drops to 0.0307, about 1476 N.
 
 ## Real-life examples
 
@@ -30,7 +30,7 @@ variables:
 
 ## Test yourself
 
-1. Reach an induced drag coefficient of about 0.034 — the short-winged airliner without winglets.
+1. Halve the induced drag coefficient, to about 0.017. Try a longer wing.
 2. Turn winglets on and get the induced drag coefficient below 0.031, beating the no-winglet number.
 3. Push the aspect ratio high and get the induced drag coefficient below 0.005, glider territory.
 
@@ -38,7 +38,7 @@ variables:
 
 A wing only works by keeping high pressure below and low pressure above — but at the tip, there is nothing to stop that high-pressure air from simply curling up and around into the low-pressure region on top. Raise «angle of attack α» and watch the swirl grow: more lift means a bigger pressure difference, and a bigger pressure difference means more air is eager to leak around the tip. That leaking air rolls itself into a spinning trailing vortex — the same vortex a following aircraft must stay well clear of, and the same one you sometimes see condense into a visible spiral behind a landing jet on a humid day.
 
-That vortex is not free: it tilts the whole flow the wing feels slightly backward, tilting the lift vector back with it — so part of what should have been pure lift now points backward too, as extra drag. Drag «aspect ratio AR» toward a long, slender wing and watch the vortex shrink even at the same lift: a longer wing spreads the same lift over more span, so proportionally less air needs to leak around each tip to balance the pressure. This is exactly why gliders and geese both favour long, narrow wings, and why «winglets» — small fins that block the air's escape route around the tip — buy back some of what a short wing loses.
+That vortex is not free: it tilts the whole flow the wing feels slightly backward, tilting the lift vector back with it — so part of what should have been pure lift now points backward too, as extra drag. Drag «aspect ratio AR» toward a long, slender wing and watch the induced-drag readout fall even at the same lift: a longer wing spreads the same lift over more span, so proportionally less air needs to leak around each tip to balance the pressure. This is exactly why gliders and geese both favour long, narrow wings, and why «winglets» — small fins that block the air's escape route around the tip — buy back some of what a short wing loses.
 
 ## Formal
 
@@ -59,13 +59,17 @@ Winglets do not eliminate the tip vortex; they reshape it, effectively pushing t
 ## Real world
 
 ### Why airliners keep getting longer, thinner wings
+
 Modern airliner wings favour higher aspect ratio for exactly this reason, folding wingtips (like the 777X's) let a long, efficient wing still fit existing airport gates.
 
 ### Geese flying in a V
+
 Each bird flies slightly behind and to the side of the one ahead, riding the upward-swirling outer edge of that bird's wingtip vortex for a free boost, which is also why the formation always trails off at an angle, not a straight line.
 
 ### Contrails and vortex cores
+
 On humid days, the very low pressure at the core of a wingtip vortex can chill moist air below its dew point, condensing a visible spiral trail even without any engine exhaust involved.
 
 ### Wake turbulence separation rules
+
 Air traffic control keeps following aircraft well behind and below a heavy jet's flight path specifically to avoid its wingtip vortices, which can persist and roll a smaller aircraft dangerously for a minute or more.

@@ -3,15 +3,15 @@ subject: aerodynamics
 difficulty: university
 equation: C_{D,i} = \dfrac{C_L^2}{\pi\, \mathrm{AR}\, e}
 concepts:
-- induced-drag
-- wingtip-vortex
-- aspect-ratio
-- winglets
+  - induced-drag
+  - wingtip-vortex
+  - aspect-ratio
+  - winglets
 prerequisites:
-- lift
+  - lift
 related:
-- lift-to-drag
-- how-wings-really-lift
+  - lift-to-drag
+  - how-wings-really-lift
 visualization:
   type: wingtip-vortices-and-induced-drag
   options: {}
@@ -39,28 +39,28 @@ parameters:
     value: 0
     unit: ''
 variables:
-- C_{D,i}
-- C_L
-- \mathrm{AR}
-- e
+  - C_{D,i}
+  - C_L
+  - \mathrm{AR}
+  - e
 derivation:
-- L \approx \dot m\, w, \quad \dot m = \rho v \cdot \pi\!\left(\tfrac{b}{2}\right)^2
-- \alpha_i \approx \dfrac{w}{2v} \;\Rightarrow\; D_i \approx L\,\alpha_i
-- C_{D,i} = \dfrac{C_L^2}{\pi\, \mathrm{AR}\, e}
+  - L \approx \dot m\, w, \quad \dot m = \rho v \cdot \pi\!\left(\tfrac{b}{2}\right)^2
+  - \alpha_i \approx \dfrac{w}{2v} \;\Rightarrow\; D_i \approx L\,\alpha_i
+  - C_{D,i} = \dfrac{C_L^2}{\pi\, \mathrm{AR}\, e}
 charts: []
 presets:
-- AR: 9
-  alpha: 8
-  winglets: 0
-- AR: 9
-  alpha: 8
-  winglets: 1
-- AR: 25
-  alpha: 4
-  winglets: 0
+  - AR: 9
+    alpha: 8
+    winglets: 0
+  - AR: 9
+    alpha: 8
+    winglets: 1
+  - AR: 25
+    alpha: 4
+    winglets: 0
 challenges:
-- check: '((2*pi*sin(alpha*pi/180))^2)/(pi*AR*(winglets>0.5?0.88:0.8))'
-  target: 0.034
-  tol: 0.004
-- check: 'winglets>0.5 and ((2*pi*sin(alpha*pi/180))^2)/(pi*AR*0.88) < 0.031'
-- check: '((2*pi*sin(alpha*pi/180))^2)/(pi*AR*(winglets>0.5?0.88:0.8)) < 0.005'
+  - check: '((2*pi*sin(alpha*pi/180))^2)/(pi*AR*(winglets>0.5?0.88:0.8))'
+    target: 0.017
+    tol: 0.002
+  - check: 'winglets>0.5 and ((2*pi*sin(alpha*pi/180))^2)/(pi*AR*0.88) < 0.031'
+  - check: '((2*pi*sin(alpha*pi/180))^2)/(pi*AR*(winglets>0.5?0.88:0.8)) < 0.005'
