@@ -3,14 +3,14 @@ subject: cryptography
 difficulty: beginner
 equation: c = (p + k) \bmod 26
 concepts:
-- cryptography
-- substitution-cipher
-- modular-arithmetic
-- key
+  - cryptography
+  - substitution-cipher
+  - modular-arithmetic
+  - key
 prerequisites: []
 related:
-- modular-arithmetic
-- permutations
+  - modular-arithmetic
+  - permutations
 visualization:
   type: cipher-wheel
   options:
@@ -20,13 +20,13 @@ parameters:
     min: 0
     max: 25
     step: 1
-    value: 3
+    value: 1
 variables:
-- \bmod
+  - \bmod
 derivation:
-- p = \text{index of the plain letter } (A=0,\dots,Z=25)
-- c = (p + k) \bmod 26
-- p = (c - k) \bmod 26
+  - p = \text{index of the plain letter } (A=0,\dots,Z=25)
+  - c = (p + k) \bmod 26
+  - p = (c - k) \bmod 26
 charts: []
 primary: shift
 presets:
