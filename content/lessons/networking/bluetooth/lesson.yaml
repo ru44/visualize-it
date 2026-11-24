@@ -3,14 +3,14 @@ subject: networking
 difficulty: beginner
 equation: P = 1 - \left(1 - \frac{1}{79}\right)^{k}
 concepts:
-- bluetooth
-- frequency-hopping
-- pairing
-- collision
+  - bluetooth
+  - frequency-hopping
+  - pairing
+  - collision
 prerequisites:
-- wifi
+  - wifi
 related:
-- wifi
+  - wifi
 visualization:
   type: bluetooth-hop
 parameters:
@@ -18,29 +18,29 @@ parameters:
     min: 0
     max: 30
     step: 1
-    value: 5
+    value: 10
   r:
     min: 100
     max: 1600
     step: 100
     value: 1600
 variables:
-- P
-- k
+  - P
+  - k
 derivation:
-- \text{one rival pair lands on your channel with chance } \frac{1}{79}
-- \text{all } k \text{ rivals miss with chance } \left(1 - \frac{1}{79}\right)^{k}
-- P = 1 - \left(1 - \frac{1}{79}\right)^{k}
+  - \text{one rival pair lands on your channel with chance } \frac{1}{79}
+  - \text{all } k \text{ rivals miss with chance } \left(1 - \frac{1}{79}\right)^{k}
+  - P = 1 - \left(1 - \frac{1}{79}\right)^{k}
 charts: []
 primary: k
 presets:
-- k: 5
-  r: 1600
-- k: 20
-  r: 1600
-- k: 0
-  r: 100
+  - k: 5
+    r: 1600
+  - k: 20
+    r: 1600
+  - k: 0
+    r: 100
 challenges:
-- check: k >= 4.5 and (1 - (1 - 1/79)^k) <= 0.07
-- check: k >= 19.5 and (1 - (1 - 1/79)^k) < 0.25
-- check: k < 0.5
+  - check: k >= 4.5 and (1 - (1 - 1/79)^k) <= 0.07
+  - check: k >= 19.5 and (1 - (1 - 1/79)^k) < 0.25
+  - check: k < 0.5

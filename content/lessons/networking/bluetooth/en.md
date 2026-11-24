@@ -14,9 +14,9 @@ variables:
 
 ## Try it
 
-1. Leave k = 5 and watch the band: your phone and earbud light up the same channel on every hop — both computed it from the pairing secret, nobody announced it.
-2. Raise k to 20: rivals now land on your channel roughly every fourth hop and the column flashes red — and on the very next hop, a fraction of a millisecond later, the packet simply goes again.
-3. Drop k to 0 and slow r down: an empty room never collides, and you can watch the hop sequence calmly stepping through the band.
+1. Set k = 5 (the readout shows P = 6.2%) and watch the band: your phone and earbud light up the same channel on every hop — both computed it from the pairing secret, nobody announced it.
+2. Raise k to 20: the readout shows P = 22.5%. Rivals now land on your channel roughly every fourth hop and the column flashes red — and on the very next hop, a fraction of a millisecond later, the packet simply goes again.
+3. Drop k to 0 and slow r down to 100: the readout shows P = 0.0%. An empty room never collides, and you can watch the hop sequence calmly stepping through the band.
 
 ## Real-life examples
 
@@ -55,13 +55,17 @@ Modern Bluetooth refines the dance: adaptive frequency hopping notices channels 
 ## Real world
 
 ### Earbuds, watches and keyboards
+
 Everything short-range and battery-powered rides this dance — the hop sequence is why your earbuds work on a train full of other earbuds.
 
 ### Hands-free in cars
+
 The car and phone pair once, then recompute the same dance every drive, immune to the parking lot's other radios.
 
 ### Contact-tracing and beacons
+
 Low-energy Bluetooth broadcasts tiny hops of presence, letting phones notice each other without connecting at all.
 
 ### Sharing the band with Wi-Fi
+
 Bluetooth, Wi-Fi and microwave ovens all crowd into 2.4 GHz — frequency hopping is how Bluetooth stays polite and survives.
