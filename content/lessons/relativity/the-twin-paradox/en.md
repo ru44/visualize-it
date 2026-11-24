@@ -14,13 +14,13 @@ parameters:
 
 1. Look at the spacetime diagram: Earth's worldline runs straight up the middle, and the ship's worldline goes out to the star and back, bending sharply at the turnaround.
 2. Count the tick marks along each worldline. Earth's ticks are evenly spaced, one per year; the ship's ticks are spaced further apart in this picture, because each of the ship's own years covers more of Earth's time.
-3. Drag v higher. The ship's line tilts closer to the dashed 45° light line, its ticks spread even further apart, and the age gap printed at the bottom grows.
+3. Raise v from 0.8 to 0.9. The ship's line tilts closer to the dashed 45° light line, its ticks spread even further apart, and the «age difference» readout grows from 4.24 to 5.32 years.
 
 ## Real-life examples
 
 1. **A round trip to Proxima Centauri**, D = 4.24 light-years, at v = 0.9. Earth counts T = 9.4 years; the traveler's own clock counts only τ = 4.1 years — the traveler comes home 5.3 years younger than a twin who stayed behind.
 2. **A round trip to Sirius**, D = 8.6 light-years, at a gentler v = 0.5. Earth counts a long T = 34.4 years; the traveler still ages less, τ = 29.8 years, a 4.6-year gap even at only half light speed.
-3. **A short, extreme hop**, D = 1 light-year at v = 0.99. Earth counts T = 2.0 years; the traveler's own clock counts only τ = 0.29 years, about 104 days, for the same round trip.
+3. **A short, extreme hop**, D = 1 light-year at v = 0.99. Earth counts T = 2.02 years; the traveler's own clock counts only τ = 0.28 years, about 104 days, for the same round trip.
 
 ## Test yourself
 
@@ -42,7 +42,7 @@ The traveler's own clock measures proper time instead, always shorter by the Lor
 
 ## Advanced
 
-A full accounting of what each twin actually *sees* through a telescope during the trip, not just what their clocks read at the end, uses the relativistic Doppler effect: the traveler sees Earth's clock appear to run slow on the way out and fast on the way back, and the two effects do not cancel evenly around the turnaround — they resolve into exactly the same final age gap this page computes from the two worldlines.
+A full accounting of what each twin actually _sees_ through a telescope during the trip, not just what their clocks read at the end, uses the relativistic Doppler effect: the traveler sees Earth's clock appear to run slow on the way out and fast on the way back, and the two effects do not cancel evenly around the turnaround — they resolve into exactly the same final age gap this page computes from the two worldlines.
 
 ## Derivation
 
@@ -53,13 +53,17 @@ A full accounting of what each twin actually *sees* through a telescope during t
 ## Real world
 
 ### GPS satellites, on a much gentler scale
+
 A GPS satellite is, in miniature, a twin that keeps moving relative to the ground: its orbital motion alone would make its onboard clock run slightly slow compared to a ground clock, the same effect this page shows at wildly exaggerated speed and distance.
 
 ### Why no astronaut has done this yet
+
 Even the fastest human spaceflight, the Apollo missions at roughly 11 km/s, gives v/c of about 0.00004 — far too small a fraction of light speed to produce a measurable age gap on a human timescale; the effect is real but needs speeds no current rocket can reach.
 
 ### Muon decay, the twin paradox on a subatomic clock
+
 A muon that accelerates, turns around in a magnetic field, and returns to its starting point measures less of its own decay-clock time than a muon that never turned at all, a laboratory-scale version of exactly this asymmetry, confirmed to high precision.
 
 ### Interstellar travel proposals
+
 Serious proposals for reaching nearby stars, like laser-sail concepts aiming for tens of percent of light speed, are studied partly because of this very effect: a probe or crew moving fast enough would experience meaningfully less elapsed time than mission control back on Earth.
