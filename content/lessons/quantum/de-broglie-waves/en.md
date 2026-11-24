@@ -16,21 +16,21 @@ charts: []
 
 ## Try it
 
-1. Look at the curve on screen: it shows how an electron's wavelength shrinks as its speed grows.
-2. Drag the point along the curve toward higher speed. The wavelength reading drops fast.
-3. Drag it back toward low speed and watch the wavelength grow instead, tracing the tangent line as you go.
+1. Look at the curve on screen: it shows how an electron's wavelength shrinks as its speed grows. «x» is the speed in km/s and «f(x)» is the wavelength in nanometres. At x = 100, f(x) reads 7.27.
+2. Drag the point along the curve to x = 200. f(x) drops to 3.635: twice the speed, half the wavelength.
+3. Drag it on to x = 1000. f(x) reads 0.727, ten times shorter than at x = 100, and the tangent line that follows the point is now almost flat.
 
 ## Real-life examples
 
-1. **A slow electron beam.** At low speed the electron's wavelength is large enough to show up clearly on the plot.
-2. **A faster electron beam.** Speeding the electron up shrinks its wavelength noticeably.
-3. **An electron-microscope beam.** At the highest speeds shown here the wavelength shrinks toward the size of a single atom, which is exactly why electron microscopes can image things a light microscope never could.
+1. **A slow electron beam.** At 100 km/s the electron's wavelength is 7.27 nm, as wide as a few dozen atoms side by side.
+2. **A faster electron beam.** At 500 km/s the wavelength shrinks to about 1.45 nm, five times shorter.
+3. **An electron-microscope beam.** At 1500 km/s the wavelength is about 0.48 nm, close to the size of a single atom, which is exactly why electron microscopes can image things a light microscope never could.
 
 ## Test yourself
 
-1. Set the speed so the wavelength reads about 7.3 on the plot.
-2. Push the speed high enough that the wavelength drops below 1.
-3. Land the wavelength on exactly 2.
+1. Cut the starting wavelength in half: set the speed so f(x) reads about 3.6.
+2. Push the speed high enough that the wavelength drops below 1 nm.
+3. Land the wavelength on 2 nm (to within 0.05).
 
 ## Intuition
 
@@ -57,10 +57,13 @@ Louis de Broglie proposed matter waves in his 1924 doctoral thesis purely from s
 ## Real world
 
 ### Electron microscopes
+
 Because fast electrons have a wavelength thousands of times shorter than visible light, electron microscopes can resolve details far finer than any light microscope.
 
 ### Electron diffraction in chemistry
+
 Chemists fire electron beams at crystals and read the resulting diffraction pattern to work out where every atom sits.
 
 ### Neutron scattering
+
 Neutron beams, which also carry a de Broglie wavelength, probe the atomic structure of materials too dense or opaque for light or electrons to penetrate.
