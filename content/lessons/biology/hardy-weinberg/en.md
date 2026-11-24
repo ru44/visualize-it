@@ -22,9 +22,9 @@ charts:
 
 ## Try it
 
-1. Drag $p$ toward 0.5 and watch the square split into four equal patches — the "one of each" group (Aa) becomes the largest share, 50 of the 100 villagers.
-2. Drag $p$ close to 1. The AA patch floods the square, and the "two A" villagers take over almost the whole population.
-3. Drag $p$ close to 0. The "two a" corner takes over instead — the same counting, mirrored.
+1. Drag $p$ to 0.5 and watch the square split into four equal patches — the "one of each" group (Aa) becomes the largest share, 50 of the 100 villagers.
+2. Drag $p$ to 0.9. The AA patch floods the square, and the "two A" villagers take over most of the population: 81 of the 100, with 18 Aa and just 1 aa.
+3. Drag $p$ to 0.1. The "two a" corner takes over instead, with 81 of the 100 villagers — the same counting, mirrored.
 
 ## Real-life examples
 
@@ -63,13 +63,17 @@ Deviations from Hardy–Weinberg proportions (measured, e.g., by the fixation in
 ## Real world
 
 ### Screening for recessive disease
+
 Knowing the frequency of carriers (2pq) of a recessive disease allele from the frequency of affected individuals (q²) guides genetic counselling.
 
 ### Detecting selection
+
 A population whose genotype counts drift from Hardy–Weinberg proportions is a signal that something — selection, non-random mating, drift — is acting.
 
 ### Conservation genetics
+
 Small, isolated populations often show heterozygote deficits relative to Hardy–Weinberg due to inbreeding, a key conservation warning sign.
 
 ### Blood types
+
 ABO blood group frequencies in a population are classic examples used to teach Hardy–Weinberg calculations.
