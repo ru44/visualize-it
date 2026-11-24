@@ -14,9 +14,9 @@ variables:
 
 ## Try it
 
-1. Tap the rightmost bit square: the decimal number jumps by exactly 1, its place value in that spot.
-2. Tap the leftmost bit square instead: the decimal number jumps by 128, the biggest single bit there is.
-3. Watch the hex and ASCII readouts change together as you flip bits — every 4 bits becomes one hex digit, and a byte between 32 and 126 shows up as a printable character.
+1. The picture starts at 42 (00101010). Tap the rightmost bit square: the decimal readout jumps by exactly 1, that square's place value, and shows 43.
+2. Now tap the leftmost bit square: the decimal readout jumps by 128, the biggest single bit there is, from 43 to 171.
+3. Flip bits until the squares read 01000001 (64 + 1 = 65). The hexadecimal readout shows 0x41 and the ASCII readout shows 'A' — every 4 bits make one hex digit, and a byte between 32 and 126 shows up as a printable character.
 
 ## Real-life examples
 
@@ -55,13 +55,17 @@ Hexadecimal groups bits four at a time because $16=2^4$, so each hex digit encod
 ## Real world
 
 ### Memory and storage
+
 Every file, image and program is ultimately a sequence of bytes — binary is the only language the hardware speaks.
 
 ### Colour codes
+
 A web colour like #2A5FFF packs three bytes of red, green and blue, each written as two hex digits.
 
 ### Networking
+
 IP addresses, subnet masks and MAC addresses are all groups of bits, usually displayed in decimal or hex for humans.
 
 ### Text encoding
+
 ASCII maps each byte value 0–127 to a character; the byte 42 is the character *, and 65 is A.
