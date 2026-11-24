@@ -23,13 +23,13 @@ charts:
 
 ## Try it
 
-1. Drag the radius slider to about 6.8, near Earth's surface. Read orbital speed: about 7.8 km/s, ISS territory.
-2. Keep dragging out to 42.2. Watch orbital speed drop to about 3.1 km/s.
-3. Watch orbital period climb from about 90 minutes to a full 24 hours — geostationary orbit.
+1. Set x to 6.8, just above Earth's surface. The readout f(x) shows the orbital speed: about 7.7 km/s, ISS territory.
+2. Set x to 42.2. Orbital speed drops to about 3.1 km/s.
+3. On the second chart, the orbital period climbs from about 1.5 hours at 6.8 to a full 24 hours at 42.2 — geostationary orbit.
 
 ## Real-life examples
 
-- **The International Space Station.** At x = 6.8, low Earth orbit, the ISS circles at about 7.8 km/s, completing a lap in roughly 93 minutes.
+- **The International Space Station.** At x = 6.8, low Earth orbit, the ISS circles at about 7.7 km/s, completing a lap in roughly 93 minutes.
 - **GPS satellites.** At x = 26.6, GPS satellites orbit slower, completing a lap roughly every 12 hours.
 - **Geostationary satellites.** At x = 42.2, orbital speed has dropped enough that one lap takes exactly 24 hours, matching Earth's rotation.
 
@@ -41,13 +41,13 @@ charts:
 
 ## Intuition
 
-Drag the radius slider outward from just above Earth's surface and watch the tangent line's slope — the orbital speed — fall. Close in, near 6,600 km, you need about 7.8 km/s to keep curving fast enough to match gravity's pull; that is low Earth orbit, home to the ISS, circling the planet in about 90 minutes.
+Drag the radius slider outward from just above Earth's surface and watch the height of the curve — the orbital speed — fall. Close in, near 6,600 km, you need about 7.8 km/s to keep curving fast enough to match gravity's pull; that is low Earth orbit, home to the ISS, circling the planet in about 90 minutes.
 
 Keep dragging out to 42,200 km and the speed has dropped to about 3.1 km/s, slow enough that one lap now takes 24 hours — exactly matching Earth's rotation. A satellite there appears to hang motionless over one spot on the equator: geostationary orbit, used by communication and weather satellites.
 
 ## Formal
 
-For a circular orbit, gravity supplies exactly the centripetal force needed to keep curving: $\frac{GMm}{r^2} = \frac{mv^2}{r}$. The satellite's own mass $m$ cancels from both sides, so orbital speed does not depend on what you are orbiting with: $v = \sqrt{\frac{GM}{r}}$.
+For a circular orbit, gravity supplies exactly the centripetal force needed to keep curving: $\frac{GMm}{r^2} = \frac{mv^2}{r}$. The satellite's own mass $m$ cancels from both sides, so orbital speed does not depend on the mass of the thing in orbit: $v = \sqrt{\frac{GM}{r}}$.
 
 The period follows from circumference over speed, $T = \frac{2\pi r}{v} = 2\pi\sqrt{\frac{r^3}{GM}}$ — this is Kepler's third law, period squared proportional to radius cubed, extended here to any radius rather than just the planets' orbits around the Sun.
 
@@ -64,13 +64,17 @@ Kepler's first law says real orbits are ellipses with the central body at one fo
 ## Real world
 
 ### GPS satellites
+
 GPS satellites orbit at about 20,200 km, chosen so their 12-hour period repeats the same ground track twice a day.
 
 ### Geostationary communication satellites
+
 TV and weather satellites sit at 42,200 km precisely so their 24-hour period matches Earth's rotation and they stay fixed over one spot.
 
 ### The International Space Station
+
 The ISS orbits at roughly 6,800 km from Earth's centre (about 400 km altitude), completing a lap in about 93 minutes — over 15 sunrises a day for the crew.
 
 ### Planning interplanetary transfers
+
 Mission planners use this same speed-versus-radius trade-off, layered with Kepler's other laws, to compute the fuel needed to move a spacecraft from one orbit to another.
