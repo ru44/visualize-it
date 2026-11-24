@@ -22,9 +22,9 @@ charts:
 
 ## Try it
 
-1. Set the slider "x" to 2. On the chart, notice the polynomial curve sitting above the exponential curve — 8 beats 4.
-2. Drag "x" up to 10 and watch the two curves cross: the exponential curve rockets to 1024 while the polynomial curve is still only at 1000.
-3. Push "x" all the way to 12 and read the gap: the exponential curve is now far above the polynomial one, more than twice as high.
+1. Set the slider "x" to 2. The f(x) readout shows 4 for the exponential, and on the chart the polynomial curve sits above it — 8 beats 4.
+2. Drag "x" up to 10 and watch the two curves cross: the exponential curve reaches 1024 (the f(x) readout) while the polynomial curve is still only at 1000.
+3. Push "x" all the way to 12 and read the gap: the exponential curve is at 4096 and the polynomial one at 1728, less than half as high.
 
 ## Real-life examples
 
@@ -36,13 +36,13 @@ charts:
 
 1. Find a value of "x" where the exponential curve is already bigger than the polynomial curve.
 2. Find the exact value of "x" where the exponential curve beats the polynomial curve by 2368.
-3. Find a value of "x" in the middle of the slider's range where the polynomial curve is still bigger than the exponential curve.
+3. Find the value of "x" in the middle of the slider's range where the polynomial curve has its biggest lead: 512 against 256, ahead by 256.
 
 ## Intuition
 
-Imagine two weekly allowances that start out equal. One doubles every week: after 2 weeks it is 4 dollars, but after 10 weeks it has grown to $2^{10}=1024$ dollars. The other grows with the cube of the number of weeks: after 2 weeks it is 8 dollars, well ahead of the doubling one, but after 10 weeks it only reaches $10^3=1000$ dollars — already behind. Drag the slider "x" up toward 12 and watch the chart's steep curve, the exponential one, pull decisively ahead of the gently climbing cube.
+Imagine two weekly allowances that both start out small. One doubles every week: after 2 weeks it is 4 dollars, but after 10 weeks it has grown to $2^{10}=1024$ dollars. The other grows with the cube of the number of weeks: after 2 weeks it is 8 dollars, well ahead of the doubling one, but after 10 weeks it only reaches $10^3=1000$ dollars — already behind. Drag the slider "x" up toward 12 and watch the chart's steep curve, the exponential one, pull decisively ahead of the gently climbing cube.
 
-That crossover near x = 10 is no accident of this one pair of numbers — any exponential curve eventually beats any polynomial curve, no matter how high the polynomial's power or how close the exponential's base is to 1. Look at the chart's two curves: the steep one is $2^x$, doubling with every step of x. The gentler one is $x^3$, growing only by a fixed power of x. That is why adding a single extra character to a password does not add a little security — it doubles the number of guesses an attacker needs.
+That crossover near x = 10 is no accident of this one pair of numbers — any exponential curve eventually beats any polynomial curve, no matter how high the polynomial's power or how close the exponential's base is to 1. Look at the chart's two curves: the steep one is $2^x$, doubling with every step of x. The gentler one is $x^3$, growing only by a fixed power of x. That is why adding a single extra character to a password does not add a little security — it multiplies the number of guesses an attacker needs — by 26 for one more lowercase letter.
 
 ## Formal
 
@@ -52,7 +52,7 @@ Binary search on a sorted list of n items halves the remaining range each compar
 
 ## Advanced
 
-A brute-force search over an n-bit key space costs O(2^n); adding one bit doubles the work, so security parameters are chosen in bits precisely because the cost scales exponentially while the cost of using the key (encrypting one message) scales polynomially in n — that asymmetry, not secrecy of the algorithm, is what modern cryptography relies on. The hardest known classical algorithms for breaking RSA (factoring) are sub-exponential but still super-polynomial, while quantum algorithms (Shor's) would make factoring polynomial-time — the reason post-quantum cryptography is being developed.
+A brute-force search over an n-bit key space costs O(2^n); adding one bit doubles the work, so security parameters are chosen in bits precisely because the cost scales exponentially while the cost of using the key (encrypting one message) scales polynomially in n — that asymmetry, not secrecy of the algorithm, is what modern cryptography relies on. The fastest known classical algorithms for breaking RSA (factoring) are sub-exponential but still super-polynomial, while quantum algorithms (Shor's) would make factoring polynomial-time — the reason post-quantum cryptography is being developed.
 
 ## Derivation
 
@@ -63,13 +63,17 @@ A brute-force search over an n-bit key space costs O(2^n); adding one bit double
 ## Real world
 
 ### Password strength
+
 Each extra character (or bit) in a password multiplies, not adds to, the number of guesses a brute-force attacker needs — exponential, not polynomial, growth in security.
 
 ### Encryption key sizes
+
 AES-256 is not "roughly twice as strong" as AES-128 — it is 2^128 times harder to brute force, because security scales exponentially with key length.
 
 ### Binary search
+
 Searching a sorted array of a billion items takes about 30 comparisons, not a billion, because each comparison halves the range — the logarithmic mirror image of exponential growth.
 
 ### Why some algorithms are infeasible
+
 An O(2^n) algorithm for the travelling salesman problem is fine for 10 cities and impossible for 100 — no amount of faster hardware closes an exponential gap.

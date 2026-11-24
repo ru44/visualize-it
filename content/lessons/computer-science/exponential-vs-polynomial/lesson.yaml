@@ -56,4 +56,5 @@ challenges:
   - check: 2^x > x^3
   - check: 2^x - x^3
     target: 2368
-  - check: x^3 > 2^x
+  - check: x^3 - 2^x
+    target: 256
