@@ -17,15 +17,15 @@ variables:
 
 ## Try it
 
-1. Drag «reaction quotient Q» up, away from 1. The product beaker crowds up, the voltmeter sags, and the electrons on the wire visibly slow down.
-2. Raise «electrons transferred n» instead. The same climb in Q now costs less voltage — the needle barely moves.
-3. Raise «standard cell potential E⁰». The voltmeter jumps and the electrons hurry — a stronger battery to start with.
+1. Drag the reaction quotient Q slider up from 1 to the top, about 1000. The product beaker crowds up, the readout E sags from 1.1 V to 1.011 V, and the electrons on the wire slow down.
+2. Leave Q at the top and change «electrons transferred n» instead. With n = 1 the readout shows E = 0.923 V; with n = 3 it shows E = 1.041 V. The same climb in Q costs less voltage when n is larger.
+3. Bring Q back down to about 1 and raise «standard cell potential E⁰» from 1.1 to 2. The voltmeter jumps to about 2 V and the electrons hurry — a stronger battery to start with.
 
 ## Real-life examples
 
-1. **A fresh Daniell cell, just connected.** Standard potential 1.10 V, two electrons transferred, reactants and products in balance (Q = 1): the cell delivers its full rated voltage.
-2. **A battery that has nearly run flat.** After a long discharge, products have built up a thousandfold over reactants (Q = 500): even with a decent 1.5 V rating, the voltage has sagged noticeably.
-3. **The instant a cell is switched on.** Virtually no products exist yet (Q near its minimum): the voltage briefly reads close to its full standard value of 1.8 V.
+1. **A fresh Daniell cell, just connected.** Standard potential 1.10 V, two electrons transferred, reactants and products at equal, standard concentrations (Q = 1): the cell delivers its full rated voltage.
+2. **A battery that has nearly run flat.** After a long discharge, products have built up five-hundredfold over reactants (Q = 500): even with a decent 1.5 V rating, the voltage has sagged noticeably.
+3. **The instant a cell is switched on.** Virtually no products exist yet (Q at its minimum, 0.001): the voltage briefly reads about 1.98 V, even a little above its standard value of 1.8 V.
 
 ## Test yourself
 
@@ -58,13 +58,17 @@ The Nernst equation is why a cell's voltage can be used to measure concentration
 ## Real world
 
 ### Why a battery's voltage sags as it runs down
+
 As a battery discharges, reactants are consumed and products accumulate, raising $Q$ and steadily lowering the voltage below its fresh, standard value — exactly what this lesson's Q slider acts out.
 
 ### The Daniell cell and early batteries
+
 The Daniell cell's reliable 1.10 V output made it one of the first practical batteries, used to power early telegraph systems in the 19th century.
 
 ### pH meters and ion-selective electrodes
+
 Many lab sensors are electrochemical cells at heart, converting a concentration difference into a voltage through this exact relationship, then converting that voltage back into a reading.
 
 ### Corrosion and cathodic protection
+
 Rusting is an electrochemical process; engineers protect ships and pipelines by attaching a more easily oxidised metal that sacrifices itself, shifting which half-reaction happens where.
