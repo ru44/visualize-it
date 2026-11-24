@@ -43,16 +43,16 @@ derivation:
   - \left(\dfrac{r-d}{r}\right)^3 = \text{starved fraction of the volume, once } r>d
 charts: []
 presets:
-- r: 1
-  activity: 3
-- r: 15
-  activity: 1
-- r: 800
-  activity: 2
+  - r: 1
+    activity: 3
+  - r: 15
+    activity: 1
+  - r: 800
+    activity: 2
 challenges:
-- check: 3/r
-  target: 3
-- check: (max(0, r - 200/sqrt(activity))/r)^3
-  target: 0.5
-  tol: 0.05
-- check: r>500 and activity<0.2 and r<=200/sqrt(activity)
+  - check: 3/r
+    target: 3
+  - check: (max(0, r - 200/sqrt(activity))/r)^3
+    target: 0.5
+    tol: 0.05
+  - check: r>500 and activity<0.2 and r<=200/sqrt(activity)
