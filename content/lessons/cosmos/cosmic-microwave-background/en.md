@@ -5,20 +5,20 @@ parameters:
   T: temperature T
   x: wavelength x
 variables:
-- the wavelength where the glow's brightness peaks
-- the temperature of the glowing gas or, here, the whole universe
+  - the wavelength where the glow's brightness peaks
+  - the temperature of the glowing gas or, here, the whole universe
 ---
 
 ## Try it
 
 1. Set «temperature T» to 2.725 K, the universe's actual measured temperature today.
-2. Drag «wavelength x» until the curve reaches its highest point — that is the peak wavelength for this temperature.
-3. Raise «temperature T» further and watch the whole curve shift toward shorter wavelengths, and grow taller.
+2. Drag «wavelength x» until the point sits on the curve's highest spot, where f(x) reads 1. That happens at x = 1.06 mm, the peak wavelength for this temperature.
+3. Raise «temperature T» to 5.8 K and watch the whole curve shift toward shorter wavelengths: the peak is now at 0.5 mm. (The picture always scales the peak's height to 1.)
 
 ## Real-life examples
 
 1. **Today's cosmic microwave background.** At 2.725 K, the glow peaks at about 1.06 mm, squarely in the microwave part of the spectrum.
-2. **A much hotter early universe.** Long before atoms could even form, the universe's glow was far hotter, around 8 on this slider, peaking at a much shorter wavelength.
+2. **A hotter, younger universe.** When the universe was about a third of its present size, its glow was near 8 K, peaking at a shorter wavelength, about 0.36 mm.
 3. **A cooler hypothetical universe.** At only 1.5 K, the peak wavelength stretches out past 1.9 mm.
 
 ## Test yourself
@@ -29,9 +29,9 @@ variables:
 
 ## Intuition
 
-In 1965, two engineers at Bell Labs, Arno Penzias and Robert Wilson, kept picking up a faint microwave hiss with their antenna no matter which direction they pointed it, equivalent to a temperature of about 3.5 degrees above absolute zero. They first suspected pigeon droppings on the antenna; instead, they had stumbled onto the afterglow of the early universe.
+In 1965, two radio astronomers at Bell Labs, Arno Penzias and Robert Wilson, kept picking up a faint microwave hiss with their antenna no matter which direction they pointed it, equivalent to a temperature of about 3.5 degrees above absolute zero. They first suspected pigeon droppings on the antenna; instead, they had stumbled onto the afterglow of the early universe.
 
-Drag «temperature T» up on the picture and the curve grows taller and slides left, peaking at a shorter «wavelength x». Every hot glowing object does this — a stove element glows dull red, then orange, then white as it heats up — and the same rule that describes a stove tells us the universe itself cooled from a blinding fireball to a faint 2.725 K microwave whisper.
+Drag «temperature T» up on the picture and the curve slides left, peaking at a shorter «wavelength x». Every hot glowing object does this — a stove element glows dull red, then orange, then white as it heats up — and the same rule that describes a stove tells us the universe itself cooled from a blinding fireball to a faint 2.725 K microwave whisper.
 
 ## Formal
 
@@ -52,10 +52,13 @@ The full curve plotted here is Planck's blackbody law, and its near-perfect matc
 ## Real world
 
 ### Penzias and Wilson's accidental discovery
+
 Their 1965 measurement of the microwave background, made while trying to remove noise from a radio antenna, won them the 1978 Nobel Prize in Physics.
 
 ### The COBE and Planck satellites
+
 Later missions mapped the glow's temperature across the whole sky to within millionths of a degree, revealing the seeds of every galaxy that would ever form.
 
 ### Watching a piece of metal heat up
+
 A blacksmith's iron glows dull red, then orange, then white as it gets hotter — the same Wien's law shift seen here, just at everyday temperatures.
