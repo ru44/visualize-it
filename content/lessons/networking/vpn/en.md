@@ -18,7 +18,7 @@ variables:
 
 1. Start with vpn = 0 and read the ISP panel: every site you visit sits there in plain sight, because each packet must carry its destination on the outside to be delivered at all.
 2. Flip vpn to 1: the packets seal into locked envelopes addressed only to the VPN server, and the ISP's list collapses to one encrypted line.
-3. Now raise h and watch the bar at the bottom: the wrapper eats into your speed, G = B(1 − h/1500) — a small, honest fare for the privacy.
+3. Now raise h from 60 to 120 and watch the bar at the bottom: on the 100 Mbps line G falls from 96.0 to 92.0 Mbps. The wrapper eats into your speed, G = B(1 − h/1500) — a small, honest fare for the privacy.
 
 ## Real-life examples
 
@@ -29,8 +29,8 @@ variables:
 ## Test yourself
 
 1. Turn the tunnel on.
-2. Keep the tunnel on and the goodput at 480 Mbps or better — you will need the big line and the leanest wrapper.
-3. Turn the tunnel off again and look at the ISP panel: that is what "no VPN" means.
+2. Keep the tunnel on and the goodput at 480 Mbps or better — you will need the biggest line and a wrapper of 60 bytes or less.
+3. Turn the tunnel off on the fastest line (B = 500) and look at the ISP panel: full speed, and that is what "no VPN" means.
 
 ## Intuition
 
@@ -57,13 +57,17 @@ A VPN moves trust rather than removing it: the VPN server now sees exactly what 
 ## Real world
 
 ### Public Wi-Fi
+
 On a network you do not own — hotels, airports, cafés — the tunnel keeps the network's owner from reading your destinations.
 
 ### Working from home
+
 Corporate VPNs put a remote laptop inside the office network, so internal servers that refuse the public internet still answer it.
 
 ### Crossing untrusted networks
+
 Journalists and travellers use the pipe to keep local networks from logging, filtering or tampering with their traffic.
 
 ### What the VPN sees
+
 The pipe ends at the provider's server — choosing a trustworthy one is the decision the whole scheme rests on.

@@ -3,15 +3,15 @@ subject: networking
 difficulty: beginner
 equation: G = B\left(1 - \frac{h}{1500}\right)
 concepts:
-- vpn
-- encryption
-- tunnel
-- privacy
+  - vpn
+  - encryption
+  - tunnel
+  - privacy
 prerequisites:
-- routers
+  - routers
 related:
-- cloud-vpc
-- diffie-hellman
+  - cloud-vpc
+  - diffie-hellman
 visualization:
   type: vpn-tunnel
 parameters:
@@ -19,7 +19,7 @@ parameters:
     min: 0
     max: 1
     step: 1
-    value: 1
+    value: 0
   h:
     min: 20
     max: 120
@@ -33,26 +33,26 @@ parameters:
     value: 100
     unit: Mbps
 variables:
-- G
-- B
-- h
+  - G
+  - B
+  - h
 derivation:
-- \text{each 1500-byte packet carries } 1500 - h \text{ bytes of your data}
-- G = B\left(1 - \frac{h}{1500}\right)
-- h = 60 \Rightarrow G = 0.96B
+  - \text{each 1500-byte packet carries } 1500 - h \text{ bytes of your data}
+  - G = B\left(1 - \frac{h}{1500}\right)
+  - h = 60 \Rightarrow G = 0.96B
 charts: []
 primary: vpn
 presets:
-- vpn: 1
-  h: 60
-  B: 100
-- vpn: 0
-  h: 60
-  B: 100
-- vpn: 1
-  h: 20
-  B: 500
+  - vpn: 1
+    h: 60
+    B: 100
+  - vpn: 0
+    h: 60
+    B: 100
+  - vpn: 1
+    h: 20
+    B: 500
 challenges:
-- check: vpn > 0.5
-- check: vpn > 0.5 and B*(1 - h/1500) >= 480
-- check: vpn < 0.5
+  - check: vpn > 0.5
+  - check: vpn > 0.5 and B*(1 - h/1500) >= 480
+  - check: vpn < 0.5 and B >= 500
