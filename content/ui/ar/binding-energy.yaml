@@ -7,7 +7,7 @@ binding.peak: 'القمة ≈ {v} MeV/نوية'
 binding.A: العدد الكتلي A
 binding.Z: البروتونات Z
 binding.N: النيوترونات N
-binding.eb: طاقة الترابط
+binding.eb: طاقة الربط
 binding.ebA: لكل نوية
 viz3d.binding.note: النويات مرصوصة بمقياس حقيقي · اللون يبيّن كم جارًا قريبًا يشدّ كل نوية
 viz3d.binding.stats: 'Z{z} N{n} · {eba} MeV/A · السطح {surf}%'
