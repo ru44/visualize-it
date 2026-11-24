@@ -25,13 +25,13 @@ charts:
 
 ## Try it
 
-1. Picture a 75 kg skydiver falling belly-down, arms and legs spread wide.
-2. Drag the time point «time t» along the curve: it starts steep, like free fall, then bends over and flattens.
-3. Now shrink «frontal area A», as if the skydiver tucked into a head-down dive. The speed it flattens toward — the terminal velocity — rises.
+1. Start with the values on screen: «mass m» 75 kg, «drag coefficient C_D» 1 and «frontal area A» 0.7 m², a skydiver falling belly-down, arms and legs spread wide. At «time t» = 4 s the readout shows f(x) = 30.5939, the speed in m/s.
+2. Drag the time point «time t» along the curve to 15 s: the curve starts steep, like free fall (slope 9.81 at t = 0), then bends over and flattens. At 15 s the speed is 41.357 m/s and the slope is almost zero.
+3. Now shrink «frontal area A» to 0.3 m², as if the skydiver tucked into a head-down dive. The speed it flattens toward — the terminal velocity — rises: at 15 s the speed is now 62.0803 m/s.
 
 ## Real-life examples
 
-1. **A skydiver falling belly-down.** At 75 kg with arms and legs spread (area 0.7 m²), they level off at about 55 m/s — roughly 200 km/h.
+1. **A skydiver falling belly-down.** At 75 kg with arms and legs spread (area 0.7 m²), they level off at about 41 m/s — roughly 150 km/h.
 2. **The same skydiver diving head-down.** Tucked in with far less area (0.3 m²), they can reach about 76 m/s — much faster, purely from a smaller shape.
 3. **A heavier skydiver with gear, tucked in.** At 120 kg with a moderate 0.5 m² area, they level off around 62 m/s.
 
@@ -66,13 +66,17 @@ The $\tanh$ solution is exact for constant $C_D$; in reality $C_D$ itself varies
 ## Real world
 
 ### Skydiving
+
 A belly-to-earth skydiver reaches about 55 m/s terminal velocity; head-down, with far less frontal area, the same person can exceed 90 m/s.
 
 ### Raindrops
+
 Small raindrops fall gently at only a few m/s terminal velocity, which is why fine drizzle drifts rather than stings.
 
 ### Parachute design
+
 A parachute’s huge area is chosen specifically to make $v_t$ survivably small before landing.
 
 ### Hailstone size and damage
+
 Larger hailstones have higher terminal velocity (mass grows faster than area), which is why big hail is so much more damaging.
