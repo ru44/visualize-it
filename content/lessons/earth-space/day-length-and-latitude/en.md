@@ -31,7 +31,7 @@ variables:
 ## Test yourself
 
 1. Find a latitude and day that give almost exactly 12 hours of daylight, without being at the equator.
-2. Push a high-latitude location into full midnight sun: more than 23.5 hours of daylight.
+2. Push a high-latitude location (lat above 60°) into full midnight sun: more than 23.5 hours of daylight.
 3. Push that same high latitude into full polar night: less than half an hour of daylight.
 
 ## Intuition
@@ -48,7 +48,7 @@ For a low $|\phi|$, $\tan\phi$ stays small, so $D$ stays close to 12 hours regar
 
 ## Advanced
 
-The 66.5° threshold for polar day and night is simply $90° - \epsilon$: it is the latitude at which, on a solstice, the Sun's noon altitude or its midnight altitude just touches the horizon. Because $\epsilon$ slowly changes over roughly 41,000 years (Earth's axial tilt drifts between about 22.1° and 24.5°), the exact latitude of the Arctic and Antarctic Circles drifts very slowly too, by tens of meters a year today.
+The 66.5° threshold for polar day and night is simply $90° - \epsilon$: it is the latitude at which, on a solstice, the Sun's noon altitude or its midnight altitude just touches the horizon. Because $\epsilon$ slowly changes over roughly 41,000 years (Earth's axial tilt drifts between about 22.1° and 24.5°), the exact latitude of the Arctic and Antarctic Circles drifts very slowly too, by about 15 meters a year today.
 
 ## Derivation
 
@@ -59,13 +59,17 @@ The 66.5° threshold for polar day and night is simply $90° - \epsilon$: it is 
 ## Real world
 
 ### Farming and crop planning
+
 Farmers at high latitudes plan planting around the long summer daylight, which lets crops grow unusually fast, while farmers near the equator plan around rainfall instead, since daylight barely changes there.
 
 ### Airline schedules across latitudes
+
 Airlines flying polar routes account for near-constant daylight or darkness at high latitude in summer and winter, which changes how crews are scheduled for rest.
 
 ### Solar power output by location
+
 Solar farms built at high latitude generate far more power in local summer than winter, simply because there are so many more daylight hours to work with, while equatorial solar farms produce steadily all year.
 
 ### Human body clocks near the poles
+
 Residents of far-northern cities like Tromsø and Utqiagvik report disrupted sleep during weeks of continuous daylight or darkness, since the body's clock depends partly on the day–night cycle these latitudes nearly lose.
