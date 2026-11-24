@@ -16,8 +16,8 @@ variables:
 ## Try it
 
 1. Start at rest: 70 beats per minute, 70 mL per beat. Watch the loop take about a minute to complete one full circuit.
-2. Raise heart rate toward a jogging pace and watch the loop speed up.
-3. Push both heart rate and stroke volume to a trained athlete's maximum effort. Watch cardiac output blow past 20 L/min and the loop complete in barely 12 seconds.
+2. Raise heart rate to a jogging pace, 140 beats per minute, and watch the loop speed up: cardiac output reads 9.8 L/min and one circuit takes about 31 seconds.
+3. Push both heart rate and stroke volume to a trained athlete's maximum effort: 190 beats per minute and 130 mL. Watch cardiac output reach 24.7 L/min and the loop complete in barely 12 seconds.
 
 ## Real-life examples
 
@@ -27,7 +27,7 @@ variables:
 
 ## Test yourself
 
-1. Land close to a resting cardiac output of about 5 L/min.
+1. Build a trained athlete's resting heart: a heart rate under 55 beats per minute that still gives a cardiac output of about 5 L/min.
 2. Reach an elite athlete's cardiac output of about 25 L/min.
 3. Get heart rate above 150 and stroke volume above 90 at the same time.
 
@@ -45,7 +45,7 @@ Because $\mathrm{CO}$ is a product, either factor rising raises it: a faster hea
 
 ## Advanced
 
-Stroke volume itself is not fixed — the more blood fills the heart's chambers between beats, the more forcefully the heart muscle contracts and the more it ejects, a built-in mechanical response called the Frank–Starling mechanism. Endurance training enlarges the heart's chambers over months, raising the *resting* stroke volume permanently — which is exactly why a well-trained resting heart rate can sit as low as 40–50 bpm and still deliver a completely normal cardiac output.
+Stroke volume itself is not fixed — the more blood fills the heart's chambers between beats, the more forcefully the heart muscle contracts and the more it ejects, a built-in mechanical response called the Frank–Starling mechanism. Endurance training enlarges the heart's chambers over months, raising the _resting_ stroke volume permanently — which is exactly why a well-trained resting heart rate can sit as low as 40–50 bpm and still deliver a completely normal cardiac output.
 
 ## Derivation
 
@@ -56,13 +56,17 @@ Stroke volume itself is not fixed — the more blood fills the heart's chambers 
 ## Real world
 
 ### Resting heart rate as a fitness marker
+
 Doctors and fitness trackers alike watch resting heart rate because a lower one, at the same cardiac output, usually means a stronger heart moving more blood with every single beat.
 
 ### Heart failure
+
 In heart failure the weakened muscle cannot eject as much blood per beat, so stroke volume drops; the heart often compensates by beating faster, but cardiac output can still fall short of what the body needs.
 
 ### The fight-or-flight response
+
 A surge of adrenaline raises heart rate almost instantly and makes each beat squeeze harder, boosting cardiac output within seconds to get more oxygen to the muscles.
 
 ### Wearable fitness trackers
+
 Most fitness watches measure heart rate directly from your pulse and estimate cardiac output indirectly, using it to judge exercise intensity even though stroke volume itself is much harder to measure without a hospital.

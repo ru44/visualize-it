@@ -37,17 +37,15 @@ derivation:
   - \mathrm{CO} = \mathrm{HR}\times \mathrm{SV} \ (\text{mL/min}), \qquad \mathrm{CO}[\text{L/min}] = \dfrac{\mathrm{HR}\times \mathrm{SV}}{1000}
 charts: []
 presets:
-- HR: 70
-  SV: 70
-- HR: 140
-  SV: 90
-- HR: 190
-  SV: 130
+  - HR: 70
+    SV: 70
+  - HR: 140
+    SV: 90
+  - HR: 190
+    SV: 130
 challenges:
-- check: HR*SV/1000
-  target: 5
-  tol: 0.3
-- check: HR*SV/1000
-  target: 25
-  tol: 2
-- check: HR>150 and SV>90
+  - check: HR < 55 and abs(HR*SV/1000 - 5) < 0.3
+  - check: HR*SV/1000
+    target: 25
+    tol: 2
+  - check: HR>150 and SV>90
