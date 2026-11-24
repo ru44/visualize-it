@@ -3,14 +3,14 @@ subject: aerodynamics
 difficulty: university
 equation: v_i = \sqrt{\dfrac{T}{2\rho A}}
 concepts:
-- rotor
-- hover
-- disc-loading
-- swashplate
+  - rotor
+  - hover
+  - disc-loading
+  - swashplate
 prerequisites: []
 related:
-- propellers-and-jets
-- how-wings-really-lift
+  - propellers-and-jets
+  - how-wings-really-lift
 visualization:
   type: helicopters-and-rotors
   options: {}
@@ -38,28 +38,28 @@ parameters:
     value: 0
     unit: °
 variables:
-- v_i
-- T
-- \rho
-- A
+  - v_i
+  - T
+  - \rho
+  - A
 derivation:
-- L \approx \dot m\, w, \quad \dot m = \rho A v_i
-- v_i = \sqrt{T/(2\rho A)}
-- P = T\, v_i
+  - L \approx \dot m\, w, \quad \dot m = \rho A v_i
+  - v_i = \sqrt{T/(2\rho A)}
+  - P = T\, v_i
 charts: []
 presets:
-- R: 3.84
-  W: 6076
-  tilt: 0
-- R: 16
-  W: 548800
-  tilt: 0
-- R: 3.84
-  W: 6076
-  tilt: 12
+  - R: 3.84
+    W: 6076
+    tilt: 0
+  - R: 16
+    W: 548800
+    tilt: 0
+  - R: 3.84
+    W: 6076
+    tilt: 12
 challenges:
-- check: 'sqrt((W/cos(tilt*pi/180))/(2*1.225*pi*R^2))'
-  target: 8
-  tol: 1
-- check: '(W/cos(tilt*pi/180))/(pi*R^2) > 400'
-- check: 'tilt>10 and (W/cos(tilt*pi/180))/W > 1.01'
+  - check: 'sqrt((W/cos(tilt*pi/180))/(2*1.225*pi*R^2))'
+    target: 5
+    tol: 0.5
+  - check: '(W/cos(tilt*pi/180))/(pi*R^2) > 400'
+  - check: 'tilt>10 and (W/cos(tilt*pi/180))/W > 1.01'

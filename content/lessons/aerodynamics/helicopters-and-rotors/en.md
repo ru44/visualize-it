@@ -17,9 +17,9 @@ variables:
 
 ## Try it
 
-1. Picture a small helicopter, rotor radius 3.84 m, weighing 6,076 N, hovering with the rotor level.
-2. Read the downwash speed and the hover power — both are estimates, but realistic ones.
-3. Drag «rotor tilt» forward a few degrees. Watch total thrust climb slightly and the whole disc — not the fuselage — lean to push the aircraft ahead.
+1. Start with the values on screen: a small helicopter, «rotor radius R» 3.84 m, «aircraft weight W» 6,076 N, hovering with «rotor tilt» at 0°.
+2. Read the downwash speed v_i = 7.32 m/s and the hover power P = 44.5 kW — both are estimates, but realistic ones.
+3. Drag «rotor tilt» forward to 12°. Total thrust T climbs from 6076 N to 6212 N, and the whole disc — not the fuselage — leans to push the aircraft ahead.
 
 ## Real-life examples
 
@@ -29,7 +29,7 @@ variables:
 
 ## Test yourself
 
-1. Get the hover downwash velocity down to about 8 m/s by choosing a big enough rotor for a light aircraft.
+1. Get the hover downwash velocity down to about 5 m/s by choosing a big enough rotor for a light aircraft.
 2. Push disc loading (thrust over disc area) above 400 N/m² — a compact, power-hungry rotor.
 3. Tilt the rotor forward past 10° and see total thrust climb more than 1% above the aircraft's weight.
 
@@ -58,13 +58,17 @@ Real hover power exceeds this ideal (induced) power because of blade profile dra
 ## Real world
 
 ### Why heavy-lift helicopters have huge rotors
+
 The Mil Mi-26, one of the heaviest helicopters ever built, carries an enormous 32 m rotor precisely to keep disc loading — and hover power — as low as this physics allows.
 
 ### Ground effect
+
 Hovering close to the ground, the downwash can't fully develop, effectively raising the air pressure under the rotor and cutting the power needed to hover — pilots use this deliberately for a heavier, more efficient takeoff.
 
 ### Tandem and coaxial rotor helicopters
+
 Aircraft like the Chinook (tandem) or Kamov Ka-52 (coaxial) use two rotors partly to avoid the tail-rotor power penalty, and partly to fit more total disc area — and so lower disc loading — into a compact airframe.
 
 ### Autorotation
+
 If the engine fails, a helicopter's rotor keeps spinning driven by the upward flow of air through it during a controlled descent, still generating enough lift for a safe landing without any engine power at all.
