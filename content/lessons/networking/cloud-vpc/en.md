@@ -15,9 +15,9 @@ variables:
 
 ## Try it
 
-1. Start at p = 20: the 10.0.0.0/16 block splits into 16 subnets of about four thousand addresses each — one tile holds the globe, the rest hold locks.
-2. Slide p up and down: every step up doubles the subnets and halves their size — the same 65,536 addresses, sliced finer or coarser.
-3. Raise pub and watch more tiles face the world. Real designs keep that number ruthlessly small: web servers face out, databases never do.
+1. Set p = 20 and pub = 1: the readouts show S = 16 and H = 4,094. The 10.0.0.0/16 block splits into 16 subnets of about four thousand addresses each — one tile holds the globe, the rest hold locks.
+2. Slide p up to 21 (S = 32, H = 2,046), then down to 19 (S = 8, H = 8,190): every step up doubles the subnets and halves their size — the same 65,536 addresses, sliced finer or coarser.
+3. Go back to p = 20 and raise pub to 4: four tiles now show the globe and face the world, and 12 stay locked. Real designs keep that number ruthlessly small: web servers face out, databases never do.
 
 ## Real-life examples
 
@@ -28,7 +28,7 @@ variables:
 ## Test yourself
 
 1. Slice the block into exactly 16 subnets.
-2. Keep at least 4,000 usable addresses in every subnet.
+2. Keep at least 16,000 usable addresses in every subnet.
 3. Sixteen subnets guarded by a single public gate.
 
 ## Intuition
@@ -56,13 +56,17 @@ Private subnets that still need to download updates reach out through a NAT gate
 ## Real world
 
 ### Practically every app you use
+
 Streaming services, banks and games run inside VPCs — "in the cloud" almost always means "inside someone's fenced compound".
 
 ### The database that cannot be hacked from outside
+
 Breaches via the open internet stop at the missing route: locked subnets are unreachable by construction, not by vigilance.
 
 ### Compliance and banking
+
 Regulators often require exactly this layout — public faces separated from private data by subnets, not promises.
 
 ### Hybrid offices
+
 A company VPN often ends inside the VPC, placing the office network and the cloud compound on one private map.
