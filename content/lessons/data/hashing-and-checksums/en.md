@@ -13,20 +13,20 @@ variables:
 
 ## Try it
 
-1. With view at 0 and m at 11, look at the seven keys and their buckets; most land alone. Drag m down toward 4 and watch two or three keys pile into the same bucket.
-2. Read the line "23 mod 7 = 2": that single division is the whole lookup, no scanning needed, straight to bucket 2.
-3. Switch view to 1. Flip corrupt to 1 and watch the third letter's byte turn red on the receiver's side, while the two checksums below stop matching.
+1. With view at 0 and m at 10, look at the seven keys and their buckets: every key lands alone, and the readout shows collisions = 0. Drag m down to 4: all seven keys pile into buckets 0 and 3, and the readouts show collisions = 2 and load factor = 1.75.
+2. Set m to 7 and read the line "23 mod 7 = 2": that single division is the whole lookup, no scanning needed, straight to bucket 2.
+3. Switch view to 1. Flip corrupt to 1 and watch the third letter's byte turn red on the receiver's side, changing from 108 to 100. The sender checksum stays 244, the receiver checksum becomes 236, and the two no longer match.
 
 ## Real-life examples
 
 1. **A small table, several collisions.** view at 0, m at 4: only four buckets for seven keys guarantees at least one bucket holds more than one key.
-2. **A bigger table, fewer collisions.** view at 0, m at 11: with more buckets than keys, most land alone and lookups rarely need to check a second key.
+2. **A bigger table, no collisions.** view at 0, m at 10: with more buckets than keys, every one of these seven keys lands alone, so a lookup never needs to check a second key.
 3. **A corrupted message.** view at 1, corrupt at 1: one byte changes during transmission, and the sender's and receiver's checksums no longer agree.
 
 ## Test yourself
 
 1. Set view to 0 and m to 4, the smallest table, and find a collision.
-2. Set view to 0 and m to 11, the largest table, with no collisions among the seven keys.
+2. Set view to 0 and m to 10, a table with no collisions among the seven keys.
 3. Set view to 1 and corrupt to 1, and watch the checksums disagree.
 
 ## Intuition
@@ -54,13 +54,17 @@ A real hash table keeps its load factor, the number of keys divided by the numbe
 ## Real world
 
 ### Programming language dictionaries
+
 Python's dict, JavaScript's Map and Java's HashMap all use a hash table internally, so looking up a value by key stays fast even with millions of entries.
 
 ### Barcodes and ID numbers
-The last digit of a UPC barcode or an ISBN book number is a checksum, computed from the digits before it, so a scanner or a typo instantly catches a single mistyped or misread digit.
+
+The last digit of a UPC barcode or an ISBN book number is a checksum, computed from the digits before it, so a scanner instantly catches a single mistyped or misread digit.
 
 ### File downloads
+
 A download page often lists a checksum next to a file so you can recompute it after downloading and confirm the file was not corrupted or cut short by a bad connection.
 
 ### Network packets
+
 Every packet sent over the internet carries a checksum in its header, computed from the packet's contents, so a router or the receiving computer can spot a packet damaged in transit and ask for it again.
