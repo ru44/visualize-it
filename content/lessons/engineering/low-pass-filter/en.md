@@ -20,19 +20,19 @@ charts:
 
 ## Try it
 
-1. Set the signal frequency low and watch the box: the output wave leaves with nearly its full swing — the filter waves the lows straight through.
-2. Drag $f_c$ (cutoff frequency) up. The whole corner slides right, letting higher frequencies through before the rolloff starts.
-3. Now drag $x$ (signal frequency) across the corner near $f_c$. The output wave squashes and slips behind the input — gain falling, phase shift growing toward −90°.
+1. Start with the signal frequency at 20 Hz and $f_c$ at 100 Hz, and watch the box: the output wave leaves with 98.1% of its swing — the filter waves the lows straight through.
+2. Raise $x$ (signal frequency) to 200 Hz: only 44.7% of the swing gets out (−7 dB). Now drag $f_c$ (cutoff frequency) up from 100 Hz to 400 Hz. The whole corner slides right, and the same 200 Hz signal now leaves with 89.4% of its swing (−1 dB).
+3. Set $f_c$ back to 100 Hz and drag $x$ across the corner. At 100 Hz the readouts show 70.7%, −3 dB and φ = −45°; at 1000 Hz they show 10%, −20 dB and φ = −84°. The output wave squashes and slips behind the input — gain falling, phase shift growing toward −90°.
 
 ## Real-life examples
 
-1. **A bass-focused tone control.** Setting the cutoff near 100 Hz lets a 50 Hz bass note pass through almost untouched, since it sits below the cutoff.
-2. **A bandwidth-limited voice channel.** A channel that only needs to carry speech filters out content above roughly 300 Hz in this simplified model, cutting an 800 Hz tone down substantially to save bandwidth.
-3. **A speaker crossover.** A woofer's crossover, cutting off around 150 Hz, blocks a 1,000 Hz signal almost entirely, protecting the woofer from frequencies it cannot reproduce well.
+1. **A bass-focused tone control.** Setting the cutoff near 100 Hz lets a 50 Hz bass note pass through with 89.4% of its swing, since it sits below the cutoff.
+2. **A bandwidth-limited channel.** A channel that carries only a narrow band saves bandwidth by filtering out everything higher. In this scaled-down model the cutoff is 300 Hz, and an 800 Hz tone comes out with only 35.1% of its swing (real telephone lines cut off near 3,400 Hz).
+3. **A speaker crossover.** A woofer's crossover, cutting off around 150 Hz, lets only 14.8% of a 1,000 Hz signal's swing through, protecting the woofer from frequencies it cannot reproduce well.
 
 ## Test yourself
 
-1. Set the signal frequency equal to the cutoff frequency: the gain should drop by exactly 3 dB, the definition of the cutoff.
+1. Set the signal frequency equal to the cutoff frequency: the gain should drop by about 3 dB, the definition of the cutoff.
 2. Find a signal frequency more than 10 times the cutoff frequency where the gain has dropped by over 20 dB.
 3. Using a cutoff of at least 200 Hz, find a signal frequency that pushes the phase shift to about −75°.
 
@@ -61,13 +61,17 @@ A single resistor-capacitor stage like this one rolls off at $-20$ dB per decade
 ## Real world
 
 ### RC circuits
+
 A single resistor and capacitor wired together form exactly this filter, with $f_c$ set by their values — see the rc-circuit lesson for how R and C combine into that one number.
 
 ### Treble and tone controls
+
 The treble knob on a stereo or guitar amp shifts a low-pass filter's cutoff, letting you dial how much of the high end survives.
 
 ### Anti-aliasing before sampling
+
 Every analogue-to-digital converter puts a low-pass filter in front of the sampler to remove frequencies that would otherwise alias into false tones.
 
 ### Speaker crossovers
+
 A loudspeaker crossover sends only the low frequencies to the woofer with a low-pass filter, protecting it from high frequencies it cannot reproduce well.
