@@ -7,13 +7,13 @@ parameters:
 variables:
   - A, the first table (customers)
   - B, the second table (orders)
-  - R, the result table shown on the right
+  - R, the result table shown at the bottom
 ---
 
 ## Try it
 
-1. Set mode to 0 (inner join) with orphan at 1. Yousef sits in the customers table on the left, but no line reaches him, and he never appears in the result.
-2. Move mode to 1 (left join). The same Yousef row now appears in the result, with NULL where his order id and amount would be.
+1. Set mode to 0 (inner join) with orphan at 1. Yousef sits in the customers table on the left, but no line reaches him, and he never appears in the result: rows returned = 4, and the readout says that customer is dropped.
+2. Move mode to 1 (left join). Yousef's row now appears in the result, with NULL where his order id and amount would be: rows returned = 5, and that customer is kept.
 3. Push orphan to 0, removing Yousef from the customers table entirely. Now flip mode back and forth: the result stays the same four rows either way.
 
 ## Real-life examples
@@ -25,7 +25,7 @@ variables:
 ## Test yourself
 
 1. Set mode to 1, switching to a left join.
-2. With Yousef still in the customers table, set mode to 0, the inner join.
+2. Remove Yousef from the customers table (orphan at 0) and keep mode at 0, the inner join, so that no customer is dropped.
 3. Remove Yousef from the customers table, then set mode to 1, the left join.
 
 ## Intuition
@@ -53,13 +53,17 @@ Real databases usually implement a join with an index or a hash table on the key
 ## Real world
 
 ### Customer relationship management
+
 A company joins its customer list to its orders list to build a "top spenders" report; customers who never ordered simply do not appear in an inner join version of that report.
 
 ### Online store checkouts
+
 An online store's order confirmation page joins the orders table to the products table by product id, pulling in each item's name and price to show next to the order.
 
 ### Marketing emails
+
 A left join between customers and orders is exactly how a marketing tool finds "customers who signed up but never bought anything": look for the rows where the order columns came back NULL.
 
 ### Spreadsheet lookups
+
 A spreadsheet's VLOOKUP or XLOOKUP does the same matching by hand, one row at a time, that a database join does automatically for millions of rows.
