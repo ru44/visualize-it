@@ -17,9 +17,9 @@ variables:
 
 ## Try it
 
-1. Start in parity mode (mode = 2) and find the grey P blocks: one disk's worth of space holds the safety maths for all the rest.
-2. Set dead = 1: the first disk dies, and the box recomputes every missing stripe from parity — slower for a while, but nothing is lost.
-3. Switch to stripe (mode = 0) with the disk still dead: the very same failure now destroys the file — all the space, none of the safety. Then try mirror (mode = 1).
+1. Start in parity mode (mode = 2) with 4 disks of 4 TB and find the grey P blocks: usable space reads 12.0 TB out of 16 TB raw, because one disk's worth of space holds the safety maths for all the rest.
+2. Set dead = 1: the first disk dies, and the box recomputes every missing stripe from parity — slower for a while, but nothing is lost: the readout says «files survive».
+3. Switch to stripe (mode = 0) with the disk still dead: usable space rises to 16.0 TB, but the very same failure now destroys the file and the readout says «everything is lost». Then try mirror (mode = 1): 8.0 TB usable, and the files survive.
 
 ## Real-life examples
 
@@ -58,13 +58,17 @@ RAID is not backup: it protects against a dying disk, not against ransomware, ac
 ## Real world
 
 ### Home media servers
+
 A NAS running a media app streams the family's films to every screen in the house — the closet cloud in its natural habitat.
 
 ### Small businesses
+
 Offices keep their shared drives on parity boxes: disks are replaced over coffee instead of over lost contracts.
 
 ### Surveillance recorders
+
 Security camera systems write continuously for years — parity keeps the archive alive through routine disk deaths.
 
 ### The big clouds themselves
+
 Data centres use erasure coding, parity's grown-up form, spreading each file across so many disks that whole racks can die unnoticed.
