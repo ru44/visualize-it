@@ -19,9 +19,9 @@ charts: []
 
 ## Try it
 
-1. Set «number of stocks n» to 1. Portfolio risk equals «single-stock volatility v» exactly — no diversification at all with just one stock.
-2. Raise «number of stocks n» toward 30. Portfolio risk drops well below the single stock's volatility, even though the average expected return has not changed.
-3. Raise «average correlation c» toward 0.8. Even with many stocks, portfolio risk stops shrinking much further — correlated stocks tend to fall together, so spreading money across them stops helping as much.
+1. Set «number of stocks n» to 1. Portfolio risk w reads 35%, exactly «single-stock volatility v» — no diversification at all with just one stock.
+2. Raise «number of stocks n» to 30. Portfolio risk w drops to 19.9%, well below the single stock's 35%, even though the average expected return has not changed.
+3. Raise «average correlation c» to 0.8. Even with 30 stocks, portfolio risk w climbs back to 31.4% — correlated stocks tend to fall together, so spreading money across them stops helping as much.
 
 ## Real-life examples
 
@@ -60,13 +60,17 @@ Diversification is sometimes called the only "free lunch" in investing, because 
 ## Real world
 
 ### Index funds
+
 A fund holding hundreds or thousands of stocks pushes «number of stocks n» about as high as it can go, capturing nearly all of the diversifiable-risk reduction in one purchase instead of buying dozens of shares one at a time.
 
 ### International diversification
+
 Stocks from different countries and industries tend to have lower «average correlation c» with each other than stocks from the same sector, which is why spreading across geographies and industries — not just across more companies — lowers the correlated risk floor itself.
 
 ### Crashes and correlation spikes
+
 During a financial crisis, «average correlation c» tends to rise sharply as nearly everything sells off together, which is exactly when diversification's benefit shrinks the most — the one moment investors most wanted it to help.
 
 ### Over-concentration ("diworsification")
+
 Adding more stocks from the same sector barely lowers «average correlation c», so a portfolio can hold dozens of stocks and still carry most of a single sector's risk — count alone is not the same as real diversification.
