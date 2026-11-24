@@ -46,7 +46,7 @@ charts:
       - 45
     marker: x
     series:
-      - -b*x/(a - b*x)
+      - b*x/(a - b*x)
 primary: x
 presets:
   - a: 120
