@@ -6,17 +6,17 @@ parameters:
   q2: quark 2
   q3: quark 3
 variables:
-- the proton's total electric charge, in units of e, the size of the electron's charge
-- the up quark's charge, +2/3 e
-- the down quark's charge, −1/3 e
-- the proton's mass
+  - the proton's total electric charge, in units of e, the size of the electron's charge
+  - the up quark's charge, +2/3 e
+  - the down quark's charge, −1/3 e
+  - the proton's mass
 ---
 
 ## Try it
 
-1. Look at the three slots. Each holds a quark: up (+2/3 e), down (−1/3 e), or strange (−1/3 e).
-2. Set all three sliders to build a proton: two up quarks and one down quark. Check the total charge shown.
-3. Change one slider at a time and watch the total charge change with it.
+1. Look at the three slots. Each holds a quark: up (+2/3 e), down (−1/3 e), or strange (−1/3 e). On each slider 0 means up, 1 means down and 2 means strange; you can also click the buttons in the picture.
+2. Set all three sliders to build a proton: two up quarks and one down quark. The total charge reads +⅔ +⅔ −⅓ = +1.
+3. Change one slider at a time and watch the total charge change with it. Switch one up quark to down: the charge drops to 0 and the picture says neutron.
 
 ## Real-life examples
 
@@ -44,24 +44,28 @@ Since $q_u = +2/3\,e$ and $q_d = -1/3\,e$, adding them gives $Q_p = 2/3 + 2/3 - 
 
 ## Advanced
 
-Only a tiny fraction of the proton's mass, $m_p c^2 \approx 938$ MeV, comes from the rest mass of its three quarks, which together weigh only a few MeV; almost all of it is the energy of the strong force binding them together, a direct consequence of $E=mc^2$.
+Only a tiny fraction of the proton's mass, $m_p c^2 \approx 938$ MeV, comes from the rest mass of its three quarks, which together weigh only about 9 MeV; almost all of it is the energy of the strong force binding them together, a direct consequence of $E=mc^2$.
 
 ## Derivation
 
 1. A proton's total charge is the sum of the charges of the three quarks that make it up: two up quarks and one down quark.
 2. Adding two-thirds, two-thirds, and minus one-third gives exactly one full unit of positive charge.
-3. Almost none of that mass comes from the quarks themselves — nearly all of it is binding energy, since the three quarks alone weigh far less than the whole proton.
+3. Almost none of the proton's mass comes from the quarks themselves — nearly all of it is binding energy, since the three quarks alone weigh far less than the whole proton.
 
 ## Real world
 
 ### Inside every atom
+
 Every proton and neutron in every atomic nucleus you have ever touched is built from up and down quarks in exactly this pattern.
 
 ### Discovering quarks at SLAC
+
 The 1968 deep inelastic scattering experiments that revealed quarks inside protons led to the 1990 Nobel Prize in Physics.
 
 ### The eightfold way
+
 Murray Gell-Mann organised dozens of particles, including strange ones like the one you can build here, into neat families years before quarks were directly observed.
 
 ### Neutron stars
+
 Crush enough neutrons together under gravity and some physicists think their quarks may briefly break free into a soup called quark matter.
