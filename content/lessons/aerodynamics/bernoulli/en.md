@@ -15,9 +15,9 @@ variables:
 
 ## Try it
 
-1. Picture air entering a pipe at 5 m/s, about a gentle breath through a straw.
-2. Shrink «throat / inlet area» with the drag handle. The air must speed up to squeeze through, just like cars bunching up and accelerating through a lane closure.
-3. Watch the three manometer tubes. The liquid sits lower at the narrow throat — that's where the pressure has dropped.
+1. Start with «inlet speed v₁» at 5 m/s, about a gentle breath through a straw, and «throat / inlet area» at 0.5. The readout shows v₂ = 10 m/s at the throat.
+2. Shrink «throat / inlet area» to 0.25 with the slider or the drag handle. The air must speed up to squeeze through, just like cars bunching up and accelerating through a lane closure: v₂ now reads 20 m/s.
+3. Watch the three manometer tubes. The liquid sits lower at the narrow throat — that's where the pressure has dropped. The readout shows Δp = 225 Pa.
 
 ## Real-life examples
 
@@ -56,13 +56,17 @@ Bernoulli’s equation is the steady-flow, along-a-streamline statement of energ
 ## Real world
 
 ### Carburettors and atomisers
+
 Air accelerated through a venturi throat drops in pressure enough to draw fuel or perfume up a side tube.
 
 ### Flow meters
+
 Measuring the pressure drop through a known constriction (a venturi or orifice meter) gives the flow rate directly.
 
 ### Aneurysms
+
 Blood speeding up through a narrowed artery drops in local pressure — the same physics, with real physiological consequences.
 
 ### Wind around buildings
+
 Air squeezed between tall buildings speeds up and its pressure drops, which is why gaps between towers feel so much windier.
