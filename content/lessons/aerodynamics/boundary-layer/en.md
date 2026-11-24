@@ -17,20 +17,20 @@ variables:
 
 ## Try it
 
-1. Picture a golf ball, 4.3 cm across, leaving the tee at 70 m/s, with its dimples doing their job.
-2. Read the drag force, and note how the flow clings to the ball almost all the way round before separating.
-3. Turn «dimples» off, same ball, same speed. Watch the wake balloon and the drag force jump.
+1. Keep «diameter d» at 0.043 m, a golf ball. Set «speed v» to 70 m/s and turn «dimples» on (1): a drive leaving the tee with its dimples doing their job. The layer readout says turbulent.
+2. Read the drag force: 0.87 N. The separation angle reads 120°: the flow clings to the ball far around before separating.
+3. Turn «dimples» off (0), same ball, same speed. The separation angle falls to 82°, the wake balloons and the drag force jumps to 2.18 N.
 
 ## Real-life examples
 
-1. **A dimpled golf ball off the tee.** At 70 m/s, the dimples trip the boundary layer turbulent early, it clings to the ball far around before separating, and the drag comes out to well under 1 N.
-2. **The same ball, imagined smooth.** Same 4.3 cm, same 70 m/s, but with no dimples the layer stays laminar and separates early, leaving a big wake — the drag more than doubles.
+1. **A dimpled golf ball off the tee.** At 70 m/s, the dimples trip the boundary layer turbulent early, it clings to the ball far around before separating, and the drag comes out to about 0.87 N.
+2. **The same ball, imagined smooth.** Same 4.3 cm, same 70 m/s, but with no dimples the layer stays laminar and separates early, leaving a big wake — the drag more than doubles, to about 2.18 N.
 3. **A soccer ball's stitched surface in flight.** A 22 cm ball at 25 m/s: the stitching, like dimples, trips the layer turbulent too, keeping the flow attached longer than a truly smooth ball would manage.
 
 ## Test yourself
 
 1. Get the ball into the low-drag turbulent regime using dimples.
-2. Get a *smooth* ball into the turbulent regime too — it takes a much higher Reynolds number to manage without dimples' help.
+2. Get a _smooth_ ball into the turbulent regime too — it takes a much higher Reynolds number to manage without dimples' help.
 3. Reach a Reynolds number of about 200,000, a typical driver shot.
 
 ## Intuition
@@ -47,7 +47,7 @@ Past a transition Reynolds number, the layer turns turbulent and grows faster, r
 
 ## Advanced
 
-A smooth sphere's drag coefficient famously *drops* from about 0.5 to about 0.1 once the flow trips turbulent — the so-called drag crisis — because delaying separation shrinks the low-pressure wake far more than turbulent skin friction costs. Golf ball dimples exploit exactly this crisis, deliberately triggering it at a much lower speed (and Reynolds number) than a smooth ball would ever reach on its own.
+A smooth sphere's drag coefficient famously _drops_ from about 0.5 to about 0.1 once the flow trips turbulent — the so-called drag crisis — because delaying separation shrinks the low-pressure wake far more than turbulent skin friction costs. Golf ball dimples exploit exactly this crisis, deliberately triggering it at a much lower speed (and Reynolds number) than a smooth ball would ever reach on its own.
 
 ## Derivation
 
@@ -58,13 +58,17 @@ A smooth sphere's drag coefficient famously *drops* from about 0.5 to about 0.1 
 ## Real world
 
 ### Golf ball dimples
+
 A smooth golf ball, tested at driving speeds, travels roughly half as far as a dimpled one — dimples are one of the oldest deliberate uses of tripping a boundary layer turbulent on purpose.
 
 ### Vortex generators on aircraft wings
+
 Small fins on a wing's upper surface deliberately trip the boundary layer turbulent to delay separation near the wing's trailing edge and tail surfaces, buying extra control authority at low speed.
 
 ### Shark-skin swimsuits and hull coatings
+
 Riblets that mimic shark skin subtly manage the turbulent boundary layer's structure to cut skin-friction drag, the opposite goal from a golf ball, since a swimmer's whole body is already past transition.
 
 ### Aircraft icing
+
 Even a thin, rough layer of ice on a wing can trip or disturb the boundary layer in the wrong place at the wrong time, moving separation forward and cutting lift — a major reason wings are de-iced before flight.
