@@ -19,7 +19,7 @@ variables:
 
 1. Leave mode at 0 (a call) and move step from 0 to 5. Read each message in the bubble at the top. Then look at line 7 at the bottom: it is kept for you at step 1, carries your voices at step 3 and is free again at step 5.
 2. Set mode to 1 (a text). The voice lines stay grey the whole time, because the text rides inside a signalling message. Count the messages: two to find the phone, two to deliver the text.
-3. Raise h and hop. Each message crosses more links, and each link takes longer, so the wait in the last box grows.
+3. Go back to mode 0 and set h to 6 and hop to 50. Each message crosses more links, and each link takes longer: one message now takes 300 ms, and the last box says you hear ringing after 600 ms.
 
 ## Real-life examples
 
@@ -66,16 +66,21 @@ Operators now put SS7 firewalls at their borders, which drop requests that shoul
 ## Real world
 
 ### The ringing tone you hear
+
 The ringing you hear while you wait is played by your own exchange, and it starts only when the ACM message has come back. Until then the network is still agreeing on the call.
 
 ### Why texts had 160 letters
+
 A text had to fit inside one signalling message, which left room for 140 bytes. With 7 bits per letter, that is exactly 160 letters.
 
 ### Roaming abroad
+
 When you switch on your phone in another country, the exchange there sends an SS7 message to your home register. From then on, every call and text for your number is sent abroad to find you.
 
 ### Keeping your number
+
 When you move your number to a new company, other exchanges ask a database over SS7 which company owns the number now, before they set up the call.
 
 ### Stolen bank codes
+
 In 2017, thieves in Germany used SS7 access to redirect bank customers' text-message codes to themselves and emptied their accounts. This is why operators now filter SS7 traffic and banks prefer app approvals.
