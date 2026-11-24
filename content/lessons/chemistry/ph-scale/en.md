@@ -13,9 +13,9 @@ variables:
 
 ## Try it
 
-1. Drag the marker toward the red end of the strip. The pH falls toward stomach acid, and the crowd of H⁺ dots in the beaker thickens.
-2. Drag it the other way, toward the tomato at pH 4. The pH climbs and the beaker almost empties.
-3. Step the pH from 3 to 2 and watch the beaker — one unit along the strip means ten times the ions, the signature of a logarithm.
+1. Drag the marker toward the red end of the strip until the readout shows pH 1.5, level with stomach acid. [H⁺] reads 0.0316 mol/L and the crowd of H⁺ dots in the beaker thickens to about 32.
+2. Drag it the other way, toward the tomato, as far as pH 4. [H⁺] reads 0.0001 mol/L and the beaker is left with a single dot.
+3. Step the pH from 3 to 2 and watch the beaker go from 1 dot to 10 — one unit along the strip means ten times the ions, the signature of a logarithm.
 
 ## Real-life examples
 
@@ -54,13 +54,17 @@ Buffers resist pH change because they contain a reservoir of a weak acid and its
 ## Real world
 
 ### Blood chemistry
+
 Human blood is buffered tightly between pH 7.35 and 7.45; drifting outside that narrow band is medically dangerous.
 
 ### Soil and agriculture
+
 Crops have preferred soil pH ranges; farmers add lime (base) or sulfur (acid) to shift it.
 
 ### Swimming pools
+
 Pool chemistry is kept near pH 7.4 — too acidic corrodes equipment, too basic lets chlorine stop working.
 
 ### Ocean acidification
+
 Absorbed $\mathrm{CO_2}$ has dropped average ocean pH by about 0.1 — a seemingly small number that is really a ~30% rise in hydrogen-ion concentration.
