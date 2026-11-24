@@ -5,9 +5,9 @@ loan.interestNow: الفائدة في الشهر {m}
 loan.principalNow: أصل الدين ذلك الشهر
 loan.balance: الرصيد المتبقي
 loan.totalInterest: مجموع الفوائد على مدى القرض
-loan.tipping: 'الشهر {m}: أصل الدين يبدأ بالفوز'
+loan.tipping: 'الشهر {m}: أصل الدين يتجاوز الفائدة'
 loan.month: الشهر {m}
 loan.legendInterest: الفائدة (حصة البنك)
 loan.legendPrincipal: أصل الدين (يسدّد القرض)
 loan.legendBalance: الرصيد المتبقي
-loan.caption: تقترض {loan} وتسلّم البنك {total} فوائد فوقها — هذا الإسفين الأحمر هو سرّ قوة الدفعات الإضافية المبكرة
+loan.caption: تقترض {loan} وتدفع للبنك فوقها {total} فوائد — الجزء الأحمر الكبير في البداية هو سبب نفع الدفعات الإضافية المبكرةة

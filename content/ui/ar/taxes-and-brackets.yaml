@@ -1,7 +1,7 @@
 tax.hint: اسحب المنزلقات أدناه لتغيير الدخل ومكان بداية الشريحة الأعلى
 tax.scaleTitle: الدخل، مقسّمًا إلى الشريحتين الخاضعتين للضريبة
 tax.gaugeTitle: المعدل الحدي مقابل المعدل المتوسط
-tax.marginalLabel: المعدل الحدي (ضريبة الدولار التالي)
+tax.marginalLabel: المعدل الحدي (ضريبة الريال التالي)
 tax.averageLabel: المعدل المتوسط (الضريبة المستحقة ÷ الدخل)
 tax.marginalShort: حدي
 tax.averageShort: متوسط
