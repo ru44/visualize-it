@@ -30,14 +30,14 @@ charts:
 
 ## Try it
 
-1. Drag «n» along the straight line from 1 up to 30, and watch the line stay perfectly straight the whole way.
-2. Look at the chart below: the same n now marks a point on three more curves at once — notice how close together they are at n=10 and how far apart by n=30.
-3. Raise «k» and watch the straight line get steeper — multiplying by a bigger k still only makes a straight line, never a curve.
+1. With «k» at 1, set «n» to 10: the f(x) readout shows 10. Drag «n» up to 30: it shows 30, three times as high, and the line stays perfectly straight the whole way.
+2. Look at the chart below: the same n marks a point on three curves at once. At n=10 they stand at 10, about 33 and 100; by n=30 they are at 30, about 147 and 900.
+3. Keep «n» at 30 and raise «k» to 5: the readout climbs to 150 and the line gets steeper — multiplying by a bigger k still only makes a straight line, never a curve.
 
 ## Real-life examples
 
 - **Grading 30 exams, 2 minutes each.** With n=30 exams and k=2 minutes per exam, the straight line shows a job that takes 60 minutes in total — double the exams, double the time.
-- **Checking 10 names on a guest list, 1 second each.** With n=10 and k=1, the search takes about 10 seconds — the simplest, slowest-growing kind of work there is.
+- **Checking 10 names on a guest list, 1 second each.** With n=10 and k=1, the search takes about 10 seconds — one more name, one more second, the simplest kind of growth.
 - **Delivering to 20 houses, 4 minutes between stops.** With n=20 and k=4, the round trip takes about 80 minutes — still a straight line, just a steeper one.
 
 ## Test yourself
@@ -50,7 +50,7 @@ charts:
 
 Picture grading a stack of exams: 10 exams take some amount of time, but 30 exams — three times as many — could take three times as long, depending on how the grading works. Drag the slider labelled $n$ (how many exams, from 1 to 30) and watch the straight orange line rise. It is controlled by a second slider, $k$, which sets how steep the line climbs, like minutes spent per exam. At $n=10$ the line sits low. By $n=30$ it has climbed three times higher, because a straight line grows in direct proportion to the number of exams.
 
-Now look at the chart underneath. The same $n$ marks a point on three more curves at once. One is the straight line itself, labelled n on the chart. Another, labelled n·log2(n) on the legend, climbs a little faster. The steepest, labelled n² there, races far above the rest by the time input size reaches 30. A fourth curve, labelled $2^n$, grows so fast it flies off the top of the chart long before then. That gap between the curves — not which curve wins for one small input — is what tells you whether an algorithm will still be fast once the input is huge.
+Now look at the chart underneath. The same $n$ marks a point on three more curves at once. One is the straight line itself, labelled n on the chart. Another, labelled n·log2(n) on the legend, climbs a little faster. The steepest, labelled n² there, races far above the rest by the time input size reaches 30. A second chart sets n² beside a fourth curve, labelled $2^n$, which grows so fast that by n = 12 it has reached 4096 while n² is only at 144. That gap between the curves — not which curve wins for one small input — is what tells you whether an algorithm will still be fast once the input is huge.
 
 ## Formal
 
@@ -71,13 +71,17 @@ $\Theta(f(n))$ tightens Big-O to a two-sided bound ($c_1 f(n) \le T(n) \le c_2 f
 ## Real world
 
 ### Search engines
+
 Indexing billions of pages only works because lookup is O(log n) or better, not O(n) per query.
 
 ### Scaling a startup
+
 An O(n²) algorithm that works fine on 1,000 users can grind to a halt at 1,000,000 — a million-times slowdown, not a thousand-times.
 
 ### Compiler and database optimisation
+
 Choosing between algorithms with different Big-O classes is the single biggest lever for performance at scale.
 
 ### Cryptography
+
 Security often relies on the gap between polynomial-time and exponential-time algorithms for the same problem — see exponential vs polynomial growth.
