@@ -43,15 +43,15 @@ derivation:
   - '\text{compensation point:} P = 0 \implies I = \dfrac{RK}{P_{max}-R}'
 charts: []
 presets:
-- I: 100
-  C: 420
-- I: 1500
-  C: 420
-- I: 1500
-  C: 1000
+  - I: 100
+    C: 420
+  - I: 1500
+    C: 420
+  - I: 1500
+    C: 1000
 challenges:
-- check: I>1000 and C>=400 and C<=450
-- check: C>=800 and I>=1000
-- check: 20*min(1,C/800)*(I/(200+I)) - 1
-  target: 0
-  tol: 0.3
+  - check: I>1000 and C>=400 and C<=450
+  - check: C>=800 and I>=1000
+  - check: 20*min(1,C/800)*(I/(200+I)) - 1
+    target: 0
+    tol: 0.3
