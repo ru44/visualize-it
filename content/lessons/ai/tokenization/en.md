@@ -15,15 +15,15 @@ variables:
 
 ## Try it
 
-1. At merges = 0, read the chips: every character is its own token, word starts marked with ▁ — this is the crawl a model would face with no vocabulary at all.
-2. Drag merges up slowly and watch the greedy rule work: «th», then «the», whole common words fusing into single chips while rare ones stay in pieces.
-3. Switch to the code sample and then the Arabic one at the same merges: different text, different chips — a vocabulary grown on one kind of text serves another kind badly.
+1. Set merges to 0 and read the chips: every character is its own token, word starts marked with ▁, and the readout counts 49 tokens — this is the crawl a model would face with no vocabulary at all.
+2. Drag merges from 0 to 6 one step at a time and watch the greedy rule work: «▁th», then «▁the», then «▁cat» fuse into single chips while rare words stay in pieces. The count falls from 49 to 31; past 6 nothing changes, because no pair is left that appears twice.
+3. Keep merges at 10 and set text to 1 (code), then 2 (Arabic). The code only shrinks from 38 tokens to 34 because almost nothing in it repeats; the Arabic shrinks from 44 to 32 once «▁القطة» becomes one chip. Chips are earned by repetition — which is why a vocabulary grown on one kind of text serves another kind badly.
 
 ## Real-life examples
 
 - **Plain English, no vocabulary.** The cat sentence costs 49 character-tokens — at this rate a page of text would swamp the model before it said anything.
-- **The same sentence, 25 merges later.** Common words have fused into single chips and the count collapses — compression earned purely by repetition.
-- **Arabic at 12 merges.** The greedy rule works on any script — but a vocabulary trained mostly on English spends its chips there, which is why the same sentence often costs more tokens in other languages.
+- **The same sentence, 25 merges later.** The repeated words «the» and «cat» have fused into single chips and the count drops from 49 to 31 — compression earned purely by repetition. Only the first 6 merges did any work; after that this short sentence has no repeated pair left.
+- **Arabic at 12 merges.** The greedy rule works on any script, taking this sentence from 44 tokens to 32 — but a vocabulary trained mostly on English spends its chips there, which is why the same sentence often costs more tokens in other languages.
 
 ## Test yourself
 
@@ -33,7 +33,7 @@ variables:
 
 ## Intuition
 
-Before a model can predict anything it must read, and "read" needs an alphabet. Characters are too slow — a thought spread over hundreds of steps — and whole words are too brittle: the first typo or new name would be unreadable. The compromise the field settled on is wonderfully unclever: start from characters, count every adjacent pair in a mountain of text, glue the most frequent pair into a new symbol, and repeat tens of thousands of times. The result is a vocabulary where «the» is one chip because English repeats it endlessly, while a rare word travels as two or three chips — and *nothing* is ever unreadable, because in the worst case it falls back to characters.
+Before a model can predict anything it must read, and "read" needs an alphabet. Characters are too slow — a thought spread over hundreds of steps — and whole words are too brittle: the first typo or new name would be unreadable. The compromise the field settled on is wonderfully unclever: start from characters, count every adjacent pair in a mountain of text, glue the most frequent pair into a new symbol, and repeat tens of thousands of times. The result is a vocabulary where «the» is one chip because English repeats it endlessly, while a rare word travels as two or three chips — and _nothing_ is ever unreadable, because in the worst case it falls back to characters.
 
 The chips on screen are that exact algorithm running on the sample. This one design choice leaks into everything you have noticed about AI: billing is per token because the model's work is per token; a long foreign word costs more because the vocabulary spent its chips elsewhere; and a model asked to count the letters in «strawberry» struggles precisely because it has never seen letters — it sees one or two chips, with the letters sealed inside.
 
@@ -45,7 +45,7 @@ With no merges, $k = c$, one per character. Production vocabularies (tens of tho
 
 ## Advanced
 
-The vocabulary is frozen before the model ever trains, and every quirk becomes permanent: digits may split oddly (why arithmetic is strangely hard), spaces belong to the *following* token (why trailing spaces confuse completions), and a single rare chip can carry bizarre behaviour if it almost never appeared in training. Counting problems — letters in a word, words in a sentence — are tokenization problems in disguise: the model is asked about objects its alphabet dissolved. Newer systems bite the bullet and read raw bytes, paying with longer sequences; where that trade settles is an open question, but whoever wins, some alphabet always comes first.
+The vocabulary is frozen before the model ever trains, and every quirk becomes permanent: digits may split oddly (why arithmetic is strangely hard), spaces belong to the _following_ token (why trailing spaces confuse completions), and a single rare chip can carry bizarre behaviour if it almost never appeared in training. Counting problems — letters in a word, words in a sentence — are tokenization problems in disguise: the model is asked about objects its alphabet dissolved. Newer systems bite the bullet and read raw bytes, paying with longer sequences; where that trade settles is an open question, but whoever wins, some alphabet always comes first.
 
 ## Derivation
 
@@ -56,13 +56,17 @@ The vocabulary is frozen before the model ever trains, and every quirk becomes p
 ## Real world
 
 ### API bills
+
 Every AI provider prices per token — this page's counter is literally the meter that runs while a chatbot reads your message.
 
 ### The context window
-"128k context" counts tokens, not words: how much *text* fits depends on the language and the vocabulary's fit to it.
+
+"128k context" counts tokens, not words: how much _text_ fits depends on the language and the vocabulary's fit to it.
 
 ### Multilingual fairness
+
 Users writing in underrepresented scripts pay more tokens for the same meaning — a bias baked in before training began.
 
 ### Prompt oddities
+
 Famous glitches — misspelled words the model cannot see, magic strings that derail it — usually trace back to how the text happened to tokenize.
