@@ -60,24 +60,24 @@ derivation:
 charts: []
 primary: theta
 presets:
-- N: 100
-  I: 0.5
-  A: 0.001
-  B: 0.4
-  theta: 1.571
-- N: 300
-  I: 1.5
-  A: 0.002
-  B: 0.6
-  theta: 1.571
-- N: 20
-  I: 0.1
-  A: 0.0005
-  B: 0.2
-  theta: 1.571
+  - N: 100
+    I: 0.5
+    A: 0.001
+    B: 0.4
+    theta: 1.571
+  - N: 300
+    I: 1.5
+    A: 0.002
+    B: 0.6
+    theta: 1.571
+  - N: 20
+    I: 0.1
+    A: 0.0005
+    B: 0.2
+    theta: 1.571
 challenges:
-- check: 'N*I*A*B*sin(theta)'
-  target: 0.02
-  tol: 0.002
-- check: 'N*I*A*B*sin(theta) > 0.5'
-- check: 'abs(sin(theta)) < 0.05'
+  - check: 'N*I*A*B*sin(theta)'
+    target: 0.05
+    tol: 0.005
+  - check: 'N*I*A*B*sin(theta) > 0.5'
+  - check: 'abs(sin(theta)) < 0.05'

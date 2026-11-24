@@ -19,19 +19,19 @@ variables:
 
 ## Try it
 
-1. The picture shows a rectangular coil sitting between two fixed magnet poles, with a split-ring commutator and brushes feeding it current. Drag «coil's angle θ» around a full turn and watch the torque arrow grow and shrink.
-2. Torque peaks at θ = 90° (a quarter turn), where the coil's face is edge-on to the field, and drops to zero at θ = 0° and θ = 180°, where the coil's face points straight along the field.
+1. The picture shows a rectangular coil sitting between two fixed magnet poles, with a split-ring commutator and brushes feeding it current. At the start θ is about 90° and the readout shows τ = 0.02 N·m. Drag «the coil's angle from the field θ» around a full turn and watch the torque arrow grow and shrink.
+2. Torque peaks at θ = 90° (a quarter turn), where the coil's face is edge-on to the field, and drops to zero at θ = 0° and θ = 180°, where the coil's face points straight along the field. Set the slider to 3.14 rad, which is 180°: the readout shows τ = 0 N·m.
 3. Watch the commutator: every time the coil crosses θ = 0° or θ = 180°, its two contacts swap which brush they touch, flipping the current direction so the torque never reverses — that's what keeps the coil spinning the same way, all the way round.
 
 ## Real-life examples
 
 1. **A small hobby motor.** 100 turns, 0.5 A, a 10 cm² loop, in a 0.4 T field, at peak angle: about 0.02 N·m of torque — roughly what it takes to slowly lift a small toy car's wheel.
 2. **A robotics gearmotor.** 300 turns, 1.5 A, a 20 cm² loop, in a 0.6 T field: about 0.54 N·m — enough stall torque to drive a small robot before any gearbox multiplies it further.
-3. **A phone's tiny vibration motor.** Just 20 turns, 0.1 A, a 5 mm² loop, in a weak 0.2 T field: about 0.0002 N·m (0.2 mN·m) — tiny, but enough to spin an off-centre weight and buzz the phone.
+3. **A phone's tiny vibration motor.** Just 20 turns, 0.1 A, a 5 cm² loop, in a weak 0.2 T field: about 0.0002 N·m (0.2 mN·m) — tiny, but enough to spin an off-centre weight and buzz the phone.
 
 ## Test yourself
 
-1. Build a small hobby motor that produces about 0.02 N·m of torque at its peak angle.
+1. Build a stronger hobby motor that produces about 0.05 N·m of torque at its peak angle.
 2. Without changing the angle much, push the torque above 0.5 N·m using turns, current, and field strength alone.
 3. Find the commutator's "dead spot" — an angle where the torque drops to (almost) zero.
 
@@ -60,13 +60,17 @@ Real motors use several coils at different angles around the same axle (not just
 ## Real world
 
 ### Toy and hobby motors
+
 Small DC motors in toy cars, fans, and robotics kits are almost exactly this: one or a few coils, a permanent-magnet field, and a commutator.
 
 ### Car starter motors
+
 A car's starter motor is a much larger version of the same idea, built to deliver a huge, brief torque to turn over a cold engine.
 
 ### Electric vehicle motors
+
 Modern EVs mostly use brushless motors, which replace the mechanical commutator with electronics that switch the current — same torque formula, no sliding contacts to wear out.
 
 ### Loudspeakers
+
 A speaker's voice coil sits in a fixed magnet's field exactly like a motor's coil, except it moves back and forth along a straight track instead of spinning, pushed by the same $F$ that turns a motor's coil.
