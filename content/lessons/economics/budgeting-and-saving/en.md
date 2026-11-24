@@ -20,9 +20,9 @@ charts: []
 
 ## Try it
 
-1. Drop «monthly spending X» well below «monthly income I». The monthly saving jumps, and so does the total saved after «months saved m».
-2. Raise «months saved m» toward a full year or two. Even a modest monthly saving turns into a total worth noticing.
-3. Push «monthly spending X» close to «monthly income I». The saving shrinks toward zero, and the total barely grows no matter how long «months saved m» runs.
+1. Drop «monthly spending X» from 900 to 600, well below «monthly income I» at 1200. The monthly saving S jumps from 300 to 600, and the total saved T after 6 months jumps from 1800 to 3600.
+2. Raise «months saved m» to 24, two full years. T reads 14400: a steady monthly saving turns into a total worth noticing.
+3. Push «monthly spending X» up to 1150, close to «monthly income I». S shrinks to 50, and T is only 1200 even after 24 months.
 
 ## Real-life examples
 
@@ -61,13 +61,17 @@ The same formula runs backward for goal-setting: to reach a target total $T$ by 
 ## Real world
 
 ### Zero-based budgeting
+
 A common household technique assigns every dollar of «monthly income I» a job before the month starts — rent, food, saving — so nothing is left unaccounted for and spending cannot quietly creep up to match income.
 
 ### Pay yourself first
+
 Many savers set up an automatic transfer of the saving the moment income arrives, before there is a chance to spend it, which turns saving from "whatever is left over" into a fixed, protected part of the budget.
 
 ### Sinking funds
+
 Saving a fixed amount every month toward a specific future cost — a birthday gift, a school trip, a replacement phone — is the same $T = S\,m$ arithmetic aimed at a known target instead of an open-ended goal.
 
 ### Lifestyle inflation
+
 As «monthly income I» rises, «monthly spending X» often quietly rises with it, which is exactly why a raise does not always translate into more saving — the gap $S$ can stay just as thin as before.
