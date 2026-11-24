@@ -18,9 +18,9 @@ variables:
 
 ## Try it
 
-1. With $N$ at 1, look at the single noisy trace — the faint pulse is barely, if at all, visible under the noise.
-2. Drag $N$ up toward 16 or so. Watch the bold averaged trace pull cleanly out of the noise while the faint single trace stays just as messy as before.
-3. Now raise $\sigma$ (more noise) while keeping $N$ high. Notice how much larger $N$ has to get before the pulse reappears — averaging still works, it just needs more repeats.
+1. With $A$ = 2 mV, $\sigma$ = 4 mV and $N$ at 1, look at the single noisy trace. The single-trace SNR reads 0.5 — the faint pulse is barely, if at all, visible under the noise.
+2. Drag $N$ up to 16. The averaged SNR climbs to 2 and the noise after averaging falls from 4 mV to 1 mV: the bold averaged trace pulls cleanly out of the noise while the faint single trace stays just as messy as before.
+3. Now raise $\sigma$ to 8 mV (more noise) while keeping $N$ at 16. The averaged SNR drops to 1. Raise $N$ to 64 to get back to 2 — twice the noise needs four times the repeats. Averaging still works, it just needs more repeats.
 
 ## Real-life examples
 
@@ -30,7 +30,7 @@ variables:
 
 ## Test yourself
 
-1. Set up a signal that is completely buried on a single trace ($S$ below 1).
+1. Set up a signal that is deeply buried on a single trace ($S$ below 0.25).
 2. Find a combination where averaging brings the signal-to-noise ratio comfortably above 3.
 3. Bring the averaged signal-to-noise ratio to about 2.
 
@@ -59,13 +59,17 @@ This $\sqrt N$ improvement assumes the noise on each trace is independent of the
 ## Real world
 
 ### ECG and EEG monitoring
+
 Doctors average many heartbeats or brain-wave cycles together to pull a clean, repeatable waveform out of the muscle and electrical noise that buries any single reading.
 
 ### Radio telescopes and pulsar detection
+
 A pulsar's radio pulse can be far fainter than the surrounding cosmic noise on any single rotation; astronomers average thousands of rotations together to reveal a pulse invisible in any one of them.
 
 ### Astrophotography image stacking
+
 Photographers stack dozens or hundreds of exposures of the same faint galaxy, averaging away each frame's random sensor noise while the galaxy's real light keeps adding up.
 
 ### GPS positioning
+
 A GPS receiver averages many rapid position readings together, since each individual reading is noisy from atmospheric and signal effects, giving a far steadier final position than any single fix.
