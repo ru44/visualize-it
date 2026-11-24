@@ -11,15 +11,15 @@ parameters:
 
 ## Try it
 
-1. Watch the light clock inside the train: a flash of light bounces between a floor mirror and a ceiling mirror. At v = 0.3 the train barely moves during one bounce, so the diagonal path drawn from the platform looks almost straight up and down.
+1. Watch the light clock inside the train: a flash of light bounces between a floor mirror and a ceiling mirror. At v = 0.3 the train barely moves during one bounce, so the diagonal path drawn from the platform looks almost straight up and down. The readouts show γ = 1.048, Δt₀ = 10.01 ns and Δt = 10.49 ns.
 2. Raise v toward 0.7 and 0.9. The train slides further sideways during each bounce, so the same flash now traces a much longer, shallower diagonal — yet the readout for its speed along that diagonal never moves off 299,792,458 m/s.
-3. Check the two clock readouts: Δt₀ is what a passenger's watch would time for one bounce, Δt is what a platform clock times for the same bounce. Watch Δt pull ahead of Δt₀ as v climbs, even though the light itself never sped up.
+3. Check the two clock readouts: Δt₀ is what a passenger's watch would time for one bounce, Δt is what a platform clock times for the same bounce. At v = 0.9, Δt₀ still reads 10.01 ns but Δt has grown to 22.96 ns, even though the light itself never sped up.
 
 ## Real-life examples
 
 1. **The Parker Solar Probe**, the fastest object humans have ever built, reached about 192 km/s — v = 0.00064 here. Its light clock's diagonal path is stretched only a hair; γ is 1.0000002, too close to 1 to draw any differently from a stationary train.
-2. **A beam at half light speed**, v = 0.5. Now the stretching is real: γ = 1.15, so the platform clock already reads noticeably more than a passenger's watch for the very same bounce.
-3. **A beam at v = 0.866**, roughly nine-tenths of light speed. γ has reached almost exactly 2: the platform times the bounce at almost double the passenger's own count, purely from geometry, because the light's speed itself could not budge.
+2. **A train at half light speed**, v = 0.5. Now the stretching is real: γ = 1.15, so the platform clock already reads noticeably more than a passenger's watch for the very same bounce.
+3. **A train at v = 0.866**, about 87% of light speed. γ has reached almost exactly 2: the platform times the bounce at almost double the passenger's own count, purely from geometry, because the light's speed itself could not budge.
 
 ## Test yourself
 
@@ -52,13 +52,17 @@ This is exactly the logic behind the 1887 Michelson–Morley experiment: it trie
 ## Real world
 
 ### Michelson and Morley's interferometer
+
 Splitting a beam and sending its two halves down perpendicular arms, then recombining them, Michelson and Morley expected Earth's 30 km/s orbital motion to shift the light's timing detectably. It never did, in any direction, at any season — direct evidence that there is no hidden "ether wind" and that light's speed is the same for every observer, which is exactly the assumption this light clock relies on.
 
 ### GPS satellites
+
 Every GPS satellite carries an atomic clock whose ticks must be corrected for exactly this stretching, because it orbits at about 3.9 km/s relative to the ground; engineers who ignored it would see position errors grow by kilometres per day.
 
 ### Particle accelerators
+
 Beams of protons at CERN are pushed to v > 0.999999c, and every calculation of how long their unstable companions survive depends on exactly this Δt = γΔt₀ relationship holding to extraordinary precision — which it does, every time it is tested.
 
 ### Why nothing can ever reach light speed itself
+
 As v climbs toward c in this picture, the diagonal path keeps stretching but the speed along it never can, since c is fixed; the passenger's whole bounce would need to take an ever-larger slice of the platform's time, which is one reason nothing with mass can ever be pushed all the way to v = c.
