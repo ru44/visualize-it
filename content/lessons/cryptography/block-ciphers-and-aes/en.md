@@ -15,13 +15,13 @@ variables:
 ## Try it
 
 1. Look at the two towers of small squares, A on the left and B on the right: they start as the same 16-bit block, except for one flipped bit.
-2. Drag «rounds» from 0 up to 4 and watch how many squares differ between A and B by the bottom row.
-3. Drag «flip» to change which single input bit differs, and watch the same spreading pattern happen no matter which bit you pick.
+2. Keep «flip» at 0 and step «rounds» through 0, 1, 2, 3, 4. The "bits different" readout goes 1, 3, 9, 5, 5 out of 16: one flipped bit spreads over the block.
+3. With «rounds» at 4, set «flip» to 8, then to 15. A different input bit now differs, and the readout shows 7 / 16, then 6 / 16 — the change spreads no matter which bit you pick.
 
 ## Real-life examples
 
 1. **Sending a block with zero rounds.** «rounds» = 0 skips all mixing, so A and B — identical except for one input bit — still differ by exactly that one square at the bottom, just like plain, unshuffled data.
-2. **A partly-mixed message.** «rounds» = 2 lets that one-bit difference spread only part-way through the block, the way a weak, watered-down cipher would leave it.
+2. **A partly-mixed message.** «rounds» = 2 already spreads that one-bit difference to 9 of the 16 squares, but after so few rounds the pattern is still easy to predict, the way a weak, watered-down cipher would leave it.
 3. **A fully-mixed message, from a different bit.** «rounds» = 4 with «flip» = 8 shows a different starting bit still ending up scrambling roughly half the block, just as real AES's 10 rounds do to a full 128-bit block.
 
 ## Test yourself
@@ -55,13 +55,17 @@ The Advanced Encryption Standard operates on 128-bit blocks with 10, 12 or 14 ro
 ## Real world
 
 ### Wi-Fi encryption
+
 The WPA2 and WPA3 standards that protect home Wi-Fi traffic both encrypt every packet with AES.
 
 ### HTTPS connections
+
 Once a browser and a website agree on a shared key, most of the actual encrypted traffic behind the padlock icon is protected with AES.
 
 ### Encrypted phones and disks
+
 Phone storage and full-disk encryption tools scramble every file with AES so the data is unreadable without the device's key.
 
 ### Government and banking standards
+
 AES is approved by the U.S. government for protecting even top-secret information, and banks rely on it throughout card payment and transfer systems.
