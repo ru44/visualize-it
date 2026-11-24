@@ -19,9 +19,9 @@ charts: []
 
 ## Try it
 
-1. Set «pump fraction η» to 0.5. Whatever you set «number of cavity passes p» to, the beam neither grows nor fades: this is exactly the threshold.
-2. Raise «pump fraction η» above 0.5 and push «number of cavity passes p» up. The beam grows a little more with every pass — population inversion switching on.
-3. Lower «pump fraction η» below 0.5. Now the beam loses a little brightness on every pass instead, even with many passes.
+1. Set «pump fraction η» to 0.5. Whatever you set «number of cavity passes p» to, «amplification G» stays at ×1 and the beam neither grows nor fades: this is exactly the threshold.
+2. Raise «pump fraction η» to 0.7 and «number of cavity passes p» to 10. «population inversion ΔN» reads 0.4 and the beam grows a little more with every pass, up to ×4.06.
+3. Lower «pump fraction η» to 0.3 with p still at 10. ΔN reads -0.4 and the beam now loses brightness on every pass, down to ×0.25.
 
 ## Real-life examples
 
@@ -31,9 +31,9 @@ charts: []
 
 ## Test yourself
 
-1. Reach roughly five times amplification.
-2. Make the beam fade instead of grow, using a weak pump with several passes.
-3. Sit exactly at threshold, with the beam neither growing nor fading.
+1. Reach roughly five times amplification («amplification G» between ×4.5 and ×5.5).
+2. Make the beam fade instead of grow: a pump fraction below 0.5 with at least 5 passes.
+3. Sit exactly at threshold, with the beam neither growing nor fading (G = ×1).
 
 ## Intuition
 
@@ -60,13 +60,17 @@ Real gain media range from a helium-neon gas tube to a semiconductor diode barel
 ## Real world
 
 ### Barcode scanners and laser pointers
+
 A cheap helium-neon or diode laser produces a tight, single-coloured red beam precisely because of the mirror-and-inversion trick in this lesson.
 
 ### Fibre-optic internet
+
 Laser diodes switch on and off billions of times a second to send pulses of light down optical fibres, carrying most of the world's long-distance internet traffic.
 
 ### Laser eye surgery
+
 LASIK surgery uses an excimer laser tuned to one exact ultraviolet wavelength to reshape the cornea with a precision no ordinary lamp could match.
 
 ### Optical discs
+
 CD, DVD and Blu-ray players read data with laser diodes of ever-shorter wavelength, since a tighter single-colour beam can resolve smaller and smaller pits on the disc.
