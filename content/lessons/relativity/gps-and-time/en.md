@@ -10,8 +10,8 @@ parameters:
 
 ## Try it
 
-1. Watch the blue curve. It dips below zero near the ground, then rises — the orange dot shows how many microseconds a clock gains (or loses) each day at altitude x.
-2. Drag x down toward 0. The dot drops below zero: down here a clock actually loses time compared with one far from Earth.
+1. Watch the blue curve. It dips below zero near the ground, then rises — the orange dot shows how many microseconds a clock gains (or loses) each day at altitude x. At the starting altitude, x = 10, it reads about +25.
+2. Drag x down to 0. f(x) falls to about −30: a satellite skimming this low must fly so fast that its clock loses 30 microseconds a day compared with a clock on the ground.
 3. Raise x to 20.2, the real GPS altitude. The dot settles near +38 microseconds a day — tiny, but enough to shift a position fix by kilometres if it went uncorrected.
 
 ## Real-life examples
@@ -28,9 +28,9 @@ parameters:
 
 ## Intuition
 
-Look at the blue curve on the graph: near x = 0, right at Earth's surface, it dips below the horizontal axis, then climbs into positive territory as you slide x higher. The orange dot marks exactly how many microseconds a clock at your chosen altitude gains or loses every day, compared with a clock resting far from any planet.
+Look at the blue curve on the graph: near x = 0, right at Earth's surface, it dips below the horizontal axis, then climbs into positive territory as you slide x higher. The orange dot marks exactly how many microseconds a clock at your chosen altitude gains or loses every day, compared with a clock resting on the ground.
 
-Two things are competing here. Being high up, farther from Earth's mass, means weaker gravity, and weaker gravity lets a clock run faster, which pulls the curve upward as x grows. But a satellite up there also moves fast to stay in orbit, and speed itself slows a clock down, pulling the curve back toward zero. High enough, gravity wins — which is why the curve ends up positive at GPS altitude.
+Two things are competing here. Being high up, farther from Earth's mass, means weaker gravity, and weaker gravity lets a clock run faster, which pulls the curve upward as x grows. But a satellite up there also moves fast to stay in orbit, and speed itself slows a clock down, pulling the curve back down. High enough, gravity wins — which is why the curve ends up positive at GPS altitude.
 
 ## Formal
 
@@ -51,13 +51,17 @@ The crossover altitude, where the two effects exactly cancel, sits at about 3,20
 ## Real world
 
 ### GPS positioning
+
 If engineers ignored relativity, GPS clocks would drift by about 38 microseconds a day — tiny, until you multiply by the speed of light and find it would shift computed positions by roughly 10 km every single day.
 
 ### The correction built into every satellite
+
 GPS satellites carry clocks deliberately tuned to tick slightly slow before launch, so that once relativity speeds them up in orbit, they match ground clocks exactly.
 
 ### The International Space Station
+
 Astronauts on the ISS orbit low and fast enough that velocity time dilation wins over the gravitational effect, so after six months in space they come home a few milliseconds younger than if they had stayed on Earth.
 
 ### Testing general relativity on the ground
+
 Atomic clocks are now precise enough to detect a difference of just a few centimetres in height, letting physicists confirm Einstein's prediction directly in the lab, not only in orbit.

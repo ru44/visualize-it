@@ -30,7 +30,7 @@ parameters:
     min: 0
     max: 40
     step: 0.1
-    value: 20.2
+    value: 10
     unit: Mm
 variables: []
 derivation:
