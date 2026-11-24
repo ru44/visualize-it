@@ -26,14 +26,14 @@ charts:
 
 ## Try it
 
-1. Start at low [S] and watch the bench: substrate is scarce, most machines sit idle, and the rate meter barely lifts.
-2. Drag [S] up to Km. Exactly half the enzymes light up busy and the meter reads half of Vmax — that is all Km means.
-3. Keep dragging past Km. The cloud thickens but the bench is already nearly full — the meter creeps toward Vmax and flattens, machines saturated.
+1. Set [S] = 0.5 and watch the bench: substrate is scarce, only 2 of the 10 machines are busy (20%), and the rate meter reads just v = 1.00.
+2. Drag [S] up to Km = 2. Exactly half the enzymes light up busy (5/10) and the meter reads half of Vmax, v = 2.50 — that is all Km means.
+3. Keep dragging to [S] = 30. The cloud thickens but the bench is nearly full (9/10 busy) — the meter creeps to v = 4.69, just under Vmax = 5, and flattens, machines saturated.
 
 ## Real-life examples
 
 - **Lactase digesting milk sugar.** A fast, sensitive enzyme (Vmax = 8, Km = 1.5) working on a modest amount of lactose ([S] = 3) already keeps most of the bench busy, breaking sugar down quickly.
-- **Alcohol dehydrogenase clearing ethanol.** The liver's enzyme (Vmax = 4, Km = 4) working at a matching substrate level ([S] = 4) runs at exactly half speed — this is part of what keeps blood-alcohol clearance roughly steady.
+- **Alcohol dehydrogenase clearing ethanol.** The liver's enzyme (Vmax = 4, Km = 4) working at a matching substrate level ([S] = 4) runs at exactly half speed: 5 of the 10 machines are busy and the meter reads v = 2.00.
 - **An enzyme swamped with substrate.** With plenty of substrate available ([S] = 25) and a moderate Km = 2, the enzyme is almost completely saturated, running close to its ceiling, Vmax = 5.
 
 ## Test yourself
@@ -67,13 +67,17 @@ The Michaelis–Menten equation follows from the steady-state assumption that th
 ## Real world
 
 ### Drug design
+
 Many drugs work as competitive inhibitors, raising a target enzyme’s apparent Km so normal substrate can no longer compete effectively at typical concentrations.
 
 ### Lactose intolerance
+
 The enzyme lactase’s Km and Vmax determine how much dairy sugar the gut can process before symptoms appear.
 
 ### Industrial catalysis
+
 Enzyme reactors are sized using Vmax and Km to predict throughput at a given substrate feed concentration.
 
 ### Liver enzymes and alcohol
+
 Alcohol dehydrogenase’s kinetics set the roughly constant rate at which the body clears ethanol from the blood.
