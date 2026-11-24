@@ -16,9 +16,9 @@ variables:
 
 ## Try it
 
-1. Set step to 0 and stare at the canvas: pure static, no picture hiding in it — this is genuinely all the model is given.
-2. Drag step up slowly: structure condenses out of the noise, vague blobs committing to edges — the exact reverse of the corruption the model trained on.
-3. Jump to another seed at full step: a different picture — same model, same skill, different starting static. The variety of AI art lives entirely in the seed.
+1. Set step to 0 and stare at the canvas: pure static, no picture hiding in it — this is genuinely all the model is given. The readouts say noise left 100% and «pure static».
+2. Drag step up slowly to 50, where the readout says «something emerging…», then on to 100: structure condenses out of the noise, vague blobs committing to edges, until a clean heart stands on the canvas — the exact reverse of the corruption the model trained on.
+3. Keep step at 100 and set seed to 2, then 3: a star, then a moon instead of the heart — same model, same skill, different starting static. The variety of AI art lives entirely in the seed.
 
 ## Real-life examples
 
@@ -30,11 +30,11 @@ variables:
 
 1. Return the canvas to pure static.
 2. Walk seed #1 all the way to its clean picture.
-3. Change the seed and walk again — confirm the same slider finds a different picture.
+3. Change the seed to 2 or 3 and walk again — confirm the same slider finds a different picture.
 
 ## Intuition
 
-Teaching a network to paint from scratch sounds impossible, so diffusion teaches something embarrassingly easier: here is a slightly noisy picture — point toward the clean one. That is a supervised task with infinite free training data, because corrupting a photo with noise is trivial, and the right answer (the original) is known. Train on billions of such repairs, at every noise level from "barely dusty" to "pure static", and the model becomes an expert at one question: *in which direction does "more like a real picture" lie?*
+Teaching a network to paint from scratch sounds impossible, so diffusion teaches something embarrassingly easier: here is a slightly noisy picture — point toward the clean one. That is a supervised task with infinite free training data, because corrupting a photo with noise is trivial, and the right answer (the original) is known. Train on billions of such repairs, at every noise level from "barely dusty" to "pure static", and the model becomes an expert at one question: _in which direction does "more like a real picture" lie?_
 
 Generation is that expertise run backwards. Start from static the model has never seen, ask it which way realness lies, take a small step, ask again — a hundred times — and a picture condenses that never existed anywhere. The seed slider is the honest answer to "where do different images come from": not from the model choosing, but from different starting static falling toward different valleys of the learned landscape. The prompt (not simulated here) merely tilts the landscape, so the walk condenses toward "a cat in the rain" instead of anywhere else.
 
@@ -57,13 +57,17 @@ The field's practical breakthroughs are compressions of this walk: latent diffus
 ## Real world
 
 ### Image generators
+
 Midjourney, DALL·E and Stable Diffusion are this walk with text steering — every output began as the static on this page.
 
 ### Photo restoration
-Point the same pointer at a *genuinely* damaged photo and denoising becomes repair: old-photo restoration and super-resolution are diffusion's day job.
+
+Point the same pointer at a _genuinely_ damaged photo and denoising becomes repair: old-photo restoration and super-resolution are diffusion's day job.
 
 ### Video and audio
+
 Extend the canvas through time and the same condensation yields generated video frames and synthesized voices.
 
 ### Drug discovery
+
 Diffusion over 3D atom positions proposes novel protein structures — static condensing into molecules instead of cats.
