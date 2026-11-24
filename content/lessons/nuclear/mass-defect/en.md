@@ -10,21 +10,21 @@ variables:
   - 'the mass of one free proton, 1.007276 u'
   - 'the mass of one free neutron, 1.008665 u'
   - 'the actual measured mass of the whole nucleus, once bound together'
-  - 'the mass defect: the missing mass — the separate protons and neutrons'' total mass minus the nucleus''s actual mass'
+  - "the mass defect: the missing mass — the separate protons and neutrons' total mass minus the nucleus's actual mass"
   - 'the binding energy: the missing mass converted into energy, at 931.5 MeV for every atomic mass unit (u) that goes missing'
 charts: []
 ---
 
 ## Try it
 
-1. Watch the balance scale. The left pan holds Z separate protons and N separate neutrons; the right pan holds the single nucleus they'd form.
-2. Drag "protons Z" and "neutrons N" up to 2 and 2 — helium-4. Watch the right pan tip up, lighter, and the flash beside it show the energy that missing mass became.
-3. Now drag Z and N up toward carbon (6 and 6, then 6 and 8). Watch the flash grow — more nucleons, more missing mass, more energy.
+1. Watch the balance scale. The left pan holds Z separate protons and N separate neutrons; the right pan holds the single nucleus they'd form. It starts with one lone proton, so the scale is level and "binding energy" reads 0 MeV.
+2. Drag "protons Z" and "neutrons N" up to 2 and 2 — helium-4. The right pan tips up, lighter: "mass defect Δm" reads 0.0304 u and "binding energy" reads 28.3 MeV, the energy that missing mass became, shown by the flash beside the pan.
+3. Now drag Z and N up to carbon: 6 and 6, then 6 and 8. The flash grows as "binding energy" rises to about 90 MeV and then about 105 MeV — more nucleons, more missing mass, more energy.
 
 ## Real-life examples
 
 1. **Helium-4, the classic worked example.** Two protons and two neutrons bind into a nucleus about 28.3 MeV lighter than the free particles — the single most quoted number in nuclear physics.
-2. **Carbon-12, the reference isotope.** Six protons and six neutrons bind into the very nucleus whose mass, by definition, is exactly 12 atomic mass units.
+2. **Carbon-12, the reference isotope.** Six protons and six neutrons bind into the nucleus of the very atom whose mass, by definition, is exactly 12 atomic mass units.
 3. **Carbon-14, two neutrons heavier.** The same six protons, but with eight neutrons instead of six — the radioactive isotope used to date bones and charcoal.
 
 ## Test yourself
@@ -58,13 +58,17 @@ The same missing-mass accounting explains why a fission or fusion reaction relea
 ## Real world
 
 ### Nuclear power and weapons
+
 Both convert a measurable slice of missing mass into energy — a reactor slowly and steadily, a weapon in a single burst — using exactly the accounting on this scale.
 
 ### Defining the atomic mass unit
+
 Carbon-12's mass is fixed at exactly 12 u by international agreement, which is precisely why building the mass-defect scale from Z and N and converting through 931.5 MeV/u works for every other nucleus.
 
 ### The Sun's energy budget
+
 Every second, the Sun converts about four million tonnes of mass into the sunlight and heat that reach the solar system, fusing hydrogen into helium and losing a tiny fraction of the mass each time.
 
 ### Precision mass spectrometry
+
 Physicists measure nuclear masses to better than one part in a billion specifically so mass-defect calculations like this one can be trusted to predict real reaction energies.
