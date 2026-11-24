@@ -14,9 +14,9 @@ variables:
 
 ## Try it
 
-1. Keep p = 24 and d = 4 and follow one packet: it leaves a coloured gadget, reaches the router, and continues to the cloud recoloured — outside the house, every packet wears the same public address.
+1. Keep p = 24 and d = 4 (the readout shows 254 addresses available) and follow one packet: it leaves a coloured gadget, reaches the router, and continues to the cloud recoloured — outside the house, every packet wears the same public address.
 2. Raise d to 8: more gadgets, more coloured packets, still one public address — the NAT table under the router is what keeps the replies from getting mixed up.
-3. Now push p to 30: the private subnet shrinks to just 2 usable addresses and the house overflows — the prefix length alone decides how big a network is.
+3. Now push p to 30: the readout drops to 2 addresses available and turns red, and a «subnet full» warning appears, because 8 gadgets cannot share 2 addresses — the prefix length alone decides how big a network is.
 
 ## Real-life examples
 
@@ -26,7 +26,7 @@ variables:
 
 ## Test yourself
 
-1. Set the prefix so the subnet holds exactly 254 gadgets.
+1. Set the prefix so the subnet holds exactly 62 gadgets.
 2. Shrink the subnet to exactly 2 usable addresses.
 3. Fill the house: connect all 8 gadgets.
 
@@ -55,13 +55,17 @@ NAT became universal because IPv4 ran out: 32 bits give about 4.3 billion addres
 ## Real world
 
 ### The box by your door
+
 Every home router is doorman, address book and translator at once — the Wi-Fi is just how packets reach it through the air.
 
 ### Carrier-grade NAT
+
 Many mobile networks put thousands of customers behind one public address, running the same ledger at city scale.
 
 ### Port forwarding for games
+
 Hosting a game server from home means telling the doorman in advance: anything arriving on this port goes to that machine.
 
 ### Why 192.168.1.1 works in every house
+
 Private ranges are reserved precisely so the same numbers can be reused in every home on Earth without a single clash.
