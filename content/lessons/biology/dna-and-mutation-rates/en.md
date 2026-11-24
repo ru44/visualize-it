@@ -18,14 +18,14 @@ variables:
 
 ## Try it
 
-1. Start with a slow, human-like rate and only a handful of generations — almost nothing changes.
-2. Push generations up toward 1000, keeping the rate low, and watch differences slowly accumulate one red box at a time.
-3. Switch to a fast, virus-like rate. Watch the strip fill with red boxes and the line shoot up almost immediately.
+1. Start with a slow, human-like rate (μ = 0.01) and only 10 generations — almost nothing changes: expected mutations E reads 0 and no box is red.
+2. Set the rate to μ = 1 and push generations up to 1000. E climbs slowly to 1: about one changed base in the whole 1000-base sequence, still too few to show in the 60-box window.
+3. Switch to a fast, virus-like rate, μ = 100. E jumps to 100, 10% of the bases have changed, and 6 of the 60 boxes turn red.
 
 ## Real-life examples
 
 1. **A human gene copied across 10 generations.** At about one mistake per hundred million bases, essentially nothing changes — human DNA is copied with extraordinary care.
-2. **E. coli evolving in the lab for 1000 generations.** A real experiment (Lenski's, still running after tens of thousands of generations): bacteria mutate faster and divide fast enough for real change to show up in a lab timescale.
+2. **E. coli evolving in the lab for 1000 generations.** A real experiment (Lenski's, still running after tens of thousands of generations): bacteria divide so fast — several generations a day — that real change shows up on a lab timescale.
 3. **A flu gene segment over one flu season, about 50 replication cycles.** Influenza's copying machinery makes far more mistakes per copy — new variants appear within a single season, which is why flu vaccines are updated every year.
 
 ## Test yourself
@@ -59,13 +59,17 @@ The linear approximation $E \approx N\mu g$ breaks down once $\mu g$ is no longe
 ## Real world
 
 ### Dating when species split
+
 Comparing the same gene in two species and counting the differences, then dividing by a measured mutation rate, gives a rough date for their last common ancestor — the molecular clock.
 
 ### Antibiotic resistance evolving
+
 Bacteria dividing fast, with mutations happening on every copy, occasionally produce a mutation that survives an antibiotic — which then multiplies while its non-resistant neighbours die.
 
 ### Flu shots updated every year
+
 Influenza's error-prone copying machinery lets new variants appear within months, fast enough that last year's vaccine often no longer matches this year's circulating strains.
 
 ### Cancer building up over a lifetime
+
 Most cancers need several specific mutations in the same cell line before they turn dangerous — a slow accumulation over decades of ordinary cell division, which is one reason cancer risk climbs sharply with age.
