@@ -16,8 +16,8 @@ variables:
 ## Try it
 
 1. Set the clock size "n" to 12, then tap the number 9 on the clock face to set the start, a.
-2. Drag "b", how many steps to walk forward, up past 5 steps and watch the marker sail past the top of the clock and loop back around to the bottom.
-3. Keep dragging b higher and check the "full turns" readout — it counts exactly how many times you lapped the clock.
+2. Set "b", how many steps to walk forward, to 5. The walk passes the top of the clock: the readouts show a + b = 14, (a + b) mod 12 = 2 and 1 full turn.
+3. Raise b to 27. Now a + b = 36, the walk lands on 0, and the "full turns" readout shows 3 — exactly how many times you lapped the clock.
 
 ## Real-life examples
 
@@ -56,13 +56,17 @@ This single idea of wrapping is what every cipher in this course is built on. A 
 ## Real world
 
 ### Telling time
+
 A 12-hour clock is modular arithmetic in daily use: 9 o'clock plus 5 hours is 2 o'clock, not 14 o'clock.
 
 ### Day of the week
+
 Adding days wraps every 7: if today is day 3 of the week, 10 days from now is day $(3+10) \bmod 7$, not day 13.
 
 ### Hash tables
+
 A program spreads data across a fixed number of storage slots by computing key $\bmod$ (number of slots), reusing the same small set of buckets no matter how large the key is.
 
 ### Every cipher in this course
+
 Caesar shifts wrap mod 26; the number games behind Diffie–Hellman and RSA wrap mod a chosen $n$ — the same clock idea at a much larger scale.
