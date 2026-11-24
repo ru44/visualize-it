@@ -17,18 +17,18 @@ charts: []
 ## Try it
 
 1. Look at the ladder of energy levels on screen and the electron dropping from one rung to a lower one.
-2. Set «starting level nᵢ» to 3 and «landing level n_f» to 2. A red line lights up — the same red seen in a hydrogen discharge tube.
-3. Raise «starting level nᵢ» while keeping «landing level n_f» at 2. The emitted colour shifts toward blue and then violet.
+2. Set «starting level nᵢ» to 3 and «landing level n_f» to 2. «photon energy» reads 1.89 eV and «wavelength» reads 656 nm: a red line lights up, the same red seen in a hydrogen discharge tube.
+3. Raise «starting level nᵢ» to 4, 5 and 6 while keeping «landing level n_f» at 2. The wavelength steps down to 486 nm, 434 nm and 410 nm, and the colour shifts from red to blue-green and then violet.
 
 ## Real-life examples
 
 1. **Balmer-alpha, the red line of hydrogen.** The drop from level 3 to level 2 gives out red light at 656 nm, visible in any hydrogen discharge tube.
 2. **Balmer-beta, a blue-green line.** The drop from level 4 to level 2 gives out light at about 486 nm.
-3. **Lyman-alpha, the ultraviolet line that revealed hydrogen in stars.** The drop from level 2 to level 1 gives out ultraviolet light, the strongest single spectral line in the whole universe.
+3. **Lyman-alpha, the ultraviolet line astronomers use to map hydrogen in space.** The drop from level 2 to level 1 gives out ultraviolet light at about 122 nm, hydrogen's strongest spectral line.
 
 ## Test yourself
 
-1. Reproduce the red Balmer-alpha line at about 656 nm.
+1. Find the violet-blue Balmer line at about 434 nm.
 2. Find a jump whose light lands in the ultraviolet, below 200 nm.
 3. Reproduce the blue-green Balmer-beta line at about 486 nm.
 
@@ -57,10 +57,13 @@ Every element has its own unique ladder of energy levels, so its emission and ab
 ## Real world
 
 ### Astronomical spectroscopy
+
 Astronomers identify hydrogen, helium and other elements in stars and nebulae by matching the exact wavelengths of light they receive to each element's known spectral lines.
 
 ### Neon and sodium lighting
+
 Neon signs glow orange-red and sodium street lamps glow yellow-orange because each gas has its own fixed set of allowed energy drops, unlike a smooth-spectrum incandescent bulb.
 
 ### The discovery of helium
+
 Helium was first detected in the Sun's spectrum in 1868, decades before it was ever found on Earth, purely from an emission line that matched no known element.
