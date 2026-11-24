@@ -15,20 +15,20 @@ variables:
 ## Try it
 
 1. The picture shows a long labelled bar from radio waves on the left to gamma rays on the right, with a marker you slide along it, and a small squiggly wave next to it that stretches or squeezes to match.
-2. Drag «e» from the far left to the far right. The marker sweeps through radio, microwave, infrared, a thin sliver of visible light, ultraviolet, X-ray, and gamma — the wavelength shrinks by a factor of ten every single step of 1 on the slider.
-3. Watch the squiggly wave as you cross into the visible band: it's a vanishingly small part of the whole spectrum, yet it's the only part your eyes can see directly.
+2. At the start the slider «how many powers of ten the wavelength is, e (wavelength = 10^e metres)» is at −2: the readouts show λ = 0.01 m and f = 3.000e+10 Hz, a microwave. Drag it from 3 all the way down to −12. The marker sweeps through radio, microwave, infrared, a thin sliver of visible light, ultraviolet, X-ray, and gamma — the wavelength shrinks by a factor of ten every single step of 1 on the slider.
+3. Stop at −6.3, where the label above the bar reads Visible and the wavelength is 5.01e-7 m, about 500 nanometres. This band is a vanishingly small part of the whole spectrum, yet it's the only part your eyes can see directly.
 
 ## Real-life examples
 
 1. **An FM radio station.** Wavelength around 3.2 m: a frequency of about 95 MHz, right in the middle of the FM dial.
-2. **Green light.** Wavelength around 500 nanometres (5×10⁻⁷ m): a frequency of about 6×10¹⁴ Hz —600 trillion wave crests reaching your eye every second.
+2. **Green light.** Wavelength around 500 nanometres (5×10⁻⁷ m): a frequency of about 6×10¹⁴ Hz — 600 trillion wave crests reaching your eye every second.
 3. **A medical X-ray.** Wavelength around 0.1 nanometres (10⁻¹⁰ m): a frequency of about 3×10¹⁸ Hz, energetic enough to pass through soft tissue and shadow-image your bones.
 
 ## Test yourself
 
 1. Tune the wavelength so the frequency lands on about 100 MHz, an FM radio station.
 2. Slide into the visible-light band, where the frequency is somewhere between about 4×10¹⁴ and 7.5×10¹⁴ Hz.
-3. Push the frequency above 10¹⁹ Hz, into gamma-ray territory.
+3. Push the frequency up to 3×10¹⁹ Hz or more, into gamma-ray territory.
 
 ## Intuition
 
@@ -38,7 +38,7 @@ A short wavelength packs more wave crests into every second, so it means a high 
 
 ## Formal
 
-The wave equation linking wavelength and frequency is $c = \lambda f$, where $c \approx 3\times10^8$ m/s is the speed of light in vacuum, the same for every part of the spectrum. Writing the wavelength as $\lambda = 10^{e}$ metres lets one slider sweep the entire spectrum, from kilometre-scale radio waves ($e \approx 3$) to gamma rays smaller than a nucleus ($e \approx -15$).
+The wave equation linking wavelength and frequency is $c = \lambda f$, where $c \approx 3\times10^8$ m/s is the speed of light in vacuum, the same for every part of the spectrum. Writing the wavelength as $\lambda = 10^{e}$ metres lets one slider sweep the entire spectrum, from kilometre-scale radio waves ($e \approx 3$) to gamma rays far smaller than an atom ($e \approx -12$).
 
 Rearranging, $f = c/\lambda$: doubling the wavelength halves the frequency, and every step of 1 in $e$ changes the frequency by a factor of exactly 10.
 
@@ -55,13 +55,17 @@ Each photon of light carries energy $E = hf$, where $h$ is Planck's constant —
 ## Real world
 
 ### Radio and television broadcasting
+
 AM, FM, and TV broadcasts use wavelengths from metres to kilometres, long enough to bend around hills and buildings and carry a signal a long way.
 
 ### Microwave ovens and Wi-Fi
+
 Both use roughly the same slice of spectrum, around 12 cm (2.45 GHz) — a frequency that happens to be efficiently absorbed by water molecules, which is exactly why it cooks food.
 
 ### Visible light and cameras
+
 The narrow visible band, roughly 400–700 nanometres, is what eyes and ordinary cameras detect directly; infrared cameras extend a little further to sense heat.
 
 ### Medical and security imaging
+
 X-rays image bones and airport baggage precisely because their short wavelength lets them pass through soft materials that block visible light entirely.
