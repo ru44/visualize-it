@@ -16,15 +16,15 @@ variables:
 
 ## Try it
 
-1. Set greenhouse strength to 0. Watch the temperature settle near −18°C — an airless Earth.
-2. Drag greenhouse strength up toward 0.78, today's value. Watch temperature climb to about +15°C.
-3. Drag albedo up instead, reflecting more sunlight away, and watch temperature fall.
+1. Set greenhouse strength x to 0 and leave albedo at 0.3. The readout f(x) shows about −18.6°C — an airless Earth.
+2. Drag greenhouse strength up to 0.78, today's value. The temperature climbs to about +15°C.
+3. Keep x at 0.78 and raise albedo from 0.3 to 0.4, reflecting more sunlight away. The temperature falls from about +15°C to about +4°C.
 
 ## Real-life examples
 
-- **An airless, Moon-like world.** With almost no greenhouse trapping (x = 0) and a dark surface (albedo = 0.11), the surface sits far below freezing.
+- **An airless, Moon-like world.** With almost no greenhouse trapping (x = 0) and a dark surface (albedo = 0.11), the surface sits just below freezing, at about −3°C.
 - **Earth today.** With today's albedo (0.3) and greenhouse strength (x = 0.78), the surface averages a comfortable +15°C.
-- **A runaway greenhouse, Venus-like.** A bright cloud cover (albedo = 0.6) still can't save a world with an extreme greenhouse strength (x = 0.95) from scorching heat.
+- **A bright, cloud-covered world.** A bright cloud cover (albedo = 0.6) reflects so much sunlight that even the strongest greenhouse on the slider (x = 0.95) leaves the surface at about −13°C. Real Venus is scorching because its greenhouse is far stronger than this simple model can reach.
 
 ## Test yourself
 
@@ -57,13 +57,17 @@ This one-layer model is a simplification: real greenhouse warming depends on the
 ## Real world
 
 ### Climate change
+
 Rising CO₂ and methane increase effective greenhouse strength, pushing surface temperature up along exactly this curve.
 
 ### Venus
+
 Venus's thick CO₂ atmosphere pushes its greenhouse strength so high that its surface reaches roughly 465 °C, hotter than Mercury despite being farther from the Sun.
 
 ### Greenhouses and cars
+
 A literal greenhouse (or a parked car) warms by trapping infrared radiation behind glass, a related but distinct mechanism from the atmospheric greenhouse effect.
 
 ### Ice ages and albedo feedback
+
 More ice means higher albedo, which reflects more sunlight and cools the planet further, a feedback loop that can deepen an ice age once it starts.
