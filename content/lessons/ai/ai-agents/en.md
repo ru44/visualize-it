@@ -17,14 +17,14 @@ variables:
 
 ## Try it
 
-1. With tools on and budget 6, drag t to the end: four laps — look up, read, draft, send — each lap appending its result to the context bar, each tick unlocking the next.
-2. Take the toolbox away and run again: the loop never turns; at the halfway mark the model simply *answers anyway* — fluent, confident, and checked against nothing.
-3. Restore tools but cut the budget to 2: the agent dies mid-errand with the forecast in hand and the message never sent — budgets are real, and the checklist shows exactly where it stopped.
+1. With tools at 1 and steps at 6, drag t from 0 to 100: four laps — look up, read, draft, send — each lap appending its result to the context bar, each tick unlocking the next. The readouts end at loops used 4 / 4 and «errand done».
+2. Set tools to 0 and drag t from 0 to 100 again: the loop never turns and loops used stays at 0 / 4; at t = 50 the episode readout switches to «guessed» and the model simply _answers anyway_ — fluent, confident, and checked against nothing.
+3. Set tools back to 1 but cut steps to 2 and run t to 100: the agent dies mid-errand at loops used 2 / 4, «out of budget», with the forecast in hand and the message never sent — budgets are real, and the checklist shows exactly where it stopped.
 
 ## Real-life examples
 
 - **A coding assistant fixing a bug.** Read the file (lap 1), run the tests (lap 2), edit (lap 3), re-run tests (lap 4) — the same loop as the errand, with a compiler for a weather service.
-- **The model alone.** Ask a bare model for tomorrow's weather and it *will* answer — from patterns, not from the sky. Without a loop there is no checking, only completion.
+- **The model alone.** Ask a bare model for tomorrow's weather and it _will_ answer — from patterns, not from the sky. Without a loop there is no checking, only completion.
 - **The timed-out agent.** Real harnesses cap laps and context; an agent that stops mid-research and reports what it has is this sim's out-of-budget ending, handled gracefully.
 
 ## Test yourself
@@ -35,9 +35,9 @@ variables:
 
 ## Intuition
 
-A language model is a text-completion engine: it cannot check the weather, send a message, or remember yesterday. Everything agent-like that you have seen it do comes from a surprisingly ordinary piece of software wrapped around it — the harness. The harness shows the model its context (the conversation plus everything gathered so far), lets it *propose* an action in text ("search for tomorrow's forecast"), actually executes that action with real code, and pastes the result back into the context. Then it asks the model again. That is the entire loop on screen: model, tool, result, context — repeat.
+A language model is a text-completion engine: it cannot check the weather, send a message, or remember yesterday. Everything agent-like that you have seen it do comes from a surprisingly ordinary piece of software wrapped around it — the harness. The harness shows the model its context (the conversation plus everything gathered so far), lets it _propose_ an action in text ("search for tomorrow's forecast"), actually executes that action with real code, and pastes the result back into the context. Then it asks the model again. That is the entire loop on screen: model, tool, result, context — repeat.
 
-Each ingredient earns its place when you remove it. Take the tools away and the loop collapses to a bare model, which answers the weather question anyway — the guess in a nice suit — because completing text is all it can do; nothing in it knows that it does not know. Cut the budget and the agent stops mid-errand, because every lap costs real money and time, so harnesses enforce limits. And watch the context bar: appending results is the agent's *only* memory, so when the window fills, the oldest knowledge must be summarized or dropped. Agents did not arrive by making models bigger; they arrived when a plain while-loop started taking the model's words seriously enough to act on them.
+Each ingredient earns its place when you remove it. Take the tools away and the loop collapses to a bare model, which answers the weather question anyway — the guess in a nice suit — because completing text is all it can do; nothing in it knows that it does not know. Cut the budget and the agent stops mid-errand, because every lap costs real money and time, so harnesses enforce limits. And watch the context bar: appending results is the agent's _only_ memory, so when the window fills, the oldest knowledge must be summarized or dropped. Agents did not arrive by making models bigger; they arrived when a plain while-loop started taking the model's words seriously enough to act on them.
 
 ## Formal
 
@@ -47,7 +47,7 @@ The state is nothing but the growing context — the model's weights do not chan
 
 ## Advanced
 
-The hard engineering questions all live in the loop's edges. *Grounding:* a tool result is pasted text, and nothing forces the model to use it faithfully — an agent can hold the correct forecast and still typo it into the message. *Error recovery:* a failed tool call must re-enter the context in a form the model recognizes as failure, or it will build on garbage. *Context economy:* long errands force the harness to summarize its own history, and what gets summarized away is genuinely forgotten. *Safety:* an agent's blast radius is its toolbox, so real deployments scope permissions per tool, require confirmation for irreversible actions, and log every lap — treating the model's proposals exactly the way the checklist treats them here: as suggestions to be executed by something accountable.
+The hard engineering questions all live in the loop's edges. _Grounding:_ a tool result is pasted text, and nothing forces the model to use it faithfully — an agent can hold the correct forecast and still typo it into the message. _Error recovery:_ a failed tool call must re-enter the context in a form the model recognizes as failure, or it will build on garbage. _Context economy:_ long errands force the harness to summarize its own history, and what gets summarized away is genuinely forgotten. _Safety:_ an agent's blast radius is its toolbox, so real deployments scope permissions per tool, require confirmation for irreversible actions, and log every lap — treating the model's proposals exactly the way the checklist treats them here: as suggestions to be executed by something accountable.
 
 ## Derivation
 
@@ -58,13 +58,17 @@ The hard engineering questions all live in the loop's edges. *Grounding:* a tool
 ## Real world
 
 ### Coding agents
+
 Tools are the editor, compiler and test runner; the loop reads failures and edits until green — software now routinely written this way.
 
 ### Research assistants
+
 Search, open, read, cross-check across many laps — with the context window deciding how much of the investigation stays in mind at once.
 
 ### Computer-use agents
+
 The toolbox is a screen, keyboard and mouse; each lap is a screenshot in, a click out — the same loop at the pixel level.
 
 ### Customer-service bots
+
 Look up the order, check the policy, issue the refund — bounded toolboxes and strict lap budgets, because every action touches a real account.
