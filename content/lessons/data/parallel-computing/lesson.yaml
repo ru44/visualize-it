@@ -3,14 +3,14 @@ subject: data
 difficulty: beginner
 equation: S(x) = \dfrac{1}{(1-p) + p/x}
 concepts:
-- Amdahl's law
-- parallel computing
-- speedup
-- distributed systems
+  - Amdahl's law
+  - parallel computing
+  - speedup
+  - distributed systems
 prerequisites:
-- algorithms-and-complexity
+  - algorithms-and-complexity
 related:
-- mapreduce
+  - mapreduce
 visualization:
   type: function-plot
   options:
@@ -31,24 +31,24 @@ parameters:
     step: 1
     value: 16
 variables:
-- S
-- p
-- x
-- T
+  - S
+  - p
+  - x
+  - T
 derivation:
-- T(x) = (1-p) + \dfrac{p}{x}
-- S(x) = \dfrac{T(1)}{T(x)}
-- x \to \infty \Rightarrow S \to \dfrac{1}{1-p}
+  - T(x) = (1-p) + \dfrac{p}{x}
+  - S(x) = \dfrac{T(1)}{T(x)}
+  - x \to \infty \Rightarrow S \to \dfrac{1}{1-p}
 presets:
-- p: 0.5
-  x: 4
-- p: 0.95
-  x: 16
-- p: 0.99
-  x: 200
+  - p: 0.5
+    x: 4
+  - p: 0.95
+    x: 16
+  - p: 0.99
+    x: 100
 challenges:
-- check: p
-  target: 0.9
-- check: x
-  target: 100
-- check: 1/((1-p)+p/x) > 15
+  - check: p
+    target: 0.9
+  - check: x
+    target: 100
+  - check: 1/((1-p)+p/x) > 15
