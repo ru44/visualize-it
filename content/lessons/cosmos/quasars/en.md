@@ -5,16 +5,16 @@ parameters:
   eta: efficiency η
   x: matter swallowed per year
 variables:
-- the quasar's luminosity, in trillions of times the Sun's brightness
-- 'efficiency: the fraction of infalling mass-energy that escapes as light'
-- 'the accretion rate: how much mass falls in each year, in Suns per year'
+  - the quasar's luminosity, in trillions of times the Sun's brightness
+  - 'efficiency: the fraction of infalling mass-energy that escapes as light'
+  - 'the accretion rate: how much mass falls in each year, in Suns per year'
 ---
 
 ## Try it
 
-1. Drag «matter swallowed per year» up. The brighter the feeding, the higher the curve climbs.
-2. Raise «efficiency η» instead. Even the same feeding rate now shines far brighter.
-3. Push both sliders high together and read the luminosity — some real quasars reach tens of trillions of Suns.
+1. Keep «efficiency η» at 0.1 and drag «matter swallowed per year» from 1 to 5. The point climbs the line and f(x), the luminosity, rises from 1.48 to 7.4 trillion Suns.
+2. Now raise «efficiency η» to 0.3. The same feeding rate shines three times brighter: 22.2 trillion Suns.
+3. Push both sliders to their highest values and read the luminosity: 59.2 trillion Suns. Some real quasars do reach tens of trillions of Suns.
 
 ## Real-life examples
 
@@ -32,7 +32,7 @@ variables:
 
 3C 273, discovered in 1963, sits about 2.4 billion light-years away yet still looks like a faint dot through a small telescope — because it outshines its entire host galaxy, blazing at roughly 4 trillion times the Sun's brightness from a region smaller than our solar system.
 
-Drag «matter swallowed per year» up on the picture and the curve climbs steeply — gas and dust spiralling into a black hole heats up and glows fiercely before it ever crosses the point of no return. Raise «efficiency η» as well, and the same infalling matter now yields even more light, since a bigger share of its mass-energy manages to escape as radiation.
+Drag «matter swallowed per year» up on the picture and the point climbs the line — gas and dust spiralling into a black hole heats up and glows fiercely before it ever crosses the point of no return. Raise «efficiency η» as well, and the same infalling matter now yields even more light, since a bigger share of its mass-energy manages to escape as radiation.
 
 ## Formal
 
@@ -53,13 +53,17 @@ Typical efficiencies of 5–30%, set by how close a black hole's spin lets infal
 ## Real world
 
 ### The first quasar, 3C 273
+
 Identified in 1963 by Maarten Schmidt, its puzzlingly large redshift revealed it was billions of light-years away, far too bright for its distance under ordinary explanations.
 
 ### Quasars as cosmic lighthouses
+
 Because they are so bright, quasars let astronomers study gas in galaxies billions of light-years away, using their light as a backlight.
 
 ### Sagittarius A*, our own quiet giant
+
 The supermassive black hole at our galaxy's center feeds so slowly today that it is millions of times fainter than a typical quasar.
 
 ### Shaping galaxy growth
+
 A quasar's radiation and outflowing wind can blow away the gas a galaxy needs to form new stars, linking a black hole's growth to its galaxy's fate.
