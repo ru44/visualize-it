@@ -16,9 +16,9 @@ variables:
 
 ## Try it
 
-1. Picture a small aircraft climbing away after takeoff, tilted 5° into the air at 50 m/s.
-2. Raise «angle of attack α» slowly. Watch the blue (low pressure) shading over the top thicken and the orange dot finish its lap of the top surface well before the orange dot on the bottom.
-3. Read the two crossing times at the bottom of the picture. They are never equal — that is the point.
+1. Start with «angle of attack α» at 5° and «airspeed v» at 50 m/s: a small aircraft climbing away after takeoff. The readouts show Δp = 839 Pa and L = 13417 N.
+2. Raise «angle of attack α» slowly to 10°. The blue (low pressure) band over the top thickens, Δp rises to 1671 Pa, and the blue dot finishes its run along the top surface well before the orange dot on the bottom.
+3. Read the two crossing times in the readouts: 20 ms over the top, 41 ms underneath. They are never equal — that is the point.
 
 ## Real-life examples
 
@@ -30,13 +30,13 @@ variables:
 
 1. Reach about 15,000 N of lift while staying at or below the 15° stall angle.
 2. Push the angle of attack past 15° and keep the lift coefficient above 1.0 anyway.
-3. Without exceeding 15°, get the pressure difference between the two surfaces to at least 600 Pa.
+3. Without exceeding 15°, get the pressure difference between the two surfaces to at least 2000 Pa.
 
 ## Intuition
 
 Forget the story you may have heard: that the air splitting at the leading edge must meet its partner again at the trailing edge, so the top path — being longer over a curved wing — forces the air above to speed up. That story is false, and you can see it fail here: drag «angle of attack α» up and watch the two timer dots. The top dot finishes its lap of the wing well ahead of the bottom dot, every time, even though the top path is barely longer than the bottom one. Equal transit time is not what makes the top air fast.
 
-What actually makes the top air fast is that the wing bends the whole flow field around it, and the bending is strongest just above the curved, tilted surface — that is what a real fluid does when it has to flow past a shape without leaving a gap behind it. Faster air over the top means lower pressure there (drag «airspeed v» and watch the blue shading strengthen at higher speed); slower, squeezed air underneath means higher pressure. That pressure difference, multiplied by the wing's area, is the lift force — and it is exactly the same number you would get by asking how hard the wing throws air downward and invoking Newton's third law. One event, two honest ways to add it up.
+What actually makes the top air fast is that the wing bends the whole flow field around it, and the bending is strongest just above the curved, tilted surface — that is what a real fluid does when it has to flow past a shape without leaving a gap behind it. Faster air over the top means lower pressure there (drag «airspeed v» up and watch the Δp readout grow at higher speed); slower, squeezed air underneath means higher pressure. That pressure difference, multiplied by the wing's area, is the lift force — and it is exactly the same number you would get by asking how hard the wing throws air downward and invoking Newton's third law. One event, two honest ways to add it up.
 
 ## Formal
 
@@ -57,13 +57,17 @@ The genuinely correct reason the top-surface flow is faster is circulation: a re
 ## Real world
 
 ### Wind tunnels and pressure taps
+
 Engineers testing a new wing shape often measure surface pressure directly with rows of tiny taps, reconstructing $\Delta p$ across the whole surface rather than guessing it from streamline shapes.
 
 ### Smoke and dye visualisations
+
 The elegant curved streamlines you see in smoke-tunnel photos show the deflected flow (Newton's picture) directly; the pressure difference (Bernoulli's picture) has to be measured separately, because it is invisible to smoke.
 
 ### Why race-car wings work upside down
+
 An inverted wing pushes air upward instead of down, so by the same reasoning it presses the car downward onto the track — same physics, opposite sign.
 
 ### Textbooks that still repeat the myth
+
 The equal-transit-time explanation persists in some popular science because it sounds tidy; professional aerodynamics texts have not used it as the explanation for decades.
