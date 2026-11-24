@@ -15,8 +15,8 @@ variables:
 ## Try it
 
 1. Look at the two labels above the grids: both show the same password, "sunshine1", but a different number attached to it — the salt.
-2. Drag «s1», the first user's salt, and watch their entire 256-square fingerprint reshuffle.
-3. Compare it with the second grid, using salt «s2». Even though both users typed "sunshine1", the two fingerprints share almost nothing in common.
+2. Set «s1», the first user's salt, to 17 and «s2» to 742. The labels read "sunshine1#17" and "sunshine1#742", and "bits changed" shows 117 / 256: even though both users typed "sunshine1", about half the squares differ.
+3. Now set «s2» to 17 as well. The two grids become identical and "bits changed" drops to 0 / 256 — with the same salt, the same password is easy to spot.
 
 ## Real-life examples
 
@@ -28,13 +28,13 @@ variables:
 
 1. Set «s1» back to 17, the salt used in the first example above.
 2. Set «s2» to 742, its matching partner from that same example.
-3. Push «s1» and «s2» to within 5 of each other and notice the two fingerprints still look nothing alike.
+3. Push «s1» and «s2» to within 5 of each other, but not equal, and notice the two fingerprints still look nothing alike.
 
 ## Intuition
 
 Suppose two classmates both choose the password "sunshine1" for the same school forum, salt 17 for one and salt 742 for the other. On screen, the left label shows exactly what actually gets hashed: the password glued to that random salt number, and the grid beneath it is the resulting 256-bit fingerprint, one small square per bit. Drag «s1» and the left grid reshuffles completely, even though the password text itself never changes — only the number stuck onto the end of it does.
 
-Compare the left grid with the right one, computed the same way from «s2»: despite both starting from the identical password, the two fingerprints share almost no squares in common, exactly as if two completely different passwords had been hashed. That is written $h = H(P \Vert s)$: hash the password $P$ joined to a salt $s$, and even a small change in $s$ sends $h$ somewhere entirely unrelated.
+Compare the left grid with the right one, computed the same way from «s2»: despite both starting from the identical password, the two fingerprints differ in about half of their squares, exactly as if two completely different passwords had been hashed. That is written $h = H(P \Vert s)$: hash the password $P$ joined to a salt $s$, and even a small change in $s$ sends $h$ somewhere entirely unrelated.
 
 ## Formal
 
@@ -55,13 +55,17 @@ Without salting, an attacker can precompute a single "rainbow table" mapping mil
 ## Real world
 
 ### Rainbow table attacks
+
 Salting exists specifically to defeat precomputed password-hash lookup tables, forcing an attacker to attack each account separately.
 
 ### The 2012 LinkedIn breach
+
 LinkedIn once stored password hashes without salt, so attackers cracked millions of accounts at once using tables built long before the breach.
 
 ### Modern password hashing
+
 Current best practice uses slow, salted functions like bcrypt or Argon2 instead of a single fast hash, making large-scale guessing far more expensive.
 
 ### Password managers
+
 Because salting only protects the stored hash, reusing one password everywhere is still risky — a password manager lets every account get its own strong, unique one.
