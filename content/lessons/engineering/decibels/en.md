@@ -20,25 +20,25 @@ charts:
 
 ## Try it
 
-1. Compare the two bars. The same ratio $x$ is invisible on the raw linear bar yet sits at a clean rung of the ladder, $L$ decibels up.
-2. Drag $x$ from 1 toward a million. The ladder marker climbs in equal steps — one rung per ×10 — while the linear bar only wakes up at the very end.
-3. Notice that every time you double $x$, $L$ climbs by the same 3 dB, no matter where you started.
+1. Start at $x$ = 1000 and compare the two bars. On the raw linear bar the ratio is too thin to see, yet on the ladder the marker sits right on the 30 dB rung.
+2. Drag $x$ up to about 10,000, then 100,000, then the top of the slider. The ladder marker climbs one rung each time — 40, 50, 60 dB, one rung per ×10 — while the linear bar only fills up at the very end.
+3. Go back to about 1000 (30 dB), then double $x$ to about 2000, 4000 and 8000. $L$ reads 33, 36 and 39 dB: every doubling adds the same 3 dB, no matter where you started.
 
 ## Real-life examples
 
-1. **Turning up a speaker just slightly.** Doubling the electrical power sent to a speaker (x = 2) raises the sound level by exactly 3 dB — a small but just-noticeable jump in loudness.
+1. **Turning up a speaker just slightly.** Doubling the electrical power sent to a speaker (x = 2) raises the sound level by 3 dB — a small but just-noticeable jump in loudness.
 2. **An audio amplifier stage.** A preamp that boosts a weak microphone signal's power a thousandfold (x = 1,000) delivers 30 dB of gain, typical of a single amplification stage.
 3. **A long fiber-optic repeater chain.** By the time optical amplifiers restore a signal that has lost a millionfold in power (x = 1,000,000) over a long cable run, they have added back 60 dB of gain.
 
 ## Test yourself
 
-1. Find the power ratio that gives a level of exactly 45 dB.
+1. Find a power ratio that gives a level within 1 dB of 45 dB.
 2. Find the power ratio that gives a level close to 50 dB.
 3. Find a ratio where the level exceeds 55 dB while staying under half the maximum ratio on the slider.
 
 ## Intuition
 
-A whisper measures about 20 dB and a jet engine about 140 dB — a difference so large that describing it in raw power would mean writing a 1 followed by twelve zeros. The ladder on screen shows $L$, the level in decibels, for $x$, the ratio of the power you're measuring to a fixed reference power. Drag $x$ from 1 up toward a million and the marker climbs rung by equal rung, because each extra factor of ten in power only adds another fixed 10 dB, no matter how huge the ratio has already become.
+A ticking watch measures about 20 dB and a jet engine about 140 dB — a difference so large that describing it in raw power would mean writing a 1 followed by twelve zeros. The ladder on screen shows $L$, the level in decibels, for $x$, the ratio of the power you're measuring to a fixed reference power. Drag $x$ from 1 up toward a million and the marker climbs rung by equal rung, because each extra factor of ten in power only adds another fixed 10 dB, no matter how huge the ratio has already become.
 
 That squashing is exactly what your ears do naturally: a sound needs roughly ten times the power to seem twice as loud, so a scale that compresses huge power ranges into small, evenly spaced steps matches how loudness is actually perceived. A jump from 1 to 10 on the slider looks the same size on the ladder as a jump from 100,000 to 1,000,000 — both add exactly 10 dB.
 
@@ -61,13 +61,17 @@ Human sensory response to sound, brightness and even the Richter scale for earth
 ## Real world
 
 ### Loudness and hearing
-Everyday sounds range from a whisper near 20 dB to a jet engine near 140 dB — a factor of $10^{12}$ in power that the decibel scale turns into a manageable range of numbers.
+
+Everyday sounds range from a ticking watch near 20 dB to a jet engine near 140 dB — a factor of $10^{12}$ in power that the decibel scale turns into a manageable range of numbers.
 
 ### Phone signal bars
+
 Phone signal strength is measured in dBm, decibels relative to one milliwatt; a change from −70 dBm to −80 dBm is a tenfold drop in actual signal power, not a small one.
 
 ### Amplifier and cable specs
+
 Audio and radio-frequency equipment is rated in dB of gain or loss, so an engineer can add or subtract stages along a signal chain instead of multiplying raw power ratios.
 
 ### Hearing-safety limits
+
 Workplace noise limits are set in dB because a jump of just 3 dB doubles the sound power reaching an ear, which is why permitted exposure time is cut in half for every 3 dB increase.
