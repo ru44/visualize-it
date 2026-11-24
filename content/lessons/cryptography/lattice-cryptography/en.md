@@ -17,9 +17,9 @@ variables:
 
 ## Try it
 
-1. With the good basis selected, drag the target anywhere: rounding its coordinates always rings the grid point nearest to it, and the dashed line stays short.
-2. Switch the basis to 1 — the grid has not moved, only the arrows describing it — and watch the rounding ring a point far away while the true closest sits circled elsewhere.
-3. Drag the target to (4, 3.5), dead centre between the bad arrows: the miss becomes dramatic, several times farther than the honest answer.
+1. With the good basis selected (basis = 0), put the target at (3.25, 2.5): rounding its coordinates rings the grid point (3, 3), and "distance found" and "closest possible" both read 0.56.
+2. Switch the basis to 1 — the grid has not moved, only the arrows describing it — and the rounding now rings (5, 4): "distance found" jumps to 2.30 while "closest possible" is still 0.56.
+3. Drag the target to (4, 3.5): the miss becomes dramatic, a distance of 5.32 against a closest possible 1.12, several times farther than the honest answer.
 
 ## Real-life examples
 
@@ -58,13 +58,17 @@ Real schemes replace the picture's geometry with algebra: Learning With Errors (
 ## Real world
 
 ### ML-KEM in your browser
+
 Major browsers and servers already wrap their TLS key exchange in a hybrid of elliptic curves and ML-KEM, so recorded traffic stays safe even if quantum computers arrive.
 
 ### Harvest now, decrypt later
+
 Intelligence agencies are assumed to store encrypted traffic in bulk; post-quantum migration is racing the decryption horizon, not the quantum computer's press release.
 
 ### Signatures for a quantum century
+
 ML-DSA and the hash-based SLH-DSA were standardised alongside ML-KEM in 2024 to replace RSA and elliptic-curve signatures where documents must stay verifiable for decades.
 
 ### Fully homomorphic encryption
+
 The same lattice noise that defeats attackers can be managed so a server computes on encrypted data without ever decrypting it — lattices opened that door too.
