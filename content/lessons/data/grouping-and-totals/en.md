@@ -10,9 +10,9 @@ variables:
 
 ## Try it
 
-1. Set the slider by to 0. The table's rows collapse into one row per city, each showing a total.
-2. Set by to 1 instead. The same 12 orders now collapse into one row per product.
-3. Compare the two sets of totals: the same 12 orders, grouped two different ways, always add up to the same grand total.
+1. Set the slider by to 0. Rows from the same city take the same colour, and one bar per city shows its total: Riyadh 43, Cairo 50, Dubai 66, Amman 51.
+2. Set by to 1 instead. The same 12 orders are now coloured by product, with one bar each: tea 54, coffee 117, juice 39.
+3. Compare the two sets of totals: 43 + 50 + 66 + 51 = 210 and 54 + 117 + 39 = 210. The same 12 orders, grouped two different ways, add up to the same grand total.
 
 ## Real-life examples
 
@@ -21,12 +21,12 @@ variables:
 
 ## Test yourself
 
-1. Set by to 0 and read off the total for a single city.
-2. Set by to 1 and read off the total for a single product.
+1. Which product sold the most? Set by so the orders are grouped by product and read the total for coffee, 117.
+2. With the orders grouped by product, find the product with the smallest total: juice, 39.
 
 ## Intuition
 
-Say a shop sold three orders in Paris worth 10, 15 and 5 dollars: added up, that city sold 30 dollars in total. Flip the slider by between 0 and 1 in the table and watch every row with the same city, or the same product, merge into a single line. That merged line's number is the group's total, written $T(k) = \sum \text{amount}$, where k is whichever group — a city or a product — the row now stands for.
+Say a shop sold three orders in Riyadh worth 12, 25 and 6 dollars: added up, that city sold 43 dollars in total. Flip the slider by between 0 and 1 and watch every row with the same city, or the same product, take the same colour and feed a single bar. That bar's number is the group's total, written $T(k) = \sum \text{amount}$, where k is whichever group — a city or a product — the bar stands for.
 
 Grouping does not delete any information; it just reorganizes it. Every dollar in the original 12 rows is still counted once, only now sorted into fewer, more useful buckets. This is the idea behind SQL's GROUP BY together with SUM, two of the most common tools for turning a huge table into a short, readable report.
 
@@ -49,13 +49,17 @@ A database usually computes a grouped total with a hash table: it reads each row
 ## Real world
 
 ### Sales dashboards
+
 A manager checks daily sales grouped by store or by product to spot what is selling and what is not.
 
 ### School grade reports
+
 A teacher groups scores by class to compute and compare each class's average.
 
 ### BigQuery analytics
+
 Analysts run GROUP BY over billions of log rows in BigQuery to get a handful of totals per country or per device.
 
 ### Web analytics
+
 A website groups visits by page or by country to see where its traffic actually comes from.
