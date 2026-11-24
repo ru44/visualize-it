@@ -15,15 +15,15 @@ variables:
 
 ## Try it
 
-1. With view at 0, drag reps from 2 up to 12. Watch the strip of colored blocks grow, while the compressed "symbol × count" boxes underneath stay exactly the same size.
+1. With view at 0, set reps to 2: the original size and the compressed size are both 48 b, so the compression ratio is ×1.0. Now drag reps to 12: the original size climbs to 288 b, the compressed size stays at 48 b, and the ratio reaches ×6.0.
 2. Switch view to 1. Four letters, E, T, A and Q, appear as bars sized by how often each one shows up.
-3. Drag skew from 1 to 9. As E's bar grows past the others, its bit strip on the right shrinks from 2 bits down toward 1, while Q's grows longer.
+3. Set skew to 1: every letter gets 2 bits, and "smaller by" shows 0%. Drag skew to 9: E's bar grows past the others and its code shrinks to 1 bit, Q's grows to 3 bits, the average falls to 1.56 b, and "smaller by" shows 22%.
 
 ## Real-life examples
 
-1. **A short, barely-repeated run.** view at 0, reps at 2: each symbol appears only twice, so writing "symbol × 2" barely saves anything over writing it out.
-2. **A long, heavily-repeated run.** view at 0, reps at 12: each symbol appears twelve times in a row, and "symbol × 12" still costs the same few bits as "symbol × 2" did.
-3. **Strongly uneven letter frequencies.** view at 1, skew at 8: one letter dominates the message, so giving it a short code saves far more than a fair, fixed-length code ever could.
+1. **A short, barely-repeated run.** view at 0, reps at 2: each symbol appears only twice, so writing "symbol × 2" saves nothing over writing it out: the ratio is ×1.0.
+2. **A long, heavily-repeated run.** view at 0, reps at 12: each symbol appears twelve times in a row, and "symbol × 12" still costs the same few bits as "symbol × 2" did, so the ratio is ×6.0.
+3. **Strongly uneven letter frequencies.** view at 1, skew at 8: one letter dominates the message, so giving it a 1-bit code brings the average down from 2 bits to 1.60 b per letter, 20% smaller than a fair, fixed-length code.
 
 ## Test yourself
 
@@ -56,13 +56,17 @@ The average number of bits per symbol that any lossless code can achieve is boun
 ## Real world
 
 ### Fax machines and BMP images
+
 Fax machines and simple bitmap image formats use run-length encoding on scan lines that are mostly one color, since a blank page or a plain sky is exactly the kind of long, repeated run this technique shrinks best.
 
 ### ZIP, PNG and gzip
+
 Everyday compressors such as ZIP, PNG and gzip combine a repeat-finder with a Huffman-style step at the end, squeezing out both kinds of redundancy this lesson covers, one after the other.
 
 ### JPEG and video codecs
+
 JPEG images and video codecs like H.264 both finish their compression pipeline with Huffman or a close relative of it, after other steps have already made the data more repetitive.
 
 ### Morse code
+
 Morse code assigned its shortest signals to the most common English letters back in the 1830s, decades before Huffman coding was invented, using exactly the same "frequent means short" idea by hand.

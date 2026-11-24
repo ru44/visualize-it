@@ -3,15 +3,15 @@ subject: data
 difficulty: beginner
 equation: C = \dfrac{S_0}{S_1}
 concepts:
-- lossless compression
-- run-length encoding
-- Huffman coding
-- entropy
+  - lossless compression
+  - run-length encoding
+  - Huffman coding
+  - entropy
 prerequisites:
-- bits-bytes-and-data-sizes
+  - bits-bytes-and-data-sizes
 related:
-- bits-bytes-and-data-sizes
-- column-storage-and-bigquery
+  - bits-bytes-and-data-sizes
+  - column-storage-and-bigquery
 visualization:
   type: compression-entropy
   options: {}
@@ -33,24 +33,24 @@ parameters:
     step: 1
     value: 5
 variables:
-- C
-- S_0
-- S_1
-- n
-- b
+  - C
+  - S_0
+  - S_1
+  - n
+  - b
 derivation:
-- S_0 = n \times b
-- S_1 = 2b
-- C = \dfrac{S_0}{S_1} = \dfrac{n}{2}
+  - S_0 = n \times b
+  - S_1 = 2b
+  - C = \dfrac{S_0}{S_1} = \dfrac{n}{2}
 presets:
-- view: 0
-  reps: 2
-- view: 0
-  reps: 12
-- view: 1
-  skew: 8
+  - view: 0
+    reps: 2
+  - view: 0
+    reps: 12
+  - view: 1
+    skew: 8
 challenges:
-- check: reps
-  target: 12
-- check: view == 1 and skew <= 2
-- check: view == 1 and skew >= 8
+  - check: reps
+    target: 12
+  - check: view == 1 and skew <= 2
+  - check: view == 1 and skew >= 8
