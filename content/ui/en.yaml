@@ -732,7 +732,7 @@ rot.speedVisible: speed at {r} kpc from visible matter
 rot.speedModel: speed with the dark halo
 rot.miss: distance from the measurements
 rot.darkShare: invisible share of the mass
-rot.hint: add invisible mass until the curve goes through the black measured points
+rot.hint: add invisible mass until the curve goes through the large measured points
 rot.distance: distance from the centre (kpc)
 rot.speed: orbit speed (km/s)
 rot.measured: measured

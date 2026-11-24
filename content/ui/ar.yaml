@@ -38,7 +38,7 @@ home.subjects.d: كل مادة مسار قصير من الدروس، يبدأ ب
 home.lessons: '{n|zero=لا دروس|one=درس واحد|two=درسان|few=# دروس|many=# درسًا|other=# درس}'
 home.demo: حرّك المؤشر، فيبيّن الخط البرتقالي مدى انحدار المنحنى.
 home.slope: الانحدار
-explore.placeholder: "اكتب معادلة هنا، مثل ⁦2x + 5 = 17⁩"
+explore.placeholder: 'اكتب معادلة هنا، مثل ⁦2x + 5 = 17⁩'
 explore.button: أرِني
 explore.try: أو اضغط على مثال
 explore.help: هل تساءلت يومًا ماذا تعني معادلة مثل ⁦2x + 5 = 17⁩؟ اكتبها هنا، أو اضغط على أحد الأمثلة في الأسفل، فنرسمها لك ونشرحها بكلمات بسيطة.
@@ -221,17 +221,17 @@ coin.proportion: النسبة حتى الآن
 coin.gap: البعد عن p
 coin.again: ↻ من جديد
 coin.band: 'التظليل: نطاق تقريبي لـ95% من النتائج عند كل عدد ثابت من المحاولات'
-bayes.hint: "تقسيم المجتمع بحسب الحالة والنتيجة؛ اسحب لتغيير نسبة الانتشار."
-bayes.tp: "الحالة موجودة والنتيجة إيجابية"
-bayes.fp: "الحالة غير موجودة والنتيجة إيجابية"
-bayes.fn: "الحالة موجودة والنتيجة سلبية"
-bayes.tn: "الحالة غير موجودة والنتيجة سلبية"
-bayes.has: "الحالة موجودة"
-bayes.hasNot: "الحالة غير موجودة"
-bayes.positives: "الإيجابيات لكل 1000 بعد التقريب"
-bayes.ofWhichIll: "نسبة وجود الحالة بين الإيجابيات"
-bayes.posterior: "احتمال الحالة بعد نتيجة إيجابية"
-bayes.prior: "الاحتمال السابق"
+bayes.hint: 'تقسيم المجتمع بحسب الحالة والنتيجة؛ اسحب لتغيير نسبة الانتشار.'
+bayes.tp: 'الحالة موجودة والنتيجة إيجابية'
+bayes.fp: 'الحالة غير موجودة والنتيجة إيجابية'
+bayes.fn: 'الحالة موجودة والنتيجة سلبية'
+bayes.tn: 'الحالة غير موجودة والنتيجة سلبية'
+bayes.has: 'الحالة موجودة'
+bayes.hasNot: 'الحالة غير موجودة'
+bayes.positives: 'الإيجابيات لكل 1000 بعد التقريب'
+bayes.ofWhichIll: 'نسبة وجود الحالة بين الإيجابيات'
+bayes.posterior: 'احتمال الحالة بعد نتيجة إيجابية'
+bayes.prior: 'الاحتمال السابق'
 adhoc.count.title: مستكشف العدّ
 adhoc.count.summary: بكم طريقة؟ إجابة دقيقة تمامًا، مع رسم كل الترتيبات ما دام عددها قليلًا.
 adhoc.count.n: n — عدد العناصر المتاحة
@@ -352,7 +352,7 @@ moon.full: بدر
 moon.waningGibbous: أحدب متناقص
 moon.lastQuarter: تربيع أخير
 moon.waningCrescent: هلال متناقص
-market.hint: اسحب لأعلى أو لأسفل لتحدّد سعرًا وترى العجز أو الفائض
+market.hint: اسحب لأعلى أو لأسفل لتحدّد سعرًا وترى النقص أو الفائض
 market.qty: الكمية
 market.priceAxis: السعر
 market.demand: الطلب
@@ -363,7 +363,7 @@ market.price: السعر
 market.demandAt: الكمية المطلوبة
 market.supplyAt: الكمية المعروضة
 market.surplus: فائض
-market.shortage: عجز
+market.shortage: نقص
 sampling.hint: النقاط هي العينات · المنحنى الملوّن ما تعيد العينات بناءه
 sampling.f: تردد الإشارة
 sampling.fs: معدل أخذ العينات
@@ -482,7 +482,7 @@ emb.car: سيارة
 emb.bus: حافلة
 nlp.hint: 'نموذج لغوي في أصغر صورة: أي كلمة تميل إلى أن تتبع أي كلمة في هذا النص'
 nlp.corpusLabel: 'نص التدريب:'
-nlp.corpus: جلس القط على البساط. جلس الكلب على الخشبة. رأى القط الكلب. رأى الكلب القط وركض. ركض القط إلى البساط.
+nlp.corpus: جلس القط على البساط. جلس الكلب على الخشبة. جلس القط قرب الكلب. رأى الكلب القط وركض. ركض القط إلى البساط.
 nlp.words: عدد كلمات النص
 nlp.current: الكلمة الحالية
 nlp.temp: الحرارة
@@ -606,14 +606,14 @@ qt.amman: عمّان
 qt.tea: شاي
 qt.coffee: قهوة
 qt.juice: عصير
-qt.amount: الكمية
+qt.amount: المبلغ
 qt.city: المدينة
 qt.product: المنتج
 qt.scanned: الصفوف المفحوصة
 qt.returned: الصفوف الناتجة
 qt.rowStore: التخزين بالصفوف يقرأ
 qt.colStore: التخزين بالأعمدة يقرأ
-qt.saved: بيانات أقل تُقرأ
+qt.saved: بيانات أقل بنسبة
 qt.atBillion: مع مليار صف (8 بايت لكل قيمة)
 qt.filterHint: الصفوف البرتقالية مطابقة
 search.linear: الفحص واحدًا واحدًا
@@ -621,19 +621,19 @@ search.binary: التنصيف في كل مرة
 search.hint: اضغط المربع الذي تبحث عنه، وكل صف ينصّف البحث
 search.sorted: 64 قيمة مرتبة
 search.found: 'وُجد في {n|one=خطوة واحدة|two=خطوتين|few=# خطوات|many=# خطوة|other=# خطوة}'
-mr.doc1: القط جلس
-mr.doc2: الكلب ركض
-mr.doc3: القط ركض
-mr.doc4: كلب جلس
+mr.doc1: جلس القط هنا
+mr.doc2: ركض الكلب هنا
+mr.doc3: ركض القط هنا
+mr.doc4: جلس الكلب هناك
 mr.stage: المرحلة
-mr.machines: الأجهزة
+mr.machines: الآلات
 mr.words: الكلمات
 mr.unique: الكلمات المختلفة
-mr.s0: التقسيم
-mr.s1: التعيين
-mr.s2: الخلط
-mr.s3: التجميع
-mr.machine: جهاز
+mr.s0: التقسيم (split)
+mr.s1: المعالجة (map)
+mr.s2: الخلط (shuffle)
+mr.s3: التجميع (reduce)
+mr.machine: آلة
 photo.wavelength: الطول الموجي
 photo.uv: فوق بنفسجي
 photo.ir: تحت أحمر
@@ -732,7 +732,7 @@ rot.speedVisible: السرعة عند {r} kpc من المادة المرئية
 rot.speedModel: السرعة مع الهالة المظلمة
 rot.miss: البعد عن القياسات
 rot.darkShare: حصة الكتلة غير المرئية
-rot.hint: أضف كتلة غير مرئية حتى يمر المنحنى بالنقاط المقيسة السوداء
+rot.hint: أضف كتلة غير مرئية حتى يمر المنحنى بالنقاط المقيسة الكبيرة
 rot.distance: البعد عن المركز (kpc)
 rot.speed: سرعة الدوران (km/s)
 rot.measured: مقيس
@@ -749,7 +749,7 @@ lens.hint: مجرة خلف كتلة ثقيلة كما تُرى من الأرض
 exp.scale: حجم الكون (اليوم = 1)
 exp.time: الزمن منذ الانفجار العظيم
 exp.billionYears: مليار سنة
-exp.state: التوسع
+exp.state: التمدد
 exp.speedingUp: يتسارع
 exp.slowingDown: يتباطأ
 exp.hint: تتباعد المجرات لأن الفضاء بينها يتمدد
