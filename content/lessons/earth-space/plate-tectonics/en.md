@@ -16,9 +16,9 @@ variables:
 
 ## Try it
 
-1. Set v to a positive number, like 5 cm/yr — the plates are colliding. Drag t up from 0 and watch D climb into the thousands of kilometers.
-2. Now make v negative — the plates are pulling apart. Watch D go negative too: that's how much wider the gap between them has grown.
-3. Try v = 3.5 cm/yr with t = 20 Myr. That is roughly the sideways slip measured across California's San Andreas Fault.
+1. Set v to 5 cm/yr, a positive number — the plates are colliding. Drag t up from 0 to 50 Myr and watch the total displacement climb to 2,500 km.
+2. Now set v to −2 and t to 180 — the plates are pulling apart. The total displacement reads −3,600 km: that's how much wider the gap between them has grown.
+3. Try v = 3.5 cm/yr with t = 20 Myr. The readout shows 700 km, roughly the sideways slip measured across California's San Andreas Fault.
 
 ## Real-life examples
 
@@ -57,13 +57,17 @@ Real plate motion is rarely a single constant speed: rates measured from magneti
 ## Real world
 
 ### Mountain building
+
 The Himalayas, the Andes, and the Alps all sit where plates are actively converging today; their height keeps growing (and eroding) as the collision continues at a few centimeters each year.
 
 ### Seafloor spreading and ocean age
+
 Rock on the ocean floor gets systematically older the farther it sits from a mid-ocean ridge, letting geologists read off the plate's spreading rate directly from the seafloor itself.
 
 ### Earthquake hazard maps
+
 Cities built along active plate boundaries, like San Francisco and Tokyo, base their building codes on how much stress a fault is likely to have stored since its last big earthquake.
 
 ### GPS monitoring of moving continents
+
 Networks of GPS stations now measure plate motion directly, in real time, confirming the same centimeters-per-year speeds that were once inferred only from ancient rock.
