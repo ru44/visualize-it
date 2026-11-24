@@ -15,9 +15,9 @@ charts: []
 
 ## Try it
 
-1. Set "isotope" to technetium-99m and watch its curve. By hour 24, barely 6% of it is left.
-2. Switch "isotope" to iodine-131 without moving "hours". Its curve has barely dropped in that same 24 hours.
-3. Drag "hours" all the way to 48. Technetium-99m has essentially vanished; iodine-131 is still mostly there.
+1. Keep "isotope" on technetium-99m (position 0) and drag "hours since injection" from 0 to 24 along its curve. By hour 24, "remaining" reads about 6%.
+2. Switch "isotope" to iodine-131 (position 1) without moving "hours". Its curve has barely dropped in that same 24 hours: "remaining" reads 91.7%.
+3. Drag "hours" all the way to 48. Technetium-99m has essentially vanished, at 0.4%; iodine-131 is still mostly there, at 84.1%.
 
 ## Real-life examples
 
@@ -56,10 +56,13 @@ What a detector actually measures is activity, not the raw amount left — activ
 ## Real world
 
 ### Bone and heart scans
+
 Technetium-99m is attached to different carrier molecules to light up bones, the heart or the kidneys, then clears the body within a day or two.
 
 ### Thyroid imaging and treatment
+
 A small tracer dose of iodine-131 images the thyroid; a much larger therapeutic dose destroys overactive or cancerous thyroid tissue over the following days and weeks.
 
 ### Radiation safety
+
 Hospitals plan storage, handling and patient discharge around each isotope's half-life, since activity drops in a completely predictable way.
