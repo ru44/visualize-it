@@ -14,14 +14,14 @@ variables:
 
 ## Try it
 
-1. With the bluff switch at 0, run a few rounds: Victor shouts A or B, Peggy walks out of the demanded side every time, and his confidence meter sinks toward certainty.
-2. Flip the bluff switch to 1: the impostor guessed a side before hearing the shout, and the round list shows the ✗ where the luck ran out.
-3. Push rounds to 20 and read the odds: a bluffer survives all twenty shouts once in about a million attempts.
+1. With the bluff switch at 0, set rounds to 3: Victor shouts a side, Peggy walks out of the demanded side every time, the "bluffing survives" readout shows 1 / 8, and the verdict reads "Victor is convinced".
+2. Flip the bluff switch to 1: the impostor guessed a side before hearing the shout, and the round list shows the ✗ where the luck ran out — the verdict reads "caught bluffing in round 2".
+3. Push rounds to 20 and read the odds, 1 / 1,048,576: a bluffer survives all twenty shouts once in about a million attempts.
 
 ## Real-life examples
 
 - **Three honest rounds.** Peggy passes all three — but three lucky coin flips happen one time in eight, so Victor keeps asking.
-- **Three rounds of bluffing.** An impostor has a 1-in-8 chance of the same record; the simulation usually shows the ✗ that gives the game away.
+- **Three rounds of bluffing.** An impostor has a 1-in-8 chance of the same record; in this simulation the ✗ that gives the game away appears in round 2.
 - **Twenty rounds, caught.** At 20 rounds the survival odds are 1 in 1,048,576 — Victor is as sure as he would ever need to be, and still has not seen the password.
 
 ## Test yourself
@@ -55,13 +55,17 @@ Two modern turns made this hall exhibit into infrastructure. The Fiat–Shamir t
 ## Real world
 
 ### Private transactions
+
 Zcash and similar cryptocurrencies use zk-SNARKs to prove a payment balances — no coins created, none double-spent — while hiding sender, receiver and amount.
 
 ### Proving age without an ID card
+
 Digital identity schemes let a phone prove "over 18" or "licensed to drive" to a verifier that learns nothing else on the document.
 
 ### Blockchain rollups
+
 Layer-2 networks batch thousands of transactions off-chain and post one succinct proof that all of them were valid, multiplying throughput without trusting the operator.
 
 ### Authentication without passwords-in-flight
+
 Zero-knowledge identification protocols let a device prove it holds a key without the key or anything derived from it crossing the wire — nothing for an eavesdropper to replay.
