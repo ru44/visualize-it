@@ -256,8 +256,10 @@ const reportUrl = computed(() => {
       </div>
     </header>
 
-    <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
-      <section class="surface relative overflow-hidden">
+    <!-- The picture and charts keep their own height (self-start): stretched to the taller panel beside them, a
+         3D scene or short picture left an empty card. With charts, any extra height goes to the chart row. -->
+    <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]" :class="lesson.charts?.length ? 'lg:grid-rows-[auto_1fr]' : ''">
+      <section class="surface relative overflow-hidden lg:self-start">
         <div v-if="has3d" class="flex items-center justify-end gap-2 border-b px-3 py-1.5" style="border-color: var(--line)">
           <span class="label">{{ t('three.view') }}</span>
           <div class="flex gap-0.5 rounded-lg p-0.5 text-xs" style="background: var(--sunken)">
@@ -317,7 +319,7 @@ const reportUrl = computed(() => {
         </details>
       </aside>
 
-      <section v-if="lesson.charts?.length" class="surface overflow-hidden [&>figure:first-child]:border-t-0">
+      <section v-if="lesson.charts?.length" class="surface overflow-hidden lg:self-start [&>figure:first-child]:border-t-0">
         <ParamChart v-for="c in lesson.charts" :key="c.title" :spec="c" :params="params" />
       </section>
     </div>
