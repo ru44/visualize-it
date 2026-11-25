@@ -7,3 +7,7 @@ fx.costCaption: import price × exchange rate
 fx.fxTitle: your pounds, converted
 fx.fxCaption: pounds ÷ exchange rate
 fx.caption: the same rate drives both panels — a weaker pound raises the left bar and lowers the right one
+fx.usd: '${n}'
+fx.egp: '{n} EGP'
+fx.rate: '{n} EGP/$'
+fx.rateLong: '{n} EGP / $1'

@@ -5,3 +5,5 @@ budget.savedLabel: مُدَّخر
 budget.chartTitle: إجمالي المدخرات، شهرًا بعد شهر
 budget.monthsUnit: شهر
 budget.caption: خط مستقيم؛ نفس الادخار يُجمع شهرًا بعد شهر
+budget.money: '{n} ريال'
+budget.perMonth: '{n} ريال/شهر'

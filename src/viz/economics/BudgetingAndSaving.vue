@@ -43,11 +43,11 @@ const areaPoints = computed(() => `${PLOT.x},${yScale.value(0)} ${linePoints.val
 const zeroY = computed(() => yScale.value(0))
 
 const readouts = computed(() => [
-  { label: 'I', value: `$${fmt(income.value, 0)}/mo` },
-  { label: 'X', value: `$${fmt(spending.value, 0)}/mo` },
-  { label: 'S', value: `$${fmt(saving.value, 0)}/mo`, color: saving.value >= 0 ? 'var(--accent-2)' : 'var(--danger, #d33)' },
-  { label: 'm', value: `${months.value} mo` },
-  { label: 'T', value: `$${fmt(total.value, 0)}`, color: 'var(--accent)' },
+  { label: 'I', value: t('budget.perMonth', { n: fmt(income.value, 0) }) },
+  { label: 'X', value: t('budget.perMonth', { n: fmt(spending.value, 0) }) },
+  { label: 'S', value: t('budget.perMonth', { n: fmt(saving.value, 0) }), color: saving.value >= 0 ? 'var(--accent-2)' : 'var(--danger, #d33)' },
+  { label: 'm', value: `${months.value} ${t('budget.monthsUnit')}` },
+  { label: 'T', value: t('budget.money', { n: fmt(total.value, 0) }), color: 'var(--accent)' },
 ])
 </script>
 
@@ -71,7 +71,7 @@ const readouts = computed(() => [
       <polygon :points="areaPoints" fill="var(--accent)" fill-opacity="0.18" />
       <polyline :points="linePoints" fill="none" stroke="var(--accent)" stroke-width="2.5" />
       <circle :cx="PLOT.x + PLOT.w" :cy="yScale(total)" r="5" fill="var(--accent)" />
-      <text :x="PLOT.x + PLOT.w - 6" :y="yScale(total) - 12" text-anchor="end" font-size="13" font-weight="600" fill="var(--accent)">${{ fmt(total, 0) }}</text>
+      <text :x="PLOT.x + PLOT.w - 6" :y="yScale(total) - 12" text-anchor="end" font-size="13" font-weight="600" fill="var(--accent)">{{ t('budget.money', { n: fmt(total, 0) }) }}</text>
       <text :x="PLOT.x" :y="PLOT.y + PLOT.h + 22" font-size="11" fill="var(--muted)">0 {{ t('budget.monthsUnit') }}</text>
       <text :x="PLOT.x + PLOT.w" :y="PLOT.y + PLOT.h + 22" text-anchor="end" font-size="11" fill="var(--muted)">{{ months }} {{ t('budget.monthsUnit') }}</text>
 
