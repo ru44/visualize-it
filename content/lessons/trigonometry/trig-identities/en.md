@@ -1,68 +1,61 @@
 ---
 title: The Pythagorean and tangent identities
-summary: >-
-  Square a point's up-distance and its across-distance on a circle of radius
-  1, add them, and you always get exactly 1 — and dividing one by the other
-  gives the tangent.
+summary: 'Explain why sine squared plus cosine squared is always 1, and relate tangent to the same coordinates.'
 parameters:
-  theta: angle θ
+  theta: 'θ — angle in degrees'
 variables:
-  - the angle you have swept around the circle, measured from the 3 o'clock direction
-  - the point's height above the centre line
-  - the point's distance sideways from the centre
-  - sine divided by cosine, the same ratio for every point on the same line through the centre
+  - 'θ: angle counterclockwise from the positive horizontal axis'
+  - 'sin θ: signed vertical coordinate'
+  - 'cos θ: signed horizontal coordinate'
+  - 'tan θ: vertical coordinate divided by horizontal coordinate, when defined'
 ---
 
 ## Try it
 
-1. Drag the point around the circle and watch the readouts sin θ and cos θ change together.
-2. Square each one and add them in your head: the total stays 1 no matter where the point sits.
-3. Divide sin θ by cos θ. The tan θ readout matches exactly, because that division is what tangent means.
+1. Set θ = 0°. Sine is 0 and cosine is 1, so their squared values add to 1.
+2. Set θ = 45°. Both values are about 0.7071. Each square is about 0.5, again giving 1. Rounded readouts may introduce a small arithmetic error.
+3. Set θ = 115°, then 205°. Coordinate signs change, but the squares still add to 1. Divide sine by cosine to check the tangent where cosine is nonzero.
 
 ## Real-life examples
 
-1. **A solar panel tilted 25°.** Its rise fraction is sin 25° ≈ 0.42 for every metre of panel. The identity gives the run fraction without a second measurement: cos 25° = √(1 − 0.42²) ≈ 0.91.
-2. **A crane arm swung to 115°.** Past straight up, the height fraction is still large, sin 115° ≈ 0.91, but the reach fraction has turned negative, cos 115° ≈ −0.42: the load now hangs behind the crane's base.
-3. **A dish rotated to bearing 205°.** Both readouts are negative, sin 205° ≈ −0.42 and cos 205° ≈ −0.91, since the dish points back and to the left of home — yet squared and added they still make exactly 1.
+1. **First quadrant.** At 25°, sine is about 0.4226 and cosine about 0.9063. Their squares are about 0.1786 and 0.8214.
+2. **Second quadrant.** At 115°, sine is about 0.9063 and cosine about −0.4226. The squared values still sum to 1; tangent is negative.
+3. **Third quadrant.** At 205°, sine is about −0.4226 and cosine about −0.9063. Their ratio is positive even though both coordinates are negative.
 
 ## Test yourself
 
-1. Find an angle where tan θ equals 1 exactly.
-2. Find an angle where sin θ is above 0.9 but cos θ has already turned negative.
-3. Find an angle where sin θ is exactly ±0.5 while cos θ stays negative.
+1. Make tangent differ from 1 by less than 0.02.
+2. Make sine greater than 0.9 and cosine negative.
+3. Make sine squared differ from 0.25 by less than 0.01 while cosine is negative.
 
 ## Intuition
 
-The point on screen never leaves the circle, so it is always exactly 1 step from the centre. Drag it and watch its two shadows: cos θ is how far sideways it has moved, sin θ is how far up. Those two shadows are the legs of a right triangle whose hypotenuse is the radius itself, fixed at 1 — which is the whole reason squaring and adding them always lands back on 1.
+The point stays one unit from the centre. Its horizontal and vertical coordinates vary, but the squared distance is always the horizontal coordinate squared plus the vertical coordinate squared. Calling those coordinates cosine and sine gives the identity. Negative coordinates cause no problem because their squares are positive.
 
-Tangent is a different question: not how far the point has moved, but how steep the line from the centre to the point is. That steepness is rise over run, sin θ over cos θ, and it stays the same for any point you'd find further out along the same line — which is why tan θ can grow far larger than 1 even though sin θ and cos θ never can.
+An identity holds for every permitted input, whereas an equation such as sine equals 0.5 selects particular angles. The diagram offers examples of the identity; the circle equation explains why it must hold for all angles. Tangent uses the ratio of the same coordinates to describe the slope of the line through the centre and the point.
 
 ## Formal
 
-For any angle θ, the point $(\cos\theta, \sin\theta)$ lies on the circle of radius 1, so $\sin^2\theta + \cos^2\theta = 1$ for every θ — the Pythagorean identity.
+For every real angle θ, $\sin^2\theta+\cos^2\theta=1$. Here $\sin^2\theta$ means $[\sin\theta]^2$, not sine of the squared angle. Each sine and cosine value lies between −1 and 1.
 
-Tangent is defined directly from the same point: $\tan\theta = \dfrac{\sin\theta}{\cos\theta}$, undefined only where $\cos\theta = 0$.
+Where $\cos\theta\ne0$, $\tan\theta=\sin\theta/\cos\theta$. Rearranging the first identity gives $\cos\theta=\pm\sqrt{1-\sin^2\theta}$; the quadrant determines the sign. Knowing sine alone does not always determine cosine's sign.
 
 ## Advanced
 
-Because $(\cos\theta, \sin\theta)$ always has length 1, it is exactly the kind of vector a rotation matrix needs in its columns to preserve distances; the identity is what guarantees a rotation never stretches or shrinks anything it turns.
+Divide the Pythagorean identity by cosine squared, only where cosine is nonzero, to obtain 1 + tan² θ = 1/cos² θ. Conditions matter: division cannot extend the resulting identity to angles where its denominator vanishes.
 
 ## Derivation
 
-1. Any point on a circle of radius 1 satisfies $x^2 + y^2 = 1$, since that distance-from-centre is the circle's whole definition.
-2. Writing that point's coordinates as $x = \cos\theta$ and $y = \sin\theta$ turns the circle equation directly into $\sin^2\theta + \cos^2\theta = 1$.
-3. The same coordinates give the line's steepness $y/x$, which is exactly $\tan\theta = \sin\theta / \cos\theta$.
+1. The squared distance of a point (x, y) from the origin is x² + y². On the unit circle this equals 1.
+2. Substitute cosine for x and sine for y to obtain the Pythagorean identity.
+3. For a nonzero horizontal coordinate, the slope y/x is sine divided by cosine, which defines tangent.
 
 ## Real world
 
-### Normalising a direction
-GPS and game engines store headings as $(\cos\theta,\sin\theta)$; the identity is how software checks that a direction vector hasn't drifted off length 1 after repeated rotations.
+### Checking a direction vector
 
-### Resolving a force
-An engineer who knows a cable's angle and its horizontal pull can recover the vertical pull from the identity alone, without measuring it directly.
+The vector (cos θ, sin θ) has length 1. Multiplying it by a desired distance gives a displacement of that length in the chosen direction.
 
-### AC power
-Mains voltage and current both ride on $\sin(\omega t)$ and $\cos(\omega t)$ terms; the identity keeps their combined instantaneous power tied to a fixed envelope instead of drifting.
+### Recovering a component
 
-### Grade and slope
-A road's tangent (its grade) and the sine and cosine of its incline angle are three views of the same hill, so surveyors move between them with these two identities.
+If a unit vector has vertical component 0.6, its horizontal component is either 0.8 or −0.8. Direction information selects the sign; the identity supplies the magnitude.

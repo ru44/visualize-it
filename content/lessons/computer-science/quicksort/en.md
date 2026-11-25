@@ -15,9 +15,9 @@ variables:
 
 ## Try it
 
-1. Set n to 8 bars, press play slowly, and watch one bar get marked as the pivot while every other bar is pushed to its left or right.
-2. Watch the pivot once the shuffle settles — it never moves again, because it is already sitting in its final sorted spot.
-3. Drag n up to 40 bars and press play — a new pivot gets picked inside each smaller group, again and again, until every group is a single bar.
+1. Set n to 8 bars and let it play (or drag «step» slowly). The last bar on the right, 78, is the pivot: every other bar is compared with it and pushed to its left or right.
+2. Watch the pivot when that first round ends: it jumps into sixth place and turns green. It never moves again, because it is already sitting in its final sorted spot.
+3. Drag n up to 40 bars and let it run — a new pivot gets picked inside each smaller group, again and again, until every group is a single bar. It finishes after 227 comparisons, where bubble sort would need 780.
 
 ## Real-life examples
 
@@ -33,7 +33,7 @@ variables:
 
 ## Intuition
 
-Picture 8 kids lined up in random height order, and you want them sorted from shortest to tallest fast: pick one kid as the pivot, and send everyone shorter than the pivot to their left and everyone taller to their right. Press play here and watch exactly that happen on screen: one bar gets marked as the pivot, every other bar is compared to it, and the shuffle ends with the pivot sitting in its exact final position — the one guarantee every round makes.
+Picture 8 kids lined up in random height order, and you want them sorted from shortest to tallest fast: pick one kid as the pivot, and send everyone shorter than the pivot to their left and everyone taller to their right. Press play here and watch exactly that happen on screen: one bar gets marked as the pivot, every other bar is compared to it, and the round ends with the pivot sitting in its exact final position — the one guarantee every round makes.
 
 The same trick then repeats inside each smaller group on its own: a new pivot for the left group, a new pivot for the right group, smaller and smaller, until every group is down to one bar. Watch how a lucky pivot splits the bars into two roughly equal halves, while an unlucky pivot — say, always the shortest bar — leaves one huge group and one empty one, which is the difference between the fast, typical case and the slow, unlucky one.
 
@@ -56,10 +56,13 @@ Quicksort sorts in place with O(log n) extra stack space on average (from the re
 ## Real world
 
 ### Standard library sorts
+
 Many languages’ default array sort is a quicksort variant, chosen for its excellent average-case speed and in-place memory use.
 
 ### Database query engines
+
 Sorting result sets before a merge join or a GROUP BY often uses a quicksort-family algorithm.
 
 ### Selection algorithms
+
 The same partition idea, without recursing on both sides, finds the k-th smallest element in expected O(n) time (quickselect).

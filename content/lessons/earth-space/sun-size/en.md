@@ -22,14 +22,14 @@ variables:
 
 ## Real-life examples
 
-- **Aristarchus, about 250 BC.** He had n = 19. The Moon is 3,474 km wide, so the Sun is 19 × 3,474, about 66,000 km. That is 5 Earths side by side, and it was far too small, but it was already bigger than the whole known world.
+- **Aristarchus, about 270 BC.** He had n = 19. The Moon is 3,474 km wide, so the Sun is 19 × 3,474, about 66,000 km. That is 5 Earths side by side, and it was far too small, but it was already bigger than the whole known world.
 - **Today.** The Sun looks about 3 % bigger than the average Moon, so n = 400. That gives 1.39 million km, 109 Earths side by side. It is the real width of the Sun.
 - **A partial eclipse.** Same sizes, but the Moon has covered only half of the Sun. The shape you see changes, the size of the Sun does not.
 
 ## Test yourself
 
 1. Make the Sun 1.39 million km wide, the real size, within 2 %.
-2. Make the Sun exactly about 109 Earths wide.
+2. Make the Sun 109 Earths wide.
 3. Make a Sun smaller than the Earth. It is easy to do, but nobody after Aristarchus could believe a Sun that small, because the numbers of the sky say it is not.
 
 ## Intuition
@@ -38,7 +38,7 @@ On 21 August 2017, millions of people across the United States stood in the Moon
 
 Two things that look equally big but are not equally far must be very different in size. The Sun is farther than the Moon by a number n. Draw a cone from your eye through the edge of the Moon and keep going: at the Sun it is n times wider, so the Sun is n times wider than the Moon. The top of the picture shows this cone. Move n and watch the Sun disc grow to fill it.
 
-The earlier lesson gave you n. Aristarchus of Samos measured it as 19 around 250 BC. The truth is about 400. The Moon is 3,474 km wide, so 19 gives 66,000 km, about 5 Earths side by side. And 400 gives 1.39 million km, 109 Earths side by side. The bottom strip draws the Earth, the Moon and your Sun at true relative sizes, and it clips the Sun when it does not fit.
+The earlier lesson gave you n. Aristarchus of Samos measured it as 19 around 270 BC. The truth is about 400. The Moon is 3,474 km wide, so 19 gives 66,000 km, about 5 Earths side by side. And 400 gives 1.39 million km, 109 Earths side by side. The bottom strip draws the Earth, the Moon and your Sun at true relative sizes, and it clips the Sun when it does not fit.
 
 Even Aristarchus's too-small number said something startling: the Sun is much bigger than the Earth. That made it hard to believe that the huge Sun goes round the small Earth. So he suggested that the Earth goes round the Sun. That was about 1,800 years before Copernicus, and almost nobody believed him.
 

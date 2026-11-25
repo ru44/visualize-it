@@ -5,7 +5,7 @@ import { t } from '../../i18n'
 import Readouts from '../../components/Readouts.vue'
 
 // content/lessons/waves/speed-of-sound. v depends on medium (bar chart, left) and on air
-// temperature (v = 331 + 0.6T); the right side times how far a storm is, d = v*t.
+// temperature (v = 331 + 0.6T); the right side shows a pulse’s one-way travel distance, d = v*t.
 const props = defineProps<{ params: Record<string, number>; options: Record<string, any> }>()
 const emit = defineEmits<{ set: [name: string, value: number] }>()
 const W = 800
@@ -52,7 +52,7 @@ const readouts = computed(() => [
       <text class="num" x="60" y="40" font-size="12" fill="var(--muted)">{{ t('speedsound.clickHint') }}</text>
 
       <line x1="600" x2="600" y1="40" y2="440" stroke="var(--line)" />
-      <text class="num" x="620" y="60" font-size="24" fill="var(--neg)">⚡</text>
+      <text class="num" x="620" y="60" font-size="24" fill="var(--neg)">◉</text>
       <text class="num" x="620" y="90" font-size="12" fill="var(--muted)">{{ t('speedsound.flash') }}</text>
       <circle cx="630" cy="70" :r="Math.min(150, (d / 5000) * 150)" fill="none" stroke="var(--accent-2)" stroke-width="2" opacity="0.7" />
       <text class="num" x="615" y="240" font-size="12" fill="var(--fg)">{{ t('speedsound.count', { t: fmt(tCount, 1) }) }}</text>

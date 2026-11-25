@@ -14,9 +14,9 @@ variables:
 
 ## Try it
 
-1. With the defaults, find the stripe that died in the storm: no thank-you note came back for it, so the sender quietly sent it again — and the picture on the right is whole anyway.
-2. Flip ack to 0 and raise loss a little: the same storm now leaves permanent holes in the picture, because nobody is keeping books.
-3. Push loss to 40 with ack back on: the picture still arrives complete — later and at the cost of many resends, but complete. Read E: at 40% loss, each packet costs 1.67 sends on average.
+1. With the defaults (loss = 10, ack = 1), find the stripe that died in the storm, stripe 2: no thank-you note came back for it, so the sender quietly sent it again — and the picture on the right is whole anyway.
+2. Flip ack to 0: stripe 2 never arrives and «picture delivered» reads 90%. Raise loss to 20 and it falls to 80%: the same storm now leaves permanent holes in the picture, because nobody is keeping books.
+3. Push loss to 40 with ack back on: the picture still arrives complete (100%) — later and at the cost of 4 resends, but complete. Read E: at 40% loss, each packet costs 1.67 sends on average.
 
 ## Real-life examples
 
@@ -55,13 +55,17 @@ A dropped packet carries a second meaning: on wired networks, loss almost always
 ## Real world
 
 ### Everything that must be exact
+
 Web pages, emails, downloads, bank transfers — all TCP: a single flipped or missing byte would corrupt them, so they buy the promise.
 
 ### Everything that must be now
+
 Calls, game movement, live video run on UDP and simply absorb small losses — lateness is worse than a glitch.
 
 ### QUIC, the modern blend
+
 HTTP/3 runs on QUIC: UDP underneath, with TCP-style numbering and acknowledgement rebuilt on top, plus encryption — the same bookkeeping, relocated.
 
 ### Space probes
+
 Deep-space links use the same resend logic with hours-long round trips — the mathematics of unthanked pieces does not care about distance.

@@ -3,14 +3,14 @@ subject: cryptography
 difficulty: beginner
 equation: a \equiv b \;(\bmod n)
 concepts:
-- modular-arithmetic
-- remainder
-- congruence
-- cryptography
+  - modular-arithmetic
+  - remainder
+  - congruence
+  - cryptography
 prerequisites: []
 related:
-- caesar-cipher
-- one-way-functions
+  - caesar-cipher
+  - one-way-functions
 visualization:
   type: mod-clock
   options:
@@ -32,12 +32,12 @@ parameters:
     step: 1
     value: 8
 variables:
-- \bmod
-- \equiv
+  - \bmod
+  - \equiv
 derivation:
-- a \bmod n = b \bmod n
-- a - b = kn \text{ for some integer } k
-- a \equiv b \;(\bmod n)
+  - a \bmod n = b \bmod n
+  - a - b = kn \text{ for some integer } k
+  - a \equiv b \;(\bmod n)
 charts: []
 primary: n
 presets:

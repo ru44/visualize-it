@@ -18,9 +18,9 @@ charts: []
 
 ## Try it
 
-1. Keep «annual income x» below «bracket threshold b». All of it sits in the cheap slice, so the average rate equals the 10% marginal rate exactly.
-2. Raise «annual income x» well above «bracket threshold b». Only the slice above the threshold is taxed at 25%, so the average rate stays well below that 25% marginal rate.
-3. Raise «bracket threshold b» toward «annual income x». More of the same income now sits in the cheap 10% slice, and the average rate falls even though income has not changed at all.
+1. Set «annual income x» to 30000, below «bracket threshold b» at 40000. All of it sits in the cheap slice: T reads 3000, and the average rate equals the 10% marginal rate exactly.
+2. Raise «annual income x» to 120000, well above «bracket threshold b». Only the slice above the threshold is taxed at 25%: T reads 24000, so the average rate is 20%, still below the 25% marginal rate.
+3. Raise «bracket threshold b» to 100000, toward «annual income x». More of the same income now sits in the cheap 10% slice, and the average rate falls to 12.5% even though income has not changed at all.
 
 ## Real-life examples
 
@@ -31,7 +31,7 @@ charts: []
 ## Test yourself
 
 1. Get the average tax rate to exactly 15%.
-2. Earn more than «bracket threshold b», and keep the average rate under 20%.
+2. Earn more than 100,000 dollars, and keep the average rate under 20%.
 3. Earn more than 60,000 dollars, and keep the average rate under 12%.
 
 ## Intuition
@@ -59,13 +59,17 @@ Real tax systems chain together many more brackets than two, but the arithmetic 
 ## Real world
 
 ### The "raise makes you poorer" myth
+
 A common worry is that a raise pushing income past a bracket threshold means losing money overall — but under a progressive system only the income above the threshold is ever taxed at the higher rate, so take-home pay always rises with a raise, just not by quite as much per dollar above the threshold.
 
 ### Standard deductions
+
 Most real tax systems also exempt a first slice of income entirely — a 0%-taxed allowance before the 10% bracket even begins — layering one more slice onto the same $\min$/$\max$ pattern used here.
 
 ### Withholding
+
 Employers typically estimate the year's average rate and withhold roughly that share from every paycheck, so «tax owed» is usually already paid gradually across the year rather than landing as one lump sum.
 
 ### Bracket creep
+
 When «bracket threshold b» is not raised to keep pace with rising prices, wages that merely keep up with inflation still push more and more income into the higher bracket over time, even though nothing has really changed in what that income can buy.

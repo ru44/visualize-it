@@ -3,13 +3,13 @@ subject: data
 difficulty: beginner
 equation: T(k) = \sum \text{amount}
 concepts:
-- GROUP BY
-- aggregation
-- SUM
+  - GROUP BY
+  - aggregation
+  - SUM
 prerequisites:
-- tables-and-filtering
+  - tables-and-filtering
 related:
-- column-storage-and-bigquery
+  - column-storage-and-bigquery
 visualization:
   type: query-table
   options:
@@ -22,17 +22,16 @@ parameters:
     step: 1
     value: 0
 variables:
-- T
-- k
+  - T
+  - k
 derivation:
-- k = \text{the city if by is 0, the product if by is 1}
-- \text{every row sharing the same } k \text{ joins one group}
-- T(k) = \sum \text{amount within group } k
+  - k = \text{the city if by is 0, the product if by is 1}
+  - \text{every row sharing the same } k \text{ joins one group}
+  - T(k) = \sum \text{amount within group } k
 presets:
-- by: 0
-- by: 1
+  - by: 0
+  - by: 1
 challenges:
-- check: by
-  target: 0
-- check: by
-  target: 1
+  - check: by
+    target: 1
+  - check: by == 1

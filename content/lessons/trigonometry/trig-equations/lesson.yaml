@@ -32,7 +32,7 @@ parameters:
     value: 0.5
   h:
     min: -6.2
-    max: 6.2
+    max: 6.3
     step: 0.02
     value: 2.14
 variables:

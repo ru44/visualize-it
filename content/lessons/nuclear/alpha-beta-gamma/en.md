@@ -17,14 +17,14 @@ charts: []
 ## Try it
 
 1. Watch the three beams: alpha (top), beta (middle) and gamma (bottom), all flying at the same wall.
-2. Set "shield material" to paper and drag "shield thickness" up from zero. The alpha beam stops the instant the wall appears; beta and gamma barely notice.
-3. Switch "shield material" to lead and push "shield thickness" toward 50 mm. The gamma beam keeps thinning but never fully stops, while beta was already blocked by a sliver of it.
+2. Set "shield material" to paper (position 0) and drag "shield thickness" from zero to 0.5 mm. The alpha beam is "blocked" the instant the wall appears; beta still "gets through" and gamma reads 99.6%.
+3. Switch "shield material" to lead (position 2) and push "shield thickness" up to 50 mm. The gamma beam keeps thinning, down to 0.5%, but never fully stops, while beta was already blocked by the first 1 mm of it.
 
 ## Real-life examples
 
 1. **A smoke detector's tiny alpha source.** It sits behind a thin foil window, thinner than a millimetre — plenty to stop its alpha particles from ever leaving the detector housing.
 2. **A strontium-90 beta source, shielded properly.** Five millimetres of aluminium is enough to stop its beta particles, which is why aluminium and plastic, not lead, are the standard choice for beta shielding.
-3. **A hospital's lead-lined gamma room.** Twenty millimetres of lead cuts the gamma beam to roughly an eighth of its original strength — real protection, but not a perfect wall.
+3. **A hospital's lead-lined gamma room.** Twenty millimetres of lead cuts the gamma beam to 11.9%, roughly an eighth of its original strength — real protection, but not a perfect wall.
 
 ## Test yourself
 
@@ -36,7 +36,7 @@ charts: []
 
 Alpha and beta particles are chunks of matter — a helium nucleus for alpha, an electron for beta — crashing through a solid and losing a little energy in every collision until they run out and stop. That gives each one a fixed range in a given material: thinner than the range and it sails through untouched, thicker than the range and it never comes out the other side. That is why the picture shows a clean, sudden "blocked" or "passes" for those two lanes, with nothing in between.
 
-A gamma ray is not a chunk of matter but a burst of light, far more energetic than the light your eyes see. It does not lose energy gradually; it either slams straight through unaffected or is absorbed in one single event, and there is no way to know in advance which will happen to any one ray. Thicken the shield and you only change the odds — more rays get unlucky and are absorbed, but there is never a thickness that guarantees every last one is stopped, which is exactly what the flickering dots in the gamma lane are showing you.
+A gamma ray is not a chunk of matter but a burst of light, far more energetic than the light your eyes see. It does not lose energy gradually; it either slams straight through unaffected or is absorbed in one single event, and there is no way to know in advance which will happen to any one ray. Thicken the shield and you only change the odds — more rays get unlucky and are absorbed, but there is never a thickness that guarantees every last one is stopped, which is exactly what the gamma lane is showing you: some dots vanish at the wall while others carry straight on.
 
 ## Formal
 
@@ -57,13 +57,17 @@ The half-value layer $H$ is set by the material and the gamma energy through $H 
 ## Real world
 
 ### Smoke detectors
+
 The americium-241 inside emits alpha particles that never leave the sensor chamber, stopped by the foil and the surrounding air itself, which is why the device is safe to keep on a ceiling.
 
 ### Nuclear medicine and industrial radiography
+
 Technicians shield beta-emitting tracers with plastic or aluminium, and gamma-emitting sources with lead or thick concrete, choosing the material to match the radiation, not just piling on the densest thing available.
 
 ### X-ray and CT rooms
+
 The lead lining in a hospital scanning room's walls and the lead apron worn nearby are sized in half-value layers, calculated so the dose on the far side falls to an accepted safe fraction.
 
 ### Spacecraft and astronauts
+
 Deep-space missions face a mix of particles and high-energy gamma-like radiation that ordinary shielding thicknesses can only thin, not stop completely, which is why mission planners work in total accumulated dose rather than expecting any shield to bring the count to zero.

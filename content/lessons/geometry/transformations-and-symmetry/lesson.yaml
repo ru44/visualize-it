@@ -48,9 +48,9 @@ variables:
 - t_x
 - t_y
 derivation:
-- \text{translating first moves every point of the shape by the same vector } (t_x, t_y)
-- \text{rotating by } \theta \text{ about the origin turns } (x, y) \text{ into } (x\cos\theta - y\sin\theta,\; x\sin\theta + y\cos\theta)
-- \text{doing the rotation before adding the translation gives the combined rule } x' = x\cos\theta - y\sin\theta + t_x,\; y' = x\sin\theta + y\cos\theta + t_y
+  - '\text{translation alone sends }(x,y)\text{ to }(x+t_x,y+t_y)'
+  - '\text{rotation alone sends }(x,y)\text{ to }(x\cos\theta-y\sin\theta,\ x\sin\theta+y\cos\theta)'
+  - '\text{rotation then translation: }x\prime=x\cos\theta-y\sin\theta+t_x,\quad y\prime=x\sin\theta+y\cos\theta+t_y'
 charts: []
 primary: angle
 presets:

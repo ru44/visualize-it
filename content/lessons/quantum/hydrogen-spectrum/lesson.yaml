@@ -48,7 +48,7 @@ presets:
     nf: 1
 challenges:
   - check: 1240/(13.6*(1/nf^2-1/ni^2))
-    target: 656
+    target: 434
     tol: 5
   - check: 1240/(13.6*(1/nf^2-1/ni^2)) < 200
   - check: 1240/(13.6*(1/nf^2-1/ni^2))

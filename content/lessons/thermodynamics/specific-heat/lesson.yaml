@@ -15,7 +15,7 @@ related:
 visualization:
   type: function-plot
   options:
-    expr: "t1 = m*41800/P; t2 = t1 + m*334000/P; t3 = t2 + m*418600/P; x < t1 ? -20 + P*x/(m*2090) : (x < t2 ? 0 : (x < t3 ? 100*(x - t2)/(t3 - t2) : 100))"
+    expr: 't1 = m*41800/P; t2 = t1 + m*334000/P; t3 = t2 + m*418600/P; x < t1 ? -20 + P*x/(m*2090) : (x < t2 ? 0 : (x < t3 ? 100*(x - t2)/(t3 - t2) : 100))'
     domain:
       - 0
       - 450
@@ -68,4 +68,4 @@ challenges:
   - check: m*(41800+334000+418600)/P < 200
   - check: m*334000/P
     target: 60
-  - check: abs(m-1.5)<0.05 and m*794400/P > 300
+  - check: abs(m-1.5)<0.05 and m*794400/P < 700

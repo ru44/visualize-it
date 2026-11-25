@@ -12,8 +12,8 @@ variables:
 ## Try it
 
 1. Set the shift slider to 3 and compare the cipher text next to the sample message — every letter has moved three places forward.
-2. Raise the shift past 20 and notice the cipher text changes completely, even though the message underneath never does.
-3. Push the shift past 25, toward the top of its range, and notice the wheel simply wraps back around to 0 instead of stopping.
+2. Set the shift to 23. MEET now reads JBBQ, a completely different scramble, while the plain text readout has not changed at all.
+3. Drag the inner wheel all the way around. After 25 the shift does not stop: it goes back to 0, and at 0 the cipher text is the same as the message.
 
 ## Real-life examples
 
@@ -31,7 +31,7 @@ variables:
 
 Picture a note passed between two Roman generals: MEET ME AT NOON, with every letter pushed three places forward so M becomes P and E becomes H. Turn the wheel on screen until the shift reads 3 and watch that same swap happen — the sample message on the right updates letter by letter, so MEET turns into PHHW while the shift number stays visible on the slider the whole time.
 
-The readouts list the key, the plain text and the cipher text side by side, plus one more number: 26, the count of every possible key. That number is the whole weakness of this cipher — whoever intercepts PHHW ME AT NOON can try all 26 wheel positions in seconds and read off the one that turns into real words.
+The readouts list the key, the plain text and the cipher text side by side, plus one more number: 26, the count of every possible key. That number is the whole weakness of this cipher — whoever intercepts PHHW PH DW QRRQ can try all 26 wheel positions in seconds and read off the one that turns into real words.
 
 ## Formal
 
@@ -52,13 +52,17 @@ With only 26 possible keys, a computer can decrypt an intercepted message by bru
 ## Real world
 
 ### ROT13
+
 A shift-13 Caesar cipher used on forums to hide spoilers or punchlines — not for secrecy, since anyone can decode it, just to stop the eye from reading it by accident.
 
 ### Ancient military use
+
 Julius Caesar reportedly used a shift-3 cipher for messages to his generals; it was enough to stop a casual reader, though not a determined one.
 
 ### Why key size matters
+
 A keyspace of 26 is small enough to search by hand; real ciphers use keys with more possibilities than atoms in the observable universe, which is what actually keeps a message safe.
 
 ### Frequency analysis
+
 Any cipher that always maps the same plain letter to the same cipher letter — not just Caesar's — leaks the frequency pattern of the underlying language, which is why modern ciphers avoid that fixed mapping entirely.

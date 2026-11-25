@@ -23,9 +23,9 @@ charts:
 
 ## Try it
 
-1. Drag time forward from zero. Watch the curve drop fastest at the start, then slow down.
-2. Watch the curve reach half its starting height at exactly one half-life.
-3. Drag the half-life slider instead. Watch the whole curve stretch or compress in time.
+1. Leave N0 at 100 and T at 5730. Drag time x forward from 0 to 2000: f(x) falls from 100 to about 78.5. The curve drops fastest at the start, then slows down.
+2. Set x to 5700, almost exactly one half-life. f(x) shows about 50, half of the starting 100.
+3. Keep x at 5700 and set the half-life T to 1900. The whole curve squeezes toward the left: three half-lives now fit into 5700 years, and only 12.5 remain.
 
 ## Real-life examples
 
@@ -64,13 +64,17 @@ The same law can be written as continuous exponential decay, $N = N_0 e^{-\lambd
 ## Real world
 
 ### Carbon-14 dating of organic material
+
 Archaeologists date bone, wood and charcoal by measuring the remaining fraction of carbon-14, useful out to roughly ten half-lives, about 50,000 years.
 
 ### Uranium-lead dating of rocks
+
 Much longer-lived isotopes like uranium-238 (half-life 4.5 billion years) date rocks and meteorites, including estimates of Earth's own age.
 
 ### Medical imaging and treatment
+
 Short-lived isotopes like technetium-99m (half-life about 6 hours) are chosen deliberately so they decay away quickly after a scan.
 
 ### Nuclear waste storage
+
 Storage timelines are planned around how many half-lives it takes for radioactivity to fall to a safe level, sometimes tens of thousands of years for the longest-lived byproducts.

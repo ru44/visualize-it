@@ -15,8 +15,8 @@ variables:
 
 ## Try it
 
-1. Set a to 5 and n to 23, then drag k from 1 up to 3 and read the growing list $a^1, a^2, a^3$ mod 23.
-2. Keep dragging k up to 8. Notice the list is no harder to build — each new entry costs one more multiply-and-wrap.
+1. Set a to 5 and n to 23, then drag k from 1 up to 3 and read the growing list $a^1, a^2, a^3$ mod 23: it shows 5 → 2 → 10.
+2. Keep dragging k up to 8. The list grows to 5 → 2 → 10 → 4 → 20 → 8 → 17 → 16, and it is no harder to build — each new entry costs one more multiply-and-wrap.
 3. Try to guess, just by looking at the last number on the list, which value of k produced it. Notice there's no shortcut — you'd have to retrace the whole climb.
 
 ## Real-life examples
@@ -29,7 +29,7 @@ variables:
 
 1. With a fixed at 5 and n fixed at 23, find the value of k that makes the widget land on 10.
 2. Push k all the way up to 12, the highest exponent the slider allows.
-3. Set the base a to 0 and the clock size n close to 30, and see why every single power lands on the same spot — a bad choice for a real lock.
+3. Set the base a to 0 and the clock size n to 30, and see why every single power lands on the same spot — a bad choice for a real lock.
 
 ## Intuition
 
@@ -56,13 +56,17 @@ Think of it as a padlock: anyone can click it shut in an instant, but opening it
 ## Real world
 
 ### Diffie–Hellman key exchange
+
 Two people publish numbers built this way and combine them into a shared secret that an eavesdropper, seeing only the public numbers, cannot reconstruct.
 
 ### Elliptic-curve cryptography
+
 Modern HTTPS mostly uses a geometric cousin of this same one-way idea, chosen because it reaches the same security with much shorter keys.
 
 ### Password storage
+
 Sites store a one-way transformation of a password rather than the password itself, so a stolen database does not hand out the originals directly.
 
 ### Digital signatures
+
 Signing schemes rely on operations that are easy to check but hard to forge — the same easy-forward, hard-backward shape as a discrete logarithm.

@@ -3,16 +3,16 @@ subject: cryptography
 difficulty: high-school
 equation: c = a^{k} \bmod n
 concepts:
-- one-way-function
-- discrete-logarithm
-- trapdoor
-- cryptography
+  - one-way-function
+  - discrete-logarithm
+  - trapdoor
+  - cryptography
 prerequisites:
-- modular-arithmetic
-- exponents-and-powers
+  - modular-arithmetic
+  - exponents-and-powers
 related:
-- diffie-hellman
-- logarithms
+  - diffie-hellman
+  - logarithms
 visualization:
   type: mod-clock
   options:
@@ -34,11 +34,11 @@ parameters:
     step: 1
     value: 8
 variables:
-- \bmod
+  - \bmod
 derivation:
-- c = a^{k} \bmod n
-- \text{finding } k \text{ from } a, c, n \text{ (the discrete logarithm) has no known fast general method}
-- \log_a c \text{ inverts an ordinary power instantly; the mod hides the pattern that log needs}
+  - c = a^{k} \bmod n
+  - \text{finding } k \text{ from } a, c, n \text{ (the discrete logarithm) has no known fast general method}
+  - \log_a c \text{ inverts an ordinary power instantly; the mod hides the pattern that log needs}
 charts: []
 primary: k
 presets:

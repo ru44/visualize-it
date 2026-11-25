@@ -13,9 +13,9 @@ variables:
 
 ## Try it
 
-1. Set rails to 3 and read the bottom rows: the message WE ARE DISCOVERED RUN comes out as WECRU ERDSOEEDN AIVD — the same 18 letters, picked up row by row.
+1. Set rails to 3 and read the bottom rows: the message WE ARE DISCOVERED RUN comes out as WECRU ERDSOEERN AIVD — the same 18 letters, picked up row by row.
 2. Tap the picture to follow one letter at a time and watch where each one lands: down the rails, bounce, back up, bounce again.
-3. Raise rails to 6 and see the zigzag stretch: the pattern now repeats only every 10 letters, and the rows scramble the message even further apart.
+3. Raise rails to 6 and see the zigzag stretch: the pattern now repeats only every 10 letters, and the cipher text becomes WV EOE ACR RSEN EIDU DR.
 
 ## Real-life examples
 
@@ -25,7 +25,7 @@ variables:
 
 ## Test yourself
 
-1. Set the wheel of rails to 3, the classic rail-fence setting.
+1. Set rails to 3, the classic rail-fence setting.
 2. Now stretch the fence to exactly 5 rails and watch the rows re-form.
 3. Move the letter marker forward until it lands on the top rail again — the first letter after a full zigzag.
 
@@ -54,13 +54,17 @@ The serious version is columnar transposition: write the message into a grid und
 ## Real world
 
 ### Scytale of Sparta
-Greek commanders wrapped a leather strip around a rod and wrote along it; unwound, the letters sat in zigzag order — a transposition cipher from 2,500 years ago.
+
+Greek commanders wrapped a leather strip around a rod and wrote along it; unwound, the letters sat in a scrambled order — a transposition cipher from 2,500 years ago.
 
 ### ADFGVX in World War I
+
 The German field cipher combined substitution with columnar transposition; Georges Painvin broke it in 1918, reportedly losing 15 kilograms in the effort.
 
 ### AES ShiftRows
+
 Every round of AES slides rows of the state sideways — a transposition whose whole job is diffusion, spreading each byte's influence across the block.
 
 ### Why it never worked alone
+
 Cipher text that keeps the original letters hands the codebreaker a letter-frequency receipt; anagram attacks finish the job, which is why every strong cipher pairs moving letters with changing them.

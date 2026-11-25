@@ -19,13 +19,13 @@ variables:
 
 ## Try it
 
-1. Drag along the resonance curve (or slide f). Watch the dots in the loop: they barely tremble at the edges and slosh wildly as you pass the middle.
-2. Lower the slider "resistance R". The peak grows taller and narrower, and the amplitude bar slams to full right at f0.
+1. Start at f = 100 Hz: the current reads about 0.203 A and the dots barely tremble. Drag along the resonance curve (or slide f) to 159 Hz: the dots slosh wildly and the current reaches 1 A.
+2. Lower the slider "resistance R" from 10 Ω to 5 Ω. The peak grows taller and narrower: the current at f0 doubles to 2 A and Q rises from 5 to 10.
 3. Read the frequency under the green flag — that is the resonant frequency f0, where the coil and the capacitor cancel.
 
 ## Real-life examples
 
-1. **A radio tuner searching for a station.** With low resistance (L = 50 mH, C = 20 µF, R = 5 Ω), the response peaks sharply at one frequency, letting the receiver pick out a single station and reject its neighbours.
+1. **A radio tuner searching for a station.** With low resistance (L = 50 mH, C = 20 µF, R = 5 Ω), the response peaks sharply at one frequency, here near 159 Hz. A real radio uses the same idea at far higher frequencies to pick out a single station and reject its neighbours.
 2. **A wireless phone-charging pad.** With moderate resistance (L = 100 mH, C = 50 µF, R = 20 Ω), transmitter and receiver coils are tuned to the same resonant frequency so energy transfers efficiently across the small gap.
 3. **A metal detector's coil.** With L = 150 mH, C = 5 µF, R = 15 Ω, a nearby metal object shifts the coil's effective inductance, moving the resonant peak in a way the circuit can sense.
 
@@ -60,13 +60,17 @@ The sharpness of the peak is captured by the quality factor $Q=\dfrac{1}{R}\sqrt
 ## Real world
 
 ### Radio tuning
+
 Turning a dial changes C (or L) to move $f_0$ to the station you want to pick out of the air.
 
 ### Wireless power transfer
+
 Transmitter and receiver coils are tuned to the same resonant frequency to transfer energy efficiently over a gap.
 
 ### Metal detectors
+
 A metal object nearby shifts the coil's effective inductance, detuning the resonance in a way the circuit can sense.
 
 ### Audio filters and equalisers
+
 RLC-like resonant stages boost or cut a narrow band of frequencies around $f_0$.

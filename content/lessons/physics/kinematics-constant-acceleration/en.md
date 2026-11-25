@@ -1,71 +1,64 @@
 ---
 title: 'Position, velocity and constant acceleration'
-summary: >-
-  This is how engineers predict a car's braking distance, or how far a
-  dropped ball falls, just from its starting speed and a constant
-  acceleration.
+summary: 'Use constant acceleration to calculate position and velocity, including slowing down and reversing direction.'
 parameters:
-  x0: starting position x₀
-  v0: initial velocity v₀
-  a: acceleration a
-  x: time t
+  x0: 'x₀ — position at time zero'
+  v0: 'v₀ — velocity at time zero'
+  a: 'a — constant acceleration'
+  x: 't — elapsed time'
 variables:
-  - position at $t=0$
-  - velocity at $t=0$
-  - constant acceleration
-  - 'time (the scrubbed moment, labelled $x$ on the slider)'
+  - 'initial position'
+  - 'initial signed velocity'
+  - 'constant rate of change of velocity'
+  - 'elapsed time in seconds'
 ---
 
 ## Try it
 
-1. Scrub time along the road and watch the car roll past the metre marks, dropping a breadcrumb every second.
-2. Read the two arrows: the velocity arrow grows (or shrinks) as time passes, while the acceleration arrow never changes — that is what "constant acceleration" means.
-3. Set "acceleration a" to zero. The breadcrumbs fall evenly spaced: constant speed, no speeding up.
+1. Set x₀ = 0 m, v₀ = 2 m/s and a = 1 m/s². Move time from 0 to 4 s. At 4 s, the position is 16 m and velocity is 6 m/s.
+2. Set a = 0 while keeping the other starting values. At 4 s the position is 8 m and velocity stays 2 m/s. The marks placed at whole seconds are evenly spaced.
+3. Set v₀ = 8 m/s and a = −3 m/s². Near 2.67 s the velocity reaches zero; later it becomes negative and the object moves back. The road and inset clamp positions outside their visible range, so use the readouts for off-screen values.
 
 ## Real-life examples
 
-1. **A car braking to a stop.** Starting at 8 m/s (about 29 km/h) and braking at 3 m/s², the car's position traces a downward-curving parabola until it stops.
-2. **An elevator starting to rise.** From rest, an elevator accelerating at a gentle 1 m/s² smoothly builds up speed without jolting passengers.
-3. **A skateboarder on a gentle slope.** Starting 2 m along at 1 m/s and speeding up at 2 m/s² down the hill, the breadcrumbs spread farther apart every second.
+1. **Slowing, then reversing.** With x₀ = 0, v₀ = 8 and a = −3, the object stops momentarily at about 2.67 s and x = 10.67 m. Continuing the same acceleration reverses it; a braking model for a car should end or change at the stop.
+2. **Starting from rest.** With x₀ = 0, v₀ = 0 and a = 1, after 4 s the position is 8 m and the velocity is 4 m/s. Constant acceleration does not make position grow at a constant rate.
+3. **A different starting point.** With x₀ = 2, v₀ = 1 and a = 2, at 4 s the position is 22 m and velocity is 9 m/s. The displacement from the start is 20 m.
 
 ## Test yourself
 
-1. Make the object be at position 20 m exactly at t = 5 s.
-2. Find v₀ and a so the object's velocity is exactly zero at t = 4 s.
-3. Make the object return to its starting position x₀ at some time later than t = 0.
+1. Set time to 5 s and make the position approximately 20 m; the position tolerance is 1 m.
+2. Set time to 4 s and make the velocity within 0.2 m/s of zero.
+3. At a time greater than 0.5 s, make the displacement from the starting point less than 0.5 m in magnitude. A stationary object also passes this check; try a reversal for a moving example.
 
 ## Intuition
 
-Picture a car starting at 8 m/s and braking hard at 3 m/s² until it stops. Scrub the time slider and watch the road: the velocity arrow shortens steadily while the breadcrumbs bunch closer together — and the inset x–t curve records the same story as a flattening slope, because velocity changes at a steady rate under constant acceleration.
+Acceleration says how much velocity changes each second. With initial velocity 2 m/s and acceleration 1 m/s², the velocities at 0, 1 and 2 seconds are 2, 3 and 4 m/s. The object covers more distance in each successive second. The position formula includes both the distance associated with the starting velocity and the extra displacement caused by acceleration.
 
-Now set "acceleration a" to zero: the breadcrumbs fall evenly spaced and the inset curve straightens into a plain sloped line — constant velocity, no speeding up or slowing down. Make "acceleration a" negative with a positive "initial velocity v₀" instead: the car speeds forward, slows, pauses at the v = 0 flag, then rolls back — exactly like a ball thrown straight up.
+Choose one direction as positive. Negative velocity means motion in the opposite direction, while negative acceleration means velocity changes toward the negative direction. A positive velocity with negative acceleration first slows, then reverses if that acceleration continues. After reversal, speed increases even though acceleration remains negative. The inset plots position against time, so its slope represents velocity where the curve has not been clipped by the display bounds.
 
 ## Formal
 
-$x(t) = x_0 + v_0 t + \tfrac12 a t^2$; differentiating gives $v(t) = x'(t) = v_0 + at$.
+For one-dimensional motion with constant acceleration a, $v(t)=v_0+at$ and $x(t)=x_0+v_0t+\tfrac12at^2$. Here x₀ and v₀ are the position and velocity at t = 0. Use consistent units, such as metres, seconds, metres per second and metres per second squared.
 
-Differentiating again, $a(t) = v'(t) = a$ — constant, consistent with the assumption.
+Displacement is $\Delta x=x(t)-x_0$, which can be negative. It differs from total distance travelled if the direction changes. The relations $v=dx/dt$ and $a=dv/dt$ connect the quantities; they do not require position, velocity and acceleration to have the same sign.
 
 ## Advanced
 
-This is the unique solution of $\ddot x = a$ (a constant) with initial conditions $x(0)=x_0$, $\dot x(0)=v_0$; it is the simplest second-order linear ODE with constant coefficients, and every higher kinematic quantity (jerk, snap) is defined by continuing to differentiate, each derivative flattening the previous curve's time-dependence by one degree.
+For constant acceleration, v² = v₀² + 2a(x−x₀) relates velocity to position without time. A stopping-time solution t = −v₀/a requires a nonzero acceleration and a nonnegative time to describe a future stop. It is only a momentary stop if the acceleration continues. At zero acceleration, velocity is constant and position is linear in time, including a horizontal line for an object at rest.
 
 ## Derivation
 
-1. Start from constant acceleration.
-2. Integrate acceleration to get velocity, using $v(0)=v_0$.
-3. Integrate velocity to get position, using $x(0)=x_0$.
+1. Assume the acceleration is constant over the time interval being modeled.
+2. Integrate acceleration and choose the integration constant so that velocity at t = 0 is v₀.
+3. Integrate velocity and choose the constant so that position at t = 0 is x₀.
 
 ## Real world
 
-### Braking distance
-A car braking at constant deceleration follows this parabola; doubling initial speed roughly quadruples stopping distance.
+### Short periods of acceleration
 
-### Free fall
-Dropping or throwing an object near Earth's surface is this equation with $a = -9.81\ \text{m/s}^2$.
+A section of a vehicle's motion may be approximated by constant acceleration. Starting and ending that section generally involves changes in acceleration that this formula does not describe.
 
-### Elevators and trains
-Comfortable constant-acceleration profiles are designed using exactly this position-time relationship.
+### Vertical motion
 
-### Rocket ascent (early phase)
-Before fuel burn changes mass significantly, a rocket's early ascent is well modeled by constant acceleration.
+Near Earth's surface, an object subject only to approximately constant gravity follows this equation with a = −9.81 m/s² when upward is positive. Impact or significant air resistance ends that simple description.

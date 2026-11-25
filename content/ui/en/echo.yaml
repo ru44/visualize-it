@@ -6,4 +6,4 @@ echo.free: free end
 echo.fixed: fixed end
 echo.hintOut: the pulse travels out toward the wall
 echo.hintBack: the pulse returns as an echo
-echo.tip: fixed ends flip the returning pulse; free ends do not — the timing is the same either way
+echo.tip: 'For rope displacement, a fixed end inverts the pulse; a free end does not. Travel time stays the same.'

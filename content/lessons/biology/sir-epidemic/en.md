@@ -28,9 +28,9 @@ variables:
 
 ## Try it
 
-1. Watch the infected curve rise as the disease spreads through a susceptible population.
-2. Raise β, the rate of contacts that infect. The infected curve shoots higher and earlier.
-3. Raise γ, the recovery rate, instead. The same wave arrives lower and passes quicker.
+1. At the start (β = 0.3, γ = 0.1), watch the infected curve rise as the disease spreads, peak at about 302 people near day 30, then fall.
+2. Raise β, the rate of contacts that infect, to 0.5. The infected peak jumps to about 479 people and comes earlier, near day 17.
+3. Put β back at 0.3 and raise γ, the recovery rate, to 0.2 instead. The peak drops to about 66 people.
 
 ## Real-life examples
 
@@ -40,15 +40,15 @@ variables:
 
 ## Test yourself
 
-1. Set the basic reproduction number (β divided by γ) to exactly 3.
+1. Set the basic reproduction number (β divided by γ) to exactly 4.
 2. Reach a herd-immunity threshold of 80% (1 minus γ divided by β equals 0.8).
 3. Start an outbreak that cannot take off: keep the reproduction number below 1, starting from at least 20 initial cases.
 
 ## Intuition
 
-Three curves race across the plot: susceptible falls, infected rises then falls back to zero, recovered climbs and levels off. Drag β up and the infected curve shoots higher and earlier — more contacts mean a faster, sharper wave. Drag γ up instead and people leave the infected group faster, so the same wave arrives lower and passes quicker.
+Three curves race across the plot: susceptible falls, infected rises then falls back to zero, recovered climbs and levels off. Drag β up and the infected curve shoots higher and earlier — more contacts mean a faster, sharper wave. Drag γ up instead and people leave the infected group faster, so the wave comes out much lower: fewer people are sick at the same time.
 
-The infected curve only grows while $\beta S/N > \gamma$: once enough people have moved to the susceptible-depleted side, each case infects less than one new person on average and the outbreak turns over on its own, even with nobody left immune by choice. That is herd immunity — reached once the susceptible share falls below $1/R_0$, where $R_0 = \beta/\gamma$.
+The infected curve only grows while $\beta S/N > \gamma$: once enough people have left the susceptible group, each case infects less than one new person on average and the outbreak turns over on its own, even with nobody left immune by choice. That is herd immunity — reached once the susceptible share falls below $1/R_0$, where $R_0 = \beta/\gamma$.
 
 ## Formal
 
@@ -69,13 +69,17 @@ The final-size relation $\ln(S_0/S_\infty) = R_0(1 - S_\infty/N)$ (obtained by d
 ## Real world
 
 ### Seasonal flu
+
 Flu has R0 around 1.3, so a modest fraction of immune people each season is often enough to keep it from taking off widely.
 
 ### Measles
+
 Measles has R0 near 15–18, among the highest known, which is why roughly 95% vaccination coverage is needed for herd immunity.
 
 ### Flattening the curve
+
 Lowering β through distancing or masks does not just delay an epidemic — it lowers and widens the infected peak, keeping hospitals below capacity.
 
 ### Smallpox eradication
+
 Sustained vaccination pushed the susceptible share worldwide below 1/R0 everywhere at once, driving smallpox to zero in the wild by 1980.

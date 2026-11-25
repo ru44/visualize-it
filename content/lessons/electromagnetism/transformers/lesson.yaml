@@ -58,24 +58,24 @@ derivation:
 charts: []
 primary: Vp
 presets:
-- Np: 1000
-  Ns: 50
-  Vp: 230
-  P: 100
-  R: 5
-- Np: 1000
-  Ns: 1000
-  Vp: 11000
-  P: 1000000
-  R: 5
-- Np: 1000
-  Ns: 1000
-  Vp: 400000
-  P: 1000000
-  R: 5
+  - Np: 1000
+    Ns: 50
+    Vp: 230
+    P: 100
+    R: 5
+  - Np: 1000
+    Ns: 1000
+    Vp: 11000
+    P: 1000000
+    R: 5
+  - Np: 1000
+    Ns: 1000
+    Vp: 400000
+    P: 1000000
+    R: 5
 challenges:
-- check: 'Vp*Ns/Np'
-  target: 12
-  tol: 1
-- check: 'P >= 900000 and P <= 1100000 and R >= 4 and R <= 6 and (P/Vp)^2*R < 5000'
-- check: 'Vp >= 10000 and Vp <= 12000 and Vp*Ns/Np >= 200000'
+  - check: 'Vp*Ns/Np'
+    target: 12
+    tol: 1
+  - check: 'P >= 900000 and P <= 1100000 and R >= 4 and R <= 6 and (P/Vp)^2*R < 5000'
+  - check: 'Vp >= 10000 and Vp <= 12000 and Vp*Ns/Np >= 200000'

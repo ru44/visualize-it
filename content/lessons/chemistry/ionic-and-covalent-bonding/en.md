@@ -13,9 +13,9 @@ variables:
 
 ## Try it
 
-1. Tap through the periodic table to change «atomic number Z». Watch the valence-electron count and the element's family change.
-2. Land on a metal from the left side, then a nonmetal from the right. Notice how far apart their electronegativities sit.
-3. Land on two nonmetals close together on the table and compare — their electronegativities are close, favouring a shared, covalent bond.
+1. Tap fluorine (Z = 9). The «electrons per shell» readout shows 2 · 7 and the family is halogens: seven outer electrons, one short of eight.
+2. Tap sodium (Z = 11), a metal from the far left. It reads 2 · 8 · 1, alkali metals: one spare outer electron, exactly what fluorine is missing. The two sit far apart on the table, and so do their electronegativities.
+3. Tap carbon (Z = 6, reading 2 · 4) and then oxygen (Z = 8, reading 2 · 6), two nonmetals close together on the table — their electronegativities are close, favouring a shared, covalent bond.
 
 ## Real-life examples
 
@@ -27,7 +27,7 @@ variables:
 
 1. Find the noble gas that ends period 2.
 2. Find the alkali metal that starts period 4.
-3. Find the halogen in chlorine's own group (period 3).
+3. Find the halogen in period 3, the one in table salt.
 
 ## Intuition
 
@@ -54,13 +54,17 @@ Real bonds are rarely purely one or the other; even many "ionic" bonds have some
 ## Real world
 
 ### Why table salt dissolves in water
+
 Sodium chloride is held together by strong ionic attraction between Na⁺ and Cl⁻, but water's polar molecules surround and separate those ions easily, which is why salt dissolves readily.
 
 ### Why methane is a gas at room temperature
+
 Methane's covalent C–H bonds create small, electrically near-neutral molecules with only weak attractions between them, so little energy is needed to separate them into a gas.
 
 ### Metals and alloys
+
 Metallic bonding, a third case where valence electrons are shared across many atoms at once rather than between just two, explains why metals conduct electricity and can be bent without shattering.
 
 ### Body salts and nerve signals
+
 Ionic compounds like sodium and potassium chloride dissolve into free ions in the body, and the flow of those ions across cell membranes is how nerve cells send signals.

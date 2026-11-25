@@ -1,71 +1,63 @@
 ---
-title: Temperature is molecules in motion
-summary: >-
-  A thermometer in a warm room and one in a freezer are not reading two
-  different "kinds" of hot and cold — they are counting how fast the
-  air molecules around them are jiggling, and that single idea explains
-  Celsius, Kelvin, and why nothing can get colder than −273.15°C.
+title: Temperature and molecular motion
+summary: 'Relate an ideal gas’s temperature to average translational kinetic energy, and see why lighter particles move faster at the same temperature.'
 parameters:
-  T: absolute temperature T
-  M: molar mass of the gas M
+  T: 'T — absolute temperature'
+  M: 'M — molar mass'
 variables:
-  - average kinetic energy of one molecule
-  - Boltzmann constant, 1.38×10⁻²³ J/K
-  - root-mean-square molecular speed
-  - universal gas constant, 8.314 J/(mol·K)
-  - mass of one mole of the gas
+  - 'average translational kinetic energy per particle'
+  - 'Boltzmann constant'
+  - 'square root of mean squared particle speed'
+  - 'molar gas constant'
+  - 'mass of one mole, in kg/mol'
 ---
 
 ## Try it
 
-1. Drag the slider "temperature T" up from near zero. Watch the molecules in the box speed up and the thermometer fill.
-2. Pull "temperature T" down toward 1 K. Watch the molecules almost stop moving.
-3. Lower the slider "molar mass M" to helium's value with T fixed. Watch the typical speed jump even though the temperature has not changed.
+1. Set T = 293 K and M = 0.029 kg/mol. The Celsius readout is about 19.9°C and the root-mean-square speed is about 502 m/s.
+2. Keep M fixed and raise T to 586 K. Average translational kinetic energy doubles, but the speed rises only by a factor of √2, to about 710 m/s.
+3. Return to 293 K and set M = 0.004 kg/mol. Speed rises to about 1352 m/s while average translational kinetic energy stays unchanged. The 2D streaks are static indicators with capped lengths; the 3D particles show slowed, schematic motion.
 
 ## Real-life examples
 
-1. **Room-temperature air.** Nitrogen and oxygen (M ≈ 0.029 kg/mol) at 293 K, a mild room, have molecules zipping around at roughly 500 m/s — faster than a rifle bullet, yet you feel nothing because they are so light and so small.
-2. **A helium balloon.** Helium (M = 0.004 kg/mol) at the same 293 K room temperature has molecules moving over three times faster than the nitrogen around it, which is part of why helium leaks out of a balloon so much quicker than air would.
-3. **Liquid nitrogen boiling off.** Nitrogen gas cooled to 77 K, the temperature at which liquid nitrogen boils, has molecules moving barely a third as fast as they do at room temperature.
+1. **A gas representing room-temperature air.** At T = 293 K and M = 0.029 kg/mol, the model gives about 502 m/s. Air is a mixture, so this effective molar mass simplifies its different molecular species.
+2. **Helium at the same temperature.** At T = 293 K and M = 0.004 kg/mol, the speed is about 1352 m/s, roughly 2.69 times the first value—not three times.
+3. **Cold nitrogen in the ideal-gas model.** At T = 77 K and M = 0.028 kg/mol, the speed is about 262 m/s. Compared with the same gas at 293 K, it is about 51% as large. Whether actual nitrogen remains a gas also depends on pressure.
 
 ## Test yourself
 
-1. Get the typical molecular speed to 1500 m/s.
-2. Set up a cold, heavy gas: keep the temperature under 100 K with a molar mass above 0.02 kg/mol.
-3. Set up a hot, light gas: get the speed above 2000 m/s using a molar mass under 0.01 kg/mol.
+1. Find T and M that give a root-mean-square speed near 1500 m/s.
+2. Set T below 100 K and M above 0.02 kg/mol.
+3. Make the speed greater than 2000 m/s while keeping M below 0.01 kg/mol.
 
 ## Intuition
 
-Nothing in a gas sits still — every molecule is flying around, bouncing off its neighbours and off the walls of whatever holds it, and "temperature" is simply a number for how fast that flying around is, on average. On screen, drag the slider "temperature T", measured in kelvin, and watch the particles in the box: at low T they barely drift, and as T climbs toward 1000 K they streak across the box far faster.
+Gas particles move in many directions and at many speeds. Temperature is related to their average random translational kinetic energy in this model; it is not the speed of every particle. Two gases at the same temperature have the same average translational energy per particle. A lighter particle needs a larger speed to have the same kinetic energy as a heavier one.
 
-Kelvin and Celsius describe the same jiggling, just counted from different starting lines: 0°C (ice melting) sits at 273 K, and 0 K — "absolute zero" — sits at −273.15°C, the point where a substance has given up essentially all the kinetic energy it can give up. That is also why nothing can get colder than absolute zero: there is no such thing as slower than not moving. Now lower the slider "molar mass M" toward helium's value while T stays fixed, and the typical speed jumps up even though nothing about the temperature changed — light molecules simply have to move faster than heavy ones to carry the same amount of kinetic energy.
+Kelvin and Celsius use equal-sized temperature intervals but different zero points. Absolute zero is 0 K, or −273.15°C; the lowest slider setting, 1 K, is above it. A thermometer measures a temperature-dependent property after exchanging energy with its surroundings, rather than literally counting molecular speeds. The ideal-gas picture is useful here, but it is not a complete description of all matter near absolute zero.
 
 ## Formal
 
-The average translational kinetic energy of a molecule in an ideal gas depends on temperature alone: $\overline{KE} = \tfrac{3}{2}k_BT$, with $k_B$ the Boltzmann constant.
+For a classical ideal gas in thermal equilibrium in three dimensions, $\overline{KE}_{trans}=\tfrac32k_BT$, with T in kelvin and $k_B=1.380649\times10^{-23}\ \mathrm{J/K}$. This is translational kinetic energy per particle, not necessarily all its internal energy.
 
-The root-mean-square speed that follows from that energy is $v_{rms} = \sqrt{3RT/M}$, where $R = N_Ak_B$ is the gas constant and $M = N_Am$ is the molar mass.
+Root-mean-square speed is $v_{rms}=\sqrt{\overline{v^2}}=\sqrt{3RT/M}$, where $R\approx8.314\ \mathrm{J/(mol\cdot K)}$ and M is molar mass in kilograms per mole. It differs from the mean speed. Convert temperatures using $T_K=T_C+273.15$ before applying this formula.
 
 ## Advanced
 
-Kinetic theory treats a gas as a swarm of point-like particles in constant, random, elastic motion; pressure itself is nothing more than the rate at which these molecules bombard a surface, which is why a hotter, faster-moving gas pushes harder on the walls of its container for the same volume and amount.
+For a gas at rest overall, the mean velocity vector can be zero while the root-mean-square speed is large: opposite directions cancel in a vector average, but squared speeds do not. A real equilibrium gas has a distribution of speeds, whereas the 3D illustration assigns one speed scale to all displayed particles. Quantum effects and intermolecular interactions can invalidate the classical ideal-gas approximation, especially at low temperatures or high densities.
 
 ## Derivation
 
-1. Kinetic theory equates a molecule's average kinetic energy, $\tfrac12 m\overline{v^2}$, with $\tfrac32 k_BT$ — the definition of temperature in this model.
-2. Solve for the mean-square speed and rewrite the per-molecule mass $m$ and Boltzmann constant $k_B$ in terms of molar mass $M$ and the gas constant $R$.
-3. Take the square root to get the root-mean-square speed, the typical molecular speed used to describe a gas.
+1. Equate mean translational kinetic energy to three halves of Boltzmann's constant times absolute temperature.
+2. Solve for mean squared speed and replace particle mass with molar mass divided by Avogadro's constant.
+3. Take the square root to obtain the root-mean-square speed.
 
 ## Real world
 
-### Weather balloons
-Instruments track air temperature by kelvin internally because kelvin never goes negative — it is a direct count of molecular energy, not an arbitrary human scale.
+### Comparing gas species
 
-### Cryogenics
-Liquid helium, used to cool MRI magnets to about 4 K, works because at that temperature helium atoms carry almost no kinetic energy left to conduct away as heat.
+At equal temperature, lighter ideal-gas particles have a greater root-mean-square speed. This does not mean the lighter gas is hotter.
 
-### Gas leaks
-Lighter gases such as hydrogen and helium escape through small leaks and thin balloon walls faster than heavier gases at the very same temperature, exactly because their molecules move faster.
+### Pressure in a container
 
-### Absolute zero research
-Laboratories have cooled atoms to within a billionth of a kelvin of absolute zero, but true 0 K has never been reached — it would require removing every last trace of kinetic energy.
+Particles exchange momentum with the walls. At fixed volume and particle number, increasing temperature increases ideal-gas pressure.

@@ -17,9 +17,9 @@ variables:
 
 ## Try it
 
-1. Start at ω = 90°, far from a node. Watch the shadow cones miss Earth completely — no eclipse this month.
-2. Drag ω down toward 0°. Watch the umbra (dark cone) swing down until it lands on Earth.
-3. With ω near 0°, drag the Earth–Moon distance from small to large. Watch a total eclipse turn into an annular one as the umbra's tip pulls back short of Earth.
+1. Start at ω = 90°, far from a node. The shadow cones miss Earth completely: the readout shows a shadow offset of about 34,400 km and eclipse "none".
+2. Drag ω down toward 0°. Watch the umbra (dark cone) swing down toward Earth. At ω = 16° the eclipse readout changes to "partial", and at ω = 10° to "annular".
+3. With ω near 0°, drag the Earth–Moon distance from small to large. The readout says "total" up to 374, then "annular": the umbra's tip now stops short of Earth.
 
 ## Real-life examples
 
@@ -31,7 +31,7 @@ variables:
 
 1. Line up a central eclipse: get the shadow's sideways offset under 6,371 km (Earth's radius), so the umbra or antumbra axis actually crosses Earth.
 2. Find a setting where only the penumbra reaches Earth — a partial eclipse with no total or annular phase anywhere.
-3. Set the sliders back to an ordinary month where the shadow misses Earth by more than the penumbra's reach.
+3. Find a near miss: no eclipse at all, but a shadow offset that stays under 12,000 km.
 
 ## Intuition
 
@@ -58,13 +58,17 @@ Whether a central eclipse is total or annular depends on a second, separate comp
 ## Real world
 
 ### Eclipse chasers and travel
+
 Astronomers and tourists plan trips years ahead to stand inside the narrow path of totality, often only 100–160 km wide, because the same eclipse looks merely partial just a few hundred kilometers to either side.
 
 ### Eclipse prediction and ancient astronomy
+
 Babylonian and Chinese astronomers tracked the roughly 18-year Saros cycle, in which the Sun, Moon and nodes return to nearly the same arrangement, letting them predict eclipses centuries before anyone understood the three-dimensional geometry behind it.
 
 ### Spacecraft and satellite power
+
 Engineers plan satellite orbits around Earth's own shadow the same way: a satellite that spends too long in Earth's umbra loses sunlight for its solar panels, so mission planners calculate shadow-crossing times using this same shadow geometry.
 
 ### Testing general relativity
+
 The total solar eclipse of 29 May 1919 let astronomers see stars close to the Sun's darkened disc and measure how much the Sun's gravity bent their starlight, one of the first confirmations of Einstein's general relativity.

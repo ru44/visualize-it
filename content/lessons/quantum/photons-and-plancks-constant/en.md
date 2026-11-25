@@ -16,15 +16,15 @@ charts: []
 
 ## Try it
 
-1. Drag the slider «frequency f» up and down and watch the photon energy climb as the light's colour shifts from red toward violet and beyond.
-2. Raise «brightness I» instead. Nothing happens to the photon energy — brightness only adds more photons, never stronger ones.
-3. Push «frequency f» to its highest value and read off the photon energy in electron-volts.
+1. Drag the slider «light frequency f» from 4 up to 7.5 and watch «energy of one photon» climb from 1.65 eV to 3.1 eV as the light's colour shifts from red to violet.
+2. Raise «brightness I» from 5 to 10 instead. Nothing happens to the photon energy: brightness only adds more photons, never stronger ones.
+3. Push «light frequency f» to its highest value, 15. «energy of one photon» reads 6.2 eV, deep in the ultraviolet.
 
 ## Real-life examples
 
 1. **Red laser pointer.** At about 4.7×10¹⁴ Hz, each red photon carries around 1.9 eV.
 2. **Blue LED light.** At about 6.5×10¹⁴ Hz, each blue photon carries around 2.7 eV, noticeably more than red.
-3. **Ultraviolet germicidal lamp.** At about 1.0×10¹⁵ Hz, each UV photon carries around 4.1 eV — enough to damage DNA, which is why these lamps disinfect.
+3. **Ultraviolet germicidal lamp.** At about 1.18×10¹⁵ Hz, each UV photon carries around 4.9 eV — enough to damage DNA, which is why these lamps disinfect.
 
 ## Test yourself
 
@@ -34,7 +34,7 @@ charts: []
 
 ## Intuition
 
-Point a red laser pointer and a blue LED at the same wall. Both fire huge numbers of tiny light packets called photons, yet a single blue photon always lands with more energy than a single red one. Drag the slider labelled «frequency f» — the letter $f$ just means how many light waves arrive each second — and watch the energy number above it rise in exact step with it.
+Point a red laser pointer and a blue LED at the same wall. Both fire huge numbers of tiny light packets called photons, yet a single blue photon always lands with more energy than a single red one. Drag the slider labelled «light frequency f» — the letter $f$ just means how many light waves arrive each second — and watch the «energy of one photon» reading rise in exact step with it.
 
 Each packet is one photon, and no photon can be split into anything smaller. A red beam made of a billion dim photons never adds up to one strong blue photon, which is why raising the «brightness I» slider leaves the energy number untouched: brightness only adds more photons, never bigger ones.
 
@@ -57,10 +57,13 @@ Planck introduced $E = hf$ in 1900 not as a claim about light itself but as a tr
 ## Real world
 
 ### Solar panels
+
 A solar cell only responds to photons energetic enough to free an electron, which is why some sunlight passes through unused.
 
 ### Digital cameras
+
 Each pixel counts photons one at a time; a camera sensor is, at heart, a grid of tiny photon counters.
 
 ### Fibre-optic internet
+
 Infrared photons, each carrying a small, fixed packet of energy, carry data as pulses of light through glass fibres across oceans.

@@ -3,15 +3,15 @@ subject: aerodynamics
 difficulty: university
 equation: \delta \approx \dfrac{5x}{\sqrt{\mathrm{Re}}}
 concepts:
-- boundary-layer
-- laminar-flow
-- turbulence
-- flow-separation
+  - boundary-layer
+  - laminar-flow
+  - turbulence
+  - flow-separation
 prerequisites:
-- reynolds-number
+  - reynolds-number
 related:
-- drag-equation
-- wingtip-vortices-and-induced-drag
+  - drag-equation
+  - wingtip-vortices-and-induced-drag
 visualization:
   type: boundary-layer
   options: {}
@@ -26,7 +26,7 @@ parameters:
   d:
     min: 0.02
     max: 0.7
-    step: 0.01
+    step: 0.001
     value: 0.043
     unit: m
   roughness:
@@ -36,27 +36,27 @@ parameters:
     value: 0
     unit: ''
 variables:
-- \delta
-- x
-- \mathrm{Re}
+  - \delta
+  - x
+  - \mathrm{Re}
 derivation:
-- \delta^2/\nu \sim x/v
-- \delta \propto \sqrt{\nu x / v}
-- \delta \approx \dfrac{5x}{\sqrt{\mathrm{Re}_x}}
+  - \delta^2/\nu \sim x/v
+  - \delta \propto \sqrt{\nu x / v}
+  - \delta \approx \dfrac{5x}{\sqrt{\mathrm{Re}_x}}
 charts: []
 presets:
-- v: 70
-  d: 0.043
-  roughness: 1
-- v: 70
-  d: 0.043
-  roughness: 0
-- v: 25
-  d: 0.22
-  roughness: 1
+  - v: 70
+    d: 0.043
+    roughness: 1
+  - v: 70
+    d: 0.043
+    roughness: 0
+  - v: 25
+    d: 0.22
+    roughness: 1
 challenges:
-- check: 'roughness>0.5 and 1.225*v*d/1.81e-5 > 40000'
-- check: 'roughness<0.5 and 1.225*v*d/1.81e-5 > 300000'
-- check: '1.225*v*d/1.81e-5'
-  target: 200000
-  tol: 20000
+  - check: 'roughness>0.5 and 1.225*v*d/1.81e-5 > 40000'
+  - check: 'roughness<0.5 and 1.225*v*d/1.81e-5 > 300000'
+  - check: '1.225*v*d/1.81e-5'
+    target: 200000
+    tol: 20000

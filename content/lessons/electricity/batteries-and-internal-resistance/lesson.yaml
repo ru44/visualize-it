@@ -3,13 +3,13 @@ subject: electricity
 difficulty: high-school
 equation: V = \varepsilon - Ir
 concepts:
-- emf
-- internal-resistance
-- terminal-voltage
+  - emf
+  - internal-resistance
+  - terminal-voltage
 prerequisites:
-- ohms-law
+  - ohms-law
 related:
-- voltage-and-energy
+  - voltage-and-energy
 visualization:
   type: batteries-and-internal-resistance
   options: {}
@@ -34,15 +34,15 @@ parameters:
     value: 5
     unit: Ω
 variables:
-- V
-- \varepsilon
-- I
-- r
-- R
+  - V
+  - \varepsilon
+  - I
+  - r
+  - R
 derivation:
-- V = \varepsilon - Ir
-- I = \frac{\varepsilon}{R+r}
-- V = IR
+  - V = \varepsilon - Ir
+  - I = \frac{\varepsilon}{R+r}
+  - V = IR
 presets:
   - emf: 12.6
     r: 0.02

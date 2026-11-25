@@ -22,12 +22,12 @@ parameters:
     min: 1
     max: 12
     step: 1
-    value: 2
+    value: 1
   N:
     min: 0
     max: 14
     step: 1
-    value: 2
+    value: 0
 variables:
   - Z
   - N

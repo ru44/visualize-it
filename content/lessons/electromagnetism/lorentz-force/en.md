@@ -1,7 +1,7 @@
 ---
 title: Lorentz force and cyclotron motion
 summary: >-
-  This is how MRI scanners sort atoms and mass spectrometers weigh molecules:
+  This is how old TV tubes aimed their electron beams and how mass spectrometers weigh molecules:
   a magnetic field steers a moving charged particle without ever speeding it
   up.
 parameters:
@@ -10,7 +10,7 @@ parameters:
   B: magnetic field B
   E: electric field E
 variables:
-  - 'the particle''s charge, in multiples of the elementary charge'
+  - "the particle's charge, in multiples of the elementary charge"
   - the particle's speed
   - 'magnetic field strength, into the screen when positive'
   - 'uniform electric field strength, pointing up the screen'
@@ -18,9 +18,9 @@ variables:
 
 ## Try it
 
-1. Picture an electron, curving inside the magnetic field of an old CRT television tube.
-2. Watch the particle with «electric field E» set to 0. It traces a perfect circle, over and over.
-3. Drag «charge q» from positive to negative. The particle now curves the other way around.
+1. Picture an electron, curving inside the magnetic field of an old CRT television tube. Leave «charge q» at 1, «speed v» at 5, «magnetic field B» at 1 T and «electric field E» at 0. The particle bends along a wide arc and leaves the picture; the readouts show radius 150 px and deflects down.
+2. Keep «electric field E» at 0 and drag «speed v» down to 1. The radius readout drops to 30 px, so the whole loop now fits in the picture and the particle goes round and round.
+3. Drag «charge q» from 1 to −1. The "deflects" readout changes from down to up, and the particle now curves the other way around.
 
 ## Real-life examples
 
@@ -30,9 +30,9 @@ variables:
 
 ## Test yourself
 
-1. Tune the charge, speed, and field so the magnetic force is about 5 × 10⁻¹³ N.
-2. Build a velocity selector: with the magnetic field on, tune the electric field so particles moving at your chosen speed pass straight through.
-3. Now tune the sliders so the magnetic force drops to a much gentler 1 × 10⁻¹⁴ N.
+1. Tune the charge, speed, and field so the magnetic force is about 5 × 10⁻¹³ N. One unit on the "F = qvB" readout is 1.6 × 10⁻¹⁴ N, so aim for a reading of about 31.
+2. Build a velocity selector: with the magnetic field on, tune the electric field so that «electric field E» divided by «magnetic field B» equals «speed v».
+3. Now tune the sliders so the magnetic force drops to a much smaller 1 × 10⁻¹⁴ N, a reading of about 0.6.
 
 ## Intuition
 
@@ -59,13 +59,17 @@ A velocity selector balances $qE = qvB$, passing only particles with $v = E/B$ u
 ## Real world
 
 ### Mass spectrometers
+
 Ions of different mass-to-charge ratio curve with different radii in a known B, revealing their mass.
 
 ### Auroras
+
 Charged solar-wind particles spiral along Earth's magnetic field lines toward the poles, exciting the atmosphere to glow.
 
 ### Velocity selectors
+
 Crossed E and B fields pass only particles at one speed, $v=E/B$, used to prepare particle beams.
 
 ### Cyclotrons and mass spectrometers
+
 Particle accelerators use the fact that the cyclotron period is independent of speed to keep particles in sync as they spiral outward.

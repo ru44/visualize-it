@@ -48,7 +48,7 @@ presets:
 challenges:
   - check: a*b
     target: 1
-  - check: abs(a-b)
+  - check: b-a
     target: 1
   - check: a+b
     target: 0

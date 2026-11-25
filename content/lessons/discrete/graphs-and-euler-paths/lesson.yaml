@@ -1,7 +1,7 @@
 id: graphs-and-euler-paths
 subject: discrete
 difficulty: high-school
-equation: \deg(v) = \text{edges touching } v, \quad \text{Euler path} \iff 0 \text{ or } 2 \text{ vertices have odd } \deg(v)
+equation: \text{Connected undirected graph } \deg(v) = \text{edges touching } v, \quad \text{Euler path} \iff 0 \text{ or } 2 \text{ vertices have odd } \deg(v)
 concepts:
   - graph
   - vertex

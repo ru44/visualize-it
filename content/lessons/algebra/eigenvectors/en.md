@@ -1,9 +1,6 @@
 ---
 title: Eigenvectors and eigenvalues
-summary: >-
-  Discover the few special directions a transformation only stretches, never
-  rotates — the shortcut engineers use to predict vibrations, rank web pages,
-  and simplify repeated transformations.
+summary: 'Find nonzero vectors that a matrix scales along their own line, and read the corresponding scale factors.'
 parameters:
   a: matrix row 1, column 1
   b: matrix row 1, column 2
@@ -18,54 +15,54 @@ variables:
 
 ## Try it
 
-1. Drag the arrow's tip (vx and vy) around the grid and watch its direction bend as the matrix acts on it.
-2. Notice the two dashed lines. Land the arrow exactly on one and watch it stay on that same line, only longer or shorter.
-3. Read the two eigenvalue numbers next to the dashed lines — they show exactly how much each line's arrows stretch.
+1. Set a = 2, b = 1, c = 1 and d = 2. With vx = vy = 1, the input (1, 1) becomes (3, 3): its line is unchanged and its length triples.
+2. Set vx = 1 and vy = -1. The output is (1, -1), unchanged. This is another eigenvector, with scale factor 1.
+3. Set a = 0, b = -1, c = 1 and d = 0. A quarter-turn rotation has no real eigenvector; the display removes the real eigen-direction guides.
 
 ## Real-life examples
 
-1. **Two blocks on springs.** Blocks linked by springs to each other and to the walls (matrix a=2, b=1, c=1, d=2) have two clean vibration patterns: swinging together, stretched 3 times as far, or swinging apart, stretched only once as far.
-2. **A one-way growth process.** A population where one group feeds into a second but never the reverse (a=3, b=1, c=0, d=1) still grows cleanly along two directions, at rates 3 and 1.
-3. **A satellite's pure spin.** A thruster system that only rotates a satellite by 90° (a=0, b=-1, c=1, d=0) has no real eigen-directions at all — nothing stays on its own line, because every direction turns.
+1. **Two invariant directions.** The matrix with rows (2, 1) and (1, 2) scales (1, 1) by 3 and (1, -1) by 1. These numbers are scale factors of this map, not vibration frequencies.
+2. **A triangular matrix.** With rows (3, 1) and (0, 1), the eigenvalues are 3 and 1. Directions (1, 0) and (1, -2) provide corresponding eigenvectors.
+3. **Quarter-turn rotation.** With rows (0, -1) and (1, 0), every nonzero real vector moves off its original line. The eigenvalues are complex.
 
 ## Test yourself
 
-1. Find a matrix and an arrow (not the zero arrow) that stays on its own line after the transformation.
-2. Make the matrix a pure rotation, so that no real direction — except the zero arrow — stays on its own line.
-3. Make one eigenvalue exactly zero, so the matrix squashes one whole direction completely flat.
+1. Choose an input vector of length greater than 1 whose image lies along the same line, within the checker tolerance.
+2. Make (a minus d) squared plus 4bc negative so there are no real eigenvalues. A quarter-turn rotation is one example.
+3. Make the determinant zero, giving at least one zero eigenvalue.
 
 ## Intuition
 
-Picture two blocks connected by springs — to each other and to the walls on either side. Push them in a random way and they wobble in a tangled mix of motions. But two special pushes are clean: nudge both blocks the same amount in the same direction, or nudge them the same amount in opposite directions, and each block keeps doing exactly that motion, just growing or shrinking in size. On the grid here, those two clean pushes are the dashed lines, and the arrow is the push you are testing — drag its tip, set by vx and vy, and watch whether it stays on a dashed line or swings off it.
+A matrix usually changes both the length and direction of an arrow. Some arrows are special: the result lies along the same line as the original. A nonzero arrow with this property is an eigenvector, provided the result is a scalar multiple of it.
 
-Drag the arrow off a dashed line and the matrix twists it sideways as it acts — a vector's direction usually changes. Land the arrow exactly on a dashed line instead, and the matrix only stretches or shrinks it along that same line, never bending it: the two numbers shown as the eigenvalues, one per line, say by how much. A negative eigenvalue means the arrow flips to point backward along its own line instead of stretching forward.
+The scalar is the eigenvalue. A value of 3 triples the arrow; 1 leaves it unchanged; -1 reverses it without changing its length. A value of zero collapses it to the origin. The zero vector itself is excluded from the definition because every matrix sends it to zero, so it identifies no special direction.
 
 ## Formal
 
-A nonzero vector $\mathbf{v}$ is an eigenvector of $M$ with eigenvalue $\lambda$ when $M\mathbf{v} = \lambda\mathbf{v}$: applying the matrix has the same effect as simply multiplying by the number $\lambda$.
+A nonzero vector $\mathbf{v}$ is an eigenvector of M with eigenvalue $\lambda$ if $M\mathbf{v}=\lambda\mathbf{v}$. Negative eigenvalues reverse the arrow along its line; zero collapses it.
 
-Rearranging gives $(M - \lambda I)\mathbf{v} = 0$, which has a nonzero solution only when the matrix $M - \lambda I$ is not invertible, that is, when $\det(M - \lambda I) = 0$.
+Rearranging gives $(M-\lambda I)\mathbf{v}=0$, where I is the identity matrix. A nonzero solution exists exactly when $\det(M-\lambda I)=0$. Solve this equation for eigenvalues, then find the corresponding nonzero vectors.
 
 ## Advanced
 
-A matrix that rotates the plane, like a 90° rotation, has no real eigenvectors at all: every direction turns, so the characteristic equation's roots are complex. Where real eigenvectors do exist, expressing $M$ in that eigenbasis turns matrix powers $M^k$ into simply raising each $\lambda$ to the power $k$, the basis of countless applications.
+A real matrix may have two independent real eigen-directions, one, none, or infinitely many. The identity makes every nonzero vector an eigenvector, although the diagram shows only representative guides. Expressing all vectors in an eigenbasis is possible only when there are enough independent eigenvectors; merely having real eigenvalues is not sufficient.
 
 ## Derivation
 
-1. Write down what "only stretched, not rotated" means as an equation.
-2. Move everything to one side to get a homogeneous system.
-3. That system has a nonzero solution only where this determinant vanishes.
+1. State that applying the matrix gives a scalar multiple of the original nonzero vector.
+2. Move the scalar multiple to the left using the identity matrix.
+3. Require a singular coefficient matrix so the homogeneous system can have a nonzero solution.
 
 ## Real world
 
-### Vibration analysis
-A bridge or building's natural modes of vibration are the eigenvectors of its stiffness matrix; the eigenvalues give the resonant frequencies.
+### Repeated transformations
 
-### Search ranking
-Google's original PageRank score is the eigenvector of the web's link matrix with eigenvalue 1.
+Along an eigenvector, applying the same matrix repeatedly raises the eigenvalue to successive powers.
 
-### Quantum mechanics
-A measurable quantity's possible outcomes are the eigenvalues of the operator that represents it.
+### Decoupling a model
 
-### Population genetics
-The long-run mix of genotypes under repeated mating is the eigenvector of the generation-to-generation transition matrix.
+When an eigenbasis exists, changing coordinates to that basis separates a linear transformation into independent scaling operations.
+
+### Vibration models
+
+Natural-mode calculations can use eigenvalue problems involving both stiffness and mass. The connection between eigenvalues and frequency depends on the actual model.

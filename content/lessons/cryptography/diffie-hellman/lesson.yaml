@@ -3,16 +3,16 @@ subject: cryptography
 difficulty: high-school
 equation: s = g^{ab} \bmod p
 concepts:
-- key-exchange
-- discrete-logarithm
-- shared-secret
-- cryptography
+  - key-exchange
+  - discrete-logarithm
+  - shared-secret
+  - cryptography
 prerequisites:
-- modular-arithmetic
-- one-way-functions
+  - modular-arithmetic
+  - one-way-functions
 related:
-- rsa-encryption
-- stream-ciphers
+  - rsa-encryption
+  - stream-ciphers
 visualization:
   type: diffie-hellman
   options:
@@ -27,18 +27,18 @@ parameters:
     min: 1
     max: 11
     step: 1
-    value: 6
+    value: 4
   b:
     min: 1
     max: 11
     step: 1
-    value: 9
+    value: 7
 variables:
-- \bmod
+  - \bmod
 derivation:
-- A = g^{a} \bmod p = 5^{6} \bmod 23 = 8
-- B = g^{b} \bmod p = 5^{9} \bmod 23 = 11
-- s = B^{a} \bmod p = A^{b} \bmod p = 9
+  - A = g^{a} \bmod p = 5^{6} \bmod 23 = 8
+  - B = g^{b} \bmod p = 5^{9} \bmod 23 = 11
+  - s = B^{a} \bmod p = A^{b} \bmod p = 9
 charts: []
 primary: a
 presets:

@@ -3,15 +3,15 @@ subject: aerodynamics
 difficulty: university
 equation: C_L(\alpha) \nearrow \text{until } \alpha_{\text{crit}}, \text{ then } C_L \searrow
 concepts:
-- stall
-- separation
-- angle-of-attack
-- boundary-layer
+  - stall
+  - separation
+  - angle-of-attack
+  - boundary-layer
 prerequisites:
-- lift
+  - lift
 related:
-- lift
-- lift-to-drag
+  - lift
+  - lift-to-drag
 visualization:
   type: airfoil
   options: {}
@@ -29,36 +29,36 @@ parameters:
     value: 40
     unit: m/s
 variables:
-- \alpha
-- \alpha_{\text{crit}}
-- C_L
+  - \alpha
+  - \alpha_{\text{crit}}
+  - C_L
 derivation:
-- L = W \;\Rightarrow\; \tfrac12\rho v^2 S C_L = W
-- C_L \le C_{L,\max}
-- v_{\text{stall}} = \sqrt{\dfrac{2W}{\rho S\, C_{L,\max}}}
+  - L = W \;\Rightarrow\; \tfrac12\rho v^2 S C_L = W
+  - C_L \le C_{L,\max}
+  - v_{\text{stall}} = \sqrt{\dfrac{2W}{\rho S\, C_{L,\max}}}
 charts:
-- domain:
-  - -5
-  - 20
-  marker: alpha
-  series:
-  - 'x < 15 ? 0.11*(x+2) : 1.87 - 0.19*(x-15)'
+  - domain:
+      - -5
+      - 20
+    marker: alpha
+    series:
+      - 'x < 15 ? 0.11*(x+2) : 1.87 - 0.19*(x-15)'
 visualization3d:
   type: airfoil
   options:
     models:
-    - airplane
+      - airplane
 primary: alpha
 presets:
-- alpha: 5
-  v: 60
-- alpha: 13
-  v: 25
-- alpha: 18
-  v: 70
+  - alpha: 5
+    v: 60
+  - alpha: 13
+    v: 25
+  - alpha: 18
+    v: 70
 challenges:
-- check: 'alpha > 15 and v >= 60'
-- check: '(alpha<15 ? 0.11*(alpha+2) : 1.87-0.19*(alpha-15))'
-  target: 1.87
-  tol: 0.1
-- check: 'alpha > 15 and v >= 20 and v <= 35'
+  - check: 'alpha > 15 and v >= 60'
+  - check: '(alpha<15 ? 0.11*(alpha+2) : 1.87-0.19*(alpha-15))'
+    target: 1.87
+    tol: 0.1
+  - check: 'alpha > 15 and v >= 20 and v <= 35'

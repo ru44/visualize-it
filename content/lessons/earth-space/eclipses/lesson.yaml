@@ -23,13 +23,13 @@ parameters:
     max: 180
     step: 1
     value: 90
-    unit: "°"
+    unit: '°'
   dist:
     min: 356.5
     max: 406.7
     step: 0.5
     value: 384.4
-    unit: "×1000 km"
+    unit: '×1000 km'
 variables:
   - h
   - d
@@ -43,13 +43,13 @@ derivation:
 charts: []
 primary: omega
 presets:
-- omega: 2
-  dist: 372
-- omega: 2
-  dist: 400
-- omega: 90
-  dist: 384.4
+  - omega: 2
+    dist: 372
+  - omega: 2
+    dist: 400
+  - omega: 90
+    dist: 384.4
 challenges:
-- check: dist*1000*sin(5.14*sin(omega*pi/180)*pi/180) < 6371
-- check: dist*1000*sin(5.14*sin(omega*pi/180)*pi/180) >= 6371 and dist*1000*sin(5.14*sin(omega*pi/180)*pi/180) < 9900
-- check: dist*1000*sin(5.14*sin(omega*pi/180)*pi/180) >= 9900
+  - check: dist*1000*sin(5.14*sin(omega*pi/180)*pi/180) < 6371
+  - check: dist*1000*sin(5.14*sin(omega*pi/180)*pi/180) >= 6371 and dist*1000*sin(5.14*sin(omega*pi/180)*pi/180) < 9900
+  - check: dist*1000*sin(5.14*sin(omega*pi/180)*pi/180) >= 9900 and dist*1000*sin(5.14*sin(omega*pi/180)*pi/180) < 12000

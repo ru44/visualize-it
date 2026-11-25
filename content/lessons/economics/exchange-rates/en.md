@@ -20,9 +20,9 @@ charts: []
 
 ## Try it
 
-1. Raise «exchange rate e» while «import price p» stays fixed. The pound cost of the exact same imported item climbs — nothing about the item changed, only the exchange rate did.
-2. Raise «exchange rate e» again and watch how many dollars «pounds to convert m» buys — the same savings reach less far abroad as the rate rises.
-3. Drop «import price p» to something cheap. Even a much weaker «exchange rate e» barely moves the pound cost of a cheap item.
+1. Raise «exchange rate e» from 30 to 40 while «import price p» stays at 300. The pound cost c of the exact same imported item climbs from 9000 EGP to 12000 EGP — nothing about the item changed, only the exchange rate did.
+2. Raise «exchange rate e» again, to 50, and watch how many dollars «pounds to convert m» buys: f, which read 166.7 at a rate of 30, now reads 100 — the same savings reach less far abroad as the rate rises.
+3. Drop «import price p» to 10. The cost c reads 500 EGP at a rate of 50 and 300 EGP at a rate of 30: even a much weaker pound adds only 200 EGP to a cheap item.
 
 ## Real-life examples
 
@@ -32,7 +32,7 @@ charts: []
 
 ## Test yourself
 
-1. Get the pound cost of the import to exactly 9,000 EGP.
+1. Get the pound cost of the import to exactly 6,000 EGP.
 2. With the pound weaker than 40 EGP per dollar, push the import's pound cost above 12,000 EGP.
 3. With the pound weaker than 45 EGP per dollar, get the converted dollars below 100.
 
@@ -61,13 +61,17 @@ A weaker currency is not purely bad news: it makes a country's own exports and t
 ## Real world
 
 ### Central bank intervention
+
 Central banks sometimes buy or sell foreign currency reserves to push «exchange rate e» in a chosen direction, trying to keep imports affordable or exports competitive rather than leaving the rate to markets alone.
 
 ### The Big Mac Index
+
 Comparing the price of an identical product, like a burger, converted through «exchange rate e» across countries gives a rough, informal check on whether a currency looks over- or under-valued relative to what money actually buys.
 
 ### Import-dependent economies
+
 Countries that import most of their fuel or food feel a weakening «exchange rate e» fastest and hardest, since «import price p» for daily essentials converts straight into higher pound prices at the market.
 
 ### Tourism swings
+
 A weaker «exchange rate e» makes a country cheaper for foreign visitors converting their own money in, which is why tourism often rises exactly when a currency weakens, even as the same rate makes trips abroad pricier for locals.

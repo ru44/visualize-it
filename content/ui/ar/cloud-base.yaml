@@ -4,6 +4,6 @@ cloud.temp: درجة الحرارة (°م)
 cloud.height: الارتفاع (م)
 cloud.base: قاعدة السحابة
 cloud.fog: ضباب — الهواء مشبع أصلًا عند الأرض
-cloud.clear: هواء جاف — لا سحابة ضمن المدى
+cloud.clear: هواء جاف — لا سحابة في الرسم
 cloud.tLine: درجة حرارة الهواء
 cloud.tdLine: نقطة الندى

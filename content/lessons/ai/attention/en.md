@@ -16,21 +16,21 @@ variables:
 
 ## Try it
 
-1. Set word to king (word 0) and see which other words get the brightest attention weight — the ones the query treats as most relevant.
-2. Change word to pick a different query word and watch the attention weights redistribute entirely to different words.
-3. Raise temp toward 3 and notice attention spreads out almost evenly across every word; lower it toward 0.1 and notice attention sharpens onto just the single best-matching word.
+1. Set word to 0 (king) with temp at 1 and see which words get the biggest, brightest circles — the ones the query treats as most relevant. The readouts show king 18 %, prince 18 %, man 13 %, queen 11 %.
+2. Change word to 8 (apple) and watch the attention weights move to entirely different words: apple 16 %, banana 16 %, with the royal words far behind.
+3. Go back to word 0 and raise temp to 3: attention spreads out almost evenly, about 10 % for each of the top words. Lower it to 0.1 and attention sharpens onto the best matches only: king 49 %, prince 48 %, man 2 %.
 
 ## Real-life examples
 
-1. **Balanced attention.** With temperature at 1, the query for king spreads its attention across a few plausible words at reasonable strength.
-2. **Sharp, focused attention.** With temperature dropped near its minimum, almost all the attention weight piles onto a single best-matching word.
-3. **Diffuse, unfocused attention.** With temperature pushed near its maximum, attention spreads out almost evenly, barely favouring any one word.
+1. **Balanced attention.** With temperature at 1, the query for king spreads its attention across a few plausible words: 18 % each for king itself and prince, 13 % for man, 11 % for queen.
+2. **Sharp, focused attention.** With temperature dropped near its minimum, almost all the attention weight piles onto the best matches: king and prince take 45 % each, and man is left with 5 %.
+3. **Diffuse, unfocused attention.** With temperature pushed near its maximum, attention spreads out almost evenly, barely favouring any one word: the top four all sit at 10 or 11 %.
 
 ## Test yourself
 
 1. Sharpen attention until the temperature drops below 0.2.
 2. Flatten attention until the temperature rises above 2.5.
-3. Pick a query word from the second half of the sentence, word index 6 or higher, and see which words it attends to.
+3. Pick a query word from the second half of the word list, word index 6 or higher, and see which words it attends to.
 
 ## Intuition
 
@@ -57,13 +57,17 @@ Real transformers compute many attention heads in parallel, each with its own le
 ## Real world
 
 ### Chat assistants
+
 Every response from a chat assistant is built by layers of attention deciding which earlier words in the conversation matter for the next word.
 
 ### Pronoun resolution
+
 Working out what "it" or "they" refers to in a long sentence is exactly the kind of relevance attention was built to compute.
 
 ### Machine translation
+
 Translating a sentence requires attending to the right source words, not just the nearest ones, when producing each target word.
 
 ### Image captioning
+
 Captioning models attend to the relevant region of an image while generating each word of the caption.

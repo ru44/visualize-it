@@ -4,21 +4,21 @@ summary: Try to pull a quark out on its own and you can't — the effort just cr
 parameters:
   d: separation d
 variables:
-- the potential energy stored in the field between the two quarks
-- 'string tension: the energy per unit length of that stretched field'
-- the separation between the pulled quark pair
+  - the potential energy stored in the field between the two quarks
+  - 'string tension: the energy per unit length of that stretched field'
+  - the separation between the pulled quark pair
 ---
 
 ## Try it
 
-1. Drag «separation d» up slowly from 0.1 fm. Notice the pair stays connected, like a stretching rubber band.
-2. Keep pulling past about 1.2 fm. The connection snaps, and two new particles appear where it broke.
-3. Pull the slider all the way to 2 fm and see that the quarks are still never alone — each broken end is now part of its own pair.
+1. Drag «separation d» up slowly from 0.1 fm to 1 fm. The pair stays connected, like a stretching rubber band, while the energy in the string climbs from 0.10 to 1.00 GeV.
+2. Keep pulling past 1.2 fm, to 1.21 fm. The connection snaps, and two new particles appear where it broke.
+3. Pull the slider all the way to 2 fm and see that the quarks are still never alone — each broken end is now part of its own pair, and the result reads «it snapped into two particles».
 
 ## Real-life examples
 
 1. **A gentle tug.** At 0.3 fm apart, smaller than a proton itself, the pull between the quarks is still mild.
-2. **Right at the breaking point.** At 1.2 fm, the stored energy has grown enough to snap the connection into two fresh particles.
+2. **Right at the breaking point.** At 1.2 fm the string stores 1.20 GeV and is about to break. One step further, at 1.21 fm, it snaps into two fresh particles.
 3. **Fully separated, but never alone.** At 1.8 fm, the string has already broken, and each original quark now has a brand-new partner.
 
 ## Test yourself
@@ -29,7 +29,7 @@ variables:
 
 ## Intuition
 
-A whole proton is only about 0.84 fm across, yet by the time you have pulled a quark pair apart to roughly 1.2 fm — already bigger than a proton — the tug between them has stored enough energy to conjure a whole new particle pair out of nowhere.
+A proton's radius is only about 0.84 fm, yet by the time you have pulled a quark pair apart to roughly 1.2 fm — a little more than that radius — the tug between them has stored enough energy to create a whole new particle pair.
 
 Drag «separation d» outward on the picture and the field between the quarks stretches like a rubber band, not like the widening space between two magnets. Past the snapping point, the band's stored energy turns into the mass of two new quarks, so you never end up holding just one quark alone.
 
@@ -52,10 +52,13 @@ This behaviour, called confinement, is why free single quarks have never been ob
 ## Real world
 
 ### Jets at the Large Hadron Collider
+
 When collisions fling quarks apart, detectors never see a lone quark — instead they see a tight spray, or jet, of new particles born from exactly this snapping process.
 
 ### Why no one has ever seen a lone quark
+
 Every experiment ever built to isolate a single quark has instead produced new particle pairs, strong indirect evidence for confinement.
 
 ### Asymptotic freedom
+
 Physicists showed the strong force actually weakens at very short distances, letting quarks move nearly freely inside a proton — work that won the 2004 Nobel Prize in Physics.

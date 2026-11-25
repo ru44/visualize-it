@@ -15,9 +15,9 @@ variables:
 
 ## Try it
 
-1. Set T = 30°C and Td = 22°C, a muggy summer afternoon. See the cloud base sit low, around 1,000 m.
-2. Keep T = 35°C but drag Td down to 5°C, a dry desert afternoon. Watch the cloud base climb to nearly 4,000 m.
-3. Drag Td up until it is within 1°C of T. Watch the cloud base drop almost to the ground — that is fog.
+1. Set T = 30°C and Td = 22°C, a muggy summer afternoon. The cloud base readout shows 1,000 m, quite low.
+2. Set T = 35°C and drag Td down to 5°C, a dry desert afternoon. The cloud base climbs to 3,750 m.
+3. Set T = 10°C and Td = 9°C, only 1°C apart. The cloud base drops to 125 m, almost at the ground. Raise Td to 10°C and the readout says fog.
 
 ## Real-life examples
 
@@ -56,13 +56,17 @@ This "125 rule" is the same rough estimate pilots, skydivers, and glider pilots 
 ## Real world
 
 ### Cumulus clouds on a summer afternoon
+
 The flat bottoms lined up across the sky on a fair-weather day all sit at nearly the same height, because every rising bubble of air over that region shares almost the same ground temperature and dew point.
 
 ### Pilots and glider pilots reading the sky
+
 Glider pilots use the visible cloud base to estimate how high they can expect rising thermals to carry them before condensation begins, planning cross-country flights around it.
 
 ### Fog at dawn
+
 Ground temperatures often drop overnight until they nearly meet the dew point, which is why fog is common at dawn and usually burns off within an hour or two once morning sunlight warms the ground again.
 
 ### Mountain clouds and orographic lift
+
 When moist air is forced to rise over a mountain range, the same cooling-to-dew-point process produces a persistent cap of cloud sitting right at the same height on the windward slope almost every day.

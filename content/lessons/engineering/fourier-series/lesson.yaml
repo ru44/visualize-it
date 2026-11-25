@@ -16,7 +16,7 @@ related:
 visualization:
   type: function-plot
   options:
-    expr: "4/pi*(sin(x) + (N >= 3 ? sin(3*x)/3 : 0) + (N >= 5 ? sin(5*x)/5 : 0) + (N >= 7 ? sin(7*x)/7 : 0) + (N >= 9 ? sin(9*x)/9 : 0) + (N >= 11 ? sin(11*x)/11 : 0))"
+    expr: '4/pi*(sin(x) + (N >= 3 ? sin(3*x)/3 : 0) + (N >= 5 ? sin(5*x)/5 : 0) + (N >= 7 ? sin(7*x)/7 : 0) + (N >= 9 ? sin(9*x)/9 : 0) + (N >= 11 ? sin(11*x)/11 : 0))'
     domain: [-7, 7]
     range: [-1.6, 1.6]
     mode: plain
@@ -51,5 +51,5 @@ presets:
     x: 3
 challenges:
   - check: abs(N-1)<0.5 and abs(4/pi*sin(x) - 1.27) < 0.05
-  - check: "N>=11 and x>0 and x<1 and (4/pi*(sin(x) + (N >= 3 ? sin(3*x)/3 : 0) + (N >= 5 ? sin(5*x)/5 : 0) + (N >= 7 ? sin(7*x)/7 : 0) + (N >= 9 ? sin(9*x)/9 : 0) + (N >= 11 ? sin(11*x)/11 : 0))) > 1.1"
-  - check: "abs(x-1.5708)<0.05 and (4/pi*(sin(x) + (N >= 3 ? sin(3*x)/3 : 0) + (N >= 5 ? sin(5*x)/5 : 0) + (N >= 7 ? sin(7*x)/7 : 0) + (N >= 9 ? sin(9*x)/9 : 0) + (N >= 11 ? sin(11*x)/11 : 0))) > 0.92 and (4/pi*(sin(x) + (N >= 3 ? sin(3*x)/3 : 0) + (N >= 5 ? sin(5*x)/5 : 0) + (N >= 7 ? sin(7*x)/7 : 0) + (N >= 9 ? sin(9*x)/9 : 0) + (N >= 11 ? sin(11*x)/11 : 0))) < 1.08"
+  - check: 'N>=11 and x>0 and x<1 and (4/pi*(sin(x) + (N >= 3 ? sin(3*x)/3 : 0) + (N >= 5 ? sin(5*x)/5 : 0) + (N >= 7 ? sin(7*x)/7 : 0) + (N >= 9 ? sin(9*x)/9 : 0) + (N >= 11 ? sin(11*x)/11 : 0))) > 1.1'
+  - check: 'abs(x-1.5708)<0.05 and (4/pi*(sin(x) + (N >= 3 ? sin(3*x)/3 : 0) + (N >= 5 ? sin(5*x)/5 : 0) + (N >= 7 ? sin(7*x)/7 : 0) + (N >= 9 ? sin(9*x)/9 : 0) + (N >= 11 ? sin(11*x)/11 : 0))) > 0.92 and (4/pi*(sin(x) + (N >= 3 ? sin(3*x)/3 : 0) + (N >= 5 ? sin(5*x)/5 : 0) + (N >= 7 ? sin(7*x)/7 : 0) + (N >= 9 ? sin(9*x)/9 : 0) + (N >= 11 ? sin(11*x)/11 : 0))) < 1.08'

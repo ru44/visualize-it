@@ -3,14 +3,14 @@ subject: aerodynamics
 difficulty: high-school
 equation: \dfrac{L}{D} = \dfrac{1}{\tan\gamma}
 concepts:
-- glide-ratio
-- lift-to-drag
-- flight-path-angle
+  - glide-ratio
+  - lift-to-drag
+  - flight-path-angle
 prerequisites:
-- lift-to-drag
+  - lift-to-drag
 related:
-- four-forces-of-flight
-- terminal-velocity
+  - four-forces-of-flight
+  - terminal-velocity
 visualization:
   type: gliding-and-glide-ratio
   options: {}
@@ -29,24 +29,24 @@ parameters:
     value: 3000
     unit: m
 variables:
-- L
-- D
-- \gamma
+  - L
+  - D
+  - \gamma
 derivation:
-- W\sin\gamma = D, \quad W\cos\gamma = L
-- \dfrac{L}{D} = \dfrac{\cos\gamma}{\sin\gamma} = \dfrac{1}{\tan\gamma}
-- \tan\gamma \approx \gamma \;\Rightarrow\; \text{distance} \approx h \cdot (L/D)
+  - W\sin\gamma = D, \quad W\cos\gamma = L
+  - \dfrac{L}{D} = \dfrac{\cos\gamma}{\sin\gamma} = \dfrac{1}{\tan\gamma}
+  - \tan\gamma \approx \gamma \;\Rightarrow\; \text{distance} \approx h \cdot (L/D)
 charts: []
 presets:
-- LD: 4
-  h: 1.5
-- LD: 30
-  h: 1000
-- LD: 15
-  h: 12500
+  - LD: 4
+    h: 1.5
+  - LD: 30
+    h: 1000
+  - LD: 15
+    h: 12500
 challenges:
-- check: 'h*LD'
-  target: 30000
-  tol: 3000
-- check: 'LD > 40'
-- check: 'h<=2 and h*LD>8'
+  - check: 'h*LD'
+    target: 30000
+    tol: 3000
+  - check: 'LD > 40'
+  - check: 'h<=2 and h*LD>8'

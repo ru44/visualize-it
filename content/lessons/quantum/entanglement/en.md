@@ -18,9 +18,9 @@ charts: []
 
 ## Try it
 
-1. Set «Alice's detector angle a» and «Bob's detector angle b» to the same value. Every pair you measure below comes back matching — both "heads" or both "tails".
-2. Set «Bob's detector angle b» exactly 180° away from «Alice's detector angle a». Now every pair comes back opposite.
-3. Set «Bob's detector angle b» 90° away from «Alice's detector angle a» and raise «number of pairs measured» toward 500. The match rate settles at almost exactly one half.
+1. Set «Alice's detector angle a» and «Bob's detector angle b» both to 0° and press «run 100 pairs». «predicted match chance» reads 100 %, and every pair comes back matching: both H (heads) or both T (tails).
+2. Keep a = 0° and set «Bob's detector angle b» to 180°. «predicted match chance» reads 0 %. Run the pairs again: now every pair comes back opposite.
+3. Set b = 90°, raise «number of pairs measured» to 500 and press «run 500 pairs». «predicted match chance» reads 50 %, and «observed match rate» settles close to it.
 
 ## Real-life examples
 
@@ -30,8 +30,8 @@ charts: []
 
 ## Test yourself
 
-1. Get the match chance to (very nearly) 1.
-2. Get the match chance to almost exactly 0.5.
+1. Get «predicted match chance» to (very nearly) 100 %.
+2. Get «predicted match chance» to 75 %.
 3. Push the two detector angles at least 170° apart.
 
 ## Intuition
@@ -59,13 +59,17 @@ A local hidden-variable model, in which each particle secretly carries a fixed p
 ## Real world
 
 ### Quantum key distribution
-Banks and governments already send secret keys over entangled-photon links; any eavesdropper who intercepts a photon disturbs the correlation in a way the two legitimate ends can detect.
+
+Research networks have already sent secret keys over entangled-photon links; any eavesdropper who intercepts a photon disturbs the correlation in a way the two legitimate ends can detect.
 
 ### Quantum computers
+
 Linking qubits with entanglement lets a quantum computer's measurements depend on each other in ways no ordinary computer's bits can, which is where a lot of its extra power comes from.
 
 ### Testing the foundations of physics
+
 Bell's inequality turned "is nature secretly classical underneath?" from a philosophical question into a lab measurement, one of the most repeated and most decisively answered tests in physics.
 
 ### Satellite quantum networks
+
 The Micius satellite experiment mentioned above is the first step toward a global network that shares entangled pairs between distant ground stations for secure communication.

@@ -48,9 +48,9 @@ variables:
   - d
   - U
 derivation:
-  - '\text{Fourier''s law: conductive heat flow through a slab depends on } k, A, \Delta T \text{ and inversely on thickness } d.'
-  - \frac{Q}{t} = \frac{kA\Delta T}{d} \;\text{gives the heat-loss rate directly, in watts.}
-  - \text{Builders roll } k/d \text{ into one number, the U-value, so } \frac{Q}{t} = UA\Delta T.
+  - \frac{Q}{t} = \frac{kA\Delta T}{d}
+  - U = \frac{k}{d}
+  - \frac{Q}{t} = UA\Delta T
 charts: []
 primary: k
 presets:
@@ -68,5 +68,5 @@ presets:
     dT: 15
 challenges:
   - check: k*A*dT/d < 50 and A > 10
-  - check: k/d < 0.3
+  - check: k/d < 0.15
   - check: k*A*dT/d > 500 and k > 0.5

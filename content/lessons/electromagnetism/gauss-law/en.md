@@ -18,15 +18,15 @@ variables:
 
 ## Try it
 
-1. Picture a small charged demonstration ball, 20 nC of charge spread over a 0.5 m sphere.
-2. Drag «distance from the centre x» outward from the middle. The field climbs while you're still inside the sphere, then starts falling once you pass its surface.
-3. Now raise «sphere radius R» while the charge stays fixed. The peak field at the surface drops — the same charge is now spread over more space.
+1. Picture a charged demonstration ball, 20 nC of charge spread through a sphere of radius 1 m. Leave «total charge Q» at 20 nC and «sphere radius R» at 1 m, and set «distance from the centre x» to 1.5 m. The readout shows f(x) = 79.9111: the field there is about 80 V/m.
+2. Drag «distance from the centre x» from 0.5 m out to 1 m. The field climbs from 89.9 to 179.8 V/m, its peak, right at the surface. Go on to 2 m and it falls to 44.95 V/m.
+3. Keep «distance from the centre x» at 2 m and raise «sphere radius R» from 1 m to 2 m, so you are at the surface again. The field there is now only 44.95 V/m instead of 179.8 — the same charge is spread over more space.
 
 ## Real-life examples
 
-1. **A small charged demonstration ball.** With 20 nC spread over a 0.5 m sphere, the field 2 m from the centre is a modest 45 V/m.
-2. **A Van de Graaff dome.** Charged to 80 nC on a compact 0.2 m sphere, the field just 1 m from the centre reaches over 700 V/m.
-3. **A large charged weather balloon.** With 50 nC spread over a bigger 1.5 m sphere, the field halfway to the surface (0.5 m out) is about 67 V/m — gentler, because the charge is more spread out.
+1. **A charged demonstration ball.** With 20 nC spread through a sphere of radius 1 m, the field 2 m from the centre is a modest 45 V/m.
+2. **A Van de Graaff dome.** Charged to 80 nC on a compact sphere of radius 0.2 m, the field just 1 m from the centre reaches over 700 V/m.
+3. **A large charged weather balloon.** With 50 nC spread through a bigger sphere of radius 1.5 m, the field a third of the way to the surface (0.5 m out) is about 67 V/m — gentler, because the charge is more spread out.
 
 ## Test yourself
 
@@ -36,7 +36,7 @@ variables:
 
 ## Intuition
 
-Picture a small charged ball used in physics demonstrations, carrying 20 nC of charge spread over a sphere half a metre across. Drag «distance from the centre x» outward from the middle: while you are still inside the sphere, the field climbs in a straight line, because moving out sweeps past more and more of the charge. The moment $x$ passes the sphere's radius $R$, every bit of charge is already enclosed, and the field starts falling off instead, the same shape as in Coulomb's law.
+Picture a charged ball used in physics demonstrations, carrying 20 nC of charge spread through a sphere of radius 1 m. Drag «distance from the centre x» outward from the middle: while you are still inside the sphere, the field climbs in a straight line, because moving out sweeps past more and more of the charge. The moment $x$ passes the sphere's radius $R$, every bit of charge is already enclosed, and the field starts falling off instead, the same shape as in Coulomb's law.
 
 Now raise «sphere radius R» while the charge stays fixed: the same total charge is now smeared over a bigger sphere, so the peak field right at the surface drops, even though the amount of charge never changed — only how spread out it is.
 
@@ -59,13 +59,17 @@ Gauss's law is one of Maxwell's equations and holds for any charge distribution 
 ## Real world
 
 ### Faraday cages
+
 A closed conducting shell keeps its interior field at zero regardless of the charge or field outside, which is exactly what Gauss's law demands for any charge-free enclosed region.
 
 ### Van de Graaff generators
+
 Extra charge sprayed onto a hollow conducting sphere migrates entirely to the outer surface, leaving the field and potential inside constant — a direct consequence of the same law.
 
 ### Coaxial cables
+
 Swapping the spherical Gaussian surface for a cylindrical one gives the field between a cable's inner conductor and its outer shield by the identical symmetry argument.
 
 ### Recovering Coulomb's law
+
 Shrinking the charged sphere to a point recovers the $1/x^2$ field of a single point charge studied in the 'coulombs-law' lesson — Gauss's law contains it as a special case.

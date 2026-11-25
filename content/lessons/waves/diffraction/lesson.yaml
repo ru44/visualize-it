@@ -37,7 +37,7 @@ variables:
 derivation:
   - \theta = \arcsin\!\left(\dfrac{\lambda}{a}\right)
   - a \gg \lambda \Rightarrow \theta \to 0
-  - a \approx \lambda \Rightarrow \theta \to \text{90°}
+  - a \to \lambda^+ \Rightarrow \theta \to 90^\circ
 charts: []
 primary: a
 presets:

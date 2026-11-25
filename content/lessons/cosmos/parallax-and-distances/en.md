@@ -7,14 +7,14 @@ parameters:
 variables:
   - distance to the star, in parsecs
   - 'the baseline: how far apart the two viewpoints are, in astronomical units (AU)'
-  - 'the parallax angle: half the star''s apparent yearly shift, in arcseconds'
+  - "the parallax angle: half the star's apparent yearly shift, in arcseconds"
 ---
 
 ## Try it
 
-1. Set «parallax angle» to 0.768 arcseconds with «baseline width» = 1 AU — that's the real shift of the nearest star beyond the Sun. Read off its distance.
-2. Shrink «parallax angle» toward 0.01. The star has to be much farther away to shift by such a tiny amount.
-3. Now raise «baseline width» toward 30 AU, as if Earth's orbit were as wide as Neptune's. The same tiny shift now reaches a star thousands of parsecs away.
+1. Set «parallax angle» to 0.768 arcseconds with «baseline width» = 1 AU — that's the real shift of the nearest star beyond the Sun. Read off its distance: 1.30 parsecs, or 4.25 light-years.
+2. Shrink «parallax angle» to 0.01. The star has to be much farther away to shift by such a tiny amount: 100 parsecs.
+3. Now raise «baseline width» to 30 AU, as if Earth's orbit were as wide as Neptune's. The same tiny shift now reaches a star 3000 parsecs away.
 
 ## Real-life examples
 
@@ -26,13 +26,13 @@ variables:
 
 1. Reproduce Proxima Centauri's real distance of about 1.3 parsecs.
 2. Measure a star more than 1,000 parsecs away.
-3. Measure a nearby star using only Earth's own 1 AU orbit.
+3. Measure a nearby star (parallax above 0.5 arcseconds) using only Earth's own 1 AU orbit.
 
 ## Intuition
 
 Hold a finger up at arm's length and close one eye, then the other — your finger seems to jump against the background. Close things jump more than far things. Now imagine that "jump" isn't your two eyes but Earth itself, seen from opposite sides of its orbit six months apart: nearby stars appear to shift slightly against the far more distant stars behind them, tracing out a tiny loop over a year.
 
-Drag «parallax angle» down and the star has to sit much farther away to produce such a small shift — the picture's distance grows sharply. Drag «baseline width» up instead, and the same shift now corresponds to a much bigger distance too, because a wider "eye separation" can measure the same tiny angle from farther out.
+Drag «parallax angle» down and the star has to sit much farther away to produce such a small shift — the distance in the readout grows sharply. Drag «baseline width» up instead, and the same shift now corresponds to a much bigger distance too, because a wider "eye separation" can measure the same tiny angle from farther out.
 
 ## Formal
 
@@ -53,13 +53,17 @@ Ground-based parallax measurements are limited to roughly 0.01 arcsecond precisi
 ## Real world
 
 ### The parsec itself
+
 Astronomers invented the parsec specifically so this formula stays simple: 1 parsec is defined as the distance at which a 1 AU baseline produces exactly 1 arcsecond of parallax.
 
 ### The Gaia space telescope
+
 Gaia has measured parallax distances for over a billion stars, building the most precise 3D map of the Milky Way ever made.
 
 ### The first rung of the distance ladder
+
 Parallax only reaches nearby stars directly, but astronomers use it to calibrate other distance methods — like the brightness of certain pulsating stars — that then reach much farther across the universe.
 
 ### Ancient attempts that failed
+
 Ancient Greek astronomers looked for stellar parallax and found none, correctly reasoning it must be too small to see with the naked eye — evidence, they realized, that the stars were staggeringly far away.

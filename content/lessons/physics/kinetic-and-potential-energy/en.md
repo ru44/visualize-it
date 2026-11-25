@@ -1,15 +1,13 @@
 ---
 title: Kinetic energy and why speed matters so much
-summary: >-
-  This is why doubling a car's speed doesn't double its crash energy — it
-  quadruples it, which is why speed limits matter so much.
+summary: 'Calculate kinetic energy and the height an ideal vertical launch reaches when that energy becomes gravitational potential energy.'
 parameters:
-  m: mass m
-  x: speed v
+  m: 'm — mass'
+  x: 'v — vertical launch speed'
 variables:
-  - mass of the object
-  - 'speed (the horizontal axis, labelled $x$)'
-  - 'kinetic energy, $\tfrac12 mv^2$'
+  - 'constant mass of the object'
+  - 'initial speed of a vertical launch'
+  - 'translational kinetic energy at launch'
 charts:
   - title: Gravitational potential energy vs height
     xLabel: height h (m)
@@ -20,54 +18,50 @@ charts:
 
 ## Try it
 
-1. Set a low speed and read the bars: a gentle throw carries only a few joules, and the ghost ball barely leaves the ground.
-2. Drag the speed up and watch the ghost climb — each extra unit of speed buys more height than the last one did.
-3. Compare speed v with speed 2v — the coasting height doesn't just double, it quadruples.
+1. Set m = 1 kg and v = 6 m/s. The initial kinetic energy is 18 J, and the ideal vertical rise is about 1.83 m.
+2. Keep mass fixed and double speed to 12 m/s. Energy rises to 72 J and height to about 7.34 m: both quadruple.
+3. Keep speed fixed and double the mass to 2 kg. Both energy bars double, but the height stays the same. The two bars compare energy at launch and at the top; they are not two energies to add at one instant.
 
 ## Real-life examples
 
-1. **A basketball pass.** A 0.6 kg basketball thrown at 8 m/s carries about 19 J of kinetic energy — enough to sting bare hands if caught wrong.
-2. **A bowling ball rolling down the lane.** At 5 kg and just 3 m/s, a bowling ball still carries over 22 J, more than the much lighter basketball, thanks to its mass.
-3. **Swinging a hammer.** A 2 kg hammer swung at 6 m/s carries 36 J of kinetic energy — enough to drive a nail deep with one blow.
+1. **A light object.** A 0.6 kg object launched vertically at 8 m/s has 19.2 J of kinetic energy and rises about 3.26 m if air resistance is neglected.
+2. **A heavier, slower object.** A 5 kg object at 3 m/s has 22.5 J and an ideal rise of about 0.46 m. More energy does not imply more height when the mass also changes.
+3. **An intermediate launch.** A 2 kg object at 6 m/s has 36 J and rises about 1.83 m. Mass doubles the energy relative to the first Try it setting, but not the height at that speed.
 
 ## Test yourself
 
-1. Make the kinetic energy exactly 20 J.
-2. Keep the mass at 1 kg and find the speed that gives 50 J of kinetic energy.
-3. Get the kinetic energy above 100 J while keeping the speed under 8 m/s.
+1. Make the kinetic energy approximately 20 J.
+2. Keep mass at 1 kg and find a speed giving about 50 J.
+3. Keep speed below 8 m/s and make kinetic energy greater than 100 J.
 
 ## Intuition
 
-Picture a 0.6 kg basketball thrown at 8 m/s: it carries about 19 joules of kinetic energy, the energy of motion. Drag the speed slider from low to high and watch the ghost ball's resting height: it doesn't rise steadily, it leaps — each extra unit of speed adds more energy, and buys more height, than the last one did.
+Kinetic energy is energy associated with motion. In a vertical launch with no air resistance, gravity slows the object as it rises. At the highest point its speed is zero, and the initial kinetic energy has become an increase in gravitational potential energy. The diagram places the starting and highest positions side by side for comparison; the curved connector is not a literal sideways flight path.
 
-Go from speed v to speed 2v instead: the coasting height doesn't merely double, it quadruples, because doubling a number and squaring it multiplies the result by four. That's the physical reason braking distance from double the speed is roughly four times longer — all that extra kinetic energy has to be removed by the same friction force over a longer stopping distance.
+Doubling speed multiplies kinetic energy by four because speed is squared. At a fixed mass this also quadruples the ideal height. Doubling mass at a fixed speed doubles the kinetic energy, but raising that mass through any given height also needs twice the potential-energy increase. Those factors cancel, so the height is independent of mass in this model.
 
 ## Formal
 
-$KE(v) = \tfrac12 mv^2$; differentiating, $\dfrac{d(KE)}{dv} = mv$, the momentum — energy increases fastest exactly where momentum is largest.
+For a constant-mass object in classical mechanics, translational kinetic energy is $K=\tfrac12mv^2$, where v is speed and m is mass. Near Earth's surface with approximately constant g, the increase in gravitational potential energy for a rise h is $\Delta U=mgh$.
 
-The chart shows gravitational potential energy $PE = mgh$, linear in height $h$ — a useful contrast: PE grows proportionally, KE grows quadratically.
+For a vertical launch with no air resistance or other energy transfers, $\tfrac12mv^2=mgh$, giving $h=v^2/(2g)$ for positive mass. Here $g=9.81\ \mathrm{m/s^2}$ and height is measured above the starting point. At an intermediate height, kinetic plus gravitational potential energy remains constant; neither alone need be constant.
 
 ## Advanced
 
-Kinetic energy is quadratic in $v$ because it comes from integrating momentum: $KE = \int_0^v mv'\,dv' = \tfrac12 mv^2$, the same triangular-area argument as spring work but with momentum $mv$ playing the role of the linear "force". This is also why energy, not momentum, sets stopping distances: momentum absorbed at constant braking force gives a time proportional to $v$, but energy absorbed over a fixed braking force gives a distance proportional to $v^2$.
+The work-energy theorem relates net work to the change in kinetic energy: Wnet = ΔK. The displayed formula counts translational motion; a rolling or spinning object can also have rotational kinetic energy. The lower chart varies height independently and plots mgh. Its horizontal axis is height, whereas the main control selects launch speed; the two inputs share a numerical range but represent different quantities.
 
 ## Derivation
 
-1. Newton's second law.
-2. Change variables using $dx/dt = v$.
-3. Integrate from rest to speed $v$ — the work-energy theorem.
+1. Apply F = m dv/dt to a constant-mass object moving along a line.
+2. In the work integral, use dx = v dt to obtain the integral of mv with respect to velocity.
+3. Integrate from rest to speed v. The resulting net work is the kinetic energy ½mv².
 
 ## Real world
 
-### Crash safety
-Car crash energy scales with speed squared, which is why small speed limit increases produce disproportionately worse collisions.
+### Comparing moving loads
 
-### Wind turbines
-Power available from wind scales with the cube of wind speed, since kinetic energy flux already scales as speed squared times speed.
+At the same speed, twice the mass has twice the translational kinetic energy. At the same mass, twice the speed has four times the energy.
 
-### Ballistics
-A bullet's destructive energy depends on the square of its muzzle velocity, not just its mass.
+### Raising an object
 
-### Sports impacts
-A slightly faster pitch or serve carries much more kinetic energy on impact than the speed increase alone would suggest.
+An ideal mechanism can convert motion into height. Real mechanisms may transfer some energy to heating, sound or rotation, so the model's rise is not automatically achieved.

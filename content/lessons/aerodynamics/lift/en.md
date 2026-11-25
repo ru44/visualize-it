@@ -22,9 +22,9 @@ charts:
 
 ## Try it
 
-1. Picture a small aircraft climbing away after takeoff, tilted 5° into the air at 50 m/s.
-2. Raise «angle of attack α» slowly. The green lift arrow grows.
-3. Keep going past 15°. The air over the wing breaks up, the arrow shrinks: that is a stall.
+1. Start with «angle of attack α» at 5° and «airspeed v» at 50 m/s: a small aircraft climbing away after takeoff. The readout shows L = 18865 N.
+2. Raise «angle of attack α» slowly to 15°. The green lift arrow grows: C_L climbs to 1.87 and L to 45815 N.
+3. Keep going to 18°. The air over the wing breaks up, C_L falls to 1.3 and L shrinks to 31850 N: that is a stall.
 
 ## Real-life examples
 
@@ -34,7 +34,7 @@ charts:
 
 ## Test yourself
 
-1. Reach about 20,000 N of lift while staying below the 15° stall angle.
+1. Reach about 25,000 N of lift while staying below the 15° stall angle.
 2. Push the angle of attack just past 15° and see the lift coefficient stay above 1.5.
 3. Without exceeding 15°, generate at least 30,000 N of lift.
 
@@ -63,13 +63,17 @@ Formally, lift on a 2D airfoil equals $\rho v \Gamma$ (the Kutta–Joukowski the
 ## Real world
 
 ### Takeoff and landing
+
 Flaps increase effective camber and area at low speed, boosting $C_L$ so the wing can make enough lift before the wheels leave the ground.
 
 ### Bird and insect flight
+
 Birds actively vary α and camber stroke by stroke; the same $L = \tfrac12\rho v^2 S C_L$ relation governs a sparrow as much as an airliner.
 
 ### Formula 1 wings
+
 Inverted airfoils on a race car generate downforce the same way, pressing tyres into the track for more cornering grip.
 
 ### Sailing upwind
+
 A sail is a cambered airfoil in cross-section; trimming it changes its effective angle of attack to the apparent wind.

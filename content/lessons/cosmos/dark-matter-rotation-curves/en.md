@@ -5,17 +5,17 @@ parameters:
   halo: dark matter halo
   r: distance from center r
 variables:
-- the orbital speed of a star or gas cloud at distance r
-- Newton's gravitational constant
-- all the mass sitting inside radius r — stars, gas, and any hidden matter
-- distance from the galaxy's center, in kiloparsecs
+  - the orbital speed of a star or gas cloud at distance r
+  - Newton's gravitational constant
+  - all the mass sitting inside radius r — stars, gas, and any hidden matter
+  - distance from the galaxy's center, in kiloparsecs
 ---
 
 ## Try it
 
-1. Watch the black dots. They mark the speeds astronomers actually measured for stars at each distance r.
-2. Raise «dark matter halo» from 0. The orange curve climbs to meet the black dots instead of drooping down.
-3. Drag «distance from center r» all the way out. Even far from the center, the curve stays flat rather than falling.
+1. Look at the large dots. They mark the speeds astronomers actually measured for stars at each distance r.
+2. Raise «dark matter halo» from 0 to 5. The orange curve climbs to meet the large dots instead of drooping down, and the miss shrinks from 69.6 km/s to 4.0 km/s.
+3. Keep the halo at 5 and drag «distance from center r» from 5 to 30 kpc. Visible matter alone would drop from 160 to 93 km/s; with the halo the speed only eases from 217 to 173 km/s.
 
 ## Real-life examples
 
@@ -25,15 +25,15 @@ variables:
 
 ## Test yourself
 
-1. Find the halo strength that makes the orange curve sit on top of the black measured points.
-2. Push the view out to 25 kpc from the center, near the edge of the galaxy.
-3. Turn the halo down below 0.5 and see how far short the curve falls of the real data.
+1. Find the halo strength that makes the orange curve sit on top of the large measured points.
+2. Drag «distance from center r» out to 25 kpc, near the edge of the galaxy.
+3. Turn the halo down below 0.5 and drag r out to 30 kpc: see how far short the curve falls of the real data.
 
 ## Intuition
 
 The Sun circles the center of the Milky Way at about 220 km/s, some 8 kpc out. Neptune, far out in our own solar system, crawls at only 5 km/s, because the Sun's pull is so much weaker that far away. Stars in other galaxies should slow down the same way the farther out they sit — but when astronomers measured them, most did not.
 
-Drag «distance from center r» outward and watch the black measured points: they stay at roughly the same height instead of dropping. Raise «dark matter halo» from 0 and the orange curve rises to meet them. The only way to keep those far-out stars moving that fast is extra mass, spread through and beyond the visible galaxy, that no telescope has ever photographed.
+Follow the large measured points from left to right, toward bigger r: they stay at roughly the same height instead of dropping. Raise «dark matter halo» from 0 and the orange curve rises to meet them. The only way to keep those far-out stars moving that fast is extra mass, spread through and beyond the visible galaxy, that no telescope has ever photographed.
 
 ## Formal
 
@@ -54,10 +54,13 @@ Fitting curves like this one across thousands of galaxies, pioneered by Vera Rub
 ## Real world
 
 ### Vera Rubin's galaxies
+
 In the 1970s Vera Rubin and Kent Ford measured dozens of spiral galaxies and found their outer stars orbiting far too fast for the visible matter — one of the first clear signs of dark matter.
 
 ### Weighing a galaxy without seeing its mass
+
 Astronomers use curves like this one to estimate how much dark matter surrounds a galaxy, long before any telescope could hope to see the halo directly.
 
 ### Dwarf galaxies as extreme test cases
+
 Small, faint dwarf galaxies often show the strongest evidence of all, since their visible matter is far too little to explain how fast their gas moves.

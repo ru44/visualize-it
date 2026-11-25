@@ -1,76 +1,68 @@
 ---
 title: Three ways heat moves
-summary: >-
-  A metal spoon left in hot tea gets warm at the handle without touching
-  the tea, air above a radiator rises even though nothing pushes it, and
-  sunlight warms your face across 150 million kilometres of empty space —
-  conduction, convection and radiation, the only three ways heat can travel.
+summary: 'Compare conduction through material, convection involving moving fluid, and radiation emitted by a surface.'
 parameters:
-  dT: temperature difference ΔT
-  k: thermal conductivity of the material k
-  Tsurf: hot surface's absolute temperature T
+  dT: 'ΔT — temperature difference for conduction and convection'
+  k: 'k — conductivity of the conducting path'
+  Tsurf: 'T — absolute temperature of the emitting surface'
 variables:
-  - heat transferred by conduction, convection, and radiation
-  - thermal conductivity of the material
-  - the area heat crosses
-  - temperature difference driving the flow
-  - thickness of the conducting material
-  - convective heat transfer coefficient
-  - emissivity of the radiating surface
-  - the Stefan–Boltzmann constant, 5.67×10⁻⁸ W/(m²·K⁴)
-  - absolute temperature of the radiating surface
+  - 'energy transferred by each mechanism; dividing by time gives power'
+  - 'thermal conductivity'
+  - 'area used by the relevant panel'
+  - 'temperature difference across the path or between surface and fluid'
+  - 'length of the conduction path'
+  - 'convective transfer coefficient'
+  - 'emissivity, between zero and one'
+  - 'Stefan–Boltzmann constant'
+  - 'absolute surface temperature in kelvin'
 ---
 
 ## Try it
 
-1. Raise the slider "temperature difference ΔT". Watch the heat spreading along the spoon, the rising air above the radiator, and the radiating sun all intensify together.
-2. Raise the slider "thermal conductivity k" toward copper's value. Watch only the spoon's heat front race ahead — convection and radiation do not care what the spoon is made of.
-3. Raise the slider "hot surface temperature T" toward 800 K. Watch the radiated power climb far faster than ΔT alone would suggest.
+1. Set ΔT = 40°C, k = 15 and T = 350 K. Read about 0.10 W of conduction, 240 W of convection and 38 W of emitted radiation. The panels use different areas and assumptions, so they are separate examples.
+2. Double ΔT to 80°C. Conduction and convection double. The radiation reading stays unchanged because its surface-temperature control has not changed.
+3. Restore ΔT = 40°C and double T from 350 to 700 K. Emitted radiation rises by a factor of 16, to about 613 W. Changing k affects only the conduction panel.
 
 ## Real-life examples
 
-1. **A steel spoon left in hot tea.** With ΔT = 70°C between the tea and the air, and steel's conductivity (k = 15 W/(m·K)), heat creeps up the handle by direct contact — conduction, molecule bumping molecule.
-2. **A radiator warming a room.** With ΔT = 40°C between the radiator and the room air, but a poor conductor like wood nearby (k = 0.2 W/(m·K)), almost none of the useful warming comes from touching the radiator — it comes from convection, air heated at the radiator rising and carrying warmth around the room.
-3. **A red-hot stove element.** At Tsurf = 800 K with a large ΔT = 60°C and a copper pan (k = 400 W/(m·K)) on top, both conduction into the pan and radiation off the glowing element are intense — you can feel the heat before you even touch anything.
+1. **A conducting handle model.** At ΔT = 70°C and k = 15 W/(m·K), a 0.15 m path with cross-section 25 mm² transfers 0.175 W in the steady one-dimensional model.
+2. **A poorly conducting path.** At ΔT = 40°C and k = 0.2 W/(m·K), conduction is about 0.00133 W. The separate convection example still gives 240 W, and radiation at 350 K remains about 38 W.
+3. **Higher conductivity and surface temperature.** At ΔT = 60°C, k = 400 and T = 800 K, the three readings are 4 W, 360 W and about 1045 W. They are not an energy balance for one object.
 
 ## Test yourself
 
-1. Get the conduction rate along the spoon to about 1 W.
-2. Get the radiated power from the hot surface to about 500 W.
-3. Set up a very hot, very conductive scene: ΔT above 60°C with a conductivity above 200 W/(m·K).
+1. Make the conduction rate approximately 1 W.
+2. Make emitted radiative power approximately 500 W.
+3. Set ΔT above 60°C and k above 200 W/(m·K).
 
 ## Intuition
 
-Heat always moves from hot to cold, but it has exactly three routes for getting there. Touch a metal spoon left in a hot drink and the handle warms even though your hand never touched the liquid — that is conduction, energy passed molecule to molecule through a solid, fastest through metals and slowest through wood, wool or air. On screen, drag the slider "thermal conductivity k" toward copper's value and watch the heated stretch of the spoon race outward much faster than it does for wood.
+A spoon's handle can warm even though the liquid touches only its other end. Energy passes through the material without the whole spoon moving: this is conduction. In convection, fluid motion transports energy. For example, buoyancy can make warmer, less dense air rise through cooler surroundings. Fans and pumps can also drive convection; it does not require natural rising motion.
 
-Hold your hand above a radiator, not beside it, and you feel warm air rising — that is convection, heat carried physically by a moving fluid, air or water, as the warmed part becomes less dense and floats upward while cooler fluid sinks in to replace it. Raise the slider "temperature difference ΔT" and the rising-air arrows above the radiator panel lengthen, because a bigger temperature gap drives faster circulation. Finally, step outside on a sunny day and feel warmth on your skin with no air or contact involved at all — that is radiation, energy carried by light itself across empty space, which is also how a glowing stove element or the Sun, 150 million kilometres away with no medium in between, can still warm you.
+Radiation carries energy through electromagnetic waves and can cross a vacuum. A surface emits radiation and also absorbs radiation from its surroundings. The displayed radiation value is emission alone, not net heat loss. The pictures illustrate three mechanisms with separate fixed geometries. Their colours and arrows are cues, not a simulation of a spoon's temperature over time or a calculated room airflow.
 
 ## Formal
 
-Conduction follows Fourier's law, $Q_{cond}/t = kA\Delta T/d$: the rate of heat flow through a solid is set by the material's conductivity $k$, the area $A$ it crosses, the temperature difference $\Delta T$, and the thickness $d$ it must cross.
+Steady one-dimensional conduction through a uniform path is $\dot Q_{cond}=kA\Delta T/d$. This panel uses $A=2.5\times10^{-5}\ \mathrm{m^2}$ and $d=0.15\ \mathrm{m}$. Convection is modelled as $\dot Q_{conv}=hA\Delta T$, with $h=5\ \mathrm{W/(m^2\cdot K)}$ and $A=1.2\ \mathrm{m^2}$. A temperature difference has the same numerical value in kelvin and degrees Celsius.
 
-Convection is described by Newton's law of cooling, $Q_{conv}/t = hA\Delta T$, and radiation by the Stefan–Boltzmann law, $Q_{rad}/t = \varepsilon\sigma AT^4$ — power rising with the *fourth power* of absolute temperature, which is why a surface only slightly hotter can radiate dramatically more.
+Emitted radiation is $P_{emit}=\varepsilon\sigma AT^4$, with $\varepsilon=0.9$, $A=0.05\ \mathrm{m^2}$ and $\sigma=5.67\times10^{-8}\ \mathrm{W/(m^2\cdot K^4)}$. T must be in kelvin. For a grey surface exchanging radiation with large surroundings at temperature Tₛ under the usual full-view approximation, net loss is $P_{net}=\varepsilon\sigma A(T^4-T_s^4)$.
 
 ## Advanced
 
-Because radiated power scales as $T^4$, doubling a surface's absolute temperature multiplies its radiated power by sixteen, not two — a subtlety that conduction and convection, both linear in $\Delta T$, do not share, and the reason extremely hot objects (a stove element, a star) are dominated by radiative heat loss even when touching or surrounding fluid could also carry heat away.
+The constant h summarizes fluid flow and thermal boundary-layer behavior; it can change with conditions. Conductivity and emissivity can also depend on temperature. Thus the simple proportional comparisons here hold with those coefficients fixed. Radiation does not automatically dominate every hot object's energy transfer: area, surroundings, contact and flow matter too.
 
 ## Derivation
 
-1. Conduction: heat creeps through a solid at a rate set by the material's conductivity, the crossing area and temperature difference, and inversely by how thick the material is.
-2. Convection: a moving fluid carries heat at a rate set by a transfer coefficient that bundles up all the details of how the fluid flows.
-3. Radiation: every warm surface radiates power set by its area and the fourth power of its absolute temperature, with no fluid or contact required at all.
+1. For steady conduction, multiply conductivity by area and temperature gradient; for a uniform path the gradient magnitude is temperature difference divided by length.
+2. For the convection estimate, multiply the surface-to-fluid temperature difference by area and the transfer coefficient.
+3. For emitted thermal radiation, multiply emissivity, the Stefan–Boltzmann constant, surface area and the fourth power of absolute temperature.
 
 ## Real world
 
-### Cookware handles
-Pan and pot handles are made of wood or plastic, both poor conductors, specifically so heat from the metal body cannot creep into your hand by conduction.
+### Insulated containers
 
-### Double-glazed windows
-A thin layer of trapped air between two panes blocks conduction (air conducts poorly) while the sealed gap also suppresses convection currents that would otherwise carry heat straight through.
+Reducing gas in a gap reduces conduction and convection through that gap. Radiation and conduction through supports can still transfer energy.
 
-### Thermos flasks
-A vacuum between a thermos's two walls stops conduction and convection completely, since both need matter to carry heat, leaving only slow radiation across the gap — that vacuum is why a thermos keeps drinks hot for hours.
+### Heating a room
 
-### Central heating radiators
-Despite the name, household "radiators" transfer most of their heat by convection, warming the air that touches them and letting that air carry the warmth around the room.
+A heater can transfer energy by convection and radiation at the same time. Their shares depend on the heater and room; its name alone does not determine them.

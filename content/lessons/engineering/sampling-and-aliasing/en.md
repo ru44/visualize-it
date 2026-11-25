@@ -15,19 +15,19 @@ variables:
 
 ## Try it
 
-1. Watch the dots. They mark where the signal is actually measured, and the smooth curve behind them is what gets reconstructed from those dots alone.
-2. Drag $f_s$ down toward twice $f$. The dots grow sparse and the reconstruction starts to struggle.
-3. Push $f_s$ below that line. The reconstructed curve locks onto a slower, fake wave that was never really there — aliasing.
+1. Start with $f$ = 3 Hz and $f_s$ = 20 Hz and watch the dots. They mark where the signal is actually measured, and the coloured curve is what gets reconstructed from those dots alone. The readout «frequency the samples show» reads 3 Hz, the true frequency.
+2. Drag $f_s$ down to 6.5 Hz, just above twice $f$. The dots grow sparse and the reconstruction starts to struggle, but the samples still show 3 Hz.
+3. Push $f_s$ down to 4 Hz, below that line. The samples now show 1 Hz: the reconstructed curve locks onto a slower, fake wave that was never really there — aliasing.
 
 ## Real-life examples
 
 1. **Recording a musical note safely.** Sampling a 5 Hz-equivalent tone at a 40 Hz rate — comfortably more than twice the signal frequency — reconstructs the wave cleanly, the same safety margin CDs use by sampling well above twice the range of human hearing.
-2. **The wagon-wheel effect on camera.** A wheel's spin (here, f = 10) sampled by a camera at only fs = 12 frames a second falls well short of the Nyquist rate, so the wheel appears to crawl or spin backward on screen.
+2. **The wagon-wheel effect on camera.** A wheel's spin (here, f = 10) sampled by a camera at only fs = 12 frames a second falls well short of the Nyquist rate, so the samples show only 2 Hz: the wheel appears to crawl or spin backward on screen.
 3. **A sensor sampled right at the edge.** A signal at f = 8 sampled at fs = 17, just above the strict fs > 2f = 16 minimum, works in theory but leaves little margin — real systems sample well above this edge for safety.
 
 ## Test yourself
 
-1. Find $f$ and $f_s$ where $f_s$ is at least twice $f$, but no more than 10% above that minimum — right at the edge of what the sampling rule requires.
+1. Find $f$ and $f_s$ where $f_s$ is more than twice $f$, but less than 5% above that minimum — right at the edge of what the sampling rule requires.
 2. Create clear aliasing: find $f$ and $f_s$ where $f_s$ is less than 1.5 times $f$.
 3. Find $f$ and $f_s$ where $f_s$ sits just below twice $f$ — so aliasing has only just begun.
 
@@ -56,13 +56,17 @@ Because aliasing folds any frequency above $f_s/2$ down into the band below it, 
 ## Real world
 
 ### Why CDs sample at 44.1 kHz
+
 Human hearing tops out near 20 kHz, so CDs sample comfortably above twice that, at 44.1 kHz, with room to spare for a gentle anti-aliasing filter.
 
 ### The wagon-wheel effect
+
 Wheels and propellers in video appear to spin slowly, stop, or reverse whenever their rotation rate lines up with the camera's frame rate — the same aliasing, in rotation instead of time.
 
 ### Digital cameras and moiré
+
 A camera sensor sampling fine repeating patterns (a striped shirt, a distant roof) without enough resolution turns them into false colours and wavy bands — spatial aliasing instead of temporal.
 
 ### Oversampling in audio converters
+
 Modern digital-to-analogue converters sample far above the Nyquist minimum on purpose, which pushes aliasing artefacts to frequencies easy to filter out cheaply.

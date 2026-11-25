@@ -3,14 +3,14 @@ subject: networking
 difficulty: beginner
 equation: H = 2^{32-p} - 2
 concepts:
-- router
-- nat
-- ip-address
-- subnet
+  - router
+  - nat
+  - ip-address
+  - subnet
 prerequisites: []
 related:
-- wifi
-- vpn
+  - wifi
+  - vpn
 visualization:
   type: home-router
 parameters:
@@ -25,22 +25,22 @@ parameters:
     step: 1
     value: 4
 variables:
-- H
-- p
+  - H
+  - p
 derivation:
-- H = 2^{32-p} - 2
-- p = 24 \Rightarrow H = 2^{8} - 2 = 254
-- p = 30 \Rightarrow H = 2^{2} - 2 = 2
+  - H = 2^{32-p} - 2
+  - p = 24 \Rightarrow H = 2^{8} - 2 = 254
+  - p = 30 \Rightarrow H = 2^{2} - 2 = 2
 charts: []
 primary: d
 presets:
-- p: 24
-  d: 4
-- p: 30
-  d: 2
-- p: 24
-  d: 8
+  - p: 24
+    d: 4
+  - p: 30
+    d: 2
+  - p: 24
+    d: 8
 challenges:
-- check: abs(2^(32-p) - 2 - 254) < 0.5
-- check: abs(2^(32-p) - 2 - 2) < 0.5
-- check: d > 7.5
+  - check: abs(2^(32-p) - 2 - 62) < 0.5
+  - check: abs(2^(32-p) - 2 - 2) < 0.5
+  - check: d > 7.5

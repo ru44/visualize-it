@@ -27,13 +27,13 @@ parameters:
     max: 100
     step: 1
     value: 90
-    unit: ""
+    unit: ''
   nRight:
     min: 1
     max: 100
     step: 1
     value: 10
-    unit: ""
+    unit: ''
   perm:
     min: 0
     max: 100
@@ -41,16 +41,16 @@ parameters:
     value: 30
     unit: '%'
 variables:
-  - entropy
-  - Boltzmann constant, 1.38×10⁻²³ J/K
-  - multiplicity — the number of microscopic arrangements matching this split
-  - number of molecules on the left side
-  - number of molecules on the right side
-  - total number of molecules, n_L + n_R
+  - S
+  - k_B
+  - \Omega
+  - n_L
+  - n_R
+  - N
 derivation:
-  - \Omega(n_L,n_R) = \dfrac{N!}{n_L!\,n_R!} \;\text{counts the arrangements of } N \text{ molecules split } n_L/n_R \text{ between the two halves.}
-  - S = k_B\ln\Omega \;\text{(Boltzmann's definition of entropy).}
-  - \text{Stirling's approximation gives } S/k_B \approx N\ln N - n_L\ln n_L - n_R\ln n_R.
+  - \Omega = \frac{N!}{n_L!\,n_R!}
+  - S = k_B\ln\Omega
+  - \frac{S}{k_B} \approx N\ln N - n_L\ln n_L - n_R\ln n_R
 charts: []
 primary: nLeft
 presets:

@@ -41,7 +41,7 @@ parameters:
     min: 0.5
     max: 10
     step: 0.1
-    value: 2
+    value: 4
     unit: L
 variables:
   - C
@@ -61,7 +61,7 @@ presets:
     V1: 1
     x: 4
   - C1: 3
-    V1: 0.2
+    V1: 0.1
     x: 2
 challenges:
   - check: C1*V1/x

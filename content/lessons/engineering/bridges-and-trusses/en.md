@@ -18,15 +18,15 @@ variables:
 
 ## Try it
 
-1. Drag $h$ (how far down the brace attaches) up, making the brace steeper. Watch both $F_{brace}$ and $F_{arm}$ fall sharply — a steeper brace carries the same load with far less internal force.
-2. Now drag $L$ (the arm's length) up instead, keeping $h$ fixed. Both forces climb — a longer reach always costs more force in every member.
-3. Drag $W$ (the load) up. Both $F_{brace}$ and $F_{arm}$ grow in exact proportion to $W$ — double the load, double every member's force.
+1. Start at $W$ = 300 N, $L$ = 0.6 m, $h$ = 0.4 m: the brace angle reads 34°, the brace force 541 N and the arm force 450 N. Drag $h$ (how far down the brace attaches) up to 1.2 m, making the brace steeper (63°). The forces fall to 335 N and 150 N — a steeper brace carries the same load with far less internal force.
+2. Set $h$ back to 0.4 m and drag $L$ (the arm's length) up to 1.2 m. The forces climb to 949 N and 900 N — a longer reach always costs more force in every member.
+3. Set $L$ back to 0.6 m and double $W$ (the load) to 600 N. Both forces double exactly, from 541 N and 450 N to 1082 N and 900 N — double the load, double every member's force.
 
 ## Real-life examples
 
 1. **A small shelf bracket.** Holding 150 N of books at a 30 cm arm, with the brace meeting the wall 20 cm below (θ ≈ 34°), the brace carries about 270 N in compression and the arm about 225 N in tension.
 2. **A long balcony bracket.** A 1.2 m arm carrying an 800 N load, braced 60 cm below (θ ≈ 27°, a shallower angle), pushes the brace up to about 1789 N and the arm to about 1600 N — far more force for the same kind of load.
-3. **The same balcony, braced steeply instead.** Moving the same 300 N load onto a 0.6 m arm with the brace dropping a full 1.2 m below (θ ≈ 63°, a much steeper angle) cuts the brace force to about 335 N and the arm to just 150 N.
+3. **A short bracket, braced steeply.** A 300 N load on a 0.6 m arm, with the brace dropping a full 1.2 m below (θ ≈ 63°, a much steeper angle), puts only about 335 N in the brace and just 150 N in the arm.
 
 ## Test yourself
 
@@ -59,13 +59,17 @@ Every member of a properly triangulated, pin-jointed truss carries pure axial fo
 ## Real world
 
 ### Shelf and awning brackets
+
 The exact triangle in this lesson: a horizontal arm and a diagonal brace, turning a load that would bend an unbraced arm into simple tension and compression.
 
 ### Roof trusses
+
 A house roof's triangular truss carries the roof's weight down through a web of triangles into the walls, using far less timber or steel than a single solid bending beam would need to span the same width.
 
 ### Bridge trusses
+
 Warren and Pratt truss bridges repeat the same triangle over and over across a span, so every member works in pure tension or compression and the whole structure stays light for its strength.
 
 ### Bicycle frames
+
 A bicycle's diamond frame is really two triangles sharing an edge, which is why a well-triangulated frame stays rigid under a rider's weight using thin, light tubing instead of a single thick beam.

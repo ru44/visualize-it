@@ -1,68 +1,62 @@
 ---
 title: Solving right triangles
-summary: >-
-  Know any two pieces of a right triangle — a side and the angle, or two sides
-  — and SOH-CAH-TOA finds everything else, from a ladder's angle to a ramp's slope.
+summary: 'Identify opposite, adjacent and hypotenuse, then choose a ratio to find a missing side or angle.'
 parameters:
-  a: leg a — opposite θ
-  b: leg b — adjacent to θ
+  a: 'a — leg opposite θ'
+  b: 'b — leg adjacent to θ'
 variables:
-  - the leg opposite the angle θ (drag its far vertex)
-  - the leg adjacent to θ (drag its far vertex)
-  - the hypotenuse, computed from a and b
-  - the angle θ, opposite side a
+  - 'a: opposite leg length'
+  - 'b: adjacent leg length'
+  - 'c: hypotenuse length'
+  - 'θ: acute angle opposite a'
 ---
 
 ## Try it
 
-1. Drag the vertex at the far end of leg «a — opposite θ» up and down, and watch the angle θ change with it.
-2. Now drag the vertex on leg «b — adjacent to θ» instead, and watch the hypotenuse stretch to match.
-3. Set the two legs so θ reads close to 45°. At that point the triangle mirrors itself, and a and b become equal.
+1. Set a = 3 and b = 4. Read c = 5 and θ ≈ 36.87°. Side a is opposite θ even though it is drawn horizontally on screen.
+2. Set a = 6 and b = 8. All lengths double, but θ stays the same because the side ratios are unchanged.
+3. Set a = b = 2. The angle θ is 45° and c is about 2.828. The hypotenuse is longer than either leg.
 
 ## Real-life examples
 
-1. **A ladder against a wall.** It reaches 6 m up the wall while its foot sits 1.5 m out: a steep, sturdy angle.
-2. **A wheelchair ramp.** Rising 1 m over a 5 m run keeps the ramp gentle, well under the steepest slope building codes allow.
-3. **A staircase or roof pitch.** Rising 4 m over a 2 m run is a steep pitch, more like a ladder than a walkable stair.
+1. **A tall rectangle's diagonal.** Legs 6 and 1.5 give c ≈ 6.185 and θ ≈ 75.96° opposite the longer leg.
+2. **A wide rectangle's diagonal.** Legs 1 and 5 give c ≈ 5.099 and θ ≈ 11.31° opposite the shorter leg.
+3. **A two-to-one ratio.** Legs 4 and 2 give tangent 2 and θ ≈ 63.43°. The hypotenuse is √20 ≈ 4.472.
 
 ## Test yourself
 
-1. Make θ exactly 45°.
-2. Make the triangle steeper than 70° while keeping leg b under 2 m.
-3. Make it shallower than 15° while keeping leg a above 1 m.
+1. Make θ equal 45°.
+2. Make θ greater than 70° while keeping b below 2 length units.
+3. Make θ less than 15° while keeping a above 1 length unit.
 
 ## Intuition
 
-A 6 m ladder mark on the wall with its foot 1.5 m out looks steep just by eye — but "steep" becomes a number the moment you compare the two legs. Drag the far vertex of leg a and the angle θ swings with it: taller leg a for the same leg b means a bigger angle, exactly the way a ladder leaning closer to the wall gets steeper.
+First choose the acute angle you are working with. The side across from it is opposite; the leg touching it is adjacent. The hypotenuse is always opposite the right angle. Rotating the drawing does not change these names, but switching to the other acute angle exchanges opposite and adjacent.
 
-The three ratios sin, cos and tan are just three ways of comparing sides of this same triangle. sin θ compares the leg opposite θ to the hypotenuse; cos θ compares the leg next to θ to the hypotenuse; tan θ skips the hypotenuse entirely and compares the two legs directly. Whichever two of the triangle's six pieces (three sides, three angles) you already know, one of these three ratios gets you the rest.
+For legs 3 and 4 with hypotenuse 5, the ratios are sine = 3/5, cosine = 4/5 and tangent = 3/4 for the angle opposite 3. Doubling all lengths leaves every ratio unchanged. This is why the ratios determine an angle rather than the triangle's size. To determine the whole triangle, we need two sides, or one side and one acute angle; angles alone do not determine lengths.
 
 ## Formal
 
-In a right triangle with legs $a$ and $b$, hypotenuse $c = \sqrt{a^2+b^2}$, and angle $\theta$ opposite side $a$: $\sin\theta = a/c$ and $\cos\theta = b/c$.
+With positive legs a and b and θ opposite a, $c=\sqrt{a^2+b^2}$, $\sin\theta=a/c$, $\cos\theta=b/c$ and $\tan\theta=a/b$. Use the same length unit for all sides. These side-ratio definitions refer to an acute angle in a right triangle.
 
-Dividing one by the other cancels the hypotenuse: $\tan\theta = \sin\theta/\cos\theta = a/b$, so knowing just the two legs gives the angle directly, without ever computing $c$.
+Choose the ratio containing the known and unknown quantities. For example, if c and θ are known, $a=c\sin\theta$ and $b=c\cos\theta$. If a and b are known, $\theta=\arctan(a/b)$. The other acute angle is $90^\circ-\theta$.
 
 ## Advanced
 
-These three ratios only work for a right triangle: $\theta$ must be one of the two acute angles, and the ratio is defined against the specific right angle in the triangle. A triangle with no right angle needs the sine rule or the cosine rule instead, which reduce to these same SOH-CAH-TOA ratios the moment one angle happens to be $90°$.
+The mnemonic SOH–CAH–TOA stands for sine = opposite/hypotenuse, cosine = adjacent/hypotenuse, tangent = opposite/adjacent. It helps recall the ratios after the sides are identified. Sine, cosine and tangent are also defined beyond acute angles through the unit circle; ordinary positive side lengths alone do not describe those signed values.
 
 ## Derivation
 
-1. The Pythagorean theorem gives the hypotenuse from the two legs: $c = \sqrt{a^2+b^2}$.
-2. Each leg measured against that hypotenuse defines sine and cosine: $\sin\theta = a/c$, $\cos\theta = b/c$.
-3. Dividing sine by cosine cancels $c$, leaving tangent as the two legs compared directly: $\tan\theta = a/b$.
+1. Apply the Pythagorean theorem to the two perpendicular legs to calculate the hypotenuse.
+2. Divide each leg by the hypotenuse to get sine and cosine for the chosen angle.
+3. Divide sine by cosine. The common hypotenuse cancels, leaving opposite divided by adjacent.
 
 ## Real world
 
-### Construction and safety codes
-A ladder is considered safe at roughly 75° from the ground; setting the foot too far out or too close in pushes the angle outside that range.
+### Finding a diagonal
 
-### Accessibility ramps
-Building codes cap wheelchair ramps at about 4.8° (a 1-in-12 slope), which SOH-CAH-TOA turns directly into a maximum rise for any given run.
+A rectangular panel's width and height are the legs of a right triangle. The hypotenuse gives its diagonal and the ratios give the diagonal's angle.
 
-### Surveying
-A surveyor measures one side and one angle of a right triangle with a theodolite, then uses these ratios to compute a distance too large or awkward to measure directly.
+### Distance from an angle
 
-### Carpentry and roofing
-A roof's "pitch" is usually given as a ratio of rise to run, which is exactly $\tan\theta$ for the angle the roof makes with the horizontal.
+In a right-triangle measurement model, one known side and an acute angle can determine an inaccessible length. Identify whether the measured distance is a leg or the hypotenuse before choosing a formula.

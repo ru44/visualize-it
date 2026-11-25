@@ -1,68 +1,61 @@
 ---
 title: Partial derivatives and saddle points
-summary: >-
-  A mountain pass is the lowest point along the ridge but the highest point
-  along the trail crossing it — a saddle point is exactly that two-faced
-  spot, and this shows you how to spot one.
+summary: 'See why a zero gradient can occur at a point that is neither a maximum nor a minimum.'
 parameters:
-  x0: point x
-  y0: point y
+  x0: 'x₀ — selected x coordinate'
+  y0: 'y₀ — selected y coordinate'
 variables:
-  - 'slope walking in the $x$ direction — here $2x$, always concave up'
-  - 'slope walking in the $y$ direction — here $-2y$, always concave down'
-  - the gradient — zero exactly at the saddle point
+  - '∂f/∂x: slope 2x with y fixed'
+  - '∂f/∂y: slope −2y with x fixed'
+  - '∇f: vector (2x, −2y)'
 ---
 
 ## Try it
 
-1. Move the point along the x-axis, keeping «point y» at 0. The tangent plane curves upward like the wall of a valley.
-2. Now move along the y-axis instead, keeping «point x» at 0. The same surface curves downward like a hilltop.
-3. Bring the point back to the origin. The tangent plane goes flat, but this flat point is neither a peak nor a valley — it's a saddle.
+1. Keep y₀ = 0 and move x₀ from −1 to 0 to 1. The surface heights are 1, 0 and 1: this cross-section curves upward.
+2. Keep x₀ = 0 and move y₀ through the same values. Heights are −1, 0 and −1: this cross-section curves downward.
+3. Set x₀ = y₀ = 0. The tangent plane is horizontal and both partial derivatives vanish, yet nearby surface points lie both above and below it.
 
 ## Real-life examples
 
-1. **Sitting exactly at the saddle point.** At (x, y) = (0, 0), the tangent plane is flat and the gradient vanishes — yet this is neither a hilltop nor a valley floor.
-2. **Walking straight into the uphill direction.** At (x, y) = (1.5, 0), the surface curves upward, like starting up a valley wall.
-3. **Walking straight into the downhill direction.** At (x, y) = (0, 1.5), the same surface curves downward, like starting down a hilltop.
+1. **At the saddle.** At (0, 0), height and gradient are zero. The tangent plane is z = 0.
+2. **On the upward cross-section.** At (1.5, 0), height is 2.25 and the gradient is (3, 0).
+3. **On the downward cross-section.** At (0, 1.5), height is −2.25 and the gradient is (0, −3). The steepest local increase points toward decreasing y.
 
 ## Test yourself
 
-1. Find a point away from the origin where the height is exactly 0 — on the saddle's diagonal ridge.
-2. Climb to a height above 3 by moving along the x-axis.
-3. Drop to a height below -3 by moving along the y-axis.
+1. Make |x₀² − y₀²| less than 0.05, with at least one of |x₀| and |y₀| greater than 0.3.
+2. Find a point with height greater than 3. Setting y₀ = 0 is one approach.
+3. Find a point with height less than −3. Setting x₀ = 0 is one approach.
 
 ## Intuition
 
-Move the point along the x-axis, keeping «point y» at 0: the tangent plane tilts like the wall of a valley, curving upward the way a bowl does. Now move along the y-axis instead, keeping «point x» at 0: the same surface curves downward like a hilltop. One surface, two completely opposite behaviours depending on which direction you walk.
+A zero derivative in one variable is a candidate for a turning point, not a guarantee. The same caution applies in two variables. At the origin of x² − y², both partial slopes are zero. But moving a little along x gives a positive height, and moving a little along y gives a negative height.
 
-Bring the point back to the origin (0, 0): the tangent plane goes perfectly flat and the gradient arrow shrinks to nothing, just as it would at a true minimum or maximum — but this flat point is neither. It is a saddle, the shape a horse rider sits on: curving up toward the horse's head and tail, down toward its sides.
+There are therefore higher and lower points arbitrarily close to the origin. It cannot be a local maximum or minimum; it is a saddle point. The flat tangent patch describes only the first-order slopes. The surface curves above and below that plane. A plane itself does not curve, even when it is drawn on a curved surface.
 
 ## Formal
 
-$f_x = 2x$, $f_y = -2y$; both vanish only at the origin, so $(0,0)$ is the only critical point.
+For $f(x,y)=x^2-y^2$, the partial derivatives are $f_x=2x$ and $f_y=-2y$. The gradient vanishes only at $(0,0)$, making it the only critical point. Along y = 0 the function is x², and along x = 0 it is −y².
 
-The Hessian is $\begin{pmatrix}2&0\\0&-2\end{pmatrix}$, with eigenvalues of opposite sign — the signature of a saddle point, neither a local max nor min.
+The Hessian matrix of second derivatives is $H=\begin{pmatrix}2&0\\0&-2\end{pmatrix}$. Its eigenvalues have opposite signs, confirming a saddle. The zero-height set consists of the lines $y=x$ and $y=-x$; their nonzero points are not critical points.
 
 ## Advanced
 
-The second-derivative test formalises the picture: with $D = f_{xx}f_{yy} - f_{xy}^2$, $D<0$ at a critical point guarantees a saddle regardless of direction chosen, because the quadratic form $f_{xx}h^2 + 2f_{xy}hk + f_{yy}k^2$ (the local approximation of $f$ near the point) takes both signs — here $2h^2 - 2k^2$, positive along $h$, negative along $k$.
+For a twice continuously differentiable function at a critical point, a negative Hessian determinant proves a saddle. Here the determinant is −4. The second-order Taylor term is one half of the Hessian quadratic form, giving h² − k² near the origin; omitting the factor one half would double the actual height change.
 
 ## Derivation
 
-1. Differentiate holding the other variable fixed, one at a time.
-2. Critical points are where the gradient vanishes.
-3. The Hessian's mixed-sign eigenvalues classify the origin as a saddle, not an extremum.
+1. Hold one variable fixed while differentiating with respect to the other to calculate the two partial derivatives.
+2. Set both partial derivatives to zero. They vanish together only when x and y are zero.
+3. Differentiate again to obtain the Hessian. Opposite signs in the two coordinate curvatures distinguish the saddle from a minimum or maximum.
 
 ## Real world
 
-### Mountain passes
-A literal mountain pass is a saddle point: lowest along the ridge, highest along the trail crossing it.
+### Reading a terrain model
 
-### Game theory equilibria
-A minimax equilibrium in a zero-sum game is a saddle point of the payoff function — best response in one direction, worst in the other.
+A pass can be modelled locally by a surface that rises in one direction and falls in another. The ideal saddle illustrates why one cross-section alone can give a misleading impression.
 
-### Optimization pitfalls
-Gradient descent can stall near saddle points in high-dimensional loss surfaces, since the gradient nearly vanishes without being at a true minimum.
+### Checking an optimisation result
 
-### Structural engineering
-Saddle-shaped (hyperbolic paraboloid) roofs are strong precisely because they curve oppositely in two directions, resisting buckling both ways.
+A numerical method reporting a small gradient has not necessarily found a minimum. Examine nearby values or curvature to distinguish a minimum from a saddle.

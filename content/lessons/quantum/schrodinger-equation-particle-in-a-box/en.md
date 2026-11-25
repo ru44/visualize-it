@@ -18,14 +18,14 @@ charts: []
 ## Try it
 
 1. Look at the wave shape drawn between the two walls of the box on screen: it starts and ends at zero at both walls, like a guitar string pinned at both ends.
-2. Raise the slider «energy level n» from 1 to 2. An extra hump appears in the wave, and the energy readout jumps up.
-3. Keep raising «energy level n» and watch the wave pack in more humps while the energy climbs faster and faster.
+2. Raise the slider «energy level n» from 1 to 2. An extra hump appears in the wave, and the «energy» readout jumps from 1 × E₁ to 4 × E₁.
+3. Keep raising «energy level n» to 3 and then 6, and watch the wave pack in more humps while the energy climbs faster and faster: 9 × E₁, then 36 × E₁.
 
 ## Real-life examples
 
 1. **Ground state of an electron in a quantum dot.** At level 1 the electron's wave is one smooth hump, its lowest possible energy.
-2. **First excited state.** At level 2 the wave gains a second hump and a higher energy, the next rung up the ladder.
-3. **A quantum-dot TV pixel tuned to a different colour.** Manufacturers pick the dot's size so a chosen energy jump, and so a chosen colour of light, comes out.
+2. **First excited state.** At level 2 the wave gains a second hump and four times the energy, the next rung up the ladder.
+3. **A quantum-dot TV pixel tuned to a different colour.** At level 5 the wave has five humps and 25 times the ground-state energy. Manufacturers pick the dot's size so a chosen energy jump, and so a chosen colour of light, comes out.
 
 ## Test yourself
 
@@ -58,10 +58,13 @@ Erwin Schrödinger published this equation in 1926 as the wave-mechanics counter
 ## Real world
 
 ### Quantum-dot displays
+
 The colour a quantum dot emits is set by its size, which fixes the energy gap between its trapped-electron levels, letting manufacturers tune red, green and blue pixels from the same material.
 
 ### Semiconductor lasers
+
 Electrons confined in a thin semiconductor layer occupy box-like energy levels, and light is emitted when they drop from one level to a lower one.
 
 ### Understanding atoms
+
 The particle-in-a-box is the simplest model of confinement; the same wave-fitting idea, made three-dimensional, explains why atoms only ever emit light at certain sharp colours.

@@ -1,5 +1,5 @@
 ---
-title: 'CDN: the internet''s corner shops'
+title: "CDN: the internet's corner shops"
 summary: >-
   You cannot make light travel faster, so the big sites stopped trying — they
   copied their files into thousands of little servers down the street from
@@ -18,8 +18,8 @@ variables:
 ## Try it
 
 1. Read the two trips with the defaults: 0.5 ms to the fridge down the street, 90 ms across the ocean — the same physics, just different distances.
-2. Drag H from 90 down to 0 and watch the average slide from under 10 ms to the full ocean crossing: the CDN's whole value lives in that one percentage.
-3. Now set H to 100 and shrink de: with every request answered next door, even a 12,000 km origin might as well not exist.
+2. Drag H from 90 down to 0 and watch the average climb from under 10 ms to the full 90 ms ocean crossing: the CDN's whole value lives in that one percentage.
+3. Now set H to 100, shrink de to 10 km and push do up to 12,000 km: the average reads 0.1 ms. With every request answered next door, even a 12,000 km origin might as well not exist.
 
 ## Real-life examples
 
@@ -29,13 +29,13 @@ variables:
 
 ## Test yourself
 
-1. Serve at least 90% from an edge no farther than 50 km.
+1. Serve at least 95% from an edge no farther than 50 km.
 2. Set the hit rate to zero with a far origin and feel what the internet was like before CDNs.
 3. Get the average under 2 ms while the origin stays at least 5,000 km away — only one slider can do it.
 
 ## Intuition
 
-Physics sets a floor under every request: light in glass covers about 100 km per millisecond of round trip, so asking a server 9,000 km away costs 90 ms before any computer has thought about anything. No cable upgrade changes this — it is the speed of light, not a speed limit. The content delivery network is the only move left: if the data cannot travel faster, move the data closer *before it is asked for*. Copy the film, the stylesheet, the game patch into little warehouses in every city, and let each viewer fetch from the nearest one.
+Physics sets a floor under every request: light in glass covers about 100 km per millisecond of round trip, so asking a server 9,000 km away costs 90 ms before any computer has thought about anything. No cable upgrade changes this — it is the speed of light, not a speed limit. The content delivery network is the only move left: if the data cannot travel faster, move the data closer _before it is asked for_. Copy the film, the stylesheet, the game patch into little warehouses in every city, and let each viewer fetch from the nearest one.
 
 The map on screen is that bargain. The fridge down the street answers most requests in under a millisecond of travel; the ocean crossing still happens, but only for the fraction H the fridge doesn't hold. That fraction is the whole business: a CDN is only as good as its hit rate, which is why so much engineering goes into deciding what to cache, for how long, and how to warm a cold edge before the crowd arrives.
 
@@ -58,13 +58,17 @@ What counts as "cacheable" keeps expanding: modern edges run code, terminate enc
 ## Real world
 
 ### Video streaming
+
 Netflix and YouTube place racks of edge servers inside ISPs' own buildings; the night's episodes are pushed there in advance, at off-peak hours.
 
 ### Software updates
+
 A phone OS update lands on two billion devices in days only because every region downloads from copies already sitting nearby.
 
 ### News spikes
+
 When everyone opens the same page at once, the edges absorb the stampede; the origin serves one copy per edge, not one per reader.
 
 ### Online games
+
 Game clients fetch maps and patches from edges, while the latency-critical match traffic runs to dedicated regional game servers — the same geography logic, applied twice.

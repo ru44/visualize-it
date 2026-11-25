@@ -1,71 +1,70 @@
 ---
 title: Refrigerators and heat pumps
-summary: >-
-  A refrigerator does not make cold, it moves heat uphill from a cold
-  box to a warm kitchen, and it takes work to push heat the "wrong"
-  way — but a heat pump exploits that same uphill trick in reverse,
-  delivering more heating energy than the electrical energy it
-  consumes, something a plain electric heater can never do.
+summary: 'See how work moves heat from a cold place to a warmer one, and calculate the most heat that each joule of work can move between two temperatures.'
 parameters:
-  Tc: cold reservoir T_c
-  Th: hot reservoir T_h
+  Tc: 'T_c — cold reservoir temperature'
+  Th: 'T_h — hot reservoir temperature'
 variables:
-  - coefficient of performance, cooling mode
-  - coefficient of performance, heating mode
-  - absolute temperature of the cold reservoir
-  - absolute temperature of the hot reservoir
+  - 'cooling coefficient of performance: heat removed from the cold side per unit of work'
+  - 'heating coefficient of performance: heat delivered to the hot side per unit of work'
+  - 'absolute temperature of the cold reservoir'
+  - 'absolute temperature of the hot reservoir'
 ---
 
 ## Try it
 
-1. Raise the slider "hot reservoir T_h" while "cold reservoir T_c" stays put. Watch both coefficients of performance fall as the temperature gap widens.
-2. Lower "cold reservoir T_c" toward 250 K. Watch the cooling COP drop — pumping heat out of somewhere already very cold takes disproportionately more work.
-3. Narrow the gap between T_c and T_h as much as the sliders allow. Watch both coefficients climb well above 1 — moving heat a short "distance" in temperature is cheap.
+1. Set T_c = 277 K and T_h = 295 K, a difference of 18 K. The readouts show COP (cooling) = 15.39 and COP (heating) = 16.39. The heating value is exactly 1 larger.
+2. Keep T_c = 277 K and raise T_h to 320 K. The difference is now 43 K, and the two values fall to 6.44 and 7.44.
+3. Keep T_h = 320 K and lower T_c to 250 K. The difference is 70 K, and the values fall to 3.57 and 4.57.
 
 ## Real-life examples
 
-1. **A kitchen fridge.** With the inside at T_c = 277 K (4°C) and the kitchen at T_h = 295 K (22°C), an 18-degree gap gives a healthy coefficient of performance — several units of heat moved out of the fridge for every unit of work the compressor uses.
-2. **A heat pump warming a home in winter.** Pulling heat from outside air at T_c = 268 K (−5°C) and delivering it indoors at T_h = 293 K (20°C), a 25-degree gap still lets a heat pump deliver noticeably more heating energy than the electrical energy it consumes.
-3. **An air conditioner on a hot day.** Its cold evaporator coil runs at T_c = 283 K (10°C) to chill room air, dumping heat outside at T_h = 308 K (35°C) — a 25-degree gap that determines exactly how hard the compressor has to work to keep a room cool.
+1. **A kitchen refrigerator.** With the inside at T_c = 277 K (4 °C) and the kitchen at T_h = 295 K (22 °C), the cooling limit is 15.39. A real refrigerator reaches only a fraction of this.
+2. **A heat pump in winter.** With outdoor air at T_c = 268 K (−5 °C) and a room at T_h = 293 K (20 °C), the heating limit is 11.72. Real air-source heat pumps typically deliver 2 to 4 J of heat per joule of electrical work.
+3. **An air conditioner on a hot day.** With a cooling coil at T_c = 283 K (10 °C) and outdoor air at T_h = 308 K (35 °C), the cooling limit is 11.32.
 
 ## Test yourself
 
-1. Get the heating coefficient of performance to exactly 10.
-2. Set up a hard cooling job: get the cooling COP below 4 with a very cold reservoir under 260 K.
-3. Set the temperature gap between reservoirs to exactly 20 K.
+1. Make the heating coefficient of performance equal to 10.
+2. Make the cooling coefficient less than 4 with T_c below 260 K.
+3. Make the difference T_h − T_c equal to 20 K.
 
 ## Intuition
 
-Heat never flows from cold to hot on its own — a refrigerator forces it to, using a compressor that does mechanical work on a refrigerant, and that borrowed work is exactly why a fridge's power cord is plugged into the wall at all. On screen, raise "hot reservoir T_h" and watch both coefficients of performance drop, because pushing heat across a bigger temperature gap costs proportionally more work for the same amount of heat moved.
+Left alone, heat passes from a warmer place to a colder one. A refrigerator must move it the other way, from food at 4 °C to a kitchen at 22 °C, and this requires work from an electrically driven compressor. Follow the energy. Suppose the compressor uses 100 J of work and removes 300 J of heat from the inside. Both amounts end up in the kitchen, so 400 J is released there, which is why the back of a refrigerator is warm. The heat moved per joule of work is called the coefficient of performance, or COP. Here the cooling COP is 300/100 = 3, and the heating COP is 400/100 = 4.
 
-A heat pump runs the identical cycle with a different goal: instead of caring about the cold side getting colder, you care about the hot side getting hotter, and the same compressor work that pulled a little heat from the cold outdoor air now delivers that heat plus the work itself to the warm side. That is why a heat pump's heating coefficient of performance is always above 1 — often 3 or 4 — while a plain electric resistance heater converts its electrical energy to heat one-for-one, a coefficient of exactly 1, making it strictly the worse deal whenever a heat pump is an option.
+A heat pump is the same machine used for the other purpose: the cold side is outdoor air and the warm side is the room. The heat delivered includes the work, so the heating COP is always the cooling COP plus 1, and it is greater than 1. An electric resistance heater turns 100 J of electrical work into 100 J of heat, a COP of 1. The two temperatures set an upper limit on the COP, and the limit falls as the temperature difference grows. In the picture, the left box is the cold reservoir, the right box is the hot reservoir and the circle is the compressor. The arrows mark heat Q_c entering from the cold side, work W entering from below, and heat Q_h leaving to the hot side; their drawn sizes do not change. The readouts give the limits for an ideal machine. The two bars compare the heat delivered per joule of work by this ideal heat pump and by a resistance heater.
 
 ## Formal
 
-A reversible refrigerator's cooling coefficient of performance is $COP_{cool} = T_c/(T_h-T_c)$: heat removed from the cold side per unit of work supplied.
+Over one complete cycle, energy conservation gives $Q_h=Q_c+W$, where $Q_c$ is the heat removed from the cold reservoir, $W$ the work supplied and $Q_h$ the heat delivered to the hot reservoir. The coefficients are $COP_{cool}=Q_c/W$ and $COP_{heat}=Q_h/W$, so $COP_{heat}=COP_{cool}+1$ for any machine.
 
-Running the identical cycle to deliver heat instead gives $COP_{heat} = T_h/(T_h-T_c) = COP_{cool} + 1$, always at least one unit higher than the cooling coefficient for the same two reservoirs.
+The second law does not allow total entropy to fall, which requires $Q_h/T_h\ge Q_c/T_c$ with both temperatures in kelvin and $T_h>T_c$. It follows that $COP_{cool}\le T_c/(T_h-T_c)$ and $COP_{heat}\le T_h/(T_h-T_c)$. Equality holds only for a reversible machine. Both limits grow without bound as the temperature difference approaches zero, because then almost no work is needed.
 
 ## Advanced
 
-Because $COP_{heat} = COP_{cool}+1$ and both blow up as $T_h \to T_c$, real refrigeration cycles never reach the Carnot limit — irreversibilities in real compressors, valves and heat exchangers mean actual coefficients of performance sit noticeably below the reversible ideal these formulas describe, though the ideal still sets the ceiling no real machine can beat.
+Heat flows into the refrigerant only if it is colder than the cold reservoir, and out of it only if it is hotter than the hot reservoir. The cycle therefore works across a larger temperature difference than the one between the reservoirs. Friction in the compressor and the pressure drop through the expansion valve create further entropy. These effects keep real coefficients well below the reversible limit. The heating limit is the reciprocal of the Carnot efficiency of an engine working between the same two temperatures.
 
 ## Derivation
 
-1. A reversible refrigerator moves heat Q_c from the cold reservoir using work W, with the ratio Q_c/W fixed by T_c/(T_h−T_c).
-2. Running the same cycle as a heat pump delivers Q_h = Q_c + W to the hot reservoir, giving Q_h/W = T_h/(T_h−T_c).
-3. A plain resistive heater skips the cycle entirely and turns work straight into heat, giving it a coefficient of performance of exactly 1 — the baseline every heat pump beats.
+1. The cooling coefficient compares the heat removed from the cold side with the work supplied. Energy conservation writes the work as the heat delivered minus the heat removed.
+2. A reversible machine leaves total entropy unchanged, so each heat is proportional to the absolute temperature of its reservoir. Substituting gives the cooling limit.
+3. The heating coefficient uses the heat delivered instead. Because the heat delivered is the heat removed plus the work, it exceeds the cooling coefficient by 1.
 
 ## Real world
 
-### Household fridges and freezers
-Every kitchen fridge is a heat pump run in cooling mode, moving heat from its insulated interior out into the room through coils on its back or underside.
+### Refrigerators and freezers
 
-### Home heating
-Air-source and ground-source heat pumps are increasingly used to heat homes because, unlike a resistive electric heater, they can deliver several times more heating energy than the electrical energy they consume.
+A refrigerator moves heat from its insulated interior to the room through coils at the back or underneath. A freezer has a colder interior, so each joule of work moves less heat.
+
+### Heating a home
+
+A heat pump takes heat from outdoor air or the ground and delivers it indoors. It supplies more heat than the electrical work it uses, which a resistance heater cannot do.
 
 ### Air conditioning
-Air conditioners are refrigerators for a room: the same cycle that keeps food cold in a fridge keeps a house cool by pumping heat from indoors to the hotter outdoors.
 
-### Why heat pumps struggle in extreme cold
-As outdoor temperature drops far below indoor temperature, the widening gap between T_c and T_h drags a heat pump's coefficient of performance down toward 1, which is why some cold-climate heat pumps add backup resistive heating for the coldest days.
+An air conditioner moves heat from a room to warmer outdoor air. The hotter the day, the more work each joule of cooling needs.
+
+### Very cold weather
+
+As the outdoor temperature falls, the temperature difference grows and the heating coefficient falls. Some systems add resistance heating for the coldest days.

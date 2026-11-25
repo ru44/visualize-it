@@ -16,7 +16,7 @@ variables:
 ## Try it
 
 1. Set slider "a" to 1 and "b" to 0, then check the readouts: the sum lights up (1 + 0 = 1) but the carry stays off.
-2. Now set both "a" and "b" to 1 and watch the sum readout flip to 0 while the carry readout lights up instead — that's the binary carry, just like carrying a digit in 7 + 5.
+2. Now set both "a" and "b" to 1 and watch the sum readout flip to 0 while the carry readout lights up instead, and the A + B readout shows 1 + 1 = 2 = 10₂ — that's the binary carry, just like carrying a digit in 7 + 5.
 3. Set both "a" and "b" to 0 and confirm both readouts stay off — nothing to add, nothing to carry.
 
 ## Real-life examples
@@ -28,14 +28,14 @@ variables:
 ## Test yourself
 
 1. Make the carry output light up — there is only one combination of "a" and "b" that does it.
-2. Make the sum output light up while the carry stays dark.
+2. Make the sum output light up while the carry stays dark — this time with "a" at 0 and "b" at 1.
 3. Make both the sum and the carry stay off at the same time.
 
 ## Intuition
 
 When you add 7 and 5 by hand, the ones column gives 12: you write down 2 and carry a 1 into the tens column. A half adder does exactly the same carrying trick, but with a single binary digit, a bit, instead of a whole decimal column. Set both sliders "a" and "b" to 1 above and watch: the sum output drops to 0 while the carry output lights up, because $1+1=10$ in binary — a sum digit of 0 with a 1 carried onward, just like the 1 you carried from the ones column above.
 
-The other three input pairs — (0,0), (0,1), (1,0) — all give carry 0 and a sum that matches ordinary addition, with no overflow into a new column. XOR is doing the sum's job because it outputs 1 exactly when the two bits disagree, which is the only situation where adding them overflows a single digit: at (1,1).
+The other three input pairs — (0,0), (0,1), (1,0) — all give carry 0 and a sum that matches ordinary addition, with no overflow into a new column. XOR is doing the sum's job because it outputs 1 exactly when the two bits disagree, and AND does the carry's job because the only pair that overflows a single digit is (1,1).
 
 ## Formal
 
@@ -56,13 +56,17 @@ Chaining n full adders so each carry feeds the next — a ripple-carry adder —
 ## Real world
 
 ### Arithmetic logic units
+
 Every ALU inside a CPU builds multi-bit addition and subtraction from chains of full adders derived from this half adder.
 
 ### Calculators
+
 Pressing 7+5 on any calculator ultimately ripples through binary adders one bit column at a time.
 
 ### Checksums
+
 Network packet checksums use binary addition with carries to catch transmission errors.
 
 ### Digital signal processors
+
 Audio and image filters multiply and accumulate binary numbers using adder circuits built on exactly this logic.

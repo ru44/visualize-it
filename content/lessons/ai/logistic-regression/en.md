@@ -16,21 +16,21 @@ variables:
 
 ## Try it
 
-1. Drag x across its whole range and watch the point ride along the S-shaped curve, always staying between 0 and 1.
-2. Raise w toward 5 — the S steepens into almost a sharp step. Lower it toward 0.2 — the curve flattens into a gentle slope.
-3. Slide b left and right. The whole curve shifts sideways, moving the point where the output crosses 0.5.
+1. Drag x from -6 to 6 and watch the point ride along the S-shaped curve. The f(x) readout climbs from 0.0001 to 0.9999 and never leaves the range between 0 and 1.
+2. Put x at 0, then raise w to 5 — the S steepens into almost a sharp step and the slope readout shows 1.25. Lower w to 0.2 — the curve flattens into a gentle slope of 0.05.
+3. Set w = 1.5 and b = 3. The whole curve shifts left and now crosses 0.5 at x = -2. Set b = -3 and it crosses 0.5 at x = 2 instead.
 
 ## Real-life examples
 
-1. **A steep, confident filter.** With w near its maximum, the curve jumps almost straight from 0 to 1 — the model rarely sits on the fence.
-2. **A gentle, cautious filter.** With w near its minimum, the same swing in x barely moves the output — the model stays unsure over a wide range.
-3. **A filter biased to flag more mail.** With b pushed up to 3, even mail that scores slightly suspicious on x gets read as spam.
+1. **A steep, confident filter.** With w near its maximum, the curve jumps almost straight from 0 to 1 — at x = 1 the output is already 0.9933, so the model rarely sits on the fence.
+2. **A gentle, cautious filter.** With w near its minimum, the same swing in x barely moves the output — at x = 1 it is only 0.5744, so the model stays unsure over a wide range.
+3. **A filter biased to flag more mail.** With b pushed up to 3, the curve reaches 0.5 already at x = -2 instead of x = 0, so mail with any higher x gets read as spam.
 
 ## Test yourself
 
-1. Land exactly on the curve's midpoint, where the model is genuinely unsure.
+1. Land exactly on the curve's midpoint, where f(x) reads 0.5 and the model is genuinely unsure.
 2. Push w up near 5 and watch the curve steepen into an almost sharp step.
-3. Push the raw score past 3, deep into confidently-spam territory.
+3. Push the raw score past 3 (f(x) above 0.953), deep into confidently-spam territory.
 
 ## Intuition
 
@@ -57,13 +57,17 @@ With more than one input feature, $z = w_1x_1 + w_2x_2 + \dots + b$ becomes a hy
 ## Real world
 
 ### Spam filters
+
 An email is scored by a formula like this one; scores above the threshold get routed to the spam folder.
 
 ### Credit risk scoring
+
 Lenders estimate the probability a loan applicant will default and set an approval threshold on that probability.
 
 ### Medical screening tests
+
 A test result is turned into a probability of disease, and a doctor acts once that probability crosses an agreed threshold.
 
 ### Ad click prediction
+
 Ad systems estimate the probability a person will click a given ad before deciding whether to show it.

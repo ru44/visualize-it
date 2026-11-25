@@ -13,12 +13,12 @@ charts: []
 ## Try it
 
 1. Watch the green neutron drift in from the left toward the blue uranium-235 nucleus.
-2. Keep "neutron speed" low and drag "time" forward. The nucleus swells, stretches into a dumbbell, then snaps into two fragments and three new neutrons.
-3. Raise "neutron speed" past about 5,000 km/s and run it again. The neutron just grazes the nucleus and bounces away — no split, no energy released.
+2. Keep "neutron speed" at 1,000 km/s and drag "time" forward to 100. The nucleus swells, stretches into a dumbbell, then snaps into two fragments and three new neutrons: "outcome" reads fission and "energy released" reads ≈198 MeV.
+3. Raise "neutron speed" to 6,000 km/s and press restart. The neutron just grazes the nucleus and bounces away: "outcome" reads elastic scatter — no split, no energy released.
 
 ## Real-life examples
 
-1. **A reactor's slowed-down neutron.** Water or graphite inside a reactor slows neutrons to about 1,000-2,000 km/s, slow enough that a uranium-235 nucleus readily absorbs one and splits.
+1. **A reactor's slowed-down neutron.** Water or graphite inside a reactor slows neutrons all the way down to about 2 km/s. Even the 1,000 km/s on the slider counts as slow in this picture: slow enough that a uranium-235 nucleus readily absorbs the neutron and splits.
 2. **A neutron fresh out of another fission.** New fission neutrons leave at around 18,000 km/s — far too fast to be captured, so most just bounce off the next nucleus they meet.
 3. **Caught mid-split.** Freeze the frame partway through and watch the nucleus stretched into a dumbbell, a heartbeat before it snaps in two.
 
@@ -53,13 +53,17 @@ Every nucleus's stability comes down to its binding energy per nucleon, which cl
 ## Real world
 
 ### Nuclear power plants
-A power reactor runs this same split roughly 10^19 times a second across its fuel, using the heat to boil water and spin a turbine — the subject of the next lesson.
+
+A power reactor runs this same split roughly 10^20 times a second across its fuel, using the heat to boil water and spin a turbine — the subject of a later lesson.
 
 ### Naval propulsion
+
 Submarines and aircraft carriers carry small fission reactors so they can run for years, even decades, without refuelling or surfacing for air.
 
 ### Medical isotopes
+
 Research reactors fission uranium-235 to make molybdenum-99, which decays into technetium-99m — a widely used medical tracer with a half-life of just 6.0 hours.
 
 ### Nuclear weapons
+
 Letting the chain reaction run uncontrolled, with almost every released neutron splitting another nucleus within microseconds, releases the same energy all at once instead of gradually.

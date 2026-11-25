@@ -3,6 +3,7 @@ import { ref, watch } from 'vue'
 import * as THREE from 'three'
 import { useThree, ground, arrow, label, type ThreeCtx } from '../useThree'
 import { loadModel, fit } from '../models'
+import { t as translate } from '../../i18n'
 
 // Five modes, chosen once by options.mode (fixed per lesson, so each mode builds only what it needs):
 //  default  (physics/newtons-second-law): a crate pushed by F = ma. params F, m.
@@ -122,7 +123,7 @@ function setupIncline({ scene, theme }: ThreeCtx) {
     fArrow.setLength(Math.max(0.15, (held ? gComp : fMax) * 1.3), 0.25, 0.15)
     block.getWorldPosition(tmp)
     tag.position.set(tmp.x, tmp.y + 1.1, tmp.z)
-    setLabel(tag, `a = ${a.toFixed(2)} m/s²${held ? ' (held)' : ''}`, held ? theme.pos : theme.accent2)
+    setLabel(tag, `a = ${(held ? 0 : a).toFixed(2)} m/s²${held ? ` (${translate('incline.held')})` : ''}`, held ? theme.pos : theme.accent2)
   }
 }
 

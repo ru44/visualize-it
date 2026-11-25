@@ -23,19 +23,19 @@ parameters:
     max: 1000
     step: 10
     value: 100
-    unit: "atoms"
+    unit: 'atoms'
   T:
     min: 1000
     max: 10000
     step: 10
     value: 5730
-    unit: "yr"
+    unit: 'yr'
   x:
     min: 0
     max: 40000
     step: 100
-    value: 5730
-    unit: "yr"
+    value: 2000
+    unit: 'yr'
 variables:
   - N_0
   - T_{1/2}
@@ -55,20 +55,20 @@ charts:
       - (1/2)^(x/T)
 primary: T
 presets:
-- N0: 500
-  T: 5730
-  x: 1000
-- N0: 200
-  T: 5730
-  x: 5700
-- N0: 100
-  T: 1000
-  x: 8000
+  - N0: 500
+    T: 5730
+    x: 1000
+  - N0: 200
+    T: 5730
+    x: 5700
+  - N0: 100
+    T: 1000
+    x: 8000
 challenges:
-- check: (1/2)^(x/T)
-  target: 0.5
-  tol: 0.02
-- check: (1/2)^(x/T) < 0.05
-- check: N0*(1/2)^(x/T)
-  target: 25
-  tol: 2
+  - check: (1/2)^(x/T)
+    target: 0.5
+    tol: 0.02
+  - check: (1/2)^(x/T) < 0.05
+  - check: N0*(1/2)^(x/T)
+    target: 25
+    tol: 2

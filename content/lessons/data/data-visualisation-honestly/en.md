@@ -12,14 +12,14 @@ variables:
 
 ## Try it
 
-1. With truncStart at 0 and gap at 2, compare the two charts: they look almost the same, because both axes start at 0 here.
-2. Drag truncStart up toward 78. The left chart barely changes, but the right chart's second bar now looks two or three times taller than the first, even though gap has not moved.
-3. Set truncStart back to 0 and push gap up to 20. Now the honest chart itself shows a clearly taller second bar, no trick needed, because this time the real difference actually is large.
+1. With truncStart at 0 and gap at 2, compare the two charts: they look almost the same, because both axes start at 0 here. The true % difference reads 2.5%, and both bar ratios read ×1.02.
+2. Drag truncStart up to 78. The left chart does not change, but the right chart's second bar now looks twice as tall as the first: its bar ratio reads ×2.00, while the true % difference still reads 2.5%.
+3. Set truncStart back to 0 and push gap up to 20. Now the honest chart itself shows a clearly taller second bar, no trick needed, because this time the real difference actually is large: 25.0%, and both bar ratios read ×1.25.
 
 ## Real-life examples
 
 1. **A tiny real change, drawn honestly.** truncStart at 0, gap at 2: last year's 80 and this year's 82 look almost identical, which is the truth, since the real change is only 2.5%.
-2. **The same tiny change, drawn to shock.** truncStart at 70, gap at 2: the exact same 80 and 82, but with the axis starting at 70, the second bar now looks dramatically taller than the first.
+2. **The same tiny change, drawn to shock.** truncStart at 78, gap at 2: the exact same 80 and 82, but with the axis starting at 78, the second bar now looks twice as tall as the first.
 3. **A genuinely large change, drawn honestly.** truncStart at 0, gap at 20: 80 growing to 100 is a real 25% jump, and an honest, zero-based axis already shows that clearly.
 
 ## Test yourself
@@ -30,7 +30,7 @@ variables:
 
 ## Intuition
 
-Picture a company's earnings report: sales went from 80,000 dollars last year to 82,000 dollars this year, a real but modest 2.5% increase. A chart with an honest, zero-based axis shows two bars of almost the same height, which is the honest truth. But the same company's marketing team could draw the exact same two numbers with a y-axis that starts at 79,000 dollars instead of zero, and suddenly the second bar looks two or three times taller than the first, even though nothing about the sales changed at all.
+Picture a company's earnings report: sales went from 80,000 dollars last year to 82,000 dollars this year, a real but modest 2.5% increase. A chart with an honest, zero-based axis shows two bars of almost the same height, which is the honest truth. But the same company's marketing team could draw the exact same two numbers with a y-axis that starts at 79,000 dollars instead of zero, and suddenly the second bar looks three times taller than the first, even though nothing about the sales changed at all.
 
 The readouts under the chart make this precise: the honest chart's bar ratio and the truncated chart's bar ratio measure how many times taller the second bar looks, drawn on screen, in each version. When truncStart is 0 those two ratios match, because both charts are the same chart. As truncStart climbs, the truncated ratio grows far past the honest one, even though the underlying percentage difference, $p$, has not changed by a single decimal.
 
@@ -53,13 +53,17 @@ Statisticians sometimes call the size of this distortion the "lie factor," the r
 ## Real world
 
 ### News and advertising charts
+
 A political ad or a news segment can make a 2-point poll shift look enormous by starting its bar chart's axis at 45 instead of 0; reading the axis labels first is the fastest way to catch it.
 
 ### Stock and finance apps
+
 A stock app zoomed into a single day's trading often uses a tightly truncated axis, which is useful for spotting small moves but can make a 1% wiggle look like a crash if the axis is not read carefully.
 
 ### Company earnings slides
+
 Corporate earnings presentations sometimes truncate the y-axis on a "growth" chart to make a modest single-digit percentage increase look like a steep climb.
 
 ### Government and health dashboards
+
 A public dashboard tracking something like case counts or unemployment can look far more alarming or far more reassuring than the real numbers justify, depending only on where its axis is set to start.

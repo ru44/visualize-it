@@ -1,72 +1,65 @@
 ---
 title: An introduction to differential equations
-summary: >-
-  A fishing crew wants to know how many fish they can catch every season
-  without ever driving the population to zero — this idea works out that
-  safe catch rate.
+summary: 'Use a rate equation and a starting amount to explore equilibria under constant removal.'
 parameters:
-  k: growth rate k
-  K: carrying capacity K
-  h: harvest per unit time h
-  y0: starting population y0
-  tView: time
+  k: 'k — proportional growth-rate constant'
+  K: 'K — capacity without removal'
+  h: 'h — constant amount removed per time unit'
+  y0: 'y₀ — initial amount'
+  tView: 'time position — 0 to 1 across 40 time units'
 variables:
-  - the population at time t
-  - the intrinsic growth rate
-  - the carrying capacity, the population the environment can support
-  - how much is harvested (removed) per unit time
+  - 'y: amount at time t'
+  - 'k: intrinsic proportional growth rate'
+  - 'K: equilibrium amount when h = 0'
+  - 'h: fixed removal rate, in amount per time'
 ---
 
 ## Try it
 
-1. Drag «time» from the start. The population climbs, tracing out the one curve consistent with the growth rule and the starting value.
-2. Raise «harvest per unit time h». The curve settles at a lower equilibrium — more is being removed, so less remains.
-3. Push «h» high enough. The curve stops levelling off at all and runs down to zero: harvest now outpaces growth.
+1. Set k = 0.5, K = 100, h = 5 and y₀ = 30. Play the simulation or drag its time marker. The amount increases toward the upper equilibrium, about 88.73.
+2. Keep the same rates but set y₀ = 5. This lies below the lower equilibrium, about 11.27, so the amount decreases instead. The starting value matters as well as the removal rate.
+3. Set h = 15. It exceeds kK/4 = 12.5, so the rate is negative at every nonnegative amount. Interpret the population model only until it first reaches zero; numerical values beyond that point do not represent a population.
 
 ## Real-life examples
 
-1. **A sustainable fishing quota.** With growth rate k = 0.5 and capacity K = 150, a harvest of h = 5 per unit time stays safely below the maximum the fish stock can regrow.
-2. **A cautious wildlife cull.** With k = 0.3 and K = 100, a cull of h = 7 sits close to the fastest regrowth rate the population can sustain — a narrow safety margin.
-3. **Overharvesting collapse.** With k = 0.4 and K = 80, a harvest of h = 12 removes population faster than it can ever regrow, so no equilibrium exists and the population is driven to zero.
+1. **Above the lower threshold.** With k = 0.5, K = 150 and h = 5, the equilibria are about 10.77 and 139.23. Starting at y₀ = 30 leads toward the upper level in this model.
+2. **Closer equilibrium levels.** With k = 0.3, K = 100 and h = 7, the equilibria are about 37.09 and 62.91. Starting at 50 leads toward 62.91; a start below 37.09 would decrease toward zero.
+3. **Removal exceeds all growth rates.** With k = 0.4, K = 80 and h = 12, the maximum growth rate is 8. Starting at 60, removal exceeds growth and no nonnegative equilibrium exists.
 
 ## Test yourself
 
-1. Find a harvest rate h, above 0, that still leaves a stable, positive equilibrium.
-2. Push h high enough that the population collapses to zero — no equilibrium survives.
-3. Tune h to match the maximum sustainable yield exactly, right at the edge of collapse.
+1. Choose a positive h less than kK/4. This gives two positive equilibria, including a stable upper one; the check does not test whether y₀ lies above the lower threshold.
+2. Choose h greater than kK/4, so no nonnegative equilibrium exists.
+3. Make h differ from kK/4 by at most 0.5. The exact equality is the boundary where the two equilibria merge.
 
 ## Intuition
 
-Imagine a lake stocked with 30 fish, and every season fishers pull out a fixed number more. The curve on screen traces how the fish population changes over time, starting from that number 30, set by the slider «starting population y0». The curve is not drawn by hand — it grows out of a rule: at every moment, how fast the population changes depends on how many fish are already there and on how many are being caught.
+A differential equation gives a rate instead of directly giving the future amount. Here growth adds ky(1 − y/K), while constant removal subtracts h per time unit. Starting from y₀, the simulation estimates successive changes using that rate. The time control selects a point on the computed trajectory; its range 0 to 1 covers the displayed 0 to 40 time units.
 
-Raise the slider «harvest per unit time h», the number of fish removed each season. The curve settles onto a lower flat level — the population still survives, just at a smaller size. Push «h» high enough and the curve stops flattening out at all: fishers are now pulling fish out faster than the population can replace them, and the curve runs straight down to zero.
+An equilibrium is an amount where addition and removal balance. Below the maximum possible growth rate, there are two positive balance points. The upper one attracts nearby amounts, while the lower one separates outcomes: start above it and approach the upper equilibrium; start below it and decrease toward zero. The same rate settings can therefore produce different outcomes from different initial amounts.
 
 ## Formal
 
-A differential equation states a relationship between a quantity and its own rate of change; here $\dfrac{dy}{dt} = ky\left(1-\dfrac{y}{K}\right) - h$ says growth follows the logistic term $ky(1-y/K)$ but a constant amount $h$ is removed every unit of time.
+The model is $dy/dt=ky(1-y/K)-h$, with k > 0, K > 0, h ≥ 0 and a specified initial amount y₀. Equilibria solve $ky(1-y/K)=h$. For $0<h<kK/4$, they are $y_\pm=(K/2)(1\pm\sqrt{1-4h/(kK)})$; the upper is stable and the lower unstable.
 
-An equilibrium is a population level where $\dfrac{dy}{dt} = 0$: growth and harvest exactly cancel, so $y$ stops changing. Solving $ky(1-y/K) - h = 0$ gives up to two such levels, one stable and one unstable.
+At $h=kK/4$, the levels merge at $y=K/2$. It attracts trajectories from above but not from below. If $h>kK/4$, the rate is negative for every nonnegative y. The equation does not enforce y ≥ 0: at zero its rate is −h, so continuing it unchanged past depletion loses the population interpretation.
 
 ## Advanced
 
-The logistic term $ky(1-y/K)$ has a maximum value of $\dfrac{kK}{4}$, reached at $y=K/2$; this is the fastest the population can possibly regrow. Once $h$ exceeds $\dfrac{kK}{4}$, harvest always outpaces growth, no equilibrium exists at all, and every trajectory collapses to zero regardless of the starting population.
+Write the rate as kK/4 − (k/K)(y − K/2)² − h to see its maximum directly. At h = 0, the equilibria are zero and K. The numerical curve is an approximation over a finite time window, not a proof of an asymptotic limit. A constant-removal rule would need modification at depletion to describe a physical population thereafter.
 
 ## Derivation
 
-1. State the rate law: logistic growth minus a constant harvest.
-2. Set the rate to zero to find where the population would stop changing.
-3. The logistic term's own maximum value is the largest harvest the population can sustain.
+1. Specify the instantaneous rate as logistic growth minus a fixed amount removed per unit time.
+2. Set that rate to zero to locate equilibrium amounts. Solve the quadratic and examine the rate's sign between and outside the roots.
+3. The growth term reaches its maximum kK/4 at K/2. Comparing h with that maximum determines how many equilibrium levels exist, not by itself whether a chosen initial population persists.
 
 ## Real world
 
-### Fisheries management
-Quotas are set below the maximum sustainable yield of a fish stock, exactly the $kK/4$ threshold in this model, to avoid collapse.
+### Balancing production and removal
 
-### Epidemiology
-The same style of equation, a growth term minus a removal term, describes vaccination or treatment programmes removing infected individuals from circulation.
+A stock model compares a production rate with an outflow rate. Its assumptions and initial amount determine the trajectory; a rate threshold from an ideal model is not a universal operating rule.
 
-### Chemical engineering
-A continuously stirred reactor with a constant outflow follows an identical rate balance between production and removal.
+### Testing an initial-value problem
 
-### Wildlife conservation
-Culling or hunting quotas for a managed species are set using the same equilibrium analysis to keep a population from being harvested to extinction.
+Changing y₀ while keeping the rate equation fixed reveals which outcomes depend on the starting state. Comparing nearby trajectories helps identify stable and unstable equilibria.

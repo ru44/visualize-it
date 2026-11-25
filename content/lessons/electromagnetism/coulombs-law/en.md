@@ -19,27 +19,27 @@ variables:
 
 ## Try it
 
-1. Picture two balloons, each rubbed on hair until they hold about 3 µC of charge, held 1.5 m apart.
-2. Drag «charge q2» from negative to positive. The black test charge, and the field arrows around it, flip from being pulled in to being pushed away.
-3. Drag «separation d» apart. The force shrinks fast — twice the distance means a quarter of the force.
+1. Picture two balloons rubbed on hair and held 1.5 m apart. Set «charge q1» to 3 µC, «charge q2» to −3 µC and «separation d» to 1.5 m. The readout "force between charges" shows 0.036 N (attract).
+2. Drag «charge q2» from −3 to 3 µC. The readout still shows 0.036 N, but now says (repel), and the thick force arrow on the black test charge swings round to a new direction.
+3. Drag «separation d» from 1.5 m to 3 m. The force drops from 0.036 N to 0.009 N: twice the distance means a quarter of the force.
 
 ## Real-life examples
 
-1. **Two balloons rubbed on hair.** Charged oppositely to about ±3 µC and held 1.5 m apart, they pull toward each other — the same static cling that makes a balloon stick to a wall.
-2. **Two charged metal spheres.** Charged alike to +5 µC each and set 4 m apart, they push each other away with a small but real force.
-3. **Charge patches inside a storm cloud.** Oppositely charged regions, roughly −4 µC and +2 µC, sit 6 m apart before a lightning bolt jumps between them.
+1. **Two balloons rubbed on hair.** Charged oppositely to about ±3 µC and held 1.5 m apart, they pull toward each other with about 0.036 N — the same static cling that makes a balloon stick to a wall.
+2. **Two charged metal spheres.** Charged alike to +5 µC each and set 4 m apart, they push each other away with a small but real force of about 0.014 N.
+3. **A school static-electricity machine.** Its metal dome holds about −4 µC. A metal ball with +2 µC on the far side of the room, 6 m away, is still pulled toward it, but only with about 0.002 N.
 
 ## Test yourself
 
-1. Pull the two charges to a separation where the force between them is about 0.05 N.
+1. Choose the two charges and their separation so that the force between them is about 0.05 N.
 2. Keep the charges alike in sign and at least 3 m apart, but still push them apart with a force of at least 0.02 N.
-3. Bring the charges close enough that the force between them passes 0.2 N.
+3. Make the charges large and bring them close enough that the force between them passes 0.2 N.
 
 ## Intuition
 
 Picture two balloons, each charged to about 3 µC after a good rub on your hair, held 1.5 m apart. Drag the black test charge around the scene: the short arrows are the field, pointing the way a small positive charge would be pushed, and they fade out where the field is weak. Near either balloon the arrows crowd in or out; farther away they blend into one gentle flow from the pair.
 
-Now watch the thin force lines on the test charge, one pulling toward «charge q1» and one toward «charge q2», with a thick arrow showing their sum. Drag «charge q2» from negative to positive: the two thin lines swap from pulling together to pushing apart, and the field arrows near the midpoint flip too.
+Now watch the thin force lines on the test charge, one for the force from «charge q1» and one for the force from «charge q2», with a thick arrow showing their sum. Drag «charge q2» from negative to positive: its thin line flips from pulling the test charge toward it to pushing it away, and the field arrows around «charge q2» flip too.
 
 ## Formal
 
@@ -60,13 +60,17 @@ Superposition holds because Maxwell's equations are linear in the sources: $\nab
 ## Real world
 
 ### Photocopiers and laser printers
+
 A charged drum attracts toner particles exactly where light has (or has not) neutralised it.
 
 ### Lightning
+
 Charge separation in a storm cloud builds a field strong enough to ionise air and discharge in a bolt.
 
 ### Electrostatic precipitators and spray painting
+
 Charged particles are steered by an applied field onto a grounded surface.
 
 ### Atoms and bonds
+
 The same $1/r^2$ attraction between nucleus and electrons (screened by other electrons) shapes chemical bonding.

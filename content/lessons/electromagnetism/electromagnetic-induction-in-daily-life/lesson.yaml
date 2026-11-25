@@ -52,21 +52,21 @@ derivation:
 charts: []
 primary: f
 presets:
-- B: 0.005
-  A: 0.0003
-  f: 25000
-  R: 0.0001
-- B: 0.002
-  A: 0.001
-  f: 150000
-  R: 0.24
-- B: 0.0001
-  A: 0.0001
-  f: 7000
-  R: 0.001
+  - B: 0.005
+    A: 0.0003
+    f: 25000
+    R: 0.0001
+  - B: 0.002
+    A: 0.001
+    f: 150000
+    R: 0.24
+  - B: 0.0001
+    A: 0.0001
+    f: 7000
+    R: 0.001
 challenges:
-- check: '(A*B*2*pi*f/sqrt(2))^2/R'
-  target: 300
-  tol: 50
-- check: 'f >= 100000 and f <= 200000 and (A*B*2*pi*f/sqrt(2))^2/R > 5 and (A*B*2*pi*f/sqrt(2))^2/R < 10'
-- check: 'f <= 10000 and (A*B*2*pi*f)/sqrt(2) > 0.0001'
+  - check: '(A*B*2*pi*f/sqrt(2))^2/R'
+    target: 1000
+    tol: 100
+  - check: 'f >= 100000 and f <= 200000 and (A*B*2*pi*f/sqrt(2))^2/R > 5 and (A*B*2*pi*f/sqrt(2))^2/R < 10'
+  - check: 'f <= 10000 and (A*B*2*pi*f)/sqrt(2) > 0.0001'

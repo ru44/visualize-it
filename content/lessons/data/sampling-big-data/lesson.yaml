@@ -3,14 +3,14 @@ subject: data
 difficulty: beginner
 equation: \text{SE} = \sqrt{\dfrac{p(1-p)}{N}}
 concepts:
-- sampling
-- margin of error
-- law of large numbers
-- estimation
+  - sampling
+  - margin of error
+  - law of large numbers
+  - estimation
 prerequisites:
-- law-of-large-numbers
+  - law-of-large-numbers
 related:
-- mapreduce
+  - mapreduce
 visualization:
   type: coin-flips
   options: {}
@@ -32,25 +32,25 @@ parameters:
     step: 1
     value: 60
 variables:
-- p
-- N
+  - p
+  - N
 derivation:
-- \text{Var} = \dfrac{p(1-p)}{N}
-- \text{SE} = \sqrt{\text{Var}}
-- N \to \infty \Rightarrow \text{SE} \to 0
+  - \text{Var} = \dfrac{p(1-p)}{N}
+  - \text{SE} = \sqrt{\text{Var}}
+  - N \to \infty \Rightarrow \text{SE} \to 0
 presets:
-- p: 0.5
-  N: 50
-  speed: 80
-- p: 0.3
-  N: 1000
-  speed: 60
-- p: 0.8
-  N: 2000
-  speed: 150
+  - p: 0.5
+    N: 50
+    speed: 80
+  - p: 0.3
+    N: 1000
+    speed: 60
+  - p: 0.8
+    N: 2000
+    speed: 150
 challenges:
-- check: N
-  target: 500
-- check: p
-  target: 0.5
-- check: N >= 1500
+  - check: N
+    target: 500
+  - check: p
+    target: 0.5
+  - check: N >= 1500

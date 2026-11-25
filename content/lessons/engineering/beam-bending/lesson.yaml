@@ -13,7 +13,7 @@ related: []
 visualization:
   type: function-plot
   options:
-    expr: "x <= L ? F*x^2*(3*L - x)/(6*E*1e9*I*1e-8)*1000 : 0"
+    expr: 'x <= L ? F*x^2*(3*L - x)/(6*E*1e9*I*1e-8)*1000 : 0'
     domain: [0, 5]
     range: [0, 300]
     mode: plain
@@ -75,10 +75,10 @@ presets:
     I: 100
     x: 4
   - F: 5000
-    L: 5
+    L: 2
     E: 200
-    I: 150
-    x: 5
+    I: 200
+    x: 2
 challenges:
   - check: abs(x-L)<0.05 and abs(F*x^2*(3*L-x)/(6*E*1e9*I*1e-8)*1000 - 50) < 5
   - check: L<3 and x>=L-0.05 and F*x^2*(3*L-x)/(6*E*1e9*I*1e-8)*1000 > 100

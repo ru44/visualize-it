@@ -1,12 +1,9 @@
 ---
 title: Taylor series
-summary: >-
-  A calculator's sine button has no picture of a wave stored inside it — it
-  rebuilds sin(x) on the spot from nothing but powers of x, and this shows
-  you that trick, piece by piece.
+summary: 'Approximate sine with polynomials built from its derivatives at zero, and check the error away from that centre.'
 parameters:
-  N: degree of the polynomial N
-  x: point x
+  N: 'N — polynomial degree'
+  x: 'x — input in radians'
 variables: []
 charts:
   - title: sin(x) for comparison
@@ -18,54 +15,50 @@ charts:
 
 ## Try it
 
-1. Set «degree of the polynomial N» to 1. The curve is just a straight line, a poor match away from the centre.
-2. Raise «N» step by step. Each new pair of terms bends the curve to hug the true sine wave over a wider stretch.
-3. Drag «point x» outward at a high N. Even the best-fitting polynomial eventually pulls away from the true curve.
+1. Set N = 1 and x = 0.3. The main graph is the line P₁(x) = x. Its value 0.3 is close to sin(0.3) ≈ 0.29552 on the separate comparison chart.
+2. Set N = 5 and x = 2. The polynomial has three nonzero terms, with value about 0.93333; sine is about 0.90930.
+3. Set N = 11 and x = 6. The polynomial gives about −2.06026, while sine is about −0.27942. A high degree does not guarantee small error everywhere in the window.
 
 ## Real-life examples
 
-1. **A straight-line guess, far from the centre.** With N = 1 and x = 3, the polynomial is just a line — nowhere close to the real curve out there.
-2. **A five-term approximation, still fairly close.** With N = 5 and x = 2, the polynomial still tracks sine reasonably well.
-3. **The highest available degree, pushed far out.** With N = 11 and x = 6, even this many terms is being tested at the edge of where it still works well.
+1. **Linear approximation far from zero.** N = 1 at x = 3 gives 3, compared with sin 3 ≈ 0.14112. The absolute error is about 2.85888.
+2. **Degree five, three terms.** N = 5 at x = 2 has absolute error about 0.02404, below 0.05.
+3. **Degree eleven, six terms.** N = 11 at x = 6 has absolute error about 1.78084. More terms or a smaller input would be needed for a close approximation here.
 
 ## Test yourself
 
-1. Using just N = 1 (a straight line), find x where the approximation is still within 0.01 of sin(x).
-2. With N = 5, find how far from the centre you can push x and stay within 0.05 of the true sine curve.
-3. With the full N = 11 series, get within 0.05 of sin(x) as far out as you can.
+1. With N = 1, find x whose absolute approximation error is less than 0.01.
+2. With N = 5, find x whose absolute error is less than 0.05.
+3. With N = 11, find x whose absolute error is less than 0.05. As an extra experiment, move farther from zero and see where this tolerance fails.
 
 ## Intuition
 
-Think of the sine button on a calculator: it has no picture of a wave stored inside, yet it can compute the sine of any number instantly. That trick works by adding up simple powers of the input, and the curved line on screen is exactly that: the Taylor polynomial, built only from powers of «point x», while the dashed reference curve is the true sine wave. With «degree of the polynomial N» at 1, the polynomial is just a straight line, a poor match away from the centre.
+Near zero, sine has value zero and slope one. The line x matches both, so it is the first approximation. Adding −x³/6 also matches sine's third derivative at zero, and the next term x⁵/120 matches its fifth derivative. Each added term uses more local information about the same function.
 
-Raise «N» step by step and each new pair of terms bends the curve to hug the sine wave over a wider stretch. Now drag «point x» outward: even a high-degree polynomial eventually pulls away from the true curve far enough from the centre, because this kind of approximation is only guaranteed to be good close to home.
+The control N is the polynomial's degree, not its number of terms. Only odd powers appear because sine's even-order derivatives vanish at zero. The main graph shows the selected finite polynomial, while the separate chart shows sine. They agree closely near the centre but can differ substantially farther away.
 
 ## Formal
 
-Near $x=0$, any smooth function can be written $f(x) \approx f(0) + f'(0)x + \dfrac{f''(0)}{2!}x^2 + \cdots$, using more and more derivatives evaluated at the centre. For $\sin x$ this becomes $\sin x \approx x - \dfrac{x^3}{3!} + \dfrac{x^5}{5!} - \dfrac{x^7}{7!} + \cdots$.
+The Taylor polynomial of degree N about zero is $P_N(x)=\sum_{j=0}^{N}f^{(j)}(0)x^j/j!$. For sine in radians, the odd-degree polynomial is $P_{2m+1}(x)=\sum_{j=0}^{m}(-1)^j x^{2j+1}/(2j+1)!$. A factorial such as 3! means 3 × 2 × 1.
 
-Each extra term added is called increasing the degree; the sliders here jump by two degrees at a time because sine's Taylor series only has odd powers, its even-order derivatives at 0 all vanish.
+For the displayed odd degrees, the error obeys $|\sin x-P_N(x)|\leq |x|^{N+2}/(N+2)!$. Sine's next even coefficient is zero, and all its derivatives have magnitude at most 1, giving this Taylor bound. A bound may be larger than the actual error.
 
 ## Advanced
 
-For $\sin x$ the series converges to the exact value for every real $x$, an infinite radius of convergence, but the number of terms needed for a given accuracy still grows the farther $x$ is from the centre. Many functions, such as $1/(1-x)$, have a finite radius of convergence beyond which the series diverges entirely.
+The infinite sine series converges to sine at every real input, even though a fixed finite polynomial need not approximate it well far from zero. A general smooth function need not equal its infinite Taylor series. For example, the series for 1/(1 − x) about zero converges only for |x| < 1. Finite approximation, convergence and equality with the function are distinct questions.
 
 ## Derivation
 
-1. Start from the general local approximation using derivatives at the centre.
-2. Evaluate sine and its derivatives at 0; only the odd ones survive.
-3. Substitute those values to get the odd-power series for sine.
+1. Choose polynomial coefficients so that its derivatives at zero match the function's derivatives through the required degree.
+2. Sine's derivatives cycle through sine, cosine, negative sine and negative cosine, giving values 0, 1, 0, −1 and so on at zero.
+3. Substitute the nonzero coefficients to obtain alternating odd powers divided by factorials.
 
 ## Real world
 
-### Calculators and computer chips
-A calculator's sine and cosine buttons compute a truncated Taylor (or a closely related) series, not a lookup table.
+### Small-angle models
 
-### Physics approximations
-The small-angle approximation $\sin\theta \approx \theta$, used for pendulums and optics, is just the first term of this series.
+Replacing sin θ by θ is the degree-one approximation, with θ in radians. An error estimate tells you when the replacement is accurate enough.
 
-### Numerical solvers
-Simulation software that steps a system forward in time relies on Taylor's theorem to bound the error of each step.
+### Local numerical calculations
 
-### GPS and navigation
-Satellite orbit calculations use truncated series expansions to evaluate trigonometric functions fast enough for real-time positioning.
+Polynomial approximations replace a complicated function with additions and multiplications near a chosen centre. Practical algorithms can also reduce the input range or use other approximations; this lesson does not prescribe how every calculator works.

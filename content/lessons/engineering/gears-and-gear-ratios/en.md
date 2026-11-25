@@ -1,7 +1,7 @@
 ---
 title: Gears and gear ratios
 summary: >-
-  A small gear spinning inside a big one always trades speed for turning
+  A small gear turning a big one always trades speed for turning
   force — this lesson shows exactly how much of each you get.
 parameters:
   N1: N₁ — teeth on the driver gear
@@ -19,9 +19,9 @@ variables:
 
 ## Try it
 
-1. Drag $N_2$ (teeth on the driven gear) up while $N_1$ stays small. Watch $\omega_2$ fall and $\tau_2$ climb — the smaller gear is now driving a much bigger one.
-2. Drag $\omega_1$ (driver speed) up and down. Both gears speed up or slow down together, but their ratio never changes.
-3. Drag $\tau_1$ (driver torque) up. The output torque $\tau_2$ grows by exactly the same factor as the gear ratio — nothing about the teeth changed.
+1. Leave $N_1$ at 20 and drag $N_2$ (teeth on the driven gear) up from 20 to 60. The gear ratio reads 1 : 3, the driven speed $\omega_2$ falls from 300 rpm to 100 rpm, and the driven torque $\tau_2$ climbs from 20 N·m to 60 N·m — the smaller gear is now driving a much bigger one.
+2. Keep $N_2$ at 60 and raise $\omega_1$ (driver speed) from 300 rpm to 600 rpm. The driven speed doubles too, from 100 rpm to 200 rpm, but the gear ratio stays 1 : 3.
+3. Raise $\tau_1$ (driver torque) from 20 N·m to 40 N·m. The driven torque $\tau_2$ goes from 60 N·m to 120 N·m — always three times $\tau_1$, because nothing about the teeth changed.
 
 ## Real-life examples
 
@@ -60,13 +60,17 @@ Real gearboxes lose a few percent of power to friction between the teeth and in 
 ## Real world
 
 ### Bicycle derailleurs
+
 Shifting to a bigger rear sprocket increases $N_2$, raising the torque at the wheel for climbing; shifting to a smaller one raises speed for flat, fast riding.
 
 ### Car and truck transmissions
+
 Low gears use a large tooth-count ratio to multiply torque for starting from a stop; high gears drop the ratio toward 1:1 so the engine does not have to spin absurdly fast at highway speed.
 
 ### Clocks and watches
+
 A mechanical clock uses a long chain of small gear ratios to turn one slow rotation (the hour hand) into many fast ones (the second hand), each stage multiplying the speed a little.
 
 ### Wind turbines
+
 A turbine's gearbox does the opposite of a car's: it takes the slow, high-torque turn of the blades (a few rpm) and speeds it up, through many gear stages, to the thousands of rpm a generator needs.

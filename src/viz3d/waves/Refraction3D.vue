@@ -88,6 +88,7 @@ useThree(
       const dIn = new THREE.Vector3().addScaledVector(HORIZ, Math.sin(th1)).addScaledVector(UP, -Math.cos(th1))
       const dRefl = new THREE.Vector3().addScaledVector(HORIZ, Math.sin(th1)).addScaledVector(UP, Math.cos(th1))
       aim(inc, dIn.clone().multiplyScalar(-5), new THREE.Vector3())
+      refl.visible = n1 !== n2
       aim(refl, new THREE.Vector3(), dRefl.multiplyScalar(4))
       ;(refl.material as THREE.LineBasicMaterial).opacity = tir ? 1 : 0.5
 

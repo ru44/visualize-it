@@ -13,14 +13,14 @@ parameters:
 ## Try it
 
 1. Look at the two rods stacked on screen: the pale outline is the rod's rest length L0, the solid bar is the length L a platform observer actually measures as it flies past at speed v.
-2. Raise v from 0.6 toward 0.9. Watch the solid bar visibly shrink inside the pale outline, even though L0 never changed.
-3. Push v to 0.99. The solid bar collapses to a small fraction of L0 — at this speed, a 5 m rod measures barely 0.7 m long to the platform.
+2. Raise v from 0.6 to 0.9. The solid bar shrinks from L = 8 m to L = 4.36 m, while the pale outline stays at L0 = 10 m.
+3. Push v to 0.99. γ reads 7.089 and the solid bar collapses to L = 1.41 m — at this speed, the 10 m rod measures barely a seventh of its rest length to the platform.
 
 ## Real-life examples
 
 1. **A 10 m delivery van at v = 0.6.** γ = 1.25, so the platform measures it at L0/γ = 8 m long — two full metres shorter than the driver would ever measure it.
-2. **A 20 m train carriage at v = 0.9.** γ = 2.29, so the platform sees it shrunk to under 8.7 m, less than half its rest length, though every passenger inside still measures the carriage at the full 20 m.
-3. **A 5 m rod at v = 0.99**, close to the edge of the slider. γ = 7.09, and the platform's measured length collapses to about 0.7 m — shorter than the rod's own width would be if it were a car.
+2. **A 20 m train carriage at v = 0.9.** γ = 2.29, so the platform sees it shrunk to about 8.7 m, less than half its rest length, though every passenger inside still measures the carriage at the full 20 m.
+3. **A 5 m rod at v = 0.99**, close to the edge of the slider. γ = 7.09, and the platform's measured length collapses to about 0.7 m — shorter than a car is wide.
 
 ## Test yourself
 
@@ -53,13 +53,17 @@ Length contraction only ever applies along the direction of motion — a rod's w
 ## Real world
 
 ### Cosmic-ray muons again, seen from the muon's side
+
 An observer riding along with a fast muon does not see its lifetime stretched at all — instead, from the muon's own point of view, the thickness of Earth's atmosphere it has to cross is length-contracted, which is exactly why the muon still reaches the ground: time dilation and length contraction are the same physics, described from two different seats.
 
 ### Particle accelerators
+
 A relativistic proton bunch at CERN, moving at v > 0.999999c, is measured by lab instruments as a startlingly thin, pancake-flattened disc along its direction of travel, even though every proton inside it is an ordinary sphere in its own rest frame.
 
 ### Why you would never notice it in daily life
+
 A car on a motorway moving at 30 m/s has v/c of about one ten-millionth, so its length contraction is smaller than the width of an atom — real, but utterly unmeasurable with any everyday ruler.
 
 ### Electric and magnetic fields
+
 Length contraction of the electric field around a fast-moving charge is part of why a current-carrying wire, which is electrically neutral in the lab, creates a genuine magnetic force on a moving charge nearby — a purely relativistic effect hiding inside ordinary electromagnetism.

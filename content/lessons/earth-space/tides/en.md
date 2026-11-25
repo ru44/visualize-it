@@ -18,9 +18,9 @@ variables:
 
 ## Try it
 
-1. Drag time forward. Watch sea level rise and fall roughly twice a day as the lunar bulge sweeps past.
-2. Raise $B$, the Sun's pull, toward $A$, the Moon's pull. Watch the tide pattern's shape change.
-3. Set $B$ to 0. Watch the tide settle into one clean, repeating lunar rhythm.
+1. Drag time x from 0 to 48 hours. Sea level f(x) rises and falls about four times — roughly twice a day — as the lunar bulge sweeps past.
+2. Raise $B$, the Sun's pull, from 0.5 to 1.5, equal to $A$, the Moon's pull. The high tides grow taller, to almost 3 m.
+3. Set $B$ to 0. The tide settles into one clean, repeating lunar rhythm: every high tide reaches exactly 1.5 m.
 
 ## Real-life examples
 
@@ -59,13 +59,17 @@ The Moon's tidal pull is a differential force: it is stronger on the near side o
 ## Real world
 
 ### Coastal shipping and fishing
+
 Harbours schedule loading and fishing trips around predicted high and low tides read straight off this kind of curve.
 
 ### Tidal power
+
 Tidal barrages and turbines are sized around the spring-neap range, since spring tides can move several times the water volume of neap tides.
 
 ### Tide pools and ecosystems
+
 Intertidal life times feeding and reproduction to the tidal rhythm, some species even keeping to it in captivity with no ocean nearby.
 
 ### Bay of Fundy
+
 The Bay of Fundy has the world's largest tidal range, over 15 metres, because its shape resonates with the roughly 12-hour tidal period.

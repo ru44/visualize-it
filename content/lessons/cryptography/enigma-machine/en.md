@@ -16,9 +16,9 @@ variables:
 
 ## Try it
 
-1. With all three rotors at A, click the letter A on the keyboard column and follow the wire: through three rotors, off the reflector, and back out to the lamp that lights.
-2. Click the lamp's letter instead — the signal threads the exact same path backwards and lights your original letter: the machine undoes itself.
-3. Now change any rotor by one step and press the same letter as before: the whole path reroutes and a different lamp lights.
+1. Set all three rotors to A, click the letter A on the keyboard column and follow the wire: through three rotors, off the reflector, and back out to the lamp that lights, U.
+2. Click the lamp's letter, U, instead — the signal threads the exact same path backwards and lights your original letter, A: the machine undoes itself.
+3. Now move the right rotor one step, to B, and press A again: the whole path reroutes and a different lamp lights, B instead of U.
 
 ## Real-life examples
 
@@ -57,13 +57,17 @@ The plugboard (not drawn here) swapped up to ten letter pairs before and after t
 ## Real world
 
 ### Bletchley Park
+
 Up to 9,000 people worked the Enigma break; historians credit the intelligence, codenamed Ultra, with shortening the war in Europe by years.
 
 ### The bombe
+
 Turing and Welchman's electromechanical bombes tested rotor settings against a guessed phrase, discarding contradictions in minutes — machine-breaking answered by machine-searching.
 
 ### Operator error
+
 The strongest machine fell to habits: repeated message keys, reused daily settings and predictable salutations gave the cribs that made every break start.
 
 ### Rotor machines after Enigma
+
 America's SIGABA randomised its rotor stepping and was never broken in service — proof that the rotor idea was sound and the stepping and reflector were Enigma's real flaws.

@@ -19,9 +19,9 @@ charts: []
 
 ## Try it
 
-1. Drag «length L» up. «R» climbs — a longer wire means more collisions along the way, so more resistance.
-2. Drag «cross-section A» up. «R» falls — a thicker wire gives current more parallel paths, so less resistance.
-3. Flip «material» from copper to nichrome. «R» jumps by nearly a hundred times for the very same shape.
+1. Start with copper, «length L» = 1 m and «cross-section A» = 1 mm². «R» reads about 0.0168 Ω. Raise L to 2 m: R doubles to 0.0336 Ω, because electrons meet twice as many collisions along the way.
+2. Return L to 1 m and raise A to 2 mm². R halves to 0.0084 Ω, because a thicker wire gives the current more room side by side.
+3. Return A to 1 mm² and flip «material» from copper to nichrome. R jumps from 0.0168 Ω to 1.1 Ω, about 65 times more for the very same shape.
 
 ## Real-life examples
 
@@ -39,7 +39,7 @@ charts: []
 
 Picture current-carrying electrons as people squeezing down a corridor full of obstacles. Stretch «length L» and there are simply more obstacles between start and finish, so more energy gets lost along the way — resistance rises in a straight line with length. Widen «cross-section A» instead and it is like opening extra corridors side by side: the same crowd now has more room to spread out, so each path is less congested and the overall resistance drops.
 
-Shape only tells half the story, though. Flip «material» from copper to nichrome without touching «length L» or «cross-section A» at all, and the resistance still leaps by close to a hundred times, because nichrome's atoms simply obstruct moving electrons far more stubbornly than copper's do. That stubbornness — resistivity — is a property of the material alone, which is exactly why toasters and hair dryers are wound from nichrome wire, not copper.
+Shape only tells half the story, though. Flip «material» from copper to nichrome without touching «length L» or «cross-section A» at all, and the resistance still leaps by about 65 times, because nichrome's atoms simply obstruct moving electrons far more stubbornly than copper's do. That stubbornness — resistivity — is a property of the material alone, which is exactly why toasters and hair dryers are wound from nichrome wire, not copper.
 
 ## Formal
 
@@ -49,7 +49,7 @@ Copper has $\rho \approx 1.68\times10^{-8}\ \Omega\cdot\text{m}$, while nichrome
 
 ## Advanced
 
-Resistivity itself rises with temperature in most metals, since hotter atoms vibrate more and scatter the drifting electrons more often; a nichrome element glowing red-hot in a toaster actually resists noticeably more than the same wire cold.
+Resistivity itself rises with temperature in most metals, since hotter atoms vibrate more and scatter the drifting electrons more often; a copper wire at 100°C resists about 30% more than the same wire at 20°C. Nichrome changes far less when it heats up, which is one more reason it is used for heating elements.
 
 ## Derivation
 
@@ -60,13 +60,17 @@ Resistivity itself rises with temperature in most metals, since hotter atoms vib
 ## Real world
 
 ### Toasters and kettles
+
 Heating appliances deliberately choose a resistive material like nichrome, sized so that the current driven through it dissipates enough power as heat to glow or boil water.
 
 ### Fuse wire
+
 A fuse is a short, thin, carefully sized wire whose resistance is just high enough that a dangerous current heats it past its melting point, breaking the circuit before anything else does.
 
 ### Extension leads
+
 A long, thin extension cable has meaningfully more resistance than the short, thick cable inside a wall, which is why cheap thin extension leads can overheat under a heavy load.
 
 ### Resistors
+
 The resistors used in every circuit board are just carefully shaped and doped materials, engineered so their $R = \rho L/A$ lands on a precise, labelled value.

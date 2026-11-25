@@ -36,14 +36,12 @@ derivation:
 charts: []
 primary: day
 presets:
-- day: 0
-- day: 7.4
-- day: 14.8
+  - day: 0
+  - day: 7.4
+  - day: 14.8
 challenges:
-- check: (1-cos(2*pi*day/29.53))/2
-  target: 0.5
-  tol: 0.02
-- check: (1-cos(2*pi*day/29.53))/2 > 0.9
-- check: (1-cos(2*pi*day/29.53))/2
-  target: 0
-  tol: 0.02
+  - check: (1-cos(2*pi*day/29.53))/2
+    target: 0.5
+    tol: 0.02
+  - check: (1-cos(2*pi*day/29.53))/2 > 0.9
+  - check: day > 15 and (1-cos(2*pi*day/29.53))/2 < 0.02

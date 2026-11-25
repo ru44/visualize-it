@@ -18,9 +18,9 @@ variables:
 
 ## Try it
 
-1. The picture shows a coil spinning between two magnet poles, its ends connected to two slip rings and brushes that carry the current out to a lamp — and, to the right, the voltage wave that spinning produces over time.
-2. Drag «rotation speed rpm» up. The wave gets both taller (a bigger peak voltage) and tighter (a higher frequency) at the same time — spin the coil twice as fast and both double.
-3. Drag «time t» along the wave. The marker on the curve shows the instantaneous voltage, and the little coil schematic turns to match: the voltage is zero exactly when the coil is edge-on to the field, and peaks when it's face-on.
+1. The picture shows a coil spinning between two magnet poles, its ends connected to two slip rings and brushes that carry the current out to a lamp — and, below it, the voltage wave that spinning produces over time.
+2. Drag «rotation speed, in turns per minute» from 1500 up to 3000. The V_peak readout doubles from 392.7 V to 785.4 V and the frequency doubles from 25 Hz to 50 Hz, so the wave gets tighter. The picture rescales the wave to fit, so read its height from V_peak — spin the coil twice as fast and both double.
+3. Drag «time t» to 0.005 s. The marker sits on top of the wave and the v(t) readout equals V_peak, 785.4 V. Drag on to 0.01 s: the little coil has made another quarter turn, the voltage reads 0 V and the lamp goes dark.
 
 ## Real-life examples
 
@@ -59,13 +59,17 @@ The root-mean-square (rms) voltage — the steady-DC-equivalent value your multi
 ## Real world
 
 ### Power stations
+
 Coal, gas, nuclear, and hydroelectric plants nearly all work the same way at the very last step: something spins a turbine, the turbine spins a generator coil, and out comes 50 or 60 Hz AC.
 
 ### Wind and hydro turbines
+
 Wind turbines and small hydro generators use the same spinning-coil principle at far lower, more variable speeds, so their output usually needs electronics to match the grid's fixed frequency.
 
 ### Bicycle dynamos and hand-crank chargers
+
 A dynamo or a hand-crank flashlight is the same idea at a tiny scale — spin something by hand and a small coil produces just enough AC to light an LED.
 
 ### Car alternators
+
 A car's alternator is a spinning-coil AC generator too; the car then rectifies that AC into DC to charge the battery and run the electronics.

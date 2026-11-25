@@ -21,15 +21,15 @@ variables:
 
 ## Try it
 
-1. Start in low light with ordinary outdoor CO₂. The rate is barely positive.
-2. Raise light toward full midday sun and watch the curve level off — flattening into a plateau well before it looks "finished."
-3. Now raise CO₂ as well. The whole plateau lifts higher.
+1. Start in low light, 30, with ordinary outdoor CO₂, 420 ppm. The net rate reads 0.37: barely positive.
+2. Raise light to 1000 and the net rate reads 7.75. Go on to full midday sun, 2000, and it only reaches 8.55 — the curve has flattened into a plateau well before it looks "finished."
+3. Now raise CO₂ to 800 ppm as well. The whole plateau lifts higher: Pmax goes from 10.5 to 20 and the net rate reads 17.18.
 
 ## Real-life examples
 
-1. **A cloudy day, or a leaf deep in the shade.** Only about 100 μmol of light reaches it — the rate is barely above the point where photosynthesis just covers the leaf's own respiration.
-2. **Full midday sun, ordinary outdoor air at about 420 ppm CO₂.** Light is no longer the problem, but the rate plateaus well under its true maximum — CO₂ has become the limiting factor instead.
-3. **A CO₂-enriched greenhouse in full light.** Growers pump CO₂ up toward 1000 ppm exactly to lift this plateau — a real, common horticultural practice that measurably speeds up crop growth.
+1. **A cloudy day, or a leaf deep in the shade.** Only about 100 μmol of light reaches it — the net rate is only 2.5, not far above the point where photosynthesis just covers the leaf's own respiration.
+2. **Full midday sun, ordinary outdoor air at about 420 ppm CO₂.** Light is no longer the problem, but the rate plateaus at about 8.3, well under its true maximum — CO₂ has become the limiting factor instead.
+3. **A CO₂-enriched greenhouse in full light.** Growers pump CO₂ up toward 1000 ppm exactly to lift this plateau, here to about 16.6 — a real, common horticultural practice that measurably speeds up crop growth.
 
 ## Test yourself
 
@@ -62,13 +62,17 @@ The real machinery behind that ceiling is a single enzyme, Rubisco, which grabs 
 ## Real world
 
 ### CO₂-enriched greenhouses
+
 Commercial greenhouses routinely pump CO₂ up to two or three times the outdoor level specifically to raise the photosynthesis plateau and speed up crop growth — one of the most direct real-world uses of this exact curve.
 
 ### Sun leaves and shade leaves
+
 Plants growing in deep shade often evolve a lower half-saturation light level $K$, reaching their (lower) plateau at much dimmer light than a sun-loving plant, which trades a lower ceiling for working well in poor light.
 
 ### Competing for light in a forest canopy
+
 Tall trees keep the brightest light for their own upper leaves; the plants and saplings below are often light-limited their whole lives, never reaching the flat part of their own curve.
 
 ### Rising atmospheric CO₂
+
 Global atmospheric CO₂ has risen from about 280 ppm before industrialisation to over 420 ppm today, measurably raising the photosynthetic plateau for many plants — a real effect researchers call CO₂ fertilisation, though it comes bundled with the other effects of a changing climate.

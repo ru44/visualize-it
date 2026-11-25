@@ -22,14 +22,14 @@ charts:
 
 ## Try it
 
-1. Set curve to sigmoid and drag x across its range. Watch the output stay squashed between 0 and 1 no matter how far x goes.
-2. Set curve to tanh and drag x again. The output now swings between -1 and 1 instead, keeping the same S shape as sigmoid.
-3. Set curve to ReLU and drag x from negative to positive. The output sits flat at 0 for every negative x, then rises as a plain straight line past zero — no curve at all.
+1. Set curve to 0 (sigmoid) and drag x from -4 to 4. The f(x) readout climbs from 0.018 to 0.982: the output stays squashed between 0 and 1 no matter how far x goes.
+2. Set curve to 1 (tanh) and drag x again. The output now runs from -0.9993 to 0.9993, between -1 and 1 instead, keeping the same S shape as sigmoid.
+3. Set curve to 2 (ReLU) and drag x from -4 to 4. The output sits flat at 0 for every negative x, then rises as a plain straight line past zero, reaching 4 at x = 4 — no curve at all.
 
 ## Real-life examples
 
-1. **Sigmoid pushed to its limit.** With curve set to sigmoid and x at 3, the output already sits almost pinned to 1, barely different from x at 4.
-2. **Tanh pushed to its limit.** With curve set to tanh and x at -3, the output already sits almost pinned to -1.
+1. **Sigmoid pushed to its limit.** With curve set to sigmoid and x at 3, the output is 0.9526, already almost pinned to 1 and barely different from the 0.982 at x = 4.
+2. **Tanh pushed to its limit.** With curve set to tanh and x at -3, the output is -0.9951, already almost pinned to -1.
 3. **ReLU in its straight region.** With curve set to ReLU and x at 2, the output is exactly 2 — here the curve is nothing but the input itself.
 
 ## Test yourself
@@ -42,7 +42,7 @@ charts:
 
 Feed the number 3 into a plain neuron with no bend at all and it comes back out as 3, a straight, unlimited answer. Set curve to sigmoid and drag x to that same 3 instead, and the output comes back squashed to almost 1; drag x down to -3 and it comes back squashed to almost 0. The straight, unlimited line has been bent into a curve with a floor and a ceiling.
 
-If every neuron in a network bent its output like this, or not at all, stacking more layers would still buy nothing when there is no bend: a straight line feeding a straight line is still just a straight line, no matter how many layers deep. The three curves in the chart below all bend differently. Sigmoid and tanh squash everything into a fixed range and go nearly flat far from zero; ReLU instead stays perfectly straight for positive input and sits at exactly zero for negative input, a simpler bend that trains faster in practice and is what most modern networks use in their hidden layers.
+This bend matters. If no neuron in a network bent its output at all, stacking more layers would buy nothing: a straight line feeding a straight line is still just a straight line, no matter how many layers deep. The three curves in the chart below all bend differently. Sigmoid and tanh squash everything into a fixed range and go nearly flat far from zero; ReLU instead stays perfectly straight for positive input and sits at exactly zero for negative input, a simpler bend that trains faster in practice and is what most modern networks use in their hidden layers.
 
 ## Formal
 
@@ -63,13 +63,17 @@ Sigmoid and tanh both saturate for large $|x|$, meaning their slope approaches z
 ## Real world
 
 ### Image recognition
+
 Vision networks stack many layers of ReLU activations to recognize edges, shapes and eventually whole objects.
 
 ### Spam filters
+
 The final layer of a spam classifier often uses sigmoid to turn its last score into a probability of being spam.
 
 ### Speech recognition
+
 Older speech and handwriting recognition networks relied heavily on tanh activations in their hidden layers.
 
 ### Chat assistants
+
 The hidden layers inside a chat assistant's network stack activation functions like these by the billions to shape its responses.

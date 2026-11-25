@@ -1,67 +1,60 @@
 ---
 title: Continuity and jump discontinuities
-summary: >-
-  A tax schedule that jumps at a bracket boundary can cost you more than the
-  extra dollar you earned — continuity is the idea that tells you whether a
-  schedule does that.
+summary: 'Check whether the two limiting values at a boundary agree with the function value there.'
 parameters:
-  d: distance from x = 1
-  j: jump size j
+  d: 'd — sampling distance from 1'
+  j: 'j — signed shift of the right branch'
 variables:
-  - the size of the jump added for $x \ge 1$
-  - distance of the two approaching points from $x=1$
+  - 'j: amount added when x ≥ 1'
+  - 'd: marked inputs are 1 − d and 1 + d'
 ---
 
 ## Try it
 
-1. With «jump size j» away from 0, shrink «distance from x = 1» toward 0. The two dots settle at two different heights.
-2. Drag «jump size j» down to exactly 0. The step in the graph disappears.
-3. Shrink «distance from x = 1» again. Now both dots settle on the same point — the graph never lifts the pen.
+1. Set j = 1.5 and d = 0.1. The marked values are f(0.9) = 0.81 and f(1.1) = 2.71. Reduce d: the left value approaches 1 and the right approaches 2.5.
+2. Set j = 0. Both branches now use x², and both sides approach f(1) = 1.
+3. Set j = −2 and d = 0.02. The marked values are 0.9604 and −0.9596, approaching distinct limits 1 and −1. The readout table samples the right side only; the branch formulas explain both sides.
 
 ## Real-life examples
 
-1. **A smooth tax curve.** With no jump (j = 0), earning one more dollar never costs you a sudden extra chunk of tax — the schedule is continuous.
-2. **A moderate bracket jump.** With j = 1.5, crossing x = 1 suddenly adds 1.5 to the amount owed — a real step, like a poorly designed tax bracket.
-3. **A steep rebate cliff.** With j = -2, crossing x = 1 suddenly drops the value by 2 — like a rebate that disappears the moment you earn one dollar too many.
+1. **No jump.** At j = 0 and d = 0.3, the marked values are 0.49 and 1.69. They differ at this finite distance but approach the same value 1 as d shrinks.
+2. **Upward jump.** At j = 1.5 and d = 0.3, the marked values are 0.49 and 3.19. The limiting jump is 1.5, not their current difference 2.7.
+3. **Downward jump.** At j = −2 and d = 0.1, the marked values are 0.81 and −0.79. Their limits are 1 and −1, giving a jump of −2.
 
 ## Test yourself
 
-1. Make the function continuous: find the jump size that closes the gap.
-2. Create a downward jump of exactly 2, where the right side sits 2 below the left.
-3. Shrink the approach distance below 0.05 while keeping a jump bigger than 1 in size.
+1. Choose j so that the function is continuous at x = 1.
+2. Create a downward jump of 2 by setting j = −2.
+3. Make d less than 0.05 while keeping |j| greater than 1.
 
 ## Intuition
 
-Think of a tax rule where crossing a certain income suddenly adds an extra charge, like a jump of 1.5 the moment you earn one dollar too many. On screen the same idea is drawn as two dots sliding toward the input value 1 from opposite sides — one creeping up from below, one creeping down from above — with the slider «distance from x = 1» setting how close they still are.
+This function uses x² to the left of 1 and x² + j at and to the right of 1. The parameter j moves only the right branch vertically. If j is 1.5, the left branch approaches 1 at the boundary while the right branch approaches 2.5. Getting closer to the boundary does not close that gap.
 
-With «jump size j» away from 0, shrink that distance: the left dot settles near height 1, but the right dot settles near a different height, 1 plus the jump. Now drag «jump size j» down to exactly 0: the step disappears, both dots meet at the same height, and the curve can be traced through that point without ever lifting a pen — that is continuity.
+Continuity requires more than two close dots. The left-hand limit, right-hand limit and value at the boundary must agree. Setting j to zero makes that happen here. Changing d only changes where we sample the existing function; it cannot repair a jump. The drawn stroke can visually join samples across a discontinuity, so judge continuity from the formula and limits.
 
 ## Formal
 
-$f$ is continuous at $c$ iff $\lim_{x\to c^-}f(x) = \lim_{x\to c^+}f(x) = f(c)$.
+At an interior point c, a function is continuous exactly when $\lim_{x\to c^-}f(x)=\lim_{x\to c^+}f(x)=f(c)$. In particular, f(c) must be defined and the two-sided limit must exist and equal it.
 
-Here $f(1) = 1 + j$ (using the right branch's definition at the boundary), $\lim_{x\to1^-}f = 1$, $\lim_{x\to1^+}f = 1+j$; continuity requires $j = 0$.
+Here $f(x)=x^2$ for x < 1 and $f(x)=x^2+j$ for x ≥ 1. The left limit is 1, while the right limit and $f(1)=1+j$ agree. Therefore continuity at 1 holds exactly when $j=0$. The signed limiting jump is j and its size is |j|.
 
 ## Advanced
 
-This is a jump discontinuity (both one-sided limits exist but disagree), distinct from a removable discontinuity (limits agree but differ from $f(c)$, or $f(c)$ is undefined) and from the essential/infinite discontinuities seen with $1/x$ or $\tan x$ — the three types cover every way a function can fail to be continuous at a point.
+A jump has two distinct finite one-sided limits. A removable discontinuity has a finite common limit but a missing or different function value; changing that single value can repair it. Other failures include unbounded behaviour and oscillation without a limiting value. Changing only f(1) cannot repair a nonzero jump here.
 
 ## Derivation
 
-1. Approaching from the left uses the branch $x^2$.
-2. Approaching from the right uses the other branch.
-3. Continuity needs the two one-sided limits to agree — forces $j=0$.
+1. Inputs approaching 1 from below use x², whose limit is 1.
+2. Inputs approaching from above use x² + j, whose limit is 1 + j. The value at the boundary also uses this branch.
+3. Set the limits equal. The equation 1 = 1 + j requires j = 0, which also makes the boundary value agree.
 
 ## Real world
 
-### Tax brackets
-A poorly designed tax schedule can jump discontinuously at a bracket boundary, so earning one more dollar costs you far more than a dollar in tax.
+### Rounding measurements
 
-### Structural loads
-Sudden material changes in a beam can create discontinuous stress profiles that engineers must smooth or account for.
+A continuous measurement rounded to the nearest integer becomes a step function. Crossing a rounding boundary changes the reported value abruptly even if the underlying quantity changes smoothly.
 
-### Digital signal quantization
-Rounding a continuous signal to discrete levels introduces jump discontinuities at the rounding boundaries.
+### Joining formulas
 
-### Phase transitions
-Some physical quantities (like density at a phase change) jump discontinuously as temperature crosses a threshold.
+When two formulas describe adjacent input ranges, compare their limits and the assigned boundary value. Matching only their slopes or only a few plotted samples does not establish continuity.

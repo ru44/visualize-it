@@ -16,8 +16,8 @@ variables:
 
 ## Try it
 
-1. Set slider «a» to 1 and slider «b» to 0, and watch the AND gate's output light stay off.
-2. Raise «b» to 1 as well, so both switches are on, and watch the light turn on and the matching row in the truth table below get ticked.
+1. Set slider «a» to 1 and slider «b» to 0 (or tap the input squares). The AND gate's output light stays off and the AND readout shows 0.
+2. Raise «b» to 1 as well, so both switches are on. The light turns on, the AND readout shows 1, and the row 1 1 → 1 is highlighted in the truth table beside the gate.
 3. Drop «a» back to 0 while «b» stays at 1, and see the light switch off again — AND only lights up when every input is on.
 
 ## Real-life examples
@@ -29,12 +29,12 @@ variables:
 ## Test yourself
 
 1. Flip both switches on so the AND gate's output light finally turns on.
-2. Flip exactly one switch on and leave the other off, and notice the AND gate's light stays dark even though something changed.
+2. Turn switch «a» off and switch «b» on, so exactly one switch is on, and notice the AND gate's light stays dark even though something changed.
 3. Flip both switches off and confirm the output light stays dark, just as it did before.
 
 ## Intuition
 
-Think of two light switches on a wall, one labelled a and one labelled b, each either off (0) or on (1) — four combinations in total, and you have flipped switches like these a hundred times before. This screen wires those two switches into an AND gate: drag slider «a» to 1 and slider «b» to 1 together, and the output light above the gate turns on, while the truth table below fills in the matching row. Try any other combination — one switch on, or both off — and the light stays dark, because AND only turns on when every input does.
+Think of two light switches on a wall, one labelled a and one labelled b, each either off (0) or on (1) — four combinations in total, and you have flipped switches like these a hundred times before. This screen wires those two switches into an AND gate: drag slider «a» to 1 and slider «b» to 1 together, and the output light to the right of the gate turns on, while the truth table beside it highlights the matching row. Try any other combination — one switch on, or both off — and the light stays dark, because AND only turns on when every input does.
 
 Imagine the same two switches wired into an OR gate instead: now the light turns on if either switch is on, not only when both are. An XOR gate lights up only when the two switches disagree, one on and one off, and goes dark again the moment both agree. NAND and NOR are just AND and OR with the output flipped upside down, and that flip turns out to be enough on its own to build every other gate — which is why real computer chips are built almost entirely out of repeated NAND gates.
 
@@ -57,13 +57,17 @@ Any Boolean function of n inputs can be written in disjunctive normal form — a
 ## Real world
 
 ### CPUs
+
 A modern processor packs billions of transistors wired into logic gates that add, compare and branch.
 
 ### Search and filtering
+
 A database query like "price < 50 AND in-stock" is literally a Boolean AND of two conditions.
 
 ### Digital locks
+
 A keypad lock is a circuit that outputs 1 (unlock) only for one specific combination of inputs.
 
 ### Programming
+
 Every `if (a && b)` or `if (a || !b)` in code compiles down to exactly these gates.

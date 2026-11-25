@@ -10,9 +10,9 @@ parameters:
 
 ## Try it
 
-1. Watch the blue ball and the feather drop from height h. With air on, the feather drifts down slowly while the ball falls fast.
-2. Switch air to 0 — vacuum. Now the ball and the feather land at exactly the same moment, however heavy or light they are.
-3. Raise h to 100 m and switch air back to 1. Over the longer fall, the gap between the ball and the feather grows even wider.
+1. Watch the blue ball and the feather drop from height h. At h = 20 m with air on, the ball lands after 2.05 s but the feather drifts down for 33.38 s.
+2. Switch air to 0 — vacuum. Now the ball and the feather land at exactly the same moment, after 2.02 s, however heavy or light they are.
+3. Raise h to 100 m and switch air back to 1. The ball lands after 4.81 s and the feather after 166.71 s: over the longer fall, the gap between them grows even wider.
 
 ## Real-life examples
 
@@ -51,13 +51,17 @@ In air, drag grows with the square of speed, so each object settles into its own
 ## Real world
 
 ### Apollo 15, 1971
+
 Commander David Scott dropped a geological hammer and a falcon feather on live television; with no lunar air to slow the feather, both hit the ground at the same instant, exactly as gravity alone predicts.
 
 ### Skydiving
+
 A skydiver spread out flat falls far slower than one diving head-first, because a bigger surface catches more air — the same effect that separates the ball from the feather on this page.
 
 ### Vacuum-tube demonstrations
+
 Physics classrooms drop a coin and a feather inside a tube with the air pumped out, so students watch them land together and reproduce the Moon experiment on Earth.
 
 ### Why heavier does not mean faster
+
 Aristotle believed heavy objects fall faster, and dropping a feather seems to agree — but that is air resistance fooling us, not gravity itself, which pulls every mass equally hard.

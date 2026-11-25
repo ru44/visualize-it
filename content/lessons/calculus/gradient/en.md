@@ -1,68 +1,61 @@
 ---
 title: Surfaces and the gradient
-summary: >-
-  Standing on a hillside and wanting the fastest way to the top, without
-  walking the whole hill first, is exactly what the gradient — a compass
-  that always points straight uphill — tells you.
+summary: 'Combine slopes in two coordinate directions to find the direction of greatest local increase.'
 parameters:
-  x0: point x
-  y0: point y
+  x0: 'x₀ — selected x coordinate'
+  y0: 'y₀ — selected y coordinate'
 variables:
-  - slope if you walk in the x direction only
-  - slope if you walk in the y direction only
-  - the gradient vector (orange arrow on the floor)
+  - '∂f/∂x: slope when only x changes'
+  - '∂f/∂y: slope when only y changes'
+  - '∇f: vector of the two partial slopes in the input plane'
 ---
 
 ## Try it
 
-1. Move «point x» and «point y» to (0, 0), the bottom of the bowl. The orange gradient arrow shrinks to nothing.
-2. Drag both sliders up together. The orange arrow grows and points straight away from the bottom — the steepest way up.
-3. Drag only «point x» while keeping «point y» fixed. The tangent plane tilts along one direction only.
+1. Set x₀ = y₀ = 0. Both partial derivatives and the gradient magnitude are zero. The tangent plane is horizontal at the bowl's minimum.
+2. Set x₀ = 1 and y₀ = 0. The partial derivatives are 2 and 0, so the gradient points along positive x.
+3. Keep x₀ = 1 and set y₀ = 1. The gradient becomes (2, 2), with magnitude about 2.828. Drag the view to rotate the camera; use the sliders to move the selected point.
 
 ## Real-life examples
 
-1. **Standing at the bottom of the bowl.** At (x, y) = (0, 0) the ground is flat: the gradient vanishes, so there is no single steepest way up.
-2. **Partway up a steep slope.** At (x, y) = (1.5, 1.5) the gradient arrow is long: the ground climbs quickly in the direction it points.
-3. **Near the rim, off to one side.** At (x, y) = (-2, 0.5) the point sits close to the edge of the bowl, where the slope is steep in the x-direction and gentler in the y-direction.
+1. **At the minimum.** At (0, 0), f = 0 and the gradient is (0, 0). Every directional derivative is zero there, although the surface rises away from the point.
+2. **Two positive slopes.** At (1.5, 1.5), f = 4.5 and the gradient is (3, 3), with magnitude about 4.243.
+3. **Different signs.** At (−2, 0.5), f = 4.25 and the gradient is (−4, 1). Moving toward more negative x increases height; moving toward more positive x initially decreases it.
 
 ## Test yourself
 
-1. Find a point close to the bottom of the bowl — within 0.5 units of the centre — where the gradient is nearly zero.
-2. Make the gradient's length about 5.
-3. Find a point where the slope in the x-direction is exactly twice the slope in the y-direction.
+1. Choose a point whose distance from the origin in the x–y plane is less than 0.5.
+2. Make the gradient magnitude within 0.5 of 5.
+3. Make |x₀ − 2y₀| less than 0.05. Here that also makes the x slope approximately twice the y slope.
 
 ## Intuition
 
-Imagine standing somewhere on the inside of a round, bowl-shaped valley, wanting to know which direction leads straight uphill. Drag to rotate the picture, then move the point with the sliders «point x» and «point y» to stand at different spots. The small orange tile beneath your feet is the tangent plane — a flat patch that matches the bowl's tilt at exactly that spot, like a tiny platform balanced on the slope.
+A surface can rise differently in different directions. To measure its x slope, change x while holding y fixed. To measure its y slope, do the reverse. These are partial derivatives. On the bowl x² + y² they are 2x and 2y, so at (1, 1) either positive coordinate direction initially increases height at rate 2.
 
-The arrow lying flat on the floor is the gradient: it always points directly away from the bottom of the bowl, showing the one steepest way up from where you stand, and it grows longer as the walls around you get steeper. Stand exactly at the bottom (0, 0) and the arrow shrinks to nothing — the ground is flat there, because you are at the lowest point of the whole bowl.
+Combining those slopes gives the gradient (2, 2). Moving diagonally in its direction increases height faster per unit distance in the x–y plane than moving along either axis alone. The floor arrow indicates this direction, and the tangent patch approximates the surface near the selected point. The arrow's drawn length is capped; use the magnitude readout for a numerical comparison.
 
 ## Formal
 
-$\nabla f = (f_x, f_y)$. The directional derivative along a unit vector $\mathbf{u}$ is $\nabla f \cdot \mathbf{u}$, maximised when $\mathbf{u} \parallel \nabla f$.
+For a differentiable function f, $\nabla f=(f_x,f_y)$. Along a unit direction u in the input plane, $D_{\mathbf u}f=\nabla f\cdot\mathbf u$. When the gradient is nonzero, the greatest directional derivative is $|\nabla f|$, attained in the same direction as the gradient. If the gradient is zero, all first directional derivatives are zero.
 
-Tangent plane at $(a,b)$: $z = f(a,b) + f_x(a,b)(x-a) + f_y(a,b)(y-b)$.
+The tangent plane at (a, b) is $z=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b)$. For this bowl, $\nabla f=(2x,2y)$. The plane describes local change; it generally differs from the curved surface away from the contact point.
 
 ## Advanced
 
-The gradient is perpendicular to level curves: along a curve $\gamma$ with $f(\gamma(t))$ constant, the chain rule gives $\nabla f \cdot \gamma' = 0$. Critical points are classified by the Hessian — here $2I$, positive definite, hence a strict minimum.
+At a regular point, the gradient is perpendicular to a level curve: differentiating f along that constant-height curve gives a zero dot product with its tangent. The negative gradient gives the steepest local decrease. On this bowl, x² + y² ≥ 0 proves a global minimum at the origin; a zero gradient alone would not prove a minimum for a different surface.
 
 ## Derivation
 
-1. Freeze $y$ and differentiate as usual.
-2. Any direction is a mix of the two axis directions.
-3. Largest when $\alpha = 0$: walking along the gradient climbs fastest.
+1. Hold y fixed and differentiate x² + y² with respect to x to get 2x. Holding x fixed similarly gives 2y.
+2. The chain rule along a straight unit-speed path combines those partial slopes using the path's direction components.
+3. The dot product is gradient magnitude times the cosine of the angle to the unit direction. Its largest value occurs when the nonzero vectors point the same way.
 
 ## Real world
 
-### Machine learning
-Training a neural network is gradient descent on a loss surface with millions of dimensions.
+### Contour maps
 
-### Weather maps
-Wind is driven by the pressure gradient; tightly packed isobars mean a steep gradient and strong wind.
+For a smooth height model, the gradient crosses constant-height contours perpendicularly and gives the steepest local rise per unit map distance. It does not determine the shortest route to a distant summit.
 
-### Heat flow
-Heat flows along the negative temperature gradient (Fourier’s law).
+### Minimising a function
 
-### Hiking
-On a contour map the gradient points straight across the contour lines — the steepest path.
+A sufficiently small step opposite a nonzero gradient decreases a differentiable function locally. A step that is too large can overshoot; repeated steps need not find a global minimum on a general surface.

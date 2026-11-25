@@ -1,63 +1,59 @@
 ---
 title: Limit
-summary: >-
-  A GPS working out your speed at this exact instant, not your average over
-  the last minute, needs to know what your speed is heading toward as the
-  time window shrinks to nothing — that is what a limit gives you.
+summary: 'Find the value a function approaches near an input, even when the function is undefined at that input.'
 parameters:
-  d: distance from 0
+  d: 'd — positive distance from zero'
 variables:
-  - 'the input, sliding toward 0 from both sides'
-  - undefined at x = 0 (that would be 0/0) — shown as a hollow point
+  - 'x: input in radians, approaching zero'
+  - 'sin(x)/x: ratio defined for nonzero x'
 ---
 
 ## Try it
 
-1. Drag the slider «distance from 0» toward 0. The two dots slide toward the gap in the middle.
-2. Read the numbers under the picture: 0.84…, 0.99…, 0.9999… They get closer and closer to 1.
-3. The function has a hole exactly at 0, yet everything points at 1. That number 1 is the limit.
+1. Set d = 1. The marked inputs are −1 and 1; both give sin(x)/x ≈ 0.84147.
+2. Reduce d to 0.1, then 0.01. The corresponding values are about 0.99833 and 0.999983. The readout also samples inputs d/10 and d/100, even closer to zero.
+3. Look at the hollow point at (0, 1). It marks the limiting value, not a defined value of sin(x)/x at zero. The slider approaches zero without reaching it.
 
 ## Real-life examples
 
-1. **Far from the hole.** At d = 3, the readout is still a loose approximation of the limit — plenty of room left to close in.
-2. **Getting close.** At d = 0.5, the readout already sits within about 6% of the true limit of 1.
-3. **Extremely close.** At d = 0.01, the readout is indistinguishable from the limit 1 to the naked eye.
+1. **Farther away.** At d = 3, sin(3)/3 ≈ 0.04704. A value far from zero need not resemble the limit.
+2. **Closer.** At d = 0.5, sin(0.5)/0.5 ≈ 0.95885, about 0.04115 below 1.
+3. **Very close.** At d = 0.01, the value is about 0.999983. Rounding may show 1, but the value at this nonzero input is still less than 1.
 
 ## Test yourself
 
-1. Get the readout within 0.01 of the true limit.
-2. Push the readout below 0.9.
-3. Find a distance where the readout is negative.
+1. Make |sin(d)/d − 1| less than 0.01.
+2. Find d for which sin(d)/d is less than 0.9.
+3. Find d for which sin(d)/d is negative.
 
 ## Intuition
 
-Try dividing 0 by 0 on a calculator and it refuses — that calculation has no answer, and exactly that happens to this function at the input 0, shown as a hollow point with no dot filled in. But a limit never asks what happens exactly at that missing point; it asks what the function is heading toward as you sneak up on it from both sides.
+At x = 0, the expression sin(x)/x would require division by zero, so it is undefined. Nearby nonzero inputs still have valid outputs. A limit asks whether those outputs become arbitrarily close to one number as the input approaches zero. It does not require a value at zero itself.
 
-Drag the slider «distance from 0» toward 0 and watch the two dots slide toward the gap, reading off the numbers beneath the picture: 0.84, then 0.99, then 0.9999 — closer and closer to 1 every time, from both directions. That destination, 1, is the limit, even though the function itself is never actually defined there.
+Here both sides approach 1. The ratio has the same value at x and −x because numerator and denominator both change sign. The graph and samples suggest the result; the squeeze argument below explains why the approach continues beyond the finite values a slider can show. Throughout this example, the sine input is in radians.
 
 ## Formal
 
-$\lim_{x \to a} f(x) = L$ means: for every $\varepsilon > 0$ there is a $\delta > 0$ such that $0 < |x - a| < \delta$ implies $|f(x) - L| < \varepsilon$.
+The statement $\lim_{x\to a}f(x)=L$ means that we can make the outputs as close to L as desired by taking all domain inputs sufficiently close to a, while excluding a itself. A two-sided limit requires agreement from both sides when both are available.
 
-Here $a = 0$, $L = 1$. The condition $0 < |x - a|$ is why the value at $a$ itself is irrelevant.
+Precisely, for every $\varepsilon>0$ there is a $\delta>0$ such that $0<|x-a|<\delta$ implies $|f(x)-L|<\varepsilon$. Epsilon is the allowed output error, and delta is a sufficient input distance. In this example $a=0$ and $L=1$.
 
 ## Advanced
 
-Negating the definition is how limits are shown not to exist: there is an $\varepsilon > 0$ such that every $\delta$-neighbourhood contains an $x$ with $|f(x) - L| \ge \varepsilon$. Equivalently (Heine), $f(x_n) \to L$ for every sequence $x_n \to a$ with $x_n \ne a$ — which is exactly what the shrinking readouts sample.
+Defining a new function to equal sin(x)/x away from zero and to equal 1 at zero fills the hole continuously. Giving it a different value at zero would not change the limit, but would leave a discontinuity. A few matching samples cannot establish a limit for an arbitrary function; the definition concerns all sufficiently nearby domain inputs.
 
 ## Derivation
 
-1. Compare areas of a triangle, a circular sector and a larger triangle on the unit circle.
-2. The lower bound rises to 1; the upper bound is already 1.
-3. Squeeze theorem: trapped between two things that approach 1, it must approach 1 too.
+1. Comparing areas on the unit circle gives cos x < sin(x)/x < 1 for 0 < x < π/2. The ratio and cosine are even, so the same bounds hold for the corresponding negative inputs.
+2. As x approaches zero, the lower bound cos x approaches 1, while the upper bound is already 1.
+3. The squeeze theorem forces the middle expression to approach 1 as well.
 
 ## Real world
 
-### Instantaneous speed
-Speed “at an instant” is a limit of average speeds over shrinking time intervals.
+### Small-angle calculations
 
-### Small-angle approximation
-This exact limit is why $\sin\theta \approx \theta$ works for pendulums and optics.
+For a small radian angle, sine is close to the angle itself. This limit explains the approximation; how small is acceptable depends on the required error.
 
-### Numerical methods
-Every simulation that refines its step size is relying on a limit existing.
+### Instantaneous change
+
+A derivative uses a limit of average rates over shrinking intervals. The relevant quotient may be undefined at a zero interval even though its limit exists.

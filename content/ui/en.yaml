@@ -220,18 +220,18 @@ coin.successes: successes
 coin.proportion: proportion so far
 coin.gap: distance from p
 coin.again: ↻ again
-coin.band: 'shaded: where 95% of runs stay'
-bayes.hint: Everyone in a population of 1000. Drag to change how common the condition is.
-bayes.tp: ill, test positive
-bayes.fp: healthy, test positive
-bayes.fn: ill, test negative
-bayes.tn: healthy, test negative
-bayes.has: 'has the condition:'
-bayes.hasNot: does not have it
-bayes.positives: people who test positive
-bayes.ofWhichIll: …of whom actually ill
-bayes.posterior: P(ill | positive)
-bayes.prior: P(ill) before the test
+coin.band: 'shaded: approximate 95% range at each fixed trial count'
+bayes.hint: "Population divided by condition and result; drag to change prevalence."
+bayes.tp: "condition present, positive"
+bayes.fp: "condition absent, positive"
+bayes.fn: "condition present, negative"
+bayes.tn: "condition absent, negative"
+bayes.has: "condition present"
+bayes.hasNot: "condition absent"
+bayes.positives: "positive results per 1000 (rounded)"
+bayes.ofWhichIll: "condition present among positives"
+bayes.posterior: "condition given positive"
+bayes.prior: "prior probability"
 adhoc.count.title: Counting explorer
 adhoc.count.summary: How many ways? Exact answer, and every arrangement drawn while there are few enough to show.
 adhoc.count.n: n — items to choose from
@@ -391,6 +391,7 @@ buoy.hint: drag up or down to change the object’s density
 buoy.weight: weight
 buoy.buoyancy: buoyant force
 buoy.submerged: submerged
+buoy.neutral: neutrally buoyant
 buoy.state: result
 buoy.sinks: sinks
 buoy.floats: floats
@@ -731,7 +732,7 @@ rot.speedVisible: speed at {r} kpc from visible matter
 rot.speedModel: speed with the dark halo
 rot.miss: distance from the measurements
 rot.darkShare: invisible share of the mass
-rot.hint: add invisible mass until the curve goes through the black measured points
+rot.hint: add invisible mass until the curve goes through the large measured points
 rot.distance: distance from the centre (kpc)
 rot.speed: orbit speed (km/s)
 rot.measured: measured

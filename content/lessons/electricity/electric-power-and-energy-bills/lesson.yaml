@@ -3,13 +3,13 @@ subject: electricity
 difficulty: beginner
 equation: \text{Cost} = \frac{Ptc}{1000}
 concepts:
-- power
-- energy
-- kilowatt-hour
+  - power
+  - energy
+  - kilowatt-hour
 prerequisites:
-- ohms-law
+  - ohms-law
 related:
-- voltage-and-energy
+  - voltage-and-energy
 visualization:
   type: electric-power-and-energy-bills
   options: {}
@@ -34,14 +34,14 @@ parameters:
     value: 0.28
     unit: $/kWh
 variables:
-- P
-- t
-- E
-- c
+  - P
+  - t
+  - E
+  - c
 derivation:
-- E = Pt
-- E_{kWh} = \frac{Pt}{1000}
-- \text{Cost} = E_{kWh}c
+  - E = Pt
+  - E_{kWh} = \frac{Pt}{1000}
+  - \text{Cost} = E_{kWh}c
 presets:
   - P: 2200
     t: 5

@@ -12,19 +12,19 @@ variables:
 
 ## Try it
 
-1. Drag «power of ten» down to about −7.4. You've reached the Moon: its light takes only 1.3 seconds to arrive.
-2. Drag it up to about 6.4. You've reached the Andromeda Galaxy, 2.5 million light-years away — its light left before humans existed.
-3. Push it to the far right, past 10.6. You've reached the edge of the observable universe, 46.5 billion light-years away.
+1. Drag «power of ten» down to −7.4. You've reached the Moon: the readout shows 1.26 light-seconds, so its light takes only about 1.3 seconds to arrive.
+2. Drag it up to 6.4. You've reached the Andromeda Galaxy, 2.5 million light-years away — its light left before humans existed.
+3. Push it up to 10.65, close to the far right. You've reached the edge of the observable universe, 46.5 billion light-years away.
 
 ## Real-life examples
 
-1. **The Moon.** Light from the Moon takes about 1.3 seconds to reach us — close enough that Apollo astronauts could bounce a laser off a mirror they left there and time the round trip.
+1. **The Moon.** Light from the Moon takes about 1.3 seconds to reach us — close enough that scientists still bounce a laser off mirrors the Apollo astronauts left there and time the round trip.
 2. **The Andromeda Galaxy.** At 2.5 million light-years, it's the most distant object most people can see with the naked eye — and its light started traveling long before any humans walked the Earth.
 3. **The edge of the observable universe.** No light from farther than about 46.5 billion light-years has ever had time to reach us, because the universe itself has been expanding for the entire 13.8 billion years that light has been traveling.
 
 ## Test yourself
 
-1. Dial the slider to the Moon's exact distance.
+1. Dial the slider to the Moon's distance, a power of about −7.4.
 2. Dial past a billion light-years — well on the way to the edge of the observable universe.
 3. Dial to somewhere inside the solar system, closer than the Sun's own light-minutes.
 
@@ -32,7 +32,7 @@ variables:
 
 A ruler with even marks doesn't work here: the jump from the Moon to the Sun is already about 400 times bigger than the jump from you to the Moon, and the jump from the Sun to the nearest star is hundreds of thousands of times bigger again. Each step of this ruler multiplies the distance by ten instead of adding a fixed amount, which is the only way to fit both a light-second and a billion light-years on the same picture.
 
-Drag «power of ten» just one notch and the real distance it represents grows or shrinks by a factor of ten — from the Moon (a light-second and a bit) to the Sun (about 8 light-minutes) is already seven such notches. That's how fast distances explode once you leave the solar system.
+Drag «power of ten» just one notch and the real distance it represents grows or shrinks by a factor of ten — from the Moon (a light-second and a bit) to the Sun (about 8 light-minutes) takes only about two and a half such notches, while from the Sun to the nearest star takes more than five. That's how fast distances explode once you leave the solar system.
 
 ## Formal
 
@@ -53,13 +53,17 @@ The "edge of the observable universe" isn't simply 13.8 billion light-years away
 ## Real world
 
 ### The Voyager probes
-Voyager 1, humanity's most distant spacecraft, is only about 22 light-hours from Earth after nearly 50 years of flight — a reminder of how empty and vast even "nearby" space is.
+
+Voyager 1, humanity's most distant spacecraft, is only about one light-day from Earth after nearly 50 years of flight — a reminder of how empty and vast even "nearby" space is.
 
 ### Light as a time machine
+
 Because light takes time to arrive, looking far away always means looking back in time: the Andromeda Galaxy we see tonight is showing us light 2.5 million years old.
 
 ### Why the universe has an edge we can see
+
 Even though the universe may be infinite, we can only ever see the part whose light has had time to reach us since the universe became transparent, about 380,000 years after the Big Bang.
 
 ### Mapping the cosmic web
+
 Astronomers use redshift, not a ruler, to place galaxies at their proper distance on this ladder, building 3D maps that stretch most of the way to the edge of the observable universe.

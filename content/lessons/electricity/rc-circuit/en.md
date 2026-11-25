@@ -24,8 +24,8 @@ charts:
 ## Try it
 
 1. Drag across the small chart (or slide the time x). Early on, the current dots race around the loop; by the end they crawl — the first moments do most of the work.
-2. Raise the slider "resistance R". The time constant grows, the dots slow down, and the plates collect their + and − far more gradually.
-3. Set the time x to R×C (in seconds). Read the capacitor's voltage: it has reached about 63% of the supply.
+2. Raise the slider "resistance R" from 2 kΩ to 4 kΩ. The time constant τ = RC doubles from 2 s to 4 s, the dots slow down, and the plates collect their + and − far more gradually.
+3. Return R to 2 kΩ and set the time x to 2 s, which equals τ. Read the capacitor's voltage: 5.69 V, about 63% of the 9 V supply.
 
 ## Real-life examples
 
@@ -64,13 +64,17 @@ In the frequency domain the same circuit is a first-order low-pass filter, $H(j\
 ## Real world
 
 ### Timers and blinkers
+
 The 555 timer and countless delay circuits measure time by waiting for an RC curve to cross a threshold.
 
 ### Filters
+
 RC networks smooth power supplies and remove hiss or rumble in audio.
 
 ### Touch screens
+
 Your finger adds capacitance; the controller notices the charging time change.
 
 ### Camera flashes and defibrillators
+
 Charge slowly through a resistor, release quickly into the load.

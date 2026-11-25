@@ -27,9 +27,9 @@ charts:
 
 ## Try it
 
-1. Drag the time point «t» along the curve. Watch the tangent line show the instantaneous rate, steepest at the start.
-2. Raise «temperature T». The whole curve collapses toward zero much faster.
-3. Raise «activation energy Ea» instead. The reaction slows down even at the same temperature.
+1. Drag «time t» to 0: the readout shows f(x) = 1 and slope −0.0349, the steepest the tangent line gets. Now drag it to 20: f(x) = 0.4975 and the slope has halved to −0.0174.
+2. Put «time t» back at 0 and raise «temperature T» from 300 to 370. The curve drops to zero within a few seconds and the slope reads −1.3896: the reaction is about forty times faster.
+3. Put T back to 300 and raise «activation energy Ea» to 60000 instead. The curve is almost flat and the slope reads −0.0004: the reaction slows right down at the same temperature.
 
 ## Real-life examples
 
@@ -45,9 +45,9 @@ charts:
 
 ## Intuition
 
-Picture a pot of hot soup left on the counter: it cools quickly at first, then more and more slowly as it nears room temperature — the same shape a reacting chemical follows. On screen, drag the time point «t» along the curve: the tangent line shows the instantaneous rate, steep at the start when a lot of reactant is present, flattening as it gets used up.
+Picture a pot of hot soup left on the counter: it cools quickly at first, then more and more slowly as it nears room temperature — the same shape a reacting chemical follows. On screen, drag the time point «time t» along the curve: the tangent line shows the instantaneous rate, steep at the start when a lot of reactant is present, flattening as it gets used up.
 
-Now drag «temperature T» upward instead. The whole curve collapses toward zero much faster, even though T only moved a little, because T sits inside a nested exponential in the Arrhenius equation. A modest temperature rise multiplies the rate constant k by a large factor — which is why a 10°C rise can roughly double many everyday reaction rates.
+Now drag «temperature T» upward instead. The whole curve collapses toward zero much faster, even though T only moved a little, because T sits inside the exponent of the Arrhenius equation. A modest temperature rise multiplies the rate constant k by a large factor — which is why a 10°C rise can roughly double many everyday reaction rates.
 
 ## Formal
 
@@ -68,13 +68,17 @@ A catalyst provides an alternative reaction pathway with a lower $E_a$ without b
 ## Real world
 
 ### Cooking
+
 Heat speeds up the Maillard browning reactions in food — higher T means dramatically larger k.
 
 ### Refrigeration
+
 Cooling food slows the reactions and microbial growth that cause spoilage by shrinking k.
 
 ### Industrial catalysts
+
 The Haber process for ammonia uses an iron catalyst to lower $E_a$ enough to be commercially viable at moderate temperature.
 
 ### Enzymes in the body
+
 Body-temperature reactions that would otherwise be far too slow to sustain life proceed quickly because enzymes lower the activation energy.

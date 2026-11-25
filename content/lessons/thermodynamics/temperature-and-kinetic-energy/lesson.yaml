@@ -16,7 +16,7 @@ visualization:
   options: {}
 visualization3d:
   type: gas-box
-  options: {}
+  options: { molarMass: true }
 parameters:
   T:
     min: 1

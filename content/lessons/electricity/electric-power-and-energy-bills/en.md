@@ -19,9 +19,9 @@ charts: []
 
 ## Try it
 
-1. Raise «appliance power P» toward a kettle's 2200 W. The monthly cost readout climbs fast even for just a few hours.
-2. Raise «hours used per month t» toward a fridge's 720 (it runs all month). Even a modest power adds up to a real monthly cost.
-3. Drop «appliance power P» to an LED bulb's 9 W. However long «hours used per month t» runs, the cost barely moves.
+1. Set «appliance power P» to a kettle's 2200 W, «hours used per month t» to 5 and the price to 0.28. The readouts show 11 kWh and a cost of 3.08 dollars: a high power costs real money even for a few hours.
+2. Set P to a fridge's 150 W and t to 720 hours (it runs all month). The readouts show 108 kWh and 30.24 dollars: a modest power adds up when the hours are long.
+3. Drop P to an LED bulb's 9 W with t = 120 hours. The cost is only 0.30 dollars. Even at the slider's maximum of 730 hours it stays under 2 dollars.
 
 ## Real-life examples
 
@@ -60,13 +60,17 @@ Utilities often charge a lower "off-peak" price $c$ at night, when demand is low
 ## Real world
 
 ### Energy labels
+
 The EU and similar energy-label systems rate appliances mainly by how many kWh they use in typical operation each year, precisely because that — not the power rating alone — predicts the real running cost.
 
 ### Smart meters
+
 Smart meters track power draw continuously and multiply by the time at each price band, giving a household a live running total of the bill instead of one estimate at the end of the month.
 
 ### Standby power
+
 Devices left on standby still draw a small constant power for every hour of the month, which is why many small "always-on" gadgets can add up to a noticeable slice of a bill despite each one seeming trivial.
 
 ### Solar panels
+
 A home solar panel effectively subtracts from the hours of grid power used each month, which is exactly why its payback time is calculated using this same power-times-time-times-price arithmetic run in reverse.

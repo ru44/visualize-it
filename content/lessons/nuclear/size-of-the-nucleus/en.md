@@ -19,15 +19,15 @@ charts: []
 
 ## Try it
 
-1. Watch the pale grey rays: twelve alpha particles, aimed all around the gold nucleus, streaming past with barely a bend.
-2. Drag "aim b" down toward zero. The bright orange ray, aimed almost dead-on, now bounces back the way it came.
-3. Raise "alpha energy E". The same aim now bends by a smaller angle — a faster alpha punches closer to the nucleus before the repulsion can turn it around.
+1. Watch the pale grey rays: fourteen alpha particles, aimed all around the gold nucleus. The ones aimed far out stream past with barely a bend; only the few aimed closest to the nucleus turn sharply.
+2. Drag "aim b" down to 1 fm. The bright orange ray, aimed almost dead-on, now bounces back the way it came: "scattering angle θ" reads 175°.
+3. Set "aim b" back to 20 fm: θ reads 97.4°. Now raise "alpha energy E" from 5 to 10 MeV. The same aim bends by only 59.3°, and "closest approach" drops from 45.5 fm to 22.8 fm — a faster alpha punches closer to the nucleus before the repulsion can turn it around.
 
 ## Real-life examples
 
-1. **A rare direct hit.** Aimed just 2 femtometres from dead centre, the alpha particle meets the full force of the gold nucleus and bounces back almost the way it came.
-2. **A glancing deflection.** Aimed 50 femtometres off-centre, the alpha particle swings through a noticeable angle but keeps moving mostly forward.
-3. **A distant pass.** Aimed 250 femtometres off-centre — still close by atomic standards — the alpha particle barely notices the nucleus at all.
+1. **A rare direct hit.** Aimed just 2 femtometres from dead centre at 5 MeV, the alpha particle meets the full force of the gold nucleus and bounces back almost the way it came, turned by about 170°.
+2. **A glancing deflection.** Aimed 50 femtometres off-centre, the alpha particle swings through a noticeable angle, 48.9°, but keeps moving mostly forward.
+3. **A distant pass.** Aimed 250 femtometres off-centre — still close by atomic standards — the alpha particle bends by only 10.4°.
 
 ## Test yourself
 
@@ -37,7 +37,7 @@ charts: []
 
 ## Intuition
 
-Before this experiment, physicists pictured an atom as a soft blob of positive charge with electrons scattered through it, like raisins in a pudding — something a fast, heavy alpha particle should barely notice as it passed through. Watch the grey rays sweep past the gold nucleus on screen: almost every one bends only a little, exactly what that soft picture predicted. Now drag "aim b" down toward zero. One ray, the one aimed almost dead-on, slams to a stop and reverses — something a soft pudding of charge could never do.
+Before this experiment, physicists pictured an atom as a soft blob of positive charge with electrons scattered through it, like raisins in a pudding — something a fast, heavy alpha particle should barely notice as it passed through. Watch the grey rays sweep past the gold nucleus on screen: the ones aimed far from it bend only a little, exactly what that soft picture predicted for every particle. Now drag "aim b" down toward zero. One ray, the one aimed almost dead-on, slams to a stop and reverses — something a soft pudding of charge could never do.
 
 That single bounce-back was the real discovery: it meant the atom's positive charge, and nearly all its mass, had to be packed into something tiny and hard at the centre, not spread thin through the whole atom. Raise "alpha energy E" and watch even a close aim bend by less: a faster particle carries more punch, so it barrels in closer before the repulsion turns it around, and the angle it comes out at tells you exactly how strong that push was.
 
@@ -60,13 +60,17 @@ The same formula, run backwards from the largest angles actually observed, gives
 ## Real world
 
 ### Discovering the nucleus (1909-1911)
+
 Hans Geiger and Ernest Marsden fired alpha particles at gold foil in Rutherford's lab; the rare, large-angle bounces they counted led Rutherford to propose the nuclear atom in 1911.
 
 ### Particle accelerators
+
 Modern accelerators use the same idea at far higher energy: firing particles at a target and reading the pattern of what bounces back to map out structure too small to see any other way.
 
 ### Why gold foil
+
 Gold can be hammered into a foil only a few hundred atoms thick without tearing, so an alpha particle crosses it while meeting only one nucleus at a time, keeping the scattering pattern clean.
 
 ### Rutherford backscattering
+
 Materials scientists still use this exact scattering, now called Rutherford backscattering spectrometry, to measure the composition of thin films only a few atomic layers thick.

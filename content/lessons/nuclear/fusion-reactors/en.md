@@ -16,15 +16,15 @@ charts: []
 
 ## Try it
 
-1. Watch the top bars: three short bars for temperature, density and confinement time, and one long bar underneath for their product against the ignition line.
-2. Drag "plasma temperature" up. The top bar grows and the long bar's marker slides right, but nowhere near the ignition line by itself.
-3. Now raise "plasma density" and "confinement time" too, until the marker crosses the dashed ignition line. The deuterium-tritium reaction in the corner still releases the same fixed 17.6 MeV either way.
+1. Watch the top bars: three short bars for temperature, density and confinement time, and one long bar underneath for their product against the ignition line. At the start (10 keV, density 1, 1 s) "triple product nTτ" reads 1.00e+21, a third of the way to ignition.
+2. Drag "plasma temperature" up to 20 keV. The top bar grows and the long bar's marker slides right, but it still stops short of the ignition line: the product reads 2.00e+21.
+3. Now raise "plasma density" to 2 and "confinement time" to 3 s too. The product reads 1.20e+22 and the marker crosses the dashed ignition line. The deuterium-tritium reaction in the corner still releases the same fixed 17.6 MeV either way.
 
 ## Real-life examples
 
-1. **A modest lab plasma.** 10 keV, low density, held together for only a second: the triple product lands far short of ignition.
+1. **A modest lab plasma.** 10 keV, 10²⁰ particles per cubic metre, held together for only a second: the triple product, 1×10²¹, reaches just a third of the ignition line.
 2. **ITER's design target.** About 15 keV, roughly 10²⁰ particles per cubic metre, held for a few seconds — enough to clear the ignition line with room to spare.
-3. **A reactor built to spare.** 20 keV, twice ITER's density, held five seconds: the triple product lands an order of magnitude past ignition.
+3. **A reactor built to spare.** 20 keV, twice ITER's density, held five seconds: the triple product, 2×10²², lands nearly seven times past ignition.
 
 ## Test yourself
 
@@ -57,13 +57,17 @@ Real tokamaks do not hold density, temperature and confinement time independentl
 ## Real world
 
 ### ITER
+
 Under construction in France, ITER is designed to hold a plasma past the ignition-class triple product and produce ten times the power put into heating it.
 
 ### Inertial confinement fusion
+
 Facilities like the National Ignition Facility skip magnetic confinement entirely, compressing a fuel pellet with lasers so fast that its own inertia holds it together just long enough to fuse.
 
 ### Stellarators
+
 A stellarator reaches the same triple product as a tokamak using a twisted, coil-shaped magnetic field instead of a simple ring, trading a harder build for steadier confinement.
 
 ### Fusion's promise
+
 Because deuterium is abundant in seawater and tritium can be bred from lithium, a working fusion reactor would run on fuel that does not run out and leaves behind no long-lived radioactive waste.

@@ -61,7 +61,7 @@ const arcs = computed(() => {
 const readouts = computed(() => [
   { label: t('diffraction.a'), value: fmt(a.value, 2) + ' m', color: 'var(--accent)' },
   { label: t('diffraction.lambda'), value: fmt(lambda.value, 2) + ' m' },
-  { label: t('diffraction.theta'), value: fmt((theta.value * 180) / Math.PI, 1) + '°', color: 'var(--accent-2)' },
+  { label: t('diffraction.theta'), value: lambda.value > a.value ? t('diffraction.noMinimum') : fmt((theta.value * 180) / Math.PI, 1) + '°', color: 'var(--accent-2)' },
 ])
 </script>
 

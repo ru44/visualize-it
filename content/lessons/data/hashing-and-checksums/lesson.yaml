@@ -3,16 +3,16 @@ subject: data
 difficulty: beginner
 equation: h = k \text{ mod } m
 concepts:
-- hash function
-- hash table
-- collision
-- checksum
-- data integrity
+  - hash function
+  - hash table
+  - collision
+  - checksum
+  - data integrity
 prerequisites:
-- indexes-and-fast-search
+  - indexes-and-fast-search
 related:
-- indexes-and-fast-search
-- bits-bytes-and-data-sizes
+  - indexes-and-fast-search
+  - bits-bytes-and-data-sizes
 visualization:
   type: hashing-checksums
   options: {}
@@ -34,21 +34,21 @@ parameters:
     step: 1
     value: 0
 variables:
-- h
-- k
-- m
+  - h
+  - k
+  - m
 derivation:
-- k \text{ mod } m \text{ is the remainder after dividing } k \text{ by } m
-- h \text{ names exactly one of the } m \text{ buckets to look in first}
-- \text{two different keys landing on the same } h \text{ is called a collision}
+  - k \text{ mod } m \text{ is the remainder after dividing } k \text{ by } m
+  - h \text{ names exactly one of the } m \text{ buckets to look in first}
+  - \text{two different keys landing on the same } h \text{ is called a collision}
 presets:
-- view: 0
-  m: 4
-- view: 0
-  m: 11
-- view: 1
-  corrupt: 1
+  - view: 0
+    m: 4
+  - view: 0
+    m: 10
+  - view: 1
+    corrupt: 1
 challenges:
-- check: view == 0 and m == 4
-- check: view == 0 and m == 11
-- check: view == 1 and corrupt == 1
+  - check: view == 0 and m == 4
+  - check: view == 0 and m == 10
+  - check: view == 1 and corrupt == 1

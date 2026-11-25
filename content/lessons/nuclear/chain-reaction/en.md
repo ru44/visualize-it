@@ -12,9 +12,9 @@ charts: []
 
 ## Try it
 
-1. Set "multiplication factor k" to exactly 1.00 and drag "generations" up. The tree grows one node per row, forever — a steady chain reaction.
-2. Lower k below 1 and run it again. The tree thins out and the branches stop, generation after generation, until nothing is left.
-3. Raise k above 1.5 and watch each row fan out wider than the last, doubling and redoubling.
+1. Set "multiplication factor k" to exactly 1.00 and drag "generations" up to 12. The tree grows one node per row, forever: "population" stays at 1 and "status" reads holding steady — a steady chain reaction.
+2. Lower k to 0.7 and press restart. The first fission fails to start another: "population" drops to 0 from generation 1 on and "status" reads dying out.
+3. Raise k to 2.00 and restart. Each row fans out twice as wide as the last — 1, 2, 4, 8, 16 — and "population" reads 64 at generation 6 and 4096 at generation 12.
 
 ## Real-life examples
 
@@ -42,7 +42,7 @@ In a real reactor $k$, more precisely $k_{\text{eff}}$, the effective multiplica
 
 ## Advanced
 
-Real reactors are built to run only barely supercritical on a small, slow-arriving slice of "delayed" neutrons that some fission fragments emit seconds after decaying, rather than on the "prompt" neutrons released in the first instant; because those delayed neutrons take time to show up, a reactor with $k_{\text{eff}}$ just above 1 changes power over seconds, giving control rods time to react, while a reactor that goes prompt supercritical, meaning $k_{\text{eff}} > 1$ from prompt neutrons alone, changes power almost instantly — the distinction at the heart of every civilian reactor's safety margin.
+Real reactors are built to run only barely supercritical on a small, slow-arriving slice of "delayed" neutrons that some fission fragments emit seconds after the fission, rather than on the "prompt" neutrons released in the first instant; because those delayed neutrons take time to show up, a reactor with $k_{\text{eff}}$ just above 1 changes power over seconds, giving control rods time to react, while a reactor that goes prompt supercritical, meaning $k_{\text{eff}} > 1$ from prompt neutrons alone, changes power almost instantly — the distinction at the heart of every civilian reactor's safety margin.
 
 ## Derivation
 
@@ -53,13 +53,17 @@ Real reactors are built to run only barely supercritical on a small, slow-arrivi
 ## Real world
 
 ### Commercial power reactors
+
 Every commercial reactor's control system exists to hold $k_{\text{eff}}$ at 1.00 despite the fuel slowly burning up and the core heating and cooling.
 
 ### Criticality accidents
+
 Several historic laboratory accidents happened when researchers accidentally assembled enough fissile material, by hand, to push k just over 1 — a stark reminder that criticality is a property of geometry and mass, not intention.
 
 ### Nuclear weapons
+
 A weapon is designed to jump k far above 1 within microseconds, so as many generations as possible complete before the assembly blows itself apart.
 
 ### Research reactors
+
 Small research and training reactors are often run at a low, steady power specifically to keep k held exactly at 1 for hours at a time, producing neutrons for experiments rather than electricity.

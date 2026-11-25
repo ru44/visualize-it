@@ -15,9 +15,9 @@ variables:
 
 ## Try it
 
-1. Drag «atomic number Z» upward. Watch the element symbol and name change one proton at a time.
-2. Now drag «neutrons N» on its own. The element stays the same, but you build a different isotope.
-3. Watch the electron shells fill and empty: whenever the outer shell exactly completes, you land on a noble gas.
+1. Set «atomic number Z» to 6 and «neutrons N» to 6. The readout shows Carbon (C) with mass number A = 12. Move Z to 7: the element becomes Nitrogen (N).
+2. Put Z back to 6, then move «neutrons N» alone to 8. The element is still Carbon, but A = 14: you built the isotope carbon-14.
+3. Set Z to 2, then 10, then 18. The outer shell is exactly full each time (electron config 2, then 2·8, then 2·8·8), and you land on a noble gas: helium, neon, argon.
 
 ## Real-life examples
 
@@ -33,15 +33,15 @@ variables:
 
 ## Intuition
 
-Look at the diagram: a small circle in the middle is the nucleus, and rings of dots around it are the electron shells. Start at carbon, with 6 protons and 6 neutrons — that's the atom in pencil lead and in your own skin. Drag the slider labelled «atomic number Z» up by one, to 7, and the nucleus label changes, the element symbol flips to nitrogen, and one more dot appears in the outer ring.
+Look at the diagram: a small circle in the middle is the nucleus, and rings of dots around it are the electron shells. Set Z = 6 and N = 6 to start at carbon, with 6 protons and 6 neutrons — that's the atom in pencil lead and in your own skin. Drag the slider labelled «atomic number Z» up by one, to 7, and the nucleus label changes, the element symbol flips to nitrogen, and one more dot appears in the outer ring.
 
-Now drag «neutrons N» on its own, leaving Z untouched: the element name stays nitrogen, because neutrons don't change which element you have, only how heavy that atom is. Watch the outer ring instead: every time it fills up exactly, at 2, 10 or 18 dots, the diagram lands on a noble gas — helium, neon, argon — the calmest, least reactive atoms there are.
+Now drag «neutrons N» on its own, leaving Z untouched: the element name stays nitrogen, because neutrons don't change which element you have, only how heavy that atom is. Watch the outer ring instead: every time it fills up exactly, at Z = 2, 10 or 18, the diagram lands on a noble gas — helium, neon, argon — the calmest, least reactive atoms there are.
 
 ## Formal
 
 The mass number $A = Z + N$ counts nucleons; the atomic number $Z$ alone identifies the element and is written as a subscript, $A$ as a superscript: ${}^{A}_{Z}\mathrm{X}$. Atoms with the same $Z$ but different $N$ are isotopes of the same element.
 
-For the first twenty elements, electron shells fill in the order 2, 8, 8, 2 (capacities $2n^2$ only for the first shell; beyond that the simple 2-8-8 pattern is what you observe before 3d orbitals complicate things at $Z = 21$).
+For the first twenty elements, electron shells fill in the order 2, 8, 8, 2 (the capacity rule $2n^2$ gives 2 and 8 for the first two shells; the third shell could hold 18, but it pauses at 8, so the simple 2-8-8 pattern is what you observe before 3d orbitals complicate things at $Z = 21$).
 
 ## Advanced
 
@@ -56,13 +56,17 @@ The 2-8-8-2 rule is a simplification: real shell filling follows the Aufbau prin
 ## Real world
 
 ### Carbon dating
+
 Carbon-14, an isotope with two extra neutrons compared to ordinary carbon-12, decays at a known rate used to date organic remains.
 
 ### Nuclear power
+
 Uranium-235 versus uranium-238 differ only in neutron count, but only the lighter isotope sustains a chain reaction.
 
 ### The periodic table
+
 Columns are groups of elements with the same valence electron count — that shared outer shell is why sodium and potassium react so similarly.
 
 ### Chemical bonding
+
 Atoms react to fill or empty their valence shell — this single idea explains why table salt is $\mathrm{NaCl}$, one-to-one.

@@ -72,7 +72,7 @@ charts:
   - domain:
       - 0
       - 6
-    marker: w0
+    marker: w
     series:
       - F/sqrt((w0^2 - x^2)^2 + (2*g*x)^2)
 primary: g
@@ -90,4 +90,4 @@ challenges:
   - check: g >= 0.9
   - check: w
     target: 4.5
-  - check: abs(x - w0) < 0.3
+  - check: abs(w - w0) < 0.3

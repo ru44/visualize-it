@@ -25,15 +25,15 @@ charts:
 
 ## Try it
 
-1. Watch the bars: every one is the same monthly payment, but at the start the red interest slice eats most of it. The thin line is the balance, starting at the full loan.
-2. Drag $x$ (months elapsed) forward. The green principal slice grows month by month, and the dashed flag marks the tipping month where it first beats the interest.
-3. Now raise $L$ or $r$ instead. The red slices fatten and the tipping month slides later — a bigger loan or a costlier rate keeps you in interest territory longer.
+1. Watch the bars: every one is the same monthly payment, but at the start the red interest slice eats most of it. The thin line is the balance, starting at the full loan. At month 60 the readouts show a monthly payment of 716: 426 of it is interest and only 290 is principal.
+2. Set $x$ (months elapsed) to 120. The green principal slice has grown to 392 and the interest has shrunk to 325. The dashed flag marks month 103, the tipping month where principal first beats the interest.
+3. Now raise $r$ to 10. The red slices fatten and the tipping month slides from 103 to 158 — a costlier rate keeps you in interest territory longer. Raising $L$ makes every payment bigger but leaves the split and the flag where they are.
 
 ## Real-life examples
 
-1. **A 30-year, 250,000 mortgage.** At 6% interest, two years in, the balance has barely moved — the borrower has paid thousands in interest before making a real dent in the debt.
-2. **A 5-year, 25,000 car loan.** At 7%, one year in, the shorter term forces faster progress than a mortgage, but a good share of each payment still goes to interest.
-3. **A 2-year, 5,000 personal loan.** At 12%, six months in, the short term forces a comparatively fast payoff despite the higher rate.
+1. **A 30-year, 250,000 mortgage.** At 6% interest, two years in, the balance has barely moved: about 243,700 is still owed. The borrower has paid nearly 30,000 in interest before making a real dent in the debt.
+2. **A 5-year, 25,000 car loan.** At 7%, one year in, the shorter term forces faster progress than a mortgage, but about a quarter of each 495 payment (123) still goes to interest.
+3. **A 2-year, 5,000 personal loan.** At 12%, six months in, the short term forces a comparatively fast payoff despite the higher rate: the balance is already down to about 3,860.
 
 ## Test yourself
 
@@ -45,7 +45,7 @@ charts:
 
 Take a 250,000 mortgage at 6% interest over 30 years, or 360 months: in the very first payment, well over 1,000 of it is interest, and only a small amount actually reduces what is owed. The thin line on screen, $B$, is exactly that remaining balance, sliding down across the bars as $x$, the number of months since the loan started, advances. Drag $x$ forward from zero and watch the balance barely move at first, then fall faster and faster as it nears the end of the term.
 
-Now drag $L$ or $r$, the loan amount or the interest rate, up instead: the whole balance curve sits higher throughout, since a bigger loan or a costlier rate both mean more is still owed at any given month. Look at the red slices of the bars: early on, most of the fixed monthly payment goes to interest, and only a small remainder chips away at the balance — exactly why the first years of a mortgage barely dent what is owed.
+Now drag $r$, the interest rate, up instead: the whole balance line sits higher throughout, since a costlier rate means more is still owed at any given month. A bigger loan $L$ scales every payment up but leaves the shape unchanged. Look at the red slices of the bars: early on, most of the fixed monthly payment goes to interest, and only a small remainder chips away at the balance — exactly why the first years of a mortgage barely dent what is owed.
 
 ## Formal
 
@@ -78,17 +78,21 @@ to accrue interest.
 ## Real world
 
 ### Mortgages
+
 A 30-year mortgage's first payment is often 70–80% interest; only by the
 final years does most of the payment reduce the balance.
 
 ### Car loans
+
 Shorter loan terms carry higher monthly payments but far less total
 interest, since the balance falls faster.
 
 ### Extra payments
+
 Paying a lump sum early in a mortgage saves more interest than the same
 amount paid in the final year.
 
 ### Refinancing
+
 Resetting a loan to a new rate restarts the balance curve, which is why
 refinancing late in a loan can raise total interest paid.

@@ -35,7 +35,7 @@ parameters:
     min: 400
     max: 900
     step: 5
-    value: 600
+    value: 500
     unit: K
 variables:
   - T_h, T_c
@@ -43,7 +43,7 @@ variables:
   - S
 derivation:
   - \eta = \frac{W}{Q_h} = \frac{Q_h - Q_c}{Q_h}
-  - "\\text{reversible cycle: } \\frac{Q_c}{Q_h} = \\frac{T_c}{T_h}"
+  - "\\frac{Q_c}{T_c} = \\frac{Q_h}{T_h} \\;\\Rightarrow\\; \\frac{Q_c}{Q_h} = \\frac{T_c}{T_h}"
   - \eta_{\text{Carnot}} = 1 - \frac{Q_c}{Q_h} = 1 - \frac{T_c}{T_h}
 charts:
   - domain:

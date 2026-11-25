@@ -1,6 +1,6 @@
-nrg.hint: set the launch speed — the ball coasts exactly as high as its kinetic energy can pay for
-nrg.launch: 'launched at {v} m/s'
-nrg.top: 'coasts to h = {h} m'
-nrg.bars: same energy, two forms
-nrg.swap: every joule of motion buys exactly one joule of height — and back again on the way down
-nrg.caption: double the speed and the ball climbs four times as high — the v² is the whole story
+nrg.hint: 'Ideal vertical launch: compare initial kinetic energy with potential-energy gain'
+nrg.launch: 'launch speed {v} m/s'
+nrg.top: 'maximum rise h = {h} m'
+nrg.bars: 'launch KE · top PE'
+nrg.swap: 'With no air resistance, initial kinetic energy equals the potential-energy gain.'
+nrg.caption: 'At fixed mass, doubling launch speed quadruples energy and ideal height.'

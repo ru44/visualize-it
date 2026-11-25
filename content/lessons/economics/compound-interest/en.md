@@ -24,15 +24,15 @@ charts:
 
 ## Try it
 
-1. Watch the curve. It starts low and flat, showing your balance $A$ growing slowly.
-2. Drag $r$ (interest rate) up. The curve gets dramatically steeper — a higher rate changes everything.
-3. Now drag $x$ (years invested) forward instead, keeping $r$ fixed. The same rate compounds into a much bigger balance simply by waiting longer.
+1. Watch the curve. It starts low and flat, showing your balance $A$ growing slowly: at $x$ = 5 the readout f(x) shows about 1418.
+2. Set $r$ (interest rate) to 12. The curve gets much steeper, and f(x) jumps to about 1817.
+3. Put $r$ back to 7 and set $x$ (years invested) to 20 instead. The same rate compounds into a much bigger balance simply by waiting longer: f(x) shows about 4039.
 
 ## Real-life examples
 
-1. **Saving for a child's education.** Parents put aside 1,000 at birth in an account paying 6% a year, compounded monthly; by the time their child turns 18 the fund has grown several times over.
-2. **Building a retirement nest egg.** 5,000 invested at a 7% annual return, compounded yearly, grows for 30 years — most of the final balance comes from decades of interest earning interest, not the original deposit.
-3. **A credit card balance.** 2,000 left unpaid at 15% interest, compounded monthly, compounds against the borrower instead of for them, growing steadily larger the longer it goes unpaid.
+1. **Saving for a child's education.** Parents put aside 1,000 at birth in an account paying 6% a year, compounded monthly; by the time their child turns 18 the fund has nearly tripled, to about 2,937.
+2. **Building a retirement nest egg.** 5,000 invested at a 7% annual return, compounded yearly, grows for 30 years to about 38,061 — most of the final balance comes from decades of interest earning interest, not the original deposit.
+3. **A credit card balance.** 2,000 left unpaid at 15% interest, compounded monthly, compounds against the borrower instead of for them, more than doubling to about 4,214 after 5 years.
 
 ## Test yourself
 
@@ -42,7 +42,7 @@ charts:
 
 ## Intuition
 
-Put 1,000 in a savings account at 7% a year, compounded every month, and leave it alone for years. On screen, the curve labelled $A$ is your growing balance, plotted against $x$, the number of years invested. Drag $x$ to the right: the tangent line drawn on the curve gets steeper year after year, because you are now earning interest on your original deposit and on every year's interest that came before it.
+Put 1,000 in a savings account at 7% a year, compounded every month, and leave it alone for years. On screen, the curve is your growing balance $A$, plotted against $x$, the number of years invested. Drag $x$ to the right: the tangent line drawn on the curve gets steeper year after year, because you are now earning interest on your original deposit and on every year's interest that came before it.
 
 Now drag $r$, the annual interest rate, up instead: even a small rise makes the curve climb dramatically faster, because a higher rate multiplies every future year rather than just adding once. This is why a saver who starts at 25 can end up with roughly double the retirement balance of one who starts at 35 with the same monthly deposit, even though the later saver contributes for nearly as many years.
 
@@ -74,17 +74,21 @@ decade than from daily versus monthly compounding.
 ## Real world
 
 ### Retirement savings
+
 A saver starting at 25 instead of 35 can end up with nearly double the
 balance at 65, even with the same monthly contribution.
 
 ### Credit card debt
+
 Unpaid balances compound the same way, working against the borrower — a
 debt left unpaid grows faster the longer it sits.
 
 ### Savings accounts
+
 Banks quote an annual rate but often compound monthly or daily, which is
 why the actual balance ends up slightly above the simple estimate.
 
 ### National debt
+
 Government debt that compounds faster than the economy grows becomes a
 larger share of national income over time.

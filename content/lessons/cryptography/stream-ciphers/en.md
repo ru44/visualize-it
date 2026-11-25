@@ -17,8 +17,8 @@ variables:
 ## Try it
 
 1. Look at message 1: each letter meets one keystream byte, they XOR together, and the cipher byte drops out below — the keystream colours change completely if you nudge the key.
-2. Slide the second nonce around while the first stays at 7: as long as the two differ, the bottom row stays quiet and the two ciphertexts share nothing.
-3. Now set the second nonce to exactly 7, the same as the first — the keystreams match, and the bottom row lights up with the two messages XORed into each other, no key needed.
+2. Keep the first nonce at 7 and set the second to 8, then to 50: as long as the two differ, the last readout says "no reuse" and the two ciphertexts share nothing.
+3. Now set the second nonce to exactly 7, the same as the first — the keystreams match, and the readout turns red with the leak 13 11 00 08 11 0E: the two messages XORed into each other, no key needed.
 
 ## Real-life examples
 
@@ -46,7 +46,7 @@ Reuse is the one fatal sin: if two messages share a keystream, then $c_i \oplus 
 
 ## Advanced
 
-The real thing is ChaCha20, designed by Daniel Bernstein: a 256-bit key, a 96-bit nonce and a 32-bit block counter feed a scramble of additions, XORs and bit-rotations that outputs the keystream 64 bytes at a time. It encrypts a good share of today's web traffic — TLS on most phones, WireGuard VPNs — because it runs fast in pure software. Its menace is the same as the toy's: repeat a nonce under the same key and the pad collapses, which is why standards bind the nonce to a counter and why the 2008 Windows XP-era RC4 attacks and the PlayStation 3 signing disaster are taught as warnings.
+The real thing is ChaCha20, designed by Daniel Bernstein: a 256-bit key, a 96-bit nonce and a 32-bit block counter feed a scramble of additions, XORs and bit-rotations that outputs the keystream 64 bytes at a time. It encrypts a good share of today's web traffic — TLS on most phones, WireGuard VPNs — because it runs fast in pure software. Its menace is the same as the toy's: repeat a nonce under the same key and the pad collapses, which is why standards bind the nonce to a counter and why the attacks on RC4 and the PlayStation 3 signing disaster are taught as warnings.
 
 ## Derivation
 
@@ -57,13 +57,17 @@ The real thing is ChaCha20, designed by Daniel Bernstein: a 256-bit key, a 96-bi
 ## Real world
 
 ### ChaCha20 in TLS
+
 When a phone opens most secure websites, ChaCha20-Poly1305 encrypts the traffic — a stream cipher at full speed, with a counter making every block's nonce unique.
 
 ### WireGuard VPNs
+
 The modern VPN protocol encrypts every packet with ChaCha20, trusting a strict counter discipline to keep any keystream from ever repeating.
 
 ### The Venona break
+
 Soviet one-time pads were reused under wartime pressure in the 1940s; American analysts XORed matching ciphertexts and read thousands of messages — the exact attack this lesson shows.
 
 ### Wi-Fi's broken WEP
+
 The old Wi-Fi encryption used RC4 with a 24-bit nonce, so busy networks repeated nonces within hours; tools automated the keystream-reuse attack and WEP had to be abandoned.

@@ -24,15 +24,15 @@ charts:
 
 ## Try it
 
-1. Drag $x$, the price, up from a low value and watch the shaded rectangle — price × buyers — grow with it.
-2. Keep dragging $x$ higher. Past the |E| = 1 flag the queue thins faster than the price rises, and the rectangle starts shrinking instead.
-3. Check the elasticity chart below: it crosses the value 1 at exactly the price where the rectangle peaks.
+1. Set $x$, the price, to 10, then to 20. The shaded rectangle — price × buyers — grows: the readout R = x·Q goes from 800 to 1200.
+2. Set $x$ = 25: R peaks at 1250 and |E| reads 1. Now set $x$ = 35. Past the |E| = 1 flag the queue thins faster than the price rises, and the rectangle shrinks: R = 1050, |E| = 2.33.
+3. Check the elasticity chart below: it crosses the value 1 at $x$ = 25, exactly the price where the rectangle peaks.
 
 ## Real-life examples
 
-1. **A staple food.** Rice priced at 30 with 105 units sold: raising the price barely changes how much people buy, since everyone still needs to eat. Demand is inelastic.
-2. **A luxury handbag.** Priced near 25 with only 25 units sold: a small price cut brings in enough new buyers to raise total revenue. Demand is elastic.
-3. **A concert ticket at the sweet spot.** Priced at 25 with 50 tickets sold, a 1-unit price rise would lose exactly as many sales as it gains in price — this is the single price that earns the most money overall.
+1. **A staple food.** Rice priced at 30 with 105 units sold (a = 120, b = 0.5): raising the price barely changes how much people buy, since everyone still needs to eat. Demand is inelastic.
+2. **A luxury handbag.** Priced at 25 with only 25 units sold (a = 100, b = 3): a small price cut brings in enough new buyers to raise total revenue. Demand is elastic.
+3. **A concert ticket at the sweet spot.** Priced at 25 with 50 tickets sold (a = 100, b = 2), a 1-unit price rise would lose exactly as many sales as it gains in price — this is the single price that earns the most money overall.
 
 ## Test yourself
 
@@ -73,17 +73,21 @@ buyers can adjust habits and find alternatives.
 ## Real world
 
 ### Cigarette taxes
+
 Demand for cigarettes is fairly inelastic, so a tax raises government
 revenue even as it cuts smoking a little.
 
 ### Airline tickets
+
 Business travellers pay inelastically close to departure; leisure
 travellers are elastic and book early for lower fares.
 
 ### Luxury goods
+
 Demand for designer goods is often elastic — a price cut can bring in
 enough new buyers to raise total revenue.
 
 ### Staple foods
+
 Demand for rice or bread is inelastic almost everywhere: people keep
 buying roughly the same amount regardless of price swings.

@@ -17,8 +17,8 @@ variables:
 ## Try it
 
 1. The picture shows two bar magnets facing each other with their N poles (red) pointed inward. Watch how the field lines bow outward, squeezed away from the narrow gap between the two N poles.
-2. Drag «distance r» smaller. The push between the magnets grows fast — shrink the gap to a third of its size and the force jumps to 81 times as strong, because it depends on 1/r⁴.
-3. Raise «magnet 2's strength m₂». The force grows too, but only in step with it: double m₂ and the force merely doubles.
+2. Set «distance between the magnets r» to 0.15 m: the force readout shows 0.0012 N. Now drag it down to 0.05 m and the force reads 0.096 N. The push grows fast — shrink the gap to a third of its size and the force jumps to 81 times as strong, because it depends on 1/r⁴.
+3. Raise «magnet 2's strength m₂» from 1 to 2. The force grows too, from 0.096 N to 0.192 N, but only in step with it: double m₂ and the force merely doubles.
 
 ## Real-life examples
 
@@ -57,13 +57,17 @@ Real bar magnets aren't perfect point dipoles — a long thin magnet's field clo
 ## Real world
 
 ### Compasses
+
 A compass needle is a tiny bar magnet that swings to line up with Earth's own huge, weak dipole field, pointing roughly toward magnetic north.
 
 ### Motors and loudspeakers
-Fixed magnets, arranged with their poles facing a coil, push and pull on that coil's own field to spin an electric motor or move a speaker cone (see the next lesson).
+
+Fixed magnets, arranged with their poles facing a coil, push and pull on that coil's own field to spin an electric motor or move a speaker cone (see the electric motors lesson).
 
 ### MRI scanners
-Hospital MRI machines use enormous superconducting magnets — millions of times stronger than a fridge magnet — to align hydrogen atoms in your body so radio waves can image them.
+
+Hospital MRI machines use enormous superconducting magnets — hundreds of times stronger than a fridge magnet — to align hydrogen atoms in your body so radio waves can image them.
 
 ### Fridge magnets and toy blocks
+
 The everyday tug of a fridge magnet, or the snap of magnetic building blocks, is this same pole-to-pole attraction and repulsion, just at a scale you can feel with your hands.

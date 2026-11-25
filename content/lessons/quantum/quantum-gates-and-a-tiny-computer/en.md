@@ -15,9 +15,9 @@ charts: []
 
 ## Try it
 
-1. Set «circuit stage» to 0, the X gate. Every measurement below comes back 1, always — a plain, certain flip.
-2. Set «circuit stage» to 1, the H gate. Now measurements split roughly half and half, a genuine 50/50 mix.
-3. Set «circuit stage» to 2, H then CNOT on two qubits, and raise «number of measurements» toward 1000. Both qubits always agree — 00 or 11, never 01 or 10.
+1. Set «circuit stage» to 0, the X gate, and press «run 100 measurements». «results so far» shows 0: 0 and 1: 100 — every measurement comes back 1, a plain, certain flip.
+2. Set «circuit stage» to 1, the H gate, and run 100 measurements again. Now the counts split roughly half and half, close to 50 each: a genuine 50/50 mix.
+3. Set «circuit stage» to 2, H then CNOT on two qubits, raise «number of measurements» to 1000 and run them. Both qubits always agree: about 500 each of 00 and 11, and 01 and 10 stay at 0.
 
 ## Real-life examples
 
@@ -27,9 +27,9 @@ charts: []
 
 ## Test yourself
 
-1. Build the plain flip circuit.
-2. Build the coin-flip circuit and run at least 500 measurements to see the 50/50 split settle down.
-3. Build the two-qubit entangling circuit.
+1. Build the plain flip circuit (the X gate).
+2. Build the coin-flip circuit (the H gate) and set «number of measurements» to at least 500 to see the 50/50 split settle down.
+3. Build the two-qubit entangling circuit (H then CNOT).
 
 ## Intuition
 
@@ -56,13 +56,17 @@ X, H and CNOT belong to a small set of gates that, wired together in long enough
 ## Real world
 
 ### Real quantum processors
+
 IBM's and Google's quantum chips are physically wired from gates like these, applied to real superconducting qubits held near absolute zero.
 
 ### Quantum algorithms
+
 Famous quantum algorithms, like Shor's for factoring large numbers, are written on paper as a specific sequence of gates just like X, H and CNOT.
 
 ### Quantum error correction
+
 Because a single physical qubit is fragile, real quantum computers spread one "logical" qubit across many physical ones, wired together with gates like CNOT to catch and fix errors.
 
 ### Learning to program a quantum computer
+
 Free tools such as IBM's Qiskit let anyone build exactly this kind of circuit, gate by gate, and run it on a real quantum chip over the internet.

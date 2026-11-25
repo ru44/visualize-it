@@ -12,27 +12,27 @@ variables:
 
 ## Try it
 
-1. Look at the tall blue bars: each one counts how often a letter appears in the secret message below, once shifted by your current guess.
-2. Drag «guess» from 0 to 25. The short orange marks, showing true English letter frequencies, line up differently against the blue bars each time.
-3. Watch the decoded text at the bottom. It turns green and starts reading like real English exactly when the blue bars best match the orange marks.
+1. Look at the tall orange bars: each one counts how often a letter appears in the secret message at the top, once shifted by your current guess.
+2. Set «guess» to 0, then to 13. The short blue marks show true English letter frequencies; the orange bars miss them both times, and the match readout stays low: 3.86, then 3.74.
+3. Set «guess» to 7. The orange bars now sit on the blue marks, the match readout jumps to 6.85, and the decoded text at the bottom turns green and reads FREQUENCY ANALYSIS BREAKS SIMPLE CIPHERS.
 
 ## Real-life examples
 
-1. **Al-Kindi's first try: assume no shift at all.** A 9th-century codebreaker's simplest guess, «guess» = 0, gives blue bars that barely resemble the orange English pattern.
+1. **Al-Kindi's first try: assume no shift at all.** A 9th-century codebreaker's simplest guess, «guess» = 0, gives orange bars that barely resemble the blue English pattern.
 2. **A common modern guess: ROT13.** People online often scramble spoilers with a 13-letter shift; try «guess» = 13 here and the decoded text is still nonsense.
-3. **The correct key, found by counting.** At «guess» = 7 the blue bars finally match the orange marks, and the text below reads as real English.
+3. **The correct key, found by counting.** At «guess» = 7 the orange bars finally match the blue marks, and the text below reads as real English.
 
 ## Test yourself
 
 1. Slide «guess» to 7 and watch the decoded text below turn green and readable.
 2. Try «guess» = 13, the popular ROT13 shift, and see that it still looks like nonsense.
-3. Pick any guess other than 0 and 7, and notice how flat and mismatched the blue bars look against the orange marks.
+3. Pick any guess other than 0 and 7, and notice how flat and mismatched the orange bars look against the blue marks.
 
 ## Intuition
 
-Suppose a spy intercepts a message and knows only that every letter was shifted by the same fixed amount, somewhere between 0 and 25. On screen, the tall blue bars count how many times each of the 26 letters shows up in that intercepted message once you shift your guess with the «guess» slider; the short orange marks above them show how often each letter really appears in ordinary English, where E and T tower over rare letters like Q and Z. Slide «guess» through all 26 positions and watch the blue skyline slide sideways underneath the fixed orange marks, hunting for the one position where the two line up.
+Suppose a spy intercepts a message and knows only that every letter was shifted by the same fixed amount, somewhere between 0 and 25. On screen, the tall orange bars count how many times each of the 26 letters shows up in that intercepted message once you shift your guess with the «guess» slider; the short blue marks show how often each letter really appears in ordinary English, where E and T tower over rare letters like Q and Z. Slide «guess» through all 26 positions and watch the orange skyline slide sideways past the fixed blue marks, hunting for the one position where the two line up.
 
-The moment the blue bars and the orange marks match best, the text at the bottom flips to green and reads as real English instead of nonsense — that best-matching «guess» is the hidden key, and reversing it recovers the message, $M = (C - g) \bmod 26$, where $g$ is your current guess.
+The moment the orange bars and the blue marks match best, the text at the bottom flips to green and reads as real English instead of nonsense — that best-matching «guess» is the hidden key, and reversing it recovers the message, $M = (C - g) \bmod 26$, where $g$ is your current guess.
 
 ## Formal
 
@@ -53,13 +53,17 @@ The earliest known description of frequency analysis comes from Al-Kindi, a 9th-
 ## Real world
 
 ### Al-Kindi's 9th-century manuscript
+
 The technique's first written record already used tables of Arabic letter frequency to unravel simple substitution ciphers.
 
 ### Newspaper cryptogram puzzles
+
 The same letter-counting trick lets casual puzzle solvers crack the "cryptoquote" columns printed in newspapers every day.
 
 ### Early 20th-century codebreaking
+
 Military cryptanalysts extended frequency counting from single letters to pairs and triples of letters to break far more complex ciphers.
 
 ### Language tools today
+
 Spam filters, autocorrect and language-detection tools all lean on the same idea: real language has a distinctive, countable statistical fingerprint.

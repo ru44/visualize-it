@@ -13,15 +13,15 @@ variables:
 
 ## Try it
 
-1. Set p to 0.5 and x to 1. The curve sits low; with only one machine there is no speedup at all.
-2. Drag x up toward 1000. The curve on the graph climbs fast at first, then flattens out and barely rises anymore.
-3. Raise p toward 0.99 instead. The same number of machines now reaches a much higher point on the curve before it flattens.
+1. Set p to 0.5 and x to 1. The dot sits at the very start of the curve and the readout shows f(x) = 1: with only one machine there is no speedup at all.
+2. Drag x up to 1000. The dot climbs fast at first, then the curve flattens out: f(x) reads 1.998 and never passes 2.
+3. Set x to 100, where f(x) reads 1.9802, then raise p to 0.99. The same 100 machines now reach a much higher point on the curve: f(x) reads 50.2513.
 
 ## Real-life examples
 
-1. **Mostly one machine.** p at 0.5, x at 4: only half the job can be split up, so four machines barely double the speed.
-2. **A well-parallelized job.** p at 0.95, x at 16: 95% of the work splits across 16 machines, close to a 16-fold speedup on a real cluster.
-3. **A near-perfect MapReduce job.** p at 0.99, x at 200: 99% of the work parallelizes across 200 machines, like a large BigQuery-style scan.
+1. **Mostly one machine.** p at 0.5, x at 4: only half the job can be split up, so four machines make it just 1.6 times faster.
+2. **A well-parallelized job.** p at 0.95, x at 16: 95% of the work splits across 16 machines, yet the job runs only about 9.1 times faster, far short of 16.
+3. **A near-perfect MapReduce job.** p at 0.99, x at 100: 99% of the work parallelizes across 100 machines, like a large BigQuery-style scan, and the job runs about 50 times faster.
 
 ## Test yourself
 
@@ -54,13 +54,17 @@ In practice the curve is usually worse than this ideal, since coordinating x mac
 ## Real world
 
 ### BigQuery and distributed queries
+
 BigQuery splits a query across thousands of machines, but any part of the plan that cannot be split still limits how much a bigger cluster helps.
 
 ### Video rendering and encoding
+
 Rendering separate frames of a video splits easily across many machines, but stitching the final file back together is a serial step that limits total speedup.
 
 ### Scientific simulation
+
 Weather and climate simulations split space into a grid that many machines can compute in parallel, but pieces near the edges of each region still need to exchange data with each other.
 
 ### Multi-core phones and laptops
+
 A phone with eight cores does not run every app eight times faster, because the useful parallel fraction p of most everyday tasks is well under 100%.

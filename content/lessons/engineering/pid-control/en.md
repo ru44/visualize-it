@@ -20,21 +20,21 @@ variables:
 
 ## Try it
 
-1. Watch $x$ chase $r$. With $K_i$ at zero, it settles just short of $r$.
-2. Drag $K_p$ up. $x$ reacts faster and settles closer to $r$, but a gap always remains.
-3. Now drag $K_i$ up from zero. The controller starts closing that last gap, and $x$ eventually lands exactly on $r$ — though push $K_i$ too far and it starts to overshoot and oscillate.
+1. Set $K_i$ to 0, with $K_p$ = 2, $r$ = 1 and $\tau$ = 1, and watch $x$ chase $r$. It levels off at 0.667, short of the target of 1.
+2. Drag $K_p$ up to 9. $x$ reacts faster and settles closer to $r$, at 0.9, but a gap always remains.
+3. Set $K_p$ back to 2 and drag $K_i$ up from zero to 2. The controller closes that last gap, and $x$ lands exactly on 1. Now raise $\tau$ to 5: with the same gains on a more sluggish system, $x$ overshoots to about 1.24 and swings back before it settles.
 
 ## Real-life examples
 
 1. **A home thermostat.** Modest gains (Kp = 1, Ki = 0.1) bring the room to temperature smoothly and slowly, without any overshoot — comfortable but not fast.
 2. **A car's cruise control.** Higher gains (Kp = 3, Ki = 0.5) let the system reach and hold the target speed quickly and precisely, even up a hill, without much overshoot.
-3. **A poorly tuned drone stabilizer.** Aggressive gains (Kp = 8, Ki = 1.5) react fast but overshoot and oscillate before settling — exactly the "too much Ki" problem this lesson warns about.
+3. **A poorly tuned drone stabilizer.** Too much integral gain for a sluggish system (Kp = 1, Ki = 2, τ = 3) overshoots the target by about 27% and oscillates before settling — exactly the "too much Ki" problem this lesson warns about.
 
 ## Test yourself
 
 1. With $K_i$ at zero (proportional-only control), find a $K_p$ that makes $x$ settle at exactly 80% of the target $r$.
 2. Find $K_p$, $K_i$ and $\tau$ that make the response critically damped — the fastest settling possible without any overshoot.
-3. With $K_i$ above 0.05, find a $K_p$ and $\tau$ combination that makes the response clearly oscillate before settling.
+3. Find $K_p$, $K_i$ and $\tau$ that make the response clearly oscillate before settling (try a small $K_p$ with a large $K_i$ and $\tau$).
 
 ## Intuition
 
@@ -61,13 +61,17 @@ Raising K_p or K_i too far turns this into a lightly damped or even unstable osc
 ## Real world
 
 ### Cruise control
+
 A car's cruise control is a PID loop on speed: it pushes the throttle harder the further you are below the set speed, and the integral term is what lets it hold an exact speed uphill instead of settling a little slow.
 
 ### Home thermostats and HVAC
+
 Better heating and cooling systems use PID rather than simple on/off switching, which is why the temperature settles smoothly at the target instead of oscillating around it.
 
 ### Industrial process control
+
 Chemical plants use PID loops on thousands of valves and heaters at once to hold pressure, flow and temperature exactly at their setpoints despite constantly changing conditions.
 
 ### Drone stabilization
+
 A drone's flight controller runs a PID loop many times a second on each axis of tilt, pushing motors to cancel any drift from level flight before it is even noticeable.

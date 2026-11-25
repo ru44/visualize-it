@@ -3,16 +3,16 @@ subject: cryptography
 difficulty: high-school
 equation: s = h^{d} \bmod n
 concepts:
-- digital-signature
-- rsa
-- hash-function
-- authentication
+  - digital-signature
+  - rsa
+  - hash-function
+  - authentication
 prerequisites:
-- rsa-encryption
-- hash-functions
+  - rsa-encryption
+  - hash-functions
 related:
-- elliptic-curve-cryptography
-- block-ciphers-and-aes
+  - elliptic-curve-cryptography
+  - block-ciphers-and-aes
 visualization:
   type: digital-signature
 parameters:
@@ -30,38 +30,38 @@ parameters:
     min: 2
     max: 20
     step: 1
-    value: 7
+    value: 9
   tamper:
     min: 0
     max: 5
     step: 1
     value: 0
 variables:
-- s
-- h
-- d
-- n
-- \bmod
+  - s
+  - h
+  - d
+  - n
+  - \bmod
 derivation:
-- h = (m^{2} + 1) \bmod n = (49 + 1) \bmod 55 = 50
-- s = h^{d} \bmod n = 50^{27} \bmod 55 = 30
-- s^{e} \bmod n = 30^{3} \bmod 55 = 50 = h
+  - h = (m^{2} + 1) \bmod n = (49 + 1) \bmod 55 = 50
+  - s = h^{d} \bmod n = 50^{27} \bmod 55 = 30
+  - s^{e} \bmod n = 30^{3} \bmod 55 = 50 = h
 charts: []
 primary: tamper
 presets:
-- p: 5
-  q: 11
-  m: 7
-  tamper: 0
-- p: 5
-  q: 11
-  m: 7
-  tamper: 1
-- p: 13
-  q: 11
-  m: 12
-  tamper: 0
+  - p: 5
+    q: 11
+    m: 7
+    tamper: 0
+  - p: 5
+    q: 11
+    m: 7
+    tamper: 1
+  - p: 13
+    q: 11
+    m: 12
+    tamper: 0
 challenges:
-- check: abs(p-5)<0.5 and abs(q-11)<0.5 and abs(m-7)<0.5 and tamper<0.5
-- check: tamper>0.5
-- check: abs(p-13)<0.5 and abs(q-11)<0.5 and tamper<0.5
+  - check: abs(p-5)<0.5 and abs(q-11)<0.5 and abs(m-7)<0.5 and tamper<0.5
+  - check: tamper>0.5
+  - check: abs(p-13)<0.5 and abs(q-11)<0.5 and tamper<0.5

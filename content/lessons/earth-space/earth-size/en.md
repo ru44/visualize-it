@@ -17,7 +17,7 @@ variables:
 
 1. Drag the top of the right-hand stick along the Earth. The blue angle at the top of the stick and the blue angle at the Earth's centre change together. They are always the same size.
 2. Set theta to 7.2 and d to 800, as Eratosthenes did. Read "your Earth, all the way round" below the picture and compare it with the real one.
-3. Keep d at 800 and make theta bigger. A bigger shadow angle means you only had to walk a short way round the Earth, so the whole circle is smaller.
+3. Keep d at 800 and raise theta to 14.4. Your Earth shrinks to 20,000 km, half the size. A bigger shadow angle means you only had to walk a short way round the Earth, so the whole circle is smaller.
 
 ## Real-life examples
 
@@ -64,13 +64,17 @@ The angle is the hard part. With a 1 m stick, a 7.2° shadow is only about 12.6 
 ## Real world
 
 ### Schools measure the Earth
+
 Every year, classes around the world do the Eratosthenes experiment. Two schools far apart, on the same north-south line, measure the shadow of a stick at the same moment and share the numbers.
 
 ### The first rung of a ladder
+
 Everything we know about distances to the Moon, the Sun and the planets starts with the size of the Earth. It becomes the ruler for the next measurement, how far away the Moon is.
 
 ### Mapmakers still use angles
+
 Surveyors measure long distances by measuring angles and one known distance, which is the same trick as here. Satellites now find the Earth's size to a few metres.
 
 ### Round, but not perfectly
+
 The Earth is 40,008 km round through the poles and 40,075 km round the equator. It bulges a little at the middle because it spins.

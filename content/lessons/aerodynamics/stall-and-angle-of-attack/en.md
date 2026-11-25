@@ -1,8 +1,8 @@
 ---
 title: Stall and the critical angle
 summary: >-
-  This is why planes can stall even while flying fast: lift depends on the
-  wing's angle, not its speed, and tilting too far collapses it at any speed.
+  This is why planes can stall even while flying fast: a stall depends on the
+  wing's angle, not its speed, and tilting too far collapses the lift at any speed.
 parameters:
   alpha: angle of attack α
   v: airspeed v
@@ -20,9 +20,9 @@ charts:
 
 ## Try it
 
-1. Picture an aircraft on a slow final approach, tilted 13°, close to the edge but still flying.
-2. Push «angle of attack α» past about 15° and watch the streamlines over the wing. They start to wobble, separate, and tint red.
-3. Now raise «airspeed v» a lot. Nothing changes — the stall doesn't care how fast you're going.
+1. Set «angle of attack α» to 13° and «airspeed v» to 25 m/s: an aircraft on a slow final approach, close to the edge but still flying. C_L reads 1.65.
+2. Push «angle of attack α» up to 18° and watch the streamlines over the wing. Past 15° they start to wobble, separate, and tint red, and C_L drops to 1.3.
+3. Now raise «airspeed v» to 70 m/s. C_L stays at 1.3 and the streamlines stay red — the stall doesn't care how fast you're going.
 
 ## Real-life examples
 
@@ -61,13 +61,17 @@ Separation occurs where the boundary layer’s momentum can no longer overcome t
 ## Real world
 
 ### Stall warning systems
+
 Aircraft use angle-of-attack sensors, not airspeed alone, to warn pilots — exactly because stall is an angle phenomenon.
 
 ### Landing technique
+
 Pilots fly a target approach speed specifically to keep a safety margin between the angle of attack in use and $\alpha_{\text{crit}}$.
 
 ### Stall strips and slats
+
 Small fixed strips or deployable slats on the leading edge re-energise the boundary layer to push $\alpha_{\text{crit}}$ higher.
 
 ### Car spoilers and rear wings
+
 The same separation physics limits how much downforce a rear wing can generate before it stalls and downforce collapses.

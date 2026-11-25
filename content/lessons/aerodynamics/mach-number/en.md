@@ -22,9 +22,9 @@ charts:
 
 ## Try it
 
-1. Picture an airliner cruising at 250 m/s through the cold air 11 km up, where it's about −53°C (220 K).
-2. Drag the point along the curve, toward colder «air temperature T». The Mach number climbs, even at the same speed.
-3. Now raise «aircraft speed» toward 340 m/s. The marker climbs toward, and can pass, Mach 1 — the speed of sound.
+1. Set «air temperature T» to 220 K (about −53°C) and keep «aircraft speed» at 250 m/s: an airliner cruising through the cold air 11 km up. The readout shows f(x) = 297.3146, the speed of sound in m/s, and the Mach chart marker sits at about 0.84.
+2. Drag the point along the curve, toward colder «air temperature T», down to 200 K. The speed of sound falls to about 283.5 m/s, so the Mach number climbs to about 0.88, even at the same speed.
+3. Now raise «aircraft speed» to 340 m/s. The marker climbs past Mach 1 — the speed of sound — to about 1.2.
 
 ## Real-life examples
 
@@ -63,13 +63,17 @@ As local flow accelerates over a curved surface (like a wing) even a subsonic fr
 ## Real world
 
 ### Airliner cruise speed
+
 Cruising near M ≈ 0.8 in the cold air at 11 km altitude balances fuel efficiency against the sharp drag rise approaching M = 1.
 
 ### Concorde and supersonic transport
+
 Sustained supersonic cruise (M > 1) demands very different, thin swept or delta wings to manage shock waves and wave drag.
 
 ### Transonic wing design
+
 Sweep and supercritical airfoils delay the local Mach-1 point on the wing to higher speeds, pushing back the onset of wave drag.
 
 ### Sonic booms
+
 A shock wave trailing a supersonic aircraft reaches the ground as the sudden pressure jump heard as a boom.

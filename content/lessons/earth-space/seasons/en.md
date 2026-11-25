@@ -18,15 +18,15 @@ variables:
 
 ## Try it
 
-1. Drag the day-of-year slider through the year at latitude 45°. Watch day length rise toward June and fall toward December.
-2. Drag latitude toward the poles. Watch the swing between summer and winter grow much bigger.
-3. Drag latitude toward the equator instead. Watch the curve flatten out — almost no seasonal change at all.
+1. Keep latitude at 45° and drag the day-of-year slider x through the year. Day length f(x) rises to about 15.4 hours at day 172 (June) and falls to about 8.6 hours at day 355 (December).
+2. Set latitude to 65°, toward the pole. The swing between summer and winter grows much bigger: about 21.1 hours at day 172, only about 2.9 hours at day 355.
+3. Set latitude to 2°, near the equator. The curve flattens out at about 12.1 hours — almost no seasonal change at all.
 
 ## Real-life examples
 
-- **A mid-latitude city in June.** At latitude 45° on day 172 (near the June solstice), daylight stretches out to its longest of the year.
+- **A mid-latitude city in June.** At latitude 45° on day 172 (near the June solstice), daylight stretches out to its longest of the year, about 15.4 hours.
 - **A city near the equator.** At latitude 2°, day length barely changes across the whole year — sunrise and sunset stay close to 6 hours apart from noon, whatever the day.
-- **Near the Arctic Circle in winter.** At latitude 65° on day 355 (near the December solstice), the Sun barely rises at all — the polar night.
+- **Near the Arctic Circle in winter.** At latitude 65° on day 355 (near the December solstice), the Sun is up for less than 3 hours — almost the polar night.
 
 ## Test yourself
 
@@ -59,13 +59,17 @@ Where $|\tan(\phi)\tan(\delta)| > 1$ the cosine has no valid solution: the Sun n
 ## Real world
 
 ### Farming calendars
+
 Planting and harvest dates track day length, not temperature, because day length is the same every year at a given latitude and date.
 
 ### Solar panel tilt
+
 Fixed panels are often angled partway between the summer and winter Sun paths, a compromise driven by exactly this declination swing.
 
 ### Migration
+
 Birds and other animals use day length, not temperature, as the reliable cue to begin migrating each year.
 
 ### Why seasons are opposite in each hemisphere
+
 When the tilt leans the Northern Hemisphere toward the Sun it leans the Southern Hemisphere away by the same angle, so one has summer while the other has winter.

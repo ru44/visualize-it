@@ -52,7 +52,9 @@ presets:
 challenges:
   - check: 343/(343 - vs)
     target: 1.1
+    tol: 0.002
   - check: 343/(343 + vs)
     target: 0.9
+    tol: 0.002
   - check: vs
     target: 40

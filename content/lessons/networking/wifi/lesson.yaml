@@ -3,15 +3,15 @@ subject: networking
 difficulty: beginner
 equation: P_r = P_t - 40 - 20\log_{10} d - wL
 concepts:
-- wifi
-- signal-strength
-- decibel
-- attenuation
+  - wifi
+  - signal-strength
+  - decibel
+  - attenuation
 prerequisites:
-- routers
+  - routers
 related:
-- bluetooth
-- routers
+  - bluetooth
+  - routers
 visualization:
   type: wifi-signal
 parameters:
@@ -33,25 +33,25 @@ parameters:
     value: 5
     unit: dB
 variables:
-- P_r
-- P_t
+  - P_r
+  - P_t
 derivation:
-- P_r = P_t - 40 - 20\log_{10} d - wL
-- d = 10, w = 1, L = 5 \Rightarrow P_r = 20 - 40 - 20 - 5 = -45
-- d = 10, w = 4, L = 8 \Rightarrow P_r = 20 - 40 - 20 - 32 = -72
+  - P_r = P_t - 40 - 20\log_{10} d - wL
+  - d = 10, w = 1, L = 5 \Rightarrow P_r = 20 - 40 - 20 - 5 = -45
+  - d = 10, w = 4, L = 8 \Rightarrow P_r = 20 - 40 - 20 - 32 = -72
 charts: []
 primary: d
 presets:
-- d: 5
-  w: 1
-  L: 5
-- d: 2
-  w: 0
-  L: 5
-- d: 25
-  w: 3
-  L: 8
+  - d: 5
+    w: 1
+    L: 5
+  - d: 2
+    w: 0
+    L: 5
+  - d: 25
+    w: 3
+    L: 8
 challenges:
-- check: (-20 - 20*log10(d) - w*L) >= -50
-- check: (-20 - 20*log10(d) - w*L) <= -75
-- check: w >= 2.5 and (-20 - 20*log10(d) - w*L) >= -65
+  - check: (-20 - 20*log10(d) - w*L) >= -30
+  - check: (-20 - 20*log10(d) - w*L) <= -75
+  - check: w >= 2.5 and (-20 - 20*log10(d) - w*L) >= -65

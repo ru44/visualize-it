@@ -1,68 +1,61 @@
 ---
-title: 'Confidence intervals: thirty labs, one truth'
-summary: >-
-  No sample tells you the truth exactly, so honest science publishes a range —
-  and "95% confidence" is a promise about how often the method catches the
-  truth, not a feeling about any single range.
+title: 'Confidence intervals'
+summary: 'Understand a confidence interval as a method whose repeated intervals contain the true mean at a stated rate.'
 parameters:
-  n: n — how many measurements each lab takes
-  z: z — how many standard errors wide the interval reaches on each side
+  n: 'n — observations per sample'
+  z: 'z — margin in standard errors'
 variables:
-  - the sample mean a lab actually measured
-  - the chosen width of the interval, in standard errors
-  - the population's spread (fixed at 10 here)
+  - 'sample mean at the centre of an interval'
+  - 'number of standard errors on each side'
+  - 'known population standard deviation, fixed at 10'
 ---
 
 ## Try it
 
-1. Keep z = 1.96 and look at the forest: thirty labs, each with its own interval, and about 28 or 29 of the 30 catch the dashed truth — the red ones missed honestly.
-2. Drop z to 1: every interval narrows and far more labs go red — narrow claims sound precise and fail often.
-3. Now raise n instead: every interval tightens around the truth without losing catches, because more data shrinks the scatter itself.
+1. Set n = 24 and z = 1.96. Each dot is one sample mean; its horizontal interval extends about 4 units either side. The dashed line marks the true mean, 50.
+2. Keep n fixed and reduce z to 1. The same sample means now have narrower intervals, so fewer intervals contain 50. The theoretical coverage falls from about 95% to 68%.
+3. Restore z = 1.96 and increase n to 96. The margin halves. This illustration reuses the same standardized sample offsets, so the same rows miss; newly collected samples would not preserve that exact pattern.
 
 ## Real-life examples
 
-- **A typical study.** 24 measurements with z = 1.96: the interval spans about ±4, and roughly 95% of labs running this exact method would catch the truth.
-- **The bigger study.** 100 measurements, same z: the interval tightens to ±2 — quadruple the work for half the width.
-- **The overconfident lab.** z = 1 looks impressively tight, but the forest shows the price: about a third of such intervals simply miss.
+1. **24 measurements.** With known population standard deviation 10 and z = 1.96, the margin is about 4.00. A sample mean of 52 would give roughly [48, 56].
+2. **100 measurements.** With the same z, the margin is 1.96. The sample size is slightly more than four times 24, so the margin is slightly less than half the first example's.
+3. **A lower confidence level.** With n = 24 and z = 1, the margin is about 2.04 and the theoretical coverage about 68.3%. This is a different confidence level, not a dishonest interval if reported accurately.
 
 ## Test yourself
 
-1. Dial z to the famous 1.96 — the 95% setting used in most published science.
-2. Make the whole interval no wider than 2 units — you will need both a big n and a modest z.
-3. Run a 99%-style interval (z = 2.58) with a small sample, n at most 50 — wide, but honest.
+1. Set z close to 1.96, giving approximately 95% theoretical coverage.
+2. Make the full interval width, 2z × 10/√n, at most 2 units.
+3. Set z close to 2.58 and keep n at most 50, giving approximately 99% theoretical coverage.
 
 ## Intuition
 
-Thirty labs measure the same thing — the dashed line, which none of them can see. Each lab's sample mean lands a little off, so each publishes a range around what it measured: "the truth is probably in here". The forest on screen is all thirty claims at once, and the red ones are the labs that missed — not because they cheated, but because their sample happened to land far from the truth.
+Suppose many groups measure the same quantity. Even with the same method and sample size, their sample means differ. An interval puts a margin around each mean to express sampling uncertainty. In this illustration the true mean is known to us, so we can check which intervals contain it. In an actual estimation problem, that value is unknown.
 
-That is what "95% confident" really means: nothing about any single interval, which either contains the truth or does not, but a promise about the method — run this procedure a hundred times, and about 95 of the hundred intervals will catch the truth. Slide z down and you trade honesty for the appearance of precision; slide n up and you buy genuine precision, because the scatter of sample means itself shrinks as $\dfrac{\sigma}{\sqrt{n}}$.
+A 95% confidence method contains the fixed true mean in about 95% of repeated samples under its assumptions. It does not promise exactly 95 successes in every 100 samples. Increasing z widens the intervals and raises coverage; increasing n narrows them at the same theoretical coverage because sample means also become less variable. The display uses 30 fixed illustrative rows, not newly sampled experiments on every slider change.
 
 ## Formal
 
-A sample of $n$ measurements from a population with spread $\sigma$ has a sample mean whose own scatter — the standard error — is $\dfrac{\sigma}{\sqrt{n}}$. The interval $m \pm z\dfrac{\sigma}{\sqrt{n}}$ therefore catches the true mean $\mu$ exactly when $m$ happens to land within $z$ standard errors of it.
+For n independent observations from a normal population with known standard deviation σ, the sample mean m has standard error $\sigma/\sqrt{n}$. A confidence interval is $m\pm z\sigma/\sqrt{n}$, where z sets how many standard errors the margin spans on each side.
 
-Because sample means are approximately normally distributed, the catch rate is the normal probability of landing within $z$ standard errors: about 68% for $z = 1$, 95% for $z = 1.96$, and 99% for $z = 2.58$ — the coverage readout tracks it live.
+Its coverage is $P(|m-\mu|\le z\sigma/\sqrt{n})=\Phi(z)-\Phi(-z)$, where μ is the fixed population mean and Φ is the standard normal cumulative distribution. Choosing $z=1.96$ gives about 95% coverage; this refers to the sampling procedure, not a probability distribution assigned to μ after observing one interval.
 
 ## Advanced
 
-In real studies $\sigma$ is itself estimated from the sample, which widens the honest interval slightly — Student's t distribution replaces $z$ for small $n$, converging to the normal as $n$ grows. The sharper trap is interpretational: once a specific interval is printed, the truth is either in it or not, so "there is a 95% chance the truth is in this interval" is strictly wrong under this framework — the 95% belongs to the factory, not to the single product. Bayesian credible intervals are the construction that makes the tempting sentence true, at the price of stating prior beliefs.
+The known-σ normal model makes this coverage calculation exact apart from the rounded critical value. For nonnormal populations, a normal approximation may be useful with sufficiently large samples. If σ is unknown and estimated from independent normal observations, use a t interval with n−1 degrees of freedom. Confidence intervals for a mean are not prediction intervals for individual future observations.
 
 ## Derivation
 
-1. Averages are steadier than individuals: means of $n$ measurements scatter around the truth $\mu$ with spread $\dfrac{\sigma}{\sqrt{n}}$, the standard error.
-2. An interval reaching $z$ standard errors each side of $m$ catches $\mu$ precisely when the sample mean landed within $z$ standard errors of it.
-3. The normal curve puts about 95% of sample means within $1.96$ standard errors — so that choice of $z$ catches the truth in about 95 of every 100 runs.
+1. Independent observations have a sample mean with standard deviation σ/√n. Under the normal model, that mean is normally distributed.
+2. The interval contains μ exactly when its centre m lies within z standard errors of μ.
+3. The standard normal probability between −1.96 and 1.96 is about 0.95, giving the method its approximate 95% coverage.
 
 ## Real world
 
-### Polls and election forecasts
-Every "52% ± 3" headline is one tree from this forest — and about one poll in twenty misses honestly, with nobody at fault.
+### Estimating an average
 
-### Drug trials
-Regulators read the interval, not the point estimate: a treatment effect of "+4, interval −1 to +9" has not yet shown it works at all.
+An interval for mean package weight describes uncertainty about the process average. It does not say that 95% of individual packages have weights inside that interval.
 
-### Quality control
-Factories track interval estimates of weights and doses; an interval drifting off target triggers recalibration before customers notice.
+### Comparing estimates
 
-### Physics constants
-Measurements of fundamental constants are published as value ± uncertainty, and new experiments are judged by whether forests of them overlap.
+Report the sample size, method and confidence level with an interval. A narrow interval does not account for systematic measurement error or biased sampling unless the method explicitly addresses them.

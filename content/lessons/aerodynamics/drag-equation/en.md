@@ -25,15 +25,15 @@ charts:
 
 ## Try it
 
-1. Picture a cyclist riding upright at 8 m/s (about 29 km/h) into a headwind.
-2. Drag the speed point «speed v» to the right, toward highway speed. The tangent line — the extra force needed for one more m/s — gets steeper and steeper.
-3. Now shrink «frontal area A», as if the cyclist tucked down low. The whole curve drops, even at the same speed.
+1. Set «drag coefficient C_D» to 0.9, «frontal area A» to 0.5 m² and «speed v» to 8 m/s: a cyclist riding upright at about 29 km/h. The readout shows f(x) = 17.64, the drag in newtons.
+2. Drag the speed point «speed v» to the right, to 16 m/s. Twice the speed gives four times the drag: 70.56 N. The tangent line — the extra force needed for one more m/s — gets steeper too: its slope doubles from 4.41 to 8.82.
+3. Now lower «drag coefficient C_D» to 0.45, as if the cyclist tucked down low. The whole curve drops: at the same 16 m/s the drag is 35.28 N.
 
 ## Real-life examples
 
 1. **An upright cyclist commuting.** Moving at 8 m/s with a frontal area of 0.5 m² and a drag coefficient of 0.9, they push against about 18 N of drag — most of a cyclist's effort at that speed.
 2. **A family car cruising on the motorway.** At 30 m/s (108 km/h) with a smooth 0.3 drag coefficient and a 2.2 m² frontal area, the car fights about 364 N of drag.
-3. **A skydiver in free fall.** Falling belly-down at 50 m/s with a drag coefficient near 1.0 and a 0.7 m² frontal area, they push against over 1000 N — nearly their own body weight.
+3. **A skydiver in free fall.** Falling belly-down at 50 m/s with a drag coefficient near 1.0 and a 0.7 m² frontal area, they push against over 1000 N — about the weight of a heavy skydiver with all their gear.
 
 ## Test yourself
 
@@ -45,7 +45,7 @@ charts:
 
 Picture a cyclist riding upright at 8 m/s into a headwind. Drag «speed v» to the right, toward highway speed, and watch the tangent line on the curve: it is the extra force needed for one more m/s, and it gets steeper and steeper as you move right. Near very low speed the tangent is almost flat, but at highway speed a small further increase costs a large extra push — exactly why fuel economy falls off a cliff on the motorway.
 
-Now shrink «drag coefficient Cd» or «frontal area A», as if the cyclist tucked down low: the whole curve drops but keeps its parabola shape, because both act as a plain multiplier on the speed term. A cyclist tucking in shrinks the area; a streamlined car body shrinks the drag coefficient — both attack that multiplier rather than fighting the speed-squared growth itself.
+Now shrink «drag coefficient C_D» or «frontal area A», as if the cyclist tucked down low: the whole curve drops but keeps its parabola shape, because both act as a plain multiplier on the speed term. A cyclist tucking in shrinks the area; a streamlined car body shrinks the drag coefficient — both attack that multiplier rather than fighting the speed-squared growth itself.
 
 ## Formal
 
@@ -66,13 +66,17 @@ Total drag splits into parasitic drag (skin friction + form drag, both $\propto 
 ## Real world
 
 ### Cycling and running
+
 Above a jog, air drag dominates human effort; aero bars and skin suits chase small $C_D A$ reductions because the payoff compounds with $v^2$.
 
 ### Vehicle fuel economy
+
 Cruising fuel consumption rises roughly with $v^3$ once drag dominates rolling resistance — the reason motorway mpg drops sharply above about 100 km/h.
 
 ### Skydiving
+
 A skydiver’s belly-down posture maximises $A$ and $C_D$ to slow their terminal velocity for a safer, more controllable fall.
 
 ### Wind loads on structures
+
 Engineers size a building or bridge’s wind bracing using exactly this $v^2$ law, with hurricane-speed winds in mind.

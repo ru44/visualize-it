@@ -1,71 +1,71 @@
 ---
 title: Specific heat and latent heat
-summary: >-
-  Boiling water for pasta always plateaus at 100°C no matter how high you
-  turn the stove — extra heat just makes it boil faster, not hotter — and
-  that flat stretch is where all the added energy goes into changing the
-  water's state instead of its temperature.
+summary: 'Follow ice heated at constant power, and work out why its temperature rises in some stages and stays fixed while it melts.'
 parameters:
-  P: heating power P
-  m: mass of ice/water m
-  x: time t
+  P: 'P — heating power'
+  m: 'm — mass of ice, then water'
+  x: 'x — time since heating began'
 variables:
-  - heat energy delivered
-  - specific heat capacity — energy to raise 1 kg by 1°C
-  - latent heat — energy to change phase with no temperature change
-  - mass being heated
+  - 'heat supplied, in joules'
+  - 'specific heat capacity: energy needed to warm 1 kg by 1 °C'
+  - 'specific latent heat: energy needed to change the state of 1 kg at a fixed temperature'
+  - 'mass being heated'
 ---
 
 ## Try it
 
-1. Drag the time point x forward. Follow the temperature: it climbs, then holds flat, then climbs again.
-2. Raise the slider "heating power P". Every stage compresses — the same total energy now arrives faster.
-3. Raise the slider "mass m" instead. Every stage stretches out — there is more material to heat.
+1. Set P = 1000 W and m = 0.5 kg. Move x from 0 to 21 s: the temperature rises from −20 °C to 0 °C.
+2. Move x on to 188 s. The temperature stays at 0 °C for about 167 s while the ice melts. After that it rises again and reaches 100 °C near 397 s.
+3. Keep m = 0.5 kg and raise P to 2000 W. Every stage takes half as long, and melting now lasts about 84 s. Doubling m instead would double every time.
 
 ## Real-life examples
 
-1. **A kettle boiling water.** At high power (P = 2000 W) heating half a kilogram of water (m = 0.5 kg), the temperature races through each stage in well under a minute.
-2. **A campfire slowly melting snow.** At low power (P = 300 W) melting a kilogram of snow (m = 1 kg), the flat melting stage alone can take nearly twenty minutes.
-3. **A microwave defrosting ice.** At moderate power (P = 800 W) on 1.5 kg of ice, the long flat plateau at 0°C is why defrosting takes far longer than reheating already-liquid food.
+1. **A strong heater and a small mass.** With P = 2000 W and m = 0.5 kg, the ice reaches 0 °C after about 10 s, melting takes about 84 s, and the water reaches 100 °C at about 199 s.
+2. **A weak heater and a larger mass.** With P = 300 W and m = 1 kg, warming the ice takes 139 s and melting needs about 1113 s, nearly 19 minutes. The graph ends at 450 s, so it shows the warming stage and the start of the flat stage.
+3. **A medium heater and 1.5 kg of ice.** With P = 800 W and m = 1.5 kg, the ice reaches 0 °C at about 78 s. Melting takes about 626 s, so the rest of the graph is flat at 0 °C.
 
 ## Test yourself
 
-1. Get all the ice to melt and the water to reach boiling in under 200 seconds total.
-2. Make the melting plateau (ice turning to water) last close to 60 seconds.
-3. Heat a mass of 1.5 kg so the whole warming-melting-boiling process takes longer than 300 seconds.
+1. Take the ice from −20 °C to water at 100 °C in less than 200 s.
+2. Make the melting stage last close to 60 s.
+3. Set m = 1.5 kg and reach 100 °C in less than 700 s.
 
 ## Intuition
 
-Put a pot of ice on a hot stove and watch a thermometer in it: the temperature climbs steadily at first, then suddenly holds dead flat at 0°C even though the burner keeps blasting heat — that flat stretch is the ice melting. On screen, drag the time point, labelled $x$ in seconds, forward along the curve and follow the temperature the same way: it climbs, flattens at 0°C, climbs again through liquid water, then flattens once more at 100°C for boiling.
+Take 0.5 kg of ice from a freezer at −20 °C and heat it with a 1000 W heater, which supplies 1000 J every second. Warming 1 kg of ice by 1 °C takes about 2090 J, so warming 0.5 kg by 20 °C takes 0.5 × 2090 × 20 = 20 900 J, about 21 s. Then the thermometer stops at 0 °C although the heater is still on. The energy now frees the molecules from their fixed places in the ice crystal, and it does not make them move faster. Melting 1 kg of ice takes 334 000 J, so 0.5 kg takes 167 000 J, or 167 s. That is eight times as long as the warming stage. The energy that warms 1 kg by 1 °C is called the specific heat capacity. The energy that changes the state of 1 kg without changing its temperature is called the specific latent heat.
 
-All the energy delivered during a flat stretch goes into breaking the ice's crystal structure or turning liquid into vapour — none of it raises the temperature, which is why a rolling boil never gets hotter than 100°C no matter how high you turn the stove. Raise the slider "heating power P" and every stage compresses sideways, because the same total energy now arrives faster; raise the slider "mass m" instead and every stage stretches out, because there is simply more ice and water to heat and melt.
+On the graph, the horizontal position is time in seconds and the height is temperature in °C. The first sloping part is ice warming, the flat part at 0 °C is melting, and the second sloping part is liquid water warming. The water's line is about half as steep as the ice's, because 1 kg of water needs about 4186 J for each degree, twice what ice needs. At 100 °C the line becomes flat again as boiling begins; the model does not follow boiling to its end. A larger P shortens every stage in the same proportion, because the same energy arrives sooner. A larger m lengthens every stage. Neither one changes the temperatures of the flat parts. The 3D view is a schematic of particles that vibrate in place in the solid and move about freely afterwards.
 
 ## Formal
 
-While no phase change is occurring, $Q = mc\Delta T$: heat delivered is proportional to mass, specific heat capacity, and temperature rise, so $T$ rises linearly in time for constant power.
+While the state does not change, heat Q changes the temperature according to $Q=mc\Delta T$. Here m is the mass in kg, c the specific heat capacity in J/(kg·°C), and $\Delta T$ the change in temperature. A heater of constant power P supplies $Q=Pt$ in time t, so the temperature rises at the steady rate $P/(mc)$.
 
-During a phase change, $Q = mL$ with temperature held fixed: the plateau length in time is $mL/P$, proportional to mass and latent heat, inversely proportional to power.
+During a change of state at fixed pressure, $Q=mL$ and the temperature stays fixed; L is the specific latent heat in J/kg. The stage lasts $t=mL/P$. The model uses c = 2090 J/(kg·°C) for ice, c = 4186 J/(kg·°C) for water and L = 334 000 J/kg for melting. It assumes that all the heater's energy enters the sample and that the sample has one temperature throughout.
 
 ## Advanced
 
-The energy absorbed during melting or boiling is really a change in enthalpy at constant pressure, $\Delta H = mL$, and at the molecular level it goes entirely into breaking intermolecular bonds (hydrogen bonds, for water) rather than increasing average kinetic energy — which is exactly why temperature, a measure of average kinetic energy, does not move during the plateau.
+Boiling needs far more energy than melting: about 2 260 000 J for each kilogram of water at 100 °C. Boiling away 0.5 kg with 1000 W would take about 1130 s, longer than all the earlier stages together. The boiling temperature is 100 °C only at a pressure of 1 atm, and it is lower at high altitude. At constant pressure, the heat absorbed equals the change in enthalpy. During a change of state the energy raises the potential energy of the molecules' attractions, and their average kinetic energy, which temperature measures, stays the same.
 
 ## Derivation
 
-1. Time to warm ice from −20°C to 0°C at constant power P.
-2. Time added by the melting plateau: energy goes into latent heat, not temperature.
-3. Time added heating liquid water up to boiling; the curve is built by chaining these three stages plus the plateaus.
+1. Warming the ice by 20 °C needs mass times specific heat of ice times temperature change. Dividing by the power gives the time when melting begins.
+2. Melting needs mass times latent heat at a fixed 0 °C, so the flat stage ends that much later.
+3. Warming the liquid by 100 °C uses water's larger specific heat. Its time is added to the two earlier stages.
 
 ## Real world
 
 ### Cooking
-Water stays at a rolling 100°C boil no matter how high the stove is turned — extra heat just boils it faster, it never gets hotter at sea level.
 
-### Ice packs
-Ice at 0°C absorbs a large amount of heat while melting without warming up, making it far more effective at cooling than the same mass of cold water.
+Water boiling in an open pot stays near 100 °C at sea level. A stronger flame boils it away faster and does not make it hotter.
 
-### Climate moderation
-Oceans have a high specific heat capacity, so coastal climates change temperature more slowly than inland regions for the same energy input.
+### Ice in drinks
+
+Ice at 0 °C absorbs 334 000 J per kilogram as it melts, before it warms at all. It cools a drink much more than the same mass of water at 0 °C.
+
+### Coastal climates
+
+Water has a high specific heat capacity, so the sea warms and cools slowly. Places near the coast have smaller temperature swings than places far inland.
 
 ### Steam burns
-Steam at 100°C carries far more energy than boiling water at the same temperature, because of the latent heat released when it condenses on skin.
+
+Steam at 100 °C releases its latent heat when it condenses on skin, so it transfers far more energy than the same mass of water at 100 °C.

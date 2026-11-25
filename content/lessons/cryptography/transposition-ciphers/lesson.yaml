@@ -3,16 +3,16 @@ subject: cryptography
 difficulty: beginner
 equation: T = 2(r - 1)
 concepts:
-- cryptography
-- transposition
-- permutation
-- rail-fence
+  - cryptography
+  - transposition
+  - permutation
+  - rail-fence
 prerequisites:
-- caesar-cipher
+  - caesar-cipher
 related:
-- vigenere-cipher
-- frequency-analysis
-- block-ciphers-and-aes
+  - vigenere-cipher
+  - frequency-analysis
+  - block-ciphers-and-aes
 visualization:
   type: transposition-cipher
   options:
@@ -22,19 +22,19 @@ parameters:
     min: 2
     max: 6
     step: 1
-    value: 3
+    value: 4
   pos:
     min: 0
     max: 17
     step: 1
     value: 0
 variables:
-- r
-- T
+  - r
+  - T
 derivation:
-- T = 2(r - 1)
-- '\text{letter } i \text{ rides the zigzag: down } r \text{ rails, back up, and again}'
-- c = \text{row 1, then row 2, } \dots \text{ (the same letters, new places)}
+  - T = 2(r - 1)
+  - '\text{letter } i \text{ rides the zigzag: down } r \text{ rails, back up, and again}'
+  - c = \text{row 1, then row 2, } \dots \text{ (the same letters, new places)}
 charts: []
 primary: rails
 presets:

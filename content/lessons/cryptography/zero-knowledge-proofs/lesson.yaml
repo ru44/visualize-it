@@ -3,15 +3,15 @@ subject: cryptography
 difficulty: university
 equation: q = \left(\frac{1}{2}\right)^{n}
 concepts:
-- zero-knowledge
-- interactive-proof
-- soundness
-- privacy
+  - zero-knowledge
+  - interactive-proof
+  - soundness
+  - privacy
 prerequisites:
-- one-way-functions
+  - one-way-functions
 related:
-- digital-signatures
-- hash-functions
+  - digital-signatures
+  - hash-functions
 visualization:
   type: zero-knowledge
   options: {}
@@ -27,12 +27,12 @@ parameters:
     step: 1
     value: 0
 variables:
-- q
-- n
+  - q
+  - n
 derivation:
-- \text{a bluffer survives one round with probability } \frac{1}{2}
-- q = \left(\frac{1}{2}\right)^{n} \text{ after } n \text{ independent rounds}
-- n = 20 \Rightarrow q = \frac{1}{1048576}, \text{ and the verifier still learns nothing}
+  - \text{a bluffer survives one round with probability } \frac{1}{2}
+  - q = \left(\frac{1}{2}\right)^{n} \text{ after } n \text{ independent rounds}
+  - n = 20 \Rightarrow q = \frac{1}{1048576}, \text{ and the verifier still learns nothing}
 charts: []
 primary: rounds
 presets:

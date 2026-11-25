@@ -17,9 +17,9 @@ variables:
 
 ## Try it
 
-1. Watch the curve start as one smooth sine wave.
-2. Drag $N$ up. More sine terms get added, and the curve sprouts flatter tops and sharper shoulders, chasing a square wave.
-3. Now drag $x$ to move along the curve. Notice the small overshoot that lingers near the jumps even at the highest $N$ — the Gibbs ripple.
+1. Set $N$ to 1 and $x$ to 1.57. The curve is one smooth sine wave, and f(x) reads 1.2732 at its peak.
+2. Drag $N$ up one step at a time to 11. More sine terms get added, and the curve sprouts flatter tops and sharper shoulders, chasing a square wave. At $x$ = 1.57, f(x) hops to 0.8488, 1.1035, 0.9216, 1.0631 and 0.9473 — above and below the flat top of 1, closer each time.
+3. Keep $N$ at 11 and drag $x$ to 0.26, just right of the jump at 0. f(x) reads 1.1813: a small overshoot that lingers near the jumps even at the highest $N$ — the Gibbs ripple.
 
 ## Real-life examples
 
@@ -31,11 +31,11 @@ variables:
 
 1. Using just the fundamental (N = 1), find $x$ where the wave reaches its peak value of about 1.27.
 2. Push $N$ to the maximum (11) and find an $x$ close to a jump where the curve overshoots above 1.1, even though the flat top it's chasing is only 1.
-3. Find an $x$ near a quarter of the way through the cycle where the partial sum lands close to the flat-top value of 1.
+3. Put $x$ a quarter of the way through the cycle (about 1.57) and raise $N$ until the partial sum lands within 0.08 of the flat-top value of 1.
 
 ## Intuition
 
-A digital clock pulse that looks like a clean square wave on an oscilloscope is really built from many pure sine waves added together, one at the base frequency and others at odd multiples of it. The curve on screen starts as a single sine wave; drag $N$, the highest harmonic included, up and it sprouts sharper shoulders and flatter tops with each added term, chasing the square-wave shape.
+A digital clock pulse that looks like a clean square wave on an oscilloscope is really built from many pure sine waves added together, one at the base frequency and others at odd multiples of it. At $N = 1$ the curve on screen is a single sine wave; drag $N$, the highest harmonic included, up and it sprouts sharper shoulders and flatter tops with each added term, chasing the square-wave shape.
 
 Only odd harmonics show up in this sum, and each one is weaker than the last: the third harmonic stands a third as tall as the first, the fifth a fifth as tall, and so on. Even at $N = 11$ the corners still overshoot and ring a little before settling — drag $x$ near a jump to see it — the famous Gibbs ripple, which never shrinks below about 9% of the jump's height, no matter how many harmonics you add.
 
@@ -53,18 +53,22 @@ The partial sums never converge uniformly at a jump: the overshoot approaches a 
 
 1. Each harmonic's amplitude comes from matching the square wave against $\sin(kx)$; odd harmonics survive, even ones cancel exactly.
 2. The full, infinite series reconstructs the square wave exactly everywhere except at the jumps themselves.
-3. Keeping only the first $N$ terms gives the partial sum plotted here — the visible ripple is what got left out.
+3. Keeping only the harmonics up to $N$ gives the partial sum plotted here — the visible ripple is what got left out.
 
 ## Real world
 
 ### Sound and timbre
+
 A violin and a flute playing the same note share a fundamental frequency but differ in their harmonic amplitudes; that mix of harmonics is what makes them sound different.
 
 ### JPEG and MP3 compression
+
 Both formats break a signal into frequency components and keep only the ones a viewer or listener can actually perceive, discarding the rest — a direct descendant of this decomposition.
 
 ### Digital clock signals
+
 A "square" clock pulse in a circuit is really a fundamental plus a ladder of odd harmonics; a real wire filters out the highest ones, which is one reason fast clock edges round off.
 
 ### Gibbs ripple in filters
+
 Any filter built by truncating a frequency response inherits the same overshoot near sharp edges, which is why filter designers taper their coefficients instead of cutting them off sharply.

@@ -11,21 +11,21 @@ variables:
 
 ## Try it
 
-1. Set cols to 1. The table highlights only the amount column, and only that column's bytes count toward the query.
-2. Raise cols to 2. The product column lights up too, and the bytes scanned grow to match.
-3. Push cols to 3. Every column, city, product and amount, is read, exactly like SELECT *.
+1. Set cols to 1. The table highlights only the amount column. The readouts show row storage reads 24 GB, column storage reads 8 GB, and less data read is 67 %.
+2. Raise cols to 2. The city column lights up too. Column storage now reads 16 GB, and less data read drops to 33 %.
+3. Push cols to 3. Every column, amount, city and product, is read, exactly like SELECT *. Both kinds of storage read 24 GB, so less data read is 0 %.
 
 ## Real-life examples
 
 1. **Just the total.** cols at 1: a query that only needs SUM(amount) reads a single column.
-2. **Product and amount.** cols at 2: a report on revenue per product reads two columns.
+2. **City and amount.** cols at 2: a report on revenue per city reads two columns.
 3. **Everything.** cols at 3: SELECT * reads every column in the table, city, product and amount.
 
 ## Test yourself
 
-1. Set cols so that only one column is read.
-2. Set cols so that every column is read.
-3. Set cols to exactly 2.
+1. Lower cols until column storage reads less than row storage.
+2. Set cols so that the "less data read" readout shows 67 %.
+3. Set cols so that column storage reads exactly 16 GB.
 
 ## Intuition
 
@@ -35,7 +35,7 @@ This matters because BigQuery, and warehouses like it, charge you by the number 
 
 ## Formal
 
-A row-oriented table stores every column of a row together, so reading any single column still means reading all k columns of every row: $B = k \cdot 10^9$ bytes for a billion rows with k columns each. A column-oriented table instead stores each column on its own, so a query that names c columns only scans $B = c \cdot 10^9$ bytes.
+A row-oriented table stores every column of a row together, so reading any single column still means reading all k columns of every row: $B = k \cdot 10^9$ bytes for a billion rows with k columns each, if every value takes one byte (the picture counts 8 bytes per value, so its readings are 8 times larger). A column-oriented table instead stores each column on its own, so a query that names c columns only scans $B = c \cdot 10^9$ bytes.
 
 Since a query almost always needs fewer columns than the table has, $c < k$ in practice, and a column store scans strictly fewer bytes than a row store for the same query — the saving grows with how wide the table is and how few columns the query actually names.
 
@@ -52,13 +52,17 @@ Storing a column on its own also compresses far better than mixing types row by 
 ## Real world
 
 ### BigQuery pricing
+
 BigQuery's on-demand pricing charges per byte scanned, so writing SELECT city, amount instead of SELECT * can cut a bill dramatically.
 
 ### Data warehouses
+
 Snowflake, Redshift and BigQuery all store data by column for the same reason: most analytics queries touch a handful of columns out of dozens.
 
 ### Analytics dashboards
+
 A dashboard that refreshes every hour usually reads the same few columns repeatedly, so column storage keeps it fast and cheap.
 
 ### Machine learning pipelines
+
 A training job often needs only a handful of feature columns out of a table with hundreds, so column storage lets it skip the rest entirely.

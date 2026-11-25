@@ -3,13 +3,13 @@ subject: electricity
 difficulty: high-school
 equation: Q = CV
 concepts:
-- capacitance
-- charge
-- energy
+  - capacitance
+  - charge
+  - energy
 prerequisites:
-- voltage-and-energy
+  - voltage-and-energy
 related:
-- rc-circuit
+  - rc-circuit
 visualization:
   type: capacitors
   options: {}
@@ -31,14 +31,14 @@ parameters:
     value: 300
     unit: V
 variables:
-- Q
-- C
-- V
-- E
+  - Q
+  - C
+  - V
+  - E
 derivation:
-- Q = CV
-- E = \frac{V}{2}Q
-- E = \frac{1}{2}CV^2
+  - Q = CV
+  - E = \frac{V}{2}Q
+  - E = \frac{1}{2}CV^2
 presets:
   - C: 150
     V: 300

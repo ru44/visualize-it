@@ -15,9 +15,9 @@ variables:
 
 ## Try it
 
-1. Watch the defaults: honest visitors stream through door 443 to your website, while the scanner bot's probes rain against brick and bounce — the wall is doing its job invisibly.
-2. Open ssh and raise R to 300: within moments the bot finds door 22 answering, and the red counter starts — a stranger is now guessing passwords at your remote login, around the clock.
-3. Close both doors: perfectly safe, perfectly dark — the site is unreachable too. Security is choosing which doors *earn* their opening.
+1. Watch the defaults: honest visitors stream through door 443 to your website, while the scanner bot's probes rain against brick and bounce — the wall is doing its job invisibly. The readouts show 1 door open and 144,000 probes a day.
+2. Open ssh and raise R to 300: the readouts show 2 doors open and 432,000 probes a day, the bot finds door 22 answering, and a red warning appears — a stranger is now guessing passwords at your remote login, around the clock.
+3. Close both doors: perfectly safe, perfectly dark — the site is unreachable too. Security is choosing which doors _earn_ their opening.
 
 ## Real-life examples
 
@@ -27,13 +27,13 @@ variables:
 
 ## Test yourself
 
-1. Run the healthy setup: web serving, remote login sealed.
+1. Run the healthy setup under the heaviest scan: web serving, remote login sealed, R at 500.
 2. Recreate the classic mistake: ssh open under a heavy scan — then read what the bot is doing to it.
 3. Brick everything and confirm both panels: no attack surface, and no website either.
 
 ## Intuition
 
-An address gets a packet to your machine, but a machine runs many conversations at once — so every packet also names a door number, a port: 443 for the website, 22 for remote login, 25 for mail. The port system is just apartment numbers for programs. The trouble is that the building sits on a street the whole world walks: automated scanners sweep the entire internet continuously, knocking on every door of every address, cataloguing whatever answers. They are not targeting you; they are targeting *everyone*, which includes you.
+An address gets a packet to your machine, but a machine runs many conversations at once — so every packet also names a door number, a port: 443 for the website, 22 for remote login, 25 for mail. The port system is just apartment numbers for programs. The trouble is that the building sits on a street the whole world walks: automated scanners sweep the entire internet continuously, knocking on every door of every address, cataloguing whatever answers. They are not targeting you; they are targeting _everyone_, which includes you.
 
 A firewall is the stupidest security idea that works: a wall where every door is bricked shut unless you explicitly chose otherwise. The honest visitor walks to 443 and is served. The scanner's thousand knocks hit brick and learn nothing. The whole game is the short list of exceptions — each open door is a standing promise that the program behind it can defend itself against everything the street brings, forever. Fewer promises, fewer ways in.
 
@@ -45,7 +45,7 @@ A scanner at $R$ tries per minute lands $1440\,R$ knocks a day; against brick th
 
 ## Advanced
 
-The sharpest modern refinement is who may use an open door: door 443 open *to the world* is the cost of having a public website, but door 22 open to the world is unnecessary — firewalls restrict it to the office's addresses, or brick it entirely and put SSH behind the VPN from two lessons back, so the door exists only for people already inside the sealed pipe. Beyond that lies the "zero trust" turn: assume the wall will someday be breached, and demand that every service authenticate every caller even indoors — walls as the first layer, never the only one. And the scanner's eye view is public: sites like Shodan let anyone search every answering door on the internet, which is why "nobody will find it" lasts minutes, not years.
+The sharpest modern refinement is who may use an open door: door 443 open _to the world_ is the cost of having a public website, but door 22 open to the world is unnecessary — firewalls restrict it to the office's addresses, or brick it entirely and put SSH behind the VPN from two lessons back, so the door exists only for people already inside the sealed pipe. Beyond that lies the "zero trust" turn: assume the wall will someday be breached, and demand that every service authenticate every caller even indoors — walls as the first layer, never the only one. And the scanner's eye view is public: sites like Shodan let anyone search every answering door on the internet, which is why "nobody will find it" lasts minutes, not years.
 
 ## Derivation
 
@@ -56,13 +56,17 @@ The sharpest modern refinement is who may use an open door: door 443 open *to th
 ## Real world
 
 ### Your home router
+
 It firewalls by design: nothing outside can open a conversation inward, which is why your laptop survives the open internet at all.
 
 ### Server hardening
+
 The first command on any new cloud server is enabling the firewall and allowlisting the two or three ports the machine is actually for.
 
 ### Ransomware's favourite door
-Exposed remote-desktop and SSH ports with guessable passwords remain a leading way into company networks — the sim's red counter, in real life.
+
+Exposed remote-desktop and SSH ports with guessable passwords remain a leading way into company networks — the sim's red warning, in real life.
 
 ### Game servers and port forwarding
+
 Hosting a game from home means deliberately opening one door through the router's wall — the rare case where a home network makes a promise to the street.

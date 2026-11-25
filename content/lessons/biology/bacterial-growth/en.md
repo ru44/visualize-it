@@ -16,15 +16,15 @@ variables:
 
 ## Try it
 
-1. Watch the dish near $t=0$: just the starting handful of colonies, and the counter matching them.
-2. Drag the time slider forward. The dish stays calm for most of the run, then floods — the counter rockets past what the dish can even draw.
-3. Now drag the doubling-time slider, $T$, down. The timeline's tick marks crowd together, and the same stretch of time fits many more doublings.
+1. Set the time slider to $t=0$: just the starting 10 colonies in the dish, and the counter reading 10.
+2. Drag the time slider forward. At 150 minutes, five doublings give 320 cells. At 600 minutes, twenty doublings: the counter reads 10.49 M, far past the 360 the dish can draw.
+3. Now set the time back to 120 minutes and drag the doubling-time slider, $T$, from 30 down to 10. The timeline's tick marks crowd together, and the same stretch of time fits 12 doublings instead of 4: the count jumps from 160 to about 41 k.
 
 ## Real-life examples
 
-- **E. coli in a warm broth.** Starting from just 10 cells ($N_0 = 10$) and doubling every 20 minutes ($T = 20$), the colony grows for 2 hours ($t = 120$): over six doublings, enough to pass 600 cells.
-- **Yogurt culture bacteria.** Lactobacillus starting from 20 cells ($N_0 = 20$) doubles more slowly, about every 65 minutes ($T = 65$); after over 4 hours ($t = 260$) it has still multiplied many times over.
-- **Slow soil bacteria.** A sluggish soil species starting from just 5 cells ($N_0 = 5$) and doubling only every 110 minutes ($T = 110$) still keeps climbing after over 7 hours ($t = 440$).
+- **E. coli in a warm broth.** Starting from just 10 cells ($N_0 = 10$) and doubling every 20 minutes ($T = 20$), the colony grows for 2 hours ($t = 120$): exactly six doublings, giving 640 cells.
+- **Yogurt culture bacteria.** Lactobacillus starting from 20 cells ($N_0 = 20$) doubles more slowly, about every 65 minutes ($T = 65$); after over 4 hours ($t = 260$) it has doubled four times, to 320 cells.
+- **Slow soil bacteria.** A sluggish soil species starting from just 5 cells ($N_0 = 5$) and doubling only every 110 minutes ($T = 110$) has doubled only four times after over 7 hours ($t = 440$): 80 cells.
 
 ## Test yourself
 
@@ -57,13 +57,17 @@ Real bacterial growth curves show four phases — lag, exponential, stationary, 
 ## Real world
 
 ### Food safety
+
 Bacteria left at room temperature can double every 20–30 minutes, which is why perishable food is refrigerated to slow this down.
 
 ### Lab culturing
+
 Microbiologists estimate doubling time from optical density readings to characterise how fast a strain grows.
 
 ### Infections
+
 Untreated bacterial infections can grow exponentially in the body until the immune system or antibiotics intervene.
 
 ### Antibiotic dosing
+
 Dosing schedules are timed against a pathogen’s doubling time to keep drug concentration ahead of regrowth between doses.

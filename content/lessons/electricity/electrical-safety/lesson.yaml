@@ -3,14 +3,14 @@ subject: electricity
 difficulty: beginner
 equation: I_b = \frac{V}{R_b}
 concepts:
-- fuses
-- circuit-breakers
-- earthing
-- rcd
+  - fuses
+  - circuit-breakers
+  - earthing
+  - rcd
 prerequisites:
-- ohms-law
+  - ohms-law
 related:
-- batteries-and-internal-resistance
+  - batteries-and-internal-resistance
 visualization:
   type: electrical-safety
   options: {}
@@ -26,16 +26,16 @@ parameters:
     min: 500
     max: 500000
     step: 500
-    value: 1000
+    value: 100000
     unit: Ω
 variables:
-- I_b
-- V
-- R_b
+  - I_b
+  - V
+  - R_b
 derivation:
-- I_b \propto V
-- R_b \equiv \frac{V}{I_b} \;\Rightarrow\; I_b = \frac{V}{R_b}
-- I_b > 0.03 \;\Rightarrow\; \text{the RCD trips}
+  - I_b \propto V
+  - R_b \equiv \frac{V}{I_b} \;\Rightarrow\; I_b = \frac{V}{R_b}
+  - I_b > 0.03 \;\Rightarrow\; \text{the RCD trips}
 presets:
   - V: 230
     Rb: 100000

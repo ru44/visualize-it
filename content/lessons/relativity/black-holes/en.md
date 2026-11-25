@@ -9,21 +9,21 @@ parameters:
 
 ## Try it
 
-1. Watch the blue line rise as you raise x, the black hole's mass in multiples of our Sun. The orange dot shows the radius, in kilometres, of the event horizon — the point of no return.
-2. Set x to 1, one solar mass. The dot lands under 3 km: our Sun would need to shrink to about that size to become a black hole.
-3. Push x to 20. The horizon grows past 55 km, roughly the size of a large city.
+1. Raise x, the black hole's mass in multiples of our Sun, from 1 to 2. The orange dot climbs the blue line and f(x) doubles from 2.95 to 5.9: it is the radius, in kilometres, of the event horizon — the point of no return.
+2. Set x back to 1, one solar mass. f(x) reads 2.95: our Sun would need to shrink to a ball about 3 km in radius to become a black hole.
+3. Push x to 20. f(x) reads 59: the horizon's radius is now 59 km, roughly the size of a large city.
 
 ## Real-life examples
 
-1. **The Sun as a black hole.** If our Sun (x = 1) were compressed this small, its event horizon would stretch about 3 km across.
-2. **A typical stellar black hole.** Many black holes astronomers detect form from collapsed stars around x = 10, with a horizon roughly 30 km across.
-3. **A large stellar-mass black hole.** At the top of the slider, x = 20, the horizon has grown to nearly 60 km.
+1. **The Sun as a black hole.** If our Sun (x = 1) were compressed this small, its event horizon would have a radius of about 3 km.
+2. **A typical stellar black hole.** Many black holes astronomers detect form from collapsed stars around x = 10, with a horizon radius of roughly 30 km.
+3. **A large stellar-mass black hole.** At the top of the slider, x = 20, the horizon radius has grown to nearly 60 km.
 
 ## Test yourself
 
 1. Set the mass to 10 solar masses.
-2. Find the mass whose horizon is about 50 km across.
-3. Push the horizon past 55 km.
+2. Find the mass whose horizon radius is about 50 km.
+3. Push the horizon radius past 55 km.
 
 ## Intuition
 
@@ -50,13 +50,17 @@ Nothing physical actually sits at radius $r_s$ — it is a mathematical boundary
 ## Real world
 
 ### The Event Horizon Telescope, 2019
+
 Astronomers combined radio telescopes across the whole planet to capture the first direct image of a black hole's silhouette, in the galaxy M87, confirming the size Einstein's equations predicted.
 
 ### Earth as a black hole
-If Earth's entire mass were squeezed into a black hole, its event horizon would be barely 9 millimetres across, smaller than a grape.
+
+If Earth's entire mass were squeezed into a black hole, its event horizon would have a radius of barely 9 millimetres, about the size of a grape.
 
 ### Stellar collapse
+
 When a massive star runs out of fuel, its core can collapse so completely that nothing, not even the star's own light, can stop the crush past a certain point, forming a stellar-mass black hole.
 
 ### Sagittarius A*
+
 At the centre of our own galaxy sits a black hole with a mass of about 4 million Suns, far beyond this slider's range, yet its horizon is still tiny compared with the vast orbits of stars swirling around it.

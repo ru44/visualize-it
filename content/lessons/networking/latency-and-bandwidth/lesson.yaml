@@ -3,15 +3,15 @@ subject: networking
 difficulty: beginner
 equation: T = \frac{L}{1000} + \frac{8S}{B}
 concepts:
-- latency
-- bandwidth
-- throughput
-- ping
+  - latency
+  - bandwidth
+  - throughput
+  - ping
 prerequisites:
-- routers
+  - routers
 related:
-- packet-switching
-- cdn
+  - packet-switching
+  - cdn
 visualization:
   type: latency-road
 parameters:
@@ -34,27 +34,27 @@ parameters:
     value: 100
     unit: MB
 variables:
-- T
-- L
-- B
-- S
+  - T
+  - L
+  - B
+  - S
 derivation:
-- '\text{waiting for the far end: } \frac{L}{1000} \text{ seconds, no matter the width}'
-- '\text{streaming the data: } S \text{ MB} = 8S \text{ Mb, so } \frac{8S}{B} \text{ seconds}'
-- T = \frac{L}{1000} + \frac{8S}{B}
+  - '\text{waiting for the far end: } \frac{L}{1000} \text{ seconds, no matter the width}'
+  - '\text{streaming the data: } S \text{ MB} = 8S \text{ Mb, so } \frac{8S}{B} \text{ seconds}'
+  - T = \frac{L}{1000} + \frac{8S}{B}
 charts: []
 primary: L
 presets:
-- L: 10
-  B: 500
-  S: 100
-- L: 600
-  B: 200
-  S: 100
-- L: 40
-  B: 10
-  S: 100
+  - L: 10
+    B: 500
+    S: 100
+  - L: 600
+    B: 200
+    S: 100
+  - L: 40
+    B: 10
+    S: 100
 challenges:
-- check: L <= 20 and B >= 400
-- check: L/1000 + 8*S/B <= 2 and S >= 100
-- check: L >= 500 and B >= 500
+  - check: L <= 20 and B >= 400
+  - check: L/1000 + 8*S/B <= 2 and S >= 100
+  - check: L >= 500 and B >= 500

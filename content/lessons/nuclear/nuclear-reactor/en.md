@@ -13,9 +13,9 @@ charts: []
 
 ## Try it
 
-1. Watch the red control rods and the blue water level inside the core, and the turbine spinning on the right.
-2. Drag "control rod depth" up. The rods slide deeper into the core, and the power output and the turbine slow down.
-3. Now drag "moderator amount" down toward zero instead. Even with the rods fully out, power collapses — without a moderator the chain reaction barely runs at all.
+1. Watch the red control rods and the blue water level inside the core, and the turbine spinning on the right. With the rods at 50% and the moderator at 80%, "power output" reads 40% and "electric power" reads 400 MW.
+2. Drag "control rod depth" up to 80%. The rods slide deeper into the core, the turbine slows, and the power settles at 16%, or 160 MW.
+3. Now pull the rods fully out, to 0%: power rises to 80%, 800 MW. Then drag "moderator amount" down to 5%. Even with the rods fully out, power collapses to 5%, 50 MW, and "status" reads won't sustain — without a moderator the chain reaction barely runs at all.
 
 ## Real-life examples
 
@@ -54,13 +54,17 @@ Real power reactors run on low-enriched fuel, typically about 3 to 5 percent ura
 ## Real world
 
 ### Pressurized water reactors
+
 Most power reactors use ordinary water as both coolant and moderator, so losing coolant also removes the moderator — a safety feature, since the chain reaction then weakens on its own.
 
 ### Load following
+
 Some plants adjust their control rods through the day to match power output to demand, dropping output overnight when the grid needs less electricity.
 
 ### Xenon poisoning
+
 A fission product, xenon-135, itself soaks up neutrons and briefly makes a reactor harder to restart shortly after a power change, an effect operators must plan around.
 
 ### Chernobyl and Fukushima
+
 Both disasters trace back to the same core knobs shown here: at Chernobyl a moderator design flaw let power surge instead of settle, and at Fukushima the loss of cooling, not the chain reaction itself, released the fission products' stored heat.

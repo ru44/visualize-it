@@ -20,20 +20,20 @@ charts:
 
 ## Try it
 
-1. Set temperature near 0.1 and look at the top curve, near the score-2 option: it sits close to 1, meaning the model almost always picks the single highest-scoring option.
-2. Raise temperature toward 3 and watch that top curve fall toward roughly a third, converging with the chart's other two curves below — the choice becomes almost uniform across all three options.
-3. Set temperature to 1 and compare how spread out the three curves are here with what the next-word-prediction lesson showed at its default temperature of 1 — it is the very same formula, just with three fixed scores instead of a whole vocabulary.
+1. Set temperature to 0.1 and look at the curve, the probability of the score-2 option: the f(x) readout shows 1, meaning the model almost always picks the single highest-scoring option.
+2. Raise temperature to 3 and watch that top curve fall to 0.4485, while the chart's other two curves below rise to about 0.32 and 0.23 — the three options are now much closer to an even split.
+3. Set temperature to 1: the readout shows 0.6652, and the other two curves sit at about 0.24 and 0.09. Compare how spread out the three curves are here with what the next-word-prediction lesson showed at its default temperature of 1 — it is the very same formula, just with three fixed scores instead of a whole vocabulary.
 
 ## Real-life examples
 
-1. **Balanced.** At temperature 1, the top-scoring option is favoured but far from guaranteed.
-2. **Nearly always the top choice.** Near temperature 0.15, the top curve sits almost pinned to 1.
-3. **Nearly random among the three.** Near temperature 2.8, all three curves converge close to a third each.
+1. **Balanced.** At temperature 1, the top-scoring option is favoured but far from guaranteed: it is picked with probability 0.6652, about two times in three.
+2. **Nearly always the top choice.** Near temperature 0.15, the top curve sits almost pinned to 1, at 0.9987.
+3. **Nearly random among the three.** Near temperature 2.8, the three curves draw close together: about 0.46, 0.32 and 0.22.
 
 ## Test yourself
 
 1. Push temperature near its minimum and watch the top curve pin close to 1.
-2. Push temperature near its maximum and watch all three curves converge near a third.
+2. Push temperature near its maximum and watch all three curves draw closer together.
 3. Return to temperature 1, matching the default in the next-word-prediction lesson.
 
 ## Intuition
@@ -46,7 +46,7 @@ Low temperature makes output repetitive and predictable, because the model keeps
 
 Each option $i$ has a probability $p_i(T) = \frac{\exp(s_i/T)}{\sum_j \exp(s_j/T)}$ built from its fixed score $s_i$ and the shared temperature $T$; here the three scores are $s = (2,1,0)$.
 
-Dividing every score by $T$ before exponentiating is what reshapes the distribution: a small $T$ magnifies the gap between scores before the softmax, a large $T$ shrinks that gap toward nothing, which is exactly the curves crossing in the chart as temperature rises.
+Dividing every score by $T$ before exponentiating is what reshapes the distribution: a small $T$ magnifies the gap between scores before the softmax, a large $T$ shrinks that gap toward nothing, which is exactly the curves drawing closer together as temperature rises.
 
 ## Advanced
 
@@ -61,13 +61,17 @@ In the limit $T \to 0$ the softmax becomes a hard "always pick the top score" ru
 ## Real world
 
 ### Chat assistant creativity settings
+
 Some chat apps expose a "creativity" or "temperature" slider that is literally this parameter.
 
 ### Code generation tools
+
 Coding assistants often set temperature near zero so the same prompt reliably produces the same, safest code every time.
 
 ### Creative writing tools
+
 Brainstorming and creative-writing assistants raise temperature to produce more varied, less predictable suggestions.
 
 ### Hallucination, honestly
+
 A model at any temperature is always sampling plausible-sounding text, never consulting a source of truth; hallucination is not the model "lying", it is confident sampling from a distribution that happens to be wrong, and no temperature setting fixes that on its own.

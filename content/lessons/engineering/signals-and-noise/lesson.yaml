@@ -54,7 +54,7 @@ presets:
     sigma: 6
     N: 100
 challenges:
-  - check: A/sigma < 1
+  - check: A/sigma < 0.25
   - check: A/sigma*sqrt(N) > 3
   - check: A/sigma*sqrt(N)
     target: 2

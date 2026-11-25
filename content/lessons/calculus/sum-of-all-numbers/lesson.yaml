@@ -1,7 +1,7 @@
 id: sum-of-all-numbers
 subject: calculus
 difficulty: university
-equation: '\zeta(s) = 1^{-s} + 2^{-s} + 3^{-s} + \cdots, \qquad \zeta(-1) = -\frac{1}{12}'
+equation: '\zeta(s) = 1^{-s} + 2^{-s} + 3^{-s} + \cdots\ (s>1), \qquad \zeta(-1) = -\frac{1}{12}'
 concepts:
   - divergent-series
   - zeta-function

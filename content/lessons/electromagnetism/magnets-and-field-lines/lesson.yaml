@@ -46,20 +46,20 @@ derivation:
 charts: []
 primary: r
 presets:
-- m1: 0.3
-  m2: 0.3
-  r: 0.15
-- m1: 2
-  m2: 2
-  r: 0.015
-- m1: 0.5
-  m2: 0.5
-  r: 0.04
+  - m1: 0.3
+    m2: 0.3
+    r: 0.15
+  - m1: 2
+    m2: 2
+    r: 0.015
+  - m1: 0.5
+    m2: 0.5
+    r: 0.04
 challenges:
-- check: '6e-7*m1*m2/r^4'
-  target: 1
-  tol: 0.1
-- check: '2e-7*m1/r^3'
-  target: 0.01
-  tol: 0.002
-- check: 'm1 <= 0.1 and m2 <= 0.1 and 6e-7*m1*m2/r^4 > 0.2'
+  - check: '6e-7*m1*m2/r^4'
+    target: 1
+    tol: 0.1
+  - check: '2e-7*m1/r^3'
+    target: 0.01
+    tol: 0.002
+  - check: 'm1 <= 0.1 and m2 <= 0.1 and 6e-7*m1*m2/r^4 > 0.2'

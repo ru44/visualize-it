@@ -14,9 +14,9 @@ variables:
 
 ## Try it
 
-1. Drag the day slider from 0. Watch a thin crescent grow into a half-lit disc.
-2. Keep dragging to about day 15. Watch the disc become a full, glowing circle.
-3. Keep dragging toward day 29.5. Watch the disc shrink back down to dark.
+1. Drag the day slider from 0 to 7.4. A thin crescent grows into a half-lit disc, and the readout shows 50 % lit.
+2. Keep dragging to day 14.8. The disc becomes a full, glowing circle: 100 % lit.
+3. Keep dragging to day 29.5. The lit part shrinks back down to dark: 0 % lit.
 
 ## Real-life examples
 
@@ -55,13 +55,17 @@ The synodic period (29.53 days, new moon to new moon) is longer than the Moon's 
 ## Real world
 
 ### Tide tables
+
 Spring tides cluster around new and full moon, when this same geometry lines up the Sun and Moon.
 
 ### Islamic and lunar calendars
+
 Many calendars start each month at the first visible crescent after new moon, tying the calendar directly to this cycle.
 
 ### Night photography and astronomy
+
 Astronomers schedule deep-sky observations around new moon, when no moonlight washes out faint objects.
 
 ### Eclipses
+
 A solar eclipse can only happen near new moon and a lunar eclipse only near full moon, and only when the Moon's slightly tilted orbit also crosses Earth's orbital plane at that moment.

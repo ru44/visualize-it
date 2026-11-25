@@ -3,15 +3,15 @@ subject: networking
 difficulty: high-school
 equation: E = \frac{1}{1 - p}
 concepts:
-- tcp
-- udp
-- acknowledgement
-- retransmission
+  - tcp
+  - udp
+  - acknowledgement
+  - retransmission
 prerequisites:
-- packet-switching
+  - packet-switching
 related:
-- latency-and-bandwidth
-- dns
+  - latency-and-bandwidth
+  - dns
 visualization:
   type: tcp-talk
 parameters:
@@ -27,22 +27,22 @@ parameters:
     step: 1
     value: 1
 variables:
-- E
-- p
+  - E
+  - p
 derivation:
-- \text{a packet survives a try with probability } 1 - p
-- \text{tries until success average } \frac{1}{1-p}
-- p = 0.5 \Rightarrow E = 2 \text{ sends per delivered packet}
+  - \text{a packet survives a try with probability } 1 - p
+  - \text{tries until success average } \frac{1}{1-p}
+  - p = 0.5 \Rightarrow E = 2 \text{ sends per delivered packet}
 charts: []
 primary: loss
 presets:
-- loss: 10
-  ack: 1
-- loss: 10
-  ack: 0
-- loss: 40
-  ack: 1
+  - loss: 10
+    ack: 1
+  - loss: 10
+    ack: 0
+  - loss: 40
+    ack: 1
 challenges:
-- check: ack == 1 and loss >= 30
-- check: ack == 0 and loss >= 20
-- check: loss == 0
+  - check: ack == 1 and loss >= 30
+  - check: ack == 0 and loss >= 20
+  - check: loss == 0

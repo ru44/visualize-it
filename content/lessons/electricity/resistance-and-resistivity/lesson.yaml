@@ -3,14 +3,14 @@ subject: electricity
 difficulty: high-school
 equation: R = \rho\frac{L}{A}
 concepts:
-- resistance
-- resistivity
-- resistors
+  - resistance
+  - resistivity
+  - resistors
 prerequisites:
-- ohms-law
+  - ohms-law
 related:
-- kirchhoffs-laws
-- electric-power-and-energy-bills
+  - kirchhoffs-laws
+  - electric-power-and-energy-bills
 visualization:
   type: resistance-and-resistivity
   options: {}
@@ -37,14 +37,14 @@ parameters:
     step: 1
     value: 0
 variables:
-- R
-- \rho
-- L
-- A
+  - R
+  - \rho
+  - L
+  - A
 derivation:
-- R \propto L
-- R \propto \frac{1}{A}
-- R = \rho\frac{L}{A}
+  - R \propto L
+  - R \propto \frac{1}{A}
+  - R = \rho\frac{L}{A}
 presets:
   - L: 1
     A: 1

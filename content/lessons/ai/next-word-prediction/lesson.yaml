@@ -1,7 +1,7 @@
 id: next-word-prediction
 subject: ai
 difficulty: beginner
-equation: p(w \mid w_t) = \dfrac{\exp(c(w_t,w)/T)}{\sum_{w'} \exp(c(w_t,w')/T)}
+equation: p(w \mid w_t) = \dfrac{c(w_t,w)^{1/T}}{\sum_{w'} c(w_t,w')^{1/T}}
 concepts:
   - language-model
   - bigram
@@ -29,7 +29,7 @@ variables:
   - p(w \mid w_t)
 derivation:
   - c(w_t, w)
-  - p(w \mid w_t) = \dfrac{\exp(c(w_t,w)/T)}{\sum_{w'} \exp(c(w_t,w')/T)}
+  - p(w \mid w_t) = \dfrac{c(w_t,w)^{1/T}}{\sum_{w'} c(w_t,w')^{1/T}}
   - w_{t+1} \sim p(w \mid w_t)
 charts: []
 primary: temp

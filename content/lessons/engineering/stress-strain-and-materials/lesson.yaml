@@ -57,6 +57,6 @@ presets:
     Y: 15
     sigma: 8
 challenges:
-  - check: sigma < Y and E > 100
+  - check: sigma < Y and sigma > 0.8*Y and E > 100
   - check: sigma > Y and E > 100
   - check: E < 1 and sigma < Y

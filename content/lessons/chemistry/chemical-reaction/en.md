@@ -16,9 +16,9 @@ variables:
 
 ## Try it
 
-1. Drag «h2» and «o2» to set how many molecules of each are on the table.
-2. Drag «reaction progress» from 0 to 1. Watch molecules pair off two at a time and water molecules appear.
-3. Push one gas far higher than the other. The excess molecules stop reacting and pick up a dashed "excess" ring once the other runs out.
+1. Set «H₂ molecules» to 4 and «O₂ molecules» to 2. The readout says limiting reactant: exact ratio — none.
+2. Drag «reaction progress» from 0 to 1. Every O₂ molecule takes two H₂ molecules with it, and the readout shows H₂O formed: 4, with leftover H₂ 0 · O₂ 0.
+3. Now raise «H₂ molecules» to 10 and keep «O₂ molecules» at 2. Six hydrogen molecules get a dashed "excess" ring; the readout shows limiting reactant: O₂ and leftover H₂ 6 · O₂ 0.
 
 ## Real-life examples
 
@@ -34,9 +34,9 @@ variables:
 
 ## Intuition
 
-Think of a recipe that needs exactly 2 eggs for every 1 cup of flour: bring 4 eggs and 6 cups of flour, and you can only make two batches before the eggs run out, no matter how much flour is left. On screen, drag «h2» and «o2» to set how many hydrogen and oxygen molecules sit on the table, then drag «reaction progress» from 0 to 1 and watch pairs of balls vanish together while new, bent water molecules appear.
+Think of a recipe that needs exactly 2 eggs for every 1 cup of flour: bring 4 eggs and 6 cups of flour, and you can only make two batches before the eggs run out, no matter how much flour is left. On screen, drag «H₂ molecules» and «O₂ molecules» to set how many hydrogen and oxygen molecules sit on the table, then drag «reaction progress» from 0 to 1 and watch the balls leave their pairs and regroup into new, bent water molecules.
 
-Push «h2» much higher than «o2» and, once the reaction runs, the leftover hydrogen molecules pick up a dashed ring and just sit there unreacted — the oxygen ran out first and capped how much water could form. Whichever ingredient runs out first is called the limiting reactant, and it decides how much product you get, no matter how much of the other ingredient is sitting around.
+Push «H₂ molecules» much higher than «O₂ molecules» and the leftover hydrogen molecules pick up a dashed ring and just sit there unreacted — the oxygen ran out first and capped how much water could form. Whichever ingredient runs out first is called the limiting reactant, and it decides how much product you get, no matter how much of the other ingredient is sitting around.
 
 ## Formal
 
@@ -57,13 +57,17 @@ Balancing is really solving a linear system: assign unknown coefficients to each
 ## Real world
 
 ### Rocket fuel
+
 Liquid hydrogen and liquid oxygen burn in exactly this reaction to power upper-stage rocket engines.
 
 ### Fuel cells
-Run the reaction in reverse-controlled steps and you extract electrical energy instead of heat — the basis of hydrogen fuel cells.
+
+Run the same reaction in controlled steps, without a flame, and you extract electrical energy instead of heat — the basis of hydrogen fuel cells.
 
 ### Cooking and baking
+
 Recipe ratios are stoichiometry: too little of one ingredient and the rest goes to waste, exactly like a limiting reactant.
 
 ### Industrial synthesis
+
 Chemical plants deliberately feed an excess of the cheaper reactant so the expensive one is used as completely as possible.

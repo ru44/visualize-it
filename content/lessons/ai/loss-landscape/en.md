@@ -15,15 +15,15 @@ variables:
 
 ## Try it
 
-1. Drag x0 and y0 around. Watch the tangent plane tilt and the arrow point in the steepest uphill direction from wherever you stand.
-2. Walk opposite the arrow a few times by hand — each move should bring you closer to the bottom of the bowl.
-3. Land exactly on (1, -0.5), the lowest point. Notice the arrow shrinks to almost nothing: a flat gradient means you have reached a minimum.
+1. Start at x0 = 2.5, y0 = 2. The readouts show f(x, y) = 14.75, ∂f/∂x = 3 and ∂f/∂y = 10. Drag x0 and y0 around and watch the tangent plane tilt and the arrow point in the steepest uphill direction from wherever you stand.
+2. Walk opposite the arrow by hand: both slopes are positive, so lower both weights. Set x0 = 2 and y0 = 1 — the height drops from 14.75 to 5.5. Repeat, and each move brings you closer to the bottom of the bowl.
+3. Land exactly on (1, -0.5), the lowest point. Every readout shows 0 and the arrow shrinks to nothing: a zero gradient means you have reached a minimum.
 
 ## Real-life examples
 
-1. **Starting far from the bottom.** With both weights pushed out to 2.5 and 2, the surface sits high and steep, like a model whose numbers are still far from anything useful.
+1. **Starting far from the bottom.** With both weights pushed out to 2.5 and 2, the surface sits high and steep (loss 14.75), like a model whose numbers are still far from anything useful.
 2. **Sitting exactly at the minimum.** At weights (1, -0.5) the ground is level in every direction — there is nothing left here for training to fix.
-3. **On the far slope.** With weights at -2 and -2, the surface is high again, but on the opposite side of the bowl from where training started.
+3. **On the far slope.** With weights at -2 and -2, the surface is high again (loss 13.5), but on the opposite side of the bowl from where training started.
 
 ## Test yourself
 
@@ -33,15 +33,15 @@ variables:
 
 ## Intuition
 
-Picture two dials on a machine, each one a weight it can turn, and imagine every possible setting of those two dials mapped to a height on a hillside: high where the machine is very wrong, low where it works well. Turn the dials and you choose a point on that hillside, written $(x, y)$ for short. The height there has a name: $L$, the loss. Training is a hiker standing somewhere on this hillside trying to reach the lowest valley, but blindfolded — the only thing they can feel is which way is downhill right where they stand, which is exactly what the arrow on screen shows.
+Picture two dials on a machine, each one a weight it can turn, and imagine every possible setting of those two dials mapped to a height on a hillside: high where the machine is very wrong, low where it works well. Turn the dials and you choose a point on that hillside, written $(x, y)$ for short. The height there has a name: $L$, the loss. Training is a hiker standing somewhere on this hillside trying to reach the lowest valley, but blindfolded — the only thing they can feel is how the ground slopes right where they stand. The arrow on screen shows the steepest way up, so downhill is the exact opposite way.
 
-That local downhill direction is what the gradient $\nabla L$ gives, and it always points uphill, so a training step subtracts it. The learning rate $\eta$ decides the size of each stride: too small and the hike takes forever, too large and the hiker can stride straight over the valley and end up higher on the far slope.
+That arrow is the gradient $\nabla L$. It always points uphill, so a training step subtracts it. The learning rate $\eta$ decides the size of each stride: too small and the hike takes forever, too large and the hiker can stride straight over the valley and end up higher on the far slope.
 
 ## Formal
 
 For this bowl, $L(x,y) = (x-1)^2 + 2(y+0.5)^2$ and its gradient is $\nabla L = \left(\frac{\partial L}{\partial x}, \frac{\partial L}{\partial y}\right) = (2(x-1),\ 4(y+0.5))$, a vector that vanishes exactly at the minimum $(1, -0.5)$.
 
-Gradient descent repeats the update $(x,y) \gets (x,y) - \eta\,\nabla L$; because this particular bowl is convex, the same shape in every direction, this update is guaranteed to reach the bottom for any small enough $\eta$.
+Gradient descent repeats the update $(x,y) \gets (x,y) - \eta\,\nabla L$; because this particular bowl is convex, curving upward in every direction with a single lowest point, this update is guaranteed to reach the bottom for any small enough $\eta$.
 
 ## Advanced
 
@@ -56,13 +56,17 @@ Real loss landscapes for large models are nothing like this tidy bowl: they live
 ## Real world
 
 ### Training neural networks
+
 Every layer of a deep network is a set of weights being walked downhill on exactly this kind of landscape, just with vastly more dimensions.
 
 ### Engineering design
+
 Shape optimizers walk downhill on a landscape of drag or material cost to refine a car body or aircraft wing.
 
 ### Portfolio optimization
+
 Financial models walk downhill on a landscape of risk to find a mix of investments that fits a target return.
 
 ### Robotics control
+
 Robot controllers tune their parameters by walking downhill on a landscape of tracking error between the intended and actual motion.

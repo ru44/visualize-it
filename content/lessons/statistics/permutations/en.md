@@ -1,64 +1,61 @@
 ---
 title: 'Permutations: when order matters'
-summary: >-
-  Count how many different ordered lists — race results, PINs, or a lineup —
-  you can make by choosing and arranging items from a set.
+summary: 'Count ordered selections without repeating an item, such as choosing first and second place in a race.'
 parameters:
-  'n': n — items available
-  k: k — places to fill
+  n: 'n — different items available'
+  k: 'k — ordered places to fill'
 variables:
-  - how many different items you can choose from
-  - 'how many places you fill, in order'
-  - 'n factorial: n × (n−1) × … × 1, the ways to line up all n items'
+  - 'number of distinct available items'
+  - 'number of places, filled without repeating an item'
+  - 'n factorial: product of the integers from 1 to n'
 ---
 
 ## Try it
 
-1. Watch the arrangements listed below the tokens as you drag «k — places to fill».
-2. Notice (1,2) and (2,1) both appear: here order matters, like first and second place in a race.
-3. Raise «n — items available» and watch the count of arrangements grow much faster than the tokens did.
+1. Set n = 4 and k = 2. There are 12 arrangements: 4 choices for the first place, then 3 for the second.
+2. Find the arrangements with tokens 1 and 2. Reversing them gives a different arrangement because the places have different meanings.
+3. Keep n = 4 and set k = 3, then 4. Both counts are 24: after filling three places, only one item is left for the fourth. Keep k at or below n; the diagram caps it at n.
 
 ## Real-life examples
 
-1. **Race podium.** Awarding gold, silver, and bronze among 8 runners can happen in 336 different orders.
-2. **Books on a shelf.** Arranging all 5 books in a row can be done in 120 different orders.
-3. **Locker code.** Picking an ordered 3-letter code from 6 available letters, no repeats, gives 120 possible codes.
+1. **Three medals.** With 8 runners and no ties, there are 8 × 7 × 6 = 336 ways to award gold, silver and bronze.
+2. **A row of books.** Five different books have 5 × 4 × 3 × 2 × 1 = 120 orders on a shelf.
+3. **A code without repeats.** A three-letter code made from six different letters has 6 × 5 × 4 = 120 possibilities if each letter can be used only once.
 
 ## Test yourself
 
-1. Find «n — items available» and «k — places to fill» that give exactly 60 possible arrangements.
-2. Fill every place, k equal to n, and make the count of arrangements exceed 100.
-3. Leave at least 3 items unused (n − k ≥ 3), yet keep the count of arrangements under 20.
+1. Make the number of ordered selections exactly 60.
+2. Set k equal to n and make the count greater than 100.
+3. Leave at least three items unused, with fewer than 20 ordered selections.
 
 ## Intuition
 
-Look at the arrangements listed below the tokens. With «n — items available» at 4 and «k — places to fill» at 2 you get 12: any of the 4 tokens can go first, then any of the 3 that are left can go second, and 4 × 3 = 12. The pair (1,2) and the pair (2,1) both appear, because here order matters — like first and second place in a race.
+Suppose four students are choosing a speaker and a note-taker. Any student can speak. Once the speaker is chosen, three students remain for the other role. Each of the four first choices has three possible partners, giving 12 assignments. Swapping the two students changes who does each job.
 
-Raise «k — places to fill» by one and every existing arrangement sprouts n − k new endings, so the count grows very fast. Set «k — places to fill» equal to «n — items available» and you are lining up every item — that count is written n factorial.
+This is an ordered selection without repetition, called a permutation. The available choices decrease by one after each selection. The count does not always increase when you add a place: filling the very last place adds no choice. The screen lists at most 60 arrangements and omits the list for very large counts; the total still includes them all.
 
 ## Formal
 
-$P(n,k) = n(n-1)\cdots(n-k+1) = \dfrac{n!}{(n-k)!}$, with $0! = 1$ so that $P(n,n) = n!$.
+For n distinct items and an integer k with $0\le k\le n$, the number of ordered selections without repetition is $P(n,k)=n(n-1)\cdots(n-k+1)=\frac{n!}{(n-k)!}$. The symbol n! means the product of the integers from 1 to n.
 
-Permutations count injective maps from a $k$-element set into an $n$-element set.
+We define $0!=1$. Selecting nothing gives one empty selection, so $P(n,0)=1$; arranging everything gives $P(n,n)=n!$. If repetition is allowed instead, each place has n choices and the count is $n^k$.
 
 ## Advanced
 
-Stirling’s approximation $n! \sim \sqrt{2\pi n}\,(n/e)^n$ shows how explosively factorials grow: $\log n!$ is of order $n \log n$, which is why brute-force search over orderings becomes hopeless beyond a few dozen items.
+A useful check is P(n,k+1) = P(n,k)(n−k). This relation explains both the rapid growth while many items remain and the equal counts for k = n−1 and k = n. If items are indistinguishable or some orders are forbidden, the basic formula needs adjustment.
 
 ## Derivation
 
-1. Multiply the choices for each place: the pool shrinks by one after every pick.
-2. Write the product as a ratio of factorials: the factors from $n-k$ downward cancel.
-3. The compact formula. For $k = n$ the denominator is $0! = 1$.
+1. Fill the places in sequence. There are n choices, then n−1, continuing until k places are filled.
+2. Multiply by the missing factors in both numerator and denominator to express the product using factorials.
+3. Cancel those extra factors. The convention 0! = 1 also covers choosing all n items.
 
 ## Real world
 
-### Passwords and PINs
-A 4-digit PIN with no repeated digit has P(10,4) = 5040 possibilities; with repeats allowed it is 10⁴ = 10 000.
+### Assigned roles
 
-### Race podiums
-Gold, silver and bronze among 8 runners can be awarded in P(8,3) = 336 ways.
+Choosing a chair, a secretary and a treasurer differs from choosing a three-person group. Exchanging two people changes the assignment.
 
-### Scheduling
-Ordering 10 tasks gives 10! ≈ 3.6 million schedules — which is why planners rely on heuristics.
+### Codes
+
+Check the repetition rule before counting. A four-digit code with leading zero allowed has 5040 possibilities without repeated digits, but 10000 with repeats. This count alone does not establish how secure a code system is.

@@ -3,14 +3,14 @@ subject: cosmos
 difficulty: high-school
 equation: t = 10\,M^{-2.5}
 concepts:
-- stellar evolution
-- main-sequence lifetime
-- supernova
+  - stellar evolution
+  - main-sequence lifetime
+  - supernova
 prerequisites: []
 related:
-- dark-matter-rotation-curves
-- quasars
-- cosmic-microwave-background
+  - dark-matter-rotation-curves
+  - quasars
+  - cosmic-microwave-background
 visualization:
   type: stellar-evolution
   options: {}
@@ -31,21 +31,21 @@ parameters:
     step: 0.01
     value: 0.5
 variables:
-- t
-- M
-- L
+  - t
+  - M
+  - L
 derivation:
-- L = M^{3.5}
-- t = \frac{M}{L}
-- t = 10\,M^{-2.5}
+  - L = M^{3.5}
+  - t = \frac{M}{L}
+  - t = 10\,M^{-2.5}
 presets:
-- mass: 0.12
-  age: 0.5
-- mass: 1
-  age: 0.46
-- mass: 18
-  age: 1.09
+  - mass: 0.12
+    age: 0.5
+  - mass: 1
+    age: 0.46
+  - mass: 18
+    age: 1.09
 challenges:
-- check: mass > 20
-- check: mass < 0.5
-- check: age > 1.1 and mass >= 8 and mass < 20
+  - check: mass > 20
+  - check: mass < 0.5
+  - check: age > 1.12 and mass >= 8 and mass < 20

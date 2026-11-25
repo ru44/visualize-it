@@ -11,8 +11,8 @@ variables:
 
 ## Try it
 
-1. Look at the yellow row of boxes at the top: each group of 8 boxes is one letter of HELLO written as bits, 0s and 1s.
-2. Drag the slider called «key». The red row of bits changes completely — that is the random key, one byte per letter.
+1. Look at the blue row of boxes at the top: each group of 8 boxes is one letter of HELLO written as bits, 0s and 1s.
+2. Set the slider called «key» to 42, then to 512. The red row of bits changes completely — that is the random key, one byte per letter. The key readout changes from 0F 79 FF 73 DE to 7C 7B B4 65 CD.
 3. Watch the green row at the bottom. It always spells HELLO again, no matter where you leave the slider, because XOR-ing with the same key twice undoes itself.
 
 ## Real-life examples
@@ -24,14 +24,14 @@ variables:
 ## Test yourself
 
 1. Slide «key» back to 42, the value used in the first example above.
-2. Push «key» to 900 or higher, and notice the orange ciphertext row looks totally different even though the yellow message HELLO never changed.
+2. Push «key» to 900 or higher, and notice the orange ciphertext row looks totally different even though the blue message HELLO never changed.
 3. Pull «key» below 10. A key that small would be one of the first ten numbers a computer tries when guessing.
 
 ## Intuition
 
-Picture writing HELLO on a strip of paper, then a friend rolling dice to pick five secret numbers, one per letter, and adding each number to its letter. On screen the top yellow row is HELLO written out as five groups of 8 tiny boxes, each box a 0 or a 1. Drag the slider called «key» and the red row directly below it reshuffles into a new set of bits — that is the secret key, a full random byte for every letter. The orange row underneath is what someone intercepting the message would actually see: move the slider and it changes completely, hiding which of many possible messages it could be.
+Picture writing HELLO on a strip of paper, then a friend rolling dice to pick five secret numbers, one per letter, and adding each number to its letter. On screen the top blue row is HELLO written out as five groups of 8 tiny boxes, each box a 0 or a 1. Drag the slider called «key» and the red row directly below it reshuffles into a new set of bits — that is the secret key, a full random byte for every letter. The orange row underneath is what someone intercepting the message would actually see: move the slider and it changes completely, hiding which of many possible messages it could be.
 
-The green row at the bottom always spells HELLO again, because combining the same key twice cancels it out — decrypting is just encrypting a second time with the same key. Written as one rule it says $C \oplus K = M$: take the orange ciphertext row, combine it once more with the red key row above it, and you land back on the yellow message you started with.
+The green row at the bottom always spells HELLO again, because combining the same key twice cancels it out — decrypting is just encrypting a second time with the same key. Written as one rule it says $C \oplus K = M$: take the orange ciphertext row, combine it once more with the red key row above it, and you land back on the blue message you started with.
 
 ## Formal
 
@@ -52,13 +52,17 @@ Claude Shannon proved in 1949 that the one-time pad gives perfect secrecy: for e
 ## Real world
 
 ### Cold War spy tradecraft
+
 Intelligence agencies issued physical one-time pads on tear-off paper, destroying each page immediately after a single message was sent.
 
 ### Military field ciphers
+
 Numbers stations still broadcast strings of digits over shortwave radio, meant to be combined with a pad only the receiving agent holds.
 
 ### Stream ciphers today
+
 Modern stream ciphers such as those inside Wi-Fi and phone calls generate a long pseudorandom key stream and XOR it with the data, trading true randomness for a key short enough to share.
 
 ### Quantum key distribution
+
 Quantum key distribution exists specifically to hand two distant parties a fresh, truly random, shared key — exactly what a real one-time pad requires.

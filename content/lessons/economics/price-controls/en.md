@@ -21,9 +21,9 @@ variables:
 
 ## Try it
 
-1. Watch the two lines cross. That crossing point is the market's natural equilibrium price and quantity.
-2. Drag price (the price fixed by law) below the crossing point. A gap opens between the lines: a shortage, more is demanded than supplied.
-3. Now drag price above the crossing point instead. The gap flips: a surplus, more is supplied than demanded.
+1. Watch the two lines cross. That crossing point is the market's natural equilibrium: the readouts show equilibrium price 40 and equilibrium quantity 50.
+2. Set $P_0$ (the price fixed by law) to 28, below the crossing point. A gap opens between the lines: quantity demanded 65, quantity supplied 30, a shortage of 35.
+3. Now set $P_0$ to 52, above the crossing point. The gap flips: quantity supplied 70, quantity demanded 35, a surplus of 35.
 
 ## Real-life examples
 
@@ -74,17 +74,21 @@ employment is smaller than simple theory predicts.
 ## Real world
 
 ### Rent control
+
 Cities that cap rents below market level often see long waiting lists and
 landlords reluctant to maintain or offer units.
 
 ### Minimum wage
+
 A wage floor above the market rate raises pay for those still employed but
 is debated for its effect on low-skill hiring.
 
 ### Fuel price caps
+
 Governments capping fuel prices during shortages often see queues at
 petrol stations instead of prices rising.
 
 ### Wartime rationing
+
 Price ceilings on staple foods during shortages led to ration cards
 allocating the scarce supply directly.

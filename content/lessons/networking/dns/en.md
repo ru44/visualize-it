@@ -16,9 +16,9 @@ variables:
 
 ## Try it
 
-1. With cache at 0, drag step from 0 to 4 and read each speech bubble: the resolver asks root, root points at the registry, the registry points at the site's own server, and only that last server knows the address.
-2. Flip cache to 1 and drag step again: the whole upper chain greys out — the resolver answers from memory in a single round trip, and the stopwatch shows a quarter of the cost.
-3. Raise rtt to 200 and run a cold lookup once more: 800 ms before the page can even *begin* — this is the lag you feel on a site nobody near you has visited lately.
+1. With cache at 0, drag step from 0 to 4 and read each speech bubble: the resolver asks root, root points at the registry, the registry points at the site's own server, and only that last server knows the address. At step 4 the readouts show 4 round trips and 200 ms.
+2. Flip cache to 1 and drag step again: the whole upper chain greys out — the resolver answers from memory in a single round trip, and the elapsed time reads 50 ms, a quarter of the cost.
+3. Set cache back to 0, raise rtt to 200 and drag step to 4 once more: 800 ms before the page can even _begin_ — this is the lag you feel on a site nobody near you has visited lately.
 
 ## Real-life examples
 
@@ -57,13 +57,17 @@ DNS answers were born unsigned, and a forged answer is a perfect trap: you typed
 ## Real world
 
 ### The first click on any site
+
 That odd pause before an unfamiliar site reacts is often the cold chain running — browsers even "prefetch" DNS for links you might click.
 
 ### Changing hosting
+
 Moving a site to a new server is one record change at the authoritative name server; the move ripples out as caches expire, TTL by TTL.
 
 ### Outages that look like the internet dying
+
 When a major DNS provider fails, thousands of healthy sites become unreachable at once — the servers are fine, but their names stopped resolving.
 
 ### Blocking and filtering
+
 School filters, corporate policies and national blocks are mostly resolvers that answer selected names with silence or a warning page.

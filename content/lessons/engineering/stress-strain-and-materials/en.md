@@ -10,7 +10,7 @@ parameters:
   sigma: σ — the stress you apply
 variables:
   - "σ — the stress: the pulling force spread over the material's cross-section"
-  - "ε — the strain: how much the material has stretched, as a fraction of its original length"
+  - 'ε — the strain: how much the material has stretched, as a fraction of its original length'
   - E — Young's modulus, how stiff the material is while it's still elastic
   - Y — the yield stress, where the material stops springing all the way back
   - E_p — the plastic hardening stiffness, how much stress still rises for extra strain past yield
@@ -19,9 +19,9 @@ variables:
 
 ## Try it
 
-1. Drag $\sigma$ (applied stress) up slowly from zero with $E$ and $Y$ at their steel defaults. Watch the strain climb in a dead straight line, then bend and flatten once $\sigma$ passes $Y$.
-2. Now drop $E$ far down, toward rubber's stiffness. The same small stress now produces a huge strain — and the material stays fully elastic across a much wider range of $\sigma$.
-3. With steel-like $E$ again, push $\sigma$ well past $Y$ and watch the readouts: some of that strain is now permanent — it will not fully disappear even if $\sigma$ drops back to zero.
+1. Drag $\sigma$ (applied stress) up slowly from zero with $E$ and $Y$ at their steel defaults (200 GPa and 250 MPa). The strain climbs in a dead straight line: 0.05% at 100 MPa, 0.125% at 250 MPa. Go on to 300 MPa, past $Y$: the curve bends and flattens, the strain jumps to 0.625% and the state reads plastic.
+2. Set $\sigma$ back to 100 MPa and drop $E$ far down, to rubber's 0.05 GPa. The same stress now produces a huge strain, 200% instead of 0.05% — and the state still reads elastic, so it would all spring back.
+3. Set $E$ back to 200 GPa, push $\sigma$ well past $Y$, to 400 MPa, and watch the readouts: the strain is 1.625%, and 1.425% of it is now permanent — it will not disappear even if $\sigma$ drops back to zero.
 
 ## Real-life examples
 
@@ -31,7 +31,7 @@ variables:
 
 ## Test yourself
 
-1. Find a stiff, steel-like material ($E$ above 100 GPa) with $\sigma$ still below $Y$, so it stays fully elastic.
+1. Load a stiff, steel-like material ($E$ above 100 GPa) close to its limit: $\sigma$ above 80% of $Y$ but still below $Y$, so it stays fully elastic.
 2. Find a stiff, steel-like material with $\sigma$ pushed past $Y$, so it takes a permanent set.
 3. Find a soft, rubber-like material ($E$ under 1 GPa) with $\sigma$ still below $Y$, so it stretches a lot but still springs back.
 
@@ -60,13 +60,17 @@ Real materials rarely have as sharp a corner at $Y$ as this simplified model dra
 ## Real world
 
 ### Steel bolts and structural fasteners
+
 Engineers deliberately keep working stresses well under $Y$ so every bolt stays in the fully elastic, fully recoverable region for its whole working life.
 
 ### Car crumple zones
+
 A car's front structure is designed to pass its yield point on purpose in a crash, absorbing the collision's energy as permanent, plastic bending instead of transmitting it straight to the passengers.
 
 ### Bent paperclips and coat hangers
+
 Bend a paperclip past its elastic limit and it stays bent — a simple, everyday demonstration of the exact plastic region this lesson models, right down to the permanent set that remains after you let go.
 
 ### Rubber seals and bands
+
 Gaskets, O-rings and rubber bands are chosen specifically for their huge elastic range, so they can stretch a great deal under everyday handling and still return to their original shape instead of taking a permanent set.

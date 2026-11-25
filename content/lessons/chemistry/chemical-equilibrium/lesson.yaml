@@ -78,7 +78,7 @@ presets:
     kr: 0.6
 challenges:
   - check: kf / kr
-    target: 3
+    target: 4
   - check: A0*(kr + kf*exp(-(kf+kr)*x))/(kf+kr)
     target: 0.3
   - check: kf < kr and A0*(kr + kf*exp(-(kf+kr)*x))/(kf+kr) > 0.8*A0

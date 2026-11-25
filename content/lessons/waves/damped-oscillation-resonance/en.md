@@ -1,20 +1,17 @@
 ---
 title: Damped oscillation and resonance
-summary: >-
-  A swing pushed once loses a little height on every pass and eventually
-  stops — but pushed at just the right rhythm instead, it can climb far
-  higher than any single push, and this lesson shows both effects together.
+summary: 'Separate two questions: how a free oscillation fades, and how strongly a repeatedly driven oscillator responds.'
 parameters:
-  A: initial amplitude A
-  g: damping rate γ
-  w: oscillation angular frequency ω
-  x: time t
-  F: driving force amplitude F
-  w0: natural frequency ω0
+  A: 'A — initial displacement in the free plot'
+  g: 'γ — envelope decay rate'
+  w: 'ω — free-plot angular frequency / selected drive frequency'
+  x: 'x — time t'
+  F: 'F — driving force per unit mass'
+  w0: 'ω₀ — natural frequency of the driven model'
 variables:
-  - damping rate — how fast the envelope decays
-  - angular frequency of the free oscillation (main plot)
-  - natural frequency and driving amplitude used in the resonance chart
+  - 'rate of exponential amplitude decay'
+  - 'angular frequency chosen for the free curve and the drive'
+  - 'natural angular frequency and driving force per unit mass in the response model'
 charts:
   - title: 'Resonance: response amplitude vs driving frequency'
     xLabel: driving frequency ω (rad/s)
@@ -25,54 +22,50 @@ charts:
 
 ## Try it
 
-1. Watch the curve. It swings up and down while shrinking toward zero, like a bell that rings and then fades.
-2. Raise the slider "damping rate γ" toward 1. The swings now die out almost immediately.
-3. Lower γ back toward 0. The swings barely fade at all — they ring on and on, like a struck tuning fork.
+1. In the main plot, set A = 3, γ = 0.2 and ω = 3. The horizontal coordinate x is time. Move x to inspect displacement and tangent slope at different instants.
+2. Raise γ to 0.9. The envelope falls to about 41% of its initial value after 1 s; it has not become zero. Lower γ to 0.06 to see a slower decay.
+3. In the response chart, set ω₀ = 3, F = 2 and γ = 0.2. Move ω near 3 rad/s to move the chart's marker near the peak. Here ω selects driving frequency; x still selects time for the main plot and 3D view.
 
 ## Real-life examples
 
-1. **A guitar string.** A plucked string (amplitude A = 1.5, damping rate γ = 0.06 per second) rings for a long time, because so little energy leaks out with each vibration.
-2. **A playground swing.** Pushed once and let go (A = 3, γ = 0.3 per second), a swing rocks a few times before friction and air resistance bring it to a stop.
-3. **A car driving over a pothole.** The suspension (A = 2.5, γ = 0.9 per second) is built to stop bouncing within about a second, so the ride feels smooth again quickly.
+1. **Slow decay.** With A = 1.5, γ = 0.06 and ω = 5, the envelope takes about 16.7 s to fall to 1/e of its starting value—beyond the main plot's 12 s window.
+2. **Moderate decay.** With A = 3, γ = 0.3 and ω = 1.5, that time is about 3.33 s. The oscillation period is about 4.19 s.
+3. **Faster decay.** With A = 2.5, γ = 0.9 and ω = 3, that time is about 1.11 s. These are model parameters, not measured specifications for a car suspension.
 
 ## Test yourself
 
-1. Make the swings die out almost immediately: set the damping rate γ to at least 0.9 per second.
-2. Make the oscillation rock back and forth at 4.5 radians per second.
-3. Drive the system at its own natural rhythm: bring the frequency slider x within 0.3 rad/s of the natural frequency ω0.
+1. Set γ to at least 0.9 per second for faster envelope decay.
+2. Set angular frequency ω to 4.5 rad/s.
+3. Bring driving frequency ω within 0.3 rad/s of ω₀. Use ω, not the time control x; this is near resonance when damping is small.
 
 ## Intuition
 
-Push a swing once and let go: each arc is a little lower than the one before, until it stops. The blue curve on screen shows exactly that pattern over time, in seconds along the bottom. It starts at a height of 3 and rocks back and forth while shrinking inside an invisible boundary. Drag the orange point along the curve and watch the short tangent line: it shows how fast the swing is moving at that exact instant. Raise the slider called "damping rate $\gamma$" — how quickly each swing shrinks — from 0.2 toward 0.9, and the same swing now dies out in about a second instead of ten.
+A damped free motion loses amplitude over time. The main plot multiplies a cosine by a shrinking exponential. The cosine supplies the repeated changes of direction, while the exponential sets a decreasing bound on displacement. The tangent measures displacement change per second. At t = 0 this particular curve already has a nonzero velocity, so it is not a release from rest.
 
-Now imagine pushing that same swing over and over, trying different rhythms to see which one builds the highest arc. The second graph plots exactly that: how strongly the system responds, against how fast you push it. Pushing close to the swing's own natural rhythm, $\omega_0$ (its natural frequency, here 3 radians per second), makes the response shoot up far higher than pushing at any other pace — this sudden peak is called resonance. Make $\gamma$ small on the first graph and the peak on the second graph turns tall and narrow, so only one precise rhythm gets a big response. Make $\gamma$ large instead and the peak flattens out, so almost any rhythm works about as well.
+The smaller chart asks a different question: after repeated sinusoidal driving has settled, how large is the response at each driving frequency? With weak damping, a narrow range near the natural frequency produces a large response. These are two demonstrations with shared controls, not automatically the free and driven motion of one identical oscillator. In 3D the spring shows the driven steady response; its visible amplitude is capped, and the support movement is schematic.
 
 ## Formal
 
-Free damped oscillation: $\ddot x + 2\gamma\dot x + \omega_0^2 x = 0$ has solution $x(t)=Ae^{-\gamma t}\cos(\omega t)$ (underdamped case, $\gamma<\omega_0$).
+The main plot is $q(t)=Ae^{-\gamma t}\cos(\omega t)$ with $t=x$. Its envelope is $Ae^{-\gamma t}$ and its decay time is $\tau=1/\gamma$. Its initial velocity is $q'(0)=-\gamma A$. For this free curve, the corresponding undamped natural frequency is $\sqrt{\omega^2+\gamma^2}$, not necessarily the separate ω₀ control.
 
-Driven steady-state amplitude: $X(\omega) = F/\sqrt{(\omega_0^2-\omega^2)^2 + (2\gamma\omega)^2}$, maximised near $\omega \approx \omega_0$ — sharper and taller the smaller $\gamma$ is.
+For the driven model $q''+2\gamma q'+\omega_0^2q=F\cos(\Omega t)$, steady amplitude is $X(\Omega)=F/\sqrt{(\omega_0^2-\Omega^2)^2+(2\gamma\Omega)^2}$. F is force per unit mass, and the ω control selects Ω. The positive-frequency amplitude peak is $\Omega_{peak}=\sqrt{\omega_0^2-2\gamma^2}$ when $\omega_0^2>2\gamma^2$; otherwise the largest response is at zero frequency.
 
 ## Advanced
 
-The resonance peak's width is set by $\gamma$: the "quality factor" $Q = \omega_0/2\gamma$ measures how sharply peaked and long-ringing the resonance is, connecting the time-domain decay envelope seen in the main plot directly to the frequency-domain sharpness seen in the chart — the same $\gamma$ governs both, one of the clearest examples of a time-frequency uncertainty trade-off in physics.
+The derivation below describes a free underdamped oscillator, with damped frequency determined by its natural frequency and damping rate. The main plot instead allows damped frequency and damping to be selected independently. For weak damping, $Q=\omega_0/(2\gamma)$ describes a narrow, strong resonance. Large damping need not leave a resonance peak at a positive frequency. The response chart samples a finite number of frequencies, so a very narrow peak can be under-resolved.
 
 ## Derivation
 
-1. Add a damping (friction) term proportional to velocity to the harmonic oscillator equation.
-2. Try $x = e^{\lambda t}$; the characteristic equation gives complex roots $\lambda=-\gamma\pm i\omega$ when $\gamma<\omega_0$.
-3. Rewrite the sum of sine and cosine as a single decaying cosine with amplitude $A$ and phase $\varphi$.
+1. Add velocity-proportional damping to the free oscillator equation, with no periodic driving force.
+2. Solve the characteristic equation in the underdamped case; the oscillation frequency is smaller than the undamped natural frequency.
+3. Combine sine and cosine into a phase-shifted cosine inside the decaying exponential envelope.
 
 ## Real world
 
-### Bridges
-The Tacoma Narrows collapse is a famous case of wind-driven oscillation approaching a structure's resonant frequency.
+### A fading vibration
 
-### Radio tuning
-A radio's tuning circuit is a resonant LC oscillator selecting one station's frequency out of many.
+A struck object can lose vibration energy to its surroundings. A damped oscillator is a useful approximation for an isolated vibration mode.
 
-### Playground swings
-Pumping a swing at its natural frequency builds up amplitude far more effectively than any other rhythm.
+### Driven systems
 
-### Shock absorbers
-Vehicle suspensions are deliberately damped to avoid resonant bouncing over bumpy, periodic road surfaces.
+Periodic forcing can produce a strong response near a system's natural frequency. The response depends on damping as well as forcing strength; a large vibration is not explained by frequency alone.

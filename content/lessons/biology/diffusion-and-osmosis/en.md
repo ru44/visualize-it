@@ -21,9 +21,9 @@ variables:
 
 ## Try it
 
-1. Watch the particles bounce across the membrane at random — some already crossing left to right and back again.
-2. Drag "particles on the left" far above "particles on the right." More crossings now happen left-to-right than right-to-left, simply because more particles start out on that side.
-3. Raise membrane permeability. Crossings happen more often on both sides at once, and the two sides even out faster.
+1. The start has 150 particles on the left and 20 on the right. Watch them bounce across the membrane at random — some already crossing left to right and back again.
+2. Set "particles on the left" to 200 and "particles on the right" to 0. Crossings now happen left-to-right far more than right-to-left, simply because the particles start out on that side, and the two counts drift toward about 100 each.
+3. Raise membrane permeability to 100%. Crossings happen more often on both sides at once, and the two sides even out faster.
 
 ## Real-life examples
 
@@ -62,13 +62,17 @@ Osmosis is diffusion of water specifically, driven by a solute gradient the wate
 ## Real world
 
 ### Cells in salt water
+
 A red blood cell in seawater loses water by osmosis and shrivels; in pure water it swells and can burst.
 
 ### Kidney function
+
 Nephrons rely on concentration gradients across membranes to reclaim water and solutes from urine.
 
 ### Plant turgor
+
 Water entering plant cells by osmosis presses the cell membrane against the rigid wall, keeping the plant upright.
 
 ### Gas exchange in lungs
+
 Oxygen and carbon dioxide diffuse across the thin membrane of alveoli, each moving down its own concentration gradient.

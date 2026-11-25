@@ -11,7 +11,7 @@ parameters:
 ## Try it
 
 1. Watch the blue curve dip downward near the middle — it is the depth of the dent a star of mass M makes in the sheet, and the orange dot marks that depth at your chosen distance x.
-2. Raise M. The dip deepens and the orange dot drops further down, the way a heavier bowling ball sinks deeper into a trampoline.
+2. Keep x = 5 and raise M from 5 to 10. The dip deepens and f(x) drops from −0.98 to −1.96, the way a heavier bowling ball sinks deeper into a trampoline.
 3. Switch to the 3D view and drag x outward. The planet's orbit widens and it circles more slowly, the same relationship the 2D curve is showing you.
 
 ## Real-life examples
@@ -51,13 +51,17 @@ In full general relativity the sheet analogy breaks down: real spacetime is four
 ## Real world
 
 ### Orbits as rolling, not pulling
+
 Planets stay in orbit the same way a marble circles the inside of a bowl — gravity curves the space they move through rather than reaching out and tugging on them.
 
 ### Gravitational lensing
-Light passing near a massive star follows the curved space around it, bending its path enough that astronomers can see galaxies hidden directly behind other galaxies.
+
+Light passing near a massive galaxy follows the curved space around it, bending its path enough that astronomers can see galaxies hidden directly behind other galaxies.
 
 ### GPS satellites
+
 Because the depth of the dip changes with height, satellite clocks tick at a very slightly different rate from clocks on the ground, an effect engineers must correct for every day.
 
 ### The limits of the rubber sheet
+
 The rubber-sheet picture only shows space bending, drawn as if gravity pulled the sheet "downward" — but real spacetime has no such extra direction, and much of gravity's effect actually comes from the curving of time, which the sheet cannot show at all.

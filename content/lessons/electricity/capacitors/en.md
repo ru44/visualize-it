@@ -17,9 +17,9 @@ charts: []
 
 ## Try it
 
-1. Raise «voltage V». «Q = CV» climbs in a straight line — twice the voltage, twice the stored charge.
-2. Raise «voltage V» again and watch «E». It climbs far faster than the charge does, because energy depends on voltage squared.
-3. Raise «capacitance C» instead, keeping «voltage V» fixed. Both «Q» and «E» climb in a straight line this time — capacitance alone scales them evenly.
+1. Set «capacitance C» to 150 µF and raise «voltage V» from 100 V to 200 V. «Q = CV» doubles from 15 mC to 30 mC — twice the voltage, twice the stored charge.
+2. Repeat the same change and watch «E». It rises from 0.75 J to 3 J, four times as much, because energy depends on voltage squared.
+3. Keep «voltage V» at 200 V and raise «capacitance C» from 150 µF to 300 µF. This time «Q» and «E» both double, to 60 mC and 6 J — capacitance scales them evenly.
 
 ## Real-life examples
 
@@ -58,13 +58,17 @@ Real capacitors reach useful capacitances — microfarads, not picofarads — ma
 ## Real world
 
 ### Camera flashes
+
 A flash charges its capacitor slowly, over a second or two, through a small current from the battery, then discharges nearly all of it in under a millisecond through the flash tube — a burst of power the battery alone could never deliver directly.
 
 ### Power supply smoothing
+
 Capacitors placed across a DC power supply's output soak up small ripples, keeping the voltage steady even as the current drawn by the rest of the circuit changes moment to moment.
 
 ### Touchscreens
+
 Capacitive touchscreens measure the tiny change in capacitance a finger causes at each point on the glass, since a finger's own conductivity briefly adds itself to the local plate area.
 
 ### Defibrillators
+
 A medical defibrillator charges a large capacitor over several seconds and then discharges it through the chest in a fraction of a second, delivering far more instantaneous power than the battery inside it could supply on its own.

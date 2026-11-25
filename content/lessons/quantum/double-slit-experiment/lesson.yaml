@@ -64,7 +64,7 @@ presets:
     rate: 100
 challenges:
   - check: lam/(2.5*d)
-    target: 0.5
+    target: 0.533
     tol: 0.02
   - check: detector == 1
   - check: lam/(2.5*d) < 0.15 and detector == 0

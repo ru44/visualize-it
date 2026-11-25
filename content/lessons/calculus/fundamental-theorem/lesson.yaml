@@ -51,7 +51,7 @@ charts:
       - 10
     marker: b
     series:
-      - -2*cos(x) + 0.5*x + 2
+      - -2*cos(x) + 0.5*x + 2*cos(a) - 0.5*a
 primary: b
 presets:
   - { a: 0, b: 3 }

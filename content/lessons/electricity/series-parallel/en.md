@@ -19,15 +19,15 @@ variables:
 
 ## Try it
 
-1. Tap the diagram to select series mode. Watch the same dots flow through both resistors, one after another.
-2. Tap again for parallel mode. Watch the dots split at the junction into two separate streams.
-3. Raise "resistance R1". In parallel mode its branch gets sparser; in series mode the whole loop slows down.
+1. Start in series mode with V = 12 V, R1 = 20 Ω and R2 = 60 Ω. The same dots flow through both resistors, one after another. R_total reads 80 Ω and I_total reads 0.15 A.
+2. Tap the diagram for parallel mode. The dots split at the junction into two separate streams. R_total drops to 15 Ω and I_total rises to 0.8 A.
+3. Raise "resistance R1". In parallel mode only the dots in its own branch slow down; in series mode the whole loop slows down.
 
 ## Real-life examples
 
 1. **Old-style string lights (series).** Wired one bulb after another (mode = series, R1 = 20 Ω, R2 = 60 Ω, V = 12 V), a single broken bulb once broke the whole string of lights.
 2. **Household wall outlets (parallel).** The same two resistors wired side-by-side instead (mode = parallel, R1 = 20 Ω, R2 = 60 Ω, V = 12 V) let each appliance work independently, seeing the full 12 V regardless of the others.
-3. **A voltage-divider light sensor (series).** A fixed 30 Ω resistor in series with a 10 Ω sensor (V = 9 V) creates a voltage across the sensor that a circuit can read to detect changes in light or temperature.
+3. **A voltage-divider light sensor (series).** A fixed 30 Ω resistor in series with a 10 Ω sensor (V = 9 V) creates 2.25 V across the sensor, a voltage that a circuit can read to detect changes in light or temperature.
 
 ## Test yourself
 
@@ -37,9 +37,9 @@ variables:
 
 ## Intuition
 
-Old-style Christmas lights were wired one bulb after another in a single loop: unscrew any one bulb and the whole string goes dark, because there is only one path for the current and it just got broken. Tap the diagram on screen to select series mode and watch the moving dots: in series there is only one path, so both resistors, $R_1$ and $R_2$, carry exactly the same dots at the same speed — the same current flows through everything in the loop, one after another.
+Old-style Christmas lights were wired one bulb after another in a single loop: unscrew any one bulb and the whole string goes dark, because there is only one path for the current and it just got broken. The diagram on screen starts in series mode. Watch the moving dots: in series there is only one path, so both resistors, $R_1$ and $R_2$, carry exactly the same dots at the same speed — the same current flows through everything in the loop, one after another.
 
-Now tap the diagram again to flip to parallel mode, like the wall outlets in a room: each one connects straight across the same two wires, so unplugging one lamp does nothing to the others. Watch the dots split at the junction: the branch with the smaller resistance gets denser, faster-moving dots, because it offers less opposition and draws more current, while both resistors now sit directly across the full battery voltage $V$ instead of sharing it.
+Now tap the diagram again to flip to parallel mode, like the wall outlets in a room: each one connects straight across the same two wires, so unplugging one lamp does nothing to the others. Watch the dots split at the junction: the branch with the smaller resistance gets faster-moving dots, because it offers less opposition and draws more current, while both resistors now sit directly across the full battery voltage $V$ instead of sharing it.
 
 ## Formal
 
@@ -60,13 +60,17 @@ The voltage divider $V_2 = V\dfrac{R_2}{R_1+R_2}$ and current divider $I_1 = I\d
 ## Real world
 
 ### Household wiring
+
 Outlets are wired in parallel so each appliance sees the full mains voltage and works independently of the others.
 
 ### Old-style string lights
+
 Wired in series, one broken bulb once broke the whole string — a classic demonstration of why series is fragile.
 
 ### Voltage-divider sensors
+
 A fixed resistor in series with a variable one (thermistor, photoresistor) creates a voltage that tracks temperature or light.
 
 ### Battery packs
+
 Cells in series add voltage; cells in parallel add capacity — pack designers combine both.

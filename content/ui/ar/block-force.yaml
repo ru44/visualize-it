@@ -1,0 +1,5 @@
+block.force: 'محصلة القوة F'
+block.mass: 'الكتلة m'
+block.acceleration: 'التسارع a = F/m'
+block.velocity: 'السرعة المتجهة v'
+block.time: 'الزمن t'

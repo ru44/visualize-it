@@ -1,68 +1,66 @@
 ---
 title: Absolute value inequalities
-summary: >-
-  Find every point within a set distance of a target — the idea behind
-  manufacturing tolerances, fever alarms, and geofences.
+summary: 'Find all inputs whose distance from a target is smaller than a chosen limit.'
 parameters:
-  c: center c
-  r: radius r
-  x: x (drag to find the boundary)
+  c: 'target c'
+  r: 'distance limit r'
+  x: 'test input x'
 variables:
-  - the center of the allowed interval
-  - the allowed distance from the center
-  - a test point
+  - 'target at the centre of the interval'
+  - 'strict distance limit'
+  - 'input being tested'
 ---
 
 ## Try it
 
-1. Drag the point labelled x back and forth under the V-shaped curve.
-2. Watch where the curve dips below the horizontal axis — that stretch is every x within the allowed distance of the target.
-3. Raise the "radius r" slider and watch that dipped stretch widen on both sides at once.
+1. Set c to 2 and r to 0.3. Compare x = 2 with x = 2.2. Both have a negative plotted output, so both satisfy the strict distance limit.
+2. Set x to 2.3. The output is zero: this is the boundary, excluded by the strict inequality.
+3. Increase r to 1. The interval between c minus r and c plus r widens, while its centre stays at 2.
 
 ## Real-life examples
 
-1. **Bolt manufacturing tolerance.** A factory accepts a bolt only if its length lands within 0.3 mm (radius r) of a 2 mm target mark (center c). Anything further off gets rejected.
-2. **Fever check.** A digital thermometer sounds an alarm when a reading strays more than 1 °C (radius r) from the healthy baseline at 0 (center c).
-3. **Delivery robot geofence.** A warehouse robot must stay within 5 units (radius r) of its charging dock at position -4 (center c) on the floor map.
+1. **An illustrative size tolerance.** A target of 2 mm and a strict error limit of 0.3 mm accept lengths greater than 1.7 and less than 2.3 mm. This example excludes the endpoints.
+2. **Deviation from a reference.** With c = 0 and r = 1, accepted deviations lie strictly between -1 and 1. Zero is the reference deviation, not a body-temperature reading.
+3. **Position on a track.** With c = -4 and r = 5, the allowed positions are greater than -9 and less than 1 on a one-dimensional track.
 
 ## Test yourself
 
-1. Move the point x onto the exact edge of the dipped region, where the curve touches the axis.
-2. Make the accepted range exactly 10 units wide, from edge to edge.
-3. Move the point x to a spot exactly 3 units outside the accepted range.
+1. Put x on either boundary, where the plotted output is zero.
+2. Make the interval width 10.
+3. Put x three units beyond either boundary, so the plotted output is 3.
 
 ## Intuition
 
-A factory accepts a bolt only if its length lands within 0.3 mm of a 2 mm target mark; anything further off gets thrown out. The picture shows this test as a V-shaped curve, drawn from $|x-c|-r$, that dips down and touches bottom exactly at the target. Drag the point x sideways along the curve: everywhere it sits below the horizontal axis is a length the factory would accept. The two spots where the curve crosses that axis mark the edges of the accepted range.
+Suppose a part should measure 2 mm, with an error smaller than 0.3 mm. A measurement of 2.2 is 0.2 away from the target, so it passes. A measurement of 1.6 is 0.4 away, so it fails. We care about the size of the difference, not its sign.
 
-The slider labelled center c sets that target mark, and radius r sets how far off a part may still be. Raise r and the V drops lower, so the accepted stretch below the axis widens on both sides at once — a looser tolerance always lets more lengths through. Move c instead and the whole V slides sideways, target and accepted range together, without changing how wide that range is.
+Absolute value gives that distance. Subtracting the permitted distance makes the plotted output negative for an accepted input, zero at a boundary, and positive outside. The V's horizontal position sets the target; lowering the V by increasing r widens the accepted interval.
 
 ## Formal
 
-$|x - c| < r$ (for $r > 0$) means $x$ lies within $r$ of $c$: $c - r < x < c + r$.
+For r positive, $|x-c|<r$ is equivalent to $c-r<x<c+r$. The endpoints are excluded because the inequality is strict.
 
-Equivalently, $|x-c| - r < 0$, so the solution set is exactly where the plotted function is negative.
+The plot shows $|x-c|-r$, so its negative portion identifies the solution interval. At r = 0, the strict inequality has no solutions because a distance cannot be negative.
 
 ## Advanced
 
-The same reasoning with $>$ instead of $<$ gives the complementary set $x < c-r$ or $x > c+r$ — a union of two rays, not an interval — because the absolute value function is convex with a single minimum, so it is below any positive threshold on one connected interval but above it on two separate pieces.
+Replacing the strict inequality with “less than or equal” includes the boundary. The complement of a strict inside condition includes both boundaries and the outside; it is a greater-than-or-equal distance condition. A strict greater-than condition alone excludes the boundaries too.
 
 ## Derivation
 
-1. Distance from $c$ to $x$ is less than $r$.
-2. Definition of absolute value as a two-sided bound.
-3. Add $c$ to all three parts.
+1. Express distance from the target as an absolute value.
+2. A distance smaller than r places the signed difference strictly between negative r and positive r.
+3. Add c to all three parts to obtain the interval of accepted inputs.
 
 ## Real world
 
-### Manufacturing tolerances
-A part is acceptable if its measurement is within $r$ of the target $c$ — precisely an absolute-value inequality.
+### Manufacturing
 
-### Error bars and confidence
-A measurement "accurate to within $r$" defines an interval exactly this way.
+A tolerance specifies a target and an allowed error. Check whether the specification includes the limiting values.
 
-### Signal thresholds
-A control system flags a fault when a reading strays more than $r$ from its setpoint.
+### Signal monitoring
 
-### GPS and geofencing
-Being "within range" of a location is an absolute-value (distance) condition in one or more dimensions.
+A threshold can compare a signal's deviation from a reference against a permitted magnitude.
+
+### Position limits
+
+On a straight track, an absolute difference measures distance from a fixed point. Two-dimensional distance requires a different formula.

@@ -3,17 +3,17 @@ subject: cryptography
 difficulty: high-school
 equation: \text{changed bits} \approx \frac{n}{2}
 concepts:
-- confusion
-- diffusion
-- avalanche-effect
-- shannon
+  - confusion
+  - diffusion
+  - avalanche-effect
+  - shannon
 prerequisites:
-- caesar-cipher
-- xor-and-one-time-pad
+  - caesar-cipher
+  - xor-and-one-time-pad
 related:
-- block-ciphers-and-aes
-- hash-functions
-- transposition-ciphers
+  - block-ciphers-and-aes
+  - hash-functions
+  - transposition-ciphers
 visualization:
   type: confusion-diffusion
   options: {}
@@ -27,18 +27,18 @@ parameters:
     min: 1
     max: 4
     step: 1
-    value: 1
+    value: 2
   key:
     min: 0
     max: 255
     step: 1
     value: 58
 variables:
-- n
+  - n
 derivation:
-- '\text{confusion: the key''s effect on each output bit is tangled, not a simple shift}'
-- '\text{diffusion: each input bit must spread its influence to about half the output bits}'
-- \text{one pass is never enough, so repeat substitute} \to \text{shuffle, round after round}
+  - '\text{confusion: the key''s effect on each output bit is tangled, not a simple shift}'
+  - '\text{diffusion: each input bit must spread its influence to about half the output bits}'
+  - \text{one pass is never enough, so repeat substitute} \to \text{shuffle, round after round}
 charts: []
 primary: rounds
 presets:

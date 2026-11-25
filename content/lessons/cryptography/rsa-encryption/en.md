@@ -14,9 +14,9 @@ variables:
 
 ## Try it
 
-1. Keep p = 5, q = 11 and m = 7 and follow the journey left to right: the open padlock (n = 55, e = 3) travels to Alice, her message leaves as the locked box c = 13, and Bob's private key d = 27 opens it back to exactly 7.
-2. Slide m up and down and watch only the locked box change — the padlock and the key never move, because one lock serves every message.
-3. Now drag q down until it sits on the same prime as p: the picture stops with a warning, because a lock built from one prime squared gives its factors away instantly.
+1. Keep p = 5 and q = 11, set m = 7, and follow the journey left to right: the open padlock (n = 55, e = 3) travels to Alice, her message leaves as the locked box c = 13, and Bob's private key d = 27 opens it back to exactly 7.
+2. Set m to 9 and watch only the locked box change, to c = 14 — the padlock (n = 55, e = 3) and the key d = 27 never move, because one lock serves every message.
+3. Now drag q down to 5, the same prime as p: the picture stops with a warning, because a lock built from one prime squared gives its factors away instantly.
 
 ## Real-life examples
 
@@ -27,7 +27,7 @@ variables:
 ## Test yourself
 
 1. Set the textbook run — p = 5, q = 11 and the message m = 7 — and read c = 13 off the locked box.
-2. Break the lock on purpose: drag p and q onto the same prime and read what the warning says.
+2. Break the lock on purpose: set p and q to the same prime, for example both to 11, and read what the warning says.
 3. Build the biggest padlock these sliders allow: p = 13 with q = 11.
 
 ## Intuition
@@ -55,13 +55,17 @@ Encrypt the message $m=7$: $c = m^{e} \bmod n = 7^{3} \bmod 55 = 13$. Decrypt it
 ## Real world
 
 ### HTTPS padlock
+
 Browsers often use RSA (or a discrete-log cousin) to agree on keys when a secure site's padlock appears, protecting the setup of the encrypted connection.
 
 ### Messaging apps
+
 End-to-end encrypted apps use public-key systems like RSA to let two phones that have never met agree on how to protect a conversation.
 
 ### Bank cards and chips
+
 Payment chips sign transactions with a private key that never leaves the card, while terminals verify with the matching public key.
 
 ### Password storage
+
 Even where RSA itself isn't used, the same public/private split underlies how servers prove identity without ever exposing the secret that makes it work.

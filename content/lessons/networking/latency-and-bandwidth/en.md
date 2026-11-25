@@ -17,9 +17,9 @@ variables:
 
 ## Try it
 
-1. Watch the two stopwatches with the defaults: the ping rider only cares how long the road is, the convoy below mostly cares how many lanes it has.
-2. Set the fibre preset, then drag L up to 600 without touching B: the gamer's stopwatch turns red while the downloader barely notices — same line, opposite verdicts.
-3. Now starve B down to 10 with L back at 40: the downloader suffers and the gamer is perfectly happy. The two numbers answer different questions.
+1. Watch the two stopwatches with the defaults: the gamer's reads 40 ms and the downloader's 8.0 s. The ping rider only cares how long the road is, the convoy below mostly cares how many lanes it has.
+2. Load the «Fibre in the city» example (L = 10, B = 500), then drag L up to 600 without touching B: the gamer's stopwatch turns red at 600 ms while the downloader's only moves from 1.6 s to 2.2 s — same line, opposite verdicts.
+3. Now starve B down to 10 with L back at 40: the downloader's stopwatch turns red at 80.0 s while the gamer's is green at 40 ms. The two numbers answer different questions.
 
 ## Real-life examples
 
@@ -43,11 +43,11 @@ The road on screen makes the two independent: drag L and the road stretches; dra
 
 The time to fetch a file of $S$ megabytes over a line of $B$ megabits per second with round-trip latency $L$ milliseconds is, to a first approximation, $T = \frac{L}{1000} + \frac{8S}{B}$: one round trip to ask, then a stream whose duration depends only on size over rate (the factor 8 converts bytes to bits).
 
-The two terms do not trade against each other. For a tiny request ($S \approx 0$) the formula collapses to $T \approx \frac{L}{1000}$ — pure latency, which is why games and calls specify ping, not megabits. For a huge file the second term dominates and latency becomes a rounding error. Real transfers add a subtlety: a connection starts cautiously and accelerates over several round trips, so high latency also slows the *start* of big downloads — one more reason short roads matter.
+The two terms do not trade against each other. For a tiny request ($S \approx 0$) the formula collapses to $T \approx \frac{L}{1000}$ — pure latency, which is why games and calls specify ping, not megabits. For a huge file the second term dominates and latency becomes a rounding error. Real transfers add a subtlety: a connection starts cautiously and accelerates over several round trips, so high latency also slows the _start_ of big downloads — one more reason short roads matter.
 
 ## Advanced
 
-Latency has a hard floor that no money removes: light in glass fibre travels at about two-thirds of $c$, roughly 200,000 km/s, so a round trip across 6,000 km of fibre costs 60 ms before a single router has done any work. That is why serious systems move the *server* instead of speeding the line — the CDN lesson next door is exactly this trick. Bandwidth, by contrast, is an engineering variable: lay more fibre, use better encodings, and it multiplies. The asymmetry explains a decade of internet history: bandwidth grew a thousandfold while latency barely moved, and whole protocols (HTTP/2, QUIC) exist mainly to spend fewer round trips.
+Latency has a hard floor that no money removes: light in glass fibre travels at about two-thirds of $c$, roughly 200,000 km/s, so a round trip across 6,000 km of fibre costs 60 ms before a single router has done any work. That is why serious systems move the _server_ instead of speeding the line — the CDN lesson next door is exactly this trick. Bandwidth, by contrast, is an engineering variable: lay more fibre, use better encodings, and it multiplies. The asymmetry explains a decade of internet history: bandwidth grew a thousandfold while latency barely moved, and whole protocols (HTTP/2, QUIC) exist mainly to spend fewer round trips.
 
 ## Derivation
 
@@ -58,13 +58,17 @@ Latency has a hard floor that no money removes: light in glass fibre travels at 
 ## Real world
 
 ### Online games
+
 A game sends tiny packets constantly; its whole feel is the $L$ term. Competitive players hunt for servers under 30 ms and could not care less about their megabits.
 
 ### Video calls
+
 A conversation falls apart when replies lag ~200 ms behind; the video itself needs only a few Mbps. Calls are latency creatures, not bandwidth ones.
 
 ### Streaming movies
+
 The player buffers ahead, hiding latency completely — streaming quality is almost purely a bandwidth question, which is why satellite internet streams well.
 
 ### High-frequency trading
+
 Firms lay private straight-line fibre between cities to shave single milliseconds — the clearest proof that the length of the road is worth real money.

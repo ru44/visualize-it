@@ -23,15 +23,15 @@ charts:
 
 ## Try it
 
-1. Drag the radius slider to Earth's surface, about 6.4 on the thousand-km scale. Read off escape velocity: about 11.2 km/s.
-2. Compare it with the lower curve, orbital speed, at that same radius.
-3. Drag the radius far out. Watch both curves fall together as gravity weakens.
+1. Set x to 6.4, Earth's surface on the thousand-km scale. The readout f(x) shows the escape velocity: about 11.2 km/s.
+2. Compare it with the second chart, orbital speed, at that same radius: about 7.9 km/s, clearly lower.
+3. Set x to 60. Escape velocity falls to about 3.6 km/s, and orbital speed falls with it, because gravity weakens.
 
 ## Real-life examples
 
 - **Launching from Earth's surface.** At x = 6.4 (thousand km from Earth's centre), escape velocity is about 11.2 km/s — the speed an unpowered object needs to leave Earth forever.
-- **GPS satellite altitude.** At x = 20, gravity is much weaker, so escape velocity has already dropped to a few kilometres per second.
-- **Geostationary distance.** At x = 42.2, the distance where satellites appear to hang still over the equator, escape velocity is lower still.
+- **GPS satellite altitude.** At x = 26.6, gravity is much weaker, so escape velocity has already dropped to about 5.5 km/s.
+- **Geostationary distance.** At x = 42.2, the distance where satellites appear to hang still over the equator, escape velocity is lower still, about 4.3 km/s.
 
 ## Test yourself
 
@@ -64,13 +64,17 @@ Escape velocity is really a statement about the sign of total mechanical energy:
 ## Real world
 
 ### Rocket launches
+
 Rockets do not aim for escape velocity when reaching low Earth orbit — that only takes orbital speed — but interplanetary probes need it to leave Earth's pull behind entirely.
 
 ### Why the Moon has no air
+
 The Moon's escape velocity, 2.4 km/s, is too low to retain an atmosphere against the thermal speed of light gas molecules over billions of years.
 
 ### Black holes
+
 A black hole is, loosely, a region where the escape velocity from within its event horizon would exceed the speed of light.
 
 ### Terraforming discussions
+
 Mars, with an escape velocity of 5.0 km/s, is a serious candidate for atmosphere retention arguments precisely because that number sits closer to Earth's than the Moon's does.

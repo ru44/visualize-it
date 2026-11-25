@@ -42,20 +42,20 @@ derivation:
   - \dfrac{E}{N} = \mu g = \text{fraction of bases changed}
 charts: []
 presets:
-- N: 1000
-  mu: 0.01
-  g: 10
-- N: 1000
-  mu: 0.5
-  g: 1000
-- N: 1000
-  mu: 50
-  g: 50
+  - N: 1000
+    mu: 0.01
+    g: 10
+  - N: 1000
+    mu: 0.5
+    g: 1000
+  - N: 1000
+    mu: 50
+    g: 50
 challenges:
-- check: N*mu*g/1e6
-  target: 50
-  tol: 5
-- check: mu>=50 and g>=20
-- check: mu*g/1e6
-  target: 0.01
-  tol: 0.002
+  - check: N*mu*g/1e6
+    target: 50
+    tol: 5
+  - check: mu>=50 and g>=20
+  - check: mu*g/1e6
+    target: 0.01
+    tol: 0.002

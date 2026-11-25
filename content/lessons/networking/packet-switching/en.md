@@ -17,8 +17,8 @@ variables:
 ## Try it
 
 1. Watch the defaults: a 12 KB message becomes 8 numbered packets, odd ones riding the top route and even ones the bottom, arriving out of order onto the shelf that reorders them.
-2. Drop P to 200 bytes: the same message shatters into 60 pieces — more envelopes, more addresses, more overhead, same letter.
-3. Now set cut to 1: the top route dies mid-journey and every packet calmly reroutes through the bottom — nobody upstream had to be told.
+2. Drop P to 200 bytes: the readout shows k = 60. The same message shatters into 60 pieces — more envelopes, more addresses, more overhead, same letter.
+3. Now set cut to 1: the top route dies mid-journey, the readout says «one — rerouted», and every packet calmly takes the bottom route — nobody upstream had to be told.
 
 ## Real-life examples
 
@@ -28,7 +28,7 @@ variables:
 
 ## Test yourself
 
-1. Make the message need exactly 8 packets.
+1. Make the message need exactly 10 packets.
 2. Cut the top route and watch the reroute happen.
 3. Shatter the message into at least 40 pieces using packets of 300 bytes or smaller.
 
@@ -42,7 +42,7 @@ The scene on screen is that decision made visible. No packet knows the route; it
 
 A message of $S$ kilobytes is $1000\,S$ bytes, and a network's links agree on a maximum transmission unit of $P$ bytes per packet, so the message travels as $k = \left\lceil \frac{1000\,S}{P} \right\rceil$ independent datagrams. Each carries a header with source, destination and a sequence position, which is what makes out-of-order arrival harmless.
 
-Smaller $P$ means more packets and proportionally more header overhead — the reason the internet's standard MTU settled near 1500 bytes. Routing is stateless per packet: a router reads the destination, consults its table for the best next hop as the table stands *now*, and forwards. The table itself is kept fresh by routers gossiping about which links are up, so a cut propagates as new table entries, not as a broken promise to any particular message.
+Smaller $P$ means more packets and proportionally more header overhead — the reason the internet's standard MTU settled near 1500 bytes. Routing is stateless per packet: a router reads the destination, consults its table for the best next hop as the table stands _now_, and forwards. The table itself is kept fresh by routers gossiping about which links are up, so a cut propagates as new table entries, not as a broken promise to any particular message.
 
 ## Advanced
 
@@ -57,13 +57,17 @@ The trade hidden in the design is that sharing creates congestion: when everyone
 ## Real world
 
 ### Cable cuts and earthquakes
+
 Undersea cables fail constantly; routing tables update within seconds and traffic flows around the damage — the design goal, achieved daily.
 
 ### Mixed traffic on one wire
+
 Your download, a neighbour's call and a stranger's game share each link packet by packet — no circuits, no reservations, just interleaved envelopes.
 
 ### Traceroute
+
 Run traceroute to any site and it prints the actual hop-by-hop path your packets chose just now — often different from the path a minute ago.
 
 ### Satellite constellations
+
 Starlink-style meshes reroute packets between moving satellites continuously: packet switching is what makes a network of moving parts even possible.

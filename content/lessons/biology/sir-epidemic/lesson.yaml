@@ -26,7 +26,7 @@ visualization:
     initial:
       - N - I0
       - I0
-      - "0"
+      - '0'
     tMax: 160
     labels:
       - susceptible
@@ -73,21 +73,21 @@ derivation:
 charts: []
 primary: beta
 presets:
-- N: 1000
-  I0: 5
-  beta: 0.13
-  gamma: 0.1
-- N: 1000
-  I0: 5
-  beta: 0.75
-  gamma: 0.05
-- N: 2000
-  I0: 10
-  beta: 0.1
-  gamma: 0.3
+  - N: 1000
+    I0: 5
+    beta: 0.13
+    gamma: 0.1
+  - N: 1000
+    I0: 5
+    beta: 0.75
+    gamma: 0.05
+  - N: 2000
+    I0: 10
+    beta: 0.1
+    gamma: 0.3
 challenges:
-- check: beta/gamma
-  target: 3
-- check: 1 - gamma/beta
-  target: 0.8
-- check: beta/gamma < 1 and I0 >= 20
+  - check: beta/gamma
+    target: 4
+  - check: 1 - gamma/beta
+    target: 0.8
+  - check: beta/gamma < 1 and I0 >= 20

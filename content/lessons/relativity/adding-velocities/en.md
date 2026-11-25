@@ -11,15 +11,15 @@ parameters:
 
 ## Try it
 
-1. Watch the three markers race along the track: gold is light itself, the dashed marker is the naive sum u + v, and the solid marker is the actual ground-frame speed w.
-2. At u = 0.8, v = 0.8, notice the dashed marker would need to run faster than light — u + v = 1.6 — while the solid marker for w stays safely behind it, at about 0.976c.
+1. Watch the three markers race along the track: gold is light itself, the dashed marker is the naive sum u + v, and the solid marker is the actual ground-frame speed w. At the start, u = 0.5 and v = 0.5: the naive sum reads 1 c, but w reads only 0.8 c.
+2. Set u = 0.8 and v = 0.8. Notice the dashed marker would need to run faster than light — u + v = 1.6 — while the solid marker for w stays safely behind it, at about 0.976c.
 3. Push both sliders to 0.99. The naive sum jumps to 1.98, wildly past light speed, but w only creeps closer to light speed itself, reaching about 0.99995c and no further.
 
 ## Real-life examples
 
 1. **A probe launched at 0.8c from a ship already moving at 0.8c.** Naive addition suggests 1.6c; the real ground-frame speed is w = 0.976c, comfortably under the limit.
 2. **Two ships each approaching light speed, at u = v = 0.99.** Naive addition suggests 1.98c; the true combined speed is w = 0.99995c, closer to light speed but never past it.
-3. **Two everyday-fast objects, u = v = 0.5.** Even at half light speed each, relativity already bites: naive addition gives 1.0c exactly at light speed, but the true answer is w = 0.8c, safely below it.
+3. **Two objects at half light speed each, u = v = 0.5.** Even at half light speed each, relativity already bites: naive addition gives 1.0c exactly at light speed, but the true answer is w = 0.8c, safely below it.
 
 ## Test yourself
 
@@ -52,13 +52,17 @@ Two limits check this formula against what is already known: as $u, v \to c$, $w
 ## Real world
 
 ### Particle accelerator collisions
+
 Two particle beams collided head-on, each already moving at 0.999999c in the lab, do not approach each other at nearly twice light speed in either beam's own frame — this exact formula is what physicists use to compute their true relative speed.
 
 ### Why nothing can be pushed past light speed
+
 No matter how many successive relativistic pushes an object receives, each one adding some velocity in its own current frame, chaining this formula together always keeps the result under $c$ — there is no finite sequence of additions that ever reaches it.
 
 ### The headlight effect in astrophysics
+
 Jets of matter blasted from black holes at relativistic speeds combine their own motion with the motion of particles inside them using exactly this formula, which is part of why such jets can appear to beam light forward far more intensely than backward.
 
 ### GPS and everyday electronics
+
 Engineers combining small relative velocities, like a satellite's motion plus the spin of the Earth beneath it, use the everyday $u + v$ approximation without a second thought, because at those speeds the relativistic correction is many orders of magnitude smaller than anything a GPS receiver could detect.

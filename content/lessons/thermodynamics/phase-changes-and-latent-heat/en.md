@@ -1,72 +1,63 @@
 ---
 title: Phase changes and latent heat
-summary: >-
-  Leave an ice cube on the counter and its temperature barely moves while
-  it melts, but a splash of boiling-hot steam on skin burns far worse
-  than the same splash of boiling water at the very same 100°C — both
-  come down to latent heat, the energy a substance hides while it
-  changes state instead of changing temperature.
+summary: 'Track energy added to ice: some warms a single phase, while some changes the proportions of ice, water and vapour.'
 parameters:
-  Q: heat energy added Q
-  m: mass being heated m
+  Q: 'Q — cumulative heat added from −20°C ice'
+  m: 'm — initial mass'
 variables:
-  - heat energy added, starting from ice at −20°C
-  - mass being heated
-  - specific heat capacity
-  - change in temperature
-  - latent heat of melting or boiling
+  - 'cumulative energy added'
+  - 'mass of the sample'
+  - 'specific heat capacity within a phase'
+  - 'temperature change within a phase'
+  - 'specific latent heat for a phase change'
 ---
 
 ## Try it
 
-1. Raise the slider "heat added Q" from zero. Watch the ice shrink, then the water level rise, then steam wisps appear.
-2. Watch the temperature readout while Q crosses the melting point. Notice it holds at 0°C even as Q keeps climbing.
-3. Raise the slider "mass m". Watch every stage need far more heat to finish for the same amount of ice.
+1. Set m = 0.1 kg and Q = 0. The sample starts as ice at −20°C. At Q = 4200 J it reaches 0°C; between 4200 and 37,600 J it melts at that temperature.
+2. Set Q = 20,000 J. The sample is partly melted, not fully liquid. Raise Q beyond 37,600 J to begin warming the liquid.
+3. Keep Q fixed and increase m. The energy per kilogram decreases, so the sample reaches an earlier stage. After all water has vaporised, further vapour heating is outside this model and no temperature is reported.
 
 ## Real-life examples
 
-1. **An ice cube melting in a drink.** Warming and melting 0.1 kg of ice takes about 20 kJ, and for most of that energy the ice's temperature does not move at all — it sits at 0°C, steadily shrinking, while the added heat breaks its crystal structure apart.
-2. **A kettle heating water toward boiling.** Once 0.1 kg of ice has fully melted, roughly 79 kJ of total heat has water almost at 100°C, climbing steadily now instead of holding flat, because this stage is ordinary warming, not a phase change.
-3. **A kettle boiling nearly dry.** With about 305 kJ delivered to 0.1 kg, almost all of the water has turned to steam — the temperature has sat at exactly 100°C for a long stretch while huge amounts of energy vanished into vapour instead of raising the reading.
+1. **Partly melted ice.** For 0.1 kg at Q = 20 kJ, 4.2 kJ warms the ice to 0°C and 15.8 kJ melts about 47.3% of its mass.
+2. **Liquid close to boiling.** At Q = 79 kJ for 0.1 kg, the temperature is about 98.9°C. Boiling starts at a cumulative 79.46 kJ.
+3. **Almost fully vaporised.** At Q = 305 kJ for 0.1 kg, about 99.97% has vaporised. Completion requires 305.06 kJ in this model.
 
 ## Test yourself
 
-1. Get all the ice melted but the water not yet boiling.
-2. Boil the mass completely away into steam.
-3. Hold the temperature on the 100°C boiling plateau.
+1. Melt all the ice and leave the liquid below its boiling point.
+2. Add more than the energy needed to vaporise the entire mass.
+3. Place the sample inside the boiling interval, while liquid and vapour coexist at 100°C.
 
 ## Intuition
 
-Put an ice cube on the counter and watch a thermometer pressed against it: the temperature climbs from freezer-cold, then suddenly stops rising and holds dead flat at 0°C for a surprisingly long time, even though the ice is visibly shrinking the whole time. On screen, raise the slider "heat added Q" from zero and watch the same thing: the pot's ice block shrinks steadily while the temperature readout sits frozen at 0°C, because every joule going in right now is breaking the ice's crystal structure apart rather than warming anything.
+Adding energy does not always raise temperature. First it warms the ice. At the melting point, further energy changes the amount of solid and liquid while their equilibrium temperature stays the same. After the last ice melts, additional energy warms the liquid. Boiling produces another interval in which phase proportions change at constant temperature.
 
-Once the ice is gone, more heat finally raises the temperature again — ordinary warming, climbing steadily — until 100°C, where the temperature freezes flat a second time while the water boils away into steam. This is exactly why steam burns worse than boiling water at the very same 100°C: turning water into steam takes a huge amount of hidden latent heat, roughly 2260 J for every gram, and steam releases every bit of that energy back the instant it touches your skin and condenses, on top of the ordinary heat a splash of 100°C water alone would deliver.
+The model starts with pure ice at −20°C and assumes approximately atmospheric pressure, uniform temperature and no heat loss to the container or surroundings. Its ice and liquid heights represent mass fractions schematically, not actual volumes. The side comparison shows energy released by one gram cooling from 100°C to 80°C: vapour must also condense, so it releases much more energy than liquid water over that route.
 
 ## Formal
 
-While a substance stays in one phase, heat added raises its temperature: $Q = mc\Delta T$, with $c$ the specific heat capacity of that phase (ice, liquid water, or steam each have their own).
+Within one phase at constant specific heat capacity c, the stage's added energy is $Q_{stage}=mc\Delta T$. During a fixed-pressure phase change of a pure substance, $Q_{stage}=mL$ for complete conversion. For converted mass fraction z, $Q_{stage}=zmL$.
 
-During a phase change, temperature holds fixed while heat is absorbed or released: $Q = mL$, with $L$ the latent heat of melting (fusion) or boiling (vaporisation), and this is the energy behind every flat stretch on the graph.
+The model uses $c_{ice}=2100\ \mathrm{J/(kg\cdot K)}$, $c_{water}=4186\ \mathrm{J/(kg\cdot K)}$, $L_f=334000\ \mathrm{J/kg}$ and $L_v=2256000\ \mathrm{J/kg}$. The Q control is cumulative energy, so subtract completed stages before calculating the current stage. The transition temperatures of $0^\circ\mathrm C$ and $100^\circ\mathrm C$ are assumptions for water near atmospheric pressure.
 
 ## Advanced
 
-Latent heat is really the energy needed to pull molecules apart against the attractive forces holding them together — breaking some hydrogen bonds to turn ice into liquid water, and breaking essentially all of them to turn liquid water into freely flying vapour, which is why vaporisation (2256 kJ/kg) takes nearly seven times more energy than melting (334 kJ/kg) for the exact same mass of water.
+At constant pressure, latent heat corresponds to an enthalpy change. It involves intermolecular arrangement and interactions, with expansion work especially relevant during vaporisation; it is not energy that disappears or breaks water molecules into hydrogen and oxygen. Once all the liquid has vaporised, further heating need not remain at 100°C. This four-stage model ends there rather than predicting superheated vapour.
 
 ## Derivation
 
-1. While the substance stays a single phase, added heat raises its temperature according to Q = mcΔT.
-2. During a phase change, every joule of added heat goes into L per unit mass instead, so Q = mL while temperature stays fixed.
-3. Chaining warm ice → melt → warm water → boil gives the full curve: four stages, two rising and two flat.
+1. While the sample stays in one phase, multiply mass, specific heat capacity and temperature change to find the stage energy.
+2. For a complete phase change, multiply mass by the corresponding specific latent heat.
+3. Add the energies for warming ice, melting, warming liquid and vaporising to obtain the cumulative energy at each transition.
 
 ## Real world
 
-### Cooking
-A pot of water boiling hard never gets hotter than 100°C at sea level — turning up the stove just boils it away faster, because the extra heat only feeds the latent heat of vaporisation.
+### Melting and freezing
 
-### Ice packs
-An ice pack at 0°C absorbs far more heat while melting than the same mass of cold water would while simply warming up, which is exactly why ice cools so much more effectively than iced water alone.
+At the same pressure, reversing a phase change reverses the direction of its latent heat transfer. Freezing releases energy that melting absorbs.
 
-### Steam burns
-A steam burn is worse than a boiling-water splash at the same 100°C because steam must first release its latent heat of vaporisation, roughly 2260 J per gram, before it can even begin to cool.
+### Boiling point
 
-### Sweating
-Sweat cools skin by evaporating, pulling its latent heat of vaporisation straight from the body, which is why a light breeze on wet skin feels so much cooler than the air temperature alone would suggest.
+Changing pressure changes water's boiling temperature. The 100°C plateau is a stated model condition, not a universal boiling temperature.

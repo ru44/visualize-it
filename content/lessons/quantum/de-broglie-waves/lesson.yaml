@@ -47,8 +47,8 @@ presets:
   - x: 1500
 challenges:
   - check: 727/x
-    target: 7.27
-    tol: 0.2
+    target: 3.635
+    tol: 0.05
   - check: 727/x < 1
   - check: 727/x
     target: 2

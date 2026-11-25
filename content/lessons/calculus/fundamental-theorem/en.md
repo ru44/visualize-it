@@ -1,73 +1,67 @@
 ---
 title: The fundamental theorem of calculus
-summary: >-
-  A car's odometer and speedometer are two sides of the same coin — read one
-  and you can work out the other, and this is the rule connecting them.
+summary: 'Connect an accumulated total to its rate of change, and calculate integrals with antiderivatives.'
 parameters:
-  a: a (start)
-  b: b (end)
+  a: 'a — starting bound'
+  b: 'b — ending bound'
 variables:
-  - the curve being shaded — think of it as a velocity
-  - accumulated area (distance) from $a=0$ up to $b$ — the chart below
-  - the bounds of the shaded region
+  - 'f(x): signed rate shown in the main graph'
+  - 'F(b): signed accumulation from the selected a to b'
+  - 'a, b: starting and ending bounds'
 charts:
-  - title: Accumulated distance F(b) = ∫ from 0 to b
+  - title: Signed accumulation from a to b
     xLabel: b
     yLabel: F(b)
     series:
-      - F(b) = -2cos(x) + 0.5x + 2
+      - F(b) = -2cos(b) + 0.5b + 2cos(a) - 0.5a
 ---
 
 ## Try it
 
-1. Drag «b (end)» to the right with «a (start)» fixed at 0. The shaded area above grows, and the chart's marker on F(b) climbs to match.
-2. Watch where the curve above dips below the axis. The chart's marker turns around and falls there too.
-3. Drag «a (start)» away from 0. The shaded region — and the accumulated total — shrinks by whatever area is cut off on the left.
+1. Set a = 0 and move b from 0 to 3. The curve f(x) is positive there, so the accumulated signed total F(b) increases to about 5.480.
+2. Continue moving b to 6. The curve becomes negative during part of this interval, so F decreases; at b = 6 it is about 3.080.
+3. Set a = 2 and b = 8. The signed total is about 2.459. The accumulation chart now uses the selected starting bound a, so its marker agrees with the signed integral readout.
 
 ## Real-life examples
 
-1. **Early odometer reading.** With a = 0 and b = 3, only a short stretch of driving has accumulated — the running total is still small.
-2. **Mid-trip odometer reading.** With a = 0 and b = 6, the trip has passed its fastest climbing stretch and the total is levelling off.
-3. **A trip segment recorded only from the 2-second mark.** With a = 2 and b = 8, the accumulated total counts only the distance covered after the odometer was reset at a = 2.
+1. **Accumulating positive values.** From 0 to 3, the integral is about 5.480. It adds the entire positive contribution on this interval.
+2. **Subtracting a negative contribution.** From 0 to 6, the integral is about 3.080, less than the total up to 3 despite the longer interval.
+3. **Changing the starting bound.** From 2 to 8, the integral is about 2.459. It excludes the accumulation before 2.
 
 ## Test yourself
 
-1. Make the accumulated area F(b) − F(a) equal about 5.
-2. Find a window (with b at least 1 apart from a) where the accumulated area returns to 0.
-3. Push the accumulated area above 6.
+1. Make the signed integral within 0.4 of 5.
+2. Choose bounds with |b − a| greater than 1 and absolute signed integral less than 0.3.
+3. Make the signed integral greater than 6.
 
 ## Intuition
 
-Picture a car's trip odometer, reset to 0 at the start of a drive. The wavy curve on screen is the car's speed at every moment, and the shaded region beneath it is the distance covered so far. Drag «b (end)» to the right with «a (start)» fixed at 0, and watch two things at once: the shaded area grows or shrinks, and the marker on the chart below — the odometer reading — climbs or falls to match.
+An integral keeps a running signed total. If the function is positive at the moving end of the interval, extending that interval adds a positive contribution. If it is negative, extending the interval reduces the total. The first graph shows the rate being accumulated; the lower chart shows the accumulated result.
 
-Now look at where the speed curve dips below the middle line: right there, the car is momentarily going backward, so the odometer marker turns around and falls too. The speed curve above is exactly the slope of the odometer chart below — read off how the total distance is changing, and you get back the very speed curve you started with.
+For a small increase h in the endpoint, the extra contribution is approximately the current height times h. Dividing that increase in the total by h gives approximately the current height. As h tends to zero, this becomes exact: the derivative of accumulation is the original function. For velocity, the total is displacement; an odometer's total distance would instead accumulate speed and would not decrease when moving backward.
 
 ## Formal
 
-If $F(b) = \int_a^b f(x)\,dx$, then $F'(b) = f(b)$ — the Fundamental Theorem of Calculus, Part 1.
+If f is continuous on an interval and a is fixed, define $F(b)=\int_a^b f(x)\,dx$. At interior points, $F'(b)=f(b)$. Continuity supplies the link between the value at the endpoint and nearby values used in the integral.
 
-Part 2: if $F$ is any antiderivative of $f$, then $\int_a^b f(x)\,dx = F(b) - F(a)$, turning area computation into evaluating an antiderivative at two points.
+If G is any antiderivative of continuous f, then $\int_a^b f(x)\,dx=G(b)-G(a)$. Here $f(x)=2\sin x+0.5$ and $G(x)=-2\cos x+0.5x$. Thus $F(b)=-2\cos b+0.5b+2\cos a-0.5a$, the formula used by the chart.
 
 ## Advanced
 
-The proof of Part 1 hinges on the Mean Value Theorem for integrals: $F(b+h)-F(b) = \int_b^{b+h} f \approx f(b)\,h$ for small $h$ because $f$ is continuous, so the difference quotient $[F(b+h)-F(b)]/h \to f(b)$ — accumulation and instantaneous rate are two sides of the same limiting process, one taken over an interval, one at a point.
+Changing the fixed starting bound shifts the accumulation curve vertically; its derivative with respect to the ending bound stays f(b). A zero of f gives a stationary point of F, but a maximum requires a positive-to-negative sign change and a minimum requires the reverse. The instantaneous height and accumulated total are different quantities.
 
 ## Derivation
 
-1. Define the accumulated area up to $b$.
-2. The extra sliver of area is approximately a thin rectangle of height $f(b)$ and width $h$, for small $h$.
-3. Divide by $h$ and take the limit: the derivative of the accumulated area is the curve itself.
+1. Define F as the signed integral from the fixed starting bound a to the varying endpoint b.
+2. The difference F(b + h) − F(b) is the integral over the small added interval. Continuity makes it approximately a rectangle with height f(b) and signed width h.
+3. Divide by h and take the limit. The average over the shrinking interval tends to f(b), establishing F′(b) = f(b).
 
 ## Real world
 
-### Velocity and distance
-A car's odometer reading is the accumulated area under its velocity-time graph; its speedometer is the derivative of the odometer reading.
+### Tracking a tank's contents
 
-### Water tank filling
-Total water in a tank is the accumulated inflow rate; the inflow rate is the derivative of the total.
+Integrating the net inflow rate gives the change in stored volume. Add the initial volume to obtain the actual amount in the tank. Outflow can make the accumulated change decrease.
 
-### Economics
-Total cost is the accumulated marginal cost; marginal cost is the derivative of total cost.
+### Position and velocity
 
-### Physics work-energy
-Work done is the area under a force-displacement curve; force is the derivative (rate of change) of accumulated work with displacement.
+For a continuous velocity, integrating over time gives displacement. Differentiating a position function gives velocity; the initial position is the extra constant needed to recover absolute position.

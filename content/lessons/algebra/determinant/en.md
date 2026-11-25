@@ -1,9 +1,6 @@
 ---
 title: The determinant
-summary: >-
-  Know instantly whether a transformation shrinks, grows, or mirror-flips a
-  shape — the single number behind image scaling, 3-D rendering, and spotting
-  when a robot arm gets stuck.
+summary: 'Use the determinant to measure area scaling, orientation reversal and loss of dimension.'
 parameters:
   a: matrix row 1, column 1
   b: matrix row 1, column 2
@@ -21,54 +18,54 @@ variables:
 
 ## Try it
 
-1. Drag a, b, c and d one at a time and watch the small square in the corner turn into a parallelogram.
-2. Watch the number below the grid — the determinant — grow or shrink as the parallelogram's area changes.
-3. Push a value far enough that the parallelogram flips over. Notice the determinant's sign flips too.
+1. Set a = 2, b = 0, c = 0 and d = 1. The transformed unit square has area 2, matching the determinant.
+2. Change a to -2. The area is still 2, but the determinant is -2 because orientation reverses.
+3. Set a to 0, keeping b = c = 0 and d = 1. The square collapses to a vertical segment and the determinant is zero.
 
 ## Real-life examples
 
-1. **Resizing a photo.** Stretching an image to twice its width while keeping its height the same (a=2, b=0, c=0, d=1) doubles its area — the determinant reads 2.
-2. **Slanting text into italics.** A shear transform (a=1, b=0.5, c=0, d=1) tilts letters sideways without changing how much ink they cover — the determinant stays 1.
-3. **Mirroring a photo.** Flipping an image left-to-right (a=-1, b=0, c=0, d=1) keeps every area the same size but reverses its orientation — the determinant turns to -1.
+1. **Stretching width.** With a = 2, d = 1 and b = c = 0, every area doubles and orientation is preserved.
+2. **Shearing.** With a = d = 1, b = 0.5 and c = 0, the square becomes a parallelogram of the same area. The determinant is 1.
+3. **Reflecting horizontally.** With a = -1, d = 1 and b = c = 0, areas are unchanged and orientation reverses. The determinant is -1.
 
 ## Test yourself
 
-1. Make the transformation double every area on the grid without flipping anything.
-2. Make the transformation collapse the whole grid onto a single line, with zero area left.
-3. Make the transformation flip the grid like a mirror while shrinking every area to exactly half.
+1. Make the determinant approximately 2, doubling areas while preserving orientation.
+2. Make the determinant zero, collapsing the plane to a line or possibly a point.
+3. Make the determinant approximately -0.5, reversing orientation and halving areas.
 
 ## Intuition
 
-Stretch a photo to twice its width but keep its height the same, and the area doubles too. Drag the slider a to 2 while leaving b, c and d alone: watch the small square in the corner of the grid turn into a rectangle twice its size, and the number below the grid — the determinant — read 2 to match.
+A square one unit wide and one unit tall has area 1. Stretch its width to 2 while keeping its height at 1, and its area becomes 2. The determinant records that area multiplier for a linear transformation.
 
-Now push a past zero to a negative number, say -1: the little square flips over like a mirror image, and the determinant's sign flips too, from positive to negative, even though its size barely changes. That sign is the whole story — positive means the shape still faces the same way, negative means it has been turned inside out. This number always equals $ad-bc$, read straight off the grid's four sliders.
+The sign records a different feature. A reflection can keep the area unchanged while reversing clockwise and counterclockwise order. Its determinant is negative. A zero determinant means the unit square has no area after transformation: different inputs have been collapsed together, so the original cannot be uniquely recovered.
 
 ## Formal
 
-For a $2\times2$ matrix, the determinant is $\det(M) = ad - bc$. Its absolute value $|\det(M)|$ is the factor by which the matrix scales any area; its sign tells you whether orientation is preserved.
+For the matrix with rows (a, b) and (c, d), $\det(M)=ad-bc$. The area scale factor is $|\det(M)|$. A positive determinant preserves orientation, and a negative one reverses it.
 
-When $\det(M) = 0$, the two columns point along the same line, so the matrix squashes the whole plane onto that line. No inverse transformation can undo that, because area, and information, has been lost.
+A zero determinant makes the columns linearly dependent. The image of the plane is a line, or a single point if the matrix is zero. The matrix is invertible exactly when its determinant is nonzero.
 
 ## Advanced
 
-In $n$ dimensions the determinant is the signed volume of the parallelepiped spanned by the matrix's columns, and $\det(M) \ne 0$ is exactly the condition for $M$ to be invertible. It also equals the product of the eigenvalues, linking area scaling to stretching along the eigen-directions.
+A determinant does not describe every change in shape. A matrix with determinant 1 can stretch one direction and compress another, preserving area while changing lengths. In higher dimensions, the absolute determinant is the corresponding volume scale factor.
 
 ## Derivation
 
-1. Expand the $2\times2$ determinant from the two columns.
-2. Its absolute value is the area-scale factor for any region.
-3. When it is zero the columns are parallel and the map has no inverse.
+1. Calculate ad minus bc from the four entries.
+2. Take the absolute value to obtain the nonnegative area multiplier.
+3. At zero, the transformed unit square has zero area and the transformation cannot be inverted uniquely.
 
 ## Real world
 
-### Computer graphics
-A rendering engine checks the sign of a triangle's determinant to decide whether it faces the camera or away from it.
+### Area changes
 
-### Solving linear systems
-A system of equations has a unique solution exactly when its coefficient matrix has a nonzero determinant.
+The determinant converts areas under a constant linear coordinate transformation.
 
-### Robotics
-A near-zero determinant of a robot's Jacobian marks a singular pose where the arm loses a degree of freedom.
+### Linear systems
 
-### Population models
-A near-zero determinant in a system of interacting species signals that the populations are about to collapse onto a single trajectory.
+A square coefficient matrix gives a unique solution for every right-hand side exactly when its determinant is nonzero.
+
+### Checking transformations
+
+A zero determinant identifies a loss of dimension. A small determinant alone does not describe every aspect of numerical sensitivity; scaling matters too.

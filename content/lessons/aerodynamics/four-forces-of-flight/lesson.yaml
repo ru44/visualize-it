@@ -3,16 +3,16 @@ subject: aerodynamics
 difficulty: high-school
 equation: T - D = W\sin\gamma
 concepts:
-- lift
-- weight
-- thrust
-- drag
-- climb-angle
+  - lift
+  - weight
+  - thrust
+  - drag
+  - climb-angle
 prerequisites: []
 related:
-- lift
-- drag-equation
-- gliding-and-glide-ratio
+  - lift
+  - drag-equation
+  - gliding-and-glide-ratio
 visualization:
   type: four-forces-of-flight
   options: {}
@@ -22,7 +22,7 @@ parameters:
     min: 0
     max: 100
     step: 1
-    value: 61
+    value: 80
     unit: '%'
   v:
     min: 40
@@ -31,25 +31,25 @@ parameters:
     value: 100
     unit: m/s
 variables:
-- T
-- D
-- W
-- \gamma
+  - T
+  - D
+  - W
+  - \gamma
 derivation:
-- D = \tfrac12\rho v^2 C_D A
-- T - D = W\sin\gamma
-- L = W\cos\gamma
+  - D = \tfrac12\rho v^2 C_D A
+  - T - D = W\sin\gamma
+  - L = W\cos\gamma
 charts: []
 presets:
-- throttle: 80
-  v: 100
-- throttle: 61
-  v: 100
-- throttle: 30
-  v: 100
+  - throttle: 80
+    v: 100
+  - throttle: 61
+    v: 100
+  - throttle: 30
+    v: 100
 challenges:
-- check: 'v*asin(min(1,max(-1,(throttle/100*60000-3.675*v^2)/78400)))'
-  target: 10
-  tol: 1.5
-- check: 'abs(asin(min(1,max(-1,(throttle/100*60000-3.675*v^2)/78400)))*180/pi) < 0.5'
-- check: 'asin(min(1,max(-1,(throttle/100*60000-3.675*v^2)/78400)))*180/pi < -10'
+  - check: 'v*asin(min(1,max(-1,(throttle/100*60000-3.675*v^2)/78400)))'
+    target: 10
+    tol: 1.5
+  - check: 'abs(asin(min(1,max(-1,(throttle/100*60000-3.675*v^2)/78400)))*180/pi) < 0.5'
+  - check: 'asin(min(1,max(-1,(throttle/100*60000-3.675*v^2)/78400)))*180/pi < -10'

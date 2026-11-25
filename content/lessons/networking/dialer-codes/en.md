@@ -1,5 +1,5 @@
 ---
-title: 'Dialer codes: why some numbers aren''t phone numbers'
+title: "Dialer codes: why some numbers aren't phone numbers"
 summary: >-
   Type the right short string of stars and hashes into the dialer and it never
   places a call — the phone reads it as an instruction, and answers it three
@@ -17,7 +17,7 @@ variables:
 
 1. Leave code at 0: that is a normal phone number, all digits, so the dialer just rings it — no code, no trick.
 2. Drag code to 1 ($\texttt{*\#06\#}$): the star-and-hash shape tells the dialer this is not a call. It is answered on the phone itself — the IMEI appears instantly, and the carrier is never contacted.
-3. Drag on to 2 ($\texttt{*\#21\#}$) and 3 ($\texttt{*123\#}$): now the string is a question for your carrier. Watch the arrow jump to the network card; raise rtt and the reply takes longer, because it really does travel out and back.
+3. Drag on to 2 ($\texttt{*\#21\#}$) and 3 ($\texttt{*123\#}$): now the string is a question for your carrier. Watch the arrow jump to the network card. With rtt = 50 the readout says the answer takes 50 ms; raise rtt to 200 and it says 200 ms, because the reply really does travel out and back.
 
 ## Real-life examples
 
@@ -58,13 +58,17 @@ This split — standard network codes versus phone-local broadcasts — is also 
 ## Real world
 
 ### Reading a phone's IMEI
+
 Every shop that buys a used phone types $\texttt{*\#06\#}$ to read its serial — it works with no SIM and no signal because the phone answers itself.
 
 ### Carrier self-service
+
 Prepaid plans across much of the world run on USSD: you top up, check balance and switch bundles through $\texttt{*123\#}$-style menus, no app and almost no data needed.
 
 ### Caller-ID control
+
 Dialing $\texttt{\#31\#}$ before a number hides your caller ID for that one call — a per-call supplementary-service request the network honours and then forgets.
 
 ### Phishing by dialer string
+
 Because a tapped link could once feed a code straight to the dialer, attackers tried to trigger harmful supplementary-service strings automatically; the defence built into modern phones is to never act on such a string without the person pressing dial.

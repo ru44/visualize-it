@@ -64,6 +64,6 @@ presets:
     r: 22
     T0: 15
 challenges:
-  - check: g < 2/(d+1)
+  - check: g > 0 and g < 1/(d+1)
   - check: g > 2/(d+1) and g < 2
-  - check: d >= 3 and g < 2/(d+1)
+  - check: d >= 3 and g > 0 and g < 1.6/(d+1)

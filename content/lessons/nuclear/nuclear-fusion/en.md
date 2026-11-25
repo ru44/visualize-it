@@ -13,8 +13,8 @@ charts: []
 ## Try it
 
 1. Watch the blue nuclei drift and bounce inside the box, pushed apart by their own electric charge.
-2. Drag "time" forward at a low temperature. Nuclei bounce off each other from a distance and almost never touch.
-3. Raise "temperature" and run again. Faster nuclei punch closer together, and a ring occasionally flashes where two of them fuse.
+2. Set "temperature" to 0.2 and drag "time" forward to 150. Nuclei bounce off each other from a distance and never touch: "fusion events" stays at 0.
+3. Raise "temperature" to 5, press restart and run to 150 again. Faster nuclei punch closer together, a ring flashes wherever two of them fuse, and "fusion events" reaches 10.
 
 ## Real-life examples
 
@@ -53,13 +53,17 @@ Quantum tunnelling lets some nuclei fuse even without quite enough classical ene
 ## Real world
 
 ### The Sun and every other star
+
 Stellar cores fuse hydrogen into helium continuously, and the outward push of that fusion energy is the only thing holding a star up against its own gravity.
 
 ### Tokamaks and stellarators
+
 Magnetic confinement reactors use powerful magnetic fields, not solid walls, to squeeze a plasma hot enough that no material container could survive touching it.
 
 ### Inertial confinement fusion
+
 Facilities such as the National Ignition Facility compress a tiny fuel pellet with lasers so fast and so hard that, for a fleeting instant, it reaches fusion conditions on its own.
 
 ### Hydrogen bombs
-The same physics, run uncontrolled and all at once, releases the fusion energy of a star in a single explosive pulse.
+
+The same physics, run uncontrolled and all at once, releases its fusion energy in a single explosive pulse.

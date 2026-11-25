@@ -3,16 +3,16 @@ subject: cryptography
 difficulty: high-school
 equation: c = \sigma^{-1}\!\left(U(\sigma(p))\right)
 concepts:
-- rotor-machine
-- enigma
-- polyalphabetic
-- cryptanalysis
+  - rotor-machine
+  - enigma
+  - polyalphabetic
+  - cryptanalysis
 prerequisites:
-- vigenere-cipher
+  - vigenere-cipher
 related:
-- frequency-analysis
-- xor-and-one-time-pad
-- caesar-cipher
+  - frequency-analysis
+  - xor-and-one-time-pad
+  - caesar-cipher
 visualization:
   type: enigma-machine
   options: {}
@@ -21,29 +21,29 @@ parameters:
     min: 0
     max: 25
     step: 1
-    value: 0
+    value: 11
   r2:
     min: 0
     max: 25
     step: 1
-    value: 0
+    value: 4
   r3:
     min: 0
     max: 25
     step: 1
-    value: 0
+    value: 21
   letter:
     min: 0
     max: 25
     step: 1
     value: 0
 variables:
-- \sigma
-- U
+  - \sigma
+  - U
 derivation:
-- \sigma = \text{three rotors in a row; each press turns them, so the path changes with every letter}
-- U = \text{the reflector bounces the signal back through all three rotors}
-- c = \sigma^{-1}(U(\sigma(p))) \Rightarrow \text{the same setting decrypts its own message}
+  - \sigma = \text{three rotors in a row; each press turns them, so the path changes with every letter}
+  - U = \text{the reflector bounces the signal back through all three rotors}
+  - c = \sigma^{-1}(U(\sigma(p))) \Rightarrow \text{the same setting decrypts its own message}
 charts: []
 primary: letter
 presets:

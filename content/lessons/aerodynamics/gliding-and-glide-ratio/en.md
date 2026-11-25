@@ -15,9 +15,9 @@ variables:
 
 ## Try it
 
-1. Picture a paper aeroplane released from a 1.5 m desk, glide ratio about 4.
-2. Read the glide distance: only a few metres, and the glide angle is steep.
-3. Drag «lift-to-drag ratio L/D» up toward a real glider's 30, and watch the same starting height suddenly buy a huge distance instead.
+1. Set «starting height h» to 2 m and «lift-to-drag ratio L/D» to 4: a paper aeroplane thrown from head height.
+2. Read the glide distance: only 8 m, and the glide angle is steep, γ = 14.04°.
+3. Drag «lift-to-drag ratio L/D» up to a real glider's 30. The same 2 m of height now buys 60 m, and γ falls to 1.91°.
 
 ## Real-life examples
 
@@ -45,7 +45,7 @@ For small angles, $\tan\gamma \approx \gamma$ in radians, and the horizontal dis
 
 ## Advanced
 
-Because glide ratio depends only on $L/D$, and both lift and drag scale with the square of airspeed at a fixed angle of attack, an aircraft has a *best* glide speed where $L/D$ peaks; flying faster or slower than that speed (even though still gliding stably) trades away some of the available distance, which is why glider pilots fly a specific "best glide" speed rather than whatever feels comfortable.
+Because glide ratio depends only on $L/D$, and both lift and drag scale with the square of airspeed at a fixed angle of attack, an aircraft has a _best_ glide speed where $L/D$ peaks; flying faster or slower than that speed (even though still gliding stably) trades away some of the available distance, which is why glider pilots fly a specific "best glide" speed rather than whatever feels comfortable.
 
 ## Derivation
 
@@ -56,13 +56,17 @@ Because glide ratio depends only on $L/D$, and both lift and drag scale with the
 ## Real world
 
 ### Competition sailplanes
+
 The best modern sailplanes reach glide ratios above 60, meaning a single kilometre of altitude can, in perfectly still air, buy more than 60 km of straight-line distance.
 
 ### Space Shuttle re-entry
+
 The Shuttle orbiter glided to landing with a glide ratio of only about 4.5 — closer to a brick than a sailplane — which is why its final approach was flown far steeper than an airliner's.
 
 ### Engine-out emergency checklists
+
 Every airliner's emergency procedures include a known best-glide speed and an estimated glide ratio, so a crew who loses all engines can immediately estimate how far they can reach.
 
 ### Hang gliders and paragliders
+
 Recreational glide ratios of 8 to 12 (hang gliders) up to 10 or more (modern paragliders) are exactly what pilots use, before launching, to judge whether a distant landing field is even reachable.

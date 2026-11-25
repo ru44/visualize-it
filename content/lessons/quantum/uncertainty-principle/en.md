@@ -14,27 +14,27 @@ charts: []
 
 ## Try it
 
-1. Look at the bump on screen: its width shows how spread out the particle's position is, and the readout beside it shows the spread in its speed.
-2. Drag «position spread Δx» narrower, squeezing the bump. The speed-spread readout climbs.
-3. Drag «position spread Δx» wider instead, spreading the bump out. The speed-spread readout falls.
+1. Look at the bump on screen: its width shows how spread out the particle's position is, and the «Δp» readout shows the spread in its momentum, which is the spread in its speed. With Δx = 0.08, Δp reads 6.25.
+2. Drag «position spread Δx» down to 0.04, squeezing the bump. Δp doubles to 12.5.
+3. Drag «position spread Δx» up to 0.2 instead, spreading the bump out. Δp falls to 2.5, and «Δx · Δp» stays at 0.5 the whole time.
 
 ## Real-life examples
 
-1. **A photon loosely located over a wide region.** With a wide position spread, its speed is known fairly precisely.
-2. **An electron confined tightly inside an atom.** Squeezed into such a small space, its speed becomes wildly uncertain.
-3. **A dust grain, localized fairly precisely.** At an everyday size the uncertainty is there in principle but far too small to ever notice.
+1. **A photon loosely located over a wide region.** With a wide position spread, Δx = 0.25, its momentum is known fairly precisely: Δp is only 2.
+2. **An electron confined tightly inside an atom.** Squeezed into such a small space, Δx = 0.03, its speed becomes wildly uncertain: Δp jumps to 16.67.
+3. **A dust grain, localized fairly precisely.** Here Δx = 0.1 and Δp = 5. At an everyday size the uncertainty is there in principle but far too small to ever notice.
 
 ## Test yourself
 
-1. Set the speed-spread readout to about 5.
-2. Squeeze the bump until the speed-spread readout climbs above 15.
-3. Widen the bump until the speed-spread readout drops to about 1.7, as wide as this slider allows.
+1. Set the «Δp» readout to about 5.
+2. Squeeze the bump until the «Δp» readout climbs above 15.
+3. Widen the bump until the «Δp» readout drops to about 1.7, as wide as this slider allows.
 
 ## Intuition
 
 Squeeze a wave packet into a single, sharp spike and it has a clean, well-defined position — but to build a spike that sharp you must add together waves of many different wavelengths, so its speed becomes almost impossible to pin down. Spread the same amount of wave out over a wide region instead, and it settles into something close to one clean wavelength, giving a well-defined speed but a hopelessly vague position.
 
-Drag «position spread Δx» narrower on screen and watch the bump shrink while the speed-spread readout beside it climbs; drag it wider and watch the opposite happen. The trade is not a flaw of the measuring instrument — the wave simply cannot have both a single sharp position and a single sharp speed at once.
+Drag «position spread Δx» narrower on screen and watch the bump shrink while the «Δp» readout climbs; drag it wider and watch the opposite happen. The trade is not a flaw of the measuring instrument — the wave simply cannot have both a single sharp position and a single sharp speed at once.
 
 ## Formal
 
@@ -55,10 +55,13 @@ Werner Heisenberg derived this limit in 1927 from the mathematics of Fourier ana
 ## Real world
 
 ### Electron microscopy resolution
+
 Confining an electron beam tightly enough to image small features unavoidably spreads its momentum, setting a fundamental limit on achievable resolution.
 
 ### Laser linewidth
+
 A laser pulse made extremely short in time must contain a correspondingly wide spread of frequencies, the time-energy cousin of the same principle.
 
 ### Zero-point energy
+
 Even at absolute zero temperature, a trapped particle cannot sit perfectly still at the bottom of its trap, since that would fix both its position and momentum at once; this leftover jiggle is called zero-point energy.

@@ -45,4 +45,4 @@ presets:
 challenges:
   - check: A >= 54 and A <= 64
   - check: A > 150
-  - check: A < 20
+  - check: A < 10
