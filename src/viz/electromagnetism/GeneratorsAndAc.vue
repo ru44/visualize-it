@@ -6,8 +6,8 @@ import Readouts from '../../components/Readouts.vue'
 
 // electromagnetism/generators-and-ac. params: N, B, A, rpm, t. f = rpm/60, Vpeak = N*B*A*2*pi*f,
 // v(t) = Vpeak*sin(2*pi*f*t). The wave on the right is auto-scaled to +-Vpeak (which spans volts to
-// kilovolts across presets); the small schematic on the left shows the coil at its matching angle
-// 2*pi*f*t, and a lamp whose brightness follows |v(t)|/Vpeak.
+// kilovolts across presets); the small schematic on the left shows the coil turned by
+// 2*pi*f*t from face-on to the field (wires across the field, v = 0), and a lamp whose brightness follows |v(t)|/Vpeak.
 const props = defineProps<{ params: Record<string, number>; options: Record<string, any> }>()
 const emit = defineEmits<{ set: [name: string, value: number] }>()
 
@@ -70,8 +70,8 @@ const SC_CX = 155
 const SC_CY = 110
 const SC_R = 46
 const outward = computed(() => v.value >= 0)
-const coilEnd1 = computed(() => ({ x: SC_CX + SC_R * Math.cos(phi.value), y: SC_CY - SC_R * Math.sin(phi.value) }))
-const coilEnd2 = computed(() => ({ x: SC_CX - SC_R * Math.cos(phi.value), y: SC_CY + SC_R * Math.sin(phi.value) }))
+const coilEnd1 = computed(() => ({ x: SC_CX - SC_R * Math.sin(phi.value), y: SC_CY - SC_R * Math.cos(phi.value) }))
+const coilEnd2 = computed(() => ({ x: SC_CX + SC_R * Math.sin(phi.value), y: SC_CY + SC_R * Math.cos(phi.value) }))
 const lampFrac = computed(() => (Vpeak.value > 0 ? Math.abs(v.value) / Vpeak.value : 0))
 
 const readouts = computed(() => [
