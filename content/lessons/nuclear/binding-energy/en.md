@@ -17,7 +17,7 @@ charts: []
 ## Try it
 
 1. Drag slider "mass number A" up from 12 to 20. The readout "per nucleon" climbs from 7.2 to 8.01 MeV: the marked dot climbs the curve fast at first, each extra nucleon adding almost the full binding energy a deep interior nucleon gets.
-2. Keep dragging until the dot sits at the very top, at A = 60, where "per nucleon" reads 8.84 MeV — the neighbourhood of iron and nickel, the most tightly bound nuclei that exist.
+2. Keep dragging until the dot sits at the very top, at A = 62, where "per nucleon" reads 8.84 MeV — the neighbourhood of iron and nickel, the most tightly bound nuclei that exist.
 3. Keep going into heavy territory, past A = 150, all the way to A = 235, the mass number of uranium-235. "per nucleon" falls to about 7.6 MeV as the curve slopes back down on the right.
 
 ## Real-life examples

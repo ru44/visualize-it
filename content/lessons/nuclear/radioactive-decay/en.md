@@ -28,8 +28,8 @@ charts: []
 
 ## Test yourself
 
-1. Run "time" forward to exactly 1 half-life.
-2. Run "time" forward until fewer than 5% of the atoms remain.
+1. Raise "how many atoms" to 200 or more, then run "time" forward to exactly 1 half-life.
+2. Set the half-life to iodine-131's, about 8 days (the "half-life" readout shows 7.9 d), then run "time" forward until fewer than 5% of the atoms remain.
 3. Set the half-life to carbon-14's, about 5730 years (the slider gets closest when the "half-life" readout shows 5462.7 yr), then run "time" forward to exactly 2 half-lives.
 
 ## Intuition

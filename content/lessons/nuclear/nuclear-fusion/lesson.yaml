@@ -54,4 +54,4 @@ presets:
 challenges:
   - check: temperature < 1 and confinement < 0.5 and step >= 80
   - check: temperature > 3 and confinement > 0.8 and step >= 80
-  - check: step >= 150
+  - check: temperature > 3 and confinement < 0.5 and step >= 150

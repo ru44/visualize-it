@@ -45,7 +45,8 @@ const tree = computed(() => {
     const parents: number[] = []
     for (let pi = 0; pi < prev.length && parents.length < CAP; pi++) {
       let children = floorK
-      if (rnd() < frac) children++
+      // below k = 1 the single lineage lasts while k^g still rounds to 1, so it fades as k^g does
+      if (floorK === 0 ? k.value ** g >= 0.5 : rnd() < frac) children++
       for (let c = 0; c < children && parents.length < CAP; c++) parents.push(pi)
     }
     const y = Y0 + rowH * g
