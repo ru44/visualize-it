@@ -99,8 +99,8 @@ const readouts = computed(() => [
         <text class="num" :x="p[0]" :y="p[1] + 5" text-anchor="middle" font-size="14" :fill="i === f.current || f.visited.includes(i) ? '#fff' : 'var(--fg)'">{{ String.fromCharCode(65 + i) }}</text>
         <text v-if="Number.isFinite(f.dist[i])" class="num" :x="p[0] + 24" :y="p[1] - 14" font-size="11" fill="var(--accent)">{{ f.dist[i] }}</text>
       </g>
-      <text class="num" :x="nodes[start][0]" :y="nodes[start][1] + 38" text-anchor="middle" font-size="11" fill="var(--muted)">start</text>
-      <text class="num" :x="nodes[target][0]" :y="nodes[target][1] + 38" text-anchor="middle" font-size="11" fill="var(--accent)">goal</text>
+      <text class="num" :x="nodes[start][0]" :y="nodes[start][1] + 38" text-anchor="middle" font-size="11" fill="var(--muted)">{{ t('gsearch.start') }}</text>
+      <text class="num" :x="nodes[target][0]" :y="nodes[target][1] + 38" text-anchor="middle" font-size="11" fill="var(--accent)">{{ t('gsearch.goal') }}</text>
     </svg>
     <Readouts :items="readouts" />
   </div>

@@ -15,8 +15,8 @@ const W = 800
 const H = 480
 const X0 = 80
 const X1 = 730
-const Y0 = 380
-const AMP_PX = 130
+const Y0 = 335
+const AMP_PX = 110
 const T_MAX = 0.1
 
 const N = computed(() => Math.max(props.params.N ?? 100, 1))

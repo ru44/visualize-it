@@ -67,7 +67,7 @@ const potential = computed(
 const arrows = computed(() => {
   const out: { x1: number; y1: number; x2: number; y2: number; head: string; op: number }[] = []
   for (let gx = 20; gx <= W - 20; gx += 40) {
-    for (let gy = 20; gy <= H - 20; gy += 40) {
+    for (let gy = 60; gy <= H - 20; gy += 40) {
       const { ex, ey } = eAt(wx(gx), wy(gy))
       const mag = Math.hypot(ex, ey)
       if (!Number.isFinite(mag) || mag < 1e-6) continue

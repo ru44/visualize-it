@@ -284,6 +284,8 @@ gsearch.frontier: in the queue
 gsearch.pathLen: path length
 gsearch.hint: tap a node to choose the start · numbers on edges are distances
 gsearch.order: visit order
+gsearch.start: start
+gsearch.goal: goal
 bits.hint: tap a bit to flip it
 bits.dec: decimal
 bits.hex: hexadecimal
