@@ -14,7 +14,7 @@ variables:
 
 ## Try it
 
-1. Leave «start» at 0 (circle A) and drag «step» slowly from 0 to 1 — circle A lights up first, then its direct neighbours B and F as one layer, then their neighbours C and G as the next layer. The visit order readout ends as A B F C G D H E I J, and the path length readout, 22, adds up the numbers on the 5 edges of the path to J.
+1. Leave «start» at 0 (circle A) and drag «step» slowly from 0 to 1 — circle A lights up first, then its direct neighbours B and F as one layer, then their neighbours C and G as the next layer. The visit order readout ends as A B F C G D H E I J, and the path length readout, 5, counts the edges on the path to J; the numbers printed on the edges play no part.
 2. Drag «step» back to 0 and forward again to replay the layers one at a time, and notice the goal, circle J, only lights up once every closer layer has already been explored.
 3. Set «start» to 5 (circle F) and drag «step» to the end again — the layers redraw from the new starting point, and the goal is found in 4 hops (F, G, H, I, J) instead of 5, still the fewest possible.
 

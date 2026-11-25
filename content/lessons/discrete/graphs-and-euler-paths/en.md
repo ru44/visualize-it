@@ -41,7 +41,7 @@ For a finite undirected graph with at least one edge, an Euler trail exists exac
 
 ## Advanced
 
-The pairing argument explains why the degree condition is necessary. To show sufficiency, one can build trails and splice closed trails into them until every edge is used. Connectivity is essential: two separate cycles have only even degrees, yet no single trail can cover both. The breadth-first search shown here minimizes edge count to reachable vertices; its displayed accumulated weights need not be minimum-weight distances.
+The pairing argument explains why the degree condition is necessary. To show sufficiency, one can build trails and splice closed trails into them until every edge is used. Connectivity is essential: two separate cycles have only even degrees, yet no single trail can cover both. The breadth-first search shown here minimizes edge count to reachable vertices; the number it shows beside each vertex counts edges and ignores the weights.
 
 ## Derivation
 

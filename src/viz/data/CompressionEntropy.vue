@@ -79,7 +79,7 @@ const barY = (i: number) => 90 + i * 90
           <rect :x="16 + s * 200" y="310" width="180" height="50" rx="8" :fill="SYM_COLOR[s]" fill-opacity="0.18" :stroke="SYM_COLOR[s]" />
           <text class="num" :x="26 + s * 200" y="342" font-size="20" fill="var(--fg)">{{ SYMS[s] }} × {{ reps }}</text>
         </g>
-        <text class="num" x="16" y="410" font-size="13" fill="var(--muted)">{{ originalBits }} bits → {{ compressedBits }} bits</text>
+        <text class="num" x="16" y="410" font-size="13" fill="var(--muted)">{{ originalBits }} {{ t('ce.bits') }} → {{ compressedBits }} {{ t('ce.bits') }}</text>
       </template>
 
       <template v-else>

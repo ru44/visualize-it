@@ -262,6 +262,7 @@ gates.out: output
 gates.table: truth table
 sort.step: step
 sort.compares: comparisons
+sort.reads: reads
 sort.swaps: swaps
 sort.done: sorted
 sort.hint: ▶ runs the algorithm · drag the slider to step through

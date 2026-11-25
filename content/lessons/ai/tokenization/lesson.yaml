@@ -17,7 +17,7 @@ visualization:
 parameters:
   merges:
     min: 0
-    max: 30
+    max: 6
     step: 1
     value: 3
   text:
@@ -38,11 +38,11 @@ primary: merges
 presets:
   - merges: 0
     text: 0
-  - merges: 25
+  - merges: 6
     text: 0
-  - merges: 12
+  - merges: 5
     text: 2
 challenges:
   - check: merges == 0
-  - check: text == 0 and merges >= 25
-  - check: text == 2 and merges >= 10
+  - check: text == 0 and merges >= 6
+  - check: text == 2 and merges >= 5

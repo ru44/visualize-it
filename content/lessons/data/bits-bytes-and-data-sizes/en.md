@@ -18,7 +18,7 @@ variables:
 
 1. **A single letter.** One typed character costs about one byte to store, so e sits at 0.
 2. **A phone photo.** A typical phone photo is a few megabytes, so e sits around 6.6, about 4,000,000 bytes.
-3. **All the world's data in a year.** Every video, message and sensor reading humanity records in a year adds up to well over a 1 followed by 21 zeros in bytes, so e climbs to the top of the slider, close to 22.
+3. **All the world's data in a year.** Every video, message and sensor reading humanity records in a year adds up to more than 100 ZB, a 1 followed by 23 zeros in bytes, so e climbs to the very top of the slider, 23.
 
 ## Test yourself
 

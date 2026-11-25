@@ -46,11 +46,13 @@ const path = (f: (x: number) => number) => Array.from({ length: 201 }, (_, i) =>
 const mse = (xs: [number, number][]) => xs.reduce((s, [x, y]) => s + (model(x) - y) ** 2, 0) / xs.length
 const trainErr = computed(() => mse(pts.value))
 const testErr = computed(() => mse(test.map((x) => [x, truth(x)] as [number, number])))
+// overfitting = far worse on new points than on the training points AND worse than a flat line (error ≈ 2)
+const over = computed(() => testErr.value > 3 * trainErr.value + 0.2 && testErr.value > 2)
 const readouts = computed(() => [
   { label: t('fit.degree'), value: String(degree.value) },
   { label: t('fit.trainErr'), value: fmt(trainErr.value, 3), color: 'var(--accent)' },
-  { label: t('fit.testErr'), value: fmt(testErr.value, 3), color: testErr.value > 3 * trainErr.value + 0.2 ? 'var(--neg)' : 'var(--pos)' },
-  { label: t('fit.verdict'), value: degree.value <= 1 ? t('fit.under') : testErr.value > 3 * trainErr.value + 0.2 ? t('fit.over') : t('fit.good') },
+  { label: t('fit.testErr'), value: fmt(testErr.value, 3), color: over.value ? 'var(--neg)' : 'var(--pos)' },
+  { label: t('fit.verdict'), value: degree.value <= 1 ? t('fit.under') : over.value ? t('fit.over') : t('fit.good') },
 ])
 function add(e: PointerEvent) {
   const svg = e.currentTarget as SVGSVGElement
