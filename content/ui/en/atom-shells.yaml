@@ -1,0 +1,9 @@
+atom.element: element
+atom.z: Z (protons)
+atom.n: N (neutrons)
+atom.a: A (mass number)
+atom.config: electron config
+atom.valence: valence electrons
+atom.isotope: '{name} — isotope {a}{sym}'
+atom.hint: drag horizontally to set Z · outer (valence) electrons highlighted
+atom.note: Shell model — real electrons occupy orbitals (probability clouds), not circular tracks.

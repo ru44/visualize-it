@@ -2,6 +2,7 @@
 import { computed, onMounted, onUnmounted, reactive, watch } from 'vue'
 import { fmt } from '../../engine/math'
 import Readouts from '../../components/Readouts.vue'
+import { t } from '../../i18n'
 
 const props = defineProps<{ params: Record<string, number>; options: Record<string, any> }>()
 defineEmits<{ set: [name: string, value: number] }>()
@@ -75,8 +76,8 @@ const radius = computed(() => (q.value !== 0 && B.value !== 0 ? (K_RAD * v.value
 const period = computed(() => (Number.isFinite(radius.value) ? (2 * Math.PI * radius.value) / v.value : NaN))
 const deflect = computed(() => {
   const ay0 = K_E * q.value * E.value - K_B * q.value * B.value * v.value
-  if (Math.abs(ay0) < 1e-6) return 'none'
-  return ay0 > 0 ? 'down' : 'up'
+  if (Math.abs(ay0) < 1e-6) return t('lorentz.none')
+  return ay0 > 0 ? t('lorentz.down') : t('lorentz.up')
 })
 
 const velLine = computed(() => {
@@ -95,10 +96,10 @@ const forceLine = computed(() => {
 const trailPath = computed(() => state.trail.map((p, i) => `${i ? 'L' : 'M'}${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(''))
 
 const readouts = computed(() => [
-  { label: 'F = qvB', value: `${fmt(fMag.value)} (rel. units)` },
-  { label: 'radius', value: Number.isFinite(radius.value) ? `${fmt(radius.value)} px` : '—' },
-  { label: 'period', value: Number.isFinite(period.value) ? `${fmt(period.value)} steps` : '—' },
-  { label: 'deflects', value: deflect.value, color: 'var(--accent-2)' },
+  { label: 'F = qvB', value: `${fmt(fMag.value)} ${t('lorentz.relUnits')}` },
+  { label: t('lorentz.radius'), value: Number.isFinite(radius.value) ? `${fmt(radius.value)} px` : '—' },
+  { label: t('lorentz.period'), value: Number.isFinite(period.value) ? `${fmt(period.value)} ${t('lorentz.steps')}` : '—' },
+  { label: t('lorentz.deflects'), value: deflect.value, color: 'var(--accent-2)' },
 ])
 </script>
 
@@ -121,7 +122,7 @@ const readouts = computed(() => [
       <line :x1="velLine.x1" :y1="velLine.y1" :x2="velLine.x2" :y2="velLine.y2" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" />
       <circle :cx="state.x" :cy="state.y" r="5.5" fill="var(--fg)" />
 
-      <text class="num" x="16" y="24" font-size="12" fill="var(--muted)">F = q(E + v × B): the magnetic force is always perpendicular to v, so it steers but never speeds up.</text>
+      <text class="num" x="16" y="24" font-size="12" fill="var(--muted)">{{ t('lorentz.hint') }}</text>
     </svg>
     <Readouts :items="readouts" />
   </div>

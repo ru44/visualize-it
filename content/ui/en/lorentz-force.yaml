@@ -1,0 +1,9 @@
+lorentz.hint: 'F = q(E + v × B): the magnetic force is always perpendicular to v, so it steers but never speeds up.'
+lorentz.radius: radius
+lorentz.period: period
+lorentz.steps: steps
+lorentz.deflects: deflects
+lorentz.relUnits: (rel. units)
+lorentz.up: up
+lorentz.down: down
+lorentz.none: none
