@@ -10,7 +10,7 @@ const W = 800
 const H = 480
 const K_RAD = 30 // px per (v / |q B|) — calibrates the visible cyclotron radius
 const K_B = 1 / K_RAD
-const K_E = 1 / (2 * K_RAD)
+const K_E = K_B
 const TRAIL_N = 200
 
 const q = computed(() => props.params.q ?? 1)
@@ -31,10 +31,18 @@ reset()
 watch(() => [q.value, v.value, B.value, E.value], reset)
 
 function step() {
-  const ax = -K_B * q.value * B.value * state.vy
-  const ay = K_B * q.value * B.value * state.vx - K_E * q.value * E.value
-  state.vx += ax
-  state.vy += ay
+  // Boris step: half electric kick, exact rotation by the magnetic field, half kick.
+  // Keeps the speed constant when E = 0 (closed circle) and gives a straight line at v = E/B.
+  // Screen y points down: with B into the screen a positive charge moving right is pushed up, and E points down.
+  const t = (K_B * q.value * B.value) / 2
+  const c = (1 - t * t) / (1 + t * t)
+  const s = (2 * t) / (1 + t * t)
+  const kick = (K_E * q.value * E.value) / 2
+  const vy0 = state.vy + kick
+  const vx1 = c * state.vx + s * vy0
+  const vy1 = c * vy0 - s * state.vx
+  state.vx = vx1
+  state.vy = vy1 + kick
   state.x += state.vx
   state.y += state.vy
   state.trail.push([state.x, state.y])
@@ -66,7 +74,7 @@ const fMag = computed(() => Math.abs(q.value * v.value * B.value))
 const radius = computed(() => (q.value !== 0 && B.value !== 0 ? (K_RAD * v.value) / Math.abs(q.value * B.value) : NaN))
 const period = computed(() => (Number.isFinite(radius.value) ? (2 * Math.PI * radius.value) / v.value : NaN))
 const deflect = computed(() => {
-  const ay0 = K_B * q.value * B.value * v.value - K_E * q.value * E.value
+  const ay0 = K_E * q.value * E.value - K_B * q.value * B.value * v.value
   if (Math.abs(ay0) < 1e-6) return 'none'
   return ay0 > 0 ? 'down' : 'up'
 })
@@ -77,8 +85,8 @@ const velLine = computed(() => {
   return { x1: state.x, y1: state.y, x2: state.x + state.vx * s, y2: state.y + state.vy * s }
 })
 const forceLine = computed(() => {
-  const ax = -K_B * q.value * B.value * state.vy
-  const ay = K_B * q.value * B.value * state.vx - K_E * q.value * E.value
+  const ax = K_B * q.value * B.value * state.vy
+  const ay = K_E * q.value * E.value - K_B * q.value * B.value * state.vx
   const m = Math.hypot(ax, ay) || 1e-9
   const s = 26 / m
   return { x1: state.x, y1: state.y, x2: state.x + ax * s, y2: state.y + ay * s }

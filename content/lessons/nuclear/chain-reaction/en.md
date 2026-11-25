@@ -13,7 +13,7 @@ charts: []
 ## Try it
 
 1. Set "multiplication factor k" to exactly 1.00 and drag "generations" up to 12. The tree grows one node per row, forever: "population" stays at 1 and "status" reads holding steady — a steady chain reaction.
-2. Lower k to 0.7 and press restart. The first fission fails to start another: "population" drops to 0 from generation 1 on and "status" reads dying out.
+2. Lower k to 0.7 and press restart. The chain manages just one more fission and then stops: "population" drops to 0 from generation 2 on and "status" reads dying out. Try k = 0.9 too: the chain lasts longer, until generation 6.
 3. Raise k to 2.00 and restart. Each row fans out twice as wide as the last — 1, 2, 4, 8, 16 — and "population" reads 64 at generation 6 and 4096 at generation 12.
 
 ## Real-life examples

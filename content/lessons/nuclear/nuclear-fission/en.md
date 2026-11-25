@@ -24,9 +24,9 @@ charts: []
 
 ## Test yourself
 
-1. Run a slow neutron, below 5,000 km/s, all the way to the end and watch the fission complete.
+1. Slow the neutron down to 400 km/s or less (but not zero), then run it all the way to the end and watch the fission complete.
 2. Run a fast neutron, 5,000 km/s or above, all the way to the end and confirm it only bounces off.
-3. Catch the nucleus stretched into its dumbbell shape, somewhere between time 30 and time 55.
+3. Raise "neutron speed" to between 2,000 and 4,800 km/s, still slow enough to split the nucleus, and catch it stretched into its dumbbell shape, somewhere between time 30 and time 55.
 
 ## Intuition
 

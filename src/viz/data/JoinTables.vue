@@ -52,7 +52,7 @@ const readouts = computed(() => [
       <text class="num" x="460" y="70" font-size="13" font-weight="600" fill="var(--fg)">{{ t('jt.orders') }}</text>
       <g v-for="(o, i) in ORDERS" :key="'o' + o.oid">
         <rect x="440" :y="ordY(i)" width="200" height="34" rx="7" fill="var(--sunken)" stroke="var(--line)" />
-        <text class="num" x="452" :y="ordY(i) + 22" font-size="13" fill="var(--fg)">#{{ o.oid }} · cust {{ o.cust }} · ${{ o.amount }}</text>
+        <text class="num" x="452" :y="ordY(i) + 22" font-size="13" fill="var(--fg)">#{{ o.oid }} · {{ t('jt.cust') }} {{ o.cust }} · {{ t('jt.money', { n: o.amount }) }}</text>
       </g>
 
       <g v-for="c in customers" :key="'lines' + c.id">
@@ -74,7 +74,7 @@ const readouts = computed(() => [
           <text x="40" :y="resY(i)" fill="var(--fg)">{{ r.cust }}</text>
           <text x="120" :y="resY(i)" fill="var(--fg)">{{ t(`jt.${r.name}` as any) }}</text>
           <text x="260" :y="resY(i)" :fill="r.oid === null ? 'var(--neg)' : 'var(--fg)'">{{ r.oid ?? 'NULL' }}</text>
-          <text x="400" :y="resY(i)" :fill="r.amount === null ? 'var(--neg)' : 'var(--fg)'">{{ r.amount === null ? 'NULL' : '$' + r.amount }}</text>
+          <text x="400" :y="resY(i)" :fill="r.amount === null ? 'var(--neg)' : 'var(--fg)'">{{ r.amount === null ? 'NULL' : t('jt.money', { n: r.amount }) }}</text>
         </g>
       </g>
     </svg>

@@ -13,7 +13,7 @@ const H = 480
 const p = (k: string, d = 0) => props.params[k] ?? d
 const sig = (z: number) => 1 / (1 + Math.exp(-z))
 function forward(x: number, y: number) {
-  const h = [Math.tanh(p('w11', 1) * x + p('w12', 1) * y), Math.tanh(p('w21', 1) * x - p('w22', 1) * y), Math.tanh(p('w31', -1) * x + p('w32', 1) * y)]
+  const h = [Math.tanh(p('w11', 1) * x + p('w12', 1) * y), Math.tanh(p('w21', 1) * x + p('w22', -1) * y), Math.tanh(p('w31', -1) * x + p('w32', 1) * y)]
   const out = sig(p('v1', 1) * h[0] + p('v2', 1) * h[1] + p('v3', 1) * h[2] + p('b', 0))
   return { h, out }
 }
@@ -29,7 +29,7 @@ const mx = (x: number) => map.x + ((x + 3) / 6) * 24 * map.s
 const my = (y: number) => map.y + ((3 - y) / 6) * 24 * map.s
 const nodes = { in: [[60, 160], [60, 320]], hid: [[220, 100], [220, 240], [220, 380]], out: [[380, 240]] }
 const wts = computed(() => [
-  ...[['w11', 0, 0], ['w12', 1, 0], ['w21', 0, 1], ['w22', 1, 1], ['w31', 0, 2], ['w32', 1, 2]].map(([k, i, h]) => ({ x1: nodes.in[i as number][0], y1: nodes.in[i as number][1], x2: nodes.hid[h as number][0], y2: nodes.hid[h as number][1], w: p(k as string, 1) * (k === 'w22' ? -1 : 1) })),
+  ...[['w11', 0, 0], ['w12', 1, 0], ['w21', 0, 1], ['w22', 1, 1], ['w31', 0, 2], ['w32', 1, 2]].map(([k, i, h]) => ({ x1: nodes.in[i as number][0], y1: nodes.in[i as number][1], x2: nodes.hid[h as number][0], y2: nodes.hid[h as number][1], w: p(k as string, 1) })),
   ...['v1', 'v2', 'v3'].map((k, h) => ({ x1: nodes.hid[h][0], y1: nodes.hid[h][1], x2: nodes.out[0][0], y2: nodes.out[0][1], w: p(k, 1) })),
 ])
 const readouts = computed(() => [

@@ -30,7 +30,7 @@ charts: []
 ## Test yourself
 
 1. Reach the energy level where the energy readout is nine times the ground-state energy.
-2. Push the level to 4 or higher.
+2. Push the level to 5 or higher.
 3. Reach the energy level where the energy readout is sixteen times the ground-state energy.
 
 ## Intuition

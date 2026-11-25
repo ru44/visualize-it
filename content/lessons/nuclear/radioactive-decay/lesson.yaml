@@ -57,6 +57,6 @@ presets:
     time: 1
     N0: 100
 challenges:
-  - check: abs(time - 1) < 0.05
-  - check: (0.5)^time < 0.05
+  - check: N0 >= 200 and abs(time - 1) < 0.05
+  - check: abs(halfLife - 0.9) < 0.1 and (0.5)^time < 0.05
   - check: abs(halfLife - 6.3207) < 0.1 and abs(time - 2) < 0.05

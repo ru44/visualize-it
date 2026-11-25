@@ -19,13 +19,13 @@ variables:
 ## Try it
 
 1. Start with a slow, human-like rate (μ = 0.01) and only 10 generations — almost nothing changes: expected mutations E reads 0 and no box is red.
-2. Set the rate to μ = 1 and push generations up to 1000. E climbs slowly to 1: about one changed base in the whole 1000-base sequence, still too few to show in the 60-box window.
-3. Switch to a fast, virus-like rate, μ = 100. E jumps to 100, 10% of the bases have changed, and 6 of the 60 boxes turn red.
+2. Set the rate to μ = 1 and push generations up to 1000. E climbs slowly to 1: about one changed base in the whole 1000-base sequence, and one of the 60 boxes turns red.
+3. Switch to a fast, virus-like rate, μ = 100. E jumps to 100, 10% of the bases have changed, and 47 of the 60 boxes turn red: almost every slice of the sequence now holds a changed base.
 
 ## Real-life examples
 
 1. **A human gene copied across 10 generations.** At about one mistake per hundred million bases, essentially nothing changes — human DNA is copied with extraordinary care.
-2. **E. coli evolving in the lab for 1000 generations.** A real experiment (Lenski's, still running after tens of thousands of generations): bacteria divide so fast — several generations a day — that real change shows up on a lab timescale.
+2. **E. coli evolving in the lab for 1000 generations.** A real experiment (Lenski's, still running after tens of thousands of generations): bacteria divide so fast — several generations a day — that real change shows up on a lab timescale. The rate in this example (μ = 0.5) is set far above the real E. coli rate, which is too small for the slider, so that the change shows in the picture.
 3. **A flu gene segment over one flu season, about 50 replication cycles.** Influenza's copying machinery makes far more mistakes per copy — new variants appear within a single season, which is why flu vaccines are updated every year.
 
 ## Test yourself

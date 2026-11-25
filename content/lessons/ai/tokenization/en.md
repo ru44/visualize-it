@@ -16,20 +16,20 @@ variables:
 ## Try it
 
 1. Set merges to 0 and read the chips: every character is its own token, word starts marked with ▁, and the readout counts 49 tokens — this is the crawl a model would face with no vocabulary at all.
-2. Drag merges from 0 to 6 one step at a time and watch the greedy rule work: «▁th», then «▁the», then «▁cat» fuse into single chips while rare words stay in pieces. The count falls from 49 to 31; past 6 nothing changes, because no pair is left that appears twice.
-3. Keep merges at 10 and set text to 1 (code), then 2 (Arabic). The code only shrinks from 38 tokens to 34 because almost nothing in it repeats; the Arabic shrinks from 44 to 32 once «▁القطة» becomes one chip. Chips are earned by repetition — which is why a vocabulary grown on one kind of text serves another kind badly.
+2. Drag merges from 0 to 6 one step at a time and watch the greedy rule work: «▁th», then «▁the», then «▁cat» fuse into single chips while rare words stay in pieces. The count falls from 49 to 31; the slider stops at 6, because by then no pair is left that appears twice.
+3. Keep merges at 6 and set text to 1 (code), then 2 (Arabic). The code only shrinks from 38 tokens to 34 because almost nothing in it repeats; the Arabic shrinks from 44 to 32 once «▁القطة» becomes one chip. Chips are earned by repetition — which is why a vocabulary grown on one kind of text serves another kind badly.
 
 ## Real-life examples
 
 - **Plain English, no vocabulary.** The cat sentence costs 49 character-tokens — at this rate a page of text would swamp the model before it said anything.
-- **The same sentence, 25 merges later.** The repeated words «the» and «cat» have fused into single chips and the count drops from 49 to 31 — compression earned purely by repetition. Only the first 6 merges did any work; after that this short sentence has no repeated pair left.
-- **Arabic at 12 merges.** The greedy rule works on any script, taking this sentence from 44 tokens to 32 — but a vocabulary trained mostly on English spends its chips there, which is why the same sentence often costs more tokens in other languages.
+- **The same sentence, 6 merges later.** The repeated words «the» and «cat» have fused into single chips and the count drops from 49 to 31 — compression earned purely by repetition. After 6 merges this short sentence has no repeated pair left, so the slider stops there.
+- **Arabic at 5 merges.** The greedy rule works on any script, taking this sentence from 44 tokens to 32 — but a vocabulary trained mostly on English spends its chips there, which is why the same sentence often costs more tokens in other languages.
 
 ## Test yourself
 
 1. Set merges to zero and read a sentence the way a vocabulary-less model would.
-2. Give English at least 25 merges and watch whole words become single chips.
-3. Take the Arabic sample to 10 merges or more and compare its chips to the English ones.
+2. Give English all 6 merges and watch whole words become single chips.
+3. Take the Arabic sample to 5 merges or more and compare its chips to the English ones.
 
 ## Intuition
 

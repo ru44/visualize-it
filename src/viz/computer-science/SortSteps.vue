@@ -195,7 +195,7 @@ const bw = computed(() => (W - 40) / n.value)
 const readouts = computed(() => [
   { label: t('sort.algorithm'), value: t(`sort.alg.${algName.value}` as any), color: 'var(--fg)' },
   { label: t('sort.step'), value: `${fi.value} / ${trace.value.length - 1}` },
-  { label: t('sort.compares'), value: String(compares.value), color: 'var(--accent)' },
+  { label: t(algName.value === 'counting' || algName.value === 'radix' ? 'sort.reads' : 'sort.compares'), value: String(compares.value), color: 'var(--accent)' },
   { label: t('sort.swaps'), value: String(swaps.value), color: 'var(--accent-2)' },
   { label: 'n', value: String(n.value) },
 ])

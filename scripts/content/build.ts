@@ -109,7 +109,7 @@ for (const subject of readdirSync(join(CONTENT, 'lessons')).sort((a, b) => order
       try { code = compile(ch.check) } catch (e: any) { return err(`${where}/lesson.yaml`, `challenges[${i}].check: ${String(e.message).slice(0, 80)}`) }
       const names = Object.keys(L.parameters)
       const passes = (sc: Record<string, number>) => { try { const v = code.evaluate(sc); if (ch.target === undefined) return !!v; const tol = ch.tol ?? Math.max(0.01, Math.abs(ch.target) * 0.02); return typeof v === 'number' && Math.abs(v - ch.target) <= tol } catch { return false } }
-      const snap = (k: string, v: number) => { const p = L.parameters[k]; return Math.min(p.max, Math.max(p.min, p.min + Math.round((v - p.min) / p.step) * p.step)) }
+      const snap = (k: string, v: number) => { const p = L.parameters[k]; if (p.scale === 'log') return Math.min(p.max, Math.max(p.min, +v.toPrecision(2))); return Math.min(p.max, Math.max(p.min, p.min + Math.round((v - p.min) / p.step) * p.step)) }
       let ok = false
       // Deterministic search (a seeded generator, so CI never flakes). Tight tasks usually pin some
       // sliders to "likely" values: the default, preset values and the numbers written in the check.

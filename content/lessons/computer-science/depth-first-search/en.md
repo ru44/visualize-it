@@ -19,25 +19,25 @@ variables:
 
 1. Set the slider "start" to 0 (circle A) and drag "step" slowly from 0 toward 1 — watch a single path snake from A toward the goal, circle J, one neighbour at a time: A, F, G, H, I, J.
 2. Drag "step" back to 0, then set "start" to 9 (circle J) — the path begins right on the goal, so J is the very first circle visited.
-3. Set "start" to 3 (circle D) and slide "step" past the halfway point — the path goes D, I, J, finds no new neighbour at J, and backtracks: it jumps back to I's other neighbour, H.
+3. Set "start" to 3 (circle D) and slide "step" past the halfway point — the path goes D, I, J, E, finds no new neighbour at E, and backtracks: it jumps back to I's other neighbour, H.
 
 ## Real-life examples
 
 - **Exploring a corn maze from the gate.** Starting at 0 (room A), the entrance, with the play position run to the end (step = 1) shows the one path DFS commits to, A F G H I J, reaching the exit without a single dead end on the way.
 - **Already standing at the exit.** Starting at 9 (room J), the same room as the goal, with the play position paused at the very beginning (step = 0) shows the search finishing instantly, because there is nowhere left to go.
-- **Starting from the middle of the maze.** Starting at 3 (room D) and running the play position all the way to the end (step = 1) shows the path reach J after two moves, then double back to H to finish exploring the other rooms.
+- **Starting from the middle of the maze.** Starting at 3 (room D) and running the play position all the way to the end (step = 1) shows the path reach J after two moves, step on to E, then double back to H to finish exploring the other rooms.
 
 ## Test yourself
 
 1. Start the search at 0 (circle A) and drag the play position all the way to the end.
 2. Move the starting node to 9 (circle J), right on top of the goal itself — the search that finds it instantly.
-3. Start the search at 3 (circle D) and push the play position past halfway — catch the path backtracking from J to H.
+3. Start the search at 3 (circle D) and push the play position past halfway — catch the path backtracking from E to H.
 
 ## Intuition
 
 Picture a corn maze with 10 rooms lettered A to J, and a single exit at room J. Set the slider "start" to 0 (room A) and slide "step" slowly to the right: a single path snakes out from room A, committing to one doorway at a time and diving as deep as the maze allows, instead of spreading out to every nearby room at once. Only when the current room has no unexplored doorway left does the path step back — backtrack — to the most recent room that still has one.
 
-That backing-up behaviour is exactly what happens when you retrace your steps in a real maze after hitting a dead end: you don't start over, you just return to the last junction with an unused turn. Move "start" to 3 (room D) instead of 0 and watch the path reach room J, the goal, and then double back to H because J has no unexplored doorway. DFS keeps whichever path it finds first, which is often longer than the shortest way out: from room E (start = 4) it walks straight to J and the path length readout shows 6, although going through I would add up to only 5.
+That backing-up behaviour is exactly what happens when you retrace your steps in a real maze after hitting a dead end: you don't start over, you just return to the last junction with an unused turn. Move "start" to 3 (room D) instead of 0 and watch the path reach room J, the goal, step on to E, and then double back to H because E has no unexplored doorway. DFS keeps whichever path it finds first and never looks at the numbers on the roads: from room E (start = 4) it walks straight to J and the path length readout shows 1 step, although that road costs 6 and going through I would add up to only 5.
 
 ## Formal
 

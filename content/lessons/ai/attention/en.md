@@ -40,7 +40,7 @@ That blend is what attention computes. The current word asks a question (its que
 
 ## Formal
 
-Relevance between the query $q$ and each word's key $k_i$ is scored by a dot product, then turned into weights that sum to one with a softmax: $a_i = \frac{\exp\!\big((q\cdot k_i)/T\big)}{\sum_j \exp\!\big((q\cdot k_j)/T\big)}$. The output blends every word's value $v_i$ by its weight $a_i$.
+Relevance between the query $q$ and each word's key $k_i$ is scored by a dot product, then turned into weights that sum to one with a softmax: $a_i = \frac{\exp\!\big((q\cdot k_i)/T\big)}{\sum_j \exp\!\big((q\cdot k_j)/T\big)}$. The output blends every word's value $v_i$ by its weight $a_i$. In this picture every word arrow is first shrunk to length 1, so the dot product only measures how closely two arrows point the same way (cosine similarity).
 
 The temperature $T$ controls how peaked those weights are: a low $T$ pushes almost all the weight onto the single highest-scoring word, a high $T$ spreads weight nearly evenly across every word regardless of score, exactly like the temperature slider in next-token prediction.
 

@@ -5,8 +5,9 @@ import { t } from '../../i18n'
 import Readouts from '../../components/Readouts.vue'
 
 // electromagnetism/electric-motors. params: N, I, A, B, theta (rad). tau = N*I*A*B*sin(theta).
-// The two dots are the coil's near and far wires, seen end-on, at angle theta from the field axis
-// (horizontal, N pole left, S pole right). A dot (out of the page) and a cross (into the page) show
+// The two dots are the coil's near and far wires, seen end-on. theta is the angle between the coil's
+// normal and the field axis (horizontal, N pole left, S pole right), so the line joining the wires sits
+// at theta - 90deg: along the field at theta = 90deg (peak torque), across it at 0 and 180deg (none). A dot (out of the page) and a cross (into the page) show
 // current direction; the split-ring commutator below flips which wire is which exactly at theta = 0
 // and pi, keeping the torque arrow's sense the same all the way round.
 const props = defineProps<{ params: Record<string, number>; options: Record<string, any> }>()
@@ -26,8 +27,8 @@ const theta = computed(() => props.params.theta ?? Math.PI / 2)
 
 const tau = computed(() => N.value * I.value * A.value * B.value * Math.sin(theta.value))
 
-const wire1 = computed(() => ({ x: CX + RC * Math.cos(theta.value), y: CY - RC * Math.sin(theta.value) }))
-const wire2 = computed(() => ({ x: CX - RC * Math.cos(theta.value), y: CY + RC * Math.sin(theta.value) }))
+const wire1 = computed(() => ({ x: CX + RC * Math.sin(theta.value), y: CY + RC * Math.cos(theta.value) }))
+const wire2 = computed(() => ({ x: CX - RC * Math.sin(theta.value), y: CY - RC * Math.cos(theta.value) }))
 const outward = computed(() => Math.sin(theta.value) >= 0) // wire1 current direction
 
 // torque arc: a curved arrow whose sweep length shows |tau|; always drawn counter-clockwise, the
@@ -62,8 +63,10 @@ function drag(e: PointerEvent) {
   const box = svg.value.getBoundingClientRect()
   const px = ((e.clientX - box.left) / box.width) * W
   const py = ((e.clientY - box.top) / box.height) * H
-  let ang = Math.atan2(-(py - CY), px - CX)
+  // the pointer grabs wire 1, which sits 90deg behind theta
+  let ang = Math.atan2(-(py - CY), px - CX) + Math.PI / 2
   if (ang < 0) ang += 2 * Math.PI
+  if (ang >= 2 * Math.PI) ang -= 2 * Math.PI
   emit('set', 'theta', ang)
 }
 function down(e: PointerEvent) {

@@ -13,14 +13,14 @@ variables:
   - "the particle's charge, in multiples of the elementary charge"
   - the particle's speed
   - 'magnetic field strength, into the screen when positive'
-  - 'uniform electric field strength, pointing up the screen'
+  - 'uniform electric field strength, pointing down the screen'
 ---
 
 ## Try it
 
-1. Picture an electron, curving inside the magnetic field of an old CRT television tube. Leave «charge q» at 1, «speed v» at 5, «magnetic field B» at 1 T and «electric field E» at 0. The particle bends along a wide arc and leaves the picture; the readouts show radius 150 px and deflects down.
+1. Picture an electron, curving inside the magnetic field of an old CRT television tube. Leave «charge q» at 1, «speed v» at 5, «magnetic field B» at 1 T and «electric field E» at 0. The particle bends along a wide arc and leaves the picture; the readouts show radius 150 px and deflects up.
 2. Keep «electric field E» at 0 and drag «speed v» down to 1. The radius readout drops to 30 px, so the whole loop now fits in the picture and the particle goes round and round.
-3. Drag «charge q» from 1 to −1. The "deflects" readout changes from down to up, and the particle now curves the other way around.
+3. Drag «charge q» from 1 to −1. The "deflects" readout changes from up to down, and the particle now curves the other way around.
 
 ## Real-life examples
 

@@ -262,6 +262,7 @@ gates.out: output
 gates.table: truth table
 sort.step: step
 sort.compares: comparisons
+sort.reads: reads
 sort.swaps: swaps
 sort.done: sorted
 sort.hint: ▶ runs the algorithm · drag the slider to step through
@@ -283,6 +284,8 @@ gsearch.frontier: in the queue
 gsearch.pathLen: path length
 gsearch.hint: tap a node to choose the start · numbers on edges are distances
 gsearch.order: visit order
+gsearch.start: start
+gsearch.goal: goal
 bits.hint: tap a bit to flip it
 bits.dec: decimal
 bits.hex: hexadecimal

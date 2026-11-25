@@ -44,6 +44,8 @@ export interface ParamSpec {
   step: number
   value: number
   unit?: string
+  /** 'log': the slider moves in equal ×10 steps and values are rounded to 2 significant figures (`step` is not used). */
+  scale?: 'log'
 }
 
 export interface ChartSpec {

@@ -43,7 +43,7 @@ Stripe scatters each file's blocks across all the disks — every byte bought is
 
 In parity mode each group of data blocks gets one parity block computed with XOR: $P = b_1 \oplus b_2 \oplus \cdots$, and because XOR undoes itself, any one lost block equals the XOR of all the others — the recomputation you watch in the sim.
 
-The capacities follow directly: stripe uses everything, $U = ns$; mirror duplicates everything, $U = \frac{ns}{2}$; parity reserves one disk's worth, $U = (n-1)s$. Only stripe fails the one-dead-disk test; mirror and parity both pass it, at different prices.
+The capacities follow directly: stripe uses everything, $U = ns$; mirror duplicates everything, $U = \frac{ns}{2}$; parity reserves one disk's worth, $U = (n-1)s$. With an odd number of disks the mirror leaves one disk without a twin, so it stays empty: 5 disks of 4 TB mirror to 8 TB, not 10. Only stripe fails the one-dead-disk test; mirror and parity both pass it, at different prices.
 
 ## Advanced
 

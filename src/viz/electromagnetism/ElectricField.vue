@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { fmt } from '../../engine/math'
+import { t } from '../../i18n'
 import Readouts from '../../components/Readouts.vue'
 
 const props = defineProps<{ params: Record<string, number>; options: Record<string, any> }>()
@@ -54,7 +55,7 @@ const forceBetween = computed(() => {
   const r = Math.max(d.value, 1e-3)
   return (K * q1.value * 1e-6 * q2.value * 1e-6) / (r * r)
 })
-const interactionLabel = computed(() => (q1.value * q2.value >= 0 ? 'repel' : 'attract'))
+const interactionLabel = computed(() => (q1.value * q2.value >= 0 ? t('ef.repel') : t('ef.attract')))
 
 function dist(from: [number, number], x: number, y: number) {
   return Math.max(Math.hypot(x - from[0], y - from[1]), 1e-3)
@@ -64,9 +65,9 @@ const potential = computed(
 )
 
 const arrows = computed(() => {
-  const out: { x1: number; y1: number; x2: number; y2: number; op: number }[] = []
+  const out: { x1: number; y1: number; x2: number; y2: number; head: string; op: number }[] = []
   for (let gx = 20; gx <= W - 20; gx += 40) {
-    for (let gy = 20; gy <= H - 20; gy += 40) {
+    for (let gy = 60; gy <= H - 20; gy += 40) {
       const { ex, ey } = eAt(wx(gx), wy(gy))
       const mag = Math.hypot(ex, ey)
       if (!Number.isFinite(mag) || mag < 1e-6) continue
@@ -74,7 +75,11 @@ const arrows = computed(() => {
       const uy = -ey / mag // screen y is flipped
       const len = 13
       const op = Math.max(0.06, Math.min(0.85, (Math.log10(mag) - 2) / 4.2))
-      out.push({ x1: gx - (ux * len) / 2, y1: gy - (uy * len) / 2, x2: gx + (ux * len) / 2, y2: gy + (uy * len) / 2, op })
+      const x2 = gx + (ux * len) / 2
+      const y2 = gy + (uy * len) / 2
+      // arrowhead: two short barbs back from the tip
+      const head = `${x2 - 4.5 * ux + 3 * uy},${y2 - 4.5 * uy - 3 * ux} ${x2},${y2} ${x2 - 4.5 * ux - 3 * uy},${y2 - 4.5 * uy + 3 * ux}`
+      out.push({ x1: gx - (ux * len) / 2, y1: gy - (uy * len) / 2, x2, y2, head, op })
     }
   }
   return out
@@ -118,10 +123,10 @@ function up() {
 }
 
 const readouts = computed(() => [
-  { label: '|E| at point', value: `${fmt(eMag.value)} N/C` },
-  { label: 'force on test charge', value: `${fmt(Math.hypot(...forceNet.value))} N`, color: 'var(--accent-2)' },
-  { label: 'force between charges', value: `${fmt(Math.abs(forceBetween.value))} N (${interactionLabel.value})` },
-  { label: 'potential V at point', value: `${fmt(potential.value)} V` },
+  { label: t('ef.eAtPoint'), value: `${fmt(eMag.value)} N/C` },
+  { label: t('ef.forceOnTest'), value: `${fmt(Math.hypot(...forceNet.value))} N`, color: 'var(--accent-2)' },
+  { label: t('ef.forceBetween'), value: `${fmt(Math.abs(forceBetween.value))} N (${interactionLabel.value})` },
+  { label: t('ef.potential'), value: `${fmt(potential.value)} V` },
 ])
 </script>
 
@@ -132,6 +137,7 @@ const readouts = computed(() => [
       <line :x1="OX" :y1="0" :x2="OX" :y2="H" stroke="var(--grid)" stroke-width="1" />
 
       <line v-for="(a, i) in arrows" :key="i" :x1="a.x1" :y1="a.y1" :x2="a.x2" :y2="a.y2" stroke="var(--fg)" :stroke-opacity="a.op" stroke-width="1.4" stroke-linecap="round" />
+      <polyline v-for="(a, i) in arrows" :key="'h' + i" :points="a.head" fill="none" stroke="var(--fg)" :stroke-opacity="a.op" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
 
       <line :x1="f1Arrow.x1" :y1="f1Arrow.y1" :x2="f1Arrow.x2" :y2="f1Arrow.y2" stroke="var(--muted)" stroke-width="1.4" />
       <line :x1="f2Arrow.x1" :y1="f2Arrow.y1" :x2="f2Arrow.x2" :y2="f2Arrow.y2" stroke="var(--muted)" stroke-width="1.4" />
@@ -147,7 +153,7 @@ const readouts = computed(() => [
       <text class="num" :x="sx(pos2[0])" :y="sy(pos2[1]) - chargeR(q2) - 6" text-anchor="middle" font-size="12" fill="var(--muted)">q2</text>
 
       <circle :cx="sx(px)" :cy="sy(py)" r="7" fill="var(--fg)" stroke="var(--bg)" stroke-width="1.5" />
-      <text class="num" x="16" y="24" font-size="12" fill="var(--muted)">drag the black test charge · arrows show field direction, faint = weak</text>
+      <text class="num" x="16" y="24" font-size="12" fill="var(--muted)">{{ t('ef.hint') }}</text>
     </svg>
     <Readouts :items="readouts" />
   </div>

@@ -1,0 +1,7 @@
+ef.hint: drag the black test charge · arrows show field direction, faint = weak
+ef.eAtPoint: '|E| at point'
+ef.forceOnTest: force on test charge
+ef.forceBetween: force between charges
+ef.potential: potential V at point
+ef.repel: repel
+ef.attract: attract

@@ -46,7 +46,7 @@ const readouts = computed(() => [
       <rect :x="BAR.x" :y="BAR.y" width="40" :height="BAR.h" rx="6" fill="var(--sunken)" stroke="var(--line)" />
       <rect :x="BAR.x" :y="BAR.y + BAR.h - Math.max(linFrac * BAR.h, 1.5)" width="40" :height="Math.max(linFrac * BAR.h, 1.5)" rx="2" fill="var(--accent-2)" />
       <text :x="BAR.x + 20" :y="BAR.y + BAR.h + 22" text-anchor="middle" font-size="10" fill="var(--muted)" class="num">0 … 1,000,000</text>
-      <text :x="BAR.x + 70" :y="BAR.y + BAR.h / 2" font-size="11" fill="var(--muted)">{{ t('db.linearNote') }}</text>
+      <text x="16" :y="BAR.y + BAR.h + 42" font-size="11" fill="var(--muted)">{{ t('db.linearNote') }}</text>
       <!-- the decibel ladder -->
       <text :x="LAD.x" :y="LAD.y - 18" font-size="12" font-weight="600" fill="var(--fg)">{{ t('db.ladder') }}</text>
       <line :x1="LAD.x" :y1="LAD.y" :x2="LAD.x" :y2="LAD.y + LAD.h" stroke="var(--line)" stroke-width="3" />

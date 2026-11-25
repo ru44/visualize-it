@@ -38,6 +38,18 @@ const best = computed(() => {
 const found = computed(() => Math.hypot(babai.value.x - tx.value, babai.value.y - ty.value))
 const hit = computed(() => Math.abs(found.value - best.value.d) < 1e-9)
 const points = computed(() => { const out: { x: number; y: number }[] = []; for (let i = -10; i <= 10; i++) for (let j = -10; j <= 10; j++) { const x = i * 2 + j; const y = i + j * 2; if (Math.abs(x) <= 9.6 && Math.abs(y) <= 5.6) out.push({ x, y }) } return out })
+// where to draw Babai's ring: the rounded point itself, or, if that is outside the picture, the spot
+// where the line towards it leaves the picture (its true coordinates are then written beside it)
+const shown = computed(() => {
+  const ax = px(tx.value), ay = py(ty.value), bx = px(babai.value.x), by = py(babai.value.y)
+  let k = 1
+  if (bx < 14) k = Math.min(k, (14 - ax) / (bx - ax))
+  if (bx > W - 14) k = Math.min(k, (W - 14 - ax) / (bx - ax))
+  if (by < 40) k = Math.min(k, (40 - ay) / (by - ay))
+  if (by > H - 34) k = Math.min(k, (H - 34 - ay) / (by - ay))
+  k = Math.max(0, k)
+  return { x: ax + k * (bx - ax), y: ay + k * (by - ay), off: k < 1 }
+})
 const svg = ref<SVGSVGElement>()
 const dragging = ref(false)
 function pick(e: PointerEvent) {
@@ -67,8 +79,9 @@ const readouts = computed(() => [
         <text class="num" :x="px(v[0]) + 10" :y="py(v[1]) - 6" font-size="12" :fill="bad ? 'var(--neg)' : 'var(--pos)'">{{ i ? 'v' : 'u' }} ({{ v[0] }}, {{ v[1] }})</text>
       </g>
       <!-- Babai's answer and the true closest -->
-      <line :x1="px(tx)" :y1="py(ty)" :x2="px(babai.x)" :y2="py(babai.y)" :stroke="hit ? 'var(--pos)' : 'var(--neg)'" stroke-width="2" stroke-dasharray="5 3" />
-      <circle :cx="px(babai.x)" :cy="py(babai.y)" r="8" fill="none" :stroke="hit ? 'var(--pos)' : 'var(--neg)'" stroke-width="3" />
+      <line :x1="px(tx)" :y1="py(ty)" :x2="shown.x" :y2="shown.y" :stroke="hit ? 'var(--pos)' : 'var(--neg)'" stroke-width="2" stroke-dasharray="5 3" />
+      <circle :cx="shown.x" :cy="shown.y" r="8" fill="none" :stroke="hit ? 'var(--pos)' : 'var(--neg)'" stroke-width="3" :stroke-dasharray="shown.off ? '3 3' : undefined" />
+      <text v-if="shown.off" class="num" :x="shown.x + 12" :y="shown.y + 4" font-size="11" :fill="hit ? 'var(--pos)' : 'var(--neg)'">→ ({{ babai.x }}, {{ babai.y }})</text>
       <circle v-if="!hit" :cx="px(best.x)" :cy="py(best.y)" r="8" fill="none" stroke="var(--accent-2)" stroke-width="2" stroke-dasharray="3 3" />
       <text v-if="!hit" class="num" :x="px(best.x) + 12" :y="py(best.y) + 4" font-size="11" fill="var(--accent-2)">{{ t('lattice.actual') }}</text>
       <!-- the target -->

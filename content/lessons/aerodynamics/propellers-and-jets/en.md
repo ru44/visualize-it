@@ -41,7 +41,7 @@ That trade matters because kinetic energy grows with speed squared, not speed. D
 
 ## Formal
 
-Thrust from momentum theory is $T = \dot m\, \Delta v$, where the mass flow rate through the propulsor's disc is $\dot m = \rho A v$ (density times disc area times the air's speed through it).
+Thrust from momentum theory is $T = \dot m\, \Delta v$, where the mass flow rate through the propulsor's disc is $\dot m = \rho A \left(v + \tfrac{\Delta v}{2}\right)$ (density times disc area times the air's speed through it, which is halfway between the incoming speed $v$ and the exhaust speed $v + \Delta v$).
 
 The ideal propulsive efficiency — useful thrust power out, divided by total kinetic power put into the airflow — works out to $\eta = \dfrac{2v}{2v + \Delta v}$: it falls toward zero as $\Delta v$ grows relative to flight speed $v$, and rises toward 100% as $\Delta v \to 0$ (though thrust itself would then also fall toward zero, so real designs balance the two).
 
@@ -51,7 +51,7 @@ Real engines don't hit this ideal efficiency: extra losses come from the fan and
 
 ## Derivation
 
-1. Each second, the engine accelerates a mass of air $\dot m = \rho A v$ (density times disc area times the speed of air moving through it) up by $\Delta v$.
+1. Each second, the engine accelerates a mass of air $\dot m = \rho A \left(v + \tfrac{\Delta v}{2}\right)$ (density times disc area times the speed of air moving through it) up by $\Delta v$.
 2. Newton's second law says the force needed to change that much momentum every second is $T = \dot m\,\Delta v$, and by the third law the air pushes back on the engine with the same force, forward: that reaction is thrust.
 3. Moving a huge mass of air by a small $\Delta v$ makes the same thrust as moving a small mass by a huge $\Delta v$, but wastes far less kinetic energy in the exhaust — which is exactly why propulsive efficiency $\eta = \dfrac{2v}{2v+\Delta v}$ falls as $\Delta v$ grows.
 

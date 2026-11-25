@@ -262,6 +262,7 @@ gates.out: المُخرَج
 gates.table: جدول الحقيقة
 sort.step: الخطوة
 sort.compares: المقارنات
+sort.reads: القراءات
 sort.swaps: التبديلات
 sort.done: مرتّب
 sort.hint: ▶ شغّل الخوارزمية · اسحب المنزلق للتقدّم خطوة خطوة
@@ -283,6 +284,8 @@ gsearch.frontier: في الطابور
 gsearch.pathLen: طول المسار
 gsearch.hint: اضغط عقدة لاختيار البداية · الأرقام على الأضلاع مسافات
 gsearch.order: ترتيب الزيارة
+gsearch.start: البداية
+gsearch.goal: الهدف
 bits.hint: اضغط خانة لتقلبها
 bits.dec: عشري
 bits.hex: ست عشري
