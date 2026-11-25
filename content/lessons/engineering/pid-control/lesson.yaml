@@ -25,9 +25,9 @@ visualization:
       - '0'
       - '0'
     tMax: 30
-    labels:
-      - temperature x
-      - integral I
+    labelKeys:
+      - pid.x
+      - pid.i
 parameters:
   Kp:
     min: 0
