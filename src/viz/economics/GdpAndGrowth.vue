@@ -62,7 +62,7 @@ const readouts = computed(() => [
 
       <!-- doubling reference line -->
       <line :x1="PLOT.x" :x2="PLOT.x + PLOT.w" :y1="doubleLevel" :y2="doubleLevel" stroke="var(--line)" stroke-dasharray="3 3" />
-      <text :x="PLOT.x + PLOT.w" :y="doubleLevel - 6" text-anchor="end" font-size="11" fill="var(--muted)">2p = {{ t('gdp.bn', { n: fmt(2 * p0, 0) }) }}</text>
+      <text :x="PLOT.x + 6" :y="doubleLevel - 6" text-anchor="start" direction="ltr" font-size="11" fill="var(--muted)">2p = {{ t('gdp.bn', { n: fmt(2 * p0, 0) }) }}</text>
 
       <!-- growth curve -->
       <polyline :points="curvePoints" fill="none" stroke="var(--accent)" stroke-width="2.5" />

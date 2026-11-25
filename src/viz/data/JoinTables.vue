@@ -28,7 +28,7 @@ const resultRows = computed(() => (mode.value === 'inner' ? matchedRows.value : 
 const sql = computed(() => `SELECT * FROM customers ${mode.value.toUpperCase()} JOIN orders ON customers.id = orders.customer_id`)
 const custY = (i: number) => 90 + i * 46
 const ordY = (i: number) => 90 + i * 46
-const resY = (i: number) => 322 + i * 30
+const resY = (i: number) => 332 + i * 28
 const lineFor = (c: { id: number }) => ORDERS.map((o, oi) => ({ o, oi })).filter(({ o }) => o.cust === c.id)
 const readouts = computed(() => [
   { label: t('jt.rowsReturned'), value: String(resultRows.value.length), color: 'var(--accent-2)' },
@@ -63,12 +63,12 @@ const readouts = computed(() => [
         <text class="num" x="266" :y="custY(customers.findIndex((x) => x.id === u.id)) + 22" font-size="11" fill="var(--muted)">{{ t('jt.noMatch') }}</text>
       </g>
 
-      <text class="num" x="40" y="272" font-size="13" font-weight="600" fill="var(--fg)">{{ t('jt.result') }} ({{ mode === 'inner' ? t('jt.innerJoin') : t('jt.leftJoin') }})</text>
+      <text class="num" x="40" y="286" font-size="13" font-weight="600" fill="var(--fg)">{{ t('jt.result') }} ({{ mode === 'inner' ? t('jt.innerJoin') : t('jt.leftJoin') }})</text>
       <g font-size="12" class="num">
-        <text x="40" y="292" fill="var(--muted)">{{ t('jt.id') }}</text>
-        <text x="120" y="292" fill="var(--muted)">{{ t('jt.name') }}</text>
-        <text x="260" y="292" fill="var(--muted)">{{ t('jt.orderId') }}</text>
-        <text x="400" y="292" fill="var(--muted)">{{ t('jt.amount') }}</text>
+        <text x="40" y="306" fill="var(--muted)">{{ t('jt.id') }}</text>
+        <text x="120" y="306" fill="var(--muted)">{{ t('jt.name') }}</text>
+        <text x="260" y="306" fill="var(--muted)">{{ t('jt.orderId') }}</text>
+        <text x="400" y="306" fill="var(--muted)">{{ t('jt.amount') }}</text>
         <g v-for="(r, i) in resultRows" :key="'r' + i">
           <rect x="36" :y="resY(i) - 18" :width="600" height="26" rx="5" :fill="r.oid === null ? 'var(--neg)' : 'var(--pos)'" :fill-opacity="r.oid === null ? 0.12 : 0.08" />
           <text x="40" :y="resY(i)" fill="var(--fg)">{{ r.cust }}</text>
