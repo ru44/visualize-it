@@ -2,6 +2,7 @@
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { fmt } from '../../engine/math'
 import Readouts from '../../components/Readouts.vue'
+import { t as tr, type Key } from '../../i18n'
 
 const props = defineProps<{ params: Record<string, number>; options: Record<string, any> }>()
 const emit = defineEmits<{ set: [name: string, value: number] }>()
@@ -48,7 +49,13 @@ function shellConfig(z: number): number[] {
 
 const config = computed(() => shellConfig(Z.value))
 const valence = computed(() => config.value[config.value.length - 1] ?? 0)
-const element = computed(() => ELEMENTS[Z.value] ?? { symbol: '?', name: '?' })
+const element = computed(() => {
+  const e = ELEMENTS[Z.value] ?? { symbol: '?', name: '?' }
+  // atom.el.<symbol> holds the translated name; English uses the list above
+  const k = `atom.el.${e.symbol}` as Key
+  const name = tr(k)
+  return { symbol: e.symbol, name: name === k ? e.name : name }
+})
 const A = computed(() => Z.value + N.value)
 
 const CX = 400
@@ -84,12 +91,12 @@ const shells = computed(() =>
 )
 
 const readouts = computed(() => [
-  { label: 'element', value: `${element.value.name} (${element.value.symbol})` },
-  { label: 'Z (protons)', value: fmt(Z.value) },
-  { label: 'N (neutrons)', value: fmt(N.value) },
-  { label: 'A (mass number)', value: fmt(A.value) },
-  { label: 'electron config', value: config.value.join('·') },
-  { label: 'valence electrons', value: fmt(valence.value), color: 'var(--accent-2)' },
+  { label: tr('atom.element'), value: `${element.value.name} (${element.value.symbol})` },
+  { label: tr('atom.z'), value: fmt(Z.value) },
+  { label: tr('atom.n'), value: fmt(N.value) },
+  { label: tr('atom.a'), value: fmt(A.value) },
+  { label: tr('atom.config'), value: config.value.join('·') },
+  { label: tr('atom.valence'), value: fmt(valence.value), color: 'var(--accent-2)' },
 ])
 
 let dragging = false
@@ -130,15 +137,14 @@ function onUp() {
         <circle v-for="(e, j) in s.electrons" :key="j" :cx="e.x" :cy="e.y" r="5.5" :fill="s.valence ? 'var(--accent-2)' : 'var(--accent)'" />
       </g>
 
-      <text class="num" x="640" y="90" font-size="34" fill="var(--fg)" text-anchor="middle">
-        {{ element.symbol }}
-        <tspan :x="640" dy="-14" font-size="14">{{ A }}</tspan>
-      </text>
-      <text class="num" x="640" y="110" font-size="12" fill="var(--muted)" text-anchor="middle">{{ element.name }} — isotope {{ A }}{{ element.symbol }}</text>
+      <!-- isotope notation: the mass number sits up and to the left of the symbol -->
+      <text class="num" x="640" y="90" font-size="34" fill="var(--fg)" text-anchor="middle">{{ element.symbol }}</text>
+      <text class="num" :x="640 - element.symbol.length * 10.5 - 3" y="70" font-size="14" fill="var(--fg)" text-anchor="end">{{ A }}</text>
+      <text class="num" x="640" y="110" font-size="12" fill="var(--muted)" text-anchor="middle">{{ tr('atom.isotope', { name: element.name, a: A, sym: element.symbol }) }}</text>
 
-      <text class="num" x="16" y="466" font-size="12" fill="var(--muted)">drag horizontally to set Z · outer (valence) electrons highlighted</text>
+      <text class="num" x="16" y="466" font-size="12" fill="var(--muted)">{{ tr('atom.hint') }}</text>
     </svg>
-    <p class="mt-2 text-xs" style="color: var(--muted)">Shell model — real electrons occupy orbitals (probability clouds), not circular tracks.</p>
+    <p class="mt-2 px-4 text-xs" style="color: var(--muted)">{{ tr('atom.note') }}</p>
     <Readouts :items="readouts" />
   </div>
 </template>

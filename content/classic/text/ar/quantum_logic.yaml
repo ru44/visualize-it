@@ -24,7 +24,7 @@
 "Both amplitudes should be between -1 and 1": "يجب أن تكون السعتان بين -1 و1"
 "Description": "الوصف"
 "Every qubit": "كل كيوبت"
-"resides on a point on a Block sphere. It can be represented by two numbers": "يقع عند نقطة على كرة بلوخ، ويمكن التعبير عنه برقمين"
+"resides on a point on a Bloch sphere. It can be represented by two numbers": "يقع عند نقطة على كرة بلوخ، ويمكن التعبير عنه برقمين"
 "such that:": "بحيث إن:"
 "Here,": "هنا،"
 "and": "و"

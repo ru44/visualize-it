@@ -8,33 +8,43 @@ let state_c;
 function updateCocktail() {
     if(left_sorted_index_c < right_sorted_index_c) {
         if(state_c == "max") {
-            if(scanning_index_c <= right_sorted_index_c) {
-                if(array[scanning_index_c] > num_interest_c) {
-                    num_interest_c = array[scanning_index_c];
-                    num_position_c = scanning_index_c;
+            // Forward pass: bubble the largest unsorted value to the right
+            if(scanning_index_c < right_sorted_index_c) {
+                num_position_c = scanning_index_c + 1; // other element of the compared pair
+
+                if(array[scanning_index_c] > array[scanning_index_c + 1]) {
+                    swap(scanning_index_c, scanning_index_c + 1);
+                    swapped_c = true;
+                    swaps++;
                 }
                 scanning_index_c++;
 
-                array_access++;
+                comparisons++;
+                array_access += 2;
             }
             else {
-                swap(num_position_c, right_sorted_index_c);
+                // Largest value is now in its final place
                 right_sorted_index_c--;
+
+                // No swaps during this pass -> array is sorted
+                if(!swapped_c) {
+                    left_sorted_index_c = right_sorted_index_c;
+                }
+                swapped_c = false;
 
                 state_c = "min";
                 scanning_index_c = right_sorted_index_c;
-
-                num_interest_c = num_numbers;
-
-                swaps++;
             }
-            comparisons++;
         }
         else if(state_c == "min") {
-            if(scanning_index_c >= left_sorted_index_c) {
-                if(array[scanning_index_c] < num_interest_c) {
-                    num_interest_c = array[scanning_index_c];
-                    num_position_c = scanning_index_c;
+            // Backward pass: bubble the smallest unsorted value to the left
+            if(scanning_index_c > left_sorted_index_c) {
+                num_position_c = scanning_index_c - 1; // other element of the compared pair
+
+                if(array[scanning_index_c - 1] > array[scanning_index_c]) {
+                    swap(scanning_index_c - 1, scanning_index_c);
+                    swapped_c = true;
+                    swaps++;
                 }
                 scanning_index_c--;
 
@@ -42,15 +52,17 @@ function updateCocktail() {
                 array_access += 2;
             }
             else {
-                swap(num_position_c, left_sorted_index_c);
+                // Smallest value is now in its final place
                 left_sorted_index_c++;
+
+                // No swaps during this pass -> array is sorted
+                if(!swapped_c) {
+                    left_sorted_index_c = right_sorted_index_c;
+                }
+                swapped_c = false;
 
                 state_c = "max";
                 scanning_index_c = left_sorted_index_c;
-
-                num_interest_c = 0;
-
-                swaps++;
             }
         }
         iterations++;

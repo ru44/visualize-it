@@ -1,0 +1,29 @@
+atom.element: العنصر
+atom.z: Z (البروتونات)
+atom.n: N (النيوترونات)
+atom.a: A (العدد الكتلي)
+atom.config: توزيع الإلكترونات
+atom.valence: إلكترونات التكافؤ
+atom.isotope: 'النظير {name}-{a}'
+atom.hint: اسحب أفقيًا لتغيير Z · إلكترونات الغلاف الخارجي (التكافؤ) ملوّنة
+atom.el.H: الهيدروجين
+atom.el.He: الهيليوم
+atom.el.Li: الليثيوم
+atom.el.Be: البريليوم
+atom.el.B: البورون
+atom.el.C: الكربون
+atom.el.N: النيتروجين
+atom.el.O: الأكسجين
+atom.el.F: الفلور
+atom.el.Ne: النيون
+atom.el.Na: الصوديوم
+atom.el.Mg: المغنيسيوم
+atom.el.Al: الألومنيوم
+atom.el.Si: السيليكون
+atom.el.P: الفوسفور
+atom.el.S: الكبريت
+atom.el.Cl: الكلور
+atom.el.Ar: الأرغون
+atom.el.K: البوتاسيوم
+atom.el.Ca: الكالسيوم
+atom.note: هذا نموذج الأغلفة للتوضيح — الإلكترونات الحقيقية تشغل مدارات تشبه السُّحب، لا مسارات دائرية.
