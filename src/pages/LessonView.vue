@@ -97,7 +97,7 @@ function loadPreset(values: Record<string, number>) {
 function setParam(name: string, value: number) {
   const spec = base.value?.parameters[name]
   if (!spec) return
-  const snapped = Math.round(value / spec.step) * spec.step
+  const snapped = spec.scale === 'log' ? +value.toPrecision(2) : Math.round(value / spec.step) * spec.step
   params[name] = Math.min(spec.max, Math.max(spec.min, +snapped.toFixed(6)))
 }
 
