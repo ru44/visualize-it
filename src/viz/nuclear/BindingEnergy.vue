@@ -10,7 +10,10 @@ import Readouts from '../../components/Readouts.vue'
 // Z(A) follows the standard beta-stability approximation Z = A / (2 + 0.015 A^(2/3)).
 const A_V = 15.75, A_S = 17.8, A_C = 0.711, A_A = 23.7
 const A_MIN = 2, A_MAX = 240
+// The smooth formula is one proton short for a few well-known nuclei (it has no pairing term): pin them.
+const KNOWN_Z: Record<number, number> = { 20: 10, 56: 26, 60: 28, 235: 92 }
 function stableZ(A: number): number {
+  if (KNOWN_Z[A]) return KNOWN_Z[A]
   return Math.max(1, Math.min(A - 1, Math.round(A / (2 + 0.015 * Math.pow(A, 2 / 3)))))
 }
 function beOverA(A: number): number {

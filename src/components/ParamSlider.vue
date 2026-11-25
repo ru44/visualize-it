@@ -5,7 +5,10 @@ import { fmt } from '../engine/math'
 
 const props = defineProps<{ name: string; spec: ParamSpec; value: number }>()
 defineEmits<{ set: [name: string, value: number] }>()
-const pct = computed(() => `${((props.value - props.spec.min) / (props.spec.max - props.spec.min)) * 100}%`)
+// a 'log' slider moves along log10 of the value, so every ×10 takes the same distance
+const log = computed(() => props.spec.scale === 'log')
+const pos = (v: number) => (log.value ? Math.log10(v) : v)
+const pct = computed(() => `${((pos(props.value) - pos(props.spec.min)) / (pos(props.spec.max) - pos(props.spec.min))) * 100}%`)
 </script>
 
 <template>
@@ -20,12 +23,12 @@ const pct = computed(() => `${((props.value - props.spec.min) / (props.spec.max 
       type="range"
       class="mt-1 w-full"
       :style="{ '--p': pct }"
-      :min="spec.min"
-      :max="spec.max"
-      :step="spec.step"
-      :value="value"
+      :min="pos(spec.min)"
+      :max="pos(spec.max)"
+      :step="log ? 0.005 : spec.step"
+      :value="pos(value)"
       :aria-label="spec.label"
-      @input="$emit('set', name, +($event.target as HTMLInputElement).value)"
+      @input="$emit('set', name, log ? 10 ** +($event.target as HTMLInputElement).value : +($event.target as HTMLInputElement).value)"
     />
   </label>
 </template>

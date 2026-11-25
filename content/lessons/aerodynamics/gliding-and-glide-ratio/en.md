@@ -21,7 +21,7 @@ variables:
 
 ## Real-life examples
 
-1. **A paper aeroplane from a desk.** Released 1.5 m up with a glide ratio around 4, it covers roughly 6 m before touching down — a steep, short glide.
+1. **A paper aeroplane from a desk.** Released 1 m up with a glide ratio around 4, it covers roughly 4 m before touching down — a steep, short glide.
 2. **A sailplane released at 1,000 m.** With a glide ratio of about 30, it can cover roughly 30 km before landing — cross-country soaring depends on exactly this number.
 3. **A widebody jet with both engines out, from 12,500 m.** At a clean glide ratio of about 15, it could in theory cover a straight-line 187 km — famous real engine-out glides have covered somewhat less, because the crew also had to manoeuvre to lose extra height before landing.
 

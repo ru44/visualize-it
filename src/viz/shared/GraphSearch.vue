@@ -40,6 +40,7 @@ const trace = computed<Frame[]>(() => {
       rec(open, u)
     }
   } else {
+    // BFS/DFS ignore the edge weights: the number beside a node counts steps (edges) from the start.
     const open = [start.value]
     const seen = new Set([start.value])
     rec(open, -1)
@@ -47,7 +48,18 @@ const trace = computed<Frame[]>(() => {
       const u = alg === 'bfs' ? open.shift()! : open.pop()!
       visited.push(u)
       rec(open, u)
-      for (const { to, w } of adj[u]) if (!seen.has(to)) seen.add(to), (parent[to] = u), (dist[to] = dist[u] + w), open.push(to)
+      if (alg === 'bfs') {
+        for (const { to } of adj[u]) if (!seen.has(to)) seen.add(to), (parent[to] = u), (dist[to] = dist[u] + 1), open.push(to)
+      } else {
+        // DFS: a node counts as seen only when visited; a waiting node found again moves to the top of the stack
+        for (const { to } of adj[u]) if (!visited.includes(to)) {
+          const k = open.indexOf(to)
+          if (k >= 0) open.splice(k, 1)
+          parent[to] = u
+          dist[to] = dist[u] + 1
+          open.push(to)
+        }
+      }
       rec(open, u)
     }
   }
@@ -63,7 +75,7 @@ const pathTo = computed(() => {
   return out[0] === start.value ? out : []
 })
 const onPath = (a: number, b: number) => done.value && pathTo.value.some((v, i) => i && ((pathTo.value[i - 1] === a && v === b) || (pathTo.value[i - 1] === b && v === a)))
-const pathLen = computed(() => (pathTo.value.length ? pathTo.value.slice(1).reduce((s, v, i) => s + edges.find((e) => (e[0] === pathTo.value[i] && e[1] === v) || (e[1] === pathTo.value[i] && e[0] === v))![2], 0) : NaN))
+const pathLen = computed(() => (!pathTo.value.length ? NaN : (props.options.algorithm ?? 'bfs') !== 'dijkstra' ? pathTo.value.length - 1 : pathTo.value.slice(1).reduce((s, v, i) => s + edges.find((e) => (e[0] === pathTo.value[i] && e[1] === v) || (e[1] === pathTo.value[i] && e[0] === v))![2], 0)))
 
 const readouts = computed(() => [
   { label: t('gsearch.visited'), value: `${f.value.visited.length} / 10`, color: 'var(--pos)' },

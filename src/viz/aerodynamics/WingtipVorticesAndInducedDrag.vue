@@ -58,7 +58,8 @@ function spiral(ox: number, oy: number, size: number, spin: number, phase: numbe
   return d
 }
 
-const vortexSize = computed(() => Math.min(60, 12 + 34 * CL.value) * (winglets.value ? 0.7 : 1))
+// circulation at the tip goes like C_L x chord, and chord shrinks as 1/sqrt(AR) at fixed area
+const vortexSize = computed(() => Math.min(60, 12 + 34 * CL.value * Math.sqrt(9 / AR.value)) * (winglets.value ? 0.7 : 1))
 
 const wing = computed(() => {
   const hs = halfSpanPx.value

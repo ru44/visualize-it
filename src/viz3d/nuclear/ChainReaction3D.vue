@@ -33,7 +33,7 @@ function countPopulation(k: number, generations: number) {
     let next = 0
     for (let pi = 0; pi < n && next < CAP; pi++) {
       let children = floorK
-      if (rnd() < frac) children++
+      if (floorK === 0 ? k ** g >= 0.5 : rnd() < frac) children++
       next += children
     }
     n = next

@@ -21,7 +21,10 @@ const R0 = 1.2 // fm
 const SCALE = 0.34 // scene units per fm
 const GOLDEN = Math.PI * (3 - Math.sqrt(5))
 
+// The smooth formula is one proton short for a few well-known nuclei (it has no pairing term): pin them.
+const KNOWN_Z: Record<number, number> = { 20: 10, 56: 26, 60: 28, 235: 92 }
 function stableZ(A: number): number {
+  if (KNOWN_Z[A]) return KNOWN_Z[A]
   return Math.max(1, Math.min(A - 1, Math.round(A / (2 + 0.015 * Math.pow(A, 2 / 3)))))
 }
 function beOverA(A: number): number {

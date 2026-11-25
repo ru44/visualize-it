@@ -26,7 +26,7 @@ charts: []
 
 1. Keep "temperature" below 1 and "confinement" below 0.5, then run to time 80 or beyond. Fusion events should stay rare.
 2. Raise "temperature" above 3 and "confinement" above 0.8, then run to time 80 or beyond. Several fusion events should appear.
-3. Run all the way to time 150 and count how many nuclei are still left.
+3. Raise "temperature" above 3 but lower "confinement" below 0.5, then run all the way to time 150 and count how many nuclei are still left.
 
 ## Intuition
 

@@ -6,7 +6,7 @@ summary: >-
 parameters:
   lat: latitude
   x: day of year
-  tilt: axial tilt (used by the 3D view)
+  tilt: axial tilt
 variables:
   - the latitude where you are standing
   - the Sun's declination — how far north or south of the equator it sits overhead

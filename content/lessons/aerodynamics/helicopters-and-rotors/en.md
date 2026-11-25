@@ -17,13 +17,13 @@ variables:
 
 ## Try it
 
-1. Start with the values on screen: a small helicopter, «rotor radius R» 3.84 m, «aircraft weight W» 6,076 N, hovering with «rotor tilt» at 0°.
-2. Read the downwash speed v_i = 7.32 m/s and the hover power P = 44.5 kW — both are estimates, but realistic ones.
-3. Drag «rotor tilt» forward to 12°. Total thrust T climbs from 6076 N to 6212 N, and the whole disc — not the fuselage — leans to push the aircraft ahead.
+1. Start with the values on screen: a small helicopter, «rotor radius R» 3.8 m, «aircraft weight W» 6,075 N, hovering with «rotor tilt» at 0°.
+2. Read the downwash speed v_i = 7.39 m/s and the hover power P = 44.9 kW — both are estimates, but realistic ones.
+3. Drag «rotor tilt» forward to 12°. Total thrust T climbs from 6075 N to 6211 N, and the whole disc — not the fuselage — leans to push the aircraft ahead.
 
 ## Real-life examples
 
-1. **A light helicopter hovering.** A 3.84 m rotor lifting 6,076 N pushes air down at roughly 7.3 m/s and needs on the order of 44 kW of ideal power to hover — a real light helicopter's engine also has to cover losses this estimate ignores.
+1. **A light helicopter hovering.** A 3.8 m rotor lifting 6,075 N pushes air down at roughly 7.4 m/s and needs on the order of 45 kW of ideal power to hover — a real light helicopter's engine also has to cover losses this estimate ignores.
 2. **A heavy-lift helicopter hovering.** A 16 m rotor lifting nearly 550,000 N still only pushes air down at about 16.7 m/s — barely more than twice the light helicopter's downwash, despite lifting almost 100 times the weight, because its disc is so much bigger.
 3. **The light helicopter tilted forward for cruise.** Tilt the same rotor 12° forward and, to keep supporting the same weight, total thrust has to rise by about 2% — a small but real extra cost of flying fast.
 

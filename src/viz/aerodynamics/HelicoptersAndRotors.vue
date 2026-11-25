@@ -17,8 +17,8 @@ const CX = 420
 const HUB_Y = 150
 const RHO = 1.225
 
-const R = computed(() => Math.max(0.1, props.params.R ?? 3.84))
-const weight = computed(() => Math.max(1, props.params.W ?? 6076))
+const R = computed(() => Math.max(0.1, props.params.R ?? 3.8))
+const weight = computed(() => Math.max(1, props.params.W ?? 6075))
 const tiltDeg = computed(() => props.params.tilt ?? 0)
 const tiltRad = computed(() => (tiltDeg.value * Math.PI) / 180)
 
@@ -76,7 +76,7 @@ const downwash = computed(() => {
 const readouts = computed(() => [
   { label: 'R', value: `${fmt(R.value, 2)} m` },
   { label: 'W', value: `${fmt(weight.value, 0)} N` },
-  { label: 'tilt', value: `${fmt(tiltDeg.value, 1)}°` },
+  { label: t('heli.tilt'), value: `${fmt(tiltDeg.value, 1)}°` },
   { label: 'T', value: `${fmt(thrust.value, 0)} N`, color: 'var(--pos)' },
   { label: 'v_i', value: `${fmt(vi.value, 2)} m/s`, color: 'var(--accent)' },
   { label: 'P', value: `${fmt(power.value / 1000, 1)} kW` },

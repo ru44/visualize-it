@@ -52,5 +52,5 @@ presets:
     m: 2
 challenges:
   - check: abs(p-5)<0.5 and abs(q-11)<0.5 and abs(m-7)<0.5
-  - check: abs(p-q)<0.5
+  - check: 'abs(p-q)<0.5 or (abs(p-3.5)<1 and abs(q-3.5)<1) or (abs(p-5.5)<1 and abs(q-5.5)<1) or (abs(p-8)<1.5 and abs(q-8)<1.5) or (abs(p-11)<1.5 and abs(q-11)<1.5)'
   - check: abs(p-13)<0.5 and abs(q-11)<0.5

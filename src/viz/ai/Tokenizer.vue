@@ -18,7 +18,7 @@ const TEXTS = [
   'القطة جلست على السجادة لأن القطة كانت متعبة',
 ]
 const textIx = computed(() => Math.min(Math.max(Math.round(props.params.text ?? 0), 0), 2))
-const merges = computed(() => Math.min(Math.max(Math.round(props.params.merges ?? 0), 0), 30))
+const merges = computed(() => Math.min(Math.max(Math.round(props.params.merges ?? 0), 0), 6))
 const sample = computed(() => TEXTS[textIx.value])
 
 // byte-pair encoding: words become char lists, then the most frequent adjacent pair merges, m times

@@ -5,3 +5,5 @@ budget.savedLabel: saved
 budget.chartTitle: total saved, month by month
 budget.monthsUnit: mo
 budget.caption: a straight line — the same saving added up, month after month
+budget.money: '${n}'
+budget.perMonth: '${n}/mo'

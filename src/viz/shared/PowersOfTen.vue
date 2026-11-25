@@ -16,10 +16,10 @@ const sets: Record<string, { min: number; max: number; unit: string; items: Item
     { id: 'hair', e: -4, icon: '〰️' }, { id: 'ant', e: -2.5, icon: '🐜' }, { id: 'child', e: 0.1, icon: '🧒' }, { id: 'field', e: 2, icon: '🏟️' },
     { id: 'everest', e: 3.95, icon: '🏔️' }, { id: 'earth', e: 7.1, icon: '🌍' }, { id: 'sun', e: 9.14, icon: '☀️' }, { id: 'earthSun', e: 11.18, icon: '🪐' },
     { id: 'lightYear', e: 15.98, icon: '✨' }, { id: 'galaxy', e: 21, icon: '🌌' }, { id: 'universe', e: 26.9, icon: '🔭' } ] },
-  bytes: { min: 0, max: 22, unit: 'B', items: [
+  bytes: { min: 0, max: 23, unit: 'B', items: [
     { id: 'letter', e: 0, icon: '🔤' }, { id: 'message', e: 2, icon: '💬' }, { id: 'page', e: 3.3, icon: '📄' }, { id: 'photo', e: 6.5, icon: '🖼️' },
     { id: 'song', e: 6.7, icon: '🎵' }, { id: 'movie', e: 9.6, icon: '🎬' }, { id: 'phone', e: 11.1, icon: '📱' }, { id: 'laptop', e: 12, icon: '💻' },
-    { id: 'petabyte', e: 15, icon: '🗄️' }, { id: 'exabyte', e: 18, icon: '🏢' }, { id: 'worldData', e: 21, icon: '🌐' } ] },
+    { id: 'petabyte', e: 15, icon: '🗄️' }, { id: 'exabyte', e: 18, icon: '🏢' }, { id: 'worldData', e: 23, icon: '🌐' } ] },
   numbers: { min: 0, max: 100, unit: '', items: [
     { id: 'thousand', e: 3, icon: '🏫' }, { id: 'million', e: 6, icon: '🏟️' }, { id: 'billion', e: 9, icon: '👥' }, { id: 'people', e: 9.9, icon: '🌍' },
     { id: 'trillion', e: 12, icon: '💰' }, { id: 'sand', e: 18.9, icon: '🏖️' }, { id: 'stars', e: 23, icon: '⭐' }, { id: 'atoms', e: 80, icon: '⚛️' }, { id: 'googol', e: 100, icon: '🔢' } ] },

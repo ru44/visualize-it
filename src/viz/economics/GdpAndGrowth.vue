@@ -41,11 +41,11 @@ const nowX = computed(() => px(tNow.value))
 const nowY = computed(() => py(output.value))
 
 const readouts = computed(() => [
-  { label: 'p', value: `$${fmt(p0.value, 0)}bn` },
-  { label: 'g', value: `${fmt(g.value, 2)}%/yr` },
-  { label: 't', value: `${fmt(tNow.value, 0)} yr` },
-  { label: 'Y', value: `$${fmt(output.value, 0)}bn`, color: 'var(--accent)' },
-  { label: 'd (70/g)', value: `${fmt(ruleDouble.value, 1)} yr`, color: 'var(--accent-2)' },
+  { label: 'p', value: t('gdp.bn', { n: fmt(p0.value, 0) }) },
+  { label: 'g', value: t('gdp.perYear', { n: fmt(g.value, 2) }) },
+  { label: 't', value: `${fmt(tNow.value, 0)} ${t('gdp.years')}` },
+  { label: 'Y', value: t('gdp.bn', { n: fmt(output.value, 0) }), color: 'var(--accent)' },
+  { label: 'd (70/g)', value: `${fmt(ruleDouble.value, 1)} ${t('gdp.years')}`, color: 'var(--accent-2)' },
 ])
 </script>
 
@@ -62,7 +62,7 @@ const readouts = computed(() => [
 
       <!-- doubling reference line -->
       <line :x1="PLOT.x" :x2="PLOT.x + PLOT.w" :y1="doubleLevel" :y2="doubleLevel" stroke="var(--line)" stroke-dasharray="3 3" />
-      <text :x="PLOT.x + PLOT.w" :y="doubleLevel - 6" text-anchor="end" font-size="11" fill="var(--muted)">2p = ${{ fmt(2 * p0, 0) }}bn</text>
+      <text :x="PLOT.x + PLOT.w" :y="doubleLevel - 6" text-anchor="end" font-size="11" fill="var(--muted)">2p = {{ t('gdp.bn', { n: fmt(2 * p0, 0) }) }}</text>
 
       <!-- growth curve -->
       <polyline :points="curvePoints" fill="none" stroke="var(--accent)" stroke-width="2.5" />
@@ -78,7 +78,7 @@ const readouts = computed(() => [
 
       <!-- current point -->
       <circle :cx="nowX" :cy="nowY" r="6" fill="var(--fg)" />
-      <text :x="nowX" :y="nowY - 12" text-anchor="middle" font-size="12" font-weight="600" fill="var(--fg)">${{ fmt(output, 0) }}bn</text>
+      <text :x="nowX" :y="nowY - 12" text-anchor="middle" font-size="12" font-weight="600" fill="var(--fg)">{{ t('gdp.bn', { n: fmt(output, 0) }) }}</text>
 
       <text :x="W / 2" :y="H - 14" text-anchor="middle" font-size="12" fill="var(--muted)">{{ t('gdp.caption') }}</text>
     </svg>

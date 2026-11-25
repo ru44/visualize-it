@@ -34,7 +34,7 @@ export const SUBJECTS = [
 ] as const
 export const LEVELS = ['beginner', 'high-school', 'university', 'advanced'] as const
 
-export const ParamSpec = z.object({ min: z.number(), max: z.number(), step: z.number().positive(), value: z.number(), unit: z.string().optional() })
+export const ParamSpec = z.object({ min: z.number(), max: z.number(), step: z.number().positive(), value: z.number(), unit: z.string().optional(), scale: z.enum(['log']).optional() })
 
 export const Video = z.object({ title: z.string(), url: z.string().url(), by: z.string(), lang: z.string(), note: z.string().optional() })
 

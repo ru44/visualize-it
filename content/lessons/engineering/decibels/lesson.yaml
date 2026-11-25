@@ -16,8 +16,9 @@ parameters:
   x:
     min: 1
     max: 1000000
-    step: 1000
+    step: 1
     value: 1000
+    scale: log
 variables:
   - L
   - P

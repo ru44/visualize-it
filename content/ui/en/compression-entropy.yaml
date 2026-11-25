@@ -8,3 +8,4 @@ ce.fixedBits: fixed-length bits per symbol
 ce.smallerBy: smaller by
 ce.run: run
 ce.count: count
+ce.bits: bits

@@ -3,3 +3,5 @@ gdp.years: yr
 gdp.exactLabel: exact double at
 gdp.ruleLabel: rule of 70 says
 gdp.caption: two doubling markers, barely apart — the shortcut tracks the real curve closely
+gdp.bn: '${n}bn'
+gdp.perYear: '{n}%/yr'

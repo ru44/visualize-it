@@ -38,7 +38,7 @@ variables:
   - \dot m
   - \Delta v
 derivation:
-  - \dot m = \rho A v
+  - \dot m = \rho A \left(v + \tfrac{\Delta v}{2}\right)
   - T = \dot m\, \Delta v
   - \eta = \dfrac{2v}{2v + \Delta v}
 charts: []

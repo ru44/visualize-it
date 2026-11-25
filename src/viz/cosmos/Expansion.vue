@@ -33,7 +33,9 @@ const main = computed(() => history(om.value, ol.value))
 const noDE = computed(() => history(om.value, 0))
 const tMax = 2.2
 const now = computed(() => main.value[Math.min(main.value.length - 1, Math.round(tv.value * (main.value.length - 1)))])
-const accel = computed(() => { const i = Math.round(tv.value * (main.value.length - 1)); const p = main.value; if (i < 2 || i > p.length - 2) return 0; return p[i + 1].a - 2 * p[i].a + p[i - 1].a })
+// d²a/dt² from the Friedmann equation: dark energy pushes (ΩΛ a), matter brakes (Ωm / 2a²); zero for an empty universe
+const accel = computed(() => ol.value * now.value.a - om.value / (2 * now.value.a ** 2))
+const stateKey = computed(() => (accel.value > 1e-9 ? 'exp.speedingUp' : accel.value < -1e-9 ? 'exp.slowingDown' : 'exp.steady'))
 const galaxies = Array.from({ length: 26 }, (_, i) => ({ x: ((i * 0.6180339) % 1) * 2 - 1, y: ((i * 0.41421356) % 1) * 2 - 1 }))
 const gx = (x: number) => 200 + x * 160 * Math.min(1.25, now.value.a / 1.2)
 const gy = (y: number) => 240 + y * 160 * Math.min(1.25, now.value.a / 1.2)
@@ -43,7 +45,7 @@ const curve = (h: { t: number; a: number }[]) => h.filter((_, i) => i % 3 === 0)
 const readouts = computed(() => [
   { label: t('exp.scale'), value: fmt(now.value.a, 2), color: 'var(--accent-2)' },
   { label: t('exp.time'), value: `${fmt((now.value.t * 14.4), 1)} ${t('exp.billionYears')}` },
-  { label: t('exp.state'), value: accel.value > 1e-7 ? t('exp.speedingUp') : t('exp.slowingDown'), color: accel.value > 1e-7 ? 'var(--neg)' : 'var(--accent)' },
+  { label: t('exp.state'), value: t(stateKey.value), color: accel.value > 1e-9 ? 'var(--neg)' : 'var(--accent)' },
 ])
 </script>
 

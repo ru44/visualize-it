@@ -262,6 +262,7 @@ gates.out: المُخرَج
 gates.table: جدول الحقيقة
 sort.step: الخطوة
 sort.compares: المقارنات
+sort.reads: القراءات
 sort.swaps: التبديلات
 sort.done: مرتّب
 sort.hint: ▶ شغّل الخوارزمية · اسحب المنزلق للتقدّم خطوة خطوة

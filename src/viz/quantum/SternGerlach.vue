@@ -14,8 +14,10 @@ const H = 480
 const G = computed(() => props.params.G ?? 6)
 const v = computed(() => props.params.v ?? 650)
 const sep = computed(() => (21300 * G.value) / v.value ** 2) // mm
-const PX_PER_MM = 150
+const PX_PER_MM = 190
 const halfPx = computed(() => Math.min(190, (sep.value * PX_PER_MM) / 2))
+// each spot's spread shrinks with the separation, so the two spots never merge (closest: 0.053 mm)
+const spread = computed(() => Math.min(10, 0.8 * halfPx.value))
 
 const CY = 240
 const OVEN_X = 70
@@ -23,14 +25,13 @@ const MAGNET_X0 = 230
 const MAGNET_X1 = 380
 const SCREEN_X = 600
 
-const hits = ref<{ y: number; up: boolean }[]>([])
+const hits = ref<{ j: number; up: boolean }[]>([])
 let raf = 0
 let last = 0
 let acc = 0
 function spawn() {
   const up = Math.random() < 0.5
-  const jitter = (Math.random() - 0.5) * 10
-  hits.value.push({ y: CY + (up ? -halfPx.value : halfPx.value) + jitter, up })
+  hits.value.push({ j: Math.random() - 0.5, up })
   if (hits.value.length > 500) hits.value.splice(0, hits.value.length - 500)
 }
 function tick(now: number) {
@@ -81,7 +82,7 @@ const readouts = computed(() => [
 
       <!-- screen with the two real spots -->
       <rect :x="SCREEN_X" y="40" width="70" height="400" fill="var(--sunken)" stroke="var(--line)" />
-      <circle v-for="(p, i) in hits" :key="i" :cx="SCREEN_X + 10 + ((i * 37) % 50)" :cy="p.y" r="1.8" :fill="p.up ? 'var(--accent)' : 'var(--accent-2)'" fill-opacity="0.85" />
+      <circle v-for="(p, i) in hits" :key="i" :cx="SCREEN_X + 10 + ((i * 37) % 50)" :cy="CY + (p.up ? -halfPx : halfPx) + p.j * spread" r="1.8" :fill="p.up ? 'var(--accent)' : 'var(--accent-2)'" fill-opacity="0.85" />
       <text class="num" :x="SCREEN_X + 35" y="460" text-anchor="middle" font-size="11" fill="var(--muted)">{{ t('sg.screen') }}</text>
       <text class="num" :x="SCREEN_X + 76" :y="CY - halfPx + 14" font-size="10" fill="var(--fg)">{{ t('sg.actual') }}</text>
     </svg>

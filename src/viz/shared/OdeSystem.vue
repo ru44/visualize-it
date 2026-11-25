@@ -8,7 +8,7 @@ import Readouts from '../../components/Readouts.vue'
 /**
  * Integrates any system  dY/dt = F(Y, t, params)  with classical RK4 and plots every variable.
  * options: { vars: ['S','I','R'], equations: ['-b*S*I/N', ...] (mathjs, may use vars, t and params),
- *            initial: ['N - I0', 'I0', '0'] (expressions in params), tMax, yMax?, labels?: string[], colors?: string[] }
+ *            initial: ['N - I0', 'I0', '0'] (expressions in params), tMax, yMax?, labels?: string[], labelKeys?: string[], colors?: string[] }
  * The param `tView` (0..1) scrubs the marker along the curves. Rerun happens automatically when params change.
  */
 const props = defineProps<{ params: Record<string, number>; options: Record<string, any> }>()
@@ -20,7 +20,8 @@ const PAD = { l: 56, r: 24, t: 24, b: 40 }
 const vars = computed<string[]>(() => props.options.vars)
 const palette = ['var(--accent)', 'var(--neg)', 'var(--pos)', 'var(--accent-2)', 'var(--fg)']
 const colors = computed<string[]>(() => props.options.colors ?? palette)
-const labels = computed<string[]>(() => props.options.labels ?? vars.value)
+// labelKeys (UI string keys) give translated labels; plain `labels` are shown as written
+const labels = computed<string[]>(() => (props.options.labelKeys as string[] | undefined)?.map((k) => t(k as any)) ?? props.options.labels ?? vars.value)
 
 const fns = computed(() => (props.options.equations as string[]).map((e) => compile(e)))
 const inits = computed(() => (props.options.initial as string[]).map((e) => compile(e)))

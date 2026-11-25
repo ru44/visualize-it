@@ -6,7 +6,7 @@ import Readouts from '../../components/Readouts.vue'
 
 // networking/nas-and-raid. params n (disks), s (TB per disk), mode (0 stripe, 1 mirror, 2 parity),
 // dead (kill disk 1). One family-photo file is spread across the bays; pull a disk and watch which
-// layout shrugs it off. Usable space: stripe ns, mirror ns/2, parity (n−1)s.
+// layout shrugs it off. Usable space: stripe ns, mirror ⌊n/2⌋·s (an odd disk has no twin and stays empty), parity (n−1)s.
 const props = defineProps<{ params: Record<string, number>; options: Record<string, any> }>()
 defineEmits<{ set: [name: string, value: number] }>()
 const W = 800
@@ -16,7 +16,7 @@ const s = computed(() => Math.min(Math.max(Math.round(props.params.s ?? 4), 1), 
 const mode = computed(() => Math.min(Math.max(Math.round(props.params.mode ?? 2), 0), 2))
 const dead = computed(() => Math.round(props.params.dead ?? 0) >= 1)
 const raw = computed(() => n.value * s.value)
-const usable = computed(() => (mode.value === 0 ? raw.value : mode.value === 1 ? raw.value / 2 : (n.value - 1) * s.value))
+const usable = computed(() => (mode.value === 0 ? raw.value : mode.value === 1 ? Math.floor(n.value / 2) * s.value : (n.value - 1) * s.value))
 const survives = computed(() => mode.value !== 0)
 const modeName = computed(() => (mode.value === 0 ? t('nas.stripe') : mode.value === 1 ? t('nas.mirror') : t('nas.parity')))
 

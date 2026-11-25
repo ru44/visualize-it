@@ -39,7 +39,7 @@ derivation:
 charts: []
 presets:
   - LD: 4
-    h: 1.5
+    h: 1
   - LD: 30
     h: 1000
   - LD: 15

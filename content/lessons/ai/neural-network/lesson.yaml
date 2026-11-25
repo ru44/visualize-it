@@ -36,7 +36,7 @@ parameters:
     min: -3
     max: 3
     step: 0.1
-    value: 1
+    value: -1
   w31:
     min: -3
     max: 3
@@ -92,7 +92,7 @@ presets:
   - w11: 1
     w12: 1
     w21: 1
-    w22: 1
+    w22: -1
     w31: -1
     w32: 1
     v1: 1
