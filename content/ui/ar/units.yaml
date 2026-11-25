@@ -1,0 +1,23 @@
+# Arabic for slider units that are words rather than symbols (ParamSlider looks up unit.<unit>).
+# Symbols such as m/s, Hz or kg need no entry and are shown as written.
+unit.$: دولار
+unit.$/kWh: دولار لكل kWh
+unit.$/mo: ريال في الشهر
+unit.$bn: مليار دولار
+unit.%/yr: '% سنويًا'
+unit.yr: سنة
+unit.Myr: مليون سنة
+unit.mo: شهر
+unit.h: ساعة
+unit.h/month: ساعة في الشهر
+unit.min: دقيقة
+unit.USD: دولار
+unit.EGP: جنيه
+unit.EGP/USD: جنيه لكل دولار
+unit.atoms: ذرة
+unit.bpm: نبضة في الدقيقة
+unit.cm/yr: cm في السنة
+unit.M☉/yr: M☉ في السنة
+unit.ly: سنة ضوئية
+unit.AU: وحدة فلكية
+unit.arcsec: ثانية قوسية
