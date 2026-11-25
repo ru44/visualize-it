@@ -52,7 +52,7 @@ challenges:
   - check: 'v1/ratio'
     target: 20
     tol: 2
-  - check: '0.6125*v1^2*(1/ratio^2-1)'
+  - check: '0.6*v1^2*(1/ratio^2-1)'
     target: 500
     tol: 50
-  - check: 'v1/ratio < 15 and 0.6125*v1^2*(1/ratio^2-1) > 100'
+  - check: 'v1/ratio < 15 and 0.6*v1^2*(1/ratio^2-1) > 100'

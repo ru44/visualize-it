@@ -53,8 +53,8 @@ useThree(
 
     let radiusScene = 1
     return (dt, t0) => {
-      const R = Math.max(0.1, props.params.R ?? 3.84)
-      const weight = Math.max(1, props.params.W ?? 6076)
+      const R = Math.max(0.1, props.params.R ?? 3.8)
+      const weight = Math.max(1, props.params.W ?? 6075)
       const tiltDeg = props.params.tilt ?? 0
       const tiltRad = (tiltDeg * Math.PI) / 180
       const A = Math.PI * R * R
