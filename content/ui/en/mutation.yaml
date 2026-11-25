@@ -1,5 +1,5 @@
 mut.hint: drag the sequence length, mutation rate and generations
-mut.strip: a 60-base window of the sequence — red boxes have changed
+mut.strip: the whole sequence in 60 slices — a red box holds a changed base
 mut.n: sequence length N
 mut.mu: mutation rate μ
 mut.g: generations g

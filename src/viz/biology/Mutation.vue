@@ -19,18 +19,19 @@ const g = computed(() => Math.max(0, props.params.g ?? 100))
 const fracMutated = computed(() => Math.min(1, muTrue.value * g.value))
 const E = computed(() => N.value * muTrue.value * g.value)
 
-// A 60-base strip. Each box's random threshold is fixed once, so raising the mutation fraction
+// The whole sequence cut into 60 slices; a slice is red once it holds at least one changed base
+// (chance 1 - e^(-E/60)). Each box's random threshold is fixed once, so raising the mutation fraction
 // lights up more boxes without the already-mutated ones flickering to a new random spot.
 const N_BOXES = 60
 let seed = 42
 const rand = () => { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff }
 const thresholds = Array.from({ length: N_BOXES }, () => rand())
-const boxes = computed(() => thresholds.map((th) => th < fracMutated.value))
+const boxes = computed(() => thresholds.map((th) => th < 1 - Math.exp(-E.value / N_BOXES)))
 
 const stripX = 40
 const stripY = 90
-const boxW = 11
-const boxGap = 2.2
+const boxW = 5.5
+const boxGap = 1.1
 
 // Accumulation line: E(x) = N·μ·x for x in [0, g], scaled to fit the panel.
 const chartX = [460, 760] as const

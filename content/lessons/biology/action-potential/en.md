@@ -35,7 +35,7 @@ variables:
 
 ## Test yourself
 
-1. Set the stimulus current $I$ above 1.0 but no higher than 1.4, so the neuron keeps firing spike after spike.
+1. Set the stimulus current $I$ above 1.0 but no higher than 1.4, so the neuron keeps firing spike after spike. (Push $I$ to 1.45 or more and the spikes die away: the voltage stays stuck high, because a stimulus that is too strong never lets the cell recover.)
 2. Set the two recovery settings, $a$ and $b$, to the same number.
 3. Slow the recovery all the way to $\tau = 20$ while keeping the stimulus current at 0.1 or below, so the neuron stays quiet.
 
