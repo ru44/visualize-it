@@ -152,3 +152,20 @@ ok4('a perfect score stays a modest estimate', iqs[60].iq <= 135 && iqs[60].iq >
 ok4('very low scores give no number', iqs[20].tooLow && !iqs[30].tooLow, [iqs[20], iqs[30]])
 if (f4) { console.log(`\n${f4} FAILED (rough IQ)`); process.exit(1) }
 console.log('rough IQ checks passed')
+
+// ---- AES-128 (FIPS-197 examples) --------------------------------------------------------------
+import { aesTrace, fromHex, toHex, SBOX } from '../src/engine/aes'
+let f5 = 0
+const ok5 = (name: string, cond: boolean, got: unknown) => {
+  if (!cond) f5++
+  console.log(`${cond ? '✓' : '✗'} ${name}${cond ? '' : '  → got ' + JSON.stringify(got)}`)
+}
+const fipsB = aesTrace(fromHex('3243f6a8885a308d313198a2e0370734'), fromHex('2b7e151628aed2a6abf7158809cf4f3c'))
+ok5('S-box: 00 → 63, 53 → ed, ff → 16', SBOX[0] === 0x63 && SBOX[0x53] === 0xed && SBOX[0xff] === 0x16, [SBOX[0], SBOX[0x53], SBOX[0xff]])
+ok5('FIPS-197 appendix B: round 1 SubBytes starts d4', fipsB[1].sub[0] === 0xd4, fipsB[1].sub[0])
+ok5('FIPS-197 appendix B: round 1 MixColumns starts 04 66 81 e5', toHex(fipsB[1].mix.slice(0, 4)) === '046681e5', toHex(fipsB[1].mix))
+ok5('FIPS-197 appendix B: ciphertext 3925841d…', toHex(fipsB[10].end) === '3925841d02dc09fbdc118597196a0b32', toHex(fipsB[10].end))
+const fipsC = aesTrace(fromHex('00112233445566778899aabbccddeeff'), fromHex('000102030405060708090a0b0c0d0e0f'))
+ok5('FIPS-197 appendix C.1: ciphertext 69c4e0d8…', toHex(fipsC[10].end) === '69c4e0d86a7b0430d8cdb78070b4c55a', toHex(fipsC[10].end))
+if (f5) { console.log(`\n${f5} FAILED (AES)`); process.exit(1) }
+console.log('all AES tests passed')

@@ -11,6 +11,7 @@ prerequisites:
   - xor-and-one-time-pad
   - binary-numbers
 related:
+  - aes-step-by-step
   - hash-functions
   - digital-signatures
 visualization:
