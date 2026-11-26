@@ -26,7 +26,7 @@ parameters:
     min: 0
     max: 15
     step: 1
-    value: 0
+    value: 2
   key:
     min: 0
     max: 65535
@@ -45,13 +45,13 @@ charts: []
 primary: rounds
 presets:
   - rounds: 0
-    flip: 0
+    flip: 2
     key: 14996
   - rounds: 2
-    flip: 0
+    flip: 2
     key: 14996
   - rounds: 4
-    flip: 8
+    flip: 3
     key: 14996
 challenges:
   - check: rounds

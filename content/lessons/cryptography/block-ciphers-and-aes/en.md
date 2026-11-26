@@ -14,27 +14,27 @@ variables:
 
 ## Try it
 
-1. Look at the two towers of small squares, A on the left and B on the right: they start as the same 16-bit block, except for one flipped bit.
-2. Keep «flip» at 0 and step «rounds» through 0, 1, 2, 3, 4. The "bits different" readout goes 1, 3, 9, 5, 5 out of 16: one flipped bit spreads over the block.
-3. With «rounds» at 4, set «flip» to 8, then to 15. A different input bit now differs, and the readout shows 7 / 16, then 6 / 16 — the change spreads no matter which bit you pick.
+1. Look at the top stage: message A is the word "hi" and message B is "Hi". The capital letter changes just one of the 16 bits, and a red column marks it.
+2. Keep «flip» at 2 and step «rounds» through 0, 1, 2, 3, 4. The "bits different" readout goes 1, 2, 6, 8, 8 out of 16: one flipped bit spreads until half the block differs.
+3. With «rounds» at 4, set «flip» to 10, then to 15. B becomes "hI", then "hh", and the readout shows 11 / 16, then 8 / 16 — the change spreads no matter which bit you pick.
 
 ## Real-life examples
 
-1. **Sending a block with zero rounds.** «rounds» = 0 skips all mixing, so A and B — identical except for one input bit — still differ by exactly that one square at the bottom, just like plain, unshuffled data.
-2. **A partly-mixed message.** «rounds» = 2 already spreads that one-bit difference to 9 of the 16 squares, but after so few rounds the pattern is still easy to predict, the way a weak, watered-down cipher would leave it.
-3. **A fully-mixed message, from a different bit.** «rounds» = 4 with «flip» = 8 shows a different starting bit still ending up scrambling roughly half the block, just as real AES's 10 rounds do to a full 128-bit block.
+1. **Sending a block with zero rounds.** «rounds» = 0 skips all mixing, so A and B — identical except for one input bit — still differ by exactly one red column, just like plain, unshuffled data.
+2. **A partly-mixed message.** «rounds» = 2 already spreads that one-bit difference to 6 of the 16 bits, but after so few rounds the pattern is still easy to predict, the way a weak, watered-down cipher would leave it.
+3. **A fully-mixed message, from a different bit.** «rounds» = 4 with «flip» = 3 (B is "xi") shows a different starting bit still ending up scrambling half the block, 8 of 16, just as real AES's 10 rounds do to a full 128-bit block.
 
 ## Test yourself
 
 1. Push «rounds» to 4, the most this toy cipher offers.
 2. Push «flip» to 15, the very last input bit.
-3. Set «rounds» to 4 and «flip» back to 0, and count how many of the 16 bottom squares differ between A and B.
+3. Set «rounds» to 4 and «flip» back to 2, and count how many of the 16 bits in the last stage differ between A and B.
 
 ## Intuition
 
-Take a tiny 16-bit block of data, small enough to draw completely on screen, and flip just one of its bits before encrypting both the original and the flipped copy side by side. The left tower of small squares is block A, the right tower is block B, identical to A except for one bit chosen with the «flip» slider. Drag «rounds» from 0 to 4 and watch a fresh row appear for each round: at «rounds» = 0 the two towers still differ by exactly one square, but every round mixes in the key, swaps each group of 4 bits through a fixed lookup table, and shuffles all 16 bits into new positions.
+Take a tiny 16-bit block of data, the two letters "hi", small enough to draw completely on screen, and flip just one of its bits before encrypting both the original and the flipped copy side by side. In each stage of the picture block A sits above block B, identical to A except for one bit chosen with the «flip» slider, and a red column marks every bit where they differ. Drag «rounds» from 0 to 4 and watch one more stage fill in for each round: at «rounds» = 0 the two blocks still differ by exactly one bit, but every round mixes in the key, swaps each group of 4 bits through a fixed lookup table, and shuffles all 16 bits into new positions.
 
-By the last row at «rounds» = 4, roughly half of the 16 squares between A and B differ in color, even though A and B started only one bit apart — this spreading is exactly what real AES does at a larger scale, encrypting a full block as $C = E_K(M)$, a message $M$ scrambled by repeated rounds under key $K$.
+By the last stage at «rounds» = 4, about half of the 16 bits of A and B differ (8 of 16 at the starting settings), even though A and B started only one bit apart — this spreading is exactly what real AES does at a larger scale, encrypting a full block as $C = E_K(M)$, a message $M$ scrambled by repeated rounds under key $K$.
 
 ## Formal
 
