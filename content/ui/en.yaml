@@ -722,11 +722,13 @@ hash.hint: change one letter and about half of the 256 bits flip
 hash.unavailable: this browser cannot compute SHA-256 here
 spn.rounds: rounds
 spn.different: bits different
-spn.hint: two inputs that differ in one bit, encrypted side by side
-spn.input: input
+spn.hint: Two messages one bit apart, encrypted with the same key. Each row of squares is 16 bits.
+spn.input: the message
 spn.after: after round {r}
-spn.bits: bits differ
-spn.aes: AES does the same three steps on 128 bits, 10 to 14 times, with a bigger S-box
+spn.step: 'round {r}: mix in the key, swap each group of 4 bits from a table, shuffle the bits'
+spn.half: half
+spn.legend: A red column is a bit where A and B differ. A well-mixed block has about half of its bits different, 8 of 16.
+spn.aes: Real AES does the same three steps on 128 bits, 10 to 14 times, with a bigger table.
 ec.off: not on the curve here
 ec.warning: warning
 ec.singular: curve has a sharp point
