@@ -51,21 +51,37 @@ const index = computed(() => {
   })
 })
 
+type Hay = (typeof index.value)[number]['hay']
+// 1 when the needle starts a word, 0.25 when it only sits inside a Latin word ("rsa" in "universal"), 0 when absent
+const at = (s: string, needle: string) => {
+  let best = 0
+  for (let i = s.indexOf(needle); i >= 0; i = s.indexOf(needle, i + 1)) {
+    if (i === 0 || !/[a-z0-9]/.test(s[i - 1])) return 1
+    best = 0.25
+  }
+  return best
+}
+const score = (h: Hay, needle: string): number =>
+  Math.max(
+    h.title.startsWith(needle) ? 100 : 80 * at(h.title, needle),
+    70 * at(h.enTitle, needle),
+    60 * at(h.id, needle),
+    50 * at(h.subjectName, needle),
+    40 * at(h.concepts, needle),
+    20 * at(h.summary, needle),
+  )
+
+// Each word is looked up on its own, so "AES RSA" lists both lessons and "rsa encryption" finds the RSA lesson.
+// Lessons matching more of the words come first; one-letter words (a, و) only count when typed alone.
 const results = computed(() => {
-  const needle = fold(q.value.trim())
-  if (!needle) return []
+  const all = fold(q.value.trim()).split(/\s+/).filter(Boolean)
+  const words = all.length > 1 ? all.filter((w) => w.length > 1) : all
+  if (!words.length) return []
   const scored = index.value
     .map((e) => {
-      const h = e.hay
-      let s = 0
-      if (h.title.startsWith(needle)) s = 100
-      else if (h.title.includes(needle)) s = 80
-      else if (h.enTitle.includes(needle)) s = 70
-      else if (h.id.includes(needle)) s = 60
-      else if (h.subjectName.includes(needle)) s = 50
-      else if (h.concepts.includes(needle)) s = 40
-      else if (h.summary.includes(needle)) s = 20
-      return { e, s }
+      const per = words.map((w) => score(e.hay, w))
+      const hits = per.filter((x) => x > 0).length
+      return { e, s: hits ? hits * 1000 + per.reduce((a, b) => a + b, 0) : 0 }
     })
     .filter((r) => r.s > 0)
   scored.sort((a, b) => b.s - a.s || a.e.title.localeCompare(b.e.title))
