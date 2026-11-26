@@ -13,6 +13,7 @@
 - password-salting
 - confusion-and-diffusion
 - block-ciphers-and-aes
+- aes-step-by-step
 - digital-signatures
 - elliptic-curve-cryptography
 - secret-sharing

@@ -1,0 +1,37 @@
+aes.message: Message (16 bytes)
+aes.key: Key (16 bytes)
+aes.bytesNote: 'Each English letter, digit or space is 1 byte; an Arabic letter is 2. Only the first 16 bytes are used, and a shorter text is filled with spaces. Bytes are shown in hex, two digits from 0–9 and a–f: 68 is the letter h.'
+aes.title0: 'Round 0: before the rounds start, the message is XORed with the key.'
+aes.title: 'Round {r} of 10 · step {s} of 4: {name}'
+aes.step1: SubBytes
+aes.step2: ShiftRows
+aes.step3: MixColumns
+aes.step4: AddRoundKey
+aes.short1: SubBytes
+aes.short2: ShiftRows
+aes.short3: MixColumns
+aes.short4: AddRoundKey
+aes.what1: Every byte is swapped for another from a fixed table of 256 entries, the S-box.
+aes.what2: Row 0 stays put, row 1 slides 1 place left, row 2 slides 2 and row 3 slides 3. A byte that falls off the left end comes back on the right.
+aes.what3: Each column is multiplied by a fixed 4×4 matrix, so every byte of the column changes all four.
+aes.what3last: The last round skips this step, so nothing changes here.
+aes.what4: Every byte is XORed with the byte in the same place of this round's key.
+aes.click: Click any byte to see how it was made.
+aes.before: before
+aes.after: after
+aes.order: bytes fill the grid down each column, column by column
+aes.sbox: 'the S-box: row = first hex digit, column = second'
+aes.rowShift: 'row {r}'
+aes.matrix: fixed matrix
+aes.column: 'column {c}'
+aes.roundKey: 'round key {r}'
+aes.subCalc: 'Byte {a}: go to row {row}, column {col} of the table. The entry there is {b}.'
+aes.shift0: Row 0 does not move, so this byte stays in its place.
+aes.shiftCalc: 'Row {r} slides {r} places left: this byte was in column {from} and is now in column {to}.'
+aes.mixRule: '×1 keeps the byte. ×2 shifts its bits one place left, and if a 1 falls off the left end, XORs with 1b. ×3 is ×2 XORed with the byte itself. ⊕ means XOR.'
+aes.keyWord: key
+aes.xorRule: 'XOR compares bit by bit: two equal bits give 0, two different bits give 1.'
+aes.cipher: 'Ciphertext after round 10:'
+aes.roundLabel: round
+aes.stepLabel: step
+aes.byteLabel: selected byte

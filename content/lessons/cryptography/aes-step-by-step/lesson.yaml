@@ -1,0 +1,65 @@
+id: aes-step-by-step
+subject: cryptography
+difficulty: high-school
+added: '2026-11-27'
+equation: s_r = \mathrm{MC}(\mathrm{SR}(\mathrm{SB}(s_{r-1}))) \oplus K_r
+concepts:
+  - aes
+  - block-cipher
+  - s-box
+  - mix-columns
+  - xor
+prerequisites:
+  - block-ciphers-and-aes
+  - xor-and-one-time-pad
+related:
+  - confusion-and-diffusion
+  - hash-functions
+visualization:
+  type: aes-explorer
+  options:
+    message: hello world 2026
+    key: my secret key 16
+parameters:
+  round:
+    min: 0
+    max: 10
+    step: 1
+    value: 1
+  step:
+    min: 1
+    max: 4
+    step: 1
+    value: 1
+  cell:
+    min: 0
+    max: 15
+    step: 1
+    value: 0
+variables:
+  - s_r
+  - s_{r-1}
+  - K_r
+  - \mathrm{SB}
+  - \mathrm{SR}
+  - \mathrm{MC}
+derivation:
+  - s_0 = M \oplus K_0
+  - s_r = \mathrm{MC}(\mathrm{SR}(\mathrm{SB}(s_{r-1}))) \oplus K_r, \quad r = 1, \dots, 9
+  - C = s_{10} = \mathrm{SR}(\mathrm{SB}(s_9)) \oplus K_{10}
+charts: []
+primary: step
+presets:
+  - round: 0
+    step: 4
+    cell: 0
+  - round: 1
+    step: 3
+    cell: 0
+  - round: 10
+    step: 4
+    cell: 0
+challenges:
+  - check: 'round == 10 and step == 3'
+  - check: 'round == 1 and step == 4'
+  - check: 'round >= 1 and step == 2 and (cell == 3 or cell == 7 or cell == 11 or cell == 15)'
